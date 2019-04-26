@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    <a href="/nagrody-ankieta" class="btn btn-success">Ankietowani PTA</a>
                 </div>
             </div>
         </div>
