@@ -28,3 +28,13 @@ Route::put('accept/{subscriber}', [
 Route::get('/search', [
     'uses' =>  'SubscriberController@search'
 ])->name('search-code');
+
+Route::get('/nagrody-suby', 'Subscriber2Controller@index')->name('subscribers2');
+
+Route::put('accept2/{subscriber2}', [
+    'uses' => 'Subscriber2Controller@updatePrice'
+])->middleware('auth')->name('get-price2');
+
+Route::get('/search2', [
+    'uses' =>  'Subscriber2Controller@search'
+])->name('search-code2');
