@@ -12,7 +12,7 @@
                         {{csrf_field()}}
                         <input type="text" class="form-control" name="search" placeholder="Szukaj...">
                         <button type="submit" class="btn btn-success border border-warning">Szukaj</button>
-                        <a href="/nagrody-ankieta" class="btn btn-danger">Resetuj</a>
+                        <a href="/nagrody-suby" class="btn btn-danger">Resetuj</a>
                     </form>
                     <table class="table table-striped table-responsive">
                         <thead>
