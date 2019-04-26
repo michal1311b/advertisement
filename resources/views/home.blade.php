@@ -15,6 +15,7 @@
                     @endif
 
                     <a href="/nagrody-ankieta" class="btn btn-success">Ankietowani PTA</a>
+                    <a href="/nagrody-suby" class="btn btn-success">Subskrybenci N4D</a>
                 </div>
             </div>
         </div>
