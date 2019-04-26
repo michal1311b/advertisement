@@ -18,3 +18,13 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/nagrody-ankieta', 'SubscriberController@index')->name('subscribers1');
+
+Route::put('accept/{subscriber}', [
+    'uses' => 'SubscriberController@updatePrice'
+])->middleware('auth')->name('get-price');
+
+Route::get('/search', [
+    'uses' =>  'SubscriberController@search'
+])->name('search-code');

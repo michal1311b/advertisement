@@ -21,4 +21,15 @@ class SubscriberController extends Controller
 
         return back();
     }
+
+    public function search()
+    {
+        $search = \Request::get('search'); //<-- we use global request to get the param of URI
+
+        $subcribers = Subscriber::where('invitation','like','%'.$search.'%')
+            ->orderBy('invitation')
+            ->paginate(20);
+
+        return view('subscribers1.index ', compact(['subcribers']));
+    }
 }
