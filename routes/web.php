@@ -1,5 +1,5 @@
 <?php
-
+use App\Events\WebsocketDemoEvent;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,6 +12,8 @@
 */
 
 Route::get('/', function () {
+    broadcast(new WebsocketDemoEvent('some data'));
+
     return view('welcome');
 });
 
