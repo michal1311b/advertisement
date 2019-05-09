@@ -17,6 +17,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::post('/push','PushController@store');
+Route::get('/push','PushController@push')->name('push');
+
 Route::get('/chats', 'ChatsController@index');
 
 Route::get('/messages', 'ChatsController@fetchMessages');
