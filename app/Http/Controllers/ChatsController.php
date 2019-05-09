@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Message;
+use App\User;
 use App\Events\MessageSent;
+use Notification;
+use App\Notifications\PushDemo;
 
 class ChatsController extends Controller
 {
@@ -27,6 +30,9 @@ class ChatsController extends Controller
             'message' => $request->message
         ]);
         broadcast(new MessageSent($message->load('user')))->toOthers();
+
+        Notification::send(User::all(), new PushDemo);
+
         return ['status' => 'success'];
     }
 }
