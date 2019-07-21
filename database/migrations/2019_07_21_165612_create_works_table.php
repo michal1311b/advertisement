@@ -20,174 +20,174 @@ class CreateWorksTable extends Migration
             $table->timestamps();
         });
 
-        DB::table('questions')->insert([
+        DB::table('works')->insert([
             [
-                'body' => 'bar, restauracja i gastronomia',
+                'name' => 'bar, restauracja i gastronomia',
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'body' => 'biuro i administracja',
+                'name' => 'biuro i administracja',
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'body' => 'praca na budowie i pracownicy fizyczni',
+                'name' => 'praca na budowie i pracownicy fizyczni',
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'body' => 'fachowcy',
+                'name' => 'fachowcy',
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'body' => 'finanse i księgowość',
+                'name' => 'finanse i księgowość',
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'body' => 'grafika i web design',
+                'name' => 'grafika i web design',
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'body' => 'hostessy, modele i aktorzy',
+                'name' => 'hostessy, modele i aktorzy',
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'body' => 'hr, kadry i rekrutacja',
+                'name' => 'hr, kadry i rekrutacja',
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'body' => 'inżynierowie, technicy i architekci',
+                'name' => 'inżynierowie, technicy i architekci',
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'body' => 'kierowcy i kurierzy',
+                'name' => 'kierowcy i kurierzy',
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'body' => 'kontrola i inwentaryzacja',
+                'name' => 'kontrola i inwentaryzacja',
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'body' => 'krawiectwo i moda',
+                'name' => 'krawiectwo i moda',
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'body' => 'magazynier',
+                'name' => 'magazynier',
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'body' => 'mlm',
+                'name' => 'mlm',
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'body' => 'nauczyciele i edukacja',
+                'name' => 'nauczyciele i edukacja',
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'body' => 'obsługa klienta i call center',
+                'name' => 'obsługa klienta i call center',
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'body' => 'ochrona',
+                'name' => 'ochrona',
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'body' => 'opiekunki i nianie',
+                'name' => 'opiekunki i nianie',
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'body' => 'pielęgnacja i uroda',
+                'name' => 'pielęgnacja i uroda',
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'body' => 'praca dla studentów',
+                'name' => 'praca dla studentów',
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'body' => 'praca na produkcji',
+                'name' => 'praca na produkcji',
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'body' => 'praca w hotelu',
+                'name' => 'praca w hotelu',
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'body' => 'prawo i prokuratura',
+                'name' => 'prawo i prokuratura',
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'body' => 'programiści, informatyka i internet',
+                'name' => 'programiści, informatyka i internet',
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'body' => 'służba zdrowia i farmacja',
+                'name' => 'służba zdrowia i farmacja',
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'body' => 'spedycja',
+                'name' => 'spedycja',
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'body' => 'sport i fitness',
+                'name' => 'sport i fitness',
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'body' => 'sprzątanie i pomoc domowa',
+                'name' => 'sprzątanie i pomoc domowa',
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'body' => 'sprzedaż, handel i praca w sklepie',
+                'name' => 'sprzedaż, handel i praca w sklepie',
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'body' => 'turystyka',
+                'name' => 'turystyka',
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'body' => 'ulotki',
+                'name' => 'ulotki',
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'body' => 'weterynaria i rolnictwo',
+                'name' => 'weterynaria i rolnictwo',
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'body' => 'video i fotografia',
+                'name' => 'video i fotografia',
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'body' => 'praca inne',
+                'name' => 'praca inne',
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ]
