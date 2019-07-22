@@ -8,7 +8,7 @@
                 <div class="card-header">Create advertisement</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
+                    <form method="POST" action="{{ route('create-advertisement') }}" enctype="multipart/form-data">
                         @csrf
 
                         <div class="form-group row">
@@ -28,14 +28,33 @@
                         </div>
 
                         <div class="form-group row">
-                            <label class="col-md-3 col-form-label text-md-right" for="work">Work</label>
+                            <label class="col-md-3 col-form-label text-md-right" for="work_id">Work</label>
                             <div class="col-md-9">
-                                <select class="custom-select" name="work" id="work">
+                                <select class="custom-select" name="work_id" id="work_id">
                                     <option selected>Choose...</option>
                                     @foreach($works as $work)
                                         <option value="{{ $work->id }}">{{ $work->name }}</option>
                                     @endforeach
                                 </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-md-3 col-form-label text-md-right" for="state_id">State</label>
+                            <div class="col-md-9">
+                                <select class="custom-select" name="state_id" id="state_id">
+                                    <option selected>Choose...</option>
+                                    @foreach($states as $state)
+                                        <option value="{{ $state->id }}">{{ $state->name }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-md-3 col-form-label text-md-right" for="photos">Wrzuć plik/pliki:</label>
+                            <div class="col-md-9">
+                                <input type="file" class="form-control @error('title') is-invalid @enderror" name="photos[]" multiple />
                             </div>
                         </div>
 
@@ -64,4 +83,10 @@
         </div>
     </div>
 </div>
+@endsection
+
+@section('scripts')
+<script>
+
+</script>
 @endsection
