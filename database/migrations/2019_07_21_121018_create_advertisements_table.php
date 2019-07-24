@@ -17,15 +17,16 @@ class CreateAdvertisementsTable extends Migration
             $table->bigIncrements('id');
             $table->string('title');
             $table->text('description');
-            $table->unsignedBigInteger('work_id');
-            $table->unsignedBigInteger('state_id');
             $table->string('city');
             $table->string('postCode');
             $table->string('street');
             $table->string('email');
             $table->string('phone');
-            $table->foreign('work_id')->references('id')->on('works');
-            $table->foreign('state_id')->references('id')->on('states');
+            $table->boolean('term1')->defualt(false);
+            $table->boolean('term2')->defualt(false);
+            $table->boolean('term3')->defualt(false);
+            $table->unsignedInteger('work_id');
+            $table->unsignedInteger('state_id');
             $table->timestamps();
         });
     }

@@ -16,6 +16,9 @@ class Advertisement extends Model
         'street',
         'email',
         'phone',
+        'term1',
+        'term2',
+        'term3',
         'slug'
     ];
 
