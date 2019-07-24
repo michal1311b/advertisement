@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Work;
 use App\State;
+use App\Http\Requests\Advertisement\StoreRequest;
 
 class AdvertisementController extends Controller
 {
@@ -16,7 +17,7 @@ class AdvertisementController extends Controller
         return view('advertisement.create', compact('works', 'states'));
     }
 
-    public function store(Request $request)
+    public function store(StoreRequest $request)
     {
         $input = $request->all();
         dd($input);
