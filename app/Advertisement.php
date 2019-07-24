@@ -7,7 +7,16 @@ use Illuminate\Database\Eloquent\Model;
 class Advertisement extends Model
 {
     protected $fillable = [
-        'title', 'description', 'work_id', 'slug'
+        'title',
+        'description',
+        'work_id',
+        'state_id',
+        'city',
+        'postCode',
+        'street',
+        'email',
+        'phone',
+        'slug'
     ];
 
     private static function getUniqueSlug($title)

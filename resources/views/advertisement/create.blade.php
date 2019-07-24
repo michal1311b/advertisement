@@ -8,28 +8,28 @@
                 <div class="card-header">Create advertisement</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('create-advertisement') }}" enctype="multipart/form-data">
+                    <form method="POST" action="{{ route('create-advertisement') }}" enctype="multipart/form-data" novalidate>
                         @csrf
 
                         <div class="form-group row">
-                            <label for="title" class="col-md-3 col-form-label text-md-right">Title</label>
+                            <label for="title" class="col-12 col-md-3 col-form-label text-md-right">Title</label>
 
-                            <div class="col-md-9">
+                            <div class="col-12 col-md-9">
                                 <input id="title" type="title" class="form-control @error('title') is-invalid @enderror" name="title" value="{{ old('title') }}" required autocomplete="title" autofocus>
                             </div>
                         </div>
 
                         <div class="form-group row">
-                            <label for="description" class="col-md-3 col-form-label text-md-right">Description</label>
+                            <label for="description" class="col-12 col-md-3 col-form-label text-md-right">Description</label>
 
-                            <div class="col-md-9">
-                                <textarea id="description" type="description" class="form-control @error('description') is-invalid @enderror" name="description" value="{{ old('description') }}" required autocomplete="description" autofocus rows="3"></textarea>
+                            <div class="col-12 col-md-9">
+                                <textarea id="description" type="description" class="form-control" name="description" value="{{ old('description') }}" required rows="3"></textarea>
                             </div>
                         </div>
 
                         <div class="form-group row">
-                            <label class="col-md-3 col-form-label text-md-right" for="work_id">Work</label>
-                            <div class="col-md-9">
+                            <label class="col-12 col-md-3 col-form-label text-md-right" for="work_id">Work</label>
+                            <div class="col-12 col-md-9">
                                 <select class="custom-select" name="work_id" id="work_id">
                                     <option selected>Choose...</option>
                                     @foreach($works as $work)
@@ -40,8 +40,8 @@
                         </div>
 
                         <div class="form-group row">
-                            <label class="col-md-3 col-form-label text-md-right" for="state_id">State</label>
-                            <div class="col-md-9">
+                            <label class="col-12 col-md-3 col-form-label text-md-right" for="state_id">State</label>
+                            <div class="col-12 col-md-9">
                                 <select class="custom-select" name="state_id" id="state_id">
                                     <option selected>Choose...</option>
                                     @foreach($states as $state)
@@ -52,9 +52,49 @@
                         </div>
 
                         <div class="form-group row">
-                            <label class="col-md-3 col-form-label text-md-right" for="photos">Wrzuć plik/pliki:</label>
-                            <div class="col-md-9">
+                            <label class="col-12 col-md-3 col-form-label text-md-right" for="photos">Upload files:</label>
+                            <div class="col-12 col-md-9">
                                 <input type="file" class="form-control @error('title') is-invalid @enderror" name="photos[]" multiple />
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="city" class="col-12 col-md-3 col-form-label text-md-right">City</label>
+
+                            <div class="col-12 col-md-9">
+                                <input id="city" type="city" class="form-control @error('city') is-invalid @enderror" name="city" value="{{ old('city') }}" required autocomplete="city" autofocus>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="postCode" class="col-12 col-md-3 col-form-label text-md-right">Post code</label>
+
+                            <div class="col-12 col-md-9">
+                                <input id="postCode" type="postCode" class="form-control @error('postCode') is-invalid @enderror" name="postCode" value="{{ old('postCode') }}" required autocomplete="postCode" autofocus>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="street" class="col-12 col-md-3 col-form-label text-md-right">Street</label>
+
+                            <div class="col-12 col-md-9">
+                                <input id="street" type="street" class="form-control @error('street') is-invalid @enderror" name="street" value="{{ old('street') }}" required autocomplete="street" autofocus>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="email" class="col-12 col-md-3 col-form-label text-md-right">E-mail</label>
+
+                            <div class="col-12 col-md-9">
+                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="phone" class="col-12 col-md-3 col-form-label text-md-right">Phone</label>
+
+                            <div class="col-12 col-md-9">
+                                <input id="phone" type="phone" class="form-control @error('phone') is-invalid @enderror" name="phone" value="{{ old('phone') }}" required autocomplete="phone" autofocus>
                             </div>
                         </div>
 
