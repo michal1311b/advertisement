@@ -25,6 +25,7 @@ class CreateAdvertisementsTable extends Migration
             $table->boolean('term1')->defualt(false);
             $table->boolean('term2')->defualt(false);
             $table->boolean('term3')->defualt(false);
+            $table->text('slug');
             $table->unsignedInteger('work_id');
             $table->unsignedInteger('state_id');
             $table->timestamps();
