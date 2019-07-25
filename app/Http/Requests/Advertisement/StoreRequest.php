@@ -24,15 +24,15 @@ class StoreRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required|min:3',
+            'title' => 'required|min:3|max:190',
             'description' => 'required|min:3',
             'work_id' => 'required',
             'state_id' => 'required',
-            'city' => 'required|min:3',
-            'postCode' => 'required|min:3',
-            'street' => 'required|min:3',
-            'email' => 'required|min:3',
-            'phone' => 'required|min:3',
+            'city' => 'required|min:3|max:190',
+            'postCode' => 'required|min:3|max:190',
+            'street' => 'required|min:3|max:190',
+            'email' => 'required|min:3|max:190',
+            'phone' => 'required|min:3|max:190',
         ];
     }
 }
