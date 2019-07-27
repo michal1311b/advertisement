@@ -13,6 +13,7 @@ class Advertisement extends Model
         'description',
         'work_id',
         'state_id',
+        'user_id',
         'city',
         'postCode',
         'street',
@@ -34,6 +35,11 @@ class Advertisement extends Model
         return $this->hasMany(Gallery::class);
     }
 
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
     public static function create(array $attributes = [])
     {
         $attributes['slug'] = self::getUniqueSlug($attributes['title']);
@@ -42,6 +48,7 @@ class Advertisement extends Model
         $entry->description = $attributes['description'];
         $entry->work_id = $attributes['work_id'];
         $entry->state_id = $attributes['state_id'];
+        $entry->user = auth()->user()->id;
         $entry->city = $attributes['city'];
         $entry->postCode = $attributes['postCode'];
         $entry->street = $attributes['street'];

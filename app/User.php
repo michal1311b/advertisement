@@ -42,6 +42,11 @@ class User extends Authenticatable
         return $this->belongsToMany(Role::class);
     }
 
+    public function advertisements()
+    {
+        return $this->hasMany(Advertisement::class);
+    }
+
     /**
     * @param string|array $roles
     */

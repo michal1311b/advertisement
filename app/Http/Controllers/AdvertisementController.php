@@ -10,7 +10,7 @@ use App\Http\Requests\Advertisement\StoreRequest;
 
 class AdvertisementController extends Controller
 {
-    public function index()
+    public function create()
     {
         $works = Work::all();
         $states = State::all();
@@ -20,6 +20,14 @@ class AdvertisementController extends Controller
 
     public function store(StoreRequest $request)
     {
-        return Advertisement::create($request->all());
+        Advertisement::create($request->all());
+        return back();
+    }
+
+    public function show($id)
+    {
+        $advertisement = Advertisement::with(['galleries'])
+        ->find($id);
+        dd($advertisement);
     }
 }

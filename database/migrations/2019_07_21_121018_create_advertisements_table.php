@@ -28,6 +28,7 @@ class CreateAdvertisementsTable extends Migration
             $table->text('slug');
             $table->unsignedInteger('work_id');
             $table->unsignedInteger('state_id');
+            $table->unsignedInteger('user_id');
             $table->timestamps();
         });
     }

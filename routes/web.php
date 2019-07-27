@@ -27,5 +27,6 @@ Route::get('{driver}/callback', 'Auth\LoginController@handleProviderCallback')
     ->name('login.callback')
     ->where('driver', implode('|', config('auth.socialite.drivers')));
 
-Route::get('/advertisement/create', 'AdvertisementController@index');
+Route::get('/advertisement/create', 'AdvertisementController@create');
 Route::post('/advertisement/create', 'AdvertisementController@store')->name('create-advertisement');
+Route::get('/advertisement/show/{id}', 'AdvertisementController@show');
