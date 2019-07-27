@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Advertisement;
 
 class Gallery extends Model
 {
@@ -15,8 +16,8 @@ class Gallery extends Model
         'advertisement_id'
     ];
 
-    public function galleriable()
+    public function advertisement()
     {
-        return $this->morphTo();
+        return $this->belongsTo(Advertisement::class);
     }
 }

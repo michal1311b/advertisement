@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Gallery;
-use Illuminate\Support\Facades\Storage;
+use Carbon\Carbon;
 
 class Advertisement extends Model
 {
@@ -31,30 +31,40 @@ class Advertisement extends Model
 
     public function galleries()
     {
-        return $this->morphMany(Gallery::class, 'galleriable');
+        return $this->hasMany(Gallery::class);
     }
 
     public static function create(array $attributes = [])
     {
         $attributes['slug'] = self::getUniqueSlug($attributes['title']);
-        $entry = parent::create($attributes);
+        $entry = new Advertisement();
+        $entry->title = $attributes['title'];
+        $entry->description = $attributes['description'];
+        $entry->work_id = $attributes['work_id'];
+        $entry->state_id = $attributes['state_id'];
+        $entry->city = $attributes['city'];
+        $entry->postCode = $attributes['postCode'];
+        $entry->street = $attributes['street'];
+        $entry->phone = $attributes['phone'];
+        $entry->email = $attributes['email'];
+        $entry->term1 = $attributes['term1'];
+        $entry->term2 = $attributes['term2'];
+        $entry->term3 = $attributes['term3'];
+        $entry->slug = $attributes['slug'];
+        $entry->save();
+
+        $now = Carbon::now();
 
         if(isset($attributes['galleries'])) {
             foreach($attributes['galleries'] as $k => $gallery) {
                 if(is_numeric($k)) {
                     $fileData = new Gallery();
                     $fileData->oldName = $gallery->getClientOriginalName();
-                    $fileData->newName = \DateTime() . self::generateRandomString();
+                    $fileData->newName = $now->getTimestamp() . $entry->generateRandomString();
                     $fileData->size = $gallery->getClientSize();
                     $fileData->mimeType = $gallery->getClientMimeType();
-                    $fileData->path = $gallery->store(self::uploadDir() . '/' . $entry->id . \DateTime(), 'public');
+                    $fileData->path = $gallery->store(self::uploadDir() . '/' . $entry->id . '_' . $now->format('Y-m-d'), 'public');
                     $fileData->advertisement_id = $entry->id;
-                    
-                    Storage::disk('public')->putFileAs(
-                        'files/'.$filename,
-                        $uploadedFile,
-                        $filename
-                    );
                     $entry->galleries()->save($fileData);
                 }
             }

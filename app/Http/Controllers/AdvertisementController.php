@@ -14,7 +14,7 @@ class AdvertisementController extends Controller
     {
         $works = Work::all();
         $states = State::all();
-
+        
         return view('advertisement.create', compact('works', 'states'));
     }
 
