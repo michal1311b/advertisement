@@ -29,4 +29,4 @@ Route::get('{driver}/callback', 'Auth\LoginController@handleProviderCallback')
 
 Route::get('/advertisement/create', 'AdvertisementController@create');
 Route::post('/advertisement/create', 'AdvertisementController@store')->name('create-advertisement');
-Route::get('/advertisement/show/{id}', 'AdvertisementController@show');
+Route::get('/advertisement/show/{slug}', 'AdvertisementController@show');

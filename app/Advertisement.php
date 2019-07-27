@@ -40,6 +40,16 @@ class Advertisement extends Model
         return $this->belongsTo(User::class);
     }
 
+    public function state()
+    {
+        return $this->belongsTo(State::class);
+    }
+
+    public function work()
+    {
+        return $this->belongsTo(Work::class);
+    }
+
     public static function create(array $attributes = [])
     {
         $attributes['slug'] = self::getUniqueSlug($attributes['title']);
@@ -48,7 +58,7 @@ class Advertisement extends Model
         $entry->description = $attributes['description'];
         $entry->work_id = $attributes['work_id'];
         $entry->state_id = $attributes['state_id'];
-        $entry->user = auth()->user()->id;
+        $entry->user_id = auth()->user()->id;
         $entry->city = $attributes['city'];
         $entry->postCode = $attributes['postCode'];
         $entry->street = $attributes['street'];
@@ -70,7 +80,7 @@ class Advertisement extends Model
                     $fileData->newName = $now->getTimestamp() . $entry->generateRandomString();
                     $fileData->size = $gallery->getClientSize();
                     $fileData->mimeType = $gallery->getClientMimeType();
-                    $fileData->path = $gallery->store(self::uploadDir() . '/' . $entry->id . '_' . $now->format('Y-m-d'), 'public');
+                    $fileData->path = "http://{$_SERVER['HTTP_HOST']}" .$gallery->store(self::uploadDir() . '/' . $entry->id . '_' . $now->format('Y-m-d'), 'public');
                     $fileData->advertisement_id = $entry->id;
                     $entry->galleries()->save($fileData);
                 }

@@ -24,10 +24,17 @@ class AdvertisementController extends Controller
         return back();
     }
 
-    public function show($id)
+    public function show($slug)
     {
-        $advertisement = Advertisement::with(['galleries'])
-        ->find($id);
-        dd($advertisement);
+        $advertisement = Advertisement::whereSlug($slug)
+        ->with([
+            'galleries',
+            'user',
+            'work',
+            'state'
+        ])
+        ->firstOrFail();
+        
+        return view('advertisement.show', compact('advertisement'));
     }
 }
