@@ -10,6 +10,12 @@ use App\Http\Requests\Advertisement\StoreRequest;
 
 class AdvertisementController extends Controller
 {
+    public function index()
+    {
+        $advertisements = Advertisement::with(['state', 'galleries'])->get();
+        
+        return view('advertisement.index', compact('advertisements'));
+    }
     public function create()
     {
         $works = Work::all();
