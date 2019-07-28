@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Advertisement;
 use App\Work;
 use App\State;
+use App\Gallery;
 use App\Http\Requests\Advertisement\StoreRequest;
 
 class AdvertisementController extends Controller
@@ -51,5 +52,13 @@ class AdvertisementController extends Controller
         $states = State::all();
 
         return view('advertisement.edit', compact(['advertisement', 'works', 'states']));
+    }
+
+    public function deletePhoto($id)
+    {
+        $gallery = Gallery::findOrFail($id);
+        $gallery->delete();
+
+        return back();
     }
 }

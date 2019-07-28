@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">Create advertisement</div>
+                <div class="card-header">Edit advertisement</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('create-advertisement') }}" enctype="multipart/form-data">
@@ -74,7 +74,7 @@
                         <div class="form-group row">
                             @foreach($advertisement->galleries as $image)
                                 <div class="col-12 col-md-4">
-                                    <a href="" class="btn btn-danger">Delete</a>
+                                    <a href="/advertisement/photo/{{ $image->id }}/delete" class="btn btn-danger">Delete</a>
                                     <img src="{{ $image->path }}" alt="{{ $image->oldName }}" class="d-block w-100 pt-2 gallery-item"/>
                                 </div>
                             @endforeach
