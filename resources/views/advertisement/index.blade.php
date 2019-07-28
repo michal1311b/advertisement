@@ -18,7 +18,11 @@
                     <a href="show/{{ $advertisement->slug }}"> 
                         <div class="row no-gutters">
                             <div class="col-md-4">
-                                <img src="{{ $advertisement->galleries[0]->path }}" class="card-img" alt="$advertisement->galleries[0]->oldName">
+                                @if($advertisement->galleries()->count())
+                                    <img src="{{ $advertisement->galleries[0]->path }}" class="card-img" alt="$advertisement->galleries[0]->oldName">
+                                @else
+                                    <img src="{{ asset('images/noImage.png') }}" class="card-img" alt="No image">
+                                @endif
                             </div>
                             <div class="col-md-8">
                                 <div class="card-body">
