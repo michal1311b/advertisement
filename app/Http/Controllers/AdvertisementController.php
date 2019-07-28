@@ -17,8 +17,10 @@ class AdvertisementController extends Controller
         
         return view('advertisement.index', compact('advertisements'));
     }
-    public function create()
+    public function create(Request $request)
     {
+        $request->user()->authorizeRoles(['employee', 'manager']);
+
         $works = Work::all();
         $states = State::all();
         
@@ -45,8 +47,10 @@ class AdvertisementController extends Controller
         return view('advertisement.show', compact('advertisement'));
     }
 
-    public function edit($id)
+    public function edit(Request $request, $id)
     {
+        $request->user()->authorizeRoles(['employee', 'manager']);
+        
         $advertisement = Advertisement::find($id);
         $works = Work::all();
         $states = State::all();

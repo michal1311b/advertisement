@@ -32,7 +32,7 @@ Route::group(array('prefix' => 'advertisement'), function () {
     Route::post('/create', 'AdvertisementController@store')->name('create-advertisement');
     Route::get('/show/{slug}', 'AdvertisementController@show')->name('show-advertisement');
     Route::get('/{id}/edit', 'AdvertisementController@edit')->name('edit-advertisement');
-    Route::get('/list', 'AdvertisementController@index');
+    Route::get('/list', 'AdvertisementController@index')->name('advertisement-list');
     Route::get('/photo/{id}/delete', 'AdvertisementController@deletePhoto')->name('delete-photo');
     Route::put('/update/{id}', 'AdvertisementController@update')->name('update-advertisement');
 });
