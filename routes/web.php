@@ -27,10 +27,12 @@ Route::get('{driver}/callback', 'Auth\LoginController@handleProviderCallback')
     ->name('login.callback')
     ->where('driver', implode('|', config('auth.socialite.drivers')));
 
-Route::get('/advertisement/create', 'AdvertisementController@create');
-Route::post('/advertisement/create', 'AdvertisementController@store')->name('create-advertisement');
-Route::get('/advertisement/show/{slug}', 'AdvertisementController@show')->name('show-advertisement');
-Route::get('/advertisement/{id}/edit', 'AdvertisementController@edit')->name('edit-advertisement');
-Route::get('/advertisement/list', 'AdvertisementController@index');
-Route::get('/advertisement/photo/{id}/delete', 'AdvertisementController@deletePhoto')->name('delete-photo');
-Route::put('/advertisement/update/{id}', 'AdvertisementController@update')->name('update-advertisement');
+Route::group(array('prefix' => 'advertisement'), function () {
+    Route::get('/create', 'AdvertisementController@create');
+    Route::post('/create', 'AdvertisementController@store')->name('create-advertisement');
+    Route::get('/show/{slug}', 'AdvertisementController@show')->name('show-advertisement');
+    Route::get('/{id}/edit', 'AdvertisementController@edit')->name('edit-advertisement');
+    Route::get('/list', 'AdvertisementController@index');
+    Route::get('/photo/{id}/delete', 'AdvertisementController@deletePhoto')->name('delete-photo');
+    Route::put('/update/{id}', 'AdvertisementController@update')->name('update-advertisement');
+});
