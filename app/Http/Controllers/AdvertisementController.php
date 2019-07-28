@@ -45,9 +45,9 @@ class AdvertisementController extends Controller
         return view('advertisement.show', compact('advertisement'));
     }
 
-    public function edit($slug)
+    public function edit($id)
     {
-        $advertisement = Advertisement::whereSlug($slug)->firstOrFail();
+        $advertisement = Advertisement::find($id);
         $works = Work::all();
         $states = State::all();
 

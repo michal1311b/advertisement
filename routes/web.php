@@ -30,7 +30,7 @@ Route::get('{driver}/callback', 'Auth\LoginController@handleProviderCallback')
 Route::get('/advertisement/create', 'AdvertisementController@create');
 Route::post('/advertisement/create', 'AdvertisementController@store')->name('create-advertisement');
 Route::get('/advertisement/show/{slug}', 'AdvertisementController@show')->name('show-advertisement');
-Route::get('/advertisement/{slug}/edit', 'AdvertisementController@edit')->name('edit-advertisement');
+Route::get('/advertisement/{id}/edit', 'AdvertisementController@edit')->name('edit-advertisement');
 Route::get('/advertisement/list', 'AdvertisementController@index');
 Route::get('/advertisement/photo/{id}/delete', 'AdvertisementController@deletePhoto')->name('delete-photo');
 Route::put('/advertisement/update/{id}', 'AdvertisementController@update')->name('update-advertisement');
