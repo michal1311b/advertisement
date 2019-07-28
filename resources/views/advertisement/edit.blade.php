@@ -8,7 +8,8 @@
                 <div class="card-header">Edit advertisement</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('create-advertisement') }}" enctype="multipart/form-data">
+                    <form method="POST" action="{{ route('update-advertisement', $advertisement->id) }}" enctype="multipart/form-data">
+                        <input type="hidden" name="_method" value="PUT">
                         @csrf
 
                         <div class="form-group row">

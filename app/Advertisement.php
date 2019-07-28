@@ -88,6 +88,32 @@ class Advertisement extends Model
         }
     }
 
+    public function update(array $attributes = [], array $options = [])
+    {
+        if($this->title !== $attributes['title']) {
+            $attributes['slug'] = self::getUniqueSlug($attributes['title']);
+        }
+
+        $now = Carbon::now();
+
+        if(isset($attributes['galleries'])) {
+            foreach($attributes['galleries'] as $k => $gallery) {
+                if(is_numeric($k)) {
+                    $fileData = new Gallery();
+                    $fileData->oldName = $gallery->getClientOriginalName();
+                    $fileData->newName = $now->getTimestamp() . $this->generateRandomString();
+                    $fileData->size = $gallery->getClientSize();
+                    $fileData->mimeType = $gallery->getClientMimeType();
+                    $fileData->path = "http://{$_SERVER['HTTP_HOST']}/" .$gallery->store(self::uploadDir() . '/' . $this->id . '_' . $now->format('Y-m-d'), 'public');
+                    $fileData->advertisement_id = $this->id;
+                    $this->galleries()->save($fileData);
+                }
+            }
+        }
+
+        parent::update($attributes, $options);
+    }
+
     private function generateRandomString($length = 10) {
         $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
         $charactersLength = strlen($characters);

@@ -32,4 +32,5 @@ Route::post('/advertisement/create', 'AdvertisementController@store')->name('cre
 Route::get('/advertisement/show/{slug}', 'AdvertisementController@show')->name('show-advertisement');
 Route::get('/advertisement/{slug}/edit', 'AdvertisementController@edit')->name('edit-advertisement');
 Route::get('/advertisement/list', 'AdvertisementController@index');
-Route::get('/advertisement/photo/{id}/delete', 'AdvertisementController@deletePhoto');
+Route::get('/advertisement/photo/{id}/delete', 'AdvertisementController@deletePhoto')->name('delete-photo');
+Route::put('/advertisement/update/{id}', 'AdvertisementController@update')->name('update-advertisement');
