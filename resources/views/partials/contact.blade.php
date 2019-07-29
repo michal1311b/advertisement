@@ -2,7 +2,9 @@
     <div class="card-header">Contact form</div>
 
     <div class="card-body">
-        <form>
+        <form method="POST" action="{{ route('send-message') }}">
+            @csrf
+            <input type="hidden" name="user_id" value="{{ $advertisement->user_id }}">
             <div class="form-row">
                 <div class="form-group col-md-6">
                 <label for="email">Email</label>
@@ -31,10 +33,14 @@
                 </div>
             <div class="form-group">
                 <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="gridCheck">
-                <label class="form-check-label" for="gridCheck">
-                    Term1
-                </label>
+                    <input name="term1" type="hidden" value="0">
+                    <input class="form-check-input" value="1"
+                    type="checkbox" name="term1" {{ old('term1', 0) == 1 ? 'checked' : '' }}
+                    id="term1">
+
+                    <label class="form-check-label" for="term1">
+                        {{ __('term1') }}
+                    </label>
                 </div>
             </div>
             <button type="submit" class="btn btn-primary">Send</button>
