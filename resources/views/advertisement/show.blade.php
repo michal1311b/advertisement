@@ -80,6 +80,9 @@
                 </div>
             </div>
         </div>
+        <div class="col-md-12">
+            @include('partials.contact')
+        </div>
     </div>
 </div>
 @endsection
