@@ -17,6 +17,7 @@ class CreateContactsTable extends Migration
             $table->bigIncrements('id');
             $table->integer('user_id')->unsigned();
             $table->string('email');
+            $table->string('emailType');
             $table->string('first_name');
             $table->string('city')->nullable();
             $table->string('phone')->nullable();
