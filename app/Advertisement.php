@@ -80,7 +80,7 @@ class Advertisement extends Model
                     $fileData->newName = $now->getTimestamp() . $entry->generateRandomString();
                     $fileData->size = $gallery->getClientSize();
                     $fileData->mimeType = $gallery->getClientMimeType();
-                    $fileData->path = "http://{$_SERVER['HTTP_HOST']}" .$gallery->store(self::uploadDir() . '/' . $entry->id . '_' . $now->format('Y-m-d'), 'public');
+                    $fileData->path = "http://{$_SERVER['HTTP_HOST']}/" .$gallery->store(self::uploadDir() . '/' . $entry->id . '_' . $now->format('Y-m-d'), 'public');
                     $fileData->advertisement_id = $entry->id;
                     $entry->galleries()->save($fileData);
                 }
