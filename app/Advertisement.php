@@ -35,6 +35,11 @@ class Advertisement extends Model
         return $this->hasMany(Gallery::class);
     }
 
+    public function tags()
+    {
+        return $this->hasMany(Tag::class);
+    }
+
     public function user()
     {
         return $this->belongsTo(User::class);

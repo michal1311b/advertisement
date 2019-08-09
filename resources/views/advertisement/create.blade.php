@@ -129,6 +129,11 @@
                         </div>
 
                         <div class="form-group row">
+                            <label for="tags">Tagi</label>
+                            <input type="text" value="" name="tags[]" id="tags" data-role="tagsinput" class="form-control" />
+                        </div>
+
+                        <div class="form-group row">
                             <div class="col-md-6 offset-md-4">
                                 <div class="form-check">
                                     <input name="term1" type="hidden" value="0">
