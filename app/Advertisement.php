@@ -91,6 +91,18 @@ class Advertisement extends Model
                 }
             }
         }
+        
+        if(isset($attributes['tags'])) {
+            $tags = explode(",", $attributes['tags'][0]);
+            foreach($tags as $k => $tag) {
+                if(is_numeric($k)) {
+                    $tagData = new Tag();
+                    $tagData->name = $tag;
+                    $tagData->advertisement_id = $entry->id;
+                    $entry->tags()->save($tagData);
+                }
+            }
+        }
     }
 
     public function update(array $attributes = [], array $options = [])
