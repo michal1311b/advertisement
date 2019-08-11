@@ -8,6 +8,8 @@ use App\Work;
 use App\State;
 use App\Gallery;
 use App\Http\Requests\Advertisement\StoreRequest;
+use App\Jobs\SendEmailJob;
+use Carbon\Carbon;
 
 class AdvertisementController extends Controller
 {
@@ -80,5 +82,13 @@ class AdvertisementController extends Controller
         $advertisement->update($request->all());
 
         return back();
+    }
+
+    public function sendEmail()
+    {
+        $emailJob = (new SendEmailJob())->delay(Carbon::now()->addSeconds(5));
+        dispatch($emailJob);
+
+        echo 'email sent';
     }
 }

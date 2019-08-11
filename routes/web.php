@@ -35,6 +35,7 @@ Route::group(array('prefix' => 'advertisement'), function () {
     Route::get('/list', 'AdvertisementController@index')->name('advertisement-list');
     Route::get('/photo/{id}/delete', 'AdvertisementController@deletePhoto')->name('delete-photo');
     Route::put('/update/{id}', 'AdvertisementController@update')->name('update-advertisement');
+    Route::get('/email', 'AdvertisementController@sendEmail');
 });
 
 Route::post('/send-message', 'ContactController@store')->name('send-message');
