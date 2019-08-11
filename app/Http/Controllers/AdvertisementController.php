@@ -40,7 +40,8 @@ class AdvertisementController extends Controller
             'galleries',
             'user',
             'work',
-            'state'
+            'state',
+            'tags'
         ])
         ->firstOrFail();
         

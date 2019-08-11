@@ -29,6 +29,12 @@
                 <div class="card-body">
                     <div class="container-fluid">
                         <div class="row">
+                            <div class="col-12 pb-2">
+                                Tags:
+                                @foreach($advertisement->tags as $tag)
+                                    <span class="badge badge-pill badge-info">{{ $tag->name }}</span>
+                                @endforeach
+                            </div>
                             <div class="col-12">
                                 <ul class="list-group">
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
