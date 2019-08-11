@@ -51,11 +51,18 @@ class AdvertisementController extends Controller
     {
         $request->user()->authorizeRoles(['employee', 'manager']);
         
-        $advertisement = Advertisement::find($id);
+        $advertisement = Advertisement::with('tags')->find($id);
         $works = Work::all();
         $states = State::all();
 
-        return view('advertisement.edit', compact(['advertisement', 'works', 'states']));
+        $tags_array = [];
+        foreach($advertisement->tags as $tag) {
+            $tags_array[] = $tag->name;
+        }
+        
+        $tags = implode(",", $tags_array);
+
+        return view('advertisement.edit', compact(['advertisement', 'works', 'states', 'tags']));
     }
 
     public function deletePhoto($id)

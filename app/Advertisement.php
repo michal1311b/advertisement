@@ -128,6 +128,27 @@ class Advertisement extends Model
             }
         }
 
+        if(isset($attributes['tags'])) {
+            $tags = explode(",", $attributes['tags'][0]);
+            foreach($this->tags as $tag)
+            {
+                $tag->delete();
+            }
+            
+            $tags = $attributes['tags'];
+            if(is_array($tags))
+            {
+                $explodedTag = explode(",", $tags[0]);
+                foreach($explodedTag as $k => $tag)
+                {
+                    $tag = new Tag;
+                    $tag->advertisement_id = $this->id;
+                    $tag->name = $explodedTag[$k];
+                    $tag->save();
+                }
+            }
+        }
+
         parent::update($attributes, $options);
     }
 
