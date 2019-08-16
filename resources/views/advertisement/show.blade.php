@@ -30,6 +30,9 @@
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-12 pb-2">
+                                <strong>Posted by:</strong> {{ $advertisement->user->name }}
+                            </div>
+                            <div class="col-12 pb-2">
                                 Tags:
                                 @foreach($advertisement->tags as $tag)
                                     <span class="badge badge-pill badge-info">{{ $tag->name }}</span>

@@ -55,6 +55,9 @@ class AdvertisementController extends Controller
         $request->user()->authorizeRoles(['employee', 'manager']);
         
         $advertisement = Advertisement::with('tags')->find($id);
+        $userId = $advertisement->user_id;
+        $this->checkAuthorization($request->user()->id, $userId);
+
         $works = Work::all();
         $states = State::all();
 
@@ -84,11 +87,29 @@ class AdvertisementController extends Controller
         return back();
     }
 
+    public function delete($id)
+    {
+        $advertisement = Advertisement::with('tags')->findOrFail($id);
+        $advertisement->delete();
+
+        return back();
+    }
+
     public function sendEmail()
     {
         $emailJob = (new SendEmailJob())->delay(Carbon::now()->addSeconds(5));
         dispatch($emailJob);
 
         echo 'email sent';
+    }
+
+    private function checkAuthorization($user, $advertUser)
+    {
+        if($user === $advertUser) {
+            return true;
+        }
+        else {
+            return abort(401, 'You don\'t have access to this site.');
+        }
     }
 }

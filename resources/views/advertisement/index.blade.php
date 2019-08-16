@@ -24,7 +24,7 @@
     <div class="row">
         @foreach($advertisements as $advertisement)
             <div class="col-12">
-                <div class="card mb-3 no-decoration" style="max-width: 540px;">
+                <div class="card mb-3 no-decoration" style="max-width: 640px;">
                     <a href="show/{{ $advertisement->slug }}"> 
                         <div class="row no-gutters">
                             <div class="col-md-4">
@@ -39,7 +39,17 @@
                                     <h5 class="card-title">{{ $advertisement->title }}</h5>
                                     <div class="card-text">
                                         <div class="ellipsis">{!! $advertisement->description !!}</div>
-                                        <p><small class="text-muted">Created at: <strong>{{ $advertisement->created_at }}</strong></small></p>                                       
+                                        <p><small class="text-muted">Created at: <strong>{{ $advertisement->created_at }}</strong></small></p>      
+                                        @if(Auth::id() === $advertisement->user->id)
+                                        <div class="btn-group btn-group-toggle">
+                                            <a href="{{ route('edit-advertisement', $advertisement->id) }}" class="btn btn-info border border-warning mr-2">Edit</a>
+                                            <form method="get" action="{{ route('delete-advertisement', $advertisement->id) }}">
+                                                {{ method_field('DELETE') }}
+                                                {{csrf_field()}}
+                                                <button type="submit" class="btn btn-danger border border-warning">Usuń</button>  
+                                            </form>
+                                        </div>     
+                                        @endif                         
                                     </div>
                                 </div>
                             </div>
