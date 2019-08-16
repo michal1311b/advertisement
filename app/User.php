@@ -64,6 +64,17 @@ class User extends Authenticatable
         return $this->hasRole($roles) || 
             abort(401, 'This action is unauthorized.');
     }
+
+    public function checkAuthorization($user, $advertUser)
+    {
+        if($user === $advertUser) {
+            return true;
+        }
+        else {
+            return abort(401, 'You don\'t have access to this site.');
+        }
+    }
+
     /**
     * Check multiple roles
     * @param array $roles

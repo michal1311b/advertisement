@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Advertisement;
 use App\Work;
+use App\User;
 use App\State;
 use App\Gallery;
 use App\Http\Requests\Advertisement\StoreRequest;
@@ -56,7 +57,7 @@ class AdvertisementController extends Controller
         
         $advertisement = Advertisement::with('tags')->find($id);
         $userId = $advertisement->user_id;
-        $this->checkAuthorization($request->user()->id, $userId);
+        $request->user()->checkAuthorization($request->user()->id, $userId);
 
         $works = Work::all();
         $states = State::all();
@@ -101,15 +102,5 @@ class AdvertisementController extends Controller
         dispatch($emailJob);
 
         echo 'email sent';
-    }
-
-    private function checkAuthorization($user, $advertUser)
-    {
-        if($user === $advertUser) {
-            return true;
-        }
-        else {
-            return abort(401, 'You don\'t have access to this site.');
-        }
     }
 }
