@@ -19,3 +19,8 @@ Breadcrumbs::for('advertisement-edit', function ($trail, $advertisment) {
     $trail->parent('home');
     $trail->push('Edit: ' . $advertisment->title, route('edit-advertisement', $advertisment));
 });
+
+Breadcrumbs::for('edit-user', function ($trail, $user) {
+    $trail->parent('home');
+    $trail->push('Edit: ' . $user->name, route('edit-user', $user));
+});

@@ -8,7 +8,7 @@
                 <div class="card-header">Create advertisement</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('create-advertisement') }}" enctype="multipart/form-data">
+                    <form method="POST" action="{{ route('store-advertisement') }}" enctype="multipart/form-data">
                         @csrf
 
                         <div class="form-group row">

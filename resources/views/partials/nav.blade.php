@@ -29,15 +29,18 @@
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             @if(auth()->user()->avatar)
-                                <img src="{{ auth()->user()->avatar }}" alt="avatar" width="32" height="32" style="margin-right: 8px;">
+                                <img src="{{ auth()->user()->avatar }}" alt="avatar" class="user-avatar">
                             @endif
                             {{ auth()->user()->name }} <span class="caret"></span>
                         </a>
     
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{{ route('edit-user', auth()->user()->id) }}">User profile</a>
+                            <a class="dropdown-item" href="{{ route('create-advertisement') }}">Create advertisement</a>
+                            <a class="dropdown-item" href="{{ route('advertisement-list') }}">Advertisements list</a>
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
-                                                document.getElementById('logout-form').submit();">
+                                document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }}
                             </a>
 

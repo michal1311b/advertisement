@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
 Route::get('/home', 'HomeController@index')->name('home');
 
@@ -28,15 +28,20 @@ Route::get('{driver}/callback', 'Auth\LoginController@handleProviderCallback')
     ->where('driver', implode('|', config('auth.socialite.drivers')));
 
 Route::group(array('prefix' => 'advertisement'), function () {
-    Route::get('/create', 'AdvertisementController@create');
-    Route::post('/create', 'AdvertisementController@store')->name('create-advertisement')->middleware('auth');
+    Route::get('/create', 'AdvertisementController@create')->name('create-advertisement');
+    Route::post('/create', 'AdvertisementController@store')->name('store-advertisement')->middleware(['auth', 'verified']);
     Route::get('/show/{slug}', 'AdvertisementController@show')->name('show-advertisement');
-    Route::get('/{id}/edit', 'AdvertisementController@edit')->name('edit-advertisement')->middleware('auth');
+    Route::get('/{id}/edit', 'AdvertisementController@edit')->name('edit-advertisement')->middleware(['auth', 'verified']);
     Route::get('/{id}/delete', 'AdvertisementController@delete')->name('delete-advertisement');
     Route::get('/list', 'AdvertisementController@index')->name('advertisement-list');
     Route::get('/photo/{id}/delete', 'AdvertisementController@deletePhoto')->name('delete-photo');
     Route::put('/update/{id}', 'AdvertisementController@update')->name('update-advertisement');
     Route::get('/email', 'AdvertisementController@sendEmail');
+});
+
+Route::group(array('prefix' => 'user'), function () {
+    Route::get('/{id}/edit', 'UserController@edit')->name('edit-user')->middleware(['auth', 'verified']);
+    Route::put('/update/{id}', 'UserController@update')->name('update-user');
 });
 
 Route::post('/send-message', 'ContactController@store')->name('send-message');
