@@ -94,7 +94,7 @@ class AdvertisementController extends Controller
         foreach($advertisement->tags as $tag) {
             $tag->delete();
         }
-            if($advertisement->delete()) {
+        if($advertisement->delete()) {
             return back();
         }
     }
