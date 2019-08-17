@@ -4,6 +4,9 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-12">
+            @include('partials.validation-errors')
+        </div>
+        <div class="col-md-12">
             <div class="card">
                 <div class="card-header">Create advertisement</div>
 
@@ -129,8 +132,10 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="tags">Tagi</label>
-                            <input type="text" value="" name="tags[]" id="tags" data-role="tagsinput" class="form-control" />
+                            <label for="tags" class="col-12 col-md-3 col-form-label text-md-right">Tagi</label>
+                            <div class="col-12 col-md-9">
+                                <input type="text" value="" name="tags[]" id="tags" data-role="tagsinput" class="form-control" />
+                            </div>
                         </div>
 
                         <div class="form-group row">

@@ -1,6 +1,8 @@
 <div class="card">
     <div class="card-header">Contact form</div>
-
+    <div class="col-md-12">
+        @include('partials.validation-errors')
+    </div>
     <div class="card-body">
         <form method="POST" action="{{ route('send-message') }}">
             @csrf
@@ -8,8 +10,8 @@
             <input type="hidden" name="emailType" value="QuestionMail">
             <div class="form-row">
                 <div class="form-group col-md-6">
-                <label for="email">Email</label>
-                <input type="email" class="form-control" id="email" name="email" placeholder="" required>
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="" required>
                 </div>
                 <div class="form-group col-md-6">
                     <label for="first_name">First name</label>
@@ -31,7 +33,7 @@
                     <label for="message">Message</label>
                     <textarea id="message" class="form-control @error('message') is-invalid @enderror" name="message" value="{{ old('message') }}" autocomplete="message" autofocus rows="3"></textarea>
                 </div>
-                </div>
+            </div>
             <div class="form-group">
                 <div class="form-check">
                     <input name="term1" type="hidden" value="0">
