@@ -10,12 +10,13 @@ use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
-    public function edit(User $user)
+    public function edit($id)
     {
-        $users = User::all();
+        $editUser = User::find($id);
         $user = Auth::user();
+        $user->checkAuthorization($editUser->id, $user->id);
 
-        return view('user.edit', compact('user', 'users'));
+        return view('user.edit', compact('user'));
     }
 
     public function update(Request $request, $id)
