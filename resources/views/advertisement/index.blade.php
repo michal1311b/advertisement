@@ -56,6 +56,9 @@
                 </div>
             </div>
         @endforeach
+        <div class="col-12">
+            {{ $advertisements->links() }}
+        </div>
     </div>
 </div>
 @endsection

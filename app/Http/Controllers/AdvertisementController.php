@@ -16,7 +16,7 @@ class AdvertisementController extends Controller
 {
     public function index()
     {
-        $advertisements = Advertisement::with(['state', 'galleries'])->get();
+        $advertisements = Advertisement::with(['state', 'galleries'])->paginate(5);
         
         return view('advertisement.index', compact('advertisements'));
     }
