@@ -45,9 +45,15 @@
                             </div>
                         </div>
 
-                        <div class="form-group row">
-                            <label for="password" class="col-12 col-md-3 col-form-label text-md-right">Password</label>
 
+                        <div class="form-group row">
+                            @if($user->provider_name)
+                                <label for="password" class="col-12 col-md-3 col-form-label text-md-right"></label>
+
+                                <div class="col-12 col-md-9">
+                                <input id="password" type="hidden" value="null" name="password">
+                            @else
+                            <label for="password" class="col-12 col-md-3 col-form-label text-md-right">Password</label>
                             <div class="col-12 col-md-9">
                                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" autocomplete="new-password">
 
@@ -56,6 +62,7 @@
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
+                            @endif
                             </div>
                         </div>
 
