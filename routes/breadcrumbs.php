@@ -24,3 +24,13 @@ Breadcrumbs::for('edit-user', function ($trail, $user) {
     $trail->parent('home');
     $trail->push('Edit: ' . $user->name, route('edit-user', $user));
 });
+
+Breadcrumbs::for('user-advertisements', function ($trail) {
+    $trail->parent('home');
+    $trail->push('User List of Advertisements', route('user-advertisement-list'));
+});
+
+Breadcrumbs::for('user-advertisement-article', function ($trail, $advertisment) {
+    $trail->parent('user-advertisements');
+    $trail->push($advertisment->title, route('user-advertisement-show', $advertisment));
+});

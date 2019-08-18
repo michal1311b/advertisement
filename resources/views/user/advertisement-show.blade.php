@@ -13,7 +13,7 @@
 <div class="container">
     <div class="row">
         <div class="col-xs-12">
-            {!! Breadcrumbs::render('advertisement-article', $advertisement) !!}
+            {!! Breadcrumbs::render('user-advertisement-article', $advertisement) !!}
         </div>
     </div>	
 </div>
@@ -32,11 +32,6 @@
                             <div class="col-12 pb-2">
                                 <div class="btn-group btn-group-toggle">
                                     <a href="{{ route('edit-advertisement', $advertisement->id) }}" class="btn btn-info border border-warning mr-2">Edit</a>
-                                    <form method="get" action="{{ route('delete-advertisement', $advertisement->id) }}">
-                                        {{ method_field('DELETE') }}
-                                        {{csrf_field()}}
-                                        <button type="submit" class="btn btn-danger border border-warning">Usuń</button>  
-                                    </form>
                                 </div>  
                             </div>
                             <div class="col-12 pb-2">
@@ -95,9 +90,6 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="col-md-12">
-            @include('partials.contact')
         </div>
     </div>
 </div>
