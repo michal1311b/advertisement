@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Advertisement;
 use Auth;
 use Image;
 use Illuminate\Support\Facades\Hash;
@@ -36,5 +37,32 @@ class UserController extends Controller
         $user->save();
 
         return back();
+    }
+
+    public function getUserAdvertisements()
+    {
+        $user = Auth::user();
+        $advertisements = Advertisement::with(['state', 'galleries'])
+        ->where('user_id', '=', $user->id)
+        ->paginate(5);
+
+        return view('user.advertisements', compact('advertisements'));
+    }
+
+    public function showUserAdvertisement($slug)
+    {
+        $user = Auth::user();
+        $advertisement = Advertisement::whereSlug($slug)
+        ->with([
+            'galleries',
+            'user',
+            'work',
+            'state',
+            'tags'
+        ])
+        ->where('user_id', '=', $user->id)
+        ->firstOrFail();
+        
+        return view('user.advertisement-show', compact('advertisement'));
     }
 }
