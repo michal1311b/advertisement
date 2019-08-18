@@ -37,6 +37,14 @@ Route::group(array('prefix' => 'advertisement'), function () {
     Route::get('/photo/{id}/delete', 'AdvertisementController@deletePhoto')->name('delete-photo');
     Route::put('/update/{id}', 'AdvertisementController@update')->name('update-advertisement');
     Route::get('/email', 'AdvertisementController@sendEmail');
+    Route::get('/tag/{tagSlug}/{page?}', [
+        'as' => 'advertisementTag',
+        'uses' => 'TagController@show'
+    ]);
+    Route::get('/tag/{tagSlug}/a/{articleSlug}', [
+        'as' => 'advertisementTagArticle',
+        'uses' => 'TagController@showArticle'
+    ]);
 });
 
 Route::group(array('prefix' => 'user'), function () {

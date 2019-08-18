@@ -99,6 +99,7 @@ class Advertisement extends Model
                     $tagData = new Tag();
                     $tagData->name = $tag;
                     $tagData->advertisement_id = $entry->id;
+                    $tagData->slug = self::getUniqueSlug($tag);
                     $entry->tags()->save($tagData);
                 }
             }
@@ -144,6 +145,7 @@ class Advertisement extends Model
                     $tag = new Tag;
                     $tag->advertisement_id = $this->id;
                     $tag->name = $explodedTag[$k];
+                    $tag->slug = self::getUniqueSlug($explodedTag[$k]);
                     $tag->save();
                 }
             }
