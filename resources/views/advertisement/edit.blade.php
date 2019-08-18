@@ -89,7 +89,7 @@
                             @foreach($advertisement->galleries as $image)
                                 <div class="col-12 col-md-4">
                                     <a href="/advertisement/photo/{{ $image->id }}/delete" class="btn btn-danger">Delete</a>
-                                    <img src="{{ $image->path }}" alt="{{ $image->oldName }}" class="d-block w-100 pt-2 gallery-item"/>
+                                    <img src="{{ $image->path }}" alt="{{ $image->oldName }}" class="d-block w-100 py-2 gallery-item"/>
                                 </div>
                             @endforeach
                         </div>
@@ -160,8 +160,10 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="tags">Tagi</label>
-                            <input type="text" value="{{$tags}}" name="tags[]" id="tags" data-role="tagsinput" class="form-control" />
+                            <label for="tags" class="col-12 col-md-3 col-form-label text-md-right">Tagi</label>
+                            <div class="col-12 col-md-9">
+                                <input type="text" value="{{$tags}}" name="tags[]" id="tags" data-role="tagsinput" class="form-control" />
+                            </div>
                         </div>
 
                         <div class="form-group row mb-0">
