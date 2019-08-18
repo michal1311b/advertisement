@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use Socialite;
 use App\User;
+use App\Profile;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
@@ -77,6 +78,10 @@ class LoginController extends Controller
             
             $newUser->save();
             $newUser->roles()->attach([1, $newUser->id]);
+
+            $profile = Profile::create([
+                'user_id' => $newUser->id
+            ]);
 
             auth()->login($newUser, true);
         }

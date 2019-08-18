@@ -13,11 +13,11 @@ class UserController extends Controller
 {
     public function edit($id)
     {
-        $editUser = User::find($id);
+        $editUser = User::with('profile')->find($id);
         $user = Auth::user();
         $user->checkAuthorization($editUser->id, $user->id);
 
-        return view('user.edit', compact('user'));
+        return view('user.edit', compact('editUser'));
     }
 
     public function update(Request $request, $id)
@@ -33,8 +33,9 @@ class UserController extends Controller
 
         $user->name = $request->name;
         $user->password = ($request->password === null) ? $user->password : Hash::make($request->password);
-
         $user->save();
+        $profile = $user->profile()->get();
+        $profile[0]->update($request->all());
 
         return back();
     }
