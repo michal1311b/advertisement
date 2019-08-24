@@ -106,4 +106,15 @@ class AdvertisementController extends Controller
 
         echo 'email sent';
     }
+
+    public function search(Request $request)
+    {
+        $input = $request->all();
+        $advertisements = Advertisement::
+        where('title', 'LIKE', '%' . $input['q'] . '%')
+        ->orWhere('description', 'LIKE', '%' . $input['q'] . '%')
+        ->paginate(5);
+
+        return view('advertisement.index', compact('advertisements'));
+    }
 }
