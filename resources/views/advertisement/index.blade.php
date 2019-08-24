@@ -41,36 +41,38 @@
         @if(count($advertisements) > 0)
             @foreach($advertisements as $advertisement)
                 <div class="col-12">
-                    <div class="card mb-3" style="max-width: 640px;">
-                        <a href="show/{{ $advertisement->slug }}" class="no-decoration"> 
+                    <a href="show/{{ $advertisement->slug }}" class="no-decoration"> 
+                        <div class="card mb-3" style="max-width: 640px;">
                             <div class="card-body">
-                                <div class="col-md-4">
-                                    @if($advertisement->galleries()->count())
-                                        <img src="{{ $advertisement->galleries[0]->path }}" class="card-img" alt="$advertisement->galleries[0]->oldName">
-                                    @else
-                                        <img src="{{ asset('images/noImage.png') }}" class="card-img" alt="No image">
-                                    @endif
-                                </div>
-                                <div class="col-md-8">
-                                    <h5 class="card-title">{{ $advertisement->title }}</h5>
-                                    <div class="card-text">
-                                        <div class="ellipsis">{!! $advertisement->description !!}</div>
-                                        <p><small class="text-muted">Created at: <strong>{{ $advertisement->created_at }}</strong></small></p>      
-                                        @if(Auth::id() === $advertisement->user->id)
-                                        <div class="btn-group btn-group-toggle">
-                                            <a href="{{ route('edit-advertisement', $advertisement->id) }}" class="btn btn-info border border-warning mr-2">Edit</a>
-                                            <form method="get" action="{{ route('delete-advertisement', $advertisement->id) }}">
-                                                {{ method_field('DELETE') }}
-                                                {{csrf_field()}}
-                                                <button type="submit" class="btn btn-danger border border-warning">Usuń</button>  
-                                            </form>
-                                        </div>     
-                                        @endif  
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        @if($advertisement->galleries()->count())
+                                            <img src="{{ $advertisement->galleries[0]->path }}" class="card-img" alt="$advertisement->galleries[0]->oldName">
+                                        @else
+                                            <img src="{{ asset('images/noImage.png') }}" class="card-img" alt="No image">
+                                        @endif
+                                    </div>
+                                    <div class="col-md-8">
+                                        <h5 class="card-title">{{ $advertisement->title }}</h5>
+                                        <div class="card-text">
+                                            <div class="ellipsis">{!! $advertisement->description !!}</div>
+                                            <p><small class="text-muted">Created at: <strong>{{ $advertisement->created_at }}</strong></small></p>      
+                                            @if(Auth::id() === $advertisement->user->id)
+                                            <div class="btn-group btn-group-toggle">
+                                                <a href="{{ route('edit-advertisement', $advertisement->id) }}" class="btn btn-info border border-warning mr-2">Edit</a>
+                                                <form method="get" action="{{ route('delete-advertisement', $advertisement->id) }}">
+                                                    {{ method_field('DELETE') }}
+                                                    {{csrf_field()}}
+                                                    <button type="submit" class="btn btn-danger border border-warning">Usuń</button>  
+                                                </form>
+                                            </div>     
+                                            @endif  
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </a>
-                    </div>
+                        </div>
+                    </a>
                 </div>
             @endforeach
             <div class="col-12">
