@@ -90,7 +90,7 @@ class AdvertisementController extends Controller
 
     public function delete($id)
     {
-        $advertisement = Advertisement::with('tags')->findOrFail($id);
+        $advertisement = Advertisement::with(['tags', 'galleries'])->findOrFail($id);
         foreach($advertisement->tags as $tag) {
             $tag->delete();
         }

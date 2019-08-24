@@ -25,10 +25,14 @@
         @foreach($advertisements as $advertisement)
             <div class="col-12">
                 <div class="card mb-3" style="max-width: 640px;">
-                    <a href="show/{{ $advertisement->advertisement->slug }}" class="no-decoration"> 
+                    <a href="{{ route('show-advertisement', ['slug' => $advertisement->advertisement->slug]) }}" class="no-decoration"> 
                         <div class="card-body">
                             <div class="col-md-4">
-                                <img src="{{ asset('images/noImage.png') }}" class="card-img" alt="No image">
+                                @if($advertisement->advertisement->galleries()->count())
+                                    <img src="{{ $advertisement->advertisement->galleries[0]->path }}" class="card-img" alt="$advertisement->advertisement->galleries[0]->oldName">
+                                @else
+                                    <img src="{{ asset('images/noImage.png') }}" class="card-img" alt="No image">
+                                @endif
                             </div>
                             <div class="col-md-8">
                                 <h5 class="card-title">{{ $advertisement->advertisement->title }}</h5>
