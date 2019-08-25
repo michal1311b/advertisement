@@ -27,6 +27,14 @@
                     @endif
                 @else
                     <li class="nav-item dropdown">
+                        <a class="dropdown-toggle" id="notifications" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            <span class="glyphicon glyphicon-user"></span>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="notificationsMenu" id="notificationsMenu">
+                            <li class="dropdown-header">No notifications</li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             @if(auth()->user()->avatar)
                                 <img src="{{ auth()->user()->avatar }}" alt="avatar" class="user-avatar user-avatar--smaller">

@@ -24,6 +24,16 @@
     <script>
         tinymce.init({selector:'textarea'});
     </script>
+    <script>
+        window.Laravel = <?php echo json_encode([
+            'csrfToken' => csrf_token(),
+        ]); ?>
+    </script>
+    @if(!auth()->guest())
+        <script>
+            window.Laravel.userId = <?php echo auth()->user()->id; ?>
+        </script>
+    @endif
 </head>
 <body>
     <div id="app">

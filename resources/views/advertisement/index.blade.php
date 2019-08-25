@@ -51,7 +51,7 @@
                                                     <button type="submit" class="btn btn-danger border border-warning">Usuń</button>  
                                                 </form>
                                             </div>     
-                                            @endif  
+                                            @endif
                                         </div>
                                     </div>
                                 </div>

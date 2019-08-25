@@ -46,6 +46,10 @@ Route::group(array('prefix' => 'advertisement'), function () {
         'as' => 'advertisementTagArticle',
         'uses' => 'TagController@showArticle'
     ]);
+    Route::post('users/{user}/follow', 'UserController@follow')->name('follow');
+    Route::delete('users/{user}/unfollow', 'UserController@unfollow')->name('unfollow');
+    Route::get('notifications', 'UserController@notifications');
+    
 });
 
 Route::group(array('prefix' => 'user'), function () {
