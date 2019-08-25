@@ -139,45 +139,45 @@
                         </div>
 
                         <div class="form-group row">
-                            <div class="col-md-6 offset-md-4">
+                            <div class="col-sm-3"></div>
+                            <div class="col-sm-9">
                                 <div class="form-check">
                                     <input name="term1" type="hidden" value="0">
-                                    <input class="form-check-input" value="1"
-                                    type="checkbox" name="term1" {{ old('term1', 0) == 1 ? 'checked' : '' }}
-                                    id="term1">
-
+                                    <input class="form-check-input" 
+                                    type="checkbox" name="term1" id="term1" value="1"
+                                    {{ old('term1', 0)  == 1 ? 'checked' : '' }}>
                                     <label class="form-check-label" for="term1">
-                                        {{ __('term1') }}
+                                     {{ __('term1') }}
                                     </label>
                                 </div>
                             </div>
                         </div>
 
                         <div class="form-group row">
-                            <div class="col-md-6 offset-md-4">
+                            <div class="col-sm-3"></div>
+                            <div class="col-sm-9">
                                 <div class="form-check">
                                     <input name="term2" type="hidden" value="0">
-                                    <input value="1" class="form-check-input"
-                                    type="checkbox" name="term2" id="term2"
-                                    {{ old('term2', 0) == 1 ? 'checked' : '' }}>
-
+                                    <input class="form-check-input" 
+                                    type="checkbox" name="term2" id="term2" value="1"
+                                    {{ old('term2', 0)  == 1 ? 'checked' : '' }}>
                                     <label class="form-check-label" for="term2">
-                                        {{ __('term2') }}
+                                     {{ __('term2') }}
                                     </label>
                                 </div>
                             </div>
                         </div>
 
                         <div class="form-group row">
-                            <div class="col-md-6 offset-md-4">
+                            <div class="col-sm-3"></div>
+                            <div class="col-sm-9">
                                 <div class="form-check">
                                     <input name="term3" type="hidden" value="0">
-                                    <input value="1" class="form-check-input"
-                                    type="checkbox" name="term3" id="term3"
+                                    <input class="form-check-input" 
+                                    type="checkbox" name="term3" id="term3" value="1"
                                     {{ old('term3', 0)  == 1 ? 'checked' : '' }}>
-
                                     <label class="form-check-label" for="term3">
-                                        {{ __('term3') }}
+                                     {{ __('term3') }}
                                     </label>
                                 </div>
                             </div>
