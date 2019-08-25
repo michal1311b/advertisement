@@ -22,6 +22,7 @@
 @section('content')
 <div class="container">
     <div class="row">
+        @include('partials.search')
         @foreach($advertisements as $advertisement)
             <div class="col-12">
                 <div class="card mb-3" style="max-width: 640px;">
