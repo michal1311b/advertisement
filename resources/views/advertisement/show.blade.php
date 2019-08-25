@@ -30,31 +30,37 @@
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-12 pb-2">
-                                <strong>Posted by:</strong> {{ $advertisement->user->name }}
-                                @if(Auth::check())
-                                @if (Auth::user()->isFollowing($advertisement->user->id))
-                                    <div class="btn-group btn-group-toggle">
-                                        <form action="{{ route('unfollow', ['id' => $advertisement->user->id]) }}" method="POST">
-                                            {{ csrf_field() }}
-                                            {{ method_field('DELETE') }}
-
-                                            <button type="submit" id="delete-follow-{{ $advertisement->user->id }}" class="btn btn-danger">
-                                                <i class="fa fa-btn fa-trash"></i>Unfollow
-                                            </button>
-                                        </form>
+                                <div class="btn-toolbar justify-content-between" role="toolbar" aria-label="Toolbar with button groups">
+                                    <div class="btn-group" role="group" aria-label="First group">
+                                        <strong>Posted by:</strong> {{ $advertisement->user->name }}
                                     </div>
-                                @else
-                                    <div class="btn-group btn-group-toggle">
-                                        <form action="{{route('follow', ['id' => $advertisement->user->id])}}" method="POST">
-                                            {{ csrf_field() }}
+                                    <div class="input-group">
+                                        @if(Auth::check() && (Auth::user()->id !== $advertisement->user->id))
+                                            @if (Auth::user()->isFollowing($advertisement->user->id))
+                                                <div class="btn-group btn-group-toggle">
+                                                    <form action="{{ route('unfollow', ['id' => $advertisement->user->id]) }}" method="POST">
+                                                        {{ csrf_field() }}
+                                                        {{ method_field('DELETE') }}
 
-                                            <button type="submit" id="follow-user-{{ $advertisement->user->id }}" class="btn btn-success">
-                                                <i class="fa fa-btn fa-user"></i>Follow
-                                            </button>
-                                        </form>
+                                                        <button type="submit" id="delete-follow-{{ $advertisement->user->id }}" class="btn btn-danger">
+                                                            <i class="fa fa-btn fa-trash"></i>Unfollow
+                                                        </button>
+                                                    </form>
+                                                </div>
+                                            @else
+                                                <div class="btn-group btn-group-toggle">
+                                                    <form action="{{route('follow', ['id' => $advertisement->user->id])}}" method="POST">
+                                                        {{ csrf_field() }}
+
+                                                        <button type="submit" id="follow-user-{{ $advertisement->user->id }}" class="btn btn-success">
+                                                            <i class="fa fa-btn fa-user"></i>Follow
+                                                        </button>
+                                                    </form>
+                                                </div>
+                                            @endif
+                                        @endif
                                     </div>
-                                @endif
-                                @endif
+                                </div>
                             </div>
                             <div class="col-12 pb-2">
                                 Tags:
