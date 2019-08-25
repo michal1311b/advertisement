@@ -49366,9 +49366,11 @@ function showNotifications(notifications, target) {
     });
     $(target + 'Menu').html(htmlElements.join(''));
     $(target).addClass('has-notifications');
+    $('#badge-notify').text(notifications.length);
   } else {
     $(target + 'Menu').html('<li class="dropdown-header">No notifications</li>');
     $(target).removeClass('has-notifications');
+    $('#badge-notify').text(0);
   }
 } // Make a single notification string
 
@@ -49381,7 +49383,6 @@ function makeNotification(notification) {
 
 
 function routeNotification(notification) {
-  console.log(notification);
   var to = "?read=".concat(notification.id);
 
   if (notification.type === NOTIFICATION_TYPES.follow) {

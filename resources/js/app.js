@@ -35,10 +35,12 @@ function showNotifications(notifications, target) {
             return makeNotification(notification);
         });
         $(target + 'Menu').html(htmlElements.join(''));
-        $(target).addClass('has-notifications')
+        $(target).addClass('has-notifications');
+        $('#badge-notify').text(notifications.length);
     } else {
         $(target + 'Menu').html('<li class="dropdown-header">No notifications</li>');
         $(target).removeClass('has-notifications');
+        $('#badge-notify').text(0);
     }
 }
 
@@ -51,7 +53,6 @@ function makeNotification(notification) {
 
 // get the notification route based on it's type
 function routeNotification(notification) {
-    console.log(notification);
     var to = `?read=${notification.id}`;
     if(notification.type === NOTIFICATION_TYPES.follow) {
         to = 'advertisement/users' + to;
