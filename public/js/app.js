@@ -49388,8 +49388,8 @@ function routeNotification(notification) {
   if (notification.type === NOTIFICATION_TYPES.follow) {
     to = 'advertisement/users' + to;
   } else if (notification.type === NOTIFICATION_TYPES.newPost) {
-    var postId = notification.data.post_id;
-    to = "advertisement/".concat(postId) + to;
+    var postSlug = notification.data.slug;
+    to = "advertisement/show/".concat(postSlug) + to;
   }
 
   return '/' + to;

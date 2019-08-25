@@ -29,7 +29,7 @@
                     <li class="nav-item dropdown">
                         <a class="dropdown-toggle notification" id="notifications" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                             <span>Inbox</span>
-                            <span class="badge" id="badge-notify">3</span>
+                            <span class="badge" id="badge-notify"></span>
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="notificationsMenu" id="notificationsMenu">
                             <li class="dropdown-header">No notifications</li>

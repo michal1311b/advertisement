@@ -57,8 +57,8 @@ function routeNotification(notification) {
     if(notification.type === NOTIFICATION_TYPES.follow) {
         to = 'advertisement/users' + to;
     } else if(notification.type === NOTIFICATION_TYPES.newPost) {
-        const postId = notification.data.post_id;
-        to = `advertisement/${postId}` + to;
+        const postSlug = notification.data.slug;
+        to = `advertisement/show/${postSlug}` + to;
     }
 
     return '/' + to;

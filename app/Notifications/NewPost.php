@@ -43,6 +43,7 @@ class NewPost extends Notification implements ShouldQueue
             'following_id' => $this->following->id,
             'following_name' => $this->following->name,
             'advertisement_id' => $this->advertisement->id,
+            'slug' => $this->advertisement->slug,
         ];
     }
 
