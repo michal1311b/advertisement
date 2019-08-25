@@ -99,4 +99,16 @@ class UserController extends Controller
     {
         return auth()->user()->unreadNotifications()->limit(5)->get()->toArray();
     }
+
+    public function read(Request $request)
+    {
+        if($request->has('read')) {
+            $notification = $request->user()->notifications()->where('id', $request->read)->first();
+            if($notification) {
+                $notification->markAsRead();
+            }
+        }
+
+        return back();
+    }
 }

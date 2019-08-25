@@ -49,7 +49,7 @@ Route::group(array('prefix' => 'advertisement'), function () {
     Route::post('users/{user}/follow', 'UserController@follow')->name('follow');
     Route::delete('users/{user}/unfollow', 'UserController@unfollow')->name('unfollow');
     Route::get('notifications', 'UserController@notifications');
-    
+    Route::get('users', 'UserController@read')->name('read');
 });
 
 Route::group(array('prefix' => 'user'), function () {
