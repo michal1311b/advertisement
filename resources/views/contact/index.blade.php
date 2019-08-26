@@ -25,6 +25,7 @@
                     <th scope="col">First name</th>
                     <th scope="col">City</th>
                     <th scope="col">Phone</th>
+                    <th scope="col">Reply</th>
                 </tr>
             </thead>
             <tbody>
@@ -36,6 +37,9 @@
                         <td>{{ $contact->first_name }}</td>
                         <td>{{ $contact->city }}</td>
                         <td>{{ $contact->phone }}</td>
+                        <td>
+                            <a href="{{ route('user-reply', $contact->id) }}" class="btn btn-success">Reply</a>
+                        </td>
                     </tr>
                     <tr>
                         <td colspan="5">
@@ -47,7 +51,7 @@
             @else
                 <tr>
                     <td colspan="5">
-                        No messages
+                        <strong>No messages</strong>
                     </td>
                 </tr>
             @endif

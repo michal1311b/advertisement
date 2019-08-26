@@ -39,3 +39,8 @@ Breadcrumbs::for('contacts', function ($trail) {
     $trail->parent('home');
     $trail->push('List of contacts', route('user-contact'));
 });
+
+Breadcrumbs::for('reply', function ($trail) {
+    $trail->parent('contacts');
+    $trail->push('Reply form', route('user-reply'));
+});
