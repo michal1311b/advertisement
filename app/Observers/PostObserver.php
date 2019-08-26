@@ -10,8 +10,11 @@ class PostObserver
     public function created(Advertisement $advertisement)
     {
         $user = $advertisement->user;
-        foreach ($user->followers as $follower) {
-            $follower->notify(new NewPost($user, $advertisement));
+
+        if(isset($user->followers)) {
+            foreach ($user->followers as $follower) {
+                $follower->notify(new NewPost($user, $advertisement));
+            }
         }
     }
 }
