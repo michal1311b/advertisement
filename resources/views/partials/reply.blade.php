@@ -4,9 +4,10 @@
         @include('partials.validation-errors')
     </div>
     <div class="card-body">
-        <form method="POST" action="{{ route('send-message') }}">
+        <form method="POST" action="{{ route('send-reply') }}">
             @csrf
-           
+            <input type="hidden" name="contact_id" value="{{ $contact->id }}">
+            <input type="hidden" name="email" value="{{ $contact->email }}">
             <input type="hidden" name="emailType" value="AnswerMail">
             
             <div class="form-row">
