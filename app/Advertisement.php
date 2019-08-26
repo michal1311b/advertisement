@@ -35,6 +35,11 @@ class Advertisement extends Model
         return $this->hasMany(Gallery::class);
     }
 
+    public function contacts()
+    {
+        return $this->hasMany(Contact::class);
+    }
+
     public function tags()
     {
         return $this->hasMany(Tag::class);
