@@ -34,3 +34,8 @@ Breadcrumbs::for('user-advertisement-article', function ($trail, $advertisment) 
     $trail->parent('user-advertisements');
     $trail->push($advertisment->title, route('user-advertisement-show', $advertisment));
 });
+
+Breadcrumbs::for('contacts', function ($trail) {
+    $trail->parent('home');
+    $trail->push('List of contacts', route('user-contact'));
+});

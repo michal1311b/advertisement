@@ -6,6 +6,7 @@
     <div class="card-body">
         <form method="POST" action="{{ route('send-message') }}">
             @csrf
+            <input type="hidden" name="advertisement_id" value="{{ $advertisement->id }}">
             <input type="hidden" name="user_id" value="{{ $advertisement->user_id }}">
             <input type="hidden" name="emailType" value="QuestionMail">
             <div class="form-row">
