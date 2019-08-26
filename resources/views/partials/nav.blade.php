@@ -45,6 +45,7 @@
     
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="{{ route('edit-user', auth()->user()->id) }}">User profile</a>
+                            <a class="dropdown-item" href="{{ route('user-contact') }}">User message box</a>
                             <a class="dropdown-item" href="{{ route('user-advertisement-list') }}">User advertisement list</a>
                             <a class="dropdown-item" href="{{ route('create-advertisement') }}">Create advertisement</a>
                             <a class="dropdown-item" href="{{ route('advertisement-list') }}">Advertisements list</a>
