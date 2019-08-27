@@ -7,10 +7,11 @@ use App\Contact;
 use App\User;
 use App\Http\Service\Mailer;
 use App\Notifications\NewMessage;
+use App\Http\Requests\Contact\StoreRequest;
 
 class ContactController extends Controller
 {
-    public function store(Request $request)
+    public function store(StoreRequest $request)
     {
         $contact = Contact::create($request->all());
         
