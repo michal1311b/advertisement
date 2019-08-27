@@ -49341,7 +49341,8 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 var notifications = [];
 var NOTIFICATION_TYPES = {
   follow: "App\\Notifications\\UserFollowed",
-  newPost: 'App\\Notifications\\NewPost'
+  newPost: 'App\\Notifications\\NewPost',
+  newMessage: 'App\\Notifications\\NewMessage'
 };
 $(document).ready(function () {
   // check if there's a logged in user
@@ -49390,6 +49391,9 @@ function routeNotification(notification) {
   } else if (notification.type === NOTIFICATION_TYPES.newPost) {
     var postSlug = notification.data.slug;
     to = "advertisement/show/".concat(postSlug) + to;
+  } else if (notification.type === NOTIFICATION_TYPES.newMessage) {
+    var contactId = notification.data.contact_id;
+    to = "user/contacts/".concat(contactId, "/reply") + to;
   }
 
   return '/' + to;
@@ -49405,6 +49409,9 @@ function makeNotificationText(notification) {
   } else if (notification.type === NOTIFICATION_TYPES.newPost) {
     var _name = notification.data.following_name;
     text += "<strong>".concat(_name, "</strong> published a post");
+  } else if (notification.type === NOTIFICATION_TYPES.newMessage) {
+    var email = notification.data.email;
+    text += "<strong>".concat(email, "</strong> send You a message");
   }
 
   return text;
