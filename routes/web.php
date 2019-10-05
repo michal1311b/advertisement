@@ -68,3 +68,12 @@ Route::group(array('prefix' => 'questionnaire'), function () {
     Route::get('/create', 'QuestionnaireController@create')->name('questionnaire.create');
     Route::post('/create', 'QuestionnaireController@store')->name('questionnaire.store');
 });
+
+Route::group(array('prefix' => 'language'), function () {
+    Route::get('/create', 'LanguageController@create')->name('language.create');
+    Route::post('/create', 'LanguageController@store')->name('language.store');
+    Route::get('/list', 'LanguageController@index')->name('language.index');
+    Route::get('/{lang_key}/edit', 'LanguageController@edit')->name('language.edit');
+    Route::patch('/{lang_key}/update', 'LanguageController@update')->name('language.update');
+    Route::delete('/{lang_key}/delete', 'LanguageController@destroy')->name('language.delete');
+});
