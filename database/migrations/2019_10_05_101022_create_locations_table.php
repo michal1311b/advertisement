@@ -23,7 +23,17 @@ class CreateLocationsTable extends Migration
 
         \Eloquent::unguard();
 
-        $path = 'public/locations.sql';
+        $zip = new ZipArchive;
+        $res = $zip->open('database/locations.zip');
+        if ($res === TRUE) {
+            $zip->extractTo('database/');
+            $zip->close();
+            echo 'woot!';
+        } else {
+            echo 'doh!';
+        }
+        
+        $path = 'database/locations.sql';
         \DB::statement(file_get_contents($path));
     }
 
