@@ -84,6 +84,9 @@ function makeNotificationText(notification) {
     return text;
 }
 
+require('./questionnaire');
+
+
 window.Vue = require('vue');
 
 /**

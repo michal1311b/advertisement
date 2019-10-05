@@ -63,3 +63,8 @@ Route::group(array('prefix' => 'user'), function () {
 });
 
 Route::post('/send-message', 'ContactController@store')->name('send-message');
+
+Route::group(array('prefix' => 'questionnaire'), function () {
+    Route::get('/create', 'QuestionnaireController@create')->name('questionnaire.create');
+    Route::post('/create', 'QuestionnaireController@store')->name('questionnaire.store');
+});

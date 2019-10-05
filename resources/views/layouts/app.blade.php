@@ -47,8 +47,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/layout.js') }}"></script>
-    
-    
+     
     @yield('scripts')
     <script src="{{ asset('js/app.js') }}" defer></script>
 </body>
