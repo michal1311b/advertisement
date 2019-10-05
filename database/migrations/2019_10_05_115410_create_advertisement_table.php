@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAdvertisementsTable extends Migration
+class CreateAdvertisementTable extends Migration
 {
     /**
      * Run the migrations.
@@ -17,7 +17,6 @@ class CreateAdvertisementsTable extends Migration
             $table->bigIncrements('id');
             $table->string('title');
             $table->text('description');
-            $table->string('city');
             $table->string('postCode');
             $table->string('street');
             $table->string('email');
@@ -26,9 +25,15 @@ class CreateAdvertisementsTable extends Migration
             $table->boolean('term2')->defualt(false);
             $table->boolean('term3')->defualt(false);
             $table->text('slug');
-            $table->unsignedInteger('work_id');
-            $table->unsignedInteger('state_id');
-            $table->unsignedInteger('user_id');
+            $table->bigInteger('work_id')->unsigned();
+            $table->bigInteger('state_id')->unsigned();
+            $table->bigInteger('location_id')->unsigned();
+            $table->bigInteger('user_id')->unsigned();
+
+            $table->foreign('state_id')->references('id')->on('states');
+            $table->foreign('location_id')->references('id')->on('locations');
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('work_id')->references('id')->on('works');
             $table->timestamps();
         });
     }

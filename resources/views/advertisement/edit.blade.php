@@ -105,11 +105,19 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="city" class="col-12 col-md-3 col-form-label text-md-right">City</label>
-
+                            <label class="col-12 col-md-3 col-form-label text-md-right" for="location_id">Location</label>
                             <div class="col-12 col-md-9">
-                                <input id="city" type="city" class="form-control @error('city') is-invalid @enderror" name="city" value="{{ $advertisement->city }}" autocomplete="city" autofocus>
-                                @error('city')
+                                <select class="custom-select @error('location_id') is-invalid @enderror" name="location_id" id="location_id">
+                                    <option selected>Choose...</option>
+                                    @foreach($locations as $location)
+                                        @if($advertisement->location_id === $location->id)
+                                            <option value="{{ $location->id }}" selected>{{ $location->city }}</option>
+                                        @else
+                                            <option value="{{ $location->id }}">{{ $location->city }}</option>
+                                        @endif
+                                    @endforeach
+                                </select>
+                                @error('location_id')
                                     <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
                             </div>

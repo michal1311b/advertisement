@@ -20,8 +20,11 @@ class CreateGalleriesTable extends Migration
             $table->string('mimeType');
             $table->integer('size');
             $table->text('path');
-            $table->integer('advertisement_id')->unsigned();
+            $table->bigInteger('advertisement_id')->unsigned();
+            
             $table->timestamps();
+
+            $table->foreign('advertisement_id')->references('id')->on('advertisements');
         });
     }
 

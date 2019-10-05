@@ -52,6 +52,21 @@
                         </div>
 
                         <div class="form-group row">
+                            <label class="col-12 col-md-3 col-form-label text-md-right" for="location_id">Location</label>
+                            <div class="col-12 col-md-9">
+                                <select class="custom-select @error('location_id') is-invalid @enderror" name="location_id" id="location_id">
+                                    <option selected>Choose...</option>
+                                    @foreach($locations as $location)
+                                        <option value="{{ $location->id }}">{{ $location->city }}</option>
+                                    @endforeach
+                                </select>
+                                @error('location_id')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
                             <label class="col-12 col-md-3 col-form-label text-md-right" for="state_id">State</label>
                             <div class="col-12 col-md-9">
                                 <select class="custom-select @error('state_id') is-invalid @enderror" name="state_id" id="state_id">
@@ -71,17 +86,6 @@
                             <div class="col-12 col-md-9">
                                 <input type="file" class="form-control @error('galleries') is-invalid @enderror" name="galleries[]" multiple />
                                 @error('galleries')
-                                    <div class="alert alert-danger">{{ $message }}</div>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="city" class="col-12 col-md-3 col-form-label text-md-right">City</label>
-
-                            <div class="col-12 col-md-9">
-                                <input id="city" type="city" class="form-control @error('city') is-invalid @enderror" name="city" value="{{ old('city') }}" autocomplete="city" autofocus>
-                                @error('city')
                                     <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
                             </div>

@@ -14,7 +14,7 @@ class Advertisement extends Model
         'work_id',
         'state_id',
         'user_id',
-        'city',
+        'location_id',
         'postCode',
         'street',
         'email',
@@ -55,6 +55,11 @@ class Advertisement extends Model
         return $this->belongsTo(State::class);
     }
 
+    public function location()
+    {
+        return $this->belongsTo(Location::class);
+    }
+
     public function work()
     {
         return $this->belongsTo(Work::class);
@@ -69,7 +74,7 @@ class Advertisement extends Model
         $entry->work_id = $attributes['work_id'];
         $entry->state_id = $attributes['state_id'];
         $entry->user_id = auth()->user()->id;
-        $entry->city = $attributes['city'];
+        $entry->location_id = $attributes['location_id'];
         $entry->postCode = $attributes['postCode'];
         $entry->street = $attributes['street'];
         $entry->phone = $attributes['phone'];

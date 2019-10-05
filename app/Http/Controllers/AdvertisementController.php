@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Advertisement;
 use App\Work;
 use App\User;
+use App\Location;
 use App\State;
 use App\Gallery;
 use App\Http\Requests\Advertisement\StoreRequest;
@@ -26,8 +27,9 @@ class AdvertisementController extends Controller
 
         $works = Work::all();
         $states = State::all();
+        $locations = Location::all();
         
-        return view('advertisement.create', compact('works', 'states'));
+        return view('advertisement.create', compact('works', 'states', 'locations'));
     }
 
     public function store(StoreRequest $request)
@@ -61,6 +63,7 @@ class AdvertisementController extends Controller
 
         $works = Work::all();
         $states = State::all();
+        $locations = Location::all();
 
         $tags_array = [];
         foreach($advertisement->tags as $tag) {
@@ -69,7 +72,7 @@ class AdvertisementController extends Controller
         
         $tags = implode(",", $tags_array);
 
-        return view('advertisement.edit', compact(['advertisement', 'works', 'states', 'tags']));
+        return view('advertisement.edit', compact(['advertisement', 'works', 'states', 'tags', 'locations']));
     }
 
     public function deletePhoto($id)
