@@ -7,6 +7,8 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
+@import 'layout';
+@import 'tagsinput';
 
 #notifications.has-notifications {
     color: #bf5329

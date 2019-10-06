@@ -5,6 +5,10 @@
  */
 
 require('./bootstrap');
+require('./tagsinput');
+require('./typeahead.bundle.min');
+require('./bloodhound.min');
+require('./bootstrap-tagsinput.min');
 
 var notifications = [];
 
