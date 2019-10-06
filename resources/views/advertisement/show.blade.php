@@ -76,7 +76,7 @@
                                 <ul class="list-group">
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
                                         City:
-                                        <span class="badge badge-pill">{{ $advertisement->city }}</span>
+                                        <span class="badge badge-pill">{{ $advertisement->location->city }}</span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
                                         State:
