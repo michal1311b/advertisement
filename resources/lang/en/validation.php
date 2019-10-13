@@ -40,6 +40,10 @@ return [
     'dimensions' => 'The :attribute has invalid image dimensions.',
     'distinct' => 'The :attribute field has a duplicate value.',
     'email' => 'The :attribute must be a valid email address.',
+<<<<<<< HEAD
+=======
+    'ends_with' => 'The :attribute must end with one of the following: :values',
+>>>>>>> bc873478dff7e481546a5007b9d26a7222a94c2f
     'exists' => 'The selected :attribute is invalid.',
     'file' => 'The :attribute must be a file.',
     'filled' => 'The :attribute field must have a value.',

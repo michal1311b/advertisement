@@ -43,5 +43,13 @@ return [
             'tolerance' => env('STRIPE_WEBHOOK_TOLERANCE', 300),
         ],
     ],
+<<<<<<< HEAD
 
+=======
+    'google' => [
+        'client_id'     => env('GOOGLE_CLIENT_ID'),
+        'client_secret' => env('GOOGLE_CLIENT_SECRET'),
+        'redirect'      => env('GOOGLE_REDIRECT'),
+    ],
+>>>>>>> bc873478dff7e481546a5007b9d26a7222a94c2f
 ];

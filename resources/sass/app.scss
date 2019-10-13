@@ -7,7 +7,16 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
+<<<<<<< HEAD
 .navbar-laravel {
     background-color: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
+=======
+@import 'layout';
+@import 'tagsinput';
+
+#notifications.has-notifications {
+    color: #bf5329
+}
+>>>>>>> bc873478dff7e481546a5007b9d26a7222a94c2f

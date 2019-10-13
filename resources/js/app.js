@@ -5,11 +5,101 @@
  */
 
 require('./bootstrap');
+<<<<<<< HEAD
 
 window.Vue = require('vue');
 
 import VueChatScroll from 'vue-chat-scroll';
 Vue.use(VueChatScroll);
+=======
+require('./tagsinput');
+require('./typeahead.bundle.min');
+require('./bloodhound.min');
+require('./bootstrap-tagsinput.min');
+
+var notifications = [];
+
+const NOTIFICATION_TYPES = {
+    follow: 'App\\Notifications\\UserFollowed',
+    newPost: 'App\\Notifications\\NewPost',
+    newMessage: 'App\\Notifications\\NewMessage'
+};
+
+$(document).ready(function() {
+    // check if there's a logged in user
+    if(Laravel.userId) {
+        $.get('/advertisement/notifications', function (data) {
+            addNotifications(data, "#notifications");
+        });
+    }
+});
+
+function addNotifications(newNotifications, target) {
+    notifications = _.concat(notifications, newNotifications);
+    // show only last 5 notifications
+    notifications.slice(0, 5);
+    showNotifications(notifications, target);
+}
+
+function showNotifications(notifications, target) {
+    if(notifications.length) {
+        var htmlElements = notifications.map(function (notification) {
+            return makeNotification(notification);
+        });
+        $(target + 'Menu').html(htmlElements.join(''));
+        $(target).addClass('has-notifications');
+        $('#badge-notify').text(notifications.length);
+    } else {
+        $(target + 'Menu').html('<li class="dropdown-header">No notifications</li>');
+        $(target).removeClass('has-notifications');
+        $('#badge-notify').text(0);
+    }
+}
+
+// Make a single notification string
+function makeNotification(notification) {
+    var to = routeNotification(notification);
+    var notificationText = makeNotificationText(notification);
+    return '<li><a href="' + to + '">' + notificationText + '</a></li>';
+}
+
+// get the notification route based on it's type
+function routeNotification(notification) {
+    var to = `?read=${notification.id}`;
+    if(notification.type === NOTIFICATION_TYPES.follow) {
+        to = 'advertisement/users' + to;
+    } else if(notification.type === NOTIFICATION_TYPES.newPost) {
+        const postSlug = notification.data.slug;
+        to = `advertisement/show/${postSlug}` + to;
+    } else if(notification.type === NOTIFICATION_TYPES.newMessage) {
+        const contactId = notification.data.contact_id;
+        to = `user/contacts/${contactId}/reply` + to;
+    }
+
+    return '/' + to;
+}
+
+// get the notification text based on it's type
+function makeNotificationText(notification) {
+    var text = '';
+    if(notification.type === NOTIFICATION_TYPES.follow) {
+        const name = notification.data.follower_name;
+        text += `<strong>${name}</strong> followed you`;
+    } else if(notification.type === NOTIFICATION_TYPES.newPost) {
+        const name = notification.data.following_name;
+        text += `<strong>${name}</strong> published a post`;
+    } else if(notification.type === NOTIFICATION_TYPES.newMessage) {
+        const email = notification.data.email;
+        text += `<strong>${email}</strong> send You a message`;
+    }
+    return text;
+}
+
+require('./questionnaire');
+
+
+window.Vue = require('vue');
+>>>>>>> bc873478dff7e481546a5007b9d26a7222a94c2f
 
 /**
  * The following block of code may be used to automatically register your
@@ -22,7 +112,12 @@ Vue.use(VueChatScroll);
 // const files = require.context('./', true, /\.vue$/i);
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
 
+<<<<<<< HEAD
 Vue.component('chats', require('./components/ChatsComponent.vue').default);
+=======
+Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+
+>>>>>>> bc873478dff7e481546a5007b9d26a7222a94c2f
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application

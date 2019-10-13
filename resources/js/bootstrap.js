@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> bc873478dff7e481546a5007b9d26a7222a94c2f
 window._ = require('lodash');
 
 /**
@@ -44,6 +47,7 @@ if (token) {
  * allows your team to easily build robust real-time web applications.
  */
 
+<<<<<<< HEAD
 import Echo from 'laravel-echo'
 
 window.Pusher = require('pusher-js');
@@ -62,4 +66,15 @@ window.Echo = new Echo({
 
 //     console.log(e);
 
+=======
+// import Echo from 'laravel-echo'
+
+// window.Pusher = require('pusher-js');
+
+// window.Echo = new Echo({
+//     broadcaster: 'pusher',
+//     key: process.env.MIX_PUSHER_APP_KEY,
+//     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
+//     encrypted: true
+>>>>>>> bc873478dff7e481546a5007b9d26a7222a94c2f
 // });

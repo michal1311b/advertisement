@@ -13,7 +13,11 @@ class HomeController extends Controller
      */
     public function __construct()
     {
+<<<<<<< HEAD
         $this->middleware('auth');
+=======
+        $this->middleware(['auth', 'verified']);
+>>>>>>> bc873478dff7e481546a5007b9d26a7222a94c2f
     }
 
     /**
@@ -25,4 +29,15 @@ class HomeController extends Controller
     {
         return view('home');
     }
+<<<<<<< HEAD
+=======
+
+    /*
+    public function someAdminStuff(Request $request)
+    {
+        $request->user()->authorizeRoles('manager');
+        return view(‘some.view’);
+    }
+    */
+>>>>>>> bc873478dff7e481546a5007b9d26a7222a94c2f
 }

@@ -3,6 +3,11 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+<<<<<<< HEAD
+=======
+use App\Profile;
+use App\Role;
+>>>>>>> bc873478dff7e481546a5007b9d26a7222a94c2f
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -63,10 +68,29 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+<<<<<<< HEAD
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+=======
+        $user = User::create([
+            'name' => $data['name'],
+            'email' => $data['email'],
+            'password' => Hash::make($data['password']),
+            'avatar' => '/images/chicken-at-facebook.jpg'
+        ]);
+
+        $profile = Profile::create([
+            'user_id' => $user->id
+        ]);
+
+        $user
+            ->roles()
+            ->attach(Role::where('name', 'employee')->first());
+
+        return $user;
+>>>>>>> bc873478dff7e481546a5007b9d26a7222a94c2f
     }
 }
