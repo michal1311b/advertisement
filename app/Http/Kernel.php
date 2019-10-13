@@ -14,18 +14,11 @@ class Kernel extends HttpKernel
      * @var array
      */
     protected $middleware = [
-<<<<<<< HEAD
-=======
-        \App\Http\Middleware\TrustProxies::class,
->>>>>>> bc873478dff7e481546a5007b9d26a7222a94c2f
         \App\Http\Middleware\CheckForMaintenanceMode::class,
         \Illuminate\Foundation\Http\Middleware\ValidatePostSize::class,
         \App\Http\Middleware\TrimStrings::class,
         \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
-<<<<<<< HEAD
         \App\Http\Middleware\TrustProxies::class,
-=======
->>>>>>> bc873478dff7e481546a5007b9d26a7222a94c2f
     ];
 
     /**
@@ -42,10 +35,6 @@ class Kernel extends HttpKernel
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
             \App\Http\Middleware\VerifyCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
-<<<<<<< HEAD
-=======
-            \App\Http\Middleware\MarkNotificationAsRead::class,
->>>>>>> bc873478dff7e481546a5007b9d26a7222a94c2f
         ],
 
         'api' => [

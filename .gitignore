@@ -1,7 +1,6 @@
 /node_modules
 /public/hot
 /public/storage
-<<<<<<< HEAD
 /storage/*.key
 /vendor
 .env
@@ -12,7 +11,7 @@
 /database/locations.sql
 .env
 .env.backup
->>>>>>> bc873478dff7e481546a5007b9d26a7222a94c2f
+
 .phpunit.result.cache
 Homestead.json
 Homestead.yaml

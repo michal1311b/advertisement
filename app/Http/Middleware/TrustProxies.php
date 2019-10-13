@@ -10,11 +10,8 @@ class TrustProxies extends Middleware
     /**
      * The trusted proxies for this application.
      *
-<<<<<<< HEAD
-     * @var array
-=======
      * @var array|string
->>>>>>> bc873478dff7e481546a5007b9d26a7222a94c2f
+
      */
     protected $proxies;
 

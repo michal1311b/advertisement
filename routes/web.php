@@ -1,9 +1,5 @@
 <?php
-<<<<<<< HEAD
 use App\Events\WebsocketDemoEvent;
-=======
-
->>>>>>> bc873478dff7e481546a5007b9d26a7222a94c2f
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,44 +12,6 @@ use App\Events\WebsocketDemoEvent;
 */
 
 Route::get('/', function () {
-<<<<<<< HEAD
-    broadcast(new WebsocketDemoEvent('some data'));
-
-    return view('welcome');
-});
-
-Route::post('/push','PushController@store');
-Route::get('/push','PushController@push')->name('push');
-
-Route::get('/chats', 'ChatsController@index');
-
-Route::get('/messages', 'ChatsController@fetchMessages');
-Route::post('/messages', 'ChatsController@sendMessage');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-Route::get('/nagrody-ankieta', 'SubscriberController@index')->name('subscribers1');
-
-Route::put('accept/{subscriber}', [
-    'uses' => 'SubscriberController@updatePrice'
-])->middleware('auth')->name('get-price');
-
-Route::get('/search', [
-    'uses' =>  'SubscriberController@search'
-])->name('search-code');
-
-Route::get('/nagrody-suby', 'Subscriber2Controller@index')->name('subscribers2');
-
-Route::put('accept2/{subscriber2}', [
-    'uses' => 'Subscriber2Controller@updatePrice'
-])->middleware('auth')->name('get-price2');
-
-Route::get('/search2', [
-    'uses' =>  'Subscriber2Controller@search'
-])->name('search-code2');
-=======
     return view('welcome');
 });
 
@@ -119,4 +77,3 @@ Route::group(array('prefix' => 'language'), function () {
     Route::patch('/{lang_key}/update', 'LanguageController@update')->name('language.update');
     Route::delete('/{lang_key}/delete', 'LanguageController@destroy')->name('language.delete');
 });
->>>>>>> bc873478dff7e481546a5007b9d26a7222a94c2f

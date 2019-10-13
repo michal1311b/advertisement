@@ -1,17 +1,13 @@
-<<<<<<< HEAD
-<!doctype html>
-=======
+
 <!DOCTYPE html>
->>>>>>> bc873478dff7e481546a5007b9d26a7222a94c2f
+
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-<<<<<<< HEAD
-        <meta name="csrf-token" content="{{ csrf_token() }}">
-=======
 
->>>>>>> bc873478dff7e481546a5007b9d26a7222a94c2f
+
+
         <title>Laravel</title>
 
         <!-- Fonts -->
@@ -72,11 +68,8 @@
         </style>
     </head>
     <body>
-<<<<<<< HEAD
-        <div id="app" class="flex-center position-ref full-height">
-=======
         <div class="flex-center position-ref full-height">
->>>>>>> bc873478dff7e481546a5007b9d26a7222a94c2f
+
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
@@ -107,10 +100,7 @@
                 </div>
             </div>
         </div>
-<<<<<<< HEAD
-
         <script src="js/app.js"></script>
-=======
->>>>>>> bc873478dff7e481546a5007b9d26a7222a94c2f
+
     </body>
 </html>

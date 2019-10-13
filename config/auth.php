@@ -100,13 +100,12 @@ return [
         ],
     ],
 
-<<<<<<< HEAD
-=======
+
     'socialite' => [
         'drivers' => [
             'google',
         ],
     ],
 
->>>>>>> bc873478dff7e481546a5007b9d26a7222a94c2f
+
 ];

@@ -14,10 +14,4 @@
 Broadcast::channel('App.User.{id}', function ($user, $id) {
     return (int) $user->id === (int) $id;
 });
-<<<<<<< HEAD
 
-Broadcast::channel('chat', function ($user) {
-    return $user;
-});
-=======
->>>>>>> bc873478dff7e481546a5007b9d26a7222a94c2f

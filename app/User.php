@@ -5,19 +5,10 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-<<<<<<< HEAD
-use NotificationChannels\WebPush\HasPushSubscriptions;
-
-class User extends Authenticatable
-{
-    use Notifiable;
-    use HasPushSubscriptions;
-=======
 
 class User extends Authenticatable implements MustVerifyEmail
 {
     use Notifiable;
->>>>>>> bc873478dff7e481546a5007b9d26a7222a94c2f
 
     /**
      * The attributes that are mass assignable.
@@ -34,11 +25,7 @@ class User extends Authenticatable implements MustVerifyEmail
      * @var array
      */
     protected $hidden = [
-<<<<<<< HEAD
-        'password', 'remember_token',
-=======
         'provider_name', 'provider_id', 'password', 'remember_token',
->>>>>>> bc873478dff7e481546a5007b9d26a7222a94c2f
     ];
 
     /**
@@ -50,11 +37,6 @@ class User extends Authenticatable implements MustVerifyEmail
         'email_verified_at' => 'datetime',
     ];
 
-<<<<<<< HEAD
-    public function messages()
-    {
-        return $this->hasMany(Message::class);
-=======
     public function roles()
     {
         return $this->belongsToMany(Role::class);
@@ -142,6 +124,5 @@ class User extends Authenticatable implements MustVerifyEmail
     public function hasRole($role)
     {
         return null !== $this->roles()->where('name', $role)->first();
->>>>>>> bc873478dff7e481546a5007b9d26a7222a94c2f
     }
 }

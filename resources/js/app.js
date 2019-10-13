@@ -5,13 +5,6 @@
  */
 
 require('./bootstrap');
-<<<<<<< HEAD
-
-window.Vue = require('vue');
-
-import VueChatScroll from 'vue-chat-scroll';
-Vue.use(VueChatScroll);
-=======
 require('./tagsinput');
 require('./typeahead.bundle.min');
 require('./bloodhound.min');
@@ -99,7 +92,7 @@ require('./questionnaire');
 
 
 window.Vue = require('vue');
->>>>>>> bc873478dff7e481546a5007b9d26a7222a94c2f
+
 
 /**
  * The following block of code may be used to automatically register your
@@ -112,12 +105,9 @@ window.Vue = require('vue');
 // const files = require.context('./', true, /\.vue$/i);
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
 
-<<<<<<< HEAD
-Vue.component('chats', require('./components/ChatsComponent.vue').default);
-=======
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 
->>>>>>> bc873478dff7e481546a5007b9d26a7222a94c2f
+
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application

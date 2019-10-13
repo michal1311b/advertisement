@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers\Auth;
 
-<<<<<<< HEAD
-=======
+
 use Socialite;
 use App\User;
 use App\Profile;
->>>>>>> bc873478dff7e481546a5007b9d26a7222a94c2f
+
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
@@ -42,8 +41,7 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
-<<<<<<< HEAD
-=======
+
 
     /**
      * Redirect the user to the provider authentication page.
@@ -93,5 +91,5 @@ class LoginController extends Controller
 
         return redirect($this->redirectPath());
     }
->>>>>>> bc873478dff7e481546a5007b9d26a7222a94c2f
+
 }
