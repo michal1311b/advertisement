@@ -57,6 +57,11 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->hasOne(Profile::class);
     }
 
+    public function doctor()
+    {
+        return $this->hasOne(Doctor::class);
+    }
+
     public function followers() 
     {
         return $this->belongsToMany(self::class, 'followers', 'follows_id', 'advertisement_id')
