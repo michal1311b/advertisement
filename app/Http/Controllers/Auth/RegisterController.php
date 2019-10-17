@@ -3,14 +3,17 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
-
+use App\Doctor;
 use App\Profile;
 use App\Role;
 
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Auth\Events\Registered;
 
 class RegisterController extends Controller
 {
@@ -59,30 +62,58 @@ class RegisterController extends Controller
         ]);
     }
 
-    /**
-     * Create a new user instance after a valid registration.
-     *
-     * @param  array  $data
-     * @return \App\User
-     */
-    protected function create(array $data)
+    public function validateNil($pwz, $dob)
     {
-        $user = User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
-            'avatar' => '/images/chicken-at-facebook.jpg'
-        ]);
+        $resp = json_decode(file_get_contents('https://nil.lptgroup.pl/validate/' . $pwz . '/' . str_replace("-", "", $dob)));
+        return $resp->status == '1';
+    }
 
-        $profile = Profile::create([
-            'user_id' => $user->id
-        ]);
+    /**
+     * Handle a registration request for the application.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function register(Request $request)
+    {
+        if($request->type === 'doctor')
+        {
+            if(!$this->validateNil($request->pwz, $request->birthday))
+            {
+                return back()->withErrors([
+                    'message' => 'Walidacja w NIL się nie powiodła.'
+                ]);
+            }
+
+            $this->validator($request->all())->validate();
+
+            event(new Registered($user = User::create([
+                'name' => $request->name,
+                'email' => $request->email,
+                'password' => Hash::make($request->password),
+                'avatar' => '/images/chicken-at-facebook.jpg'
+            ])));
+
+            $doctor = Doctor::create([
+                'user_id' => $user->id,
+                'pwz' => $request->pwz,
+                'birthday' => $request->birthday
+            ]);
+
+            $profile = Profile::create([
+                'user_id' => $user->id
+            ]);
+        } else {
+            $profile = Profile::create([
+                'user_id' => $user->id
+            ]);
+        }
 
         $user
             ->roles()
-            ->attach(Role::where('name', 'employee')->first());
+            ->attach(Role::where('name', $request->type)->first());
 
-        return $user;
-
+        return $this->registered($request, $user)
+            ?: redirect($this->redirectPath());
     }
 }
