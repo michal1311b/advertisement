@@ -8,14 +8,14 @@
         </div>
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">Create advertisement</div>
+                <div class="card-header">{{ __('Create advertisement') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('store-advertisement') }}" enctype="multipart/form-data">
                         @csrf
 
                         <div class="form-group row">
-                            <label for="title" class="col-12 col-md-3 col-form-label text-md-right">Title</label>
+                            <label for="title" class="col-12 col-md-3 col-form-label text-md-right">{{ __('Title') }}</label>
 
                             <div class="col-12 col-md-9">
                                 <input id="title" type="title" class="form-control @error('title') is-invalid @enderror" name="title" value="{{ old('title') }}" autocomplete="title" autofocus>
@@ -26,7 +26,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="description" class="col-12 col-md-3 col-form-label text-md-right">Description</label>
+                            <label for="description" class="col-12 col-md-3 col-form-label text-md-right">{{ __('Description') }}</label>
 
                             <div class="col-12 col-md-9">
                                 <textarea id="description" type="description" class="form-control @error('description') is-invalid @enderror" name="description" value="{{ old('description') }}" autocomplete="title" autofocus rows="3"></textarea>
@@ -37,7 +37,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label class="col-12 col-md-3 col-form-label text-md-right" for="work_id">Work</label>
+                            <label class="col-12 col-md-3 col-form-label text-md-right" for="work_id">{{ __('Work') }}</label>
                             <div class="col-12 col-md-9">
                                 <select class="custom-select @error('work_id') is-invalid @enderror" name="work_id" id="work_id">
                                     <option selected>Choose...</option>
@@ -52,7 +52,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label class="col-12 col-md-3 col-form-label text-md-right" for="location_id">Location</label>
+                            <label class="col-12 col-md-3 col-form-label text-md-right" for="location_id">{{ __('Location') }}</label>
                             <div class="col-12 col-md-9">
                                 <select class="custom-select @error('location_id') is-invalid @enderror" name="location_id" id="location_id">
                                     <option selected>Choose...</option>
@@ -67,7 +67,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label class="col-12 col-md-3 col-form-label text-md-right" for="state_id">State</label>
+                            <label class="col-12 col-md-3 col-form-label text-md-right" for="state_id">{{ __('State') }}</label>
                             <div class="col-12 col-md-9">
                                 <select class="custom-select @error('state_id') is-invalid @enderror" name="state_id" id="state_id">
                                     <option selected>Choose...</option>
@@ -82,7 +82,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label class="col-12 col-md-3 col-form-label text-md-right" for="galleries">Upload files:</label>
+                            <label class="col-12 col-md-3 col-form-label text-md-right" for="galleries">{{ __('Upload files') }}</label>
                             <div class="col-12 col-md-9">
                                 <input type="file" class="form-control @error('galleries') is-invalid @enderror" name="galleries[]" multiple />
                                 @error('galleries')
@@ -92,7 +92,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="postCode" class="col-12 col-md-3 col-form-label text-md-right">Post code</label>
+                            <label for="postCode" class="col-12 col-md-3 col-form-label text-md-right">{{ __('Post code') }}</label>
 
                             <div class="col-12 col-md-9">
                                 <input id="postCode" type="postCode" class="form-control @error('postCode') is-invalid @enderror" name="postCode" value="{{ old('postCode') }}" autocomplete="postCode" autofocus>
@@ -103,7 +103,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="street" class="col-12 col-md-3 col-form-label text-md-right">Street</label>
+                            <label for="street" class="col-12 col-md-3 col-form-label text-md-right">{{ __('Street') }}</label>
 
                             <div class="col-12 col-md-9">
                                 <input id="street" type="street" class="form-control @error('street') is-invalid @enderror" name="street" value="{{ old('street') }}" autocomplete="street" autofocus>
@@ -114,7 +114,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="email" class="col-12 col-md-3 col-form-label text-md-right">E-mail</label>
+                            <label for="email" class="col-12 col-md-3 col-form-label text-md-right">{{ __('E-mail') }}</label>
 
                             <div class="col-12 col-md-9">
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" autocomplete="email" autofocus>
@@ -125,7 +125,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="phone" class="col-12 col-md-3 col-form-label text-md-right">Phone</label>
+                            <label for="phone" class="col-12 col-md-3 col-form-label text-md-right">{{ __('Phone') }}</label>
 
                             <div class="col-12 col-md-9">
                                 <input id="phone" type="phone" class="form-control @error('phone') is-invalid @enderror" name="phone" value="{{ old('phone') }}" autocomplete="phone" autofocus>
@@ -136,7 +136,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="tags" class="col-12 col-md-3 col-form-label text-md-right">Tagi</label>
+                            <label for="tags" class="col-12 col-md-3 col-form-label text-md-right">{{ __('Tags') }}</label>
                             <div class="col-12 col-md-9">
                                 <input type="text" value="" name="tags[]" id="tags" data-role="tagsinput" class="form-control" />
                             </div>
@@ -190,7 +190,7 @@
                         <div class="form-group row mb-0">
                             <div class="col-md-8 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
-                                    Create
+                                    {{ __('Create') }}
                                 </button>
                             </div>
                         </div>

@@ -21,20 +21,20 @@ class CreateLocationsTable extends Migration
             $table->timestamps();
         });
 
-        \Eloquent::unguard();
+        // \Eloquent::unguard();
 
-        $zip = new ZipArchive;
-        $res = $zip->open('database/locations.zip');
-        if ($res === TRUE) {
-            $zip->extractTo('database/');
-            $zip->close();
-            echo 'woot!';
-        } else {
-            echo 'doh!';
-        }
+        // $zip = new ZipArchive;
+        // $res = $zip->open('database/locations.zip');
+        // if ($res === TRUE) {
+        //     $zip->extractTo('database/');
+        //     $zip->close();
+        //     echo 'woot!';
+        // } else {
+        //     echo 'doh!';
+        // }
         
-        $path = 'database/locations.sql';
-        \DB::statement(file_get_contents($path));
+        // $path = 'database/locations.sql';
+        // \DB::statement(file_get_contents($path));
     }
 
     /**

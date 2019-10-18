@@ -10,6 +10,7 @@ use App\Role;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
+use App\Specialization;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -45,6 +46,18 @@ class RegisterController extends Controller
     public function __construct()
     {
         $this->middleware('guest');
+    }
+
+    /**
+     * Show the application registration form.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function showRegistrationForm()
+    {
+        $specializations = Specialization::all();
+
+        return view('auth.register', compact('specializations'));
     }
 
     /**
@@ -100,12 +113,32 @@ class RegisterController extends Controller
                 'birthday' => $request->birthday
             ]);
 
+            $user->specializations()->attach($request->get('specializations'));
+
             $profile = Profile::create([
                 'user_id' => $user->id
             ]);
         } else {
+            $this->validator($request->all())->validate();
+
+            event(new Registered($user = User::create([
+                'name' => $request->name,
+                'email' => $request->email,
+                'password' => Hash::make($request->password),
+                'avatar' => '/images/chicken-at-facebook.jpg'
+            ])));
+
             $profile = Profile::create([
-                'user_id' => $user->id
+                'user_id' => $user->id,
+                'street' => $request->street,
+                'post_code' => $request->post_code,
+                'city' => $request->city,
+                'last_name' => $request->last_name,
+                'company_name' => $request->company_name,
+                'company_street' => $request->company_street,
+                'company_post_code' => $request->company_post_code,
+                'company_city' => $request->company_city,
+                'company_nip' => $request->company_nip
             ]);
         }
 

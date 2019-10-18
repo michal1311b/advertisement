@@ -23,7 +23,7 @@ class AdvertisementController extends Controller
     }
     public function create(Request $request)
     {
-        $request->user()->authorizeRoles(['employee', 'manager']);
+        $request->user()->authorizeRoles(['company', 'admin']);
 
         $works = Work::all();
         $states = State::all();
@@ -55,7 +55,7 @@ class AdvertisementController extends Controller
 
     public function edit(Request $request, $id)
     {
-        $request->user()->authorizeRoles(['employee', 'manager']);
+        $request->user()->authorizeRoles(['company', 'admin']);
         
         $advertisement = Advertisement::with('tags')->find($id);
         $userId = $advertisement->user_id;

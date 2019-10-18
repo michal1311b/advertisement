@@ -16,7 +16,8 @@ class DatabaseSeeder extends Seeder
         // User seeder will use the roles above created.
         $this->call(UserTableSeeder::class);
         $this->call(ProfileTableSeeder::class);
+        $this->call(LocationTableSeeder::class);
         $this->call(AdvertisementSeeder::class);
-
+        $this->call(SpecializationTableSeeder::class);
     }
 }

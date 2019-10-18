@@ -9,6 +9,7 @@ require('./tagsinput');
 require('./typeahead.bundle.min');
 require('./bloodhound.min');
 require('./bootstrap-tagsinput.min');
+require('select2');
 
 var notifications = [];
 
@@ -31,6 +32,10 @@ $(document).ready(function() {
     Inputmask("99-99-9999", {
         "clearIncomplete": true
     }).mask($('#birthday'));
+    
+    $('#specializations').select2({
+        width: '100%'
+    });
 });
 
 function addNotifications(newNotifications, target) {
@@ -96,7 +101,8 @@ function makeNotificationText(notification) {
 
 require('./questionnaire');
 
-window.Vue = require('vue');
+
+// window.Vue = require('vue');
 
 
 /**
@@ -110,7 +116,7 @@ window.Vue = require('vue');
 // const files = require.context('./', true, /\.vue$/i);
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
 
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+// Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 
 
 /**
@@ -119,6 +125,6 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-const app = new Vue({
-    el: '#app',
-});
+// const app = new Vue({
+//     el: '#app',
+// });

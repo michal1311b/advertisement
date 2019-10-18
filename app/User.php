@@ -62,6 +62,11 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->hasOne(Doctor::class);
     }
 
+    public function specializations()
+    {
+        return $this->belongsToMany(Specialization::class)->withTimestamps();
+    }
+
     public function followers() 
     {
         return $this->belongsToMany(self::class, 'followers', 'follows_id', 'advertisement_id')
