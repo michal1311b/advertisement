@@ -95,7 +95,14 @@ class RegisterController extends Controller
             {
                 return back()->withErrors([
                     'message' => 'Walidacja w NIL się nie powiodła.'
-                ]);
+                ])->withInput($request->all());
+            }
+
+            if(!isset($request->specializations))
+            {
+                return back()->withErrors([
+                    'message' => 'Musisz wybrać co najmniej jedną specializację'
+                ])->withInput($request->all());
             }
 
             $this->validator($request->all())->validate();

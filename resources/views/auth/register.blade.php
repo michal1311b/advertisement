@@ -8,7 +8,7 @@
                 <div class="card-header">{{ __('Register') }}</div>
                 
                 @error('message')
-                    <div class="alert alert-{{ session('type') }}">{!! $message !!}</div>
+                    <div class="alert alert-danger }}">{!! $message !!}</div>
                 @enderror
                 <ul class="nav nav-tabs" id="myTab" role="tablist">
                     <li class="nav-item">
