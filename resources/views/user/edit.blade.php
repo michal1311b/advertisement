@@ -165,6 +165,31 @@
                             </div>
                         </div>
 
+                        @if($editUser->specializations)
+                            <div class="form-group row">
+                                <label for="specializations" class="col-12 col-md-3 col-form-label text-md-right">{{__('Specializations')}}</label>
+                                <div class="col-12 col-md-9">
+                                    <select multiple="multiple"
+                                            class="form-control{{ $errors->has('specializations') ? ' is-invalid' : '' }}"
+                                            id="specializations" name="specializations[]">
+                                        @foreach ($specializations as $key => $specialization)
+                                            @if(in_array($specialization->id, $editUser->specializations->pluck('id')->toArray()))
+                                                <option value="{{ $specialization->id }}"
+                                                selected>{{ $specialization->name }}</option>
+                                            @else
+                                                <option value="{{ $specialization->id }}">{{ $specialization->name }}</option>
+                                            @endif
+                                        @endforeach
+                                    </select>
+                                    @if ($errors->has('specializations'))
+                                        <span class="invalid-feedback" role="alert">
+                                            {{  $errors->first('specializations') }}
+                                        </span>
+                                    @endif
+                                </div>
+                            </div>
+                        @endif
+
                         <div class="form-group row mb-0">
                             <div class="col-md-8 offset-md-4">
                                 <button type="submit" class="btn btn-success">

@@ -9,16 +9,18 @@ use Auth;
 use Image;
 use Illuminate\Support\Facades\Hash;
 use App\Notifications\UserFollowed;
+use App\Specialization;
 
 class UserController extends Controller
 {
     public function edit($id)
     {
-        $editUser = User::with('profile')->find($id);
+        $editUser = Auth::user()->load(['doctor', 'profile', 'specializations']);
         $user = Auth::user();
         $user->checkAuthorization($editUser->id, $user->id);
+        $specializations = Specialization::all();
 
-        return view('user.edit', compact('editUser'));
+        return view('user.edit', compact(['editUser', 'specializations']));
     }
 
     public function update(Request $request, $id)
@@ -37,6 +39,11 @@ class UserController extends Controller
         $user->save();
         $profile = $user->profile()->get();
         $profile[0]->update($request->all());
+
+        if(isset($request->specializations))
+        {
+            $user->specializations()->sync($request->specializations);
+        }
 
         return back();
     }
