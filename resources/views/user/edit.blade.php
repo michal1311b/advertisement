@@ -165,7 +165,7 @@
                             </div>
                         </div>
 
-                        @if($editUser->specializations)
+                        @if($editUser->specializations && $editUser->doctor !== null)
                             <div class="form-group row">
                                 <label for="specializations" class="col-12 col-md-3 col-form-label text-md-right">{{__('Specializations')}}</label>
                                 <div class="col-12 col-md-9">
