@@ -158,7 +158,7 @@
                             <label for="company_nip" class="col-12 col-md-3 col-form-label text-md-right">Company NIP</label>
 
                             <div class="col-12 col-md-9">
-                                <input id="company_nip" type="text" class="form-control @error('company_nip') is-invalid @enderror" name="company_nip" value="{{ $editUser->profile->company_nip }}" autocomplete="company_nip" autofocus>
+                                <input id="company_nip" type="number" class="form-control @error('company_nip') is-invalid @enderror" name="company_nip" value="{{ $editUser->profile->company_nip }}" autocomplete="company_nip" autofocus>
                                 @error('company_nip')
                                     <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
