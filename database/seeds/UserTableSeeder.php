@@ -13,8 +13,8 @@ class UserTableSeeder extends Seeder
      */
     public function run()
     {
-        $role_employee = Role::where('name', 'employee')->first();
-        $role_manager  = Role::where('name', 'manager')->first();
+        $role_employee = Role::where('name', 'doctor')->first();
+        $role_manager  = Role::where('name', 'company')->first();
         $employee = new User();
         $employee->name = 'Employee Name';
         $employee->email = 'employee@example.com';
