@@ -48,7 +48,7 @@ class AdvertisementSeeder extends Seeder
 
             for($i=1; $i<5; $i++) {
                 $now = Carbon::now();
-                $path = $faker->image('public/advertisements/', 640, 480, null);
+                $path = $faker->image('public/uploads/', 640, 480, null);
 
                 $fileData = new Gallery();
                 $fileData->oldName = $faker->name;

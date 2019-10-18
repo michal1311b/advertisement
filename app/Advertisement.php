@@ -27,7 +27,7 @@ class Advertisement extends Model
 
     public static function uploadDir()
     {
-        return '/advertisements';
+        return '/uploads';
     }
 
     public function galleries()
