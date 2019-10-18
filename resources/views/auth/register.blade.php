@@ -103,6 +103,24 @@
                                     </div>
                                 </div>
 
+                                <div class="form-group row">
+                                    <label for="specializations" class="col-md-4 col-form-label text-md-right">{{__('Specializations')}}</label>
+                                    <div class="col-md-6">
+                                        <select multiple="multiple"
+                                                class="form-control{{ $errors->has('specializations') ? ' is-invalid' : '' }}"
+                                                id="specializations" name="specializations[]">
+                                            @foreach ($specializations as $key => $specialization)
+                                                <option value="{{ $specialization->id }}">{{ $specialization->name }}</option>
+                                            @endforeach
+                                        </select>
+                                        @if ($errors->has('specializations'))
+                                            <span class="invalid-feedback" role="alert">
+                                                {{  $errors->first('specializations') }}
+                                            </span>
+                                        @endif
+                                    </div>
+                                </div>
+
                                 <div class="form-group row mb-0">
                                     <div class="col-md-6 offset-md-4">
                                         <button type="submit" class="btn btn-primary">
