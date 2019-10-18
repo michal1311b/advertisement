@@ -16,6 +16,7 @@ class CreateSpecializationUserTable extends Migration
         Schema::create('specialization_user', function (Blueprint $table) {
             $table->integer('specialization_id')->unsigned();
             $table->integer('user_id')->unsigned();
+            $table->timestamps();
       
             $table->unique(['specialization_id', 'user_id']);
             $table->index(['specialization_id', 'user_id']);
