@@ -39,7 +39,7 @@
                         <div class="form-group row">
                             <label class="col-12 col-md-3 col-form-label text-md-right" for="work_id">{{ __('Work') }}</label>
                             <div class="col-12 col-md-9">
-                                <select class="custom-select @error('work_id') is-invalid @enderror" name="work_id" id="work_id">
+                                <select data-live-search="true" class="form-control @error('work_id') is-invalid @enderror" name="work_id" id="work_id">
                                     <option selected>Choose...</option>
                                     @foreach($works as $work)
                                         <option value="{{ $work->id }}">{{ $work->name }}</option>
@@ -54,7 +54,7 @@
                         <div class="form-group row">
                             <label class="col-12 col-md-3 col-form-label text-md-right" for="location_id">{{ __('Location') }}</label>
                             <div class="col-12 col-md-9">
-                                <select class="custom-select @error('location_id') is-invalid @enderror" name="location_id" id="location_id">
+                                <select data-live-search="true" class="form-control @error('location_id') is-invalid @enderror" name="location_id" id="location_id">
                                     <option selected>Choose...</option>
                                     @foreach($locations as $location)
                                         <option value="{{ $location->id }}">{{ $location->city }}</option>
@@ -69,7 +69,7 @@
                         <div class="form-group row">
                             <label class="col-12 col-md-3 col-form-label text-md-right" for="state_id">{{ __('State') }}</label>
                             <div class="col-12 col-md-9">
-                                <select class="custom-select @error('state_id') is-invalid @enderror" name="state_id" id="state_id">
+                                <select data-live-search="true" class="form-control @error('state_id') is-invalid @enderror" name="state_id" id="state_id">
                                     <option selected>Choose...</option>
                                     @foreach($states as $state)
                                         <option value="{{ $state->id }}">{{ $state->name }}</option>

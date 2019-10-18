@@ -10,6 +10,7 @@ require('./typeahead.bundle.min');
 require('./bloodhound.min');
 require('./bootstrap-tagsinput.min');
 require('select2');
+require('../../node_modules/bootstrap-select/dist/js/bootstrap-select.min');
 
 var notifications = [];
 
@@ -40,6 +41,10 @@ $(document).ready(function() {
     $('#specializations').select2({
         width: '100%'
     });
+
+    $('#work_id').selectpicker();
+    $('#location_id').selectpicker();
+    $('#state_id').selectpicker();
 });
 
 function addNotifications(newNotifications, target) {

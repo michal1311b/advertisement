@@ -24,11 +24,12 @@
         "vue-template-compiler": "^2.6.10"
     },
     "dependencies": {
+        "bootstrap-select": "^1.13.12",
         "express": "^4.17.1",
         "inputmask": "^4.0.9",
         "ioredis": "^4.14.1",
+        "select2": "^4.0.11",
         "socket.io": "^2.3.0",
-        "socket.io-client": "^2.3.0",
-        "select2": "^4.0.11"
+        "socket.io-client": "^2.3.0"
     }
 }
