@@ -9,6 +9,7 @@ require('./tagsinput');
 require('./typeahead.bundle.min');
 require('./bloodhound.min');
 require('./bootstrap-tagsinput.min');
+require('select2');
 
 var notifications = [];
 
@@ -25,6 +26,10 @@ $(document).ready(function() {
             addNotifications(data, "#notifications");
         });
     }
+
+    $('#specializations').select2({
+        width: '100%'
+    });
 });
 
 function addNotifications(newNotifications, target) {
