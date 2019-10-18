@@ -119,8 +119,26 @@ class RegisterController extends Controller
                 'user_id' => $user->id
             ]);
         } else {
+            $this->validator($request->all())->validate();
+
+            event(new Registered($user = User::create([
+                'name' => $request->name,
+                'email' => $request->email,
+                'password' => Hash::make($request->password),
+                'avatar' => '/images/chicken-at-facebook.jpg'
+            ])));
+
             $profile = Profile::create([
-                'user_id' => $user->id
+                'user_id' => $user->id,
+                'street' => $request->street,
+                'post_code' => $request->post_code,
+                'city' => $request->city,
+                'last_name' => $request->last_name,
+                'company_name' => $request->company_name,
+                'company_street' => $request->company_street,
+                'company_post_code' => $request->company_post_code,
+                'company_city' => $request->company_city,
+                'company_nip' => $request->company_nip
             ]);
         }
 
