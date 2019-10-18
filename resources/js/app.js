@@ -25,6 +25,12 @@ $(document).ready(function() {
             addNotifications(data, "#notifications");
         });
     }
+
+    var Inputmask = require('inputmask');
+
+    Inputmask("99-99-9999", {
+        "clearIncomplete": true
+    }).mask($('#birthday'));
 });
 
 function addNotifications(newNotifications, target) {
@@ -89,7 +95,6 @@ function makeNotificationText(notification) {
 }
 
 require('./questionnaire');
-
 
 window.Vue = require('vue');
 
