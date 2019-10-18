@@ -113,6 +113,8 @@ class RegisterController extends Controller
                 'birthday' => $request->birthday
             ]);
 
+            $user->specializations()->attach($request->get('specializations'));
+
             $profile = Profile::create([
                 'user_id' => $user->id
             ]);
