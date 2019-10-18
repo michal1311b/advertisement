@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddSlugToTagTable extends Migration
+class CreateTagsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,13 @@ class AddSlugToTagTable extends Migration
      */
     public function up()
     {
-        Schema::table('tags', function (Blueprint $table) {
+        Schema::create('tags', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->bigInteger('advertisement_id')->unsigned();
+            $table->foreign('advertisement_id')->references('id')->on('advertisements');
+            $table->string('name');
             $table->text('slug')->nullable();
+            $table->timestamps();
         });
     }
 
@@ -25,8 +30,6 @@ class AddSlugToTagTable extends Migration
      */
     public function down()
     {
-        Schema::table('tags', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('tags');
     }
 }
