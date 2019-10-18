@@ -32,6 +32,10 @@ $(document).ready(function() {
     Inputmask("99-99-9999", {
         "clearIncomplete": true
     }).mask($('#birthday'));
+
+    Inputmask("99-999", {
+        "clearIncomplete": true
+    }).mask($('#post_code'));
     
     $('#specializations').select2({
         width: '100%'
