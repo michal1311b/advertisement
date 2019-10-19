@@ -143,6 +143,32 @@
                         </div>
 
                         <div class="form-group row">
+                            <label for="min_salary" class="col-12 col-md-3 col-form-label text-md-right">{{ __('Min salary per hour') }}</label>
+
+                            <div class="col-12 col-md-9">
+                                <input min="0"
+                                 id="min_salary" type="number" 
+                                 class="form-control @error('min_salary') is-invalid @enderror" name="min_salary" value="{{ old('min_salary') }}" autocomplete="min_salary" autofocus>
+                                @error('min_salary')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="max_salary" class="col-12 col-md-3 col-form-label text-md-right">{{ __('Max salary per hour') }}</label>
+
+                            <div class="col-12 col-md-9">
+                                <input min="0"
+                                 id="max_salary" type="number" 
+                                 class="form-control @error('max_salary') is-invalid @enderror" name="max_salary" value="{{ old('max_salary') }}" autocomplete="max_salary" autofocus>
+                                @error('max_salary')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
                             <div class="col-sm-3"></div>
                             <div class="col-sm-9">
                                 <div class="form-check">
