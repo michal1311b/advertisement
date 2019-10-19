@@ -127,7 +127,7 @@
                             <label for="postCode" class="col-12 col-md-3 col-form-label text-md-right">{{ __('Post code') }}</label>
 
                             <div class="col-12 col-md-9">
-                                <input id="postCode" type="postCode" class="form-control @error('postCode') is-invalid @enderror" name="postCode" value="{{ $advertisement->postCode }}" autocomplete="postCode" autofocus>
+                                <input id="post_code" type="text" class="form-control @error('postCode') is-invalid @enderror" name="postCode" value="{{ $advertisement->postCode }}" autocomplete="postCode" autofocus>
                                 @error('postCode')
                                     <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
