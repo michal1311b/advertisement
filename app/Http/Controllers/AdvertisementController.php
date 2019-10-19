@@ -18,8 +18,9 @@ class AdvertisementController extends Controller
     public function index()
     {
         $advertisements = Advertisement::with(['state', 'galleries'])->paginate(5);
+        $locations = Location::all();
         
-        return view('advertisement.index', compact('advertisements'));
+        return view('advertisement.index', compact(['advertisements', 'locations']));
     }
     public function create(Request $request)
     {
@@ -115,12 +116,20 @@ class AdvertisementController extends Controller
 
     public function search(Request $request)
     {
-        $input = $request->all();
-        $advertisements = Advertisement::
-        where('title', 'LIKE', '%' . $input['q'] . '%')
-        ->orWhere('description', 'LIKE', '%' . $input['q'] . '%')
-        ->paginate(5);
+        if($request->get('q') !== null) {
+            $advertisements = Advertisement::query()
+            ->orWhere('title', 'LIKE', '%' . $request->get('q') . '%')
+            ->orWhere('description', 'LIKE', '%' . $request->get('q') . '%')
+            ->paginate(5);
+        } else {
+            $advertisements = Advertisement::query()
+            ->orWhere('location_id', (int)$request->get('location_id'))
+            ->paginate(5);
+        }
+      
 
-        return view('advertisement.index', compact('advertisements'));
+        $locations = Location::all();
+
+        return view('advertisement.index', compact(['advertisements', 'locations']));
     }
 }
