@@ -111,7 +111,10 @@ class RegisterController extends Controller
                 'name' => $request->name,
                 'email' => $request->email,
                 'password' => Hash::make($request->password),
-                'avatar' => '/images/chicken-at-facebook.jpg'
+                'avatar' => '/images/chicken-at-facebook.jpg',
+                'term1' => $request->term1,
+                'term2' => $request->term2,
+                'term3' => $request->term3
             ])));
 
             $doctor = Doctor::create([
@@ -132,7 +135,10 @@ class RegisterController extends Controller
                 'name' => $request->name,
                 'email' => $request->email,
                 'password' => Hash::make($request->password),
-                'avatar' => '/images/chicken-at-facebook.jpg'
+                'avatar' => '/images/chicken-at-facebook.jpg',
+                'term1' => $request->term1,
+                'term2' => $request->term2,
+                'term3' => $request->term3
             ])));
 
             $profile = Profile::create([
@@ -152,6 +158,8 @@ class RegisterController extends Controller
         $user
             ->roles()
             ->attach(Role::where('name', $request->type)->first());
+
+        session()->flash('success', 'You account was created. Please verify your email.');
 
         return $this->registered($request, $user)
             ?: redirect($this->redirectPath());
