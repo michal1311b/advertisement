@@ -39,6 +39,8 @@ class AdvertisementSeeder extends Seeder
             $advertisement->street = $faker->streetAddress;
             $advertisement->email = $faker->email;
             $advertisement->phone = $faker->phoneNumber;
+            $advertisement->min_salary = 2500;
+            $advertisement->max_salary = 5000;
             $advertisement->term1 = 1;
             $advertisement->term2 = 1;
             $advertisement->term3 = 1;

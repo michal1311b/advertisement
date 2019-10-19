@@ -21,6 +21,8 @@ class CreateAdvertisementTable extends Migration
             $table->string('street');
             $table->string('email');
             $table->string('phone');
+            $table->integer('min_salary');
+            $table->integer('max_salary');
             $table->boolean('term1')->defualt(false);
             $table->boolean('term2')->defualt(false);
             $table->boolean('term3')->defualt(false);

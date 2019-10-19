@@ -19,6 +19,8 @@ class Advertisement extends Model
         'street',
         'email',
         'phone',
+        'min_salary',
+        'max_salary',
         'term1',
         'term2',
         'term3',
@@ -79,6 +81,8 @@ class Advertisement extends Model
         $entry->street = $attributes['street'];
         $entry->phone = $attributes['phone'];
         $entry->email = $attributes['email'];
+        $entry->min_salary = $attributes['min_salary'];
+        $entry->max_salary = $attributes['max_salary'];
         $entry->term1 = $attributes['term1'];
         $entry->term2 = $attributes['term2'];
         $entry->term3 = $attributes['term3'];
