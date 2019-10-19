@@ -83,7 +83,7 @@ class AdvertisementController extends Controller
         return back();
     }
 
-    public function update(Request $request, $id)
+    public function update(StoreRequest $request, $id)
     {
         $advertisement = Advertisement::findOrFail($id);
         $advertisement->update($request->all());
