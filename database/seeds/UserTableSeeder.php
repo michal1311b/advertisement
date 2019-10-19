@@ -20,6 +20,9 @@ class UserTableSeeder extends Seeder
         $employee->email = 'employee@example.com';
         $employee->password = bcrypt('secret');
         $employee->email_verified_at = '2019-08-05 23:00:00';
+        $employee->term1 = 1;
+        $employee->term2 = 1;
+        $employee->term3 = 1;
         $employee->save();
         $employee->roles()->attach($role_employee);
         $manager = new User();
@@ -27,6 +30,9 @@ class UserTableSeeder extends Seeder
         $manager->email = 'manager@example.com';
         $manager->password = bcrypt('secret');
         $manager->email_verified_at = '2019-08-05 23:00:00';
+        $manager->term1 = 1;
+        $manager->term2 = 1;
+        $manager->term3 = 1;
         $manager->save();
         $manager->roles()->attach($role_manager);
     }
