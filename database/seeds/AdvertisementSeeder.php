@@ -25,7 +25,7 @@ class AdvertisementSeeder extends Seeder
             $user1 = User::find(rand(1,2));
             $location = Location::find(rand(1,10));
             $state = State::find(rand(1,10));
-            $work = Work::find(rand(1,10));
+            $work = Work::find(rand(1,3));
 
             $title = $faker->name;
             $advertisement = new Advertisement();
@@ -44,6 +44,7 @@ class AdvertisementSeeder extends Seeder
             $advertisement->term1 = 1;
             $advertisement->term2 = 1;
             $advertisement->term3 = 1;
+            $advertisement->negotiable = 0;
             $advertisement->slug = str_slug($title, '-');
 
             $advertisement->save();

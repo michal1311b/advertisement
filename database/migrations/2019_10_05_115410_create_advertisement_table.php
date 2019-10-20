@@ -26,6 +26,7 @@ class CreateAdvertisementTable extends Migration
             $table->boolean('term1')->defualt(false);
             $table->boolean('term2')->defualt(false);
             $table->boolean('term3')->defualt(false);
+            $table->boolean('negotiable')->defualt(false);
             $table->text('slug');
             $table->bigInteger('work_id')->unsigned();
             $table->bigInteger('state_id')->unsigned();

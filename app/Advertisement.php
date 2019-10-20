@@ -24,6 +24,7 @@ class Advertisement extends Model
         'term1',
         'term2',
         'term3',
+        'negotiable',
         'slug'
     ];
 
@@ -86,6 +87,7 @@ class Advertisement extends Model
         $entry->term1 = $attributes['term1'];
         $entry->term2 = $attributes['term2'];
         $entry->term3 = $attributes['term3'];
+        $entry->negotiable = $attributes['negotiable'];
         $entry->slug = $attributes['slug'];
         $entry->save();
 
