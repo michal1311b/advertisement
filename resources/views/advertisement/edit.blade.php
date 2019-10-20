@@ -200,6 +200,21 @@
                             </div>
                         </div>
 
+                        <div class="form-group row">
+                            <div class="col-sm-3"></div>
+                            <div class="col-sm-9">
+                                <div class="form-check">
+                                    <input name="negotiable" type="hidden" value="0">
+                                    <input class="form-check-input" 
+                                    type="checkbox" name="negotiable" id="negotiable" value="1"
+                                    {{ ($advertisement->negotiable  == 1) ? 'checked' : '' }}>
+                                    <label class="form-check-label" for="negotiable">
+                                     {{ __('Salary negotiable?') }}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="form-group row mb-0">
                             <div class="col-md-8 offset-md-4">
                                 <button type="submit" class="btn btn-success">

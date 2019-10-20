@@ -172,6 +172,21 @@
                             <div class="col-sm-3"></div>
                             <div class="col-sm-9">
                                 <div class="form-check">
+                                    <input name="negotiable" type="hidden" value="0">
+                                    <input class="form-check-input" 
+                                    type="checkbox" name="negotiable" id="negotiable" value="1"
+                                    {{ old('negotiable', 0)  == 1 ? 'checked' : '' }}>
+                                    <label class="form-check-label" for="negotiable">
+                                     {{ __('Salary negotiable?') }}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <div class="col-sm-3"></div>
+                            <div class="col-sm-9">
+                                <div class="form-check">
                                     <input name="term1" type="hidden" value="0">
                                     <input class="form-check-input" 
                                     type="checkbox" name="term1" id="term1" value="1"
