@@ -126,7 +126,6 @@ class AdvertisementController extends Controller
             ->orWhere('location_id', (int)$request->get('location_id'))
             ->paginate(5);
         }
-      
 
         $locations = Location::all();
 
