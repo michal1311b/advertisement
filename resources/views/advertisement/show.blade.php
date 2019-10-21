@@ -65,7 +65,7 @@
                             <div class="col-12 pb-2">
                                 Tags:
                                 @foreach($advertisement->tags as $tag)
-                                    <a href="{{ route('advertisementTag', ['tagSlug' => $tag->name]) }}">
+                                    <a href="{{ route('advertisementTag', ['tagSlug' => $tag->slug]) }}">
                                         <span class="badge badge-pill badge-info">
                                             {{ $tag->name }}
                                         </span>
