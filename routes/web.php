@@ -77,3 +77,7 @@ Route::group(array('prefix' => 'language'), function () {
     Route::patch('/{lang_key}/update', 'LanguageController@update')->name('language.update');
     Route::delete('/{lang_key}/delete', 'LanguageController@destroy')->name('language.delete');
 });
+
+
+Route::resource('posts', 'PostController');
+Route::resource('categories', 'CategoryController');
