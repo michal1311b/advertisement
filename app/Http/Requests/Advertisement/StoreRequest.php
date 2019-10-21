@@ -26,9 +26,9 @@ class StoreRequest extends FormRequest
         return [
             'title' => 'required|min:3|max:190',
             'description' => 'required|min:3',
-            'work_id' => 'required',
-            'state_id' => 'required',
-            'location_id' => 'required',
+            'work_id' => 'required|exists:works,id',
+            'state_id' => 'required|exists:states,id',
+            'location_id' => 'required|exists:locations,id',
             'min_salary' => 'required|numeric',
             'max_salary' => 'required|numeric|greater_than_field:min_salary',
             'postCode' => 'required|min:3|max:190',
