@@ -9,7 +9,7 @@ use App\Location;
 class TagController extends Controller
 {
     public function show($slug, $page = 1) {
-        $advertisements = Tag::with('advertisement')->where('name', $slug)->paginate(5);
+        $advertisements = Tag::with('advertisement')->where('slug', $slug)->paginate(5);
 
         $locations = Location::all();
         
