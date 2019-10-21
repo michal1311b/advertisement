@@ -42,7 +42,7 @@
                                 <a href="{{ route('categories.edit' , $category) }}" class="btn btn-success">Edit</a>
                             </td>
                             <td>
-                                <button class="btn btn-danger btn-sm" data-toggle="modal"
+                                <button class="btn btn-danger" data-toggle="modal"
                                     data-target="#modalremove{{$category->id}}">Delete</i>
                                 </button>
 
