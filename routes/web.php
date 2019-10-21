@@ -79,5 +79,7 @@ Route::group(array('prefix' => 'language'), function () {
 });
 
 
-Route::resource('posts', 'PostController');
-Route::resource('categories', 'CategoryController');
+Route::group(['prefix' => 'admin'], function () {
+    Route::resource('posts', 'PostController')->middleware(['auth', 'admin', 'verified']);
+    Route::resource('categories', 'CategoryController')->middleware(['auth', 'admin', 'verified']);
+});
