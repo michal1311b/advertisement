@@ -1,5 +1,15 @@
 @extends('layouts.app')
 
+@section('breadcrumbs')
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            {!! Breadcrumbs::render('categories.create') !!}
+        </div>
+    </div>	
+</div>
+@endsection
+
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -14,7 +24,7 @@
                 <div class="card-header">{{ __('Create cateogry') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('categories.store') }}" enctype="multipart/form-data">
+                    <form method="POST" action="{{ route('categories.store') }}">
                         @csrf
 
                         <div class="form-group row">
