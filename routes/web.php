@@ -27,7 +27,7 @@ Route::get('{driver}/callback', 'Auth\LoginController@handleProviderCallback')
     ->name('login.callback')
     ->where('driver', implode('|', config('auth.socialite.drivers')));
 
-Route::group(array('prefix' => 'advertisement'), function () {
+Route::group(array('prefix' => 'offer'), function () {
     Route::get('/create', 'AdvertisementController@create')->name('create-advertisement');
     Route::post('/create', 'AdvertisementController@store')->name('store-advertisement')->middleware(['auth', 'verified']);
     Route::get('/show/{slug}', 'AdvertisementController@show')->name('show-advertisement');
@@ -55,8 +55,8 @@ Route::group(array('prefix' => 'advertisement'), function () {
 Route::group(array('prefix' => 'user'), function () {
     Route::get('/{id}/edit', 'UserController@edit')->name('edit-user')->middleware(['auth', 'verified']);
     Route::put('/update/{id}', 'UserController@update')->name('update-user');
-    Route::get('/advertisements', 'UserController@getUserAdvertisements')->name('user-advertisement-list')->middleware(['auth', 'verified']);
-    Route::get('/advertisement/show/{slug}', 'UserController@showUserAdvertisement')->name('user-advertisement-show')->middleware(['auth', 'verified']);
+    Route::get('/offers', 'UserController@getUserAdvertisements')->name('user-advertisement-list')->middleware(['auth', 'verified']);
+    Route::get('/offer/show/{slug}', 'UserController@showUserAdvertisement')->name('user-advertisement-show')->middleware(['auth', 'verified']);
     Route::get('/contacts', 'ReplyController@index')->name('user-contact')->middleware(['auth', 'verified']);
     Route::get('/contacts/{id}/reply', 'ReplyController@showReply')->name('user-reply')->middleware(['auth', 'verified']);
     Route::post('/send-reply', 'ReplyController@sendReply')->name('send-reply')->middleware(['auth', 'verified']);
