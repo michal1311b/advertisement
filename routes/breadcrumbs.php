@@ -50,8 +50,20 @@ Breadcrumbs::for('categories', function ($trail) {
     $trail->push(__('List of Categories'), route('categories.index'));
 });
 
+Breadcrumbs::for('categories.create', function ($trail) {
+    $trail->parent('home');
+    $trail->push(__('Categories'), route('categories.index'));
+    $trail->push(__('List of Categories'), route('categories.create'));
+});
+
 Breadcrumbs::for('categories.edit', function ($trail, $category) {
     $trail->parent('home');
     $trail->push(__('Categories'), route('categories.index'));
     $trail->push(__('Edit: ') . $category->name, route('categories.edit', $category));
+});
+
+Breadcrumbs::for('posts.create', function ($trail) {
+    $trail->parent('home');
+    $trail->push(__('Posts'), route('posts.index'));
+    $trail->push(__('List of Posts'), route('posts.create'));
 });
