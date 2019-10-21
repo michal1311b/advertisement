@@ -46,9 +46,16 @@
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="{{ route('edit-user', auth()->user()->id) }}">User profile</a>
                             <a class="dropdown-item" href="{{ route('user-contact') }}">User message box</a>
-                            <a class="dropdown-item" href="{{ route('user-advertisement-list') }}">User advertisement list</a>
-                            <a class="dropdown-item" href="{{ route('create-advertisement') }}">Create advertisement</a>
-                            <a class="dropdown-item" href="{{ route('advertisement-list') }}">Advertisements list</a>
+                            @if(auth()->user()->hasRole('admin') || auth()->user()->hasRole('company'))
+                                <a class="dropdown-item" href="{{ route('user-advertisement-list') }}">User advertisement list</a>
+                                <a class="dropdown-item" href="{{ route('create-advertisement') }}">Create advertisement</a>
+                                <a class="dropdown-item" href="{{ route('advertisement-list') }}">Advertisements list</a>
+                            @endif
+
+                            @if(auth()->user()->hasRole('admin'))
+                                <a class="dropdown-item" href="{{ route('categories.create') }}">Create category</a>
+                                <a class="dropdown-item" href="{{ route('categories.index') }}">Categories list</a>
+                            @endif
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
                                 document.getElementById('logout-form').submit();">
