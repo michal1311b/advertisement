@@ -45,6 +45,7 @@ $(document).ready(function() {
     $('#work_id').selectpicker();
     $('#location_id').selectpicker();
     $('#state_id').selectpicker();
+    $('#category_id').selectpicker();
 });
 
 function addNotifications(newNotifications, target) {
