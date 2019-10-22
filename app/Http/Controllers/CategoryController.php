@@ -40,7 +40,7 @@ class CategoryController extends Controller
     {
         $category = Category::create($request->all());
 
-        session()->flash('success','Category created successfully!');
+        session()->flash('success', __('Category created successfully!'));
 
         return view('admin.categories.index',[
             'categories' => Category::paginate()
@@ -82,7 +82,7 @@ class CategoryController extends Controller
     {
         $category->update($request->all());
 
-        session()->flash('success','Category updated successfully!');
+        session()->flash('success', __('Category updated successfully!'));
 
         return back();
     }
