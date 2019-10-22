@@ -83,3 +83,12 @@ Route::group(['prefix' => 'admin'], function () {
     Route::resource('posts', 'PostController')->middleware(['auth', 'admin', 'verified']);
     Route::resource('categories', 'CategoryController')->middleware(['auth', 'admin', 'verified']);
 });
+
+Route::group(array('prefix' => 'blog'), function () {
+    Route::get('/list', 'BlogController@index')->name('blog.index');
+    Route::get('/show/{slug}', 'BlogController@show')->name('blog.show');
+    Route::get('/tag/{tagSlug}/{page?}', [
+        'as' => 'postTag',
+        'uses' => 'TagController@showPost'
+    ]);
+});

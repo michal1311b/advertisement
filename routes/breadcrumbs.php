@@ -78,3 +78,20 @@ Breadcrumbs::for('posts.edit', function ($trail, $post) {
     $trail->push(__('Posts'), route('posts.index'));
     $trail->push(__('Edit: ') . $post->title, route('posts.edit', $post));
 });
+
+Breadcrumbs::for('posts.list', function ($trail) {
+    $trail->parent('home');
+    $trail->push(__('List of Posts'), route('blog.index'));
+});
+
+Breadcrumbs::for('blog-post', function ($trail, $post) {
+    $trail->parent('home');
+    $trail->push(__('List of Posts'), route('blog.index'));
+    $trail->push($post->title, route('blog.show', $post));
+});
+
+Breadcrumbs::for('tag.list', function ($trail, $tag) {
+    $trail->parent('home');
+    $trail->push(__('List of Posts'), route('blog.index'));
+    $trail->push($tag, route('postTag', $tag));
+});
