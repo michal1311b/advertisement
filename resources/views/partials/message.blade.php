@@ -1,20 +1,20 @@
-@if(Session::has('message.success'))
+@if(Session::has('success'))
     <div class="alert alert-success">
-        {{ Session::get('message.success') }}
+        {{ Session::get('success') }}
     </div>
 @endif
-@if(Session::has('message.error'))
+@if(Session::has('error'))
     <div class="alert alert-danger">
-        {{ Session::get('message.error') }}
+        {{ Session::get('error') }}
     </div>
 @endif
-@if(Session::has('message.warning'))
+@if(Session::has('warning'))
     <div class="alert alert-warning">
-        {{ Session::get('message.warning') }}
+        {{ Session::get('warning') }}
     </div>
 @endif
-@if(Session::has('message.info'))
+@if(Session::has('info'))
     <div class="alert alert-info">
-        {{ Session::get('message.info') }}
+        {{ Session::get('info') }}
     </div>
 @endif
