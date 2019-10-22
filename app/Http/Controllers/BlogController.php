@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Comment;
 use Illuminate\Http\Request;
 use App\Post;
 
@@ -20,10 +21,13 @@ class BlogController extends Controller
         ->with([
             'category',
             'user',
-            'pins'
+            'pins',
+            'comments'
         ])
         ->firstOrFail();
+
+        $comments = Comment::where('post_id', $post->id)->with('author')->paginate(5);
         
-        return view('blog.show', compact('post'));
+        return view('blog.show', compact('post', 'comments'));
     }
 }

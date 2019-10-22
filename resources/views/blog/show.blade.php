@@ -61,9 +61,38 @@
                 </div>
             </div>
         </div>
-        {{-- <div class="col-md-12">
-            @include('partials.contact')
-        </div> --}}
+        <div class="col-md-12">
+            @if(auth()->user())
+                @include('partials.comment')
+            @else
+                <div class="alert alert-danger">
+                    <a href="{{ route('login')}}" class="text-white">{{ __('Sign in to comment posts') }}</a>
+                </div>
+            @endif
+        </div>
+        <div class="col-md-12">
+            @if($comments)
+                @foreach($comments as $comment)
+                    <div class="media my-3 row">
+                        <div class="col-12 col-md-3">
+                            <img src="{{ $comment->author->avatar }}" class="img-fluid align-self-start mr-3" alt="{{ $comment->author->avatar }}">
+                        </div>
+                        
+                        <div class="media-body col-12 col-md-9">
+                          <h5 class="mt-0">{{ $comment->author->name }}</h5>
+                          <h6 class="mt-0">{{ __('Created at:') }} {{ $comment->created_at }}</h5>
+                          {!! $comment->content !!}
+                        </div>
+                    </div>
+                @endforeach
+
+                {{ $comments->links() }}
+            @else
+                <div class="alert alert-danger">
+                    <a href="{{ route('login')}}" class="text-white">{{ __('There\'s no comments') }}</a>
+                </div>
+            @endif
+        </div>
     </div>
 </div>
 @endsection
