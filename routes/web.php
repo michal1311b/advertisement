@@ -91,4 +91,6 @@ Route::group(array('prefix' => 'blog'), function () {
         'as' => 'postTag',
         'uses' => 'TagController@showPost'
     ]);
+
+    Route::post('/comment-post', 'CommentController@store')->name('comment-post');
 });
