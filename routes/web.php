@@ -28,9 +28,9 @@ Route::get('{driver}/callback', 'Auth\LoginController@handleProviderCallback')
     ->where('driver', implode('|', config('auth.socialite.drivers')));
 
 Route::group(array('prefix' => 'offer'), function () {
-    Route::get('/create', 'AdvertisementController@create')->name('create-advertisement');
+    Route::get('/create', 'AdvertisementController@create')->name('create-advertisement')->middleware(['auth', 'verified']);
     Route::post('/create', 'AdvertisementController@store')->name('store-advertisement')->middleware(['auth', 'verified']);
-    Route::get('/show/{slug}', 'AdvertisementController@show')->name('show-advertisement');
+    Route::get('/show/{slug}', 'AdvertisementController@show')->name('show-advertisement')->middleware(['auth', 'verified']);
     Route::get('/{id}/edit', 'AdvertisementController@edit')->name('edit-advertisement')->middleware(['auth', 'verified']);
     Route::get('/{id}/delete', 'AdvertisementController@delete')->name('delete-advertisement');
     Route::get('/list', 'AdvertisementController@index')->name('advertisement-list');
