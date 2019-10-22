@@ -19,13 +19,14 @@
 .no-decoration
 {
     text-decoration: none;
-    display: block;
+    display: inline-block;
     width: 100%;
     max-height: 100%;
+    color: black;
 }
 
 a:hover div{
-    display: block;
+    display: inline-block;
     text-decoration: none !important;
 }
 
