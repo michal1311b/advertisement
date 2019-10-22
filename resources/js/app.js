@@ -23,7 +23,7 @@ const NOTIFICATION_TYPES = {
 $(document).ready(function() {
     // check if there's a logged in user
     if(Laravel.userId) {
-        $.get('/advertisement/notifications', function (data) {
+        $.get('/offer/notifications', function (data) {
             addNotifications(data, "#notifications");
         });
     }
@@ -74,20 +74,20 @@ function showNotifications(notifications, target) {
 function makeNotification(notification) {
     var to = routeNotification(notification);
     var notificationText = makeNotificationText(notification);
-    return '<li><a href="' + to + '">' + notificationText + '</a></li>';
+    return '<li class="dropdown-header"><a href="' + to + '">' + notificationText + '</a></li>';
 }
 
 // get the notification route based on it's type
 function routeNotification(notification) {
-    var to = `?read=${notification.id}`;
+    var read = `?read=${notification.id}`;
     if(notification.type === NOTIFICATION_TYPES.follow) {
-        to = 'advertisement/users' + to;
+        to = 'offer/users' + read;
     } else if(notification.type === NOTIFICATION_TYPES.newPost) {
         const postSlug = notification.data.slug;
-        to = `advertisement/show/${postSlug}` + to;
+        to = `offer/show/${postSlug}` + read;
     } else if(notification.type === NOTIFICATION_TYPES.newMessage) {
         const contactId = notification.data.contact_id;
-        to = `user/contacts/${contactId}/reply` + to;
+        to = `user/contacts/${contactId}/reply` + read;
     }
 
     return '/' + to;
@@ -98,13 +98,13 @@ function makeNotificationText(notification) {
     var text = '';
     if(notification.type === NOTIFICATION_TYPES.follow) {
         const name = notification.data.follower_name;
-        text += `<strong>${name}</strong> followed you`;
+        text += `<li class="dropdown-header"><strong>${name}</strong> followed you</li>`;
     } else if(notification.type === NOTIFICATION_TYPES.newPost) {
         const name = notification.data.following_name;
-        text += `<strong>${name}</strong> published a post`;
+        text += `<li class="dropdown-header"><strong>${name}</strong> published a post</li>`;
     } else if(notification.type === NOTIFICATION_TYPES.newMessage) {
         const email = notification.data.email;
-        text += `<strong>${email}</strong> send You a message`;
+        text += `<li class="dropdown-header"><strong>${email}</strong> send You a message</li>`;
     }
     return text;
 }
