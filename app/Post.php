@@ -13,6 +13,7 @@ class Post extends Model
         'title',
         'body',
         'cover',
+        'slug',
         'is_published',
         'user_id',
         'category_id'
@@ -26,5 +27,10 @@ class Post extends Model
     public function pins()
     {
         return $this->hasMany(Pin::class);
+    }
+
+    public static function getUniqueSlug($title)
+    {
+        return str_slug($title, '-');
     }
 }

@@ -17,6 +17,7 @@ class CreatePostsTable extends Migration
             $table->bigIncrements('id');
             $table->string('title');
             $table->text('body');
+            $table->text('slug');
             $table->string('cover')->nullable()->default('/images/chicken-at-facebook.jpg');
             $table->boolean('is_published')->default(false);
             $table->bigInteger('user_id')->unsigned();
