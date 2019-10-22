@@ -34,6 +34,14 @@ class Post extends Model
         return $this->hasMany(Pin::class);
     }
 
+    /**
+     * Return the post's comments
+     */
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
+
     public static function getUniqueSlug($title)
     {
         return str_slug($title, '-');
