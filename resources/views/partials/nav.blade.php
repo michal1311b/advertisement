@@ -44,17 +44,19 @@
                         </a>
     
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{ route('edit-user', auth()->user()->id) }}">User profile</a>
-                            <a class="dropdown-item" href="{{ route('user-contact') }}">User message box</a>
+                            <a class="dropdown-item" href="{{ route('edit-user', auth()->user()->id) }}">{{ __('User profile') }}</a>
+                            <a class="dropdown-item" href="{{ route('user-contact') }}">{{ __('User message box') }}</a>
                             @if(auth()->user()->hasRole('admin') || auth()->user()->hasRole('company'))
-                                <a class="dropdown-item" href="{{ route('user-advertisement-list') }}">User advertisement list</a>
-                                <a class="dropdown-item" href="{{ route('create-advertisement') }}">Create advertisement</a>
-                                <a class="dropdown-item" href="{{ route('advertisement-list') }}">Advertisements list</a>
+                                <a class="dropdown-item" href="{{ route('user-advertisement-list') }}">{{ __('User advertisement list') }}</a>
+                                <a class="dropdown-item" href="{{ route('create-advertisement') }}">{{ __('Create advertisement') }}</a>
+                                <a class="dropdown-item" href="{{ route('advertisement-list') }}">{{ __('Advertisements list') }}</a>
                             @endif
 
                             @if(auth()->user()->hasRole('admin'))
-                                <a class="dropdown-item" href="{{ route('categories.create') }}">Create category</a>
-                                <a class="dropdown-item" href="{{ route('categories.index') }}">Categories list</a>
+                                <a class="dropdown-item" href="{{ route('categories.create') }}">{{ __('Create category') }}</a>
+                                <a class="dropdown-item" href="{{ route('categories.index') }}">{{ __('Categories list') }}</a>
+                                <a class="dropdown-item" href="{{ route('posts.create') }}">{{ __('Create post') }}</a>
+                                <a class="dropdown-item" href="{{ route('posts.index') }}">{{ __('Posts list') }}</a>
                             @endif
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
