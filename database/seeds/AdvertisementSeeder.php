@@ -19,7 +19,9 @@ class AdvertisementSeeder extends Seeder
      */
     public function run()
     {
-        for($i=1; $i<5; $i++) {
+        $counts = [1,2,3,4,5];
+
+        foreach($counts as $count) {
             $faker = Faker\Factory::create();
 
             $user1 = User::find(rand(1,2));
