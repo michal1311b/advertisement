@@ -49,17 +49,7 @@
                                             <h5 class="card-title pt-3">{{ $pin->post->title }}</h5>
                                             <div class="card-text">
                                                 <div class="ellipsis">{!! $pin->post->body !!}</div>
-                                                <p><small class="text-muted">{{ __('Created at:') }} <strong>{{ $pin->post->created_at }}</strong></small></p>      
-                                                @if(Auth::id() === $pin->post->user_id)
-                                                <div class="btn-group btn-group-toggle">
-                                                    <a href="{{ route('posts.edit', $pin->post->id) }}" class="btn btn-info border border-warning mr-2">Edit</a>
-                                                    <form method="get" action="{{ route('posts.destroy', $pin->post->id) }}">
-                                                        {{ method_field('DELETE') }}
-                                                        {{csrf_field()}}
-                                                        <button type="submit" class="btn btn-danger border border-warning">Usuń</button>  
-                                                    </form>
-                                                </div>     
-                                                @endif
+                                                <p><small class="text-muted">{{ __('Created at:') }} <strong>{{ $pin->post->created_at }}</strong></small></p>                     
                                             </div>
                                         </div>
                                     </div>

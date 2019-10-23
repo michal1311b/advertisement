@@ -16,7 +16,7 @@
         @if(count($posts) > 0)
             @foreach($posts as $post)
                 @if($post->is_published === 1)
-                    <div class="col-12">
+                    <div class="col-12 col-md-6">
                         <a href="{{ route('blog.show', $post->slug) }}" class="no-decoration"> 
                             <div class="card mb-3" style="max-width: 640px;">
                                 <div class="card-body">
@@ -28,21 +28,11 @@
                                                 <img src="{{ asset('images/noImage.png') }}" class="card-img" alt="No image">
                                             @endif
                                         </div>
-                                        <div class="col-md-8">
+                                        <div class="col-md-8 pt-3 pt-md-0">
                                             <h5 class="card-title">{{ $post->title }}</h5>
                                             <div class="card-text">
                                                 <div class="ellipsis">{!! $post->body !!}</div>
                                                 <p><small class="text-muted">{{ __('Created at:') }} <strong>{{ $post->created_at }}</strong></small></p>      
-                                                @if(Auth::id() === $post->user_id)
-                                                    <div class="btn-group btn-group-toggle">
-                                                        <a href="{{ route('posts.edit', $post->id) }}" class="btn btn-info border border-warning mr-2">Edit</a>
-                                                        <form method="get" action="{{ route('posts.destroy', $post->id) }}">
-                                                            {{ method_field('DELETE') }}
-                                                            {{csrf_field()}}
-                                                            <button type="submit" class="btn btn-danger border border-warning">Usuń</button>  
-                                                        </form>
-                                                    </div>     
-                                                @endif
                                             </div>
                                         </div>
                                     </div>
