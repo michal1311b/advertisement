@@ -8,7 +8,14 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="google-signin-client_id" content="{{env('GOOGLE_CLIENT_ID')}}.googleusercontent.com">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>@yield('title')</title>
+    <meta content="@yield('description')" name="description"/>
+
+    @if ( $app->environment('production') )
+        <meta name="robots" content="index, follow">
+    @else
+        <meta name="robots" content="noindex, nofollow">
+    @endif
     
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <!-- Fonts -->
@@ -25,6 +32,7 @@
             selector: 'textarea',
             plugins: 'autoresize'
         });
+        var LoggedUser = false;
     </script>
     <script>
         window.Laravel = <?php echo json_encode([
@@ -33,6 +41,7 @@
     </script>
     @if(!auth()->guest())
         <script>
+            var LoggedUser = <?php echo json_encode(auth()->user()); ?>;
             window.Laravel.userId = <?php echo auth()->user()->id; ?>
         </script>
     @endif
