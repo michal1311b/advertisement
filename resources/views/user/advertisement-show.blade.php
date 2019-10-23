@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title')
+    {{ __('User offers list') }}
+@endsection
+
 @section('css')
 <style>
     .carousel-inner img {
@@ -24,7 +28,7 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">Show advertisement: <strong>{{ $advertisement->title }}</strong></div>
+                <div class="card-header"> {{ __('Show advertisement:') }} <strong>{{ $advertisement->title }}</strong></div>
 
                 <div class="card-body">
                     <div class="container-fluid">
@@ -35,7 +39,7 @@
                                 </div>  
                             </div>
                             <div class="col-12 pb-2">
-                                Tags:
+                                {{ __('Tags:') }}
                                 @foreach($advertisement->tags as $tag)
                                     <span class="badge badge-pill badge-info">{{ $tag->name }}</span>
                                 @endforeach
@@ -43,28 +47,28 @@
                             <div class="col-12">
                                 <ul class="list-group">
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        City:
+                                        {{ __('City:') }}
                                         <span class="badge badge-pill">{{ $advertisement->city }}</span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        State:
+                                        {{ __('State:') }}
                                         <span class="badge badge-pill">{{ $advertisement->state->name }}</span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        Created at:
+                                        {{ __('Created at:') }}
                                         <span class="badge badge-pill">{{ $advertisement->created_at }}</span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        Phone:
+                                        {{ __('Phone:') }}
                                         <span class="badge badge-pill">{{ $advertisement->phone }}</span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        Work category:
+                                        {{ __('Work category:') }}
                                         <span class="badge badge-pill">{{ $advertisement->work->name }}</span>
                                     </li>
                                 </ul>
 
-                                <h4><strong>Description:</strong></h4>
+                                <h4><strong>{{ __('Description:') }}</strong></h4>
                                 {!! $advertisement->description !!}
                             </div>
                             <div class="col-12">

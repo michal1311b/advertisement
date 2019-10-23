@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title')
+    {{ __('Post list') }}
+@endsection
+
 @section('css')
 <style></style>
 @endsection

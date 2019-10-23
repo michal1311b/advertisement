@@ -9,14 +9,22 @@
 </style>
 @endsection
 
+@section('title')
+    {{ $advertisement->title }}
+@endsection
+
+@section('description')
+    {{ $advertisement->location->city }}, {{ $advertisement->user->profile->company_name }} {{ $advertisement->user->profile->company_street }}, {{ $advertisement->user->profile->phone }}: {{ __('salary') }}: {{ $advertisement->min_salary }} - {{ $advertisement->max_salary }}
+@endsection
+
 @section('breadcrumbs')
-<div class="container">
-    <div class="row">
-        <div class="col-xs-12">
-            {!! Breadcrumbs::render('advertisement-article', $advertisement) !!}
-        </div>
-    </div>	
-</div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                {!! Breadcrumbs::render('advertisement-article', $advertisement) !!}
+            </div>
+        </div>	
+    </div>
 @endsection
 
 @section('content')
@@ -32,7 +40,7 @@
                             <div class="col-12 pb-2">
                                 <div class="btn-toolbar justify-content-between" role="toolbar" aria-label="Toolbar with button groups">
                                     <div class="btn-group" role="group" aria-label="First group">
-                                        <strong>Posted by:</strong> {{ $advertisement->user->name }}
+                                        <strong>{{ __('Posted by:') }}</strong> {{ $advertisement->user->profile->company_name }}
                                     </div>
                                     <div class="input-group">
                                         @if(Auth::check() && (Auth::user()->id !== $advertisement->user->id))
@@ -75,23 +83,27 @@
                             <div class="col-12">
                                 <ul class="list-group">
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        City:
+                                        {{ __('Logo:') }}
+                                        <span class="badge badge-pill"><img class="user-avatar--smaller" src="{{ $advertisement->user->avatar }}" /></span>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        {{ __('City:') }}
                                         <span class="badge badge-pill">{{ $advertisement->location->city }}</span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        State:
+                                        {{ __('State:') }}
                                         <span class="badge badge-pill">{{ $advertisement->state->name }}</span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        Created at:
+                                        {{ __('Created at:') }}
                                         <span class="badge badge-pill">{{ $advertisement->created_at }}</span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        Phone:
+                                        {{ __('Phone:') }}
                                         <span class="badge badge-pill">{{ $advertisement->phone }}</span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        Work category:
+                                        {{ __('Work type:') }}
                                         <span class="badge badge-pill">{{ $advertisement->work->name }}</span>
                                     </li>
                                 </ul>

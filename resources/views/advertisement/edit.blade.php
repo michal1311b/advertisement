@@ -1,5 +1,13 @@
 @extends('layouts.app')
 
+@section('title')
+    {{ $advertisement->title }}
+@endsection
+
+@section('description')
+    {!! $advertisement->user->name !!}
+@endsection
+
 @section('breadcrumbs')
 <div class="container">
     <div class="row">

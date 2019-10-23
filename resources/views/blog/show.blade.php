@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title')
+    {{ $post->title }}
+@endsection
+
 @section('breadcrumbs')
 <div class="container">
     <div class="row">
@@ -15,7 +19,7 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">Show post: <strong>{{ $post->title }}</strong></div>
+                <div class="card-header">{{ __('Show post:') }} <strong>{{ $post->title }}</strong></div>
 
                 <div class="card-body">
                     <div class="container-fluid">

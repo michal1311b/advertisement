@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title')
+    {{ __('Create category') }}
+@endsection
+
 @section('breadcrumbs')
 <div class="container">
     <div class="row">

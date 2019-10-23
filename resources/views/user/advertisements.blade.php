@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title')
+    {{ __('User offers list') }}
+@endsection
+
 @section('css')
 <style>
     .carousel-inner img {
@@ -29,7 +33,7 @@
                         <div class="card-body">
                             <div class="col-md-4">
                                 @if($advertisement->galleries()->count())
-                                    <img src="{{ $advertisement->galleries[0]->path }}" class="card-img" alt="$advertisement->galleries[0]->oldName">
+                                    <img src="{{ $advertisement->galleries[0]->path }}" class="card-img" alt="{{ $advertisement->galleries[0]->oldName }}">
                                 @else
                                     <img src="{{ asset('images/noImage.png') }}" class="card-img" alt="No image">
                                 @endif

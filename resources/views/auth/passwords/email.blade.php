@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title')
+    {{ __('Send Password Reset form') }}
+@endsection
+
 @section('content')
 <div class="container">
     <div class="row justify-content-center">

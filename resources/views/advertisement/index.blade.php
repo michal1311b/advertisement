@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title')
+    {{ __('List of offers') }}
+@endsection
+
 @section('css')
 <style>
     .carousel-inner img {
