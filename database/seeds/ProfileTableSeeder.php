@@ -25,6 +25,8 @@ class ProfileTableSeeder extends Seeder
         $profile->company_post_code = '90-555';
         $profile->company_city = 'Dupa';
         $profile->company_nip = '955555454';
+        $profile->company_phone1 = '608325632';
+        $profile->company_phone2 = '608325632';
         $profile->save();
 
         $user2 = User::find(2);
@@ -39,6 +41,8 @@ class ProfileTableSeeder extends Seeder
         $profile->company_post_code = '90-555';
         $profile->company_city = 'Dupa';
         $profile->company_nip = '955555454';
+        $profile->company_phone1 = '608325632';
+        $profile->company_phone2 = '608325632';
         $profile->save();
 
         $user3 = User::find(3);
@@ -53,6 +57,8 @@ class ProfileTableSeeder extends Seeder
         $profile->company_post_code = '90-555';
         $profile->company_city = 'Dupa';
         $profile->company_nip = '955555454';
+        $profile->company_phone1 = '608325632';
+        $profile->company_phone2 = '608325632';
         $profile->save();
     }
 }

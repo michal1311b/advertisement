@@ -26,6 +26,8 @@ class CreateProfilesTable extends Migration
             $table->string('company_post_code')->nullable();
             $table->string('company_city')->nullable();
             $table->string('company_nip')->nullable();
+            $table->string('company_phone1')->nullable();
+            $table->string('company_phone2')->nullable();
             $table->timestamps();
         });
     }

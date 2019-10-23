@@ -17,7 +17,9 @@ class Profile extends Model
         'company_street',
         'company_post_code',
         'company_city',
-        'company_nip'
+        'company_nip',
+        'company_phone1',
+        'company_phone2'
     ];
 
     public function user()

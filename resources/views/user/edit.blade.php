@@ -15,7 +15,7 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">Edit your profile</div>
+                <div class="card-header">{{ __('Edit your profile') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('update-user', $editUser->id) }}" enctype="multipart/form-data">
@@ -23,7 +23,7 @@
                         @csrf
                         
                         <div class="form-group row">
-                            <label class="col-12 col-md-3 col-form-label text-md-right">Profile Image</label>
+                            <label class="col-12 col-md-3 col-form-label text-md-right">{{ __('Profile Image') }}</label>
 
                             <div class="col-12 col-md-9">
                                 @if($editUser->avatar)
@@ -35,7 +35,7 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="name" class="col-12 col-md-3 col-form-label text-md-right">Name</label>
+                            <label for="name" class="col-12 col-md-3 col-form-label text-md-right">{{ __('Name') }}</label>
 
                             <div class="col-12 col-md-9">
                                 <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ $editUser->name }}" autocomplete="name" autofocus>
@@ -53,7 +53,7 @@
                                 <div class="col-12 col-md-9">
                                 <input id="password" type="hidden" value="null" name="password">
                             @else
-                            <label for="password" class="col-12 col-md-3 col-form-label text-md-right">Password</label>
+                            <label for="password" class="col-12 col-md-3 col-form-label text-md-right">{{ __('Password') }}</label>
                             <div class="col-12 col-md-9">
                                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" autocomplete="new-password">
 
@@ -67,7 +67,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="last_name" class="col-12 col-md-3 col-form-label text-md-right">Last Name</label>
+                            <label for="last_name" class="col-12 col-md-3 col-form-label text-md-right">{{ __('Last Name') }}</label>
 
                             <div class="col-12 col-md-9">
                                 <input id="last_name" type="text" class="form-control @error('last_name') is-invalid @enderror" name="last_name" value="{{ $editUser->profile->last_name }}" autocomplete="last_name" autofocus>
@@ -78,7 +78,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="street" class="col-12 col-md-3 col-form-label text-md-right">Street</label>
+                            <label for="street" class="col-12 col-md-3 col-form-label text-md-right">{{ __('Street') }}</label>
 
                             <div class="col-12 col-md-9">
                                 <input id="street" type="text" class="form-control @error('street') is-invalid @enderror" name="street" value="{{ $editUser->profile->street }}" autocomplete="street" autofocus>
@@ -89,7 +89,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="post_code" class="col-12 col-md-3 col-form-label text-md-right">Post code</label>
+                            <label for="post_code" class="col-12 col-md-3 col-form-label text-md-right">{{ __('Post code') }}</label>
 
                             <div class="col-12 col-md-9">
                                 <input id="post_code" type="text" class="form-control @error('post_code') is-invalid @enderror" name="post_code" value="{{ $editUser->profile->post_code }}" autocomplete="post_code" autofocus>
@@ -100,7 +100,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="city" class="col-12 col-md-3 col-form-label text-md-right">City</label>
+                            <label for="city" class="col-12 col-md-3 col-form-label text-md-right">{{ __('City') }}</label>
 
                             <div class="col-12 col-md-9">
                                 <input id="city" type="text" class="form-control @error('city') is-invalid @enderror" name="city" value="{{ $editUser->profile->city }}" autocomplete="city" autofocus>
@@ -111,7 +111,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="company_name" class="col-12 col-md-3 col-form-label text-md-right">Company name</label>
+                            <label for="company_name" class="col-12 col-md-3 col-form-label text-md-right">{{ __('Company name') }}</label>
 
                             <div class="col-12 col-md-9">
                                 <input id="company_name" type="text" class="form-control @error('company_name') is-invalid @enderror" name="company_name" value="{{ $editUser->profile->company_name }}" autocomplete="company_name" autofocus>
@@ -122,7 +122,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="company_street" class="col-12 col-md-3 col-form-label text-md-right">Company street</label>
+                            <label for="company_street" class="col-12 col-md-3 col-form-label text-md-right">{{ __('Company street') }}</label>
 
                             <div class="col-12 col-md-9">
                                 <input id="company_street" type="text" class="form-control @error('company_street') is-invalid @enderror" name="company_street" value="{{ $editUser->profile->company_street }}" autocomplete="company_street" autofocus>
@@ -133,7 +133,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="company_post_code" class="col-12 col-md-3 col-form-label text-md-right">Company post code</label>
+                            <label for="company_post_code" class="col-12 col-md-3 col-form-label text-md-right">{{ __('Company post code') }}</label>
 
                             <div class="col-12 col-md-9">
                                 <input id="company_post_code" type="text" class="form-control @error('company_post_code') is-invalid @enderror" name="company_post_code" value="{{ $editUser->profile->company_post_code }}" autocomplete="company_post_code" autofocus>
@@ -144,7 +144,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="company_city" class="col-12 col-md-3 col-form-label text-md-right">Company city</label>
+                            <label for="company_city" class="col-12 col-md-3 col-form-label text-md-right">{{ __('Company city') }}</label>
 
                             <div class="col-12 col-md-9">
                                 <input id="company_city" type="text" class="form-control @error('company_city') is-invalid @enderror" name="company_city" value="{{ $editUser->profile->company_city }}" autocomplete="company_city" autofocus>
@@ -155,11 +155,33 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="company_nip" class="col-12 col-md-3 col-form-label text-md-right">Company NIP</label>
+                            <label for="company_nip" class="col-12 col-md-3 col-form-label text-md-right">{{ __('Company NIP') }}</label>
 
                             <div class="col-12 col-md-9">
                                 <input id="company_nip" type="number" class="form-control @error('company_nip') is-invalid @enderror" name="company_nip" value="{{ $editUser->profile->company_nip }}" autocomplete="company_nip" autofocus>
                                 @error('company_nip')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="company_phone1" class="col-12 col-md-3 col-form-label text-md-right">{{ __('Company phone') }}</label>
+
+                            <div class="col-12 col-md-9">
+                                <input id="company_phone1" type="number" class="form-control @error('company_phone1') is-invalid @enderror" name="company_phone1" value="{{ $editUser->profile->company_phone1 }}" autocomplete="company_phone1" autofocus>
+                                @error('company_phone1')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="company_phone2" class="col-12 col-md-3 col-form-label text-md-right">{{ __('Company additional phone') }}</label>
+
+                            <div class="col-12 col-md-9">
+                                <input id="company_phone2" type="number" class="form-control @error('company_phone2') is-invalid @enderror" name="company_phone2" value="{{ $editUser->profile->company_phone2 }}" autocomplete="company_phone2" autofocus>
+                                @error('company_phone2')
                                     <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
                             </div>
@@ -193,7 +215,7 @@
                         <div class="form-group row mb-0">
                             <div class="col-md-8 offset-md-4">
                                 <button type="submit" class="btn btn-success">
-                                    Update
+                                    {{ __('Update') }}
                                 </button>
                             </div>
                         </div>
