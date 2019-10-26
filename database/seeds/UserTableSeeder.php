@@ -3,6 +3,7 @@
 use Illuminate\Database\Seeder;
 use App\User;
 use App\Role;
+use App\Doctor;
 
 class UserTableSeeder extends Seeder
 {
@@ -27,6 +28,12 @@ class UserTableSeeder extends Seeder
         $employee->term3 = 1;
         $employee->save();
         $employee->roles()->attach($role_employee);
+
+        $doctor = new Doctor();
+        $doctor->pwz = 6555555;
+        $doctor->birthday = '1965-05-18';
+        $doctor->user_id = $employee->id;
+        $doctor->save();
 
         $manager = new User();
         $manager->name = 'Manager Name';
