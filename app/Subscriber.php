@@ -8,7 +8,9 @@ class Subscriber extends Model
 {
     protected $fillable = [
         'email',
-        'term1'
+        'term1',
+        'verified_at',
+        'token'
     ];
 
     public function specializations()

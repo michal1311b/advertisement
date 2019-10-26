@@ -13,7 +13,7 @@ class StoreRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -25,6 +25,8 @@ class StoreRequest extends FormRequest
     {
         return [
             'email' => 'required|min:3|max:190|email|unique:subscribers,email',
+            'specializations' => 'required|exists:specializations,id',
+            'term1' => 'required',
         ];
     }
 }

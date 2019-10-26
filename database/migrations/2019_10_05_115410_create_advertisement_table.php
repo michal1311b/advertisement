@@ -23,10 +23,10 @@ class CreateAdvertisementTable extends Migration
             $table->string('phone');
             $table->integer('min_salary');
             $table->integer('max_salary');
-            $table->boolean('term1')->defualt(false);
-            $table->boolean('term2')->defualt(false);
-            $table->boolean('term3')->defualt(false);
-            $table->boolean('negotiable')->defualt(false);
+            $table->boolean('term1')->defualt(0);
+            $table->boolean('term2')->defualt(0);
+            $table->boolean('term3')->defualt(0);
+            $table->boolean('negotiable')->defualt(0);
             $table->text('slug');
             $table->bigInteger('work_id')->unsigned();
             $table->bigInteger('state_id')->unsigned();

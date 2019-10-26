@@ -35,6 +35,7 @@ class PostController extends Controller
             'title' => $request->get('title'),
             'body' => $request->get('body'),
             'category_id' => $request->get('category_id'),
+            'is_published' => $request->get('is_published'),
             'user_id' => auth()->user()->id,
             'cover' => $cover,
             'slug' => Post::getUniqueSlug($request->get('title'))

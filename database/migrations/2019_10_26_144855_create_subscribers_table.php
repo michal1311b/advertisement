@@ -16,7 +16,9 @@ class CreateSubscribersTable extends Migration
         Schema::create('subscribers', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('email')->unique();
-            $table->boolean('term1')->defualt(false);
+            $table->boolean('term1')->defualt(0);
+            $table->timestamp('verified_at')->nullable();
+            $table->string('token')->nullable();
             $table->timestamps();
         });
 
@@ -38,5 +40,6 @@ class CreateSubscribersTable extends Migration
     public function down()
     {
         Schema::dropIfExists('subscribers');
+        Schema::dropIfExists('specialization_subscriber');
     }
 }
