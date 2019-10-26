@@ -86,6 +86,21 @@
                         </div>
 
                         <div class="form-group row">
+                            <label class="col-12 col-md-3 col-form-label text-md-right" for="specialization_id">{{ __('Specialization') }}</label>
+                            <div class="col-12 col-md-9">
+                                <select data-live-search="true" class="form-control @error('specialization_id') is-invalid @enderror" name="specialization_id" id="specialization_id">
+                                    <option selected>Choose...</option>
+                                    @foreach($specializations as $specialization)
+                                        <option value="{{ $specialization->id }}">{{ $specialization->name }}</option>
+                                    @endforeach
+                                </select>
+                                @error('specialization_id')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
                             <label class="col-12 col-md-3 col-form-label text-md-right" for="galleries">{{ __('Upload files') }}</label>
                             <div class="col-12 col-md-9">
                                 <input type="file" class="form-control @error('galleries') is-invalid @enderror" name="galleries[]" multiple />

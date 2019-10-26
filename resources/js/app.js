@@ -46,6 +46,7 @@ $(document).ready(function() {
     $('#location_id').selectpicker();
     $('#state_id').selectpicker();
     $('#category_id').selectpicker();
+    $('#specialization_id').selectpicker();
 
     (function () {
         var session_key = window.localStorage.getItem('session_key')

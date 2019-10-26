@@ -32,4 +32,9 @@ class SubscriberController extends Controller
 
         return view('subscribers1.index ', compact(['subcribers']));
     }
+
+    public function store(Request $request)
+    {
+
+    }
 }

@@ -32,11 +32,13 @@ class CreateAdvertisementTable extends Migration
             $table->bigInteger('state_id')->unsigned();
             $table->bigInteger('location_id')->unsigned();
             $table->bigInteger('user_id')->unsigned();
+            $table->bigInteger('specialization_id')->unsigned();
 
             $table->foreign('state_id')->references('id')->on('states');
             $table->foreign('location_id')->references('id')->on('locations');
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('work_id')->references('id')->on('works');
+            $table->foreign('specialization_id')->references('id')->on('specializations');
             $table->timestamps();
         });
     }

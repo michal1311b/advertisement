@@ -8,6 +8,7 @@ use App\State;
 use App\Work;
 use App\Gallery;
 use App\Tag;
+use App\Specialization;
 use Carbon\Carbon;
 
 class AdvertisementSeeder extends Seeder
@@ -28,6 +29,7 @@ class AdvertisementSeeder extends Seeder
             $location = Location::find(rand(1,10));
             $state = State::find(rand(1,10));
             $work = Work::find(rand(1,3));
+            $specialization = Specialization::find(rand(1,3));
 
             $title = $faker->name;
             $advertisement = new Advertisement();
@@ -35,6 +37,7 @@ class AdvertisementSeeder extends Seeder
             $advertisement->location_id = $location->id;
             $advertisement->state_id = $state->id;
             $advertisement->work_id = $work->id;
+            $advertisement->specialization_id = $specialization->id;
             $advertisement->title = $title;
             $advertisement->description = $faker->name;
             $advertisement->postCode = $faker->postcode;

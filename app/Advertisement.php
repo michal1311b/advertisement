@@ -68,6 +68,11 @@ class Advertisement extends Model
         return $this->belongsTo(Work::class);
     }
 
+    public function specialization()
+    {
+        return $this->belongsTo(Specialization::class);
+    }
+
     public static function create(array $attributes = [])
     {
         $attributes['slug'] = self::getUniqueSlug($attributes['title']);
