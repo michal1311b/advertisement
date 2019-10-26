@@ -52,9 +52,9 @@ class SubscriberController extends Controller
       return back();
     }
 
-    public function verify(Request $request)
+    public function verify($token)
     {
-      $subscriber = Subscriber::whereToken($request->input('token'))->first();
+      $subscriber = Subscriber::where('token', $token)->first();
   
       $subscriber->verified_at = now();
   
