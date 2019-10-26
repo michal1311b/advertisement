@@ -15,6 +15,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::post('/subscribe', 'SubscriberController@store')->name('subscribe');
+
+Route::get('/verify/subscribtion/{token}', [
+    'uses' => 'SubscriberController@verify'
+]);
+
 Auth::routes(['verify' => true]);
 
 Route::get('/home', 'HomeController@index')->name('home');

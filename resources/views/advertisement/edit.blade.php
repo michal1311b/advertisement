@@ -94,6 +94,25 @@
                         </div>
 
                         <div class="form-group row">
+                            <label class="col-12 col-md-3 col-form-label text-md-right" for="specialization_id">{{ __('Specialization') }}</label>
+                            <div class="col-12 col-md-9">
+                                <select data-live-search="true" class="form-control @error('specialization_id') is-invalid @enderror" name="specialization_id" id="specialization_id">
+                                    <option selected>{{ __('Choose...') }}</option>
+                                    @foreach($specializations as $specialization)
+                                        @if($advertisement->specialization_id === $specialization->id)
+                                            <option value="{{ $specialization->id }}" selected>{{ $specialization->name }}</option>
+                                        @else
+                                            <option value="{{ $specialization->id }}">{{ $specialization->name }}</option>
+                                        @endif
+                                    @endforeach
+                                </select>
+                                @error('specialization_id')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
                             @foreach($advertisement->galleries as $image)
                                 <div class="col-12 col-md-4">
                                     <a href="/advertisement/photo/{{ $image->id }}/delete" class="btn btn-danger">{{ __('Delete') }}</a>

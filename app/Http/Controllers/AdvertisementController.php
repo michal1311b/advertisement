@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Advertisement;
+use App\Specialization;
 use App\Work;
 use App\User;
 use App\Location;
@@ -29,8 +30,9 @@ class AdvertisementController extends Controller
         $works = Work::all();
         $states = State::all();
         $locations = Location::all();
+        $specializations = Specialization::all();
         
-        return view('advertisement.create', compact('works', 'states', 'locations'));
+        return view('advertisement.create', compact('works', 'states', 'locations', 'specializations'));
     }
 
     public function store(StoreRequest $request)
@@ -47,7 +49,8 @@ class AdvertisementController extends Controller
             'user',
             'work',
             'state',
-            'tags'
+            'tags',
+            'specialization'
         ])
         ->firstOrFail();
         
@@ -65,6 +68,7 @@ class AdvertisementController extends Controller
         $works = Work::all();
         $states = State::all();
         $locations = Location::all();
+        $specializations = Specialization::all();
 
         $tags_array = [];
         foreach($advertisement->tags as $tag) {
@@ -73,7 +77,7 @@ class AdvertisementController extends Controller
         
         $tags = implode(",", $tags_array);
 
-        return view('advertisement.edit', compact(['advertisement', 'works', 'states', 'tags', 'locations']));
+        return view('advertisement.edit', compact(['advertisement', 'works', 'states', 'tags', 'locations', 'specializations']));
     }
 
     public function deletePhoto($id)

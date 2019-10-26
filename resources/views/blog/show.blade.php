@@ -66,6 +66,15 @@
             </div>
         </div>
         <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">{{ __('Subscribe newsletter:') }}</div>
+
+                <div class="card-body">
+                    @include('partials.subscribe')
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
             @if(auth()->user())
                 @include('partials.comment')
             @else

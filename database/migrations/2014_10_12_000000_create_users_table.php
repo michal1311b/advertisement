@@ -20,9 +20,9 @@ class CreateUsersTable extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
-            $table->boolean('term1')->defualt(false);
-            $table->boolean('term2')->defualt(false);
-            $table->boolean('term3')->defualt(false);
+            $table->boolean('term1')->defualt(0);
+            $table->boolean('term2')->defualt(0);
+            $table->boolean('term3')->defualt(0);
             $table->timestamps();
         });
     }

@@ -65,6 +65,9 @@
                                             @endif
                                         </div>
                                     </div>
+                                    <div class="col-12">
+                                        <span class="badge badge-secondary">{{ $advertisement->specialization->name }}</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>

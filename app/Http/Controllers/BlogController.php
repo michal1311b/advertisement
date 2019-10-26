@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Comment;
 use Illuminate\Http\Request;
 use App\Post;
+use App\Specialization;
 
 class BlogController extends Controller
 {
@@ -27,7 +28,9 @@ class BlogController extends Controller
         ->firstOrFail();
 
         $comments = Comment::where('post_id', $post->id)->with('author')->paginate(5);
+
+        $specializations = Specialization::all();
         
-        return view('blog.show', compact('post', 'comments'));
+        return view('blog.show', compact('post', 'comments', 'specializations'));
     }
 }

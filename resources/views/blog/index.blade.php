@@ -17,6 +17,9 @@
 @section('content')
 <div class="container">
     <div class="row">
+        <div class="col-md-12">
+            @include('partials.message')
+        </div>
         @if(count($posts) > 0)
             @foreach($posts as $post)
                 @if($post->is_published === 1)

@@ -15,6 +15,7 @@ class Advertisement extends Model
         'state_id',
         'user_id',
         'location_id',
+        'specialization_id',
         'postCode',
         'street',
         'email',
@@ -68,6 +69,11 @@ class Advertisement extends Model
         return $this->belongsTo(Work::class);
     }
 
+    public function specialization()
+    {
+        return $this->belongsTo(Specialization::class);
+    }
+
     public static function create(array $attributes = [])
     {
         $attributes['slug'] = self::getUniqueSlug($attributes['title']);
@@ -78,6 +84,7 @@ class Advertisement extends Model
         $entry->state_id = $attributes['state_id'];
         $entry->user_id = auth()->user()->id;
         $entry->location_id = $attributes['location_id'];
+        $entry->specialization_id = $attributes['specialization_id'];
         $entry->postCode = $attributes['postCode'];
         $entry->street = $attributes['street'];
         $entry->phone = $attributes['phone'];
