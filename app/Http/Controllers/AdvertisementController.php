@@ -49,7 +49,8 @@ class AdvertisementController extends Controller
             'user',
             'work',
             'state',
-            'tags'
+            'tags',
+            'specialization'
         ])
         ->firstOrFail();
         
@@ -67,6 +68,7 @@ class AdvertisementController extends Controller
         $works = Work::all();
         $states = State::all();
         $locations = Location::all();
+        $specializations = Specialization::all();
 
         $tags_array = [];
         foreach($advertisement->tags as $tag) {
@@ -75,7 +77,7 @@ class AdvertisementController extends Controller
         
         $tags = implode(",", $tags_array);
 
-        return view('advertisement.edit', compact(['advertisement', 'works', 'states', 'tags', 'locations']));
+        return view('advertisement.edit', compact(['advertisement', 'works', 'states', 'tags', 'locations', 'specializations']));
     }
 
     public function deletePhoto($id)

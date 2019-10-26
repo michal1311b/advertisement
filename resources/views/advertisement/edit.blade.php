@@ -100,7 +100,7 @@
                                     <option selected>{{ __('Choose...') }}</option>
                                     @foreach($specializations as $specialization)
                                         @if($advertisement->specialization_id === $specialization->id)
-                                            <option value="{{ $specialization->id }}" selected>{{ $state->name }}</option>
+                                            <option value="{{ $specialization->id }}" selected>{{ $specialization->name }}</option>
                                         @else
                                             <option value="{{ $specialization->id }}">{{ $specialization->name }}</option>
                                         @endif
