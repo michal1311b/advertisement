@@ -30,4 +30,24 @@ class EmailController extends Controller
 
         return \View('emailTrakingViews::index')->with('emails', $emails)->with('users', $users);
     }
+
+    /**
+     * Sent email search
+     */
+    public function postSearch(Request $request)
+    {
+        session(['mail-tracker-index-search'=>$request->search]);
+
+        return redirect(route('mailTracker_Index'));
+    }
+
+    /**
+     * Clear search
+     */
+    public function clearSearch()
+    {
+        session(['mail-tracker-index-search'=>null]);
+
+        return redirect(route('mailTracker_Index'));
+    }
 }

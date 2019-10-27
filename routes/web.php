@@ -91,6 +91,12 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('/email-manager', [
         'uses' => 'EmailController@getIndex'
     ])->middleware(['auth', 'admin', 'verified'])->name('mailTracker_Index');
+    Route::post('/seach', [
+        'uses' => 'EmailController@postSearch'
+    ])->middleware(['auth', 'admin', 'verified'])->name('mailTracker_Search');
+    Route::get('/clear', [
+        'uses' => 'EmailController@clearSearch'
+    ])->middleware(['auth', 'admin', 'verified'])->name('mailTracker_ClearSearch');
 });
 
 Route::group(array('prefix' => 'blog'), function () {
