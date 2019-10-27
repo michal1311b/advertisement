@@ -88,6 +88,9 @@ Route::group(array('prefix' => 'language'), function () {
 Route::group(['prefix' => 'admin'], function () {
     Route::resource('posts', 'PostController')->middleware(['auth', 'admin', 'verified']);
     Route::resource('categories', 'CategoryController')->middleware(['auth', 'admin', 'verified']);
+    Route::get('/email-manager', [
+        'uses' => 'EmailController@getIndex'
+    ])->middleware(['auth', 'admin', 'verified'])->name('mailTracker_Index');
 });
 
 Route::group(array('prefix' => 'blog'), function () {
@@ -101,6 +104,3 @@ Route::group(array('prefix' => 'blog'), function () {
     Route::post('/comment-post', 'CommentController@store')->name('comment-post');
 });
 
-Route::get('/email-manager', [
-    'uses' => 'EmailController@getIndex'
-])->middleware('auth')->name('mailTracker_Index');
