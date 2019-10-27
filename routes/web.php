@@ -97,6 +97,7 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('/clear', [
         'uses' => 'EmailController@clearSearch'
     ])->middleware(['auth', 'admin', 'verified'])->name('mailTracker_ClearSearch');
+    Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
 });
 
 Route::group(array('prefix' => 'blog'), function () {
