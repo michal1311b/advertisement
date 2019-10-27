@@ -100,3 +100,7 @@ Route::group(array('prefix' => 'blog'), function () {
 
     Route::post('/comment-post', 'CommentController@store')->name('comment-post');
 });
+
+Route::get('/email-manager', [
+    'uses' => 'EmailController@getIndex'
+])->middleware('auth')->name('mailTracker_Index');

@@ -57,6 +57,7 @@
                                 <a class="dropdown-item" href="{{ route('categories.index') }}">{{ __('Categories list') }}</a>
                                 <a class="dropdown-item" href="{{ route('posts.create') }}">{{ __('Create post') }}</a>
                                 <a class="dropdown-item" href="{{ route('posts.index') }}">{{ __('Posts list') }}</a>
+                                <a class="dropdown-item" href="{{ route('mailTracker_Index') }}">{{ __('Email tracker') }}</a>
                             @endif
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
