@@ -17,17 +17,19 @@
             <div class="col-sm-12 text-center">
                 <form action="{{ route('mailTracker_Search') }}" method="post" class="form-inline">
                     {!! csrf_field() !!}
-                    <div class="form-group">
-                        <label for="search">
+                    <div class="form-group row">
+                        <label for="search"  class="col-sm-2 col-form-label">
                             Search
                         </label>
-                        <input type="text" name="search" id="search" value="{{ session('mail-tracker-index-search') }}">
+                        <div class="col-sm-10">
+                            <input class="form-control" type="text" name="search" id="search" value="{{ session('mail-tracker-index-search') }}">
+                        </div>
                     </div>
-                    <button type="submit" class="btn btn-default">
+                    <button type="submit" class="btn btn-success text-white">
                         Search
                     </button>
-                    <div class="btn btn-default">
-                        <a href="{{ route('mailTracker_ClearSearch') }}">
+                    <div class="btn btn-danger text-white">
+                        <a href="{{ route('mailTracker_ClearSearch') }}" class="text-white">
                             Clear Search
                         </a>
                     </div>
