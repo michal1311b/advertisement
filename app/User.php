@@ -5,10 +5,12 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Lab404\AuthChecker\Models\HasLoginsAndDevices;
+use Lab404\AuthChecker\Interfaces\HasLoginsAndDevicesInterface;
 
-class User extends Authenticatable implements MustVerifyEmail
+class User extends Authenticatable implements MustVerifyEmail, HasLoginsAndDevicesInterface
 {
-    use Notifiable;
+    use Notifiable, HasLoginsAndDevices; 
 
     /**
      * The attributes that are mass assignable.
