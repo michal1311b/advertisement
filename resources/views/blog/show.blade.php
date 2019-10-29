@@ -38,7 +38,7 @@
                                 {{ __('Tags:') }}
                                 @foreach($post->pins as $pin)
                                     <a href="{{ route('postTag', ['tagSlug' => $pin->slug]) }}">
-                                        <span class="badge badge-pill badge-info">
+                                        <span class="badge badge-pill badge-info text-white">
                                             {{ $pin->name }}
                                         </span>
                                     </a>

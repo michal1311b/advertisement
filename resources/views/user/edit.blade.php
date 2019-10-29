@@ -342,7 +342,8 @@
                                     {{ $experience->workplace }}
                                 </div>
 
-                                <div class="col-12 col-md-2 text-right">
+                                <div class="col-12 col-md-2 btn-group text-right">
+
                                     <button class="btn btn-danger" data-toggle="modal"
                                         data-target="#modalremove{{$experience->id}}">Delete</i>
                                     </button>

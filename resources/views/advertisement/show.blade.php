@@ -74,7 +74,7 @@
                                 Tags:
                                 @foreach($advertisement->tags as $tag)
                                     <a href="{{ route('advertisementTag', ['tagSlug' => $tag->slug]) }}">
-                                        <span class="badge badge-pill badge-info">
+                                        <span class="badge badge-pill badge-info text-white">
                                             {{ $tag->name }}
                                         </span>
                                     </a>
