@@ -16,8 +16,18 @@ class ExperienceController extends Controller
         $data['user_id'] = $user->id;
         $experience = Experience::create($data);
 
-        session()->flash('success',  __('Your experience was succefully stored.'));
+        session()->flash('success',  __('Your experience was successfully stored.'));
 
         return back();
+    }
+
+    public function delete(Experience $experience)
+    {
+        if($experience->delete())
+        {
+            session()->flash('success',  __('Your experience was successfully deleted.'));
+
+            return back();
+        }
     }
 }

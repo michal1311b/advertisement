@@ -337,15 +337,31 @@
                         <div class="row pt-3">
                             <div class="font-weight-bold col-12 col-md-3 text-md-right">{{ __('Workplace') }}</div>
 
-                            <div class="col-12 col-md-9">
+                            <div class="col-12 col-md-7">
                                 {{ $experience->workplace }}
+                            </div>
+
+                            <div class="col-12 col-md-2">
+                            <button class="btn btn-danger" data-toggle="modal"
+                                    data-target="#modalremove{{$experience->id}}">Delete</i>
+                                </button>
+
+                                @include('partials.confirmation', [
+                                    'url' => route('delete-experience', $experience->id),
+                                    'method' => 'DELETE',
+                                    'title' => "Usuń doświadczenie",
+                                    "description" => "Czy na pewno chcesz usunąć doświadczenie?",
+                                    "description_parameters" => [],
+                                    'button' => 'Usuń',
+                                    'modalKey' => "remove".$experience->id
+                                ])
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="font-weight-bold col-12 col-md-3 text-md-right">{{ __('Company name') }}</div>
 
-                            <div class="col-12 col-md-9">
+                            <div class="col-12 col-md-7">
                                 {{ $experience->exp_company_name }}
                             </div>
                         </div>
@@ -353,7 +369,7 @@
                         <div class="row">
                             <div class="font-weight-bold col-12 col-md-3 text-md-right">{{ __('City') }}</div>
 
-                            <div class="col-12 col-md-9">
+                            <div class="col-12 col-md-7">
                                 {{ $experience->exp_city }}
                             </div>
                         </div>
@@ -361,7 +377,7 @@
                         <div class="row">
                             <div class="font-weight-bold col-12 col-md-3 text-md-right">{{ __('Start') }}</div>
 
-                            <div class="col-12 col-md-9">
+                            <div class="col-12 col-md-7">
                                 {{ $experience->start_date }}
                             </div>
                         </div>
@@ -369,7 +385,7 @@
                         <div class="row">
                             <div class="font-weight-bold col-12 col-md-3 text-md-right">{{ __('End') }}</div>
 
-                            <div class="col-12 col-md-9">
+                            <div class="col-12 col-md-7">
                                 @if($experience->end_date)
                                     {{ $experience->end_date }}
                                 @else
@@ -381,7 +397,7 @@
                         <div class="row">
                             <div class="font-weight-bold col-12 col-md-3 text-md-right">{{ __('Responsibilities') }}</div>
 
-                            <div class="col-12 col-md-9">
+                            <div class="col-12 col-md-7">
                                 {!! $experience->responsibility !!}
                             </div>
                         </div>
