@@ -9,6 +9,8 @@ use App\Profile;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 class LoginController extends Controller
 {
@@ -37,11 +39,34 @@ class LoginController extends Controller
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(Request $request)
     {
         $this->middleware('guest')->except('logout');
+        $this->request = $request;
     }
 
+    /**
+     * Get the needed authorization credentials from the request.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return array
+     */
+    protected function credentials(Request $request)
+    {
+        $email = $this->username();
+        $field = filter_var($request->get($email), FILTER_VALIDATE_EMAIL) ? $email : 'username';
+        return [
+            $field => $request->get($email),
+            'password' => $request->password,
+        ];
+    }
+    protected function redirectTo()
+    {
+        if ($this->request->has('previous')) {
+            $this->redirectTo = $this->request->get('previous');
+        }
+        return $this->redirectTo ?? '/home';
+    }
 
     /**
      * Redirect the user to the provider authentication page.
