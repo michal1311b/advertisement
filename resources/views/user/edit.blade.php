@@ -223,7 +223,7 @@
                         @endif
 
                         <div class="form-group row mb-0">
-                            <div class="col-md-8 offset-md-4">
+                            <div class="col-md-12 text-left">
                                 <button type="submit" class="btn btn-success">
                                     {{ __('Update') }}
                                 </button>
@@ -324,7 +324,7 @@
                             </div>
 
                             <div class="form-group row mb-0">
-                                <div class="col-md-8 offset-md-4">
+                                <div class="col-md-12 text-left">
                                     <button type="submit" class="btn btn-success">
                                         {{ __('Add') }}
                                     </button>
@@ -341,8 +341,8 @@
                                 {{ $experience->workplace }}
                             </div>
 
-                            <div class="col-12 col-md-2">
-                            <button class="btn btn-danger" data-toggle="modal"
+                            <div class="col-12 col-md-2 text-right">
+                                <button class="btn btn-danger" data-toggle="modal"
                                     data-target="#modalremove{{$experience->id}}">Delete</i>
                                 </button>
 
