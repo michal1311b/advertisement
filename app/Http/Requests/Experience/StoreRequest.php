@@ -28,7 +28,7 @@ class StoreRequest extends FormRequest
             'exp_city' => 'required|max:190',
             'exp_company_name' => 'required|max:190',
             'start_date' => 'required|max:190',
-            'end_date' => 'required|max:190',
+            'end_date' => 'max:190',
             'responsibility' => 'required'
         ];
     }

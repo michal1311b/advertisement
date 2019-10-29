@@ -370,7 +370,11 @@
                             <div class="font-weight-bold col-12 col-md-3 text-md-right">{{ __('End') }}</div>
 
                             <div class="col-12 col-md-9">
-                                {{ $experience->end_date }}
+                                @if($experience->end_date)
+                                    {{ $experience->end_date }}
+                                @else
+                                    {{ __('Until now') }}
+                                @endif
                             </div>
                         </div>
 

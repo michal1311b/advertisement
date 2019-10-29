@@ -20,7 +20,7 @@ class CreateExperiencesTable extends Migration
             $table->string('exp_city');
             $table->string('exp_company_name');
             $table->date('start_date');
-            $table->date('end_date');
+            $table->date('end_date')->nullable();
             $table->boolean('until_now')->defualt(0);
             $table->text('responsibility');
             $table->timestamps();
