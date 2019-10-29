@@ -11,6 +11,9 @@
             @include('partials.validation-errors')
         </div>
         <div class="col-md-12">
+            @include('partials.message')
+        </div>
+        <div class="col-md-12">
             <div class="card">
                 <div class="card-header">{{ __('Create advertisement') }}</div>
 

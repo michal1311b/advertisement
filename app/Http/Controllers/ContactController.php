@@ -21,6 +21,8 @@ class ContactController extends Controller
 
         $user->notify(new NewMessage($contact));
 
+        session()->flash('success', __('Message was send successfully!'));
+
         return back();
     }
 
