@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Hash;
 use App\Notifications\UserFollowed;
 use App\Specialization;
 use App\Experience;
+use App\Http\Requests\User\UploadRequest;
 
 class UserController extends Controller
 {
@@ -24,7 +25,7 @@ class UserController extends Controller
         return view('user.edit', compact(['editUser', 'specializations']));
     }
 
-    public function update(Request $request, $id)
+    public function update(UploadRequest $request, $id)
     {
         $user = Auth::user();
         if($request->hasFile('avatar')){

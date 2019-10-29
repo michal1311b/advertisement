@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Category;
 use App\Http\Requests\Admin\Category\StoreRequest;
+use Illuminate\Support\Facades\Config;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 
 class CategoryController extends Controller
 {
@@ -38,13 +41,26 @@ class CategoryController extends Controller
      */
     public function store(StoreRequest $request)
     {
-        $category = Category::create($request->all());
+        DB::beginTransaction();
 
-        session()->flash('success', __('Category created successfully!'));
+        try {
+            $category = Category::create($request->all());
 
-        return view('admin.categories.index',[
-            'categories' => Category::paginate()
-        ]);
+            DB::commit();
+
+            session()->flash('success', __('Category created successfully!'));
+
+            return view('admin.categories.index',[
+                'categories' => Category::paginate()
+            ]);
+        } catch(\Exception $e) {
+            Log::info($e);
+            DB::rollback();
+
+            session()->flash('danger',  __('Something wrong try again'));
+
+            return back()->withInput($request->all());
+        }
     }
 
     /**
@@ -80,11 +96,24 @@ class CategoryController extends Controller
      */
     public function update(Category $category, StoreRequest $request)
     {
-        $category->update($request->all());
+        DB::beginTransaction();
 
-        session()->flash('success', __('Category updated successfully!'));
+        try {
+            $category->update($request->all());
 
-        return back();
+            DB::commit();
+
+            session()->flash('success', __('Category updated successfully!'));
+
+            return back();
+        } catch(\Exception $e) {
+            Log::info($e);
+            DB::rollback();
+
+            session()->flash('danger',  __('Something wrong try again'));
+
+            return back()->withInput($request->all());
+        }
     }
 
     /**

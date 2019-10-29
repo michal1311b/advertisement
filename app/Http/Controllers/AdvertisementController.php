@@ -13,6 +13,9 @@ use App\Gallery;
 use App\Http\Requests\Advertisement\StoreRequest;
 use App\Jobs\SendEmailJob;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Config;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 
 class AdvertisementController extends Controller
 {
@@ -37,8 +40,24 @@ class AdvertisementController extends Controller
 
     public function store(StoreRequest $request)
     {
-        Advertisement::create($request->all());
-        return back();
+        DB::beginTransaction();
+
+        try {
+            Advertisement::create($request->all());
+
+            DB::commit();
+
+            session()->flash('success', __('Advertisement created successfully!'));
+
+            return back();
+        } catch(\Exception $e) {
+            Log::info($e);
+            DB::rollback();
+
+            session()->flash('danger',  __('Something wrong try again'));
+
+            return back()->withInput($request->all());
+        }
     }
 
     public function show($slug)
@@ -90,10 +109,25 @@ class AdvertisementController extends Controller
 
     public function update(StoreRequest $request, $id)
     {
-        $advertisement = Advertisement::findOrFail($id);
-        $advertisement->update($request->all());
+        DB::beginTransaction();
 
-        return back();
+        try {
+            $advertisement = Advertisement::findOrFail($id);
+            $advertisement->update($request->all());
+
+            DB::commit();
+
+            session()->flash('success', __('Advertisement updated successfully!'));
+
+            return back();
+        } catch(\Exception $e) {
+            Log::info($e);
+            DB::rollback();
+
+            session()->flash('danger',  __('Something wrong try again'));
+
+            return back()->withInput($request->all());
+        }
     }
 
     public function delete($id)

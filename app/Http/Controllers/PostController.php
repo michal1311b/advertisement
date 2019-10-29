@@ -9,6 +9,9 @@ use App\Http\Requests\Admin\Post\StoreRequest;
 use App\Http\Requests\Admin\Post\UpdateRequest;
 use Illuminate\Support\Str;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Config;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 
 class PostController extends Controller
 {
@@ -27,38 +30,51 @@ class PostController extends Controller
      */
     public function store(StoreRequest $request)
     {
-        $now = \Carbon\Carbon::now();
-        $fileData = $request->file('cover');
-        $cover = "http://{$_SERVER['HTTP_HOST']}/" . $fileData->store('/posts' . '/' . Str::random(6) . $now->format('Y-m-d-hh-mm-ss') . Str::random(6), 'public');
+        DB::beginTransaction();
 
-        $post = Post::create([
-            'title' => $request->get('title'),
-            'body' => $request->get('body'),
-            'category_id' => $request->get('category_id'),
-            'is_published' => $request->get('is_published'),
-            'user_id' => auth()->user()->id,
-            'cover' => $cover,
-            'slug' => Post::getUniqueSlug($request->get('title'))
-        ]);
+        try {
+            $now = \Carbon\Carbon::now();
+            $fileData = $request->file('cover');
+            $cover = "http://{$_SERVER['HTTP_HOST']}/" . $fileData->store('/posts' . '/' . Str::random(6) . $now->format('Y-m-d-hh-mm-ss') . Str::random(6), 'public');
 
-        if(isset($request['pins'])) {
-            $pins = explode(",", $request['pins'][0]);
-            foreach($pins as $k => $pin) {
-                if(is_numeric($k)) {
-                    $pinData = new Pin();
-                    $pinData->name = trim($pin);
-                    $pinData->post_id = $post->id;
-                    $pinData->slug = $pinData::getUniqueSlug($pin);
-                    $post->pins()->save($pinData);
+            $post = Post::create([
+                'title' => $request->get('title'),
+                'body' => $request->get('body'),
+                'category_id' => $request->get('category_id'),
+                'is_published' => $request->get('is_published'),
+                'user_id' => auth()->user()->id,
+                'cover' => $cover,
+                'slug' => Post::getUniqueSlug($request->get('title'))
+            ]);
+
+            if(isset($request['pins'])) {
+                $pins = explode(",", $request['pins'][0]);
+                foreach($pins as $k => $pin) {
+                    if(is_numeric($k)) {
+                        $pinData = new Pin();
+                        $pinData->name = trim($pin);
+                        $pinData->post_id = $post->id;
+                        $pinData->slug = $pinData::getUniqueSlug($pin);
+                        $post->pins()->save($pinData);
+                    }
                 }
             }
+
+            DB::commit();
+
+            session()->flash('success',  __('Post created successfully!'));
+
+            return view('admin.posts.create',[
+                'categories' => Category::paginate()
+            ]);
+        } catch(\Exception $e) {
+            Log::info($e);
+            DB::rollback();
+
+            session()->flash('danger',  __('Something wrong try again'));
+
+            return back()->withInput($request->all());
         }
-
-        session()->flash('success',  __('Post created successfully!'));
-
-        return view('admin.posts.create',[
-            'categories' => Category::paginate()
-        ]);
     }
 
     public function index()
@@ -107,44 +123,57 @@ class PostController extends Controller
 
     public function update(UpdateRequest $request, Post $post)
     {
-        if($request->file('cover'))
-        {
-            $now = Carbon::now();
-            $fileData = $request->cover;
-            $cover = "http://{$_SERVER['HTTP_HOST']}/" . $fileData->store('/posts' . '/' . Str::random(6) . $now->format('Y-m-d-hh-mm-ss') . Str::random(6), 'public');
-            $post->cover = $cover;
-            $post->save();
-        }
+        DB::beginTransaction();
 
-        $post->slug = $post::getUniqueSlug($request->title);
-        $post->save();
-
-        if(isset($request['pins'])) {
-            $pins = explode(",", $request['pins'][0]);
-            foreach($post->pins as $pin)
+        try {
+            if($request->file('cover'))
             {
-                $pin->delete();
+                $now = Carbon::now();
+                $fileData = $request->cover;
+                $cover = "http://{$_SERVER['HTTP_HOST']}/" . $fileData->store('/posts' . '/' . Str::random(6) . $now->format('Y-m-d-hh-mm-ss') . Str::random(6), 'public');
+                $post->cover = $cover;
+                $post->save();
             }
-            
-            $pins = $request['pins'];
-            if(is_array($pins))
-            {
-                $explodedpin = explode(",", $pins[0]);
-                foreach($explodedpin as $k => $pin)
+
+            $post->slug = $post::getUniqueSlug($request->title);
+            $post->save();
+
+            if(isset($request['pins'])) {
+                $pins = explode(",", $request['pins'][0]);
+                foreach($post->pins as $pin)
                 {
-                    $pin = new Pin;
-                    $pin->post_id = $post->id;
-                    $pin->name = trim($explodedpin[$k]);
-                    $pin->slug = $pin::getUniqueSlug($explodedpin[$k]);
-                    $pin->save();
+                    $pin->delete();
+                }
+                
+                $pins = $request['pins'];
+                if(is_array($pins))
+                {
+                    $explodedpin = explode(",", $pins[0]);
+                    foreach($explodedpin as $k => $pin)
+                    {
+                        $pin = new Pin;
+                        $pin->post_id = $post->id;
+                        $pin->name = trim($explodedpin[$k]);
+                        $pin->slug = $pin::getUniqueSlug($explodedpin[$k]);
+                        $pin->save();
+                    }
                 }
             }
+
+            $post->update($request->except(['cover']));
+
+            DB::commit();
+
+            session()->flash('success', __('Post updated successfully!'));
+
+            return back();
+        } catch(\Exception $e) {
+            Log::info($e);
+            DB::rollback();
+
+            session()->flash('danger',  __('Something wrong try again'));
+
+            return back()->withInput($request->all());
         }
-
-        $post->update($request->except(['cover']));
-
-        session()->flash('success', __('Post updated successfully!'));
-
-        return back();
     }
 }
