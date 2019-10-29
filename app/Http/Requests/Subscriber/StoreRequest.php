@@ -24,9 +24,18 @@ class StoreRequest extends FormRequest
     public function rules()
     {
         return [
+            'g-recaptcha-response' => 'required|captcha',
             'email' => 'required|min:3|max:190|email|unique:subscribers,email',
             'specializations' => 'required|exists:specializations,id',
             'term1' => 'required',
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'g-recaptcha-response.required' => 'Błąd captcha',
+            'g-recaptcha-response.captcha' => 'Błąd captcha',
         ];
     }
 }

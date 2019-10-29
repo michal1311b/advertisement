@@ -23,6 +23,17 @@
                 {{  $errors->first('specializations') }}
             </span>
         @endif
+
+        <div class="pt-3">
+            {!! NoCaptcha::renderJs() !!}
+            {!! NoCaptcha::display(['data-theme' => 'dark']) !!}
+        </div>
+
+        @if ($errors->has('g-recaptcha-response'))
+            <span class="help-block">
+                <strong>{{ $errors->first('g-recaptcha-response') }}</strong>
+            </span>
+        @endif
         
         <div class="form-check pt-3">
             <input name="term1" type="hidden" value="0">
