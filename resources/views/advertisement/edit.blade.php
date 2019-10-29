@@ -115,7 +115,7 @@
                         <div class="form-group row">
                             @foreach($advertisement->galleries as $image)
                                 <div class="col-12 col-md-4">
-                                    <a href="/advertisement/photo/{{ $image->id }}/delete" class="btn btn-danger">{{ __('Delete') }}</a>
+                                    <a href="{{ route('delete-photo', $image->id) }}" class="btn btn-danger">{{ __('Delete') }}</a>
                                     <img src="{{ $image->path }}" alt="{{ $image->oldName }}" class="d-block w-100 py-2 gallery-item"/>
                                 </div>
                             @endforeach
