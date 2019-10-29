@@ -37,6 +37,14 @@ $(document).ready(function() {
     Inputmask("99-999", {
         "clearIncomplete": true
     }).mask($('#post_code'));
+
+    Inputmask("9999-99-99", {
+        "clearIncomplete": true
+    }).mask($('#start_date'));
+
+    Inputmask("9999-99-99", {
+        "clearIncomplete": true
+    }).mask($('#end_date'));
     
     $('#specializations').select2({
         width: '100%'

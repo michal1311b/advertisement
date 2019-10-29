@@ -66,6 +66,7 @@ Route::group(array('prefix' => 'user'), function () {
     Route::get('/contacts', 'ReplyController@index')->name('user-contact')->middleware(['auth', 'verified']);
     Route::get('/contacts/{id}/reply', 'ReplyController@showReply')->name('user-reply')->middleware(['auth', 'verified']);
     Route::post('/send-reply', 'ReplyController@sendReply')->name('send-reply')->middleware(['auth', 'verified']);
+    Route::post('/add-experience/{user}', 'ExperienceController@store')->name('store-experience')->middleware(['auth', 'verified']);
 });
 
 Route::post('/send-message', 'ContactController@store')->name('send-message');

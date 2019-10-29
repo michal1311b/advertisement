@@ -10,12 +10,13 @@ use Image;
 use Illuminate\Support\Facades\Hash;
 use App\Notifications\UserFollowed;
 use App\Specialization;
+use App\Experience;
 
 class UserController extends Controller
 {
     public function edit($id)
     {
-        $editUser = Auth::user()->load(['doctor', 'profile', 'specializations']);
+        $editUser = Auth::user()->load(['doctor', 'profile', 'specializations', 'experiences']);
         $user = Auth::user();
         $user->checkAuthorization($editUser->id, $user->id);
         $specializations = Specialization::all();
@@ -44,6 +45,8 @@ class UserController extends Controller
         {
             $user->specializations()->sync($request->specializations);
         }
+
+        session()->flash('success',  __('Your profile was succesfully updated.'));
 
         return back();
     }
