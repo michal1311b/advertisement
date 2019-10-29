@@ -30,4 +30,13 @@ class ExperienceController extends Controller
             return back();
         }
     }
+
+    public function update(Experience $experience, Request $request)
+    {
+        $experience->update($request->all());
+
+        session()->flash('success',  __('Your experience was successfully updated.'));
+
+        return back();
+    }
 }

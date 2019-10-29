@@ -68,6 +68,7 @@ Route::group(array('prefix' => 'user'), function () {
     Route::post('/send-reply', 'ReplyController@sendReply')->name('send-reply')->middleware(['auth', 'verified']);
     Route::post('/experience/{user}', 'ExperienceController@store')->name('store-experience')->middleware(['auth', 'verified']);
     Route::delete('/experience/{experience}/delete', 'ExperienceController@delete')->name('delete-experience');
+    Route::put('/experience/{experience}', 'ExperienceController@update')->name('update-experience');
 });
 
 Route::post('/send-message', 'ContactController@store')->name('send-message');
