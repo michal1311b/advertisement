@@ -39,6 +39,12 @@ $(document).ready(function() {
         "clearIncomplete": true
     }).mask($('#post_code'));
 
+    $('.start_date').datepicker({
+        format: 'yyyy-mm-dd'
+    });
+    $('.end_date').datepicker({
+        format: 'yyyy-mm-dd'
+    });
     $('#start_date').datepicker({
         format: 'yyyy-mm-dd'
     });
