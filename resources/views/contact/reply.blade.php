@@ -17,27 +17,37 @@
 @section('content')
 <div class="container">
     <div class="row">
+        <div class="col-md-12">
+            @include('partials.message')
+        </div>
         <div class="col-12">
-            <strong>Email:</strong> {{ $contact->email }}
-            <hr>
-            <strong>First Name:</strong> {{ $contact->first_name }}
-            <hr>
-            <strong>City:</strong> {{ $contact->city }}
-            <hr>
-            <strong>Phone:</strong> {{ $contact->phone }}
-            <hr>
-            <strong>Message:</strong> {!! $contact->message !!}
+            <strong>{{ __('Email:') }}</strong> {{ $contact->email }}
+            <br>
+            <strong>{{ __('First Name:') }}</strong> {{ $contact->first_name }}
+            <br>
+            <strong>{{ __('City:') }}</strong> {{ $contact->city }}
+            <br>
+            <strong>{{ __('Phone:') }}</strong> {{ $contact->phone }}
+            <br>
+            <strong>{{ __('Message:') }}</strong> {!! $contact->message !!}
+            <br>
+            <strong>{{ __('Files:') }}</strong> 
+            @if($contact->cv)
+                <a href="{{ $contact->cv }}" _target="blank">{{ __('Open') }}</a>
+            @else
+                {{ __('There in no file') }}
+            @endif
             <hr>
             @if(count($contact->replies) > 0)
-                <strong>Reply's count:</strong> {{ count($contact->replies) }}<br>
+                <strong>{{ __('Reply\'s count:') }}</strong> {{ count($contact->replies) }}<br>
                 @foreach($contact->replies as $reply)
-                    <strong>Email:</strong> {{ $reply->email }}
+                    <strong>{{ __('Email:') }}</strong> {{ $reply->email }}
                     <br><br>
-                    <strong>Message:</strong> {!! $reply->message !!}
+                    <strong>{{ __('Message:') }}</strong> {!! $reply->message !!}
                     <hr>
                 @endforeach
             @else
-                No replies
+                {{ __('No replies') }}
             @endif
         </div>
         <div class="col-12">

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Contact;
 use App\Reply;
 use App\Http\Service\Mailer;
+use App\Http\Requests\Reply\StoreRequest;
 
 class ReplyController extends Controller
 {
@@ -24,13 +25,15 @@ class ReplyController extends Controller
         return view('contact.reply', compact('contact'));
     }
 
-    public function sendReply(Request $request)
+    public function sendReply(StoreRequest $request)
     {
         $reply = Reply::create($request->all());
 
         $send = Mailer::sendEmail(
             $reply
         );
+
+        session()->flash('success',  __('Your reply was successfully send.'));
 
         return back();
     }
