@@ -87,14 +87,45 @@
             @if($comments)
                 @foreach($comments as $comment)
                     <div class="media my-3 row">
-                        <div class="col-12 col-md-3">
+                        <div class="col-12 col-md-2 pb-2">
                             <img src="{{ $comment->author->avatar }}" class="img-fluid align-self-start mr-3" alt="{{ $comment->author->avatar }}">
                         </div>
                         
-                        <div class="media-body col-12 col-md-9">
-                          <h5 class="mt-0">{{ $comment->author->name }}</h5>
-                          <h6 class="mt-0">{{ __('Created at:') }} {{ $comment->created_at }}</h5>
+                        <div class="media-body col-12 col-md-8">
+                          <span class="mt-0 h5 font-weight-bold">{{ $comment->author->name }}</span> <span class="h6">{{ __('Created at:') }} {{ $comment->created_at }}</span>
                           {!! $comment->content !!}
+                        </div>
+
+                        <div class="media-body col-12 col-md-2 btn-group text-right">
+                            @if(auth()->check() && auth()->user()->id === $comment->author->id)
+                                <button class="btn btn-success" data-toggle="modal"
+                                    data-target="#modaleditcomment{{$comment->id}}">{{ __('Edit') }}</i>
+                                </button>
+
+                                @include('partials.edit-comment', [
+                                    'url' => route('update-comment', $comment),
+                                    'method' => 'PUT',
+                                    'title' => "Edycja",
+                                    "description" => "Czy na pewno chcesz zaktualizować komentarz?",
+                                    "description_parameters" => [],
+                                    'button' => 'Update',
+                                    'modalKey' => "editcomment".$comment->id
+                                ])
+
+                                <button class="btn btn-danger" data-toggle="modal"
+                                    data-target="#modalremove{{$comment->id}}">{{ __('Delete') }}</i>
+                                </button>
+
+                                @include('partials.confirmation', [
+                                    'url' => route('delete-comment', $comment->id),
+                                    'method' => 'DELETE',
+                                    'title' => "Usuń komentarz",
+                                    "description" => "Czy na pewno chcesz usunąć komentarz?",
+                                    "description_parameters" => [],
+                                    'button' => 'Usuń',
+                                    'modalKey' => "remove".$comment->id
+                                ])
+                            @endif
                         </div>
                     </div>
                 @endforeach

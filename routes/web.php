@@ -115,5 +115,7 @@ Route::group(array('prefix' => 'blog'), function () {
     ]);
 
     Route::post('/comment-post', 'CommentController@store')->name('comment-post');
+    Route::put('/comment/{comment}', 'CommentController@update')->name('update-comment');
+    Route::delete('/comment/{comment}/delete', 'CommentController@delete')->name('delete-comment');
 });
 
