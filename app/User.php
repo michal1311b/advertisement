@@ -69,6 +69,10 @@ class User extends Authenticatable implements MustVerifyEmail, HasLoginsAndDevic
         return $this->hasMany(Experience::class);
     }
 
+    public function courses()
+    {
+        return $this->hasMany(Course::class);
+    }
 
     public function specializations()
     {

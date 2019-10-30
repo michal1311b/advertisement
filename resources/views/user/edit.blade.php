@@ -421,6 +421,136 @@
                     </div>
                 </div>
             </div>
+
+            <div class="col-md-12 py-3">
+                <div class="card">
+                    <div class="card-header">{{ __('Edit your courses') }}</div>
+
+                    <div class="card-body">
+                        <form method="POST" action="{{ route('store-course', $editUser) }}">
+                            @csrf
+                            @if($editUser->doctor !== null)
+                                <div class="form-group row">
+                                    <label for="name" class="col-12 col-md-3 col-form-label text-md-right">{{ __('Name') }}</label>
+
+                                    <div class="col-12 col-md-9">
+                                        <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="" autocomplete="name" autofocus>
+                                        @error('name')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="organizer" class="col-12 col-md-3 col-form-label text-md-right">{{ __('Organizer') }}</label>
+
+                                    <div class="col-12 col-md-9">
+                                        <input id="organizer" type="text" class="form-control @error('organizer') is-invalid @enderror" name="organizer" value="" autocomplete="organizer" autofocus>
+                                        @error('organizer')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="start_date" class="col-12 col-md-3 col-form-label text-md-right">{{ __('Start date') }}</label>
+
+                                    <div class="col-12 col-md-9">
+                                        <input id="start_course" type="text" class="form-control @error('start_date') is-invalid @enderror" name="start_date" value="{{ $experience->start_date ?? '' }}" autocomplete="start_date" autofocus placeholder="YYYY-MM-DD">
+                                        @error('start_date')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="end_date" class="col-12 col-md-3 col-form-label text-md-right">{{ __('End date') }}</label>
+
+                                    <div class="col-12 col-md-9">
+                                        <input id="end_course" type="text" class="form-control @error('end_date') is-invalid @enderror" name="end_date" value="{{ $experience->end_date ?? '' }}" autocomplete="end_date" autofocus placeholder="YYYY-MM-DD">
+                                        @error('end_date')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+                                </div>
+
+                                <div class="form-group row mb-0">
+                                    <div class="col-md-12 text-left">
+                                        <button type="submit" class="btn btn-success">
+                                            {{ __('Add') }}
+                                        </button>
+                                    </div>
+                                </div>
+                            @endif
+                        </form>
+
+                        @foreach($editUser->courses as $course)
+                            <div class="row pt-3">
+                                <div class="font-weight-bold col-12 col-md-3 text-md-right">{{ __('Name') }}</div>
+
+                                <div class="col-12 col-md-7">
+                                    {{ $course->name }}
+                                </div>
+
+                                <div class="col-12 col-md-2 btn-group text-right">
+
+                                    <button class="btn btn-danger" data-toggle="modal"
+                                        data-target="#modalremove{{$course->id}}">{{ __('Delete') }}</i>
+                                    </button>
+
+                                    @include('partials.confirmation', [
+                                        'url' => route('delete-course', $course->id),
+                                        'method' => 'DELETE',
+                                        'title' => "Usuń kurs",
+                                        "description" => "Czy na pewno chcesz usunąć kurs?",
+                                        "description_parameters" => [],
+                                        'button' => 'Usuń',
+                                        'modalKey' => "remove".$course->id
+                                    ])
+
+                                    <button class="btn btn-success" data-toggle="modal"
+                                        data-target="#modaledit{{$course->id}}">Edit</i>
+                                    </button>
+
+                                    @include('partials.edit-course', [
+                                        'url' => route('update-course', $course),
+                                        'method' => 'PUT',
+                                        'title' => "Edycja",
+                                        "description" => "Czy na pewno chcesz zaktualizować kurs?",
+                                        "description_parameters" => [],
+                                        'button' => 'Update',
+                                        'modalKey' => "edit".$course->id
+                                    ])
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="font-weight-bold col-12 col-md-3 text-md-right">{{ __('Company name') }}</div>
+
+                                <div class="col-12 col-md-7">
+                                    {{ $course->organizer }}
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="font-weight-bold col-12 col-md-3 text-md-right">{{ __('Start') }}</div>
+
+                                <div class="col-12 col-md-7">
+                                    {{ $course->start_date }}
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="font-weight-bold col-12 col-md-3 text-md-right">{{ __('End') }}</div>
+
+                                <div class="col-12 col-md-7">
+                                    {{ $course->end_date }}
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
         @endif
     </div>
 </div>

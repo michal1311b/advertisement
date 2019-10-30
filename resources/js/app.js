@@ -51,6 +51,13 @@ $(document).ready(function() {
     $('#end_date').datepicker({
         format: 'yyyy-mm-dd'
     });
+
+    $('#start_course').datepicker({
+        format: 'yyyy-mm-dd'
+    });
+    $('#end_course').datepicker({
+        format: 'yyyy-mm-dd'
+    });
     
     $('#specializations').select2({
         width: '100%'

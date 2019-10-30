@@ -17,7 +17,7 @@ class UserController extends Controller
 {
     public function edit(User $user)
     {
-        $editUser = Auth::user()->load(['doctor', 'profile', 'specializations', 'experiences']);
+        $editUser = Auth::user()->load(['doctor', 'profile', 'specializations', 'experiences', 'courses']);
         $user = Auth::user();
         $user->checkAuthorization($editUser->id, $user->id);
         $specializations = Specialization::all();
