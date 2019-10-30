@@ -456,7 +456,7 @@
                                     <label for="start_date" class="col-12 col-md-3 col-form-label text-md-right">{{ __('Start date') }}</label>
 
                                     <div class="col-12 col-md-9">
-                                        <input id="start_course" type="text" class="form-control @error('start_date') is-invalid @enderror" name="start_date" value="{{ $experience->start_date ?? '' }}" autocomplete="start_date" autofocus placeholder="YYYY-MM-DD">
+                                        <input id="start_course" type="text" class="form-control @error('start_date') is-invalid @enderror" name="start_date" value="" autocomplete="start_date" autofocus placeholder="YYYY-MM-DD">
                                         @error('start_date')
                                             <div class="alert alert-danger">{{ $message }}</div>
                                         @enderror
@@ -467,7 +467,7 @@
                                     <label for="end_date" class="col-12 col-md-3 col-form-label text-md-right">{{ __('End date') }}</label>
 
                                     <div class="col-12 col-md-9">
-                                        <input id="end_course" type="text" class="form-control @error('end_date') is-invalid @enderror" name="end_date" value="{{ $experience->end_date ?? '' }}" autocomplete="end_date" autofocus placeholder="YYYY-MM-DD">
+                                        <input id="end_course" type="text" class="form-control @error('end_date') is-invalid @enderror" name="end_date" value="" autocomplete="end_date" autofocus placeholder="YYYY-MM-DD">
                                         @error('end_date')
                                             <div class="alert alert-danger">{{ $message }}</div>
                                         @enderror
