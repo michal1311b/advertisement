@@ -28,7 +28,7 @@
                 <div class="card-header">{{ __('Edit your profile') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('update-user', $editUser->id) }}" enctype="multipart/form-data">
+                    <form method="POST" action="{{ route('update-user', $editUser) }}" enctype="multipart/form-data">
                         <input type="hidden" name="_method" value="PUT">
                         @csrf
                         

@@ -15,7 +15,7 @@ use App\Http\Requests\User\UploadRequest;
 
 class UserController extends Controller
 {
-    public function edit($id)
+    public function edit(User $user)
     {
         $editUser = Auth::user()->load(['doctor', 'profile', 'specializations', 'experiences']);
         $user = Auth::user();
@@ -25,9 +25,8 @@ class UserController extends Controller
         return view('user.edit', compact(['editUser', 'specializations']));
     }
 
-    public function update(UploadRequest $request, $id)
+    public function update(UploadRequest $request, User $user)
     {
-        $user = Auth::user();
         if($request->hasFile('avatar')){
     		$avatar = $request->file('avatar');
     		$filename = time() . '.' . $avatar->getClientOriginalExtension();

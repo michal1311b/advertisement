@@ -17,7 +17,7 @@
 
                     <div class="row pt-2">
                         <div class="col-12">
-                            <input id="workplace" type="text" class="form-control @error('workplace') is-invalid @enderror" name="workplace" value="{{ $experience->workplace ?? '' }}" autocomplete="workplace" autofocus>
+                            <input type="text" class="workplace form-control @error('workplace') is-invalid @enderror" name="workplace" value="{{ $experience->workplace ?? '' }}" autocomplete="workplace" autofocus>
                             @error('workplace')
                                 <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
@@ -26,7 +26,7 @@
 
                     <div class="row pt-2">
                         <div class="col-12">
-                            <input id="exp_company_name" type="text" class="form-control @error('exp_company_name') is-invalid @enderror" name="exp_company_name" value="{{ $experience->exp_company_name ?? '' }}" autocomplete="exp_company_name" autofocus>
+                            <input type="text" class="exp_company_name form-control @error('exp_company_name') is-invalid @enderror" name="exp_company_name" value="{{ $experience->exp_company_name ?? '' }}" autocomplete="exp_company_name" autofocus>
                             @error('exp_company_name')
                                 <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
@@ -35,7 +35,7 @@
 
                     <div class="row pt-2">
                         <div class="col-12">
-                            <input id="exp_city" type="text" class="form-control @error('exp_city') is-invalid @enderror" name="exp_city" value="{{ $experience->exp_city ?? '' }}" autocomplete="exp_city" autofocus>
+                            <input type="text" class="exp_city form-control @error('exp_city') is-invalid @enderror" name="exp_city" value="{{ $experience->exp_city ?? '' }}" autocomplete="exp_city" autofocus>
                             @error('exp_city')
                                 <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
@@ -44,7 +44,7 @@
 
                     <div class="row pt-2">
                         <div class="col-12">
-                            <input id="start_date" type="text" class="form-control @error('start_date') is-invalid @enderror" name="start_date" value="{{ $experience->start_date ?? '' }}" autocomplete="start_date" autofocus placeholder="YYYY-MM-DD">
+                            <input type="text" class="start_date form-control @error('start_date') is-invalid @enderror" name="start_date" value="{{ $experience->start_date ?? '' }}" autocomplete="start_date" autofocus placeholder="YYYY-MM-DD">
                             @error('start_date')
                                 <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
@@ -53,7 +53,7 @@
 
                     <div class="row pt-2">
                         <div class="col-12">
-                            <input id="end_date" type="text" class="form-control @error('end_date') is-invalid @enderror" name="end_date" value="{{ $experience->end_date ?? '' }}" autocomplete="end_date" autofocus placeholder="YYYY-MM-DD">
+                            <input type="text" class="end_date form-control @error('end_date') is-invalid @enderror" name="end_date" value="{{ $experience->end_date ?? '' }}" autocomplete="end_date" autofocus placeholder="YYYY-MM-DD">
                             @error('end_date')
                                 <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
@@ -62,8 +62,8 @@
 
                     <div class="form-check py-2">
                         <input name="until_now" type="hidden" value="0">
-                        <input class="form-check-input" 
-                        type="checkbox" name="until_now" id="until_now" value="1"
+                        <input class="form-check-input until_now" 
+                        type="checkbox" name="until_now" value="1"
                         {{ old('until_now', 0)  == 1 ? 'checked' : '' }}>
                         <label class="form-check-label" for="until_now">
                         {{ __('until now?') }}
@@ -74,7 +74,7 @@
                         <label for="responsibility" class="col-12 col-form-label">{{ __('Responsibilities') }}</label>
 
                         <div class="col-12">
-                            <textarea id="responsibility" type="responsibility" class="form-control @error('responsibility') is-invalid @enderror" name="responsibility" autocomplete="responsibility" autofocus rows="3">{!! $experience->responsibility ?? '' !!}</textarea>
+                            <textarea type="responsibility" class="form-control @error('responsibility') is-invalid @enderror" name="responsibility" autocomplete="responsibility" autofocus rows="3">{!! $experience->responsibility ?? '' !!}</textarea>
                             @error('responsibility')
                                 <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
