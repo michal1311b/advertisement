@@ -509,7 +509,7 @@
                                     ])
 
                                     <button class="btn btn-success" data-toggle="modal"
-                                        data-target="#modaledit{{$course->id}}">Edit</i>
+                                        data-target="#modaleditcourse{{$course->id}}">Edit</i>
                                     </button>
 
                                     @include('partials.edit-course', [
@@ -519,7 +519,7 @@
                                         "description" => "Czy na pewno chcesz zaktualizować kurs?",
                                         "description_parameters" => [],
                                         'button' => 'Update',
-                                        'modalKey' => "edit".$course->id
+                                        'modalKey' => "editcourse".$course->id
                                     ])
                                 </div>
                             </div>
