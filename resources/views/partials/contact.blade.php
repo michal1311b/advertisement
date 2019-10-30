@@ -3,8 +3,11 @@
     <div class="col-md-12">
         @include('partials.validation-errors')
     </div>
+    <div class="col-md-12">
+        @include('partials.message')
+    </div>
     <div class="card-body">
-        <form method="POST" action="{{ route('send-message') }}">
+        <form method="POST" action="{{ route('send-message') }}" enctype="multipart/form-data">
             @csrf
             <input type="hidden" name="advertisement_id" value="{{ $advertisement->id }}">
             <input type="hidden" name="user_id" value="{{ $advertisement->user_id }}">
@@ -44,6 +47,18 @@
                     @enderror
                 </div>
             </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label for="cv">{{ __('Upload CV') }}</label>
+                   
+                    <input type="file" class="form-control @error('cv') is-invalid @enderror" name="cv" />
+                    @error('cv')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
+                </div>
+            </div>
+
             <div class="form-group">
                 <div class="form-check">
                     <input name="term1" type="hidden" value="0">

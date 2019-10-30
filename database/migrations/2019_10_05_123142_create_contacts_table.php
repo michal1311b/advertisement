@@ -25,6 +25,7 @@ class CreateContactsTable extends Migration
             $table->string('city')->nullable();
             $table->string('phone')->nullable();
             $table->text('message');
+            $table->text('cv');
             $table->boolean('term1')->defualt(0);
             $table->timestamps();
         });

@@ -31,6 +31,9 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-12">
+            @include('partials.message')
+        </div>
+        <div class="col-md-12">
             <div class="card">
                 <div class="card-header">Show advertisement: <strong>{{ $advertisement->title }}</strong></div>
 

@@ -15,6 +15,7 @@ class Contact extends Model
         'city',
         'phone',
         'message',
+        'cv',
         'term1'
     ];
 

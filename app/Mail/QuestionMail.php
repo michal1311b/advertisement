@@ -37,6 +37,7 @@ class QuestionMail extends Mailable
                         'first_name' => $this->contact->first_name,
                         'phone' => $this->contact->phone,
                         'message' => $this->contact->message
-                    ]);
+                    ])
+                    ->attach(str_replace(config('app.url').'/', '', $this->contact->cv));
     }
 }
