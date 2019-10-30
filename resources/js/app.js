@@ -11,6 +11,7 @@ require('./bloodhound.min');
 require('./bootstrap-tagsinput.min');
 require('select2');
 require('../../node_modules/bootstrap-select/dist/js/bootstrap-select.min');
+require('../../node_modules/bootstrap-datepicker/dist/js/bootstrap-datepicker');
 
 var notifications = [];
 
@@ -38,13 +39,12 @@ $(document).ready(function() {
         "clearIncomplete": true
     }).mask($('#post_code'));
 
-    Inputmask("9999-99-99", {
-        "clearIncomplete": true
-    }).mask($('#start_date'));
-
-    Inputmask("9999-99-99", {
-        "clearIncomplete": true
-    }).mask($('#end_date'));
+    $('#start_date').datepicker({
+        format: 'yyyy-mm-dd'
+    });
+    $('#end_date').datepicker({
+        format: 'yyyy-mm-dd'
+    });
     
     $('#specializations').select2({
         width: '100%'

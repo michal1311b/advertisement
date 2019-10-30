@@ -24,6 +24,7 @@
         "vue-template-compiler": "^2.6.10"
     },
     "dependencies": {
+        "bootstrap-datepicker": "^1.9.0",
         "bootstrap-select": "^1.13.12",
         "express": "^4.17.1",
         "inputmask": "^4.0.9",
