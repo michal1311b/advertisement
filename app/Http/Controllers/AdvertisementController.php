@@ -23,8 +23,9 @@ class AdvertisementController extends Controller
     {
         $advertisements = Advertisement::with(['state', 'galleries'])->paginate(5);
         $locations = Location::all();
+        $specializations = Specialization::all();
         
-        return view('advertisement.index', compact(['advertisements', 'locations']));
+        return view('advertisement.index', compact(['advertisements', 'locations', 'specializations']));
     }
     public function create(Request $request)
     {
@@ -154,19 +155,28 @@ class AdvertisementController extends Controller
 
     public function search(Request $request)
     {
-        if($request->get('q') !== null) {
-            $advertisements = Advertisement::query()
-            ->orWhere('title', 'LIKE', '%' . $request->get('q') . '%')
-            ->orWhere('description', 'LIKE', '%' . $request->get('q') . '%')
-            ->paginate(5);
-        } else {
-            $advertisements = Advertisement::query()
-            ->orWhere('location_id', (int)$request->get('location_id'))
-            ->paginate(5);
+        if($request->input('location_id') !== null) {
+            $location = Location::find($request->input('location_id'));
+            $advertisements = Advertisement::where('location_id', $location->id);
+        }
+
+        if($request->input('specialization_id') !== null) {
+            $specialization = Specialization::find($request->input('specialization_id'));
+            $advertisements = Advertisement::where('specialization_id', $specialization->id);
+        }
+
+        if(($request->input('location_id') !== null) && ($request->input('specialization_id') !== null)) {
+            $specialization = Specialization::find($request->input('specialization_id'));
+            $location = Location::find($request->input('location_id'));
+            $advertisements = Advertisement::where('specialization_id', $specialization->id)
+            ->where('location_id', $location->id);
         }
 
         $locations = Location::all();
+        $specializations = Specialization::all();
+        
+        $advertisements = $advertisements->paginate(5);
 
-        return view('advertisement.index', compact(['advertisements', 'locations']));
+        return view('advertisement.index', compact(['advertisements', 'locations', 'specializations']));
     }
 }
