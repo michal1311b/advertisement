@@ -7,7 +7,6 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
-@import 'layout';
 @import 'tagsinput';
 
 @import '~select2';
@@ -18,16 +17,4 @@
 
 @import '../../node_modules/bootstrap-slider/dist/css/bootstrap-slider.min';
 
-#notifications.has-notifications {
-    color: #bf5329
-}
-
-.slider.slider-horizontal:hover, .slider.slider-vertical:hover {
-    .tooltip.tooltip-main {
-        opacity: 0.7 !important;
-    }
-    .tooltip-inner {
-        font-size: 90%;
-        width: auto;
-    }
-}
+@import 'layout';

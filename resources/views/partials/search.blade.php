@@ -20,6 +20,8 @@
                             <option value="{{ $location->id }}">{{ $location->city }}</option>
                         @endforeach
                     </select>
+                </div>
+                <div class="form-group col-md-10">
                     <div class="input-group-append">
                         <input
                             type="text"

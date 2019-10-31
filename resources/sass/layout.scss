@@ -1,15 +1,13 @@
-body{
+body {
     text-decoration: none;
 }
 
-.gallery-item
-{
+.gallery-item {
     max-width: 400px;
     height: auto;
 }
 
-.ellipsis
-{
+.ellipsis {
     line-height: 1.2;
     height: 3.45em;
     display: block;
@@ -20,8 +18,7 @@ body{
     text-overflow: ellipsis;
 }
 
-.no-decoration
-{
+.no-decoration {
     text-decoration: none;
     display: inline-block;
     width: 100%;
@@ -34,8 +31,7 @@ a:hover {
     text-decoration: none !important;
 }
 
-.user-avatar
-{
+.user-avatar {
     width: 150px;
     height: 150px; 
     float: left; 
@@ -43,11 +39,14 @@ a:hover {
     margin-right: 25px;
 }
 
-.user-avatar--smaller
-{
+.user-avatar--smaller {
     width: 25px;
     height: 25px; 
     margin-right: 10px;
+}
+
+#notifications.has-notifications {
+    color: #bf5329
 }
 
 .notification {
@@ -70,4 +69,14 @@ a:hover {
     color: white;
     width: 25px;
     height: 25px;
+}
+
+.slider.slider-horizontal:hover, .slider.slider-vertical:hover {
+    .tooltip.tooltip-main {
+        opacity: 0.7 !important;
+    }
+    .tooltip-inner {
+        font-size: 90%;
+        width: auto;
+    }
 }

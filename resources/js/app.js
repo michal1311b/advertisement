@@ -75,10 +75,14 @@ $(document).ready(function() {
     });
 
     $('#work_id').selectpicker();
-    $('#location_id').selectpicker();
     $('#state_id').selectpicker();
     $('#category_id').selectpicker();
-    $('#specialization_id').selectpicker();
+    $('#location_id').selectpicker({
+        width: 'fit'
+    });
+    $('#specialization_id').selectpicker({
+        width: 'fit'
+    });
 
     (function () {
         var session_key = window.localStorage.getItem('session_key')

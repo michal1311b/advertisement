@@ -30,13 +30,13 @@
         @if(count($advertisements) > 0)
             @foreach($advertisements as $advertisement)
                 <div class="col-12">
-                    <a href="show/{{ $advertisement->slug }}" class="no-decoration"> 
+                    <a href="{{ route('show-advertisement', $advertisement->slug) }}" class="no-decoration"> 
                         <div class="card mb-3" style="max-width: 640px;">
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-12 col-md-4">
                                         @if($advertisement->galleries()->count())
-                                            <img src="{{ $advertisement->galleries[0]->path }}" class="card-img" alt="$advertisement->galleries[0]->oldName">
+                                            <img src="{{ $advertisement->galleries[0]->path }}" class="card-img" alt="{{$advertisement->galleries[0]->oldName}}">
                                         @else
                                             <img src="{{ asset('images/noImage.png') }}" class="card-img" alt="No image">
                                         @endif
@@ -47,19 +47,19 @@
                                             <div class="ellipsis">{!! $advertisement->description !!}</div>
                                             <p>
                                                 <div>
-                                                    <small class="text-muted">Created at: <strong>{{ $advertisement->created_at }}</strong></small>
+                                                    <small class="text-muted">{{ __('Created at:') }} <strong>{{ $advertisement->created_at }}</strong></small>
                                                 </div>
                                                 <div>
-                                                    <small class="text-muted">Salary per hour: <strong>{{ $advertisement->min_salary }} - {{ $advertisement->max_salary }}</strong></small>
+                                                    <small class="text-muted">{{ __('Salary per hour:') }} <strong>{{ $advertisement->min_salary }} - {{ $advertisement->max_salary }}</strong></small>
                                                 </div>
                                             </p>
                                             @if(Auth::id() === $advertisement->user->id)
                                                 <div class="btn-group btn-group-toggle">
-                                                    <a href="{{ route('edit-advertisement', $advertisement->id) }}" class="btn btn-info border border-warning mr-2">Edit</a>
+                                                    <a href="{{ route('edit-advertisement', $advertisement->id) }}" class="btn btn-info border border-warning mr-2">{{ __('Edit') }}</a>
                                                     <form method="get" action="{{ route('delete-advertisement', $advertisement->id) }}">
                                                         {{ method_field('DELETE') }}
                                                         {{csrf_field()}}
-                                                        <button type="submit" class="btn btn-danger border border-warning">Usuń</button>  
+                                                        <button type="submit" class="btn btn-danger border border-warning">{{ __('Delete') }}</button>  
                                                     </form>
                                                 </div>     
                                             @endif
