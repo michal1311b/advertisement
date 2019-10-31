@@ -35,7 +35,7 @@
                         <div class="row">
                             <div class="col-12 pb-2">
                                 <div class="btn-group btn-group-toggle">
-                                    <a href="{{ route('edit-advertisement', $advertisement->id) }}" class="btn btn-info border border-warning mr-2">Edit</a>
+                                    <a href="{{ route('edit-advertisement', $advertisement->id) }}" class="btn btn-info border border-warning mr-2">{{ __('Edit') }}</a>
                                 </div>  
                             </div>
                             <div class="col-12 pb-2">

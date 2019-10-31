@@ -56,11 +56,19 @@
                                             @if(Auth::id() === $advertisement->user->id)
                                                 <div class="btn-group btn-group-toggle">
                                                     <a href="{{ route('edit-advertisement', $advertisement->id) }}" class="btn btn-info border border-warning mr-2">{{ __('Edit') }}</a>
-                                                    <form method="get" action="{{ route('delete-advertisement', $advertisement->id) }}">
-                                                        {{ method_field('DELETE') }}
-                                                        {{csrf_field()}}
-                                                        <button type="submit" class="btn btn-danger border border-warning">{{ __('Delete') }}</button>  
-                                                    </form>
+
+                                                    <button class="btn btn-danger" data-toggle="modal"
+                                                        data-target="#modalremove{{$advertisement->id}}">{{ __('Delete') }}</i>
+                                                    </button>
+                                                    @include('partials.confirmation', [
+                                                        'url' => route('delete-advertisement', $advertisement->id),
+                                                        'method' => 'DELETE',
+                                                        'title' => "Usuń ogłoszenie",
+                                                        "description" => "Czy na pewno chcesz usunąć to ogłoszenie?",
+                                                        "description_parameters" => [],
+                                                        'button' => 'Usuń',
+                                                        'modalKey' => "remove".$advertisement->id
+                                                    ])
                                                 </div>     
                                             @endif
                                         </div>

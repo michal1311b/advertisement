@@ -42,7 +42,7 @@
                         <div class="card-body">
                             <div class="col-md-4">
                                 @if($advertisement->advertisement->galleries()->count())
-                                    <img src="{{ $advertisement->advertisement->galleries[0]->path }}" class="card-img" alt="$advertisement->advertisement->galleries[0]->oldName">
+                                    <img src="{{ $advertisement->advertisement->galleries[0]->path }}" class="card-img" alt="{{ $advertisement->advertisement->galleries[0]->oldName }}">
                                 @else
                                     <img src="{{ asset('images/noImage.png') }}" class="card-img" alt="No image">
                                 @endif
@@ -53,14 +53,22 @@
                                     <div class="ellipsis">{!! $advertisement->advertisement->description !!}</div>
                                     <p><small class="text-muted">Created at: <strong>{{ $advertisement->advertisement->created_at }}</strong></small></p>      
                                     @if(Auth::id() === $advertisement->advertisement->user->id)
-                                    <div class="btn-group btn-group-toggle">
-                                        <a href="{{ route('edit-advertisement', $advertisement->advertisement->id) }}" class="btn btn-info border border-warning mr-2">Edit</a>
-                                        <form method="get" action="{{ route('delete-advertisement', $advertisement->advertisement->id) }}">
-                                            {{ method_field('DELETE') }}
-                                            {{csrf_field()}}
-                                            <button type="submit" class="btn btn-danger border border-warning">Usuń</button>  
-                                        </form>
-                                    </div>     
+                                        <div class="btn-group btn-group-toggle">
+                                            <a href="{{ route('edit-advertisement', $advertisement->advertisement->id) }}" class="btn btn-info border border-warning mr-2">{{ __('Edit') }}</a>
+
+                                            <button class="btn btn-danger" data-toggle="modal"
+                                                data-target="#modalremove{{$advertisement->advertisement->id}}">{{ __('Delete') }}</i>
+                                            </button>
+                                            @include('partials.confirmation', [
+                                                'url' => route('delete-advertisement', $advertisement->advertisement->id),
+                                                'method' => 'DELETE',
+                                                'title' => "Usuń ogłoszenie",
+                                                "description" => "Czy na pewno chcesz usunąć to ogłoszenie?",
+                                                "description_parameters" => [],
+                                                'button' => 'Usuń',
+                                                'modalKey' => "remove".$advertisement->advertisement->id
+                                            ])
+                                        </div>     
                                     @endif  
                                 </div>
                             </div>
