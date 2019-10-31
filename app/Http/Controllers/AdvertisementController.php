@@ -181,8 +181,8 @@ class AdvertisementController extends Controller
         }
 
         if (($request->input('location_id') === null) && ($request->input('specialization_id') === null)) {
-            $advertisements = Advertisement::where('min_salary', '>=', $range[0])
-                ->where('max_salary', '<=', $range[1]);
+            $advertisements = Advertisement::where('min_salary', '>=', ($range[0] ?? 0))
+                ->where('max_salary', '<=', ($range[1] ?? 1000));
         }
 
         $locations = Location::all();
