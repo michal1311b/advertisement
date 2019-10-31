@@ -20,7 +20,12 @@ class AdvertisementSeeder extends Seeder
      */
     public function run()
     {
-        $counts = [1,2,3,4,5];
+        if(env('APP_ENV') === 'local')
+        {
+            $counts = [1,2,3,4,5];
+        } else {
+            $counts = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15];
+        }
 
         foreach($counts as $count) {
             $faker = Faker\Factory::create();
