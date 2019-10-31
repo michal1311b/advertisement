@@ -27,6 +27,14 @@
 <div class="container">
     <div class="row">
         @include('partials.search')
+        <div class="col-12">
+            <ul class="list-group">
+                <li class="list-group-item d-flex align-items-center">
+                    {{ __('Search by:') }}
+                    <span class="ml-4 badge badge-pill badge-info text-white">{{ str_replace('-', ' ', request()->segment(3)) }}</span>
+                </li>
+            </ul>
+        </div>
         @foreach($advertisements as $advertisement)
             <div class="col-12">
                 <div class="card mb-3" style="max-width: 640px;">

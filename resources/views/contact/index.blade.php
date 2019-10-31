@@ -21,11 +21,11 @@
             <thead>
                 <tr>
                     <th scope="col">#</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">First name</th>
-                    <th scope="col">City</th>
-                    <th scope="col">Phone</th>
-                    <th scope="col">Reply</th>
+                    <th scope="col">{{ __('Email') }}</th>
+                    <th scope="col">{{ __('First name') }}</th>
+                    <th scope="col">{{ __('City') }}</th>
+                    <th scope="col">{{ __('Phone') }}</th>
+                    <th scope="col">{{ __('Reply') }}</th>
                 </tr>
             </thead>
             <tbody>
@@ -38,12 +38,12 @@
                         <td>{{ $contact->city }}</td>
                         <td>{{ $contact->phone }}</td>
                         <td>
-                            <a href="{{ route('user-reply', $contact->id) }}" class="btn btn-success">Reply</a>
+                            <a href="{{ route('user-reply', $contact->id) }}" class="btn btn-success">{{ __('Reply') }}</a>
                         </td>
                     </tr>
                     <tr>
                         <td colspan="5">
-                            <strong>Message:</strong>
+                            <strong>{{ __('Message:') }}</strong>
                             {!! $contact->message !!}
                         </td>
                     </tr>
@@ -51,7 +51,7 @@
             @else
                 <tr>
                     <td colspan="5">
-                        <strong>No messages</strong>
+                        <strong>{{ __('No messages') }}</strong>
                     </td>
                 </tr>
             @endif

@@ -1,5 +1,5 @@
 <div class="card">
-    <div class="card-header">Contact form</div>
+    <div class="card-header">{{ __('Contact form') }}</div>
         <div class="col-md-12">
             @include('partials.validation-errors')
         </div>
