@@ -155,21 +155,34 @@ class AdvertisementController extends Controller
 
     public function search(Request $request)
     {
+        $range = explode(',', $request->input('range'));
+
         if($request->input('location_id') !== null) {
             $location = Location::find($request->input('location_id'));
-            $advertisements = Advertisement::where('location_id', $location->id);
+            $advertisements = Advertisement::where('location_id', $location->id)
+            ->where('min_salary', '>=', $range[0])
+            ->where('max_salary', '<=', $range[1]);
         }
 
         if($request->input('specialization_id') !== null) {
             $specialization = Specialization::find($request->input('specialization_id'));
-            $advertisements = Advertisement::where('specialization_id', $specialization->id);
+            $advertisements = Advertisement::where('specialization_id', $specialization->id)
+            ->where('min_salary', '>=', $range[0])
+            ->where('max_salary', '<=', $range[1]);
         }
 
         if(($request->input('location_id') !== null) && ($request->input('specialization_id') !== null)) {
             $specialization = Specialization::find($request->input('specialization_id'));
             $location = Location::find($request->input('location_id'));
             $advertisements = Advertisement::where('specialization_id', $specialization->id)
-            ->where('location_id', $location->id);
+            ->where('location_id', $location->id)
+            ->where('min_salary', '>=', $range[0])
+            ->where('max_salary', '<=', $range[1]);
+        }
+
+        if(($request->input('location_id') === null) && ($request->input('specialization_id') === null)) {
+            $advertisements = Advertisement::where('min_salary', '>=', $range[0])
+            ->where('max_salary', '<=', $range[1]);
         }
 
         $locations = Location::all();

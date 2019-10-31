@@ -16,7 +16,18 @@
 
 @import '../../node_modules/bootstrap-datepicker/dist/css/bootstrap-datepicker.css';
 
+@import '../../node_modules/bootstrap-slider/dist/css/bootstrap-slider.min';
+
 #notifications.has-notifications {
     color: #bf5329
 }
 
+.slider.slider-horizontal:hover, .slider.slider-vertical:hover {
+    .tooltip.tooltip-main {
+        opacity: 0.7 !important;
+    }
+    .tooltip-inner {
+        font-size: 90%;
+        width: auto;
+    }
+}

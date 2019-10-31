@@ -12,6 +12,7 @@ require('./bootstrap-tagsinput.min');
 require('select2');
 require('../../node_modules/bootstrap-select/dist/js/bootstrap-select.min');
 require('../../node_modules/bootstrap-datepicker/dist/js/bootstrap-datepicker');
+require('../../node_modules/bootstrap-slider/dist/bootstrap-slider.min');
 
 var notifications = [];
 
@@ -22,6 +23,16 @@ const NOTIFICATION_TYPES = {
 };
 
 $(document).ready(function() {
+    var mySlider = $("#range").bootstrapSlider({
+        min: 0,
+        max: 1000,
+        step: 20,
+        value: [0, 800],
+        tooltip: 'always',
+        range: true,
+        ticks_tooltip: true,
+        labelledby: ['ex18-label-2a', 'ex18-label-2b']
+    });
     // check if there's a logged in user
     if(Laravel.userId) {
         $.get('/offer/notifications', function (data) {
