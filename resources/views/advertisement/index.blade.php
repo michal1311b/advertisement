@@ -29,9 +29,9 @@
         @include('partials.search')
         @if(count($advertisements) > 0)
             @foreach($advertisements as $advertisement)
-                <div class="col-12">
+                <div class="col-12 col-md-8">
                     <a href="{{ route('show-advertisement', $advertisement->slug) }}" class="no-decoration"> 
-                        <div class="card mb-3" style="max-width: 640px;">
+                        <div class="card mb-3">
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-12 col-md-4">
@@ -79,7 +79,7 @@
             </div>
         @else
             <div class="col-12">
-                <h4>No advertisements found</h4>
+                <h4>{{ __('No advertisements found') }}</h4>
             </div>
         @endif
     </div>
