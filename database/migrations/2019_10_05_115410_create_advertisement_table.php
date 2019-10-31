@@ -39,6 +39,7 @@ class CreateAdvertisementTable extends Migration
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('work_id')->references('id')->on('works');
             $table->foreign('specialization_id')->references('id')->on('specializations');
+            $table->softDeletes();
             $table->timestamps();
         });
     }
