@@ -39,7 +39,7 @@
                             <div class="media align-items-lg-center flex-column flex-lg-row p-3">
                             <div class="media-body order-2 order-lg-1">
                                 <h5 class="mt-0 font-weight-bold mb-2">{{ $advertisement->title }}</h5>
-                                <p class="font-italic text-muted mb-0 small ellipsis">{!! $advertisement->description !!}</p>
+                                <div class="font-italic text-muted mb-0 small ellipsis">{!! $advertisement->description !!}</div>
                                 <div class="d-flex align-items-center justify-content-between mt-1">
                                     <h6 class="font-weight-bold my-2">{{ __('Salary per hour:') }} {{ $advertisement->min_salary }} - {{ $advertisement->max_salary }}</h6>
                                 </div>
@@ -58,7 +58,7 @@
                 </ul>
                 <!-- End -->
             @endforeach
-            <div class="col-12 pt-3">
+            <div class="pt-3">
                 {{ $advertisements->links() }}
             </div>
         @else

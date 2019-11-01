@@ -26,50 +26,45 @@
 @section('content')
 <div class="container">
     <div class="row">
-        @foreach($advertisements as $advertisement)
-            <div class="col-12">
-                <div class="card mb-3" style="max-width: 640px;">
-                    <a href="{{ route('user-advertisement-show', $advertisement->slug) }}" class="no-decoration"> 
-                        <div class="card-body">
-                            <div class="col-md-4">
-                                @if($advertisement->galleries()->count())
-                                    <img src="{{ $advertisement->galleries[0]->path }}" class="card-img" alt="{{ $advertisement->galleries[0]->oldName }}">
-                                @else
-                                    <img src="{{ asset('images/noImage.png') }}" class="card-img" alt="No image">
-                                @endif
-                            </div>
-                            <div class="col-md-8">
-                                <h5 class="card-title">{{ $advertisement->title }}</h5>
-                                <div class="card-text">
-                                    <div class="ellipsis">{!! $advertisement->description !!}</div>
-                                    <p><small class="text-muted">{{ __('Created at:') }} <strong>{{ $advertisement->created_at }}</strong></small></p>      
-                                    @if(Auth::id() === $advertisement->user->id)
-                                        <div class="btn-group btn-group-toggle">
-                                            <a href="{{ route('edit-advertisement', $advertisement->id) }}" class="btn btn-info border border-warning mr-2">{{ __('Edit') }}</a>
-                                            
-                                            <button class="btn btn-danger" data-toggle="modal"
-                                                data-target="#modalremove{{$advertisement->id}}">{{ __('Delete') }}</i>
-                                            </button>
-                                            @include('partials.confirmation', [
-                                                'url' => route('delete-advertisement', $advertisement->id),
-                                                'method' => 'DELETE',
-                                                'title' => "Usuń ogłoszenie",
-                                                "description" => "Czy na pewno chcesz usunąć to ogłoszenie?",
-                                                "description_parameters" => [],
-                                                'button' => 'Usuń',
-                                                'modalKey' => "remove".$advertisement->id
-                                            ])
-                                        </div>     
-                                    @endif  
+        <div class="col-lg-12 mx-auto">
+            @if(count($advertisements) > 0)
+                @foreach($advertisements as $advertisement)
+                    <!-- List group-->
+                    <ul class="list-group shadow">
+                        <a href="{{ route('show-advertisement', $advertisement->slug) }}" class="no-decoration"> 
+                            <!-- list group item-->
+                            <li class="list-group-item">
+                                <!-- Custom content-->
+                                <div class="media align-items-lg-center flex-column flex-lg-row p-3">
+                                    <div class="media-body order-2 order-lg-1">
+                                        <h5 class="mt-0 font-weight-bold mb-2">{{ $advertisement->title }}</h5>
+                                        <div class="font-italic text-muted mb-0 small ellipsis">{!! $advertisement->description !!}</div>
+                                        <div class="d-flex align-items-center justify-content-between mt-1">
+                                            <h6 class="font-weight-bold my-2">{{ __('Salary per hour:') }} {{ $advertisement->min_salary }} - {{ $advertisement->max_salary }}</h6>
+                                        </div>
+                                        <div class="badge badge-secondary">{{ $advertisement->specialization->name }}</div>
+                                    </div>
+                                    @if($advertisement->galleries()->count())
+                                        <img src="{{ $advertisement->galleries[0]->path }}" width="200" class="ml-lg-5 order-1 order-lg-2" alt="{{$advertisement->galleries[0]->oldName}}">
+                                    @else
+                                        <img src="{{ asset('images/noImage.png') }}" width="200" class="ml-lg-5 order-1 order-lg-2" alt="No image">
+                                    @endif
                                 </div>
-                            </div>
-                        </div>
-                    </a>
+                                <!-- End -->
+                            </li>
+                            <!-- End -->
+                        </a>
+                    </ul>
+                    <!-- End -->
+                @endforeach
+                <div class="pt-3">
+                    {{ $advertisements->links() }}
                 </div>
-            </div>
-        @endforeach
-        <div class="col-12">
-            {{ $advertisements->links() }}
+            @else
+                <div class="col-12">
+                    <h4>{{ __('No advertisements found') }}</h4>
+                </div>
+            @endif
         </div>
     </div>
 </div>
