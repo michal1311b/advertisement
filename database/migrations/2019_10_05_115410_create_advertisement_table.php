@@ -17,6 +17,8 @@ class CreateAdvertisementTable extends Migration
             $table->bigIncrements('id');
             $table->string('title');
             $table->text('description');
+            $table->text('profits')->nullable();
+            $table->text('requirements')->nullable();
             $table->string('postCode');
             $table->string('street');
             $table->string('email');

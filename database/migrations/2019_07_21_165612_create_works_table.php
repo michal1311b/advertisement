@@ -22,17 +22,27 @@ class CreateWorksTable extends Migration
 
         DB::table('works')->insert([
             [
-                'name' => 'zlecenie',
+                'name' => 'dowolna',
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'name' => 'kontrakt (działalność gospodarcza)',
+                'name' => 'Etat (pełny wymiar)',
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'name' => 'umowa o prace',
+                'name' => 'Etat (niepełny wymiar)',
+                'created_at' => \Carbon\Carbon::now(),
+                'updated_at' => \Carbon\Carbon::now()
+            ],
+            [
+                'name' => 'Kontrakt (pełny wymiar)',
+                'created_at' => \Carbon\Carbon::now(),
+                'updated_at' => \Carbon\Carbon::now()
+            ],
+            [
+                'name' => 'Kontrakt (niepełny wymiar)',
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ]

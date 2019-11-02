@@ -47,6 +47,8 @@ class AdvertisementSeeder extends Seeder
             $advertisement->specialization_id = $specialization->id;
             $advertisement->title = $title;
             $advertisement->description = $faker->name;
+            $advertisement->profits = $faker->name;
+            $advertisement->requirements = $faker->name;
             $advertisement->postCode = $faker->postcode;
             $advertisement->street = $faker->streetAddress;
             $advertisement->email = $faker->email;

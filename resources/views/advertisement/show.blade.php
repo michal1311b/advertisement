@@ -111,8 +111,18 @@
                                     </li>
                                 </ul>
 
-                                <h4><strong>Description:</strong></h4>
+                                <div class="col-12 pb-3">
+                                    <div id="map" style="height: 440px; border: 1px solid #AAA;"></div>
+                                </div>
+
+                                <h4 class="pt-2"><strong>{{ __('Description:') }}</strong></h4>
                                 {!! $advertisement->description !!}
+
+                                <h4 class="pt-2"><strong>{{ __('Requirements:') }}</strong></h4>
+                                {!! $advertisement->requirements !!}
+
+                                <h4 class="pt-2"><strong>{{ __('Profits:') }}</strong></h4>
+                                {!! $advertisement->profits !!}
                             </div>
                             <div class="col-12">
                                 <div id="advertisementCarousel" class="carousel slide" data-ride="carousel">
@@ -147,6 +157,33 @@
 
 @section('scripts')
 <script>
+markers = [
+    {
+        "name": "{{ $advertisement->location->city }}",
+        "lat": {{ $advertisement->location->latitude }},
+        "lng": {{ $advertisement->location->longitude }},
+        "min_salary": {{ $advertisement->min_salary }},
+        "max_salary": {{ $advertisement->max_salary }},
+        "currency": "{{ $advertisement->currency->symbol }}",
+    }
+];
+var map = L.map( 'map', {
+        center: [{{ $advertisement->location->latitude }}, {{ $advertisement->location->longitude }}],
+        minZoom: 2,
+        zoom: 12
+    });
+
+L.tileLayer( 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+    subdomains: ['a','b','c']
+}).addTo( map );
+
+for ( var i=0; i < markers.length; ++i ) 
+{
+   L.marker( [markers[i].lat, markers[i].lng] )
+      .bindPopup( markers[i].name + ': ' + markers[i].min_salary + '-' + markers[i].max_salary + ' ' + markers[i].currency )
+      .addTo( map );
+}
 $('#advertisementCarousel').carousel({
   interval: 2000
 });

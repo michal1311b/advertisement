@@ -14,6 +14,8 @@ class Advertisement extends Model
     protected $fillable = [
         'title',
         'description',
+        'profits',
+        'requirements',
         'work_id',
         'state_id',
         'user_id',
@@ -89,6 +91,8 @@ class Advertisement extends Model
         $entry = new Advertisement();
         $entry->title = $attributes['title'];
         $entry->description = $attributes['description'];
+        $entry->profits = $attributes['profits'];
+        $entry->requirements = $attributes['requirements'];
         $entry->work_id = $attributes['work_id'];
         $entry->state_id = $attributes['state_id'];
         $entry->user_id = auth()->user()->id;

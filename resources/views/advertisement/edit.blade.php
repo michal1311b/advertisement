@@ -51,8 +51,30 @@
                             <label for="description" class="col-12 col-md-3 col-form-label text-md-right">{{ __('Description') }}</label>
 
                             <div class="col-12 col-md-9">
-                                <textarea id="description" type="description" class="form-control @error('description') is-invalid @enderror" name="description" value="{{ $advertisement->description }}" autocomplete="description" autofocus rows="3">{{ $advertisement->description }}</textarea>
+                                <textarea id="description" class="form-control @error('description') is-invalid @enderror" name="description" value="{{ $advertisement->description }}" autocomplete="description" autofocus rows="3">{{ $advertisement->description }}</textarea>
                                 @error('description')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="profits" class="col-12 col-md-3 col-form-label text-md-right">{{ __('Profits') }}</label>
+
+                            <div class="col-12 col-md-9">
+                                <textarea id="profits" class="form-control @error('profits') is-invalid @enderror" name="profits" value="{{ $advertisement->profits }}" autocomplete="profits" autofocus rows="3">{{ $advertisement->profits }}</textarea>
+                                @error('profits')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="requirements" class="col-12 col-md-3 col-form-label text-md-right">{{ __('Requirements') }}</label>
+
+                            <div class="col-12 col-md-9">
+                                <textarea id="requirements" class="form-control @error('requirements') is-invalid @enderror" name="requirements" value="{{ $advertisement->requirements }}" autocomplete="requirements" autofocus rows="3">{{ $advertisement->requirements }}</textarea>
+                                @error('requirements')
                                     <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
                             </div>

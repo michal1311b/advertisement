@@ -36,8 +36,30 @@
                             <label for="description" class="col-12 col-md-3 col-form-label text-md-right">{{ __('Description') }}</label>
 
                             <div class="col-12 col-md-9">
-                                <textarea id="description" type="description" class="form-control @error('description') is-invalid @enderror" name="description" value="{{ old('description') }}" autocomplete="title" autofocus rows="3"></textarea>
+                                <textarea id="description" class="form-control @error('description') is-invalid @enderror" name="description" value="{{ old('description') }}" autocomplete="description" autofocus rows="3"></textarea>
                                 @error('description')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="profits" class="col-12 col-md-3 col-form-label text-md-right">{{ __('Profits') }}</label>
+
+                            <div class="col-12 col-md-9">
+                                <textarea id="profits" class="form-control @error('profits') is-invalid @enderror" name="profits" value="{{ old('profits') }}" autocomplete="profits" autofocus rows="3"></textarea>
+                                @error('profits')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="requirements" class="col-12 col-md-3 col-form-label text-md-right">{{ __('Requirements') }}</label>
+
+                            <div class="col-12 col-md-9">
+                                <textarea id="requirements" class="form-control @error('requirements') is-invalid @enderror" name="requirements" value="{{ old('requirements') }}" autocomplete="requirements" autofocus rows="3"></textarea>
+                                @error('requirements')
                                     <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
                             </div>
