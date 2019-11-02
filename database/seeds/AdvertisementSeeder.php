@@ -32,7 +32,7 @@ class AdvertisementSeeder extends Seeder
             $faker = Faker\Factory::create();
 
             $user1 = User::find(rand(1,2));
-            $location = Location::find(rand(1,10));
+            $location = Location::find(rand(1,1000));
             $state = State::find(rand(1,10));
             $work = Work::find(rand(1,3));
             $specialization = Specialization::find(rand(1,3));

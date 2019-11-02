@@ -22,7 +22,7 @@ class AdvertisementController extends Controller
 {
     public function index()
     {
-        $advertisements = Advertisement::with(['state', 'galleries'])
+        $advertisements = Advertisement::with(['state', 'galleries', 'location'])
         ->where('created_at', '>', Carbon::now()->subDays(30))->paginate(5);
         $locations = Location::all();
         $specializations = Specialization::all();
