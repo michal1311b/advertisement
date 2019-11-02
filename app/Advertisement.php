@@ -19,6 +19,7 @@ class Advertisement extends Model
         'user_id',
         'location_id',
         'specialization_id',
+        'currency_id',
         'postCode',
         'street',
         'email',
@@ -62,6 +63,11 @@ class Advertisement extends Model
         return $this->belongsTo(State::class);
     }
 
+    public function currency()
+    {
+        return $this->belongsTo(Currency::class);
+    }
+
     public function location()
     {
         return $this->belongsTo(Location::class);
@@ -88,6 +94,7 @@ class Advertisement extends Model
         $entry->user_id = auth()->user()->id;
         $entry->location_id = $attributes['location_id'];
         $entry->specialization_id = $attributes['specialization_id'];
+        $entry->currency_id = $attributes['currency_id'];
         $entry->postCode = $attributes['postCode'];
         $entry->street = $attributes['street'];
         $entry->phone = $attributes['phone'];

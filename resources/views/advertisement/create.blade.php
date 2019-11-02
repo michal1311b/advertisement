@@ -191,6 +191,21 @@
                         </div>
 
                         <div class="form-group row">
+                            <label class="col-12 col-md-3 col-form-label text-md-right" for="currency_id">{{ __('Currency') }}</label>
+                            <div class="col-12 col-md-9">
+                                <select data-live-search="true" class="form-control @error('currency_id') is-invalid @enderror" name="currency_id" id="currency_id">
+                                    <option selected>Choose...</option>
+                                    @foreach($currencies as $currency)
+                                        <option value="{{ $currency->id }}">{{ $currency->symbol }}</option>
+                                    @endforeach
+                                </select>
+                                @error('currency_id')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
                             <div class="col-sm-3"></div>
                             <div class="col-sm-9">
                                 <div class="form-check">

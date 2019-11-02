@@ -29,7 +29,7 @@
         </div>
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">Edit advertisement</div>
+                <div class="card-header">{{ __('Edit advertisement') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('update-advertisement', $advertisement->id) }}" enctype="multipart/form-data">
@@ -225,6 +225,25 @@
                                  id="max_salary" type="number" 
                                  class="form-control @error('max_salary') is-invalid @enderror" name="max_salary" value="{{ $advertisement->max_salary }}" autocomplete="max_salary" autofocus>
                                 @error('max_salary')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-12 col-md-3 col-form-label text-md-right" for="currency_id">{{ __('Currency') }}</label>
+                            <div class="col-12 col-md-9">
+                                <select data-live-search="true" class="form-control @error('currency_id') is-invalid @enderror" name="currency_id" id="currency_id">
+                                    <option selected>{{ __('Choose...') }}</option>
+                                    @foreach($currencies as $currency)
+                                        @if($advertisement->currency_id === $currency->id)
+                                            <option value="{{ $currency->id }}" selected>{{ $currency->symbol }}</option>
+                                        @else
+                                            <option value="{{ $currency->id }}">{{ $currency->symbol }}</option>
+                                        @endif
+                                    @endforeach
+                                </select>
+                                @error('currency_id')
                                     <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
                             </div>

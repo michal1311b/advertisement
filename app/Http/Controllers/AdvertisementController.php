@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Advertisement;
+use App\Currency;
 use App\Specialization;
 use App\Work;
 use App\User;
@@ -21,11 +22,13 @@ class AdvertisementController extends Controller
 {
     public function index()
     {
-        $advertisements = Advertisement::with(['state', 'galleries'])->paginate(5);
+        $advertisements = Advertisement::with(['state', 'galleries'])
+        ->where('created_at', '>', Carbon::now()->subDays(30))->paginate(5);
         $locations = Location::all();
         $specializations = Specialization::all();
+        $expirateDate = Carbon::now()->subDays(30);
 
-        return view('advertisement.index', compact(['advertisements', 'locations', 'specializations']));
+        return view('advertisement.index', compact(['advertisements', 'locations', 'specializations', 'expirateDate']));
     }
     public function create(Request $request)
     {
@@ -35,8 +38,9 @@ class AdvertisementController extends Controller
         $states = State::all();
         $locations = Location::all();
         $specializations = Specialization::all();
+        $currencies = Currency::all();
 
-        return view('advertisement.create', compact('works', 'states', 'locations', 'specializations'));
+        return view('advertisement.create', compact('works', 'states', 'locations', 'specializations', 'currencies'));
     }
 
     public function store(StoreRequest $request)
@@ -89,6 +93,7 @@ class AdvertisementController extends Controller
         $states = State::all();
         $locations = Location::all();
         $specializations = Specialization::all();
+        $currencies = Currency::all();
 
         $tags_array = [];
         foreach ($advertisement->tags as $tag) {
@@ -97,13 +102,15 @@ class AdvertisementController extends Controller
 
         $tags = implode(",", $tags_array);
 
-        return view('advertisement.edit', compact(['advertisement', 'works', 'states', 'tags', 'locations', 'specializations']));
+        return view('advertisement.edit', compact(['advertisement', 'works', 'states', 'tags', 'locations', 'specializations', 'currencies']));
     }
 
     public function deletePhoto($id)
     {
         $gallery = Gallery::findOrFail($id);
         $gallery->delete();
+
+        session()->flash('success', __('Photo was deleted successfully!'));
 
         return back();
     }

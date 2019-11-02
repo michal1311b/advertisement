@@ -30,6 +30,7 @@ class StoreRequest extends FormRequest
             'state_id' => 'required|exists:states,id',
             'location_id' => 'required|exists:locations,id',
             'specialization_id' => 'required|exists:specializations,id',
+            'currency_id' => 'required|exists:currencies,id',
             'min_salary' => 'required|numeric',
             'max_salary' => 'required|numeric|greater_than_field:min_salary',
             'postCode' => 'required|min:3|max:190',

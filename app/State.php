@@ -14,4 +14,9 @@ class State extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function advertisement()
+    {
+        return $this->belongsTo(Advertisement::class);
+    }
 }

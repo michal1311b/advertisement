@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
         $this->call(ProfileTableSeeder::class);
         $this->call(LocationTableSeeder::class);
         $this->call(SpecializationTableSeeder::class);
+        $this->call(CurrenciesTableSeeder::class);
         $this->call(AdvertisementSeeder::class);
         $this->call(CategoriesTableSeeder::class);
     }

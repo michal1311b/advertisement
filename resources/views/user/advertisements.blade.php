@@ -56,6 +56,22 @@
                         </a>
                     </ul>
                     <!-- End -->
+                    <div class="btn-group btn-group-toggle py-2">
+                        <a href="{{ route('edit-advertisement', $advertisement->id) }}" class="btn btn-info border border-warning mr-2 text-white">{{ __('Edit') }}</a>
+
+                        <button class="btn btn-danger" data-toggle="modal"
+                            data-target="#modalremove{{$advertisement->id}}">{{ __('Delete') }}</i>
+                        </button>
+                        @include('partials.confirmation', [
+                            'url' => route('delete-advertisement', $advertisement->id),
+                            'method' => 'DELETE',
+                            'title' => "Usuń ogłoszenie",
+                            "description" => "Czy na pewno chcesz usunąć to ogłoszenie?",
+                            "description_parameters" => [],
+                            'button' => 'Usuń',
+                            'modalKey' => "remove".$advertisement->id
+                        ])
+                    </div>
                 @endforeach
                 <div class="pt-3">
                     {{ $advertisements->links() }}
