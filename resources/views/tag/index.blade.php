@@ -47,8 +47,10 @@
                                 <div class="media-body order-2 order-lg-1">
                                     <h5 class="mt-0 font-weight-bold mb-2">{{ $advertisement->advertisement->title }}</h5>
                                     <div class="font-italic text-muted mb-0 small ellipsis">{!! $advertisement->advertisement->description !!}</div>
+                                    <h6 class="mt-0 font-weight-bold mb-2"><i class="fas fa-map-marker-alt"></i> {{ $advertisement->advertisement->location->city }}</h6>
+                                    <h6 class="mt-0 mb-2"><i class="fas fa-user-md"></i> {{ $advertisement->advertisement->user->profile->company_name }}</h6>
                                     <div class="d-flex align-items-center justify-content-between mt-1">
-                                        <h6 class="font-weight-bold my-2">{{ __('Salary per hour:') }} {{ $advertisement->advertisement->min_salary }} - {{ $advertisement->advertisement->max_salary }}</h6>
+                                        <h6 class="font-weight-bold my-2"><i class="fas fa-coins"></i> {{ __('Salary per hour:') }} {{ $advertisement->advertisement->min_salary }} - {{ $advertisement->advertisement->max_salary }}</h6>
                                     </div>
                                     <div class="badge badge-secondary">{{ $advertisement->advertisement->specialization->name }}</div>
                                 </div>

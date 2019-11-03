@@ -13,6 +13,7 @@ use App\State;
 use App\Gallery;
 use App\Http\Requests\Advertisement\StoreRequest;
 use App\Jobs\SendEmailJob;
+use App\Settlement;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\DB;
@@ -39,8 +40,9 @@ class AdvertisementController extends Controller
         $locations = Location::all();
         $specializations = Specialization::all();
         $currencies = Currency::all();
+        $settlements = Settlement::all();
 
-        return view('advertisement.create', compact('works', 'states', 'locations', 'specializations', 'currencies'));
+        return view('advertisement.create', compact('works', 'states', 'locations', 'specializations', 'currencies', 'settlements'));
     }
 
     public function store(StoreRequest $request)

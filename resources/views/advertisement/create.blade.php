@@ -228,6 +228,21 @@
                         </div>
 
                         <div class="form-group row">
+                            <label class="col-12 col-md-3 col-form-label text-md-right" for="settlement_id">{{ __('Settlement') }}</label>
+                            <div class="col-12 col-md-9">
+                                <select data-live-search="true" class="form-control @error('settlement_id') is-invalid @enderror" name="settlement_id" id="settlement_id">
+                                    <option selected>Choose...</option>
+                                    @foreach($settlements as $settlement)
+                                        <option value="{{ $settlement->id }}">{{ $settlement->name }}</option>
+                                    @endforeach
+                                </select>
+                                @error('settlement_id')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
                             <div class="col-sm-3"></div>
                             <div class="col-sm-9">
                                 <div class="form-check">

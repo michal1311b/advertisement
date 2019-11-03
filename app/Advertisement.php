@@ -22,6 +22,7 @@ class Advertisement extends Model
         'location_id',
         'specialization_id',
         'currency_id',
+        'settlement_id',
         'postCode',
         'street',
         'email',
@@ -70,6 +71,11 @@ class Advertisement extends Model
         return $this->belongsTo(Currency::class);
     }
 
+    public function settlement()
+    {
+        return $this->belongsTo(Settlement::class);
+    }
+
     public function location()
     {
         return $this->belongsTo(Location::class);
@@ -99,6 +105,7 @@ class Advertisement extends Model
         $entry->location_id = $attributes['location_id'];
         $entry->specialization_id = $attributes['specialization_id'];
         $entry->currency_id = $attributes['currency_id'];
+        $entry->settlement_id = $attributes['settlement_id'];
         $entry->postCode = $attributes['postCode'];
         $entry->street = $attributes['street'];
         $entry->phone = $attributes['phone'];

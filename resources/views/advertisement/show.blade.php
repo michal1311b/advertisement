@@ -74,14 +74,18 @@
                                 </div>
                             </div>
                             <div class="col-12 pb-2">
-                                Tags:
-                                @foreach($advertisement->tags as $tag)
-                                    <a href="{{ route('advertisementTag', ['tagSlug' => $tag->slug]) }}">
-                                        <span class="badge badge-pill badge-info text-white">
-                                            {{ $tag->name }}
-                                        </span>
-                                    </a>
-                                @endforeach
+                                {{ __('Tags:') }}
+                                @if(!$advertisement->tags)
+                                    @foreach($advertisement->tags as $tag)
+                                        <a href="{{ route('advertisementTag', ['tagSlug' => $tag->slug]) }}">
+                                            <span class="badge badge-pill badge-info text-white">
+                                                {{ $tag->name }}
+                                            </span>
+                                        </a>
+                                    @endforeach
+                                @else
+                                    <span class="font-weight-bold">{{ __('There\'s no tags') }}</span>
+                                @endif
                             </div>
                             <div class="col-12">
                                 <ul class="list-group">
@@ -109,20 +113,38 @@
                                         {{ __('Work type:') }}
                                         <span class="badge badge-pill">{{ $advertisement->work->name }}</span>
                                     </li>
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        {{ __('Salary:') }}
+                                        <span class="badge badge-pill">{{ $advertisement->min_salary }} - {{ $advertisement->max_salary }} {{ $advertisement->currency->symbol }}</span>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        {{ __('Settlement:') }}
+                                        <span class="badge badge-pill">{{ $advertisement->settlement->name }}</span>
+                                    </li>
                                 </ul>
 
-                                <div class="col-12 pb-3">
+                                <div class="py-3">
                                     <div id="map" style="height: 440px; border: 1px solid #AAA;"></div>
                                 </div>
 
-                                <h4 class="pt-2"><strong>{{ __('Description:') }}</strong></h4>
-                                {!! $advertisement->description !!}
+                                <div class="py-2">
+                                    <h4><strong>{{ __('Description:') }}</strong></h4>
+                                    {!! $advertisement->description !!}
+                                </div>
 
-                                <h4 class="pt-2"><strong>{{ __('Requirements:') }}</strong></h4>
-                                {!! $advertisement->requirements !!}
+                                @if($advertisement->requirements !== null)
+                                    <div class="py-2">
+                                        <h4><strong>{{ __('Requirements:') }}</strong></h4>
+                                        {!! $advertisement->requirements !!}
+                                    </div>
+                                @endif
 
-                                <h4 class="pt-2"><strong>{{ __('Profits:') }}</strong></h4>
-                                {!! $advertisement->profits !!}
+                                @if($advertisement->profits !== null)
+                                    <div class="py-2">
+                                        <h4><strong>{{ __('Profits:') }}</strong></h4>
+                                        {!! $advertisement->profits !!}
+                                    </div>
+                                @endif
                             </div>
                             <div class="col-12">
                                 <div id="advertisementCarousel" class="carousel slide" data-ride="carousel">

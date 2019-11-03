@@ -10,6 +10,7 @@ use App\Work;
 use App\Gallery;
 use App\Tag;
 use App\Specialization;
+use App\Settlement;
 use Carbon\Carbon;
 
 class AdvertisementSeeder extends Seeder
@@ -37,6 +38,7 @@ class AdvertisementSeeder extends Seeder
             $work = Work::find(rand(1,3));
             $specialization = Specialization::find(rand(1,3));
             $currency = Currency::find(rand(1,3));
+            $settlement = Settlement::find(rand(1,3));
 
             $title = $faker->name;
             $advertisement = new Advertisement();
@@ -56,6 +58,7 @@ class AdvertisementSeeder extends Seeder
             $advertisement->min_salary = rand(20, 100);
             $advertisement->max_salary = rand(110, 250);
             $advertisement->currency_id = $currency->id;
+            $advertisement->settlement_id = $settlement->id;
             $advertisement->term1 = 1;
             $advertisement->term2 = 1;
             $advertisement->term3 = 1;
