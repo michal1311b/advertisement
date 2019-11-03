@@ -108,6 +108,20 @@
                                 </div>
 
                                 <div class="form-group row">
+                                    <label class="col-md-4 col-form-label text-md-right" for="sex">{{ __('Sex') }}</label>
+                                    <div class="col-md-6">
+                                        <select data-live-search="true" class="form-control @error('sex') is-invalid @enderror" name="sex" id="sex">
+                                            <option selected>Choose...</option>
+                                            <option value="male">{{ __('Male') }}</option>
+                                            <option value="female">{{ __('Female') }}</option>
+                                        </select>
+                                        @error('sex')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
                                     <label for="specializations" class="col-md-4 col-form-label text-md-right">{{__('Specializations')}}</label>
                                     <div class="col-md-6">
                                         <select multiple="multiple"

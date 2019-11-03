@@ -18,7 +18,7 @@ class User extends Authenticatable implements MustVerifyEmail, HasLoginsAndDevic
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'term1', 'term2', 'term3'
+        'name', 'email', 'password', 'term1', 'term2', 'term3', 'avatar'
     ];
 
     /**

@@ -17,6 +17,7 @@ class CreateDoctorsTable extends Migration
             $table->bigIncrements('id');
             $table->string('pwz');
             $table->string('birthday');
+            $table->string('sex')->nullable()->default('male');
             $table->bigInteger('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
 

@@ -220,6 +220,28 @@
                                     @endif
                                 </div>
                             </div>
+
+                            <div class="form-group row">
+                                <label class="col-12 col-md-3 col-form-label text-md-right" for="sex">{{ __('Sex') }}</label>
+                                <div class="col-12 col-md-9">
+                                    <select data-live-search="true" class="form-control @error('sex') is-invalid @enderror" name="sex" id="sex">
+                                        <option selected>Choose...</option>
+                                        <option 
+                                            @if($editUser->doctor->sex === 'male') 
+                                            selected
+                                            @endif 
+                                            value="male">{{ __('Male') }}</option>
+                                        <option 
+                                            @if($editUser->doctor->sex === 'female') 
+                                            selected
+                                            @endif 
+                                            value="female">{{ __('Female') }}</option>
+                                    </select>
+                                    @error('sex')
+                                        <div class="alert alert-danger">{{ $message }}</div>
+                                    @enderror
+                                </div>
+                            </div>
                         @endif
 
                         <div class="form-group row mb-0">
