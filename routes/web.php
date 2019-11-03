@@ -72,6 +72,9 @@ Route::group(array('prefix' => 'user'), function () {
     Route::put('/experience/{experience}', 'ExperienceController@update')->name('update-experience');
     Route::put('/course/{course}', 'CourseController@update')->name('update-course');
     Route::delete('/course/{course}/delete', 'CourseController@delete')->name('delete-course');
+    Route::post('/language/{user}', 'UserLanguageController@store')->name('store-language')->middleware(['auth', 'verified']);
+    Route::put('/language/{language}/user/{id}', 'UserLanguageController@update')->name('update-user-language');
+    Route::delete('/language/{id}', 'UserLanguageController@delete')->name('delete-user-language');
 });
 
 Route::post('/send-message', 'ContactController@store')->name('send-message');

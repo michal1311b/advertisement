@@ -12,6 +12,8 @@ use App\Notifications\UserFollowed;
 use App\Specialization;
 use App\Experience;
 use App\Http\Requests\User\UploadRequest;
+use App\Language;
+use App\UserLanguage;
 
 class UserController extends Controller
 {
@@ -21,8 +23,10 @@ class UserController extends Controller
         $user = Auth::user();
         $user->checkAuthorization($editUser->id, $user->id);
         $specializations = Specialization::all();
+        $languages = Language::all();
+        $userLanguages = UserLanguage::where('user_id', $editUser->id)->with('language')->get();
 
-        return view('user.edit', compact(['editUser', 'specializations']));
+        return view('user.edit', compact(['editUser', 'specializations', 'languages', 'userLanguages']));
     }
 
     public function update(UploadRequest $request, User $user)

@@ -573,6 +573,111 @@
                     </div>
                 </div>
             </div>
+
+            <div class="col-md-12 py-3">
+                <div class="card">
+                    <div class="card-header">{{ __('Edit your languages') }}</div>
+
+                    <div class="card-body">
+                        <form method="POST" action="{{ route('store-language', $editUser) }}">
+                            @csrf
+                            @if($editUser->doctor !== null)
+                                <div class="form-group row">
+                                    <label class="col-12 col-md-3 col-form-label text-md-right" for="lang_key">{{ __('Language') }}</label>
+                                    <div class="col-12 col-md-9">
+                                        <select data-live-search="true" class="form-control @error('lang_key') is-invalid @enderror" name="lang_key" id="lang_key">
+                                            <option selected>{{ __('Choose...') }}</option>
+                                            @foreach($languages as $language)
+                                                <option value="{{ $language->lang_key }}">{{ $language->name }}</option>
+                                            @endforeach
+                                        </select>
+                                        @error('lang_key')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-12 col-md-3 col-form-label text-md-right" for="level">{{ __('Level') }}</label>
+                                    <div class="col-12 col-md-9">
+                                        <select data-live-search="true" class="form-control @error('level') is-invalid @enderror" name="level" id="level">
+                                            <option selected>{{ __('Choose...') }}</option>
+                                            <option value="A1">{{ __('A1') }}</option>
+                                            <option value="A2">{{ __('A2') }}</option>
+                                            <option value="B1">{{ __('B1') }}</option>
+                                            <option value="B2">{{ __('B2') }}</option>
+                                            <option value="C1">{{ __('C1') }}</option>
+                                            <option value="C2">{{ __('C2') }}</option>
+                                        </select>
+                                        @error('level')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+                                </div>
+
+                                <div class="form-group row mb-0">
+                                    <div class="col-md-12 text-left">
+                                        <button type="submit" class="btn btn-success">
+                                            {{ __('Add') }}
+                                        </button>
+                                    </div>
+                                </div>
+                            @endif
+                        </form>
+
+                        @foreach($userLanguages as $language)
+                            <div class="row pt-3">
+                                <div class="font-weight-bold col-12 col-md-3 text-md-right">{{ __('Language') }}</div>
+
+                                <div class="col-12 col-md-7">
+                                    {{ $language->language->name }}
+                                </div>
+
+                                <div class="col-12 col-md-2 btn-group text-right">
+
+                                    <button class="btn btn-danger" data-toggle="modal"
+                                        data-target="#modalremove{{$language->language->lang_key}}">{{ __('Delete') }}</i>
+                                    </button>
+
+                                    @include('partials.confirmation', [
+                                        'url' => route('delete-user-language', $language->id),
+                                        'method' => 'DELETE',
+                                        'title' => "Usuń język",
+                                        "description" => "Czy na pewno chcesz usunąć język?",
+                                        "description_parameters" => [],
+                                        'button' => 'Usuń',
+                                        'modalKey' => "remove".$language->language->lang_key
+                                    ])
+
+                                    <button class="btn btn-success" data-toggle="modal"
+                                        data-target="#modaleditlang{{$language->language->lang_key}}">{{ __('Edit') }}</i>
+                                    </button>
+
+                                    @include('partials.edit-language', [
+                                        'url' => route('update-user-language', [$language->language, $editUser]),
+                                        'method' => 'PUT',
+                                        'title' => "Edycja",
+                                        'lang_key' => $language->language->lang_key,
+                                        'level' => $language->level,
+                                        "description" => "Czy na pewno chcesz zaktualizować język?",
+                                        "description_parameters" => [],
+                                        'button' => 'Update',
+                                        'modalKey' => "editlang".$language->language->lang_key
+                                    ])
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="font-weight-bold col-12 col-md-3 text-md-right">{{ __('Level') }}</div>
+
+                                <div class="col-12 col-md-7">
+                                    {{ $language->level }}
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
         @endif
     </div>
 </div>

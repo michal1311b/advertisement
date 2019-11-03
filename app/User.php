@@ -79,6 +79,11 @@ class User extends Authenticatable implements MustVerifyEmail, HasLoginsAndDevic
         return $this->belongsToMany(Specialization::class)->withTimestamps();
     }
 
+    public function languages()
+    {
+        return $this->belongsToMany(Language::class)->withPivot('level');
+    }
+
     public function followers() 
     {
         return $this->belongsToMany(self::class, 'followers', 'follows_id', 'advertisement_id')
