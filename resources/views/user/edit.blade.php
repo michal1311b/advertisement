@@ -586,7 +586,7 @@
                                     <label class="col-12 col-md-3 col-form-label text-md-right" for="lang_key">{{ __('Language') }}</label>
                                     <div class="col-12 col-md-9">
                                         <select data-live-search="true" class="form-control @error('lang_key') is-invalid @enderror" name="lang_key" id="lang_key">
-                                            <option selected>{{ __('Choose...') }}</option>
+                                            <option selected value="">{{ __('Choose...') }}</option>
                                             @foreach($languages as $language)
                                                 <option value="{{ $language->lang_key }}">{{ $language->name }}</option>
                                             @endforeach
@@ -601,7 +601,7 @@
                                     <label class="col-12 col-md-3 col-form-label text-md-right" for="level">{{ __('Level') }}</label>
                                     <div class="col-12 col-md-9">
                                         <select data-live-search="true" class="form-control @error('level') is-invalid @enderror" name="level" id="level">
-                                            <option selected>{{ __('Choose...') }}</option>
+                                            <option selected value="">{{ __('Choose...') }}</option>
                                             <option value="A1">{{ __('A1') }}</option>
                                             <option value="A2">{{ __('A2') }}</option>
                                             <option value="B1">{{ __('B1') }}</option>

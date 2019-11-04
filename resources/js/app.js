@@ -78,9 +78,15 @@ $(document).ready(function() {
     $('#state_id').selectpicker();
     $('#category_id').selectpicker();
     $('#location_id').selectpicker({
-        width: 'fit'
+        width: '100%'
     });
     $('#specialization_id').selectpicker({
+        width: '100%'
+    });
+    $('#location_ids').selectpicker({
+        width: 'fit'
+    });
+    $('#specialization_ids').selectpicker({
         width: 'fit'
     });
 
