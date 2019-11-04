@@ -21,6 +21,8 @@ Route::get('/verify/subscribtion/{token}', [
     'uses' => 'SubscriberController@verify'
 ]);
 
+Route::get('{slug}', 'PageController@siteShow')->name('site.page');
+
 Auth::routes(['verify' => true]);
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -97,6 +99,7 @@ Route::group(array('prefix' => 'language'), function () {
 Route::group(['prefix' => 'admin'], function () {
     Route::resource('posts', 'PostController')->middleware(['auth', 'admin', 'verified']);
     Route::resource('categories', 'CategoryController')->middleware(['auth', 'admin', 'verified']);
+    Route::resource('pages', 'PageController')->middleware(['auth', 'admin', 'verified']);
     Route::get('/email-manager', [
         'uses' => 'EmailController@getIndex'
     ])->middleware(['auth', 'admin', 'verified'])->name('mailTracker_Index');

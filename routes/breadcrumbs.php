@@ -95,3 +95,25 @@ Breadcrumbs::for('tag.list', function ($trail, $tag) {
     $trail->push(__('List of Posts'), route('blog.index'));
     $trail->push($tag, route('postTag', $tag));
 });
+
+Breadcrumbs::for('pages.create', function ($trail) {
+    $trail->parent('home');
+    $trail->push(__('Pages'), route('pages.index'));
+    $trail->push(__('Create page'), route('pages.create'));
+});
+
+Breadcrumbs::for('pages.edit', function ($trail, $page) {
+    $trail->parent('home');
+    $trail->push(__('Pages'), route('pages.index'));
+    $trail->push(__('Edit: ') . $page->title, route('pages.edit', $page));
+});
+
+Breadcrumbs::for('pages', function ($trail) {
+    $trail->parent('home');
+    $trail->push(__('List of Pages'), route('pages.index'));
+});
+
+Breadcrumbs::for('site.page', function ($trail, $page) {
+    $trail->parent('home');
+    $trail->push($page->title, route('site.page', $page->slug));
+});

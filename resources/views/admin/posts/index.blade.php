@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    {{ __('Post list') }}
+    {{ __('Page list') }}
 @endsection
 
 @section('css')
@@ -12,7 +12,7 @@
 <div class="container">
     <div class="row">
         <div class="col-xs-12">
-            {!! Breadcrumbs::render('posts') !!}
+            {!! Breadcrumbs::render('pages') !!}
         </div>
     </div>	
 </div>
