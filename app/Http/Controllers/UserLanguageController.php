@@ -12,6 +12,15 @@ class UserLanguageController extends Controller
 {
     public function store(User $user, UserLanguageRequest $request)
     {
+        $newLanguage = UserLanguage::where('lang_key', $request->lang_key)
+        ->where('user_id', $user->id)->first();
+
+        if($newLanguage) {
+            session()->flash('error',  __('Language already exists.'));
+        
+            return back();
+        }
+
         UserLanguage::create([
             'user_id' => $user->id,
             'lang_key' => $request->lang_key,
@@ -25,6 +34,15 @@ class UserLanguageController extends Controller
 
     public function update(Language $language, $id, Request $request)
     {
+        $newLanguage = UserLanguage::where('lang_key', $request->lang_key)
+        ->where('user_id', $id)->first();
+
+        if($newLanguage) {
+            session()->flash('error',  __('Language already exists.'));
+        
+            return back();
+        }
+
         $userLanguage = UserLanguage::where('lang_key', $language->lang_key)
         ->where('user_id', $id)->first();
         
