@@ -34,6 +34,7 @@
     <script type='text/javascript' src='http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js'></script>
 
     <script>
+        var LoggedUser = false;
         tinymce.init({
             selector: 'textarea',
             plugins: 'autoresize image',
@@ -52,8 +53,53 @@
                 ]
             }
         });
-        var LoggedUser = false;
     </script>
+    <style>
+        body {
+            overflow-x: hidden;
+        }
+
+        #sidebar-wrapper {
+            min-height: 100vh;
+            margin-left: -15rem;
+            -webkit-transition: margin .25s ease-out;
+            -moz-transition: margin .25s ease-out;
+            -o-transition: margin .25s ease-out;
+            transition: margin .25s ease-out;
+        }
+
+        #sidebar-wrapper .sidebar-heading {
+            padding: 0.875rem 1.25rem;
+            font-size: 1.2rem;
+        }
+
+        #sidebar-wrapper .list-group {
+            width: 15rem;
+        }
+
+        #page-content-wrapper {
+            min-width: 100vw;
+        }
+
+        #wrapper.toggled #sidebar-wrapper {
+            margin-left: 0;
+        }
+
+        @media (min-width: 768px) {
+            #sidebar-wrapper {
+                margin-left: 0;
+            }
+
+            #page-content-wrapper {
+                min-width: 0;
+                width: 100%;
+            }
+
+            #wrapper.toggled #sidebar-wrapper {
+                margin-left: -15rem;
+            }
+        }
+    </style>
     <script>
         window.Laravel = <?php echo json_encode([
             'csrfToken' => csrf_token(),
@@ -68,14 +114,36 @@
 </head>
 <body>
     <div id="app">
-        @include('partials.site-nav')
-       
-        <main class="py-4" id="main">
-            @yield('breadcrumbs')
-            @yield('content')
-        </main>
+        <div class="d-flex" id="wrapper">
+            <div class="bg-light border-right" id="sidebar-wrapper">
+                <div class="sidebar-heading">{{ __('Start Bootstrap') }}</div>
+                @include('partials.site-nav')
+            </div>
+
+            <div id="page-content-wrapper">
+                @include('partials.nav')
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12 py-2">
+                            <button class="btn btn-primary" id="menu-toggle">{{ __('Toggle Menu') }}</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container-fluid">
+                    @yield('breadcrumbs')
+                </div>
+                @yield('content')
+            </div>
+        </div>
     </div>
 
+    <script>
+        $("#menu-toggle").click(function(e) {
+            e.preventDefault();
+            $("#wrapper").toggleClass("toggled");
+        });
+    </script>
     <!-- Scripts -->
     @yield('scripts')
     <script src="{{ asset('js/app.js?rand=1') }}" defer></script>
@@ -84,11 +152,11 @@
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-151388518-1"></script>
         <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
 
-        gtag('config', 'UA-151388518-1');
+            gtag('config', 'UA-151388518-1');
         </script>
     @endif
 </body>
