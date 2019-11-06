@@ -20,6 +20,11 @@ Route::get('/verify/subscribtion/{token}', [
     'uses' => 'SubscriberController@verify'
 ]);
 
+//Allows to overwrite login and register actions
+Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
+Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
+Route::get('/home', 'HomeController@index')->name('home');
+
 Route::get('{slug}', 'PageController@siteShow')->name('site.page');
 
 Auth::routes(['verify' => true]);
