@@ -62,6 +62,17 @@ class PostsTest extends TestCase
     }
 
     /** @test */
+    public function unauthenticated_users_cannot_create_a_new_task()
+    {
+        //Given we have a task object
+        $post = factory(Post::class)->make();
+        //When unauthenticated user submits post request to create task endpoint
+        // He should be redirected to login page
+        $this->post('/admin/posts/create', $post->toArray())
+            ->assertRedirect('/login');
+    }
+
+    /** @test */
     public function authenticated_users_can_create_a_new_post()
     {
         //Given we have an authenticated user
