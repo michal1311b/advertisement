@@ -1,5 +1,4 @@
 <?php
-use App\Events\WebsocketDemoEvent;
 /*
 |--------------------------------------------------------------------------
 | Web Routes

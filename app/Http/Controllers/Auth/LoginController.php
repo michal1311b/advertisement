@@ -60,6 +60,7 @@ class LoginController extends Controller
             'password' => $request->password,
         ];
     }
+    
     protected function redirectTo()
     {
         if ($this->request->has('previous')) {

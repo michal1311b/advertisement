@@ -55,9 +55,7 @@
         var LoggedUser = false;
     </script>
     <script>
-        window.Laravel = <?php echo json_encode([
-            'csrfToken' => csrf_token(),
-        ]); ?>
+        window.Laravel = <?php echo json_encode(['csrfToken' => csrf_token(),]); ?>
     </script>
     @if(!auth()->guest())
         <script>
