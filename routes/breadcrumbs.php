@@ -6,7 +6,7 @@ Breadcrumbs::for('home', function ($trail) {
 });
 
 Breadcrumbs::for('site.homepage', function ($trail) {
-    $trail->push(__('Home'), route('home'));
+    $trail->push(__('Home'), route('homepage'));
 });
 
 Breadcrumbs::for('advertisement', function ($trail) {
@@ -118,6 +118,6 @@ Breadcrumbs::for('pages', function ($trail) {
 });
 
 Breadcrumbs::for('site.page', function ($trail, $page) {
-    $trail->parent('home');
+    $trail->parent('site.homepage');
     $trail->push($page->title, route('site.page', $page->slug));
 });

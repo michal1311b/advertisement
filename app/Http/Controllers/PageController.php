@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Advertisement;
 use App\Page;
+use Carbon\Carbon;
 use App\Http\Requests\Admin\Page\StoreRequest;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\DB;
@@ -11,6 +13,15 @@ use Illuminate\Support\Facades\Log;
 
 class PageController extends Controller
 {
+    public function siteIndex()
+    {
+        $advertisements = Advertisement::with(['state', 'galleries', 'location'])
+        ->where('created_at', '>', Carbon::now()->subDays(30))->orderBy('id', 'desc')->take(5)->get();
+        $expirateDate = Carbon::now()->subDays(30);
+
+        return view('welcome', compact(['advertisements', 'expirateDate']));
+    }
+
     /**
      * Display a listing of the resource.
      *

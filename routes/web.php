@@ -10,9 +10,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('homepage');
+Route::get('/', 'PageController@siteIndex')->name('homepage');
 
 Route::post('/subscribe', 'SubscriberController@store')->name('subscribe');
 
