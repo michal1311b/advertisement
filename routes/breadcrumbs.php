@@ -5,6 +5,10 @@ Breadcrumbs::for('home', function ($trail) {
     $trail->push(__('Home'), route('home'));
 });
 
+Breadcrumbs::for('site.homepage', function ($trail) {
+    $trail->push(__('Home'), route('home'));
+});
+
 Breadcrumbs::for('advertisement', function ($trail) {
     $trail->parent('home');
     $trail->push(__('List of Advertisements'), route('advertisement-list'));

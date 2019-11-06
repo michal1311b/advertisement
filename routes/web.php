@@ -12,7 +12,7 @@
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('homepage');
 
 Route::post('/subscribe', 'SubscriberController@store')->name('subscribe');
 
