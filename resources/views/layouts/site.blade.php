@@ -130,9 +130,7 @@
                     </div>
                 </div>
 
-                <div class="container-fluid">
-                    @yield('breadcrumbs')
-                </div>
+                @yield('breadcrumbs')
                 @yield('content')
             </div>
         </div>
