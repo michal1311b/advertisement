@@ -206,8 +206,5 @@ for ( var i=0; i < markers.length; ++i )
       .bindPopup( markers[i].name + ': ' + markers[i].min_salary + '-' + markers[i].max_salary + ' ' + markers[i].currency )
       .addTo( map );
 }
-$('#advertisementCarousel').carousel({
-  interval: 2000
-});
 </script>
 @endsection
