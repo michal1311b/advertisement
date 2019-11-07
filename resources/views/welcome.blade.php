@@ -120,7 +120,9 @@
                 @endforeach
             @else
                 <div class="col-12">
-                    <h4>{{ __('No advertisements found') }}</h4>
+                    <a href="{{ route('advertisement-create') }}">
+                        <h4>{{ __('No offers found, sign in to be the first one.') }}</h4>
+                    </a>
                 </div>
             @endif
         </div>

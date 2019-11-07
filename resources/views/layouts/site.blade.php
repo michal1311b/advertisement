@@ -125,7 +125,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-xs-12 py-2">
-                            <button class="btn btn-primary" id="menu-toggle">{{ __('Toggle Menu') }}</button>
+                            <button class="btn btn-primary" id="menu-toggle"><i class="fas fa-clinic-medical"></i> {{ __('Menu') }}</button>
                         </div>
                     </div>
                 </div>
