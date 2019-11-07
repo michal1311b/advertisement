@@ -102,6 +102,10 @@
                                         <span class="badge badge-pill">{{ $advertisement->state->name }}</span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        {{ __('Specialization:') }}
+                                        <span class="badge badge-pill badge-info text-white">{{ $advertisement->specialization->name }}</span>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
                                         {{ __('Created at:') }}
                                         <span class="badge badge-pill">{{ $advertisement->created_at }}</span>
                                     </li>
