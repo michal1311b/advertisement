@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
     <div class="container">
         <a class="navbar-brand" href="{{ url('/') }}">
-            {{ config('app.name', 'Laravel') }}
+            <img src="{{ asset('images/logo.png') }}" class="w-100 logo" />
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
             <span class="navbar-toggler-icon"></span>
@@ -28,11 +28,11 @@
                 @else
                     <li class="nav-item dropdown">
                         <a class="dropdown-toggle notification" id="notifications" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            <span>Inbox</span>
+                            <span>{{ __('Inbox') }}</span>
                             <span class="badge" id="badge-notify"></span>
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="notificationsMenu" id="notificationsMenu">
-                            <li class="dropdown-header">No notifications</li>
+                            <li class="dropdown-header">{{ __('No notifications') }}</li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">

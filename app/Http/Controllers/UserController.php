@@ -58,7 +58,7 @@ class UserController extends Controller
     public function getUserAdvertisements()
     {
         $user = Auth::user();
-        $advertisements = Advertisement::with(['state', 'galleries'])
+        $advertisements = Advertisement::with(['state', 'galleries', 'visits'])
         ->where('user_id', '=', $user->id)
         ->paginate(5);
 

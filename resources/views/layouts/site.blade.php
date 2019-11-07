@@ -116,15 +116,15 @@
     <div id="app">
         <div class="d-flex" id="wrapper">
             <div class="bg-light border-right" id="sidebar-wrapper">
-                <div class="sidebar-heading">{{ __('Start Bootstrap') }}</div>
+                <div class="sidebar-heading">{{ __('EmployMed') }}</div>
                 @include('partials.site-nav')
             </div>
 
             <div id="page-content-wrapper">
                 @include('partials.nav')
-                <div class="container-fluid">
+                <div class="container">
                     <div class="row">
-                        <div class="col-12 py-2">
+                        <div class="col-xs-12 py-2">
                             <button class="btn btn-primary" id="menu-toggle">{{ __('Toggle Menu') }}</button>
                         </div>
                     </div>

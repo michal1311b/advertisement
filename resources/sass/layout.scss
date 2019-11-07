@@ -9,10 +9,10 @@ body {
 
 .ellipsis {
     line-height: 1.2;
-    height: 3.45em;
+    height: 1em;
     display: block;
     display: -webkit-box;
-    -webkit-line-clamp: 3;
+    -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -79,4 +79,8 @@ a:hover {
         font-size: 90%;
         width: auto;
     }
+}
+
+.logo {
+    max-width: 50px;
 }

@@ -13,8 +13,10 @@ use App\State;
 use App\Gallery;
 use App\Http\Requests\Advertisement\StoreRequest;
 use App\Jobs\SendEmailJob;
+use App\Http\Service\Visit;
 use App\Settlement;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
@@ -79,6 +81,15 @@ class AdvertisementController extends Controller
                 'specialization'
             ])
             ->firstOrFail();
+
+        $user = Auth::user();
+        
+        if($user->doctor === null)
+        {
+            Visit::storeVisit($user->id, $advertisement->id);
+        } else {
+            Visit::storeVisit($user->id, $advertisement->id, true);
+        }
 
         return view('advertisement.show', compact('advertisement'));
     }
