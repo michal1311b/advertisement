@@ -5,7 +5,9 @@
 /vendor
 .env
 =======
-/public/*
+/public/advertisements/*
+/public/uploads/*
+/public/posts/*
 /storage/*.key
 /vendor
 /database/locations.sql
