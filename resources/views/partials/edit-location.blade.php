@@ -17,7 +17,6 @@
 
                     <div class="col-12">
                         <select data-live-search="true" class="form-control @error('location_id') is-invalid @enderror" name="location_id" id="location_id">
-                            <option selected>{{ __('Choose...') }}</option>
                             @foreach($locations as $location)
                                 <option 
                                     @if($location->id === $location_id)

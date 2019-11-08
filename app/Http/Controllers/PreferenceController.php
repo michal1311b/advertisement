@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Advertisement;
+use App\Http\Requests\Preference\StoreLocationUser;
 use App\Location;
 use App\LocationUser;
 use App\User;
@@ -35,7 +36,7 @@ class PreferenceController extends Controller
         }
     }
 
-    public function storeLocation(User $user, Request $request)
+    public function storeLocation(User $user, StoreLocationUser $request)
     {
         $newLocation = LocationUser::where('location_id', $request->location_id)
         ->where('user_id', $user->id)->first();

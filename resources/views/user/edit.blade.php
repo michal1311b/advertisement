@@ -778,8 +778,8 @@
                             <div class="form-group row">
                                 <label class="col-12 col-md-3 col-form-label text-md-right" for="location_id">{{ __('Location') }}</label>
                                 <div class="col-12 col-md-9">
-                                    <select data-live-search="true" class="form-control @error('location_id') is-invalid @enderror" name="user_location_id" id="user_location_id">
-                                        <option selected>Choose...</option>
+                                    <select data-live-search="true" class="form-control @error('location_id') is-invalid @enderror" name="user_location_id" id="user_location_id" required>
+                                        <option selected>{{ __('Choose...') }}</option>
                                         @foreach($locations as $location)
                                             <option value="{{ $location->id }}">{{ $location->city }}</option>
                                         @endforeach
@@ -793,7 +793,7 @@
                             <div class="form-group row">
                                 <label class="col-12 col-md-3 col-form-label text-md-right" for="currency_id">{{ __('Radius') }}</label>
                                 <div class="col-12 col-md-9">
-                                    <select data-live-search="true" class="form-control @error('radius') is-invalid @enderror" name="radius" id="radius">
+                                    <select data-live-search="true" class="form-control @error('radius') is-invalid @enderror" name="radius" id="radius" required>
                                         <option selected value="">{{ __('Choose...') }}</option>
                                         @foreach($distances as $radius)
                                             <option value="{{ $radius['value'] }}">{{ $radius['label'] }}</option>
