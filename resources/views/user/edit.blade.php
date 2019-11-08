@@ -766,6 +766,107 @@
                     </div>
                 </div>
             </div>
+
+            <div class="col-md-12 py-3">
+                <div class="card">
+                    <div class="card-header">{{ __('Edit your prefered location') }}</div>
+    
+                    <div class="card-body">
+                        <form method="POST" action="{{ route('store-prefered-location', $editUser) }}">
+                            @csrf
+
+                            <div class="form-group row">
+                                <label class="col-12 col-md-3 col-form-label text-md-right" for="location_id">{{ __('Location') }}</label>
+                                <div class="col-12 col-md-9">
+                                    <select data-live-search="true" class="form-control @error('location_id') is-invalid @enderror" name="user_location_id" id="user_location_id">
+                                        <option selected>Choose...</option>
+                                        @foreach($locations as $location)
+                                            <option value="{{ $location->id }}">{{ $location->city }}</option>
+                                        @endforeach
+                                    </select>
+                                    @error('location_id')
+                                        <div class="alert alert-danger">{{ $message }}</div>
+                                    @enderror
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-12 col-md-3 col-form-label text-md-right" for="currency_id">{{ __('Radius') }}</label>
+                                <div class="col-12 col-md-9">
+                                    <select data-live-search="true" class="form-control @error('radius') is-invalid @enderror" name="radius" id="radius">
+                                        <option selected value="">{{ __('Choose...') }}</option>
+                                        @foreach($distances as $radius)
+                                            <option value="{{ $radius['value'] }}">{{ $radius['label'] }}</option>
+                                        @endforeach
+                                    </select>
+                                    @error('radius')
+                                        <div class="alert alert-danger">{{ $message }}</div>
+                                    @enderror
+                                </div>
+                            </div>
+    
+                            <div class="form-group row mb-0">
+                                <div class="col-md-12 text-left">
+                                    <button type="submit" class="btn btn-success">
+                                        {{ __('Add') }}
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+
+                        @foreach($userLocations as $location)
+                            <div class="row pt-3">
+                                <div class="font-weight-bold col-12 col-md-3 text-md-right">{{ __('Location') }}</div>
+
+                                <div class="col-12 col-md-7">
+                                    {{ $location->location->city }}
+                                </div>
+
+                                <div class="col-12 col-md-2 btn-group text-right">
+
+                                    <button class="btn btn-danger" data-toggle="modal"
+                                        data-target="#modalremovelocation{{$location->location->id}}">{{ __('Delete') }}</i>
+                                    </button>
+
+                                    @include('partials.confirmation', [
+                                        'url' => route('delete-user-location', $location->id),
+                                        'method' => 'DELETE',
+                                        'title' => "Usuń lokalizację",
+                                        "description" => "Czy na pewno chcesz usunąć lokalizację?",
+                                        "description_parameters" => [],
+                                        'button' => 'Usuń',
+                                        'modalKey' => "removelocation".$location->location->id
+                                    ])
+
+                                    <button class="btn btn-success" data-toggle="modal"
+                                        data-target="#modaleditlocation{{$location->location->id}}">{{ __('Edit') }}</i>
+                                    </button>
+
+                                    @include('partials.edit-location', [
+                                        'url' => route('update-user-location', [$location->location, $editUser]),
+                                        'method' => 'PUT',
+                                        'title' => "Edycja",
+                                        'location_id' => $location->location_id,
+                                        'radius' => $location->radius,
+                                        "description" => "Czy na pewno chcesz zaktualizować lokalizację?",
+                                        "description_parameters" => [],
+                                        'button' => 'Update',
+                                        'modalKey' => "editlocation".$location->location->id
+                                    ])
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="font-weight-bold col-12 col-md-3 text-md-right">{{ __('Radius') }}</div>
+
+                                <div class="col-12 col-md-7">
+                                    {{ $location->radius }} {{ __('km') }}
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
         @endif
     </div>
 </div>

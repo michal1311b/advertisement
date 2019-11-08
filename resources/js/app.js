@@ -80,6 +80,9 @@ $(document).ready(function() {
     $('#location_id').selectpicker({
         width: '100%'
     });
+    $('#user_location_id').selectpicker({
+        width: '100%'
+    });
     $('#specialization_id').selectpicker({
         width: '100%'
     });

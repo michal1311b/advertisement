@@ -13,7 +13,9 @@ use App\Specialization;
 use App\Experience;
 use App\Http\Requests\User\UploadRequest;
 use App\Language;
+use App\Location;
 use App\UserLanguage;
+use App\LocationUser;
 use App\Work;
 use App\Settlement;
 use App\Currency;
@@ -28,11 +30,33 @@ class UserController extends Controller
         $specializations = Specialization::all();
         $languages = Language::all();
         $userLanguages = UserLanguage::where('user_id', $editUser->id)->with('language')->get();
+        $userLocations = LocationUser::where('user_id', $editUser->id)->with('location')->get();
+        $locations = Location::all();
         $works = Work::all();
         $settlements = Settlement::all();
         $currencies = Currency::all();
+        $distances = [
+            ['label' => '+0 km', 'value' => 0],
+            ['label' => '+10 km', 'value' => 10],
+            ['label' => '+20 km', 'value' => 20],
+            ['label' => '+50 km', 'value' => 50],
+            ['label' => '+100 km', 'value' => 100],
+            ['label' => '+150 km', 'value' => 150],
+            ['label' => 'Cała Polska', 'value' => 1000],
+        ];
 
-        return view('user.edit', compact(['editUser', 'specializations', 'languages', 'userLanguages', 'works', 'settlements', 'currencies']));
+        return view('user.edit', compact([
+            'editUser',
+            'specializations',
+            'languages',
+            'userLanguages',
+            'userLocations',
+            'works',
+            'settlements',
+            'currencies',
+            'locations',
+            'distances'
+        ]));
     }
 
     public function update(UploadRequest $request, User $user)
