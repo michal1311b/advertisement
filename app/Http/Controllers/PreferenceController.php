@@ -8,6 +8,7 @@ use App\Location;
 use App\LocationUser;
 use App\User;
 use App\Preference;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
@@ -118,6 +119,7 @@ class PreferenceController extends Controller
                 ->where('currency_id', $user->preference->currency_id)
                 ->whereIn('specialization_id', $user->specializations->pluck('id'))
                 ->where('min_salary', '>=', $user->preference->min_salary)
+                ->where('created_at', '>', Carbon::now()->subDays(30))
                 ->get());
                 $advertisements = $all_adverts;
             }
