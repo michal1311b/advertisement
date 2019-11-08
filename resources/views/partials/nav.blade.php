@@ -46,7 +46,11 @@
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="{{ route('edit-user', auth()->user()->id) }}">{{ __('User profile') }}</a>
                             <a class="dropdown-item" href="{{ route('user-contact') }}">{{ __('User message box') }}</a>
+                            @if(auth()->user()->hasRole('doctor'))
+                                <a class="dropdown-item" href="{{ route('user-prefered-locations') }}">{{ __('Your preferences') }}</a>
+                            @endif
                             <a class="dropdown-item" href="{{ route('advertisement-list') }}">{{ __('Advertisements list') }}</a>
+                            
                             @if(auth()->user()->hasRole('admin') || auth()->user()->hasRole('company'))
                                 <a class="dropdown-item" href="{{ route('user-advertisement-list') }}">{{ __('User advertisement list') }}</a>
                                 <a class="dropdown-item" href="{{ route('create-advertisement') }}">{{ __('Create advertisement') }}</a>

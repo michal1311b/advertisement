@@ -39,6 +39,11 @@ Breadcrumbs::for('user-advertisement-article', function ($trail, $advertisment) 
     $trail->push($advertisment->title, route('user-advertisement-show', $advertisment));
 });
 
+Breadcrumbs::for('user-preferences', function ($trail) {
+    $trail->parent('home');
+    $trail->push(__('Your preferences'), route('user-prefered-locations'));
+});
+
 Breadcrumbs::for('contacts', function ($trail) {
     $trail->parent('home');
     $trail->push(__('List of contacts'), route('user-contact'));

@@ -83,6 +83,7 @@ Route::group(array('prefix' => 'user'), function () {
     Route::post('/location/{user}', 'PreferenceController@storeLocation')->name('store-prefered-location')->middleware(['auth', 'verified']);
     Route::put('/location/{location}/user/{id}', 'PreferenceController@updateLocation')->name('update-user-location');
     Route::delete('/location/{id}', 'PreferenceController@deleteLocation')->name('delete-user-location');
+    Route::get('/preferences', 'PreferenceController@showPreferences')->name('user-prefered-locations')->middleware(['auth', 'verified']);
 });
 
 Route::post('/send-message', 'ContactController@store')->name('send-message');
