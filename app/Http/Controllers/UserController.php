@@ -14,19 +14,25 @@ use App\Experience;
 use App\Http\Requests\User\UploadRequest;
 use App\Language;
 use App\UserLanguage;
+use App\Work;
+use App\Settlement;
+use App\Currency;
 
 class UserController extends Controller
 {
     public function edit(User $user)
     {
-        $editUser = Auth::user()->load(['doctor', 'profile', 'specializations', 'experiences', 'courses']);
+        $editUser = Auth::user()->load(['doctor', 'profile', 'specializations', 'experiences', 'courses', 'preference']);
         $user = Auth::user();
         $user->checkAuthorization($editUser->id, $user->id);
         $specializations = Specialization::all();
         $languages = Language::all();
         $userLanguages = UserLanguage::where('user_id', $editUser->id)->with('language')->get();
+        $works = Work::all();
+        $settlements = Settlement::all();
+        $currencies = Currency::all();
 
-        return view('user.edit', compact(['editUser', 'specializations', 'languages', 'userLanguages']));
+        return view('user.edit', compact(['editUser', 'specializations', 'languages', 'userLanguages', 'works', 'settlements', 'currencies']));
     }
 
     public function update(UploadRequest $request, User $user)

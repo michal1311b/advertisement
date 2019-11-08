@@ -227,6 +227,25 @@
                         </div>
 
                         <div class="form-group row">
+                            <label class="col-12 col-md-3 col-form-label text-md-right" for="settlement_id">{{ __('Settlement') }}</label>
+                            <div class="col-12 col-md-9">
+                                <select data-live-search="true" class="form-control @error('settlement_id') is-invalid @enderror" name="settlement_id" id="settlement_id">
+                                    <option selected>{{ __('Choose...') }}</option>
+                                    @foreach($settlements as $settlement)
+                                        @if($advertisement->settlement_id === $settlement->id)
+                                            <option value="{{ $settlement->id }}" selected>{{ $settlement->name }}</option>
+                                        @else
+                                            <option value="{{ $settlement->id }}">{{ $settlement->name }}</option>
+                                        @endif
+                                    @endforeach
+                                </select>
+                                @error('settlement_id')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
                             <label for="min_salary" class="col-12 col-md-3 col-form-label text-md-right">{{ __('Min salary per hour') }}</label>
 
                             <div class="col-12 col-md-9">

@@ -59,6 +59,11 @@ class User extends Authenticatable implements MustVerifyEmail, HasLoginsAndDevic
         return $this->hasOne(Profile::class);
     }
 
+    public function preference()
+    {
+        return $this->hasOne(Preference::class);
+    }
+
     public function doctor()
     {
         return $this->hasOne(Doctor::class);
@@ -144,6 +149,7 @@ class User extends Authenticatable implements MustVerifyEmail, HasLoginsAndDevic
     {
         return null !== $this->roles()->whereIn('name', $roles)->first();
     }
+    
     /**
     * Check one role
     * @param string $role

@@ -79,6 +79,7 @@ Route::group(array('prefix' => 'user'), function () {
     Route::post('/language/{user}', 'UserLanguageController@store')->name('store-language')->middleware(['auth', 'verified']);
     Route::put('/language/{language}/user/{id}', 'UserLanguageController@update')->name('update-user-language');
     Route::delete('/language/{id}', 'UserLanguageController@delete')->name('delete-user-language');
+    Route::put('/preference/{preference}', 'PreferenceController@update')->name('update-preference');
 });
 
 Route::post('/send-message', 'ContactController@store')->name('send-message');

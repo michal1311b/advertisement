@@ -107,6 +107,7 @@ class AdvertisementController extends Controller
         $locations = Location::all();
         $specializations = Specialization::all();
         $currencies = Currency::all();
+        $settlements = Settlement::all();
 
         $tags_array = [];
         foreach ($advertisement->tags as $tag) {
@@ -115,7 +116,7 @@ class AdvertisementController extends Controller
 
         $tags = implode(",", $tags_array);
 
-        return view('advertisement.edit', compact(['advertisement', 'works', 'states', 'tags', 'locations', 'specializations', 'currencies']));
+        return view('advertisement.edit', compact(['advertisement', 'works', 'states', 'tags', 'locations', 'specializations', 'currencies', 'settlements']));
     }
 
     public function deletePhoto($id)

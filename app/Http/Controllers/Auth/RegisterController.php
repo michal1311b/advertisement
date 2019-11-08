@@ -10,6 +10,7 @@ use App\Role;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
+use App\Preference;
 use App\Specialization;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -127,6 +128,10 @@ class RegisterController extends Controller
             $user->specializations()->attach($request->get('specializations'));
 
             $profile = Profile::create([
+                'user_id' => $user->id
+            ]);
+
+            $preference = Preference::create([
                 'user_id' => $user->id
             ]);
         } else {
