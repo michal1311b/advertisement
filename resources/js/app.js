@@ -117,10 +117,12 @@ var deferredPrompt;
 window.addEventListener('beforeinstallprompt', function(event) {
   event.preventDefault();
   deferredPrompt = event;
+  addToHomeScreen();
   return false;
 });
 
 window.addToHomeScreen = function() {
+    console.log(5);
   if (deferredPrompt) {
     deferredPrompt.prompt();
     deferredPrompt.userChoice.then(function (choiceResult) {

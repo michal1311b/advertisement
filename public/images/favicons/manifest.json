@@ -1,5 +1,5 @@
 {
- "name": "App",
+ "name": "EmployMed",
  "icons": [
   {
    "src": "\/images/favicons/android-icon-36x36.png",
@@ -39,9 +39,9 @@
   }
  ],
     "start_url": "/",
-	"display": "standalone",
+	"display": "fullscreen",
 	"background_color": "#fff",
-	"theme_color": "#7c4dff",
+	"theme_color": "#1F3161",
     "orientation": "portrait",
     "description": "The first map of the labor market in the medical sector. We want to simplify the search process to minimum.",
     "dir": "ltr",
