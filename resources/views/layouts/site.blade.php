@@ -153,7 +153,6 @@
             </div>
         </div>
     </div>
-    <button class="add-button">Add to home screen</button>
     <script>
         $("#menu-toggle").click(function(e) {
             e.preventDefault();
