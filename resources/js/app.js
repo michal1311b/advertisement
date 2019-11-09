@@ -132,12 +132,14 @@ $(document).ready(function() {
 
 var deferredPrompt;
 window.addEventListener('beforeinstallprompt', function(event) {
+    console.log(5);
     event.preventDefault();
     deferredPrompt = event;
     return false;
 });
 
 window.addToHomeScreen = function() {
+    console.log(6);
     if (deferredPrompt) {
         deferredPrompt.prompt();
         deferredPrompt.userChoice.then(function (choiceResult) {
