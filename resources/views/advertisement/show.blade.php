@@ -75,7 +75,7 @@
                             </div>
                             <div class="col-12 pb-2">
                                 {{ __('Tags:') }}
-                                @if(!$advertisement->tags)
+                                @if(isset($advertisement->tags))
                                     @foreach($advertisement->tags as $tag)
                                         <a href="{{ route('advertisementTag', ['tagSlug' => $tag->slug]) }}">
                                             <span class="badge badge-pill badge-info text-white">
