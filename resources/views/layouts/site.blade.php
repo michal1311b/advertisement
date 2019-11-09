@@ -42,7 +42,7 @@
     <script src="https://kit.fontawesome.com/96c3aa2e82.js" crossorigin="anonymous"></script>
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css?rand=1') }}" rel="stylesheet">
+    <link href="{{ asset('css/app.css?rand=3') }}" rel="stylesheet">
     @yield('css')
     <script src="https://cdn.tiny.cloud/1/oknjb9412whickdkirspmofjwrqudakcjhdvyf31s6xhshtt/tinymce/5/tinymce.min.js"></script>
     
@@ -153,7 +153,7 @@
             </div>
         </div>
     </div>
-
+    <button class="add-button">Add to home screen</button>
     <script>
         $("#menu-toggle").click(function(e) {
             e.preventDefault();
@@ -162,7 +162,7 @@
     </script>
     <!-- Scripts -->
     @yield('scripts')
-    <script src="{{ asset('js/app.js?rand=1') }}" defer></script>
+    <script src="{{ asset('js/app.js?rand=3') }}" defer></script>
 
     @if($app->environment('production'))
         <!-- Global site tag (gtag.js) - Google Analytics -->
