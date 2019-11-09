@@ -112,6 +112,10 @@ $(document).ready(function() {
       
         $.post(window.location.protocol + '//' + window.location.host + "/api/stats", payload);
     })()
+
+    addToHomescreen({
+        detectHomescreen: true
+    });
 });
 
 var deferredPrompt;
