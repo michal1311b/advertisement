@@ -38,7 +38,7 @@
    "density": "4.0"
   }
  ],
-    "start_url": "http://127.0.0.1:8000/",
+    "start_url": "/",
 	"display": "standalone",
 	"background_color": "#fff",
 	"theme_color": "#7c4dff",
