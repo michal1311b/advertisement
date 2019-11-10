@@ -9,6 +9,7 @@ return [
   'languages' => 'Języki',
   'experience' => 'Doświadczenie',
   'courses' => 'Kursy',
+  'course' => 'kursy',
   'offers' => 'Oferty pracy',
   'no-offers' => 'Nie znaleziono żadnych ofert zaloguj się aby dodać pierwszą.',
   'login' => 'Zaloguj się',
@@ -31,6 +32,7 @@ return [
   'posts-list' => 'Artykuły',
   'post-create' => 'Stwórz artykuł',
   'post-by' => 'Dodany przez',
+  'no-post' => 'Brak artykułów',
   'edit' => 'Edycja ',
   'user-offers' => 'Twoje ogłoszenia',
   'your-preferences' => 'Dopasowane ogłoszenia',
@@ -53,6 +55,7 @@ return [
   'city-not-require' => 'Miasto (nie wymagane)',
   'phone-not-require' => 'Telefon (nie wymagane)',
   'upload-cv' => 'Dodaj CV',
+  'upload-files' => 'Dodaj pliki',
   'level' => 'Poziom',
   'radius' => 'Promień',
   'location' => 'Lokalizacja',
@@ -69,6 +72,7 @@ return [
   'no-tags' => 'Brak słów kluczowych',
   'city' => 'Miasto',
   'state' => 'Województwo',
+  'street' => 'Adres',
   'post_code' => 'Kod pocztowy',
   'phone' => 'Telefon',
   'work-category' => 'Rodzaj pracy',
@@ -104,6 +108,10 @@ return [
   'edit-prefered-location' => 'Edycja preferowanej lokalizacji',
   'organizer' => 'Organizator',
   'min_salary' => 'Minimalna kwota',
+  'max_salary' => 'Maksymalna kwota',
   'currency' => 'Waluta',
-  'location' => 'Lokalizacja'
+  'location' => 'Lokalizacja',
+  'delete_confirm' => 'Czy napewno chcesz usunać',
+  'edit_confirm' => 'Czy na pewno chcesz zaktualizować',
+  'salary_negotiable' => 'Stawka do negocjacji?'
 ];

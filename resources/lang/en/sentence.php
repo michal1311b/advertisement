@@ -8,6 +8,7 @@ return [
   'language' => 'Language',
   'languages' => 'Languages',
   'courses' => 'Courses',
+  'course' => 'Course',
   'experience' => 'Experience',
   'offers' => 'Offers',
   'no-offers' => 'No offers found, sign in to be the first one.',
@@ -31,6 +32,7 @@ return [
   'posts-list' => 'List of Posts',
   'post-create' => 'Create Post',
   'post-by' => 'Posted by',
+  'no-post' => 'No posts found',
   'edit' => 'Edit',
   'user-offers' => 'User List of Advertisements',
   'your-preferences' => 'Your Prefrences',
@@ -53,6 +55,7 @@ return [
   'city-not-require' => 'City (not required)',
   'phone-not-require' => 'Phone (not required)',
   'upload-cv' => 'Upload CV',
+  'upload-files' => 'Upload files',
   'level' => 'Level',
   'radius' => 'Radius',
   'location' => 'Location',
@@ -70,6 +73,7 @@ return [
   'city' => 'City',
   'state' => 'State',
   'post_code' => 'Post code',
+  'street' => 'Street',
   'phone' => 'Phone',
   'work-category' => 'Work category',
   'description' => 'Description',
@@ -104,6 +108,10 @@ return [
   'edit-prefered-location' => 'Edit your prefered location',
   'organizer' => 'Organizer',
   'min_salary' => 'Minimum salary',
+  'max_salary' => 'Maximum salary',
   'currency' => 'Currency',
-  'location' => 'Location'
+  'location' => 'Location',
+  'delete_confirm' => 'Are you sure delete',
+  'edit_confirm' => 'Are you sure update',
+  'salary_negotiable' => 'Salary negotiable?'
 ];

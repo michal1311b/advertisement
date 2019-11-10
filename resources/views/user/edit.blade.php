@@ -114,7 +114,7 @@
                                     </div>
             
                                     <div class="form-group row">
-                                        <label for="street" class="col-12 col-md-3 col-form-label text-md-right">{{ __('Street') }}</label>
+                                        <label for="street" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.street') }}</label>
             
                                         <div class="col-12 col-md-9">
                                             <input id="street" type="text" class="form-control @error('street') is-invalid @enderror" name="street" value="{{ $editUser->profile->street }}" autocomplete="street" autofocus>
@@ -400,8 +400,8 @@
                                                 @include('partials.confirmation', [
                                                     'url' => route('delete-experience', $experience->id),
                                                     'method' => 'DELETE',
-                                                    'title' => "Usuń doświadczenie",
-                                                    "description" => "Czy na pewno chcesz usunąć doświadczenie?",
+                                                    'title' => trans('sentence.btn-delete') . " " . trans('sentence.experience'),
+                                                    "description" => trans('sentence.delete_confirm') . " " . trans('sentence.experience') . "?",
                                                     "description_parameters" => [],
                                                     'button' => trans('sentence.btn-delete'),
                                                     'modalKey' => "remove".$experience->id
@@ -545,17 +545,17 @@
                                             <div class="col-12 col-md-2 btn-group text-right">
             
                                                 <button class="btn btn-danger" data-toggle="modal"
-                                                    data-target="#modalremove{{$course->id}}">{{ trans('sentence.btn-delete') }}</i>
+                                                    data-target="#modalremovecourse{{$course->id}}">{{ trans('sentence.btn-delete') }}</i>
                                                 </button>
             
                                                 @include('partials.confirmation', [
                                                     'url' => route('delete-course', $course->id),
                                                     'method' => 'DELETE',
-                                                    'title' => "Usuń kurs",
-                                                    "description" => "Czy na pewno chcesz usunąć kurs?",
+                                                    'title' => trans('sentence.btn-delete') . " " . trans('sentence.course'),
+                                                    "description" => trans('sentence.delete_confirm') . " " . trans('sentence.course') . "?",
                                                     "description_parameters" => [],
                                                     'button' => trans('sentence.btn-delete'),
-                                                    'modalKey' => "remove".$course->id
+                                                    'modalKey' => "removecourse".$course->id
                                                 ])
             
                                                 <button class="btn btn-success" data-toggle="modal"
@@ -566,7 +566,7 @@
                                                     'url' => route('update-course', $course),
                                                     'method' => 'PUT',
                                                     'title' => trans('sentence.edit'),
-                                                    "description" => "Czy na pewno chcesz zaktualizować kurs?",
+                                                    "description" => trans('sentence.edit_confirm') . " " . trans('sentence.course') . "?",
                                                     "description_parameters" => [],
                                                     'button' => trans('sentence.btn-edit'),
                                                     'modalKey' => "editcourse".$course->id
@@ -671,8 +671,8 @@
                                                 @include('partials.confirmation', [
                                                     'url' => route('delete-user-language', $language->id),
                                                     'method' => 'DELETE',
-                                                    'title' => "Usuń język",
-                                                    "description" => "Czy na pewno chcesz usunąć język?",
+                                                    'title' => trans('sentence.btn-delete') . " " . trans('sentence.language'),
+                                                    "description" => trans('sentence.delete_confirm') . " " . trans('sentence.language') . "?",
                                                     "description_parameters" => [],
                                                     'button' => trans('sentence.btn-delete'),
                                                     'modalKey' => "remove".$language->language->lang_key
@@ -688,7 +688,7 @@
                                                     'title' => trans('sentence.edit'),
                                                     'lang_key' => $language->language->lang_key,
                                                     'level' => $language->level,
-                                                    "description" => "Czy na pewno chcesz zaktualizować język?",
+                                                    "description" => trans('sentence.edit_confirm') . " " . trans('sentence.language') . "?",
                                                     "description_parameters" => [],
                                                     'button' => trans('sentence.btn-edit'),
                                                     'modalKey' => "editlang".$language->language->lang_key
@@ -861,8 +861,8 @@
                                                 @include('partials.confirmation', [
                                                     'url' => route('delete-user-location', $location->id),
                                                     'method' => 'DELETE',
-                                                    'title' => "Usuń lokalizację",
-                                                    "description" => "Czy na pewno chcesz usunąć lokalizację?",
+                                                    'title' => trans('sentence.btn-delete'). " " . trans('sentence.location'),
+                                                    "description" => trans('sentence.delete_confirm') . " " . trans('sentence.location') . "?",
                                                     "description_parameters" => [],
                                                     'button' => trans('sentence.btn-delete'),
                                                     'modalKey' => "removelocation".$location->location->id
@@ -878,7 +878,7 @@
                                                     'title' => trans('sentence.edit'),
                                                     'location_id' => $location->location_id,
                                                     'radius' => $location->radius,
-                                                    "description" => "Czy na pewno chcesz zaktualizować lokalizację?",
+                                                    "description" => trans('sentence.edit_confirm') . " " . trans('sentence.location') . "?",
                                                     "description_parameters" => [],
                                                     'button' => trans('sentence.btn-edit'),
                                                     'modalKey' => "editlocation".$location->location->id

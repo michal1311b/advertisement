@@ -15,7 +15,7 @@
         </div>
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">{{ __('Create advertisement') }}</div>
+                <div class="card-header">{{ trans('sentence.offer-create') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('store-advertisement') }}" enctype="multipart/form-data">
@@ -33,7 +33,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="description" class="col-12 col-md-3 col-form-label text-md-right">{{ __('Description') }}</label>
+                            <label for="description" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.description') }}</label>
 
                             <div class="col-12 col-md-9">
                                 <textarea id="description" class="form-control @error('description') is-invalid @enderror" name="description" value="{{ old('description') }}" autocomplete="description" autofocus rows="3"></textarea>
@@ -44,7 +44,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="profits" class="col-12 col-md-3 col-form-label text-md-right">{{ __('Profits') }}</label>
+                            <label for="profits" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.profits') }}</label>
 
                             <div class="col-12 col-md-9">
                                 <textarea id="profits" class="form-control @error('profits') is-invalid @enderror" name="profits" value="{{ old('profits') }}" autocomplete="profits" autofocus rows="3"></textarea>
@@ -55,7 +55,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="requirements" class="col-12 col-md-3 col-form-label text-md-right">{{ __('Requirements') }}</label>
+                            <label for="requirements" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.requirements') }}</label>
 
                             <div class="col-12 col-md-9">
                                 <textarea id="requirements" class="form-control @error('requirements') is-invalid @enderror" name="requirements" value="{{ old('requirements') }}" autocomplete="requirements" autofocus rows="3"></textarea>
@@ -69,7 +69,7 @@
                             <label class="col-12 col-md-3 col-form-label text-md-right" for="work_id">{{ trans('sentence.work-category') }}</label>
                             <div class="col-12 col-md-9">
                                 <select data-live-search="true" class="form-control @error('work_id') is-invalid @enderror" name="work_id" id="work_id">
-                                    <option selected>Choose...</option>
+                                    <option selected>{{ trans('sentence.choose') }}</option>
                                     @foreach($works as $work)
                                         <option value="{{ $work->id }}">{{ $work->name }}</option>
                                     @endforeach
@@ -84,7 +84,7 @@
                             <label class="col-12 col-md-3 col-form-label text-md-right" for="location_id">{{ trans('sentence.location') }}</label>
                             <div class="col-12 col-md-9">
                                 <select data-live-search="true" class="form-control @error('location_id') is-invalid @enderror" name="location_id" id="location_id">
-                                    <option selected>Choose...</option>
+                                    <option selected>{{ trans('sentence.choose') }}</option>
                                     @foreach($locations as $location)
                                         <option value="{{ $location->id }}">{{ $location->city }}</option>
                                     @endforeach
@@ -96,10 +96,10 @@
                         </div>
 
                         <div class="form-group row">
-                            <label class="col-12 col-md-3 col-form-label text-md-right" for="state_id">{{ __('State') }}</label>
+                            <label class="col-12 col-md-3 col-form-label text-md-right" for="state_id">{{ trans('sentence.state') }}</label>
                             <div class="col-12 col-md-9">
                                 <select data-live-search="true" class="form-control @error('state_id') is-invalid @enderror" name="state_id" id="state_id">
-                                    <option selected>Choose...</option>
+                                    <option selected>{{ trans('sentence.choose') }}</option>
                                     @foreach($states as $state)
                                         <option value="{{ $state->id }}">{{ $state->name }}</option>
                                     @endforeach
@@ -111,10 +111,10 @@
                         </div>
 
                         <div class="form-group row">
-                            <label class="col-12 col-md-3 col-form-label text-md-right" for="specialization_id">{{ __('Specialization') }}</label>
+                            <label class="col-12 col-md-3 col-form-label text-md-right" for="specialization_id">{{ trans('sentence.specialization') }}</label>
                             <div class="col-12 col-md-9">
                                 <select data-live-search="true" class="form-control @error('specialization_id') is-invalid @enderror" name="specialization_id" id="specialization_id">
-                                    <option selected>Choose...</option>
+                                    <option selected>{{ trans('sentence.choose') }}</option>
                                     @foreach($specializations as $specialization)
                                         <option value="{{ $specialization->id }}">{{ $specialization->name }}</option>
                                     @endforeach
@@ -126,7 +126,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label class="col-12 col-md-3 col-form-label text-md-right" for="galleries">{{ __('Upload files') }}</label>
+                            <label class="col-12 col-md-3 col-form-label text-md-right" for="galleries">{{ trans('sentence.upload-files') }}</label>
                             <div class="col-12 col-md-9">
                                 <input type="file" class="form-control @error('galleries') is-invalid @enderror" name="galleries[]" multiple />
                                 @error('galleries')
@@ -147,7 +147,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="street" class="col-12 col-md-3 col-form-label text-md-right">{{ __('Street') }}</label>
+                            <label for="street" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.street') }}</label>
 
                             <div class="col-12 col-md-9">
                                 <input id="street" type="street" class="form-control @error('street') is-invalid @enderror" name="street" value="{{ old('street') }}" autocomplete="street" autofocus>
@@ -169,7 +169,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="phone" class="col-12 col-md-3 col-form-label text-md-right">{{ __('Phone') }}</label>
+                            <label for="phone" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.phone') }}</label>
 
                             <div class="col-12 col-md-9">
                                 <input id="phone" type="phone" class="form-control @error('phone') is-invalid @enderror" name="phone" value="{{ old('phone') }}" autocomplete="phone" autofocus>
@@ -187,7 +187,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="min_salary" class="col-12 col-md-3 col-form-label text-md-right">{{ __('Min salary per hour') }}</label>
+                            <label for="min_salary" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.min_salary') }}</label>
 
                             <div class="col-12 col-md-9">
                                 <input min="0"
@@ -200,7 +200,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="max_salary" class="col-12 col-md-3 col-form-label text-md-right">{{ __('Max salary per hour') }}</label>
+                            <label for="max_salary" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.max_salary') }}</label>
 
                             <div class="col-12 col-md-9">
                                 <input min="0"
@@ -216,7 +216,7 @@
                             <label class="col-12 col-md-3 col-form-label text-md-right" for="currency_id">{{ trans('sentence.currency') }}</label>
                             <div class="col-12 col-md-9">
                                 <select data-live-search="true" class="form-control @error('currency_id') is-invalid @enderror" name="currency_id" id="currency_id">
-                                    <option selected>Choose...</option>
+                                    <option selected>{{ trans('sentence.choose') }}</option>
                                     @foreach($currencies as $currency)
                                         <option value="{{ $currency->id }}">{{ $currency->symbol }}</option>
                                     @endforeach
@@ -231,7 +231,7 @@
                             <label class="col-12 col-md-3 col-form-label text-md-right" for="settlement_id">{{ trans('sentence.settlement') }}</label>
                             <div class="col-12 col-md-9">
                                 <select data-live-search="true" class="form-control @error('settlement_id') is-invalid @enderror" name="settlement_id" id="settlement_id">
-                                    <option selected>Choose...</option>
+                                    <option selected>{{ trans('sentence.choose') }}</option>
                                     @foreach($settlements as $settlement)
                                         <option value="{{ $settlement->id }}">{{ $settlement->name }}</option>
                                     @endforeach
@@ -251,7 +251,7 @@
                                     type="checkbox" name="negotiable" id="negotiable" value="1"
                                     {{ old('negotiable', 0)  == 1 ? 'checked' : '' }}>
                                     <label class="form-check-label" for="negotiable">
-                                     {{ __('Salary negotiable?') }}
+                                     {{ trans('sentence.salary_negotiable') }}
                                     </label>
                                 </div>
                             </div>

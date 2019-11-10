@@ -24,7 +24,7 @@
                     <th scope="col">{{ __('Email') }}</th>
                     <th scope="col">{{ __('First name') }}</th>
                     <th scope="col">{{ trans('sentence.city') }}</th>
-                    <th scope="col">{{ __('Phone') }}</th>
+                    <th scope="col">{{ trans('sentence.phone') }}</th>
                     <th scope="col">{{ __('Reply') }}</th>
                 </tr>
             </thead>

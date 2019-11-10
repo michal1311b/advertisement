@@ -48,7 +48,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="description" class="col-12 col-md-3 col-form-label text-md-right">{{ __('Description') }}</label>
+                            <label for="description" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.description') }}</label>
 
                             <div class="col-12 col-md-9">
                                 <textarea id="description" class="form-control @error('description') is-invalid @enderror" name="description" value="{{ $advertisement->description }}" autocomplete="description" autofocus rows="3">{{ $advertisement->description }}</textarea>
@@ -59,7 +59,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="profits" class="col-12 col-md-3 col-form-label text-md-right">{{ __('Profits') }}</label>
+                            <label for="profits" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.profits') }}</label>
 
                             <div class="col-12 col-md-9">
                                 <textarea id="profits" class="form-control @error('profits') is-invalid @enderror" name="profits" value="{{ $advertisement->profits }}" autocomplete="profits" autofocus rows="3">{{ $advertisement->profits }}</textarea>
@@ -70,7 +70,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="requirements" class="col-12 col-md-3 col-form-label text-md-right">{{ __('Requirements') }}</label>
+                            <label for="requirements" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.requirements') }}</label>
 
                             <div class="col-12 col-md-9">
                                 <textarea id="requirements" class="form-control @error('requirements') is-invalid @enderror" name="requirements" value="{{ $advertisement->requirements }}" autocomplete="requirements" autofocus rows="3">{{ $advertisement->requirements }}</textarea>
@@ -100,7 +100,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label class="col-12 col-md-3 col-form-label text-md-right" for="state_id">{{ __('State') }}</label>
+                            <label class="col-12 col-md-3 col-form-label text-md-right" for="state_id">{{ trans('sentence.state') }}</label>
                             <div class="col-12 col-md-9">
                                 <select data-live-search="true" class="form-control @error('state_id') is-invalid @enderror" name="state_id" id="state_id">
                                     <option selected>{{ trans('sentence.choose') }}</option>
@@ -119,7 +119,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label class="col-12 col-md-3 col-form-label text-md-right" for="specialization_id">{{ __('Specialization') }}</label>
+                            <label class="col-12 col-md-3 col-form-label text-md-right" for="specialization_id">{{ trans('sentence.specialization') }}</label>
                             <div class="col-12 col-md-9">
                                 <select data-live-search="true" class="form-control @error('specialization_id') is-invalid @enderror" name="specialization_id" id="specialization_id">
                                     <option selected>{{ trans('sentence.choose') }}</option>
@@ -147,7 +147,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label class="col-12 col-md-3 col-form-label text-md-right" for="galleries">{{ __('Upload files') }}</label>
+                            <label class="col-12 col-md-3 col-form-label text-md-right" for="galleries">{{ trans('sentence.upload-files') }}</label>
                             <div class="col-12 col-md-9">
                                 <input type="file" class="form-control @error('galleries') is-invalid @enderror" name="galleries[]" multiple />
                                 @error('galleries')
@@ -187,7 +187,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="street" class="col-12 col-md-3 col-form-label text-md-right">{{ __('Street') }}</label>
+                            <label for="street" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.street') }}</label>
 
                             <div class="col-12 col-md-9">
                                 <input id="street" type="street" class="form-control @error('street') is-invalid @enderror" name="street" value="{{ $advertisement->street }}" autocomplete="street" autofocus>
@@ -209,7 +209,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="phone" class="col-12 col-md-3 col-form-label text-md-right">{{ __('Phone') }}</label>
+                            <label for="phone" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.phone') }}</label>
 
                             <div class="col-12 col-md-9">
                                 <input id="phone" type="phone" class="form-control @error('phone') is-invalid @enderror" name="phone" value="{{ $advertisement->phone }}" autocomplete="phone" autofocus>
@@ -246,7 +246,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="min_salary" class="col-12 col-md-3 col-form-label text-md-right">{{ __('Min salary per hour') }}</label>
+                            <label for="min_salary" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.min_salary') }}</label>
 
                             <div class="col-12 col-md-9">
                                 <input min="0"
@@ -259,7 +259,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="max_salary" class="col-12 col-md-3 col-form-label text-md-right">{{ __('Max salary per hour') }}</label>
+                            <label for="max_salary" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.max_salary') }}</label>
 
                             <div class="col-12 col-md-9">
                                 <input min="0"
@@ -299,7 +299,7 @@
                                     type="checkbox" name="negotiable" id="negotiable" value="1"
                                     {{ ($advertisement->negotiable  == 1) ? 'checked' : '' }}>
                                     <label class="form-check-label" for="negotiable">
-                                     {{ __('Salary negotiable?') }}
+                                     {{ trans('sentence.salary_negotiable') }}
                                     </label>
                                 </div>
                             </div>

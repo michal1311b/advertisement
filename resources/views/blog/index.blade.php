@@ -54,7 +54,7 @@
             </div>
         @else
             <div class="col-12">
-                <h4>{{ __('No posts found') }}</h4>
+                <h4>{{ trans('sentence.no-post') }}</h4>
             </div>
         @endif
     </div>
