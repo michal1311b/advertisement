@@ -21,7 +21,7 @@
                         @enderror
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="first_name">{{ __('First name') }}</label>
+                        <label for="first_name">{{ trans('sentence.first_name')}}</label>
                         <input type="text" class="form-control" id="first_name" name="first_name" placeholder="" required value="{{ auth()->user()->name ?? null }}">
                         @error('first_name')
                             <div class="alert alert-danger">{{ $message }}</div>
@@ -30,17 +30,17 @@
                 </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
-                    <label for="city">{{ __('City (not required)') }}</label>
+                    <label for="city">{{ trans('sentence.city-not-require')}}</label>
                     <input type="text" class="form-control" id="city" name="city" value="{{ auth()->user()->profile->city ?? null }}">
                 </div>
                 <div class="form-group col-md-6">
-                    <label for="phone">{{ __('Phone (not required)') }}</label>
+                    <label for="phone">{{ trans('sentence.phone-not-require')}}</label>
                     <input type="text" class="form-control" id="phone" name="phone" placeholder="" value="{{ auth()->user()->profile->company_phone1 ?? null }}">
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-12">
-                    <label for="message">{{ __('Message') }}</label>
+                    <label for="message">{{ trans('sentence.message')}}</label>
                     <textarea id="message" class="form-control @error('message') is-invalid @enderror" name="message" value="{{ old('message') }}" autocomplete="message" autofocus rows="3"></textarea>
                     @error('message')
                         <div class="alert alert-danger">{{ $message }}</div>
@@ -50,7 +50,7 @@
 
             <div class="form-row">
                 <div class="form-group col-md-12">
-                    <label for="cv">{{ __('Upload CV') }}</label>
+                    <label for="cv">{{ trans('sentence.upload-cv')}}</label>
                     
                     <input type="file" class="form-control @error('cv') is-invalid @enderror" name="cv" />
                     @error('cv')
@@ -71,7 +71,7 @@
                     </label>
                  </div>
             </div>
-            <button type="submit" class="btn btn-primary">{{ __('Send') }}</button>
+            <button type="submit" class="btn btn-primary">{{ trans('sentence.send')}}</button>
         </form>
     </div>
 </div>

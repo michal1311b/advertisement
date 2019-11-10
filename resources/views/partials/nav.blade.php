@@ -10,7 +10,23 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav mr-auto">
-                
+                @php $locale = session()->get('locale'); @endphp
+                <li class="nav-item dropdown">
+                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            {{ trans('sentence.language')}} <span class="caret"></span>
+                    </a>
+                    @switch($locale)
+                        @case('pl')
+                        <img src="{{asset('images/pl.png')}}" width="20px" height="20x"> {{ trans('sentence.polish')}}
+                        @break
+                        @default
+                        <img src="{{asset('images/uk.png')}}" width="20px" height="20x"> {{ trans('sentence.english')}}
+                    @endswitch
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{{ route('locale', 'en') }}"><img src="{{asset('images/uk.png')}}" width="20px" height="20x"> {{ trans('sentence.english')}}</a>
+                        <a class="dropdown-item" href="{{ route('locale', 'pl') }}"><img src="{{asset('images/pl.png')}}" width="20px" height="20x"> {{ trans('sentence.polish')}}</a>
+                    </div>
+                </li>
             </ul>
 
             <!-- Right Side Of Navbar -->
@@ -18,11 +34,11 @@
                 <!-- Authentication Links -->
                 @guest
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                        <a class="nav-link" href="{{ route('login') }}">{{ trans('sentence.login')}}</a>
                     </li>
                     @if (Route::has('register'))
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                            <a class="nav-link" href="{{ route('register') }}">{{ trans('sentence.register')}}</a>
                         </li>
                     @endif
                 @else
@@ -44,31 +60,31 @@
                         </a>
     
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{ route('edit-user', auth()->user()->id) }}">{{ __('User profile') }}</a>
-                            <a class="dropdown-item" href="{{ route('user-contact') }}">{{ __('User message box') }}</a>
+                            <a class="dropdown-item" href="{{ route('edit-user', auth()->user()->id) }}">{{ trans('sentence.user-profile')}}</a>
+                            <a class="dropdown-item" href="{{ route('user-contact') }}">{{ trans('sentence.user-message')}}</a>
                             @if(auth()->user()->hasRole('doctor'))
-                                <a class="dropdown-item" href="{{ route('user-prefered-locations') }}">{{ __('Your preferences') }}</a>
+                                <a class="dropdown-item" href="{{ route('user-prefered-locations') }}">{{ trans('sentence.your-preferences')}}</a>
                             @endif
-                            <a class="dropdown-item" href="{{ route('advertisement-list') }}">{{ __('Advertisements list') }}</a>
+                            <a class="dropdown-item" href="{{ route('advertisement-list') }}">{{ trans('sentence.offers-list')}}</a>
                             
                             @if(auth()->user()->hasRole('admin') || auth()->user()->hasRole('company'))
-                                <a class="dropdown-item" href="{{ route('user-advertisement-list') }}">{{ __('User advertisement list') }}</a>
-                                <a class="dropdown-item" href="{{ route('create-advertisement') }}">{{ __('Create advertisement') }}</a>
+                                <a class="dropdown-item" href="{{ route('user-advertisement-list') }}">{{ trans('sentence.user-offers')}}</a>
+                                <a class="dropdown-item" href="{{ route('create-advertisement') }}">{{ trans('sentence.offer-create')}}</a>
                             @endif
 
                             @if(auth()->user()->hasRole('admin'))
-                                <a class="dropdown-item" href="{{ route('categories.create') }}">{{ __('Create category') }}</a>
-                                <a class="dropdown-item" href="{{ route('categories.index') }}">{{ __('Categories list') }}</a>
-                                <a class="dropdown-item" href="{{ route('posts.create') }}">{{ __('Create post') }}</a>
-                                <a class="dropdown-item" href="{{ route('posts.index') }}">{{ __('Posts list') }}</a>
-                                <a class="dropdown-item" href="{{ route('pages.create') }}">{{ __('Create page') }}</a>
-                                <a class="dropdown-item" href="{{ route('pages.index') }}">{{ __('Pages list') }}</a>
-                                <a class="dropdown-item" href="{{ route('mailTracker_Index') }}">{{ __('Email tracker') }}</a>
+                                <a class="dropdown-item" href="{{ route('categories.create') }}">{{ trans('sentence.category-create')}}</a>
+                                <a class="dropdown-item" href="{{ route('categories.index') }}">{{ trans('sentence.category-list')}}</a>
+                                <a class="dropdown-item" href="{{ route('posts.create') }}">{{ trans('sentence.post-create')}}</a>
+                                <a class="dropdown-item" href="{{ route('posts.index') }}">{{ trans('sentence.posts-list')}}</a>
+                                <a class="dropdown-item" href="{{ route('pages.create') }}">{{ trans('sentence.pages-create')}}</a>
+                                <a class="dropdown-item" href="{{ route('pages.index') }}">{{ trans('sentence.pages-list')}}</a>
+                                <a class="dropdown-item" href="{{ route('mailTracker_Index') }}">{{ trans('sentence.email-tracker')}}</a>
                             @endif
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
                                 document.getElementById('logout-form').submit();">
-                                {{ __('Logout') }}
+                                {{ trans('sentence.logout')}}
                             </a>
 
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

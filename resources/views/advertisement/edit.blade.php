@@ -37,7 +37,7 @@
                         @csrf
 
                         <div class="form-group row">
-                            <label for="title" class="col-12 col-md-3 col-form-label text-md-right">{{ __('Title') }}</label>
+                            <label for="title" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.title') }}</label>
 
                             <div class="col-12 col-md-9">
                                 <input id="title" type="title" class="form-control @error('title') is-invalid @enderror" name="title" value="{{ $advertisement->title }}" autocomplete="title" autofocus>
@@ -81,10 +81,10 @@
                         </div>
 
                         <div class="form-group row">
-                            <label class="col-12 col-md-3 col-form-label text-md-right" for="work_id">{{ __('Work') }}</label>
+                            <label class="col-12 col-md-3 col-form-label text-md-right" for="work_id">{{ trans('sentence.work-category') }}</label>
                             <div class="col-12 col-md-9">
                                 <select data-live-search="true" class="form-control @error('work_id') is-invalid @enderror" name="work_id" id="work_id">
-                                    <option selected>{{ __('Choose...') }}</option>
+                                    <option selected>{{ trans('sentence.choose') }}</option>
                                     @foreach($works as $work)
                                         @if($advertisement->work_id === $work->id)
                                         <option value="{{ $work->id }}" selected>{{ $work->name }}</option>
@@ -103,7 +103,7 @@
                             <label class="col-12 col-md-3 col-form-label text-md-right" for="state_id">{{ __('State') }}</label>
                             <div class="col-12 col-md-9">
                                 <select data-live-search="true" class="form-control @error('state_id') is-invalid @enderror" name="state_id" id="state_id">
-                                    <option selected>{{ __('Choose...') }}</option>
+                                    <option selected>{{ trans('sentence.choose') }}</option>
                                     @foreach($states as $state)
                                         @if($advertisement->state_id === $state->id)
                                             <option value="{{ $state->id }}" selected>{{ $state->name }}</option>
@@ -122,7 +122,7 @@
                             <label class="col-12 col-md-3 col-form-label text-md-right" for="specialization_id">{{ __('Specialization') }}</label>
                             <div class="col-12 col-md-9">
                                 <select data-live-search="true" class="form-control @error('specialization_id') is-invalid @enderror" name="specialization_id" id="specialization_id">
-                                    <option selected>{{ __('Choose...') }}</option>
+                                    <option selected>{{ trans('sentence.choose') }}</option>
                                     @foreach($specializations as $specialization)
                                         @if($advertisement->specialization_id === $specialization->id)
                                             <option value="{{ $specialization->id }}" selected>{{ $specialization->name }}</option>
@@ -140,7 +140,7 @@
                         <div class="form-group row">
                             @foreach($advertisement->galleries as $image)
                                 <div class="col-12 col-md-4">
-                                    <a href="{{ route('delete-photo', $image->id) }}" class="btn btn-danger">{{ __('Delete') }}</a>
+                                    <a href="{{ route('delete-photo', $image->id) }}" class="btn btn-danger">{{ trans('sentence.btn-delete') }}</a>
                                     <img src="{{ $image->path }}" alt="{{ $image->oldName }}" class="d-block w-100 py-2 gallery-item"/>
                                 </div>
                             @endforeach
@@ -157,10 +157,10 @@
                         </div>
 
                         <div class="form-group row">
-                            <label class="col-12 col-md-3 col-form-label text-md-right" for="location_id">{{ __('Location') }}</label>
+                            <label class="col-12 col-md-3 col-form-label text-md-right" for="location_id">{{ trans('sentence.location') }}</label>
                             <div class="col-12 col-md-9">
                                 <select data-live-search="true" class="form-control @error('location_id') is-invalid @enderror" name="location_id" id="location_id">
-                                    <option selected>{{ __('Choose...') }}</option>
+                                    <option selected>{{ trans('sentence.choose') }}</option>
                                     @foreach($locations as $location)
                                         @if($advertisement->location_id === $location->id)
                                             <option value="{{ $location->id }}" selected>{{ $location->city }}</option>
@@ -176,7 +176,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="postCode" class="col-12 col-md-3 col-form-label text-md-right">{{ __('Post code') }}</label>
+                            <label for="postCode" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.post_code') }}</label>
 
                             <div class="col-12 col-md-9">
                                 <input id="post_code" type="text" class="form-control @error('postCode') is-invalid @enderror" name="postCode" value="{{ $advertisement->postCode }}" autocomplete="postCode" autofocus>
@@ -220,17 +220,17 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="tags" class="col-12 col-md-3 col-form-label text-md-right">{{ __('Tags') }}</label>
+                            <label for="tags" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.tags') }}</label>
                             <div class="col-12 col-md-9">
                                 <input type="text" value="{{$tags}}" name="tags[]" id="tags" data-role="tagsinput" class="form-control" />
                             </div>
                         </div>
 
                         <div class="form-group row">
-                            <label class="col-12 col-md-3 col-form-label text-md-right" for="settlement_id">{{ __('Settlement') }}</label>
+                            <label class="col-12 col-md-3 col-form-label text-md-right" for="settlement_id">{{ trans('sentence.settlement') }}</label>
                             <div class="col-12 col-md-9">
                                 <select data-live-search="true" class="form-control @error('settlement_id') is-invalid @enderror" name="settlement_id" id="settlement_id">
-                                    <option selected>{{ __('Choose...') }}</option>
+                                    <option selected>{{ trans('sentence.choose') }}</option>
                                     @foreach($settlements as $settlement)
                                         @if($advertisement->settlement_id === $settlement->id)
                                             <option value="{{ $settlement->id }}" selected>{{ $settlement->name }}</option>
@@ -272,10 +272,10 @@
                         </div>
 
                         <div class="form-group row">
-                            <label class="col-12 col-md-3 col-form-label text-md-right" for="currency_id">{{ __('Currency') }}</label>
+                            <label class="col-12 col-md-3 col-form-label text-md-right" for="currency_id">{{ trans('sentence.currency') }}</label>
                             <div class="col-12 col-md-9">
                                 <select data-live-search="true" class="form-control @error('currency_id') is-invalid @enderror" name="currency_id" id="currency_id">
-                                    <option selected>{{ __('Choose...') }}</option>
+                                    <option selected>{{ trans('sentence.choose') }}</option>
                                     @foreach($currencies as $currency)
                                         @if($advertisement->currency_id === $currency->id)
                                             <option value="{{ $currency->id }}" selected>{{ $currency->symbol }}</option>
@@ -308,7 +308,7 @@
                         <div class="form-group row mb-0">
                             <div class="col-md-8 offset-md-4">
                                 <button type="submit" class="btn btn-success">
-                                    {{ __('Update') }}
+                                    {{ trans('sentence.btn-update') }}
                                 </button>
                             </div>
                         </div>

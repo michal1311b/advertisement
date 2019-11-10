@@ -13,11 +13,11 @@
                         <p class="float-left">{!!__($description, $description_parameters)!!}</p>
                     </div>
 
-                    <label for="lang_key" class="col-12 col-form-label">{{ __('Language') }}</label>
+                    <label for="lang_key" class="col-12 col-form-label">{{ trans('sentence.language')}}</label>
 
                     <div class="col-12">
                         <select data-live-search="true" class="form-control @error('lang_key') is-invalid @enderror" name="lang_key" id="lang_key">
-                            <option selected>{{ __('Choose...') }}</option>
+                            <option selected>{{ trans('sentence.choose')}}</option>
                             @foreach($languages as $language)
                                 <option 
                                 @if($language->lang_key === $lang_key)
@@ -31,7 +31,7 @@
                         @enderror
                     </div>
 
-                    <label for="level" class="col-12 col-form-label">{{ __('Level') }}</label>
+                    <label for="level" class="col-12 col-form-label">{{ trans('sentence.level')}}</label>
 
                     <div class="col-12">
                         <select data-live-search="true" class="form-control @error('level') is-invalid @enderror" name="level" id="level">
@@ -48,7 +48,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-sm btn-primary" data-dismiss="modal">{{__('Anuluj')}}</button>
+                    <button type="button" class="btn btn-sm btn-primary" data-dismiss="modal">{{ trans('sentence.btn-cancel')}}</button>
                     <button type="submit" class="btn btn-sm btn-success">{{__($button)}}</button>
                 </div>
             </div>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests\Language\StoreRequest;
 use App\Language;
+use App;
 
 
 class LanguageController extends Controller
@@ -68,5 +69,12 @@ class LanguageController extends Controller
         $language->delete();
 
         return back()->with('success','Language deleted successfully!');
+    }
+
+    public function lang($locale)
+    {
+        App::setLocale($locale);
+        session()->put('locale', $locale);
+        return redirect()->back();
     }
 }

@@ -148,6 +148,11 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'name' => 'name',
+        'shot_description' => 'short description',
+        'body' => 'body',
+        'is_active' => 'is active'
+    ],
 
 ];

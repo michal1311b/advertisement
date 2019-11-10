@@ -30,7 +30,7 @@
         <div class="col-12">
             <ul class="list-group">
                 <li class="list-group-item d-flex align-items-center">
-                    {{ __('Search by:') }}
+                    {{ trans('sentence.search-by')}}
                     <span class="ml-4 badge badge-pill badge-info text-white">{{ str_replace('-', ' ', request()->segment(3)) }}</span>
                 </li>
             </ul>

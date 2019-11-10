@@ -13,7 +13,7 @@
                         <p class="float-left">{!!__($description, $description_parameters)!!}</p>
                     </div>
 
-                    <label for="location_id" class="col-12 col-form-label">{{ __('Location') }}</label>
+                    <label for="location_id" class="col-12 col-form-label">{{ trans('sentence.location')}}</label>
 
                     <div class="col-12">
                         <select data-live-search="true" class="form-control @error('location_id') is-invalid @enderror" name="location_id" id="location_id">
@@ -32,7 +32,7 @@
                         @enderror
                     </div>
 
-                    <label for="radius" class="col-12 col-form-label">{{ __('Radius') }}</label>
+                    <label for="radius" class="col-12 col-form-label">{{ trans('sentence.radius')}}</label>
 
                     <div class="col-12">
                         <select data-live-search="true" class="form-control @error('radius') is-invalid @enderror" name="radius" id="radius">
@@ -46,7 +46,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-sm btn-primary" data-dismiss="modal">{{__('Anuluj')}}</button>
+                    <button type="button" class="btn btn-sm btn-primary" data-dismiss="modal">{{ trans('sentence.btn-cancel')}}</button>
                     <button type="submit" class="btn btn-sm btn-success">{{__($button)}}</button>
                 </div>
             </div>

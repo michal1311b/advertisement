@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    {{ __('Create page') }}
+    {{ trans('sentence.pages-create') }}
 @endsection
 
 @section('breadcrumbs')
@@ -25,14 +25,14 @@
         </div>
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">{{ __('Create page') }}</div>
+                <div class="card-header">{{ trans('sentence.pages-create') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('pages.store') }}">
                         @csrf
 
                         <div class="form-group row">
-                            <label for="title" class="col-12 col-md-3 col-form-label text-md-right">{{ __('Title') }}</label>
+                            <label for="title" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.title') }}</label>
 
                             <div class="col-12 col-md-9">
                                 <input id="title" type="text" class="form-control @error('title') is-invalid @enderror" name="title" value="{{ old('title') }}" autocomplete="title" autofocus>
@@ -43,7 +43,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="shot_description" class="col-12 col-md-3 col-form-label text-md-right">{{ __('Shot description') }}</label>
+                            <label for="shot_description" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.short_descp') }}</label>
 
                             <div class="col-12 col-md-9">
                                 <input id="shot_description" type="text" class="form-control @error('shot_description') is-invalid @enderror" name="shot_description" value="{{ old('shot_description') }}" autocomplete="shot_description" autofocus>
@@ -54,7 +54,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="body" class="col-12 col-md-3 col-form-label text-md-right">{{ __('Body') }}</label>
+                            <label for="body" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.body') }}</label>
 
                             <div class="col-12 col-md-9">
                                 <textarea id="body" type="body" class="form-control @error('body') is-invalid @enderror" name="body" value="{{ old('body') }}" autocomplete="body" autofocus rows="3"></textarea>
@@ -67,7 +67,7 @@
                         <div class="form-group row mb-0">
                             <div class="col-md-8 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
-                                    {{ __('Create') }}
+                                    {{ trans('sentence.btn-create') }}
                                 </button>
                             </div>
                         </div>

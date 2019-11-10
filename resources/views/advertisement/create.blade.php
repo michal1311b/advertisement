@@ -22,7 +22,7 @@
                         @csrf
 
                         <div class="form-group row">
-                            <label for="title" class="col-12 col-md-3 col-form-label text-md-right">{{ __('Title') }}</label>
+                            <label for="title" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.title') }}</label>
 
                             <div class="col-12 col-md-9">
                                 <input id="title" type="title" class="form-control @error('title') is-invalid @enderror" name="title" value="{{ old('title') }}" autocomplete="title" autofocus>
@@ -66,7 +66,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label class="col-12 col-md-3 col-form-label text-md-right" for="work_id">{{ __('Work') }}</label>
+                            <label class="col-12 col-md-3 col-form-label text-md-right" for="work_id">{{ trans('sentence.work-category') }}</label>
                             <div class="col-12 col-md-9">
                                 <select data-live-search="true" class="form-control @error('work_id') is-invalid @enderror" name="work_id" id="work_id">
                                     <option selected>Choose...</option>
@@ -81,7 +81,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label class="col-12 col-md-3 col-form-label text-md-right" for="location_id">{{ __('Location') }}</label>
+                            <label class="col-12 col-md-3 col-form-label text-md-right" for="location_id">{{ trans('sentence.location') }}</label>
                             <div class="col-12 col-md-9">
                                 <select data-live-search="true" class="form-control @error('location_id') is-invalid @enderror" name="location_id" id="location_id">
                                     <option selected>Choose...</option>
@@ -136,7 +136,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="postCode" class="col-12 col-md-3 col-form-label text-md-right">{{ __('Post code') }}</label>
+                            <label for="postCode" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.post_code') }}</label>
 
                             <div class="col-12 col-md-9">
                                 <input id="post_code" type="text" class="form-control @error('postCode') is-invalid @enderror" name="postCode" value="{{ old('postCode') }}" autocomplete="postCode" autofocus>
@@ -180,7 +180,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="tags" class="col-12 col-md-3 col-form-label text-md-right">{{ __('Tags') }}</label>
+                            <label for="tags" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.tags') }}</label>
                             <div class="col-12 col-md-9">
                                 <input type="text" value="" name="tags[]" id="tags" data-role="tagsinput" class="form-control" />
                             </div>
@@ -213,7 +213,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label class="col-12 col-md-3 col-form-label text-md-right" for="currency_id">{{ __('Currency') }}</label>
+                            <label class="col-12 col-md-3 col-form-label text-md-right" for="currency_id">{{ trans('sentence.currency') }}</label>
                             <div class="col-12 col-md-9">
                                 <select data-live-search="true" class="form-control @error('currency_id') is-invalid @enderror" name="currency_id" id="currency_id">
                                     <option selected>Choose...</option>
@@ -228,7 +228,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label class="col-12 col-md-3 col-form-label text-md-right" for="settlement_id">{{ __('Settlement') }}</label>
+                            <label class="col-12 col-md-3 col-form-label text-md-right" for="settlement_id">{{ trans('sentence.settlement') }}</label>
                             <div class="col-12 col-md-9">
                                 <select data-live-search="true" class="form-control @error('settlement_id') is-invalid @enderror" name="settlement_id" id="settlement_id">
                                     <option selected>Choose...</option>
@@ -305,7 +305,7 @@
                         <div class="form-group row mb-0">
                             <div class="col-md-8 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
-                                    {{ __('Create') }}
+                                    {{ trans('sentence.btn-create') }}
                                 </button>
                             </div>
                         </div>

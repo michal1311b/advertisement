@@ -12,6 +12,8 @@
 
 Route::get('/', 'PageController@siteIndex')->name('homepage');
 
+Route::get('lang/{locale}', 'LanguageController@lang')->name('locale');
+
 Route::post('/subscribe', 'SubscriberController@store')->name('subscribe');
 
 Route::get('/verify/subscribtion/{token}', [

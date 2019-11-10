@@ -33,7 +33,7 @@
                         @csrf
 
                         <div class="form-group row">
-                            <label for="title" class="col-12 col-md-3 col-form-label text-md-right">{{ __('Title') }}</label>
+                            <label for="title" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.title') }}</label>
 
                             <div class="col-12 col-md-9">
                                 <input id="title" type="text" class="form-control @error('title') is-invalid @enderror" name="title" value="{{ $post->title }}" autocomplete="title" autofocus>
@@ -44,7 +44,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="body" class="col-12 col-md-3 col-form-label text-md-right">{{ __('body') }}</label>
+                            <label for="body" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.body') }}</label>
 
                             <div class="col-12 col-md-9">
                                 <textarea id="body" type="body" class="form-control @error('body') is-invalid @enderror" name="body" autocomplete="body" autofocus rows="3">
@@ -113,7 +113,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="pins" class="col-12 col-md-3 col-form-label text-md-right">{{ __('Tags') }}</label>
+                            <label for="pins" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.tags') }}</label>
                             <div class="col-12 col-md-9">
                                 <input type="text" value="{{$pins}}" name="pins[]" id="pins" data-role="tagsinput" class="form-control" />
                             </div>
@@ -122,7 +122,7 @@
                         <div class="form-group row mb-0">
                             <div class="col-md-8 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
-                                    {{ __('Update') }}
+                                    {{ trans('sentence.btn-update') }}
                                 </button>
                             </div>
                         </div>

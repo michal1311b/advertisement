@@ -66,7 +66,7 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">{{ __('Homepage') }}</strong></div>
+                <div class="card-header">{{ trans('sentence.homepage') }}</strong></div>
 
                 <div class="card-body">
                     <div class="container-fluid">
@@ -121,13 +121,13 @@
             @else
                 <div class="col-12">
                     <a href="{{ route('advertisement-create') }}">
-                        <h4>{{ __('No offers found, sign in to be the first one.') }}</h4>
+                        <h4>{{ trans('sentence.no-offers') }}</h4>
                     </a>
                 </div>
             @endif
         </div>
         <div class="col-12 pt-2 text-center">
-            <a href="{{ route('advertisement-list') }}" class="btn btn-info border border-warning mr-2 text-white">{{ __('Watch all offers') }}</a>
+            <a href="{{ route('advertisement-list') }}" class="btn btn-info border border-warning mr-2 text-white">{{ trans('sentence.watch-all') }}</a>
         </div>
     </div>
 </div>

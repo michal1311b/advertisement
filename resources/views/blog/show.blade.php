@@ -35,7 +35,7 @@
                                 <img src="{{ $post->cover }}" class="w-100" alt="{{ $post->title }}"/>
                             </div>
                             <div class="col-12 pb-2">
-                                {{ __('Tags:') }}
+                                {{ trans('sentence.tags') }}
                                 @foreach($post->pins as $pin)
                                     <a href="{{ route('postTag', ['tagSlug' => $pin->slug]) }}">
                                         <span class="badge badge-pill badge-info text-white">
@@ -47,17 +47,17 @@
                             <div class="col-12">
                                 <ul class="list-group">
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        {{ __('Created at:') }}
+                                        {{ trans('sentence.created_at') }}
                                         <span class="badge badge-pill">{{ $post->created_at }}</span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        {{ __('Updated at:') }}
+                                        {{ trans('sentence.updated_at') }}
                                         <span class="badge badge-pill">{{ $post->created_at }}</span>
                                     </li>
                                 </ul>
                             </div>
                             <div class="col-12 pt-2">
-                                <h4><strong>{{ __('Description:') }}</strong></h4>
+                                <h4><strong>{{ trans('sentence.description') }}</strong></h4>
                                 {!! $post->body !!}
                             </div>
                         </div>
@@ -92,28 +92,28 @@
                         </div>
                         
                         <div class="media-body col-12 col-md-8">
-                          <span class="mt-0 h5 font-weight-bold">{{ $comment->author->name }}</span> <span class="h6">{{ __('Created at:') }} {{ $comment->created_at }}</span>
+                          <span class="mt-0 h5 font-weight-bold">{{ $comment->author->name }}</span> <span class="h6">{{ trans('sentence.created_at') }} {{ $comment->created_at }}</span>
                           {!! $comment->content !!}
                         </div>
 
                         <div class="media-body col-12 col-md-2 btn-group text-right">
                             @if(auth()->check() && auth()->user()->id === $comment->author->id)
                                 <button class="btn btn-success" data-toggle="modal"
-                                    data-target="#modaleditcomment{{$comment->id}}">{{ __('Edit') }}</i>
+                                    data-target="#modaleditcomment{{$comment->id}}">{{ trans('sentence.edit') }}</i>
                                 </button>
 
                                 @include('partials.edit-comment', [
                                     'url' => route('update-comment', $comment),
                                     'method' => 'PUT',
-                                    'title' => "Edycja",
+                                    'title' => trans('sentence.edit'),
                                     "description" => "Czy na pewno chcesz zaktualizować komentarz?",
                                     "description_parameters" => [],
-                                    'button' => 'Update',
+                                    'button' => trans('sentence.btn-edit'),
                                     'modalKey' => "editcomment".$comment->id
                                 ])
 
                                 <button class="btn btn-danger" data-toggle="modal"
-                                    data-target="#modalremove{{$comment->id}}">{{ __('Delete') }}</i>
+                                    data-target="#modalremove{{$comment->id}}">{{ trans('sentence.btn-delete') }}</i>
                                 </button>
 
                                 @include('partials.confirmation', [
@@ -122,7 +122,7 @@
                                     'title' => "Usuń komentarz",
                                     "description" => "Czy na pewno chcesz usunąć komentarz?",
                                     "description_parameters" => [],
-                                    'button' => 'Usuń',
+                                    'button' => trans('sentence.btn-delete'),
                                     'modalKey' => "remove".$comment->id
                                 ])
                             @endif

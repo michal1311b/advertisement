@@ -32,13 +32,13 @@
                 </li>
                 @if($editUser->doctor)
                     <li class="nav-item">
-                        <a class="nav-link" data-toggle="tab" href="#menu1">{{ __('Experience') }}</a>
+                        <a class="nav-link" data-toggle="tab" href="#menu1">{{ trans('sentence.experience') }}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" data-toggle="tab" href="#menu2">{{ __('Courses') }}</a>
+                        <a class="nav-link" data-toggle="tab" href="#menu2">{{ trans('sentence.courses') }}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" data-toggle="tab" href="#menu3">{{ __('Languages') }}</a>
+                        <a class="nav-link" data-toggle="tab" href="#menu3">{{ trans('sentence.languages') }}</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" data-toggle="tab" href="#menu4">{{ __('Preferences') }}</a>
@@ -51,7 +51,7 @@
                 <div class="tab-pane container active" id="home">
                     <div class="col-md-12 py-3">
                         <div class="card">
-                            <div class="card-header">{{ __('Edit your profile') }}</div>
+                            <div class="card-header">{{ trans('sentence.edit-profile') }}</div>
             
                             <div class="card-body">
                                 <form method="POST" action="{{ route('update-user', $editUser) }}" enctype="multipart/form-data">
@@ -71,7 +71,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label for="name" class="col-12 col-md-3 col-form-label text-md-right">{{ __('Name') }}</label>
+                                        <label for="name" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.name') }}</label>
             
                                         <div class="col-12 col-md-9">
                                             <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ $editUser->name }}" autocomplete="name" autofocus>
@@ -89,7 +89,7 @@
                                             <div class="col-12 col-md-9">
                                             <input id="password" type="hidden" value="null" name="password">
                                         @else
-                                        <label for="password" class="col-12 col-md-3 col-form-label text-md-right">{{ __('Password') }}</label>
+                                        <label for="password" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.password') }}</label>
                                         <div class="col-12 col-md-9">
                                             <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" autocomplete="new-password">
             
@@ -103,7 +103,7 @@
                                     </div>
             
                                     <div class="form-group row">
-                                        <label for="last_name" class="col-12 col-md-3 col-form-label text-md-right">{{ __('Last Name') }}</label>
+                                        <label for="last_name" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.last_name') }}</label>
             
                                         <div class="col-12 col-md-9">
                                             <input id="last_name" type="text" class="form-control @error('last_name') is-invalid @enderror" name="last_name" value="{{ $editUser->profile->last_name }}" autocomplete="last_name" autofocus>
@@ -125,7 +125,7 @@
                                     </div>
             
                                     <div class="form-group row">
-                                        <label for="post_code" class="col-12 col-md-3 col-form-label text-md-right">{{ __('Post code') }}</label>
+                                        <label for="post_code" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.post_code') }}</label>
             
                                         <div class="col-12 col-md-9">
                                             <input id="post_code" type="text" class="form-control @error('post_code') is-invalid @enderror" name="post_code" value="{{ $editUser->profile->post_code }}" autocomplete="post_code" autofocus>
@@ -136,7 +136,7 @@
                                     </div>
             
                                     <div class="form-group row">
-                                        <label for="city" class="col-12 col-md-3 col-form-label text-md-right">{{ __('City') }}</label>
+                                        <label for="city" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.city') }}</label>
             
                                         <div class="col-12 col-md-9">
                                             <input id="city" type="text" class="form-control @error('city') is-invalid @enderror" name="city" value="{{ $editUser->profile->city }}" autocomplete="city" autofocus>
@@ -147,7 +147,7 @@
                                     </div>
             
                                     <div class="form-group row">
-                                        <label for="company_name" class="col-12 col-md-3 col-form-label text-md-right">{{ __('Company name') }}</label>
+                                        <label for="company_name" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.company_name') }}</label>
             
                                         <div class="col-12 col-md-9">
                                             <input id="company_name" type="text" class="form-control @error('company_name') is-invalid @enderror" name="company_name" value="{{ $editUser->profile->company_name }}" autocomplete="company_name" autofocus>
@@ -158,7 +158,7 @@
                                     </div>
             
                                     <div class="form-group row">
-                                        <label for="company_street" class="col-12 col-md-3 col-form-label text-md-right">{{ __('Company street') }}</label>
+                                        <label for="company_street" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.company_street') }}</label>
             
                                         <div class="col-12 col-md-9">
                                             <input id="company_street" type="text" class="form-control @error('company_street') is-invalid @enderror" name="company_street" value="{{ $editUser->profile->company_street }}" autocomplete="company_street" autofocus>
@@ -169,7 +169,7 @@
                                     </div>
             
                                     <div class="form-group row">
-                                        <label for="company_post_code" class="col-12 col-md-3 col-form-label text-md-right">{{ __('Company post code') }}</label>
+                                        <label for="company_post_code" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.company_post_code') }}</label>
             
                                         <div class="col-12 col-md-9">
                                             <input id="company_post_code" type="text" class="form-control @error('company_post_code') is-invalid @enderror" name="company_post_code" value="{{ $editUser->profile->company_post_code }}" autocomplete="company_post_code" autofocus>
@@ -180,7 +180,7 @@
                                     </div>
             
                                     <div class="form-group row">
-                                        <label for="company_city" class="col-12 col-md-3 col-form-label text-md-right">{{ __('Company city') }}</label>
+                                        <label for="company_city" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.company_city') }}</label>
             
                                         <div class="col-12 col-md-9">
                                             <input id="company_city" type="text" class="form-control @error('company_city') is-invalid @enderror" name="company_city" value="{{ $editUser->profile->company_city }}" autocomplete="company_city" autofocus>
@@ -191,7 +191,7 @@
                                     </div>
             
                                     <div class="form-group row">
-                                        <label for="company_nip" class="col-12 col-md-3 col-form-label text-md-right">{{ __('Company NIP') }}</label>
+                                        <label for="company_nip" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.company_nip') }}</label>
             
                                         <div class="col-12 col-md-9">
                                             <input id="company_nip" type="number" class="form-control @error('company_nip') is-invalid @enderror" name="company_nip" value="{{ $editUser->profile->company_nip }}" autocomplete="company_nip" autofocus>
@@ -202,7 +202,7 @@
                                     </div>
             
                                     <div class="form-group row">
-                                        <label for="company_phone1" class="col-12 col-md-3 col-form-label text-md-right">{{ __('Company phone') }}</label>
+                                        <label for="company_phone1" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.company_phone') }}</label>
             
                                         <div class="col-12 col-md-9">
                                             <input id="company_phone1" type="number" class="form-control @error('company_phone1') is-invalid @enderror" name="company_phone1" value="{{ $editUser->profile->company_phone1 }}" autocomplete="company_phone1" autofocus>
@@ -213,7 +213,7 @@
                                     </div>
             
                                     <div class="form-group row">
-                                        <label for="company_phone2" class="col-12 col-md-3 col-form-label text-md-right">{{ __('Company additional phone') }}</label>
+                                        <label for="company_phone2" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.company_extra_phone') }}</label>
             
                                         <div class="col-12 col-md-9">
                                             <input id="company_phone2" type="number" class="form-control @error('company_phone2') is-invalid @enderror" name="company_phone2" value="{{ $editUser->profile->company_phone2 }}" autocomplete="company_phone2" autofocus>
@@ -225,7 +225,7 @@
             
                                     @if($editUser->specializations && $editUser->doctor !== null)
                                         <div class="form-group row">
-                                            <label for="specializations" class="col-12 col-md-3 col-form-label text-md-right">{{__('Specializations')}}</label>
+                                            <label for="specializations" class="col-12 col-md-3 col-form-label text-md-right">{{trans('sentence.specializations')}}</label>
                                             <div class="col-12 col-md-9">
                                                 <select multiple="multiple"
                                                         class="form-control{{ $errors->has('specializations') ? ' is-invalid' : '' }}"
@@ -248,10 +248,10 @@
                                         </div>
             
                                         <div class="form-group row">
-                                            <label class="col-12 col-md-3 col-form-label text-md-right" for="sex">{{ __('Sex') }}</label>
+                                            <label class="col-12 col-md-3 col-form-label text-md-right" for="sex">{{ trans('sentence.sex') }}</label>
                                             <div class="col-12 col-md-9">
                                                 <select data-live-search="true" class="form-control @error('sex') is-invalid @enderror" name="sex" id="sex">
-                                                    <option selected>Choose...</option>
+                                                    <option selected>{{ trans('sentence.choose') }}</option>
                                                     <option 
                                                         @if($editUser->doctor->sex === 'male') 
                                                         selected
@@ -273,7 +273,7 @@
                                     <div class="form-group row mb-0">
                                         <div class="col-md-12 text-left">
                                             <button type="submit" class="btn btn-success">
-                                                {{ __('Update') }}
+                                                {{ trans('sentence.btn-update') }}
                                             </button>
                                         </div>
                                     </div>
@@ -286,14 +286,14 @@
                     <div class="tab-pane container fade" id="menu1">
                         <div class="col-md-12 py-3">
                             <div class="card">
-                                <div class="card-header">{{ __('Edit your experience') }}</div>
+                                <div class="card-header">{{ trans('sentence.edit-experience') }}</div>
             
                                 <div class="card-body">
                                     <form method="POST" action="{{ route('store-experience', $editUser) }}">
                                         @csrf
                                         @if($editUser->doctor !== null)
                                             <div class="form-group row">
-                                                <label for="workplace" class="col-12 col-md-3 col-form-label text-md-right">{{ __('Workplace') }}</label>
+                                                <label for="workplace" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.workplace') }}</label>
             
                                                 <div class="col-12 col-md-9">
                                                     <input id="workplace" type="text" class="form-control @error('workplace') is-invalid @enderror" name="workplace" value="{{ $experience->workplace ?? '' }}" autocomplete="workplace" autofocus>
@@ -304,7 +304,7 @@
                                             </div>
             
                                             <div class="form-group row">
-                                                <label for="exp_company_name" class="col-12 col-md-3 col-form-label text-md-right">{{ __('Company name') }}</label>
+                                                <label for="exp_company_name" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.company_name') }}</label>
             
                                                 <div class="col-12 col-md-9">
                                                     <input id="exp_company_name" type="text" class="form-control @error('exp_company_name') is-invalid @enderror" name="exp_company_name" value="{{ $experience->exp_company_name ?? '' }}" autocomplete="exp_company_name" autofocus>
@@ -315,7 +315,7 @@
                                             </div>
             
                                             <div class="form-group row">
-                                                <label for="exp_city" class="col-12 col-md-3 col-form-label text-md-right">{{ __('City') }}</label>
+                                                <label for="exp_city" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.city') }}</label>
             
                                                 <div class="col-12 col-md-9">
                                                     <input id="exp_city" type="text" class="form-control @error('exp_city') is-invalid @enderror" name="exp_city" value="{{ $experience->exp_city ?? '' }}" autocomplete="exp_city" autofocus>
@@ -326,7 +326,7 @@
                                             </div>
             
                                             <div class="form-group row">
-                                                <label for="start_date" class="col-12 col-md-3 col-form-label text-md-right">{{ __('Start date') }}</label>
+                                                <label for="start_date" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.start_date') }}</label>
             
                                                 <div class="col-12 col-md-9">
                                                     <input id="start_date" type="text" class="form-control @error('start_date') is-invalid @enderror" name="start_date" value="{{ $experience->start_date ?? '' }}" autocomplete="start_date" autofocus placeholder="YYYY-MM-DD">
@@ -337,7 +337,7 @@
                                             </div>
             
                                             <div class="form-group row">
-                                                <label for="end_date" class="col-12 col-md-3 col-form-label text-md-right">{{ __('End date') }}</label>
+                                                <label for="end_date" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.end_date') }}</label>
             
                                                 <div class="col-12 col-md-9">
                                                     <input id="end_date" type="text" class="form-control @error('end_date') is-invalid @enderror" name="end_date" value="{{ $experience->end_date ?? '' }}" autocomplete="end_date" autofocus placeholder="YYYY-MM-DD">
@@ -363,7 +363,7 @@
                                             </div>
             
                                             <div class="form-group row">
-                                                <label for="responsibility" class="col-12 col-md-3 col-form-label text-md-right">{{ __('Responsibilities') }}</label>
+                                                <label for="responsibility" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.responsibilities') }}</label>
             
                                                 <div class="col-12 col-md-9">
                                                     <textarea id="responsibility" type="responsibility" class="form-control @error('responsibility') is-invalid @enderror" name="responsibility" value="{{ old('responsibility') }}" autocomplete="responsibility" autofocus rows="3"></textarea>
@@ -376,7 +376,7 @@
                                             <div class="form-group row mb-0">
                                                 <div class="col-md-12 text-left">
                                                     <button type="submit" class="btn btn-success">
-                                                        {{ __('Add') }}
+                                                        {{ trans('sentence.bit-add') }}
                                                     </button>
                                                 </div>
                                             </div>
@@ -385,7 +385,7 @@
             
                                     @foreach($editUser->experiences as $experience)
                                         <div class="row pt-3">
-                                            <div class="font-weight-bold col-12 col-md-3 text-md-right">{{ __('Workplace') }}</div>
+                                            <div class="font-weight-bold col-12 col-md-3 text-md-right">{{ trans('sentence.workplace') }}</div>
             
                                             <div class="col-12 col-md-7">
                                                 {{ $experience->workplace }}
@@ -394,7 +394,7 @@
                                             <div class="col-12 col-md-2 btn-group text-right">
             
                                                 <button class="btn btn-danger" data-toggle="modal"
-                                                    data-target="#modalremove{{$experience->id}}">Delete</i>
+                                                    data-target="#modalremove{{$experience->id}}">{{trans('sentence.btn-delete')}}</i>
                                                 </button>
             
                                                 @include('partials.confirmation', [
@@ -403,28 +403,28 @@
                                                     'title' => "Usuń doświadczenie",
                                                     "description" => "Czy na pewno chcesz usunąć doświadczenie?",
                                                     "description_parameters" => [],
-                                                    'button' => 'Usuń',
+                                                    'button' => trans('sentence.btn-delete'),
                                                     'modalKey' => "remove".$experience->id
                                                 ])
             
                                                 <button class="btn btn-success" data-toggle="modal"
-                                                    data-target="#modaledit{{$experience->id}}">Edit</i>
+                                                    data-target="#modaledit{{$experience->id}}">{{trans('sentence.btn-edit')}}</i>
                                                 </button>
             
                                                 @include('partials.edit', [
                                                     'url' => route('update-experience', $experience),
                                                     'method' => 'PUT',
-                                                    'title' => "Edycja",
+                                                    'title' => trans('sentence.edit'),
                                                     "description" => "Czy na pewno chcesz zaktualizować doświadczenie?",
                                                     "description_parameters" => [],
-                                                    'button' => 'Update',
+                                                    'button' => trans('sentence.btn-edit'),
                                                     'modalKey' => "edit".$experience->id
                                                 ])
                                             </div>
                                         </div>
             
                                         <div class="row">
-                                            <div class="font-weight-bold col-12 col-md-3 text-md-right">{{ __('Company name') }}</div>
+                                            <div class="font-weight-bold col-12 col-md-3 text-md-right">{{ trans('sentence.company_name') }}</div>
             
                                             <div class="col-12 col-md-7">
                                                 {{ $experience->exp_company_name }}
@@ -432,7 +432,7 @@
                                         </div>
             
                                         <div class="row">
-                                            <div class="font-weight-bold col-12 col-md-3 text-md-right">{{ __('City') }}</div>
+                                            <div class="font-weight-bold col-12 col-md-3 text-md-right">{{ trans('sentence.city') }}</div>
             
                                             <div class="col-12 col-md-7">
                                                 {{ $experience->exp_city }}
@@ -440,7 +440,7 @@
                                         </div>
             
                                         <div class="row">
-                                            <div class="font-weight-bold col-12 col-md-3 text-md-right">{{ __('Start') }}</div>
+                                            <div class="font-weight-bold col-12 col-md-3 text-md-right">{{ trans('sentence.start') }}</div>
             
                                             <div class="col-12 col-md-7">
                                                 {{ $experience->start_date }}
@@ -448,7 +448,7 @@
                                         </div>
             
                                         <div class="row">
-                                            <div class="font-weight-bold col-12 col-md-3 text-md-right">{{ __('End') }}</div>
+                                            <div class="font-weight-bold col-12 col-md-3 text-md-right">{{ trans('sentence.end') }}</div>
             
                                             <div class="col-12 col-md-7">
                                                 @if($experience->end_date)
@@ -460,7 +460,7 @@
                                         </div>
             
                                         <div class="row">
-                                            <div class="font-weight-bold col-12 col-md-3 text-md-right">{{ __('Responsibilities') }}</div>
+                                            <div class="font-weight-bold col-12 col-md-3 text-md-right">{{ trans('sentence.responsibilities') }}</div>
             
                                             <div class="col-12 col-md-7">
                                                 {!! $experience->responsibility !!}
@@ -474,14 +474,14 @@
                     <div class="tab-pane container fade" id="menu2">
                         <div class="col-md-12 py-3">
                             <div class="card">
-                                <div class="card-header">{{ __('Edit your courses') }}</div>
+                                <div class="card-header">{{ trans('sentence.edit-courses') }}</div>
             
                                 <div class="card-body">
                                     <form method="POST" action="{{ route('store-course', $editUser) }}">
                                         @csrf
                                         @if($editUser->doctor !== null)
                                             <div class="form-group row">
-                                                <label for="name" class="col-12 col-md-3 col-form-label text-md-right">{{ __('Name') }}</label>
+                                                <label for="name" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.name') }}</label>
             
                                                 <div class="col-12 col-md-9">
                                                     <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="" autocomplete="name" autofocus>
@@ -492,7 +492,7 @@
                                             </div>
             
                                             <div class="form-group row">
-                                                <label for="organizer" class="col-12 col-md-3 col-form-label text-md-right">{{ __('Organizer') }}</label>
+                                                <label for="organizer" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.organizer') }}</label>
             
                                                 <div class="col-12 col-md-9">
                                                     <input id="organizer" type="text" class="form-control @error('organizer') is-invalid @enderror" name="organizer" value="" autocomplete="organizer" autofocus>
@@ -503,7 +503,7 @@
                                             </div>
             
                                             <div class="form-group row">
-                                                <label for="start_date" class="col-12 col-md-3 col-form-label text-md-right">{{ __('Start date') }}</label>
+                                                <label for="start_date" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.start_date') }}</label>
             
                                                 <div class="col-12 col-md-9">
                                                     <input id="start_course" type="text" class="form-control @error('start_date') is-invalid @enderror" name="start_date" value="" autocomplete="start_date" autofocus placeholder="YYYY-MM-DD">
@@ -514,7 +514,7 @@
                                             </div>
             
                                             <div class="form-group row">
-                                                <label for="end_date" class="col-12 col-md-3 col-form-label text-md-right">{{ __('End date') }}</label>
+                                                <label for="end_date" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.end_date') }}</label>
             
                                                 <div class="col-12 col-md-9">
                                                     <input id="end_course" type="text" class="form-control @error('end_date') is-invalid @enderror" name="end_date" value="" autocomplete="end_date" autofocus placeholder="YYYY-MM-DD">
@@ -527,7 +527,7 @@
                                             <div class="form-group row mb-0">
                                                 <div class="col-md-12 text-left">
                                                     <button type="submit" class="btn btn-success">
-                                                        {{ __('Add') }}
+                                                        {{ trans('sentence.bit-add') }}
                                                     </button>
                                                 </div>
                                             </div>
@@ -536,7 +536,7 @@
             
                                     @foreach($editUser->courses as $course)
                                         <div class="row pt-3">
-                                            <div class="font-weight-bold col-12 col-md-3 text-md-right">{{ __('Name') }}</div>
+                                            <div class="font-weight-bold col-12 col-md-3 text-md-right">{{ trans('sentence.name') }}</div>
             
                                             <div class="col-12 col-md-7">
                                                 {{ $course->name }}
@@ -545,7 +545,7 @@
                                             <div class="col-12 col-md-2 btn-group text-right">
             
                                                 <button class="btn btn-danger" data-toggle="modal"
-                                                    data-target="#modalremove{{$course->id}}">{{ __('Delete') }}</i>
+                                                    data-target="#modalremove{{$course->id}}">{{ trans('sentence.btn-delete') }}</i>
                                                 </button>
             
                                                 @include('partials.confirmation', [
@@ -554,28 +554,28 @@
                                                     'title' => "Usuń kurs",
                                                     "description" => "Czy na pewno chcesz usunąć kurs?",
                                                     "description_parameters" => [],
-                                                    'button' => 'Usuń',
+                                                    'button' => trans('sentence.btn-delete'),
                                                     'modalKey' => "remove".$course->id
                                                 ])
             
                                                 <button class="btn btn-success" data-toggle="modal"
-                                                    data-target="#modaleditcourse{{$course->id}}">Edit</i>
+                                                    data-target="#modaleditcourse{{$course->id}}">{{ trans('sentence.btn-edit') }}</i>
                                                 </button>
             
                                                 @include('partials.edit-course', [
                                                     'url' => route('update-course', $course),
                                                     'method' => 'PUT',
-                                                    'title' => "Edycja",
+                                                    'title' => trans('sentence.edit'),
                                                     "description" => "Czy na pewno chcesz zaktualizować kurs?",
                                                     "description_parameters" => [],
-                                                    'button' => 'Update',
+                                                    'button' => trans('sentence.btn-edit'),
                                                     'modalKey' => "editcourse".$course->id
                                                 ])
                                             </div>
                                         </div>
             
                                         <div class="row">
-                                            <div class="font-weight-bold col-12 col-md-3 text-md-right">{{ __('Company name') }}</div>
+                                            <div class="font-weight-bold col-12 col-md-3 text-md-right">{{ trans('sentence.company_name') }}</div>
             
                                             <div class="col-12 col-md-7">
                                                 {{ $course->organizer }}
@@ -583,7 +583,7 @@
                                         </div>
             
                                         <div class="row">
-                                            <div class="font-weight-bold col-12 col-md-3 text-md-right">{{ __('Start') }}</div>
+                                            <div class="font-weight-bold col-12 col-md-3 text-md-right">{{ trans('sentence.start') }}</div>
             
                                             <div class="col-12 col-md-7">
                                                 {{ $course->start_date }}
@@ -591,7 +591,7 @@
                                         </div>
             
                                         <div class="row">
-                                            <div class="font-weight-bold col-12 col-md-3 text-md-right">{{ __('End') }}</div>
+                                            <div class="font-weight-bold col-12 col-md-3 text-md-right">{{ trans('sentence.end') }}</div>
             
                                             <div class="col-12 col-md-7">
                                                 {{ $course->end_date }}
@@ -605,17 +605,17 @@
                     <div class="tab-pane container fade" id="menu3">
                         <div class="col-md-12 py-3">
                             <div class="card">
-                                <div class="card-header">{{ __('Edit your languages') }}</div>
+                                <div class="card-header">{{ trans('sentence.edit-language') }}</div>
             
                                 <div class="card-body">
                                     <form method="POST" action="{{ route('store-language', $editUser) }}">
                                         @csrf
                                         @if($editUser->doctor !== null)
                                             <div class="form-group row">
-                                                <label class="col-12 col-md-3 col-form-label text-md-right" for="lang_key">{{ __('Language') }}</label>
+                                                <label class="col-12 col-md-3 col-form-label text-md-right" for="lang_key">{{ trans('sentence.language') }}</label>
                                                 <div class="col-12 col-md-9">
                                                     <select data-live-search="true" class="form-control @error('lang_key') is-invalid @enderror" name="lang_key" id="lang_key">
-                                                        <option selected value="">{{ __('Choose...') }}</option>
+                                                        <option selected value="">{{ trans('sentence.choose') }}</option>
                                                         @foreach($languages as $language)
                                                             <option value="{{ $language->lang_key }}">{{ $language->name }}</option>
                                                         @endforeach
@@ -627,10 +627,10 @@
                                             </div>
             
                                             <div class="form-group row">
-                                                <label class="col-12 col-md-3 col-form-label text-md-right" for="level">{{ __('Level') }}</label>
+                                                <label class="col-12 col-md-3 col-form-label text-md-right" for="level">{{ trans('sentence.level') }}</label>
                                                 <div class="col-12 col-md-9">
                                                     <select data-live-search="true" class="form-control @error('level') is-invalid @enderror" name="level" id="level">
-                                                        <option selected value="">{{ __('Choose...') }}</option>
+                                                        <option selected value="">{{ trans('sentence.choose') }}</option>
                                                         <option value="A1">{{ __('A1') }}</option>
                                                         <option value="A2">{{ __('A2') }}</option>
                                                         <option value="B1">{{ __('B1') }}</option>
@@ -647,7 +647,7 @@
                                             <div class="form-group row mb-0">
                                                 <div class="col-md-12 text-left">
                                                     <button type="submit" class="btn btn-success">
-                                                        {{ __('Add') }}
+                                                        {{ trans('sentence.bit-add') }}
                                                     </button>
                                                 </div>
                                             </div>
@@ -656,7 +656,7 @@
             
                                     @foreach($userLanguages as $language)
                                         <div class="row pt-3">
-                                            <div class="font-weight-bold col-12 col-md-3 text-md-right">{{ __('Language') }}</div>
+                                            <div class="font-weight-bold col-12 col-md-3 text-md-right">{{ trans('sentence.language') }}</div>
             
                                             <div class="col-12 col-md-7">
                                                 {{ $language->language->name }}
@@ -665,7 +665,7 @@
                                             <div class="col-12 col-md-2 btn-group text-right">
             
                                                 <button class="btn btn-danger" data-toggle="modal"
-                                                    data-target="#modalremove{{$language->language->lang_key}}">{{ __('Delete') }}</i>
+                                                    data-target="#modalremove{{$language->language->lang_key}}">{{ trans('sentence.btn-delete') }}</i>
                                                 </button>
             
                                                 @include('partials.confirmation', [
@@ -674,30 +674,30 @@
                                                     'title' => "Usuń język",
                                                     "description" => "Czy na pewno chcesz usunąć język?",
                                                     "description_parameters" => [],
-                                                    'button' => 'Usuń',
+                                                    'button' => trans('sentence.btn-delete'),
                                                     'modalKey' => "remove".$language->language->lang_key
                                                 ])
             
                                                 <button class="btn btn-success" data-toggle="modal"
-                                                    data-target="#modaleditlang{{$language->language->lang_key}}">{{ __('Edit') }}</i>
+                                                    data-target="#modaleditlang{{$language->language->lang_key}}">{{ trans('sentence.edit') }}</i>
                                                 </button>
             
                                                 @include('partials.edit-language', [
                                                     'url' => route('update-user-language', [$language->language, $editUser]),
                                                     'method' => 'PUT',
-                                                    'title' => "Edycja",
+                                                    'title' => trans('sentence.edit'),
                                                     'lang_key' => $language->language->lang_key,
                                                     'level' => $language->level,
                                                     "description" => "Czy na pewno chcesz zaktualizować język?",
                                                     "description_parameters" => [],
-                                                    'button' => 'Update',
+                                                    'button' => trans('sentence.btn-edit'),
                                                     'modalKey' => "editlang".$language->language->lang_key
                                                 ])
                                             </div>
                                         </div>
             
                                         <div class="row">
-                                            <div class="font-weight-bold col-12 col-md-3 text-md-right">{{ __('Level') }}</div>
+                                            <div class="font-weight-bold col-12 col-md-3 text-md-right">{{ trans('sentence.level') }}</div>
             
                                             <div class="col-12 col-md-7">
                                                 {{ $language->level }}
@@ -711,14 +711,14 @@
                     <div class="tab-pane container fade" id="menu4">
                         <div class="col-md-12 py-3">
                             <div class="card">
-                                <div class="card-header">{{ __('Edit your preference') }}</div>
+                                <div class="card-header">{{ trans('sentence.edit-preference') }}</div>
                 
                                 <div class="card-body">
                                     <form method="POST" action="{{ route('update-preference', $editUser->preference) }}" enctype="multipart/form-data">
                                         <input type="hidden" name="_method" value="PUT">
                                         @csrf
                                         <div class="form-group row">
-                                            <label for="min_salary" class="col-12 col-md-3 col-form-label text-md-right">{{ __('Minimum salary') }}</label>
+                                            <label for="min_salary" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.min_salary') }}</label>
                 
                                             <div class="col-12 col-md-9">
                                                 <input id="min_salary" min="0" type="number" class="form-control @error('min_salary') is-invalid @enderror" name="min_salary" value="{{ $editUser->preference->min_salary }}" autocomplete="min_salary" autofocus>
@@ -729,10 +729,10 @@
                                         </div>
             
                                         <div class="form-group row">
-                                            <label class="col-12 col-md-3 col-form-label text-md-right" for="currency_id">{{ __('Currency') }}</label>
+                                            <label class="col-12 col-md-3 col-form-label text-md-right" for="currency_id">{{ trans('sentence.currency') }}</label>
                                             <div class="col-12 col-md-9">
                                                 <select data-live-search="true" class="form-control @error('currency_id') is-invalid @enderror" name="currency_id" id="currency_id">
-                                                    <option selected value="">{{ __('Choose...') }}</option>
+                                                    <option selected value="">{{ trans('sentence.choose') }}</option>
                                                     @foreach($currencies as $currency)
                                                         @if($editUser->preference->currency_id === $currency->id)
                                                             <option value="{{ $currency->id }}" selected>{{ $currency->symbol }}</option>
@@ -748,10 +748,10 @@
                                         </div>
             
                                         <div class="form-group row">
-                                            <label class="col-12 col-md-3 col-form-label text-md-right" for="settlement_id">{{ __('Settlement') }}</label>
+                                            <label class="col-12 col-md-3 col-form-label text-md-right" for="settlement_id">{{ trans('sentence.settlement') }}</label>
                                             <div class="col-12 col-md-9">
                                                 <select data-live-search="true" class="form-control @error('settlement_id') is-invalid @enderror" name="settlement_id" id="settlement_id">
-                                                    <option selected value="">{{ __('Choose...') }}</option>
+                                                    <option selected value="">{{ trans('sentence.choose') }}</option>
                                                     @foreach($settlements as $settlement)
                                                         @if($editUser->preference->settlement_id === $settlement->id)
                                                             <option value="{{ $settlement->id }}" selected>{{ $settlement->name }}</option>
@@ -767,10 +767,10 @@
                                         </div>
             
                                         <div class="form-group row">
-                                            <label class="col-12 col-md-3 col-form-label text-md-right" for="work_id">{{ __('Work') }}</label>
+                                            <label class="col-12 col-md-3 col-form-label text-md-right" for="work_id">{{ trans('sentence.work-category') }}</label>
                                             <div class="col-12 col-md-9">
                                                 <select data-live-search="true" class="form-control @error('work_id') is-invalid @enderror" name="work_id" id="work_id">
-                                                    <option selected value="">{{ __('Choose...') }}</option>
+                                                    <option selected value="">{{ trans('sentence.choose') }}</option>
                                                     @foreach($works as $work)
                                                         @if($editUser->preference->work_id === $work->id)
                                                             <option value="{{ $work->id }}" selected>{{ $work->name }}</option>
@@ -788,7 +788,7 @@
                                         <div class="form-group row mb-0">
                                             <div class="col-md-12 text-left">
                                                 <button type="submit" class="btn btn-success">
-                                                    {{ __('Update') }}
+                                                    {{ trans('sentence.btn-update') }}
                                                 </button>
                                             </div>
                                         </div>
@@ -799,17 +799,17 @@
 
                         <div class="col-md-12 py-3">
                             <div class="card">
-                                <div class="card-header">{{ __('Edit your prefered location') }}</div>
+                                <div class="card-header">{{ trans('sentence.edit-prefered-location') }}</div>
                 
                                 <div class="card-body">
                                     <form method="POST" action="{{ route('store-prefered-location', $editUser) }}">
                                         @csrf
             
                                         <div class="form-group row">
-                                            <label class="col-12 col-md-3 col-form-label text-md-right" for="location_id">{{ __('Location') }}</label>
+                                            <label class="col-12 col-md-3 col-form-label text-md-right" for="location_id">{{ trans('sentence.location') }}</label>
                                             <div class="col-12 col-md-9">
                                                 <select data-live-search="true" class="form-control @error('location_id') is-invalid @enderror" name="user_location_id" id="user_location_id" required>
-                                                    <option selected>{{ __('Choose...') }}</option>
+                                                    <option selected>{{ trans('sentence.choose') }}</option>
                                                     @foreach($locations as $location)
                                                         <option value="{{ $location->id }}">{{ $location->city }}</option>
                                                     @endforeach
@@ -821,10 +821,10 @@
                                         </div>
             
                                         <div class="form-group row">
-                                            <label class="col-12 col-md-3 col-form-label text-md-right" for="currency_id">{{ __('Radius') }}</label>
+                                            <label class="col-12 col-md-3 col-form-label text-md-right" for="currency_id">{{ trans('sentence.radius') }}</label>
                                             <div class="col-12 col-md-9">
                                                 <select data-live-search="true" class="form-control @error('radius') is-invalid @enderror" name="radius" id="radius" required>
-                                                    <option selected value="">{{ __('Choose...') }}</option>
+                                                    <option selected value="">{{ trans('sentence.choose') }}</option>
                                                     @foreach($distances as $radius)
                                                         <option value="{{ $radius['value'] }}">{{ $radius['label'] }}</option>
                                                     @endforeach
@@ -838,7 +838,7 @@
                                         <div class="form-group row mb-0">
                                             <div class="col-md-12 text-left">
                                                 <button type="submit" class="btn btn-success">
-                                                    {{ __('Add') }}
+                                                    {{ trans('sentence.bit-add') }}
                                                 </button>
                                             </div>
                                         </div>
@@ -846,7 +846,7 @@
             
                                     @foreach($userLocations as $location)
                                         <div class="row pt-3">
-                                            <div class="font-weight-bold col-12 col-md-3 text-md-right">{{ __('Location') }}</div>
+                                            <div class="font-weight-bold col-12 col-md-3 text-md-right">{{ trans('sentence.location') }}</div>
             
                                             <div class="col-12 col-md-7">
                                                 {{ $location->location->city }}
@@ -855,7 +855,7 @@
                                             <div class="col-12 col-md-2 btn-group text-right">
             
                                                 <button class="btn btn-danger" data-toggle="modal"
-                                                    data-target="#modalremovelocation{{$location->location->id}}">{{ __('Delete') }}</i>
+                                                    data-target="#modalremovelocation{{$location->location->id}}">{{ trans('sentence.btn-delete') }}</i>
                                                 </button>
             
                                                 @include('partials.confirmation', [
@@ -864,30 +864,30 @@
                                                     'title' => "Usuń lokalizację",
                                                     "description" => "Czy na pewno chcesz usunąć lokalizację?",
                                                     "description_parameters" => [],
-                                                    'button' => 'Usuń',
+                                                    'button' => trans('sentence.btn-delete'),
                                                     'modalKey' => "removelocation".$location->location->id
                                                 ])
             
                                                 <button class="btn btn-success" data-toggle="modal"
-                                                    data-target="#modaleditlocation{{$location->location->id}}">{{ __('Edit') }}</i>
+                                                    data-target="#modaleditlocation{{$location->location->id}}">{{ trans('sentence.edit') }}</i>
                                                 </button>
             
                                                 @include('partials.edit-location', [
                                                     'url' => route('update-user-location', [$location->location, $editUser]),
                                                     'method' => 'PUT',
-                                                    'title' => "Edycja",
+                                                    'title' => trans('sentence.edit'),
                                                     'location_id' => $location->location_id,
                                                     'radius' => $location->radius,
                                                     "description" => "Czy na pewno chcesz zaktualizować lokalizację?",
                                                     "description_parameters" => [],
-                                                    'button' => 'Update',
+                                                    'button' => trans('sentence.btn-edit'),
                                                     'modalKey' => "editlocation".$location->location->id
                                                 ])
                                             </div>
                                         </div>
             
                                         <div class="row">
-                                            <div class="font-weight-bold col-12 col-md-3 text-md-right">{{ __('Radius') }}</div>
+                                            <div class="font-weight-bold col-12 col-md-3 text-md-right">{{ trans('sentence.radius') }}</div>
             
                                             <div class="col-12 col-md-7">
                                                 {{ $location->radius }} {{ __('km') }}

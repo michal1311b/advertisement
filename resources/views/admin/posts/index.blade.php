@@ -22,18 +22,18 @@
 <div class="container">
     <div class="row">
         <div class="col-12 text-right">
-        <a href="{{ route('posts.create') }}" class="btn btn-success">{{__('Create')}}</a>
+        <a href="{{ route('posts.create') }}" class="btn btn-success">{{trans('sentence.btn-create')}}</a>
         </div>
         <div class="col-12">
             <table class="table">
                 <thead>
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col">{{__('Name')}}</th>
+                        <th scope="col">{{trans('sentence.name')}}</th>
                         <th scope="col">{{__('Is publish?')}}</th>
                         <th scope="col">{{__('Category')}}</th>
-                        <th scope="col">{{__('Edit')}}</th>
-                        <th scope="col">{{__('Delete')}}</th>
+                        <th scope="col">{{trans('sentence.edit')}}</th>
+                        <th scope="col">{{trans('sentence.btn-delete')}}</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -64,7 +64,7 @@
                                     'title' => "Usuń kategorię",
                                     "description" => "Czy na pewno chcesz usunąć ten post?",
                                     "description_parameters" => [],
-                                    'button' => 'Usuń',
+                                    'button' => trans('sentence.btn-delete'),
                                     'modalKey' => "remove".$post->id
                                 ])
                             </td>

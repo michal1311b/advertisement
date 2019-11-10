@@ -25,14 +25,14 @@
         </div>
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">{{ __('Create cateogry') }}</div>
+                <div class="card-header">{{ trans('sentence.category-create') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('categories.store') }}">
                         @csrf
 
                         <div class="form-group row">
-                            <label for="name" class="col-12 col-md-3 col-form-label text-md-right">{{ __('name') }}</label>
+                            <label for="name" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.name') }}</label>
 
                             <div class="col-12 col-md-9">
                                 <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" autocomplete="name" autofocus>
@@ -51,7 +51,7 @@
                                     type="checkbox" name="is_active" id="is_active" value="1"
                                     {{ old('is_active', 0)  == 1 ? 'checked' : '' }}>
                                     <label class="form-check-label" for="is_active">
-                                     {{ __('active?') }}
+                                        {{ trans('sentence.active') }}
                                     </label>
                                 </div>
                             </div>
@@ -60,7 +60,7 @@
                         <div class="form-group row mb-0">
                             <div class="col-md-8 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
-                                    {{ __('Create') }}
+                                    {{ trans('sentence.btn-create') }}
                                 </button>
                             </div>
                         </div>

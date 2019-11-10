@@ -1,5 +1,5 @@
 <div class="card">
-    <div class="card-header">{{ __('Comment form') }}</div>
+    <div class="card-header">{{ trans('sentence.comments')}}</div>
     <div class="col-md-12">
         @include('partials.validation-errors')
     </div>
@@ -13,11 +13,11 @@
             
             <div class="form-row">
                 <div class="form-group col-md-12">
-                    <label for="content">{{ __('Message') }}</label>
+                    <label for="content">{{ trans('sentence.message')}}</label>
                     <textarea id="content" class="form-control @error('content') is-invalid @enderror" name="content" value="{{ old('content') }}" autocomplete="content" autofocus rows="3"></textarea>
                 </div>
             </div>
-            <button type="submit" class="btn btn-primary">{{ __('Send') }}</button>
+            <button type="submit" class="btn btn-primary">{{ trans('sentence.send')}}</button>
         </form>
     </div>
 </div>

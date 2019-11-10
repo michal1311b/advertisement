@@ -53,7 +53,7 @@
                                             <h5 class="card-title pt-3">{{ $pin->post->title }}</h5>
                                             <div class="card-text">
                                                 <div class="ellipsis">{!! $pin->post->body !!}</div>
-                                                <p><small class="text-muted">{{ __('Created at:') }} <strong>{{ $pin->post->created_at }}</strong></small></p>                     
+                                                <p><small class="text-muted">{{ trans('sentence.created_at') }} <strong>{{ $pin->post->created_at }}</strong></small></p>                     
                                             </div>
                                         </div>
                                     </div>

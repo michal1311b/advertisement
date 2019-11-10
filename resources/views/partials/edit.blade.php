@@ -66,12 +66,12 @@
                         type="checkbox" name="until_now" value="1"
                         {{ old('until_now', 0)  == 1 ? 'checked' : '' }}>
                         <label class="form-check-label" for="until_now">
-                        {{ __('until now?') }}
+                            {{ trans('sentence.until')}}
                         </label>
                     </div>
 
                     <div class="row">
-                        <label for="responsibility" class="col-12 col-form-label">{{ __('Responsibilities') }}</label>
+                        <label for="responsibility" class="col-12 col-form-label">{{ trans('sentence.responsibilities')}}</label>
 
                         <div class="col-12">
                             <textarea type="responsibility" class="form-control @error('responsibility') is-invalid @enderror" name="responsibility" autocomplete="responsibility" autofocus rows="3">{!! $experience->responsibility ?? '' !!}</textarea>

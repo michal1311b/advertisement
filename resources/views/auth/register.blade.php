@@ -58,7 +58,7 @@
                                 </div>
 
                                 <div class="form-group row">
-                                    <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
+                                    <label for="name" class="col-md-4 col-form-label text-md-right">{{ trans('sentence.name') }}</label>
 
                                     <div class="col-md-6">
                                         <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
@@ -86,7 +86,7 @@
                                 </div>
 
                                 <div class="form-group row">
-                                    <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+                                    <label for="password" class="col-md-4 col-form-label text-md-right">{{ trans('sentence.password') }}</label>
 
                                     <div class="col-md-6">
                                         <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
@@ -108,7 +108,7 @@
                                 </div>
 
                                 <div class="form-group row">
-                                    <label class="col-md-4 col-form-label text-md-right" for="sex">{{ __('Sex') }}</label>
+                                    <label class="col-md-4 col-form-label text-md-right" for="sex">{{ trans('sentence.sex') }}</label>
                                     <div class="col-md-6">
                                         <select data-live-search="true" class="form-control @error('sex') is-invalid @enderror" name="sex" id="sex">
                                             <option selected>Choose...</option>
@@ -122,7 +122,7 @@
                                 </div>
 
                                 <div class="form-group row">
-                                    <label for="specializations" class="col-md-4 col-form-label text-md-right">{{__('Specializations')}}</label>
+                                    <label for="specializations" class="col-md-4 col-form-label text-md-right">{{trans('sentence.specializations')}}</label>
                                     <div class="col-md-6">
                                         <select multiple="multiple"
                                                 class="form-control{{ $errors->has('specializations') ? ' is-invalid' : '' }}"
@@ -204,7 +204,7 @@
                                 @csrf
                                 <input id="type" type="hidden" class="form-control" name="type" value="company" required autocomplete="type" autofocus>
                                 <div class="form-group row">
-                                    <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
+                                    <label for="name" class="col-md-4 col-form-label text-md-right">{{ trans('sentence.name') }}</label>
 
                                     <div class="col-md-6">
                                         <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
@@ -232,7 +232,7 @@
                                 </div>
 
                                 <div class="form-group row">
-                                    <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+                                    <label for="password" class="col-md-4 col-form-label text-md-right">{{ trans('sentence.password') }}</label>
 
                                     <div class="col-md-6">
                                         <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">

@@ -10,7 +10,7 @@
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
 
-        <label for="specializations" class="col-form-label">{{__('Specializations')}}</label>
+        <label for="specializations" class="col-form-label">{{ trans('sentence.specializations') }}</label>
         <select multiple="multiple"
                 class="form-control{{ $errors->has('specializations') ? ' is-invalid' : '' }}"
                 id="specializations" name="specializations[]">
@@ -47,6 +47,6 @@
     </div>
 
     <div class="form-group col-md-12">
-        <button type="submit" class="btn btn-primary mt-3">{{ __('Subscribe') }}</button>
+        <button type="submit" class="btn btn-primary mt-3">{{ trans('sentence.subscribe') }}</button>
     </div>
 </form>

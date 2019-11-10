@@ -22,16 +22,16 @@
 <div class="container">
     <div class="row">
         <div class="col-12 text-right">
-        <a href="{{ route('pages.create') }}" class="btn btn-success">{{__('Create')}}</a>
+        <a href="{{ route('pages.create') }}" class="btn btn-success">{{trans('sentence.btn-create')}}</a>
         </div>
         <div class="col-12">
             <table class="table">
                 <thead>
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col">{{__('Title')}}</th>
-                        <th scope="col">{{__('Edit')}}</th>
-                        <th scope="col">{{__('Delete')}}</th>
+                        <th scope="col">{{trans('sentence.title')}}</th>
+                        <th scope="col">{{trans('sentence.edit')}}</th>
+                        <th scope="col">{{trans('sentence.btn-delete')}}</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -41,11 +41,11 @@
                             <th scope="row">{{ $page->id }}</th>
                             <td>{{ $page->title }}</td>
                             <td>
-                                <a href="{{ route('pages.edit' , $page) }}" class="btn btn-success">{{__('Edit')}}</a>
+                                <a href="{{ route('pages.edit' , $page) }}" class="btn btn-success">{{trans('sentence.edit')}}</a>
                             </td>
                             <td>
                                 <button class="btn btn-danger" data-toggle="modal"
-                                    data-target="#modalremove{{$page->id}}">{{__('Delete')}}</i>
+                                    data-target="#modalremove{{$page->id}}">{{trans('sentence.btn-delete')}}</i>
                                 </button>
 
                                 @include('partials.confirmation', [
@@ -54,7 +54,7 @@
                                     'title' => "Usuń stronę",
                                     "description" => "Czy na pewno chcesz usunąć tę stronę?",
                                     "description_parameters" => [],
-                                    'button' => 'Usuń',
+                                    'button' => trans('sentence.btn-delete'),
                                     'modalKey' => "remove".$page->id
                                 ])
                             </td>

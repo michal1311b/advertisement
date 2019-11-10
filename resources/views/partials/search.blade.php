@@ -5,17 +5,17 @@
             <div class="form-group">
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
-                        <button class="btn btn-outline-secondary" type="submit" id="button-addon1">{{ __('Search') }}</button>
-                        <a href="{{ route('advertisement-list') }}" class="btn btn-outline-secondary" id="button-addon2">{{ __('Clear search') }}</a>
+                        <button class="btn btn-outline-secondary" type="submit" id="button-addon1">{{ trans('sentence.search') }}</button>
+                        <a href="{{ route('advertisement-list') }}" class="btn btn-outline-secondary" id="button-addon2">{{ trans('sentence.clear-search') }}</a>
                     </div>
                     <select data-live-search="true" class="form-control @error('specialization_id') is-invalid @enderror" name="specialization_id" id="specialization_ids">
-                        <option selected value="">{{ __('Choose specialization...') }}</option>
+                        <option selected value="">{{ trans('sentence.choose-spec') }}</option>
                         @foreach($specializations as $specialization)
                             <option value="{{ $specialization->id }}">{{ $specialization->name }}</option>
                         @endforeach
                     </select>
                     <select data-live-search="true" class="form-control @error('location_id') is-invalid @enderror" name="location_id" id="location_ids">
-                        <option selected value="">{{ __('Choose location...') }}</option>
+                        <option selected value="">{{ trans('sentence.choose-location') }}</option>
                         @foreach($locations as $location)
                             <option value="{{ $location->id }}">{{ $location->city }}</option>
                         @endforeach

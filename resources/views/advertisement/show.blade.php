@@ -35,7 +35,7 @@
         </div>
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">Show advertisement: <strong>{{ $advertisement->title }}</strong></div>
+                <div class="card-header">{{ trans('sentence.offer-show') }} <strong>{{ $advertisement->title }}</strong></div>
 
                 <div class="card-body">
                     <div class="container-fluid">
@@ -43,7 +43,7 @@
                             <div class="col-12 pb-2">
                                 <div class="btn-toolbar justify-content-between" role="toolbar" aria-label="Toolbar with button groups">
                                     <div class="btn-group" role="group" aria-label="First group">
-                                        <strong>{{ __('Posted by:') }}</strong> {{ $advertisement->user->profile->company_name }}
+                                        <strong>{{ trans('sentence.post-by') }}</strong>&nbsp;{{ $advertisement->user->profile->company_name }}
                                     </div>
                                     <div class="input-group">
                                         @if(Auth::check() && (Auth::user()->id !== $advertisement->user->id))
@@ -74,7 +74,7 @@
                                 </div>
                             </div>
                             <div class="col-12 pb-2">
-                                {{ __('Tags:') }}
+                                {{ trans('sentence.tags') }}
                                 @if(isset($advertisement->tags))
                                     @foreach($advertisement->tags as $tag)
                                         <a href="{{ route('advertisementTag', ['tagSlug' => $tag->slug]) }}">
@@ -84,7 +84,7 @@
                                         </a>
                                     @endforeach
                                 @else
-                                    <span class="font-weight-bold">{{ __('There\'s no tags') }}</span>
+                                    <span class="font-weight-bold">{{ trans('sentence.no-tags') }}</span>
                                 @endif
                             </div>
                             <div class="col-12">
@@ -94,35 +94,35 @@
                                         <span class="badge badge-pill"><img class="user-avatar--smaller" src="{{ $advertisement->user->avatar }}" /></span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        {{ __('City:') }}
+                                        {{ trans('sentence.city') }}
                                         <span class="badge badge-pill">{{ $advertisement->location->city }}</span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        {{ __('State:') }}
+                                        {{ trans('sentence.state') }}
                                         <span class="badge badge-pill">{{ $advertisement->state->name }}</span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        {{ __('Specialization:') }}
+                                        {{ trans('sentence.specialization') }}
                                         <span class="badge badge-pill badge-info text-white">{{ $advertisement->specialization->name }}</span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        {{ __('Created at:') }}
+                                        {{ trans('sentence.created_at') }}
                                         <span class="badge badge-pill">{{ $advertisement->created_at }}</span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        {{ __('Phone:') }}
+                                        {{ trans('sentence.phone') }}
                                         <span class="badge badge-pill">{{ $advertisement->phone }}</span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        {{ __('Work type:') }}
+                                        {{ trans('sentence.work-category') }}
                                         <span class="badge badge-pill">{{ $advertisement->work->name }}</span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        {{ __('Salary:') }}
+                                        {{ trans('sentence.salary') }}
                                         <span class="badge badge-pill">{{ $advertisement->min_salary }} - {{ $advertisement->max_salary }} {{ $advertisement->currency->symbol }}</span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        {{ __('Settlement:') }}
+                                        {{ trans('sentence.settlement') }}
                                         <span class="badge badge-pill">{{ $advertisement->settlement->name }}</span>
                                     </li>
                                 </ul>
@@ -132,20 +132,20 @@
                                 </div>
 
                                 <div class="py-2">
-                                    <h4><strong>{{ __('Description:') }}</strong></h4>
+                                    <h4><strong>{{ trans('sentence.description') }}</strong></h4>
                                     {!! $advertisement->description !!}
                                 </div>
 
                                 @if($advertisement->requirements !== null)
                                     <div class="py-2">
-                                        <h4><strong>{{ __('Requirements:') }}</strong></h4>
+                                        <h4><strong>{{ trans('sentence.requirements') }}</strong></h4>
                                         {!! $advertisement->requirements !!}
                                     </div>
                                 @endif
 
                                 @if($advertisement->profits !== null)
                                     <div class="py-2">
-                                        <h4><strong>{{ __('Profits:') }}</strong></h4>
+                                        <h4><strong>{{ trans('sentence.profits') }}</strong></h4>
                                         {!! $advertisement->profits !!}
                                     </div>
                                 @endif

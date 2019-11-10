@@ -25,9 +25,9 @@
             <br>
             <strong>{{ __('First Name:') }}</strong> {{ $contact->first_name }}
             <br>
-            <strong>{{ __('City:') }}</strong> {{ $contact->city }}
+            <strong>{{ trans('sentence.city') }}</strong> {{ $contact->city }}
             <br>
-            <strong>{{ __('Phone:') }}</strong> {{ $contact->phone }}
+            <strong>{{ trans('sentence.phone') }}</strong> {{ $contact->phone }}
             <br>
             <strong>{{ __('Message:') }}</strong> {!! $contact->message !!}
             <br>

@@ -16,7 +16,7 @@
                     </div>
 
                     <div class="row">
-                        <label for="content" class="col-12 col-form-label">{{ __('Comment') }}</label>
+                        <label for="content" class="col-12 col-form-label">{{ trans('sentence.comments')}}</label>
 
                         <div class="col-12">
                             <textarea type="text" class="form-control @error('content') is-invalid @enderror" name="content" autocomplete="content" autofocus rows="3">{!! $comment->content ?? '' !!}</textarea>
@@ -27,7 +27,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-sm btn-primary" data-dismiss="modal">{{__('Anuluj')}}</button>
+                    <button type="button" class="btn btn-sm btn-primary" data-dismiss="modal">{{ trans('sentence.btn-cancel')}}</button>
                     <button type="submit" class="btn btn-sm btn-success">{{__($button)}}</button>
                 </div>
             </div>

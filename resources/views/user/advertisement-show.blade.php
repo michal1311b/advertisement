@@ -28,18 +28,18 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header"> {{ __('Show advertisement:') }} <strong>{{ $advertisement->title }}</strong></div>
+                <div class="card-header"> {{ trans('sentence.offer-show') }} <strong>{{ $advertisement->title }}</strong></div>
 
                 <div class="card-body">
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-12 pb-2">
                                 <div class="btn-group btn-group-toggle">
-                                    <a href="{{ route('edit-advertisement', $advertisement->id) }}" class="btn btn-info border border-warning mr-2">{{ __('Edit') }}</a>
+                                    <a href="{{ route('edit-advertisement', $advertisement->id) }}" class="btn btn-info border border-warning mr-2">{{ trans('sentence.btn-edit') }}</a>
                                 </div>  
                             </div>
                             <div class="col-12 pb-2">
-                                {{ __('Tags:') }}
+                                {{ trans('sentence.tags') }}
                                 @foreach($advertisement->tags as $tag)
                                     <span class="badge badge-pill badge-info">{{ $tag->name }}</span>
                                 @endforeach
@@ -47,28 +47,28 @@
                             <div class="col-12">
                                 <ul class="list-group">
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        {{ __('City:') }}
+                                        {{ trans('sentence.city') }}
                                         <span class="badge badge-pill">{{ $advertisement->city }}</span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        {{ __('State:') }}
+                                        {{ trans('sentence.state') }}
                                         <span class="badge badge-pill">{{ $advertisement->state->name }}</span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        {{ __('Created at:') }}
+                                        {{ trans('sentence.created_at') }}
                                         <span class="badge badge-pill">{{ $advertisement->created_at }}</span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        {{ __('Phone:') }}
+                                        {{ trans('sentence.phone') }}
                                         <span class="badge badge-pill">{{ $advertisement->phone }}</span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        {{ __('Work category:') }}
+                                        {{ __('{{ trans('sentence.work-category') }}:') }}
                                         <span class="badge badge-pill">{{ $advertisement->work->name }}</span>
                                     </li>
                                 </ul>
 
-                                <h4><strong>{{ __('Description:') }}</strong></h4>
+                                <h4><strong>{{ trans('sentence.description') }}</strong></h4>
                                 {!! $advertisement->description !!}
                             </div>
                             <div class="col-12">
