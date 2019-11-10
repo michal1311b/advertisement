@@ -152,7 +152,11 @@ return [
         'name' => 'name',
         'shot_description' => 'short description',
         'body' => 'body',
-        'is_active' => 'is active'
+        'is_active' => 'is active',
+        'first_name' => 'first name',
+        'last_name' => 'last name',
+        'password' => 'password',
+        'sex' => 'sex'
     ],
 
 ];

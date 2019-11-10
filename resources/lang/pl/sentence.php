@@ -95,6 +95,7 @@ return [
   'title' => 'Tytuł',
   'short_descp' => 'Krótki opis',
   'body' => 'Treść',
+  'company' => 'Firma',
   'company_name' => 'Nazwa firmy',
   'company_street' => 'Adres firmy',
   'company_post_code' => 'Kod pocztowy firmy',
@@ -123,5 +124,11 @@ return [
   'edit_confirm' => 'Czy na pewno chcesz zaktualizować',
   'salary_negotiable' => 'Stawka do negocjacji?',
   'dashboard' => 'Panel',
-  'login-message' => 'Logowanie powiodło się.'
+  'login-message' => 'Logowanie powiodło się.',
+  'male' => 'mężyczyzna',
+  'female' => 'kobieta',
+  'confirm_password' => 'Potwierdź hasło',
+  'birthday' => 'Data urodzenia',
+  'doctor' => 'Lekarz',
+  'visits' => 'Odwiedzin:'
 ];

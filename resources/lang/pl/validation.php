@@ -144,6 +144,10 @@ return [
         'name' => 'nazwa',
         'shot_description' => 'krótki opis',
         'body' => 'treść',
-        'is_active' => 'aktywacja'
+        'is_active' => 'aktywacja',
+        'first_name' => 'imię',
+        'last_name' => 'nazwisko',
+        'password' => 'hasło',
+        'sex' => 'płeć'
     ],
 ];

@@ -95,6 +95,7 @@ return [
   'title' => 'Title',
   'short_descp' => 'Shot description',
   'body' => 'Body',
+  'company' => 'Company',
   'company_name' => 'Company name',
   'company_street' => 'Company street',
   'company_post_code' => 'Company post code',
@@ -123,5 +124,11 @@ return [
   'edit_confirm' => 'Are you sure update',
   'salary_negotiable' => 'Salary negotiable?',
   'dashboard' => 'Dashboard',
-  'login-message' => 'You are logged in!'
+  'login-message' => 'You are logged in!',
+  'male' => 'Male',
+  'female' => 'Female',
+  'confirm_password' => 'Confirm Password',
+  'birthday' => 'Birthday',
+  'doctor' => 'Doctor',
+  'visits' => 'Visits:'
 ];

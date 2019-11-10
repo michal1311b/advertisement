@@ -40,7 +40,7 @@
                                         <h5 class="mt-0 font-weight-bold mb-2">{{ $advertisement->title }}</h5>
                                         <div class="font-italic text-muted mb-0 small ellipsis">{!! $advertisement->description !!}</div>
                                         <div class="d-flex align-items-center justify-content-between mt-1">
-                                            <h6 class="font-weight-bold my-2"><i class="fas fa-coins"></i> {{ __('Salary per hour:') }} {{ $advertisement->min_salary }} - {{ $advertisement->max_salary }} {{ $advertisement->currency->symbol }}</h6>
+                                            <h6 class="font-weight-bold my-2"><i class="fas fa-coins"></i> {{ $advertisement->settlement->name }}: {{ $advertisement->min_salary }} - {{ $advertisement->max_salary }} {{ $advertisement->currency->symbol }}</h6>
                                         </div>
                                         <div class="badge badge-secondary">{{ $advertisement->specialization->name }}</div>
                                     </div>

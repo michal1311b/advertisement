@@ -256,12 +256,12 @@
                                                         @if($editUser->doctor->sex === 'male') 
                                                         selected
                                                         @endif 
-                                                        value="male">{{ __('Male') }}</option>
+                                                        value="male">{{ trans('sentence.male') }}</option>
                                                     <option 
                                                         @if($editUser->doctor->sex === 'female') 
                                                         selected
                                                         @endif 
-                                                        value="female">{{ __('Female') }}</option>
+                                                        value="female">{{ trans('sentence.female') }}</option>
                                                 </select>
                                                 @error('sex')
                                                     <div class="alert alert-danger">{{ $message }}</div>
