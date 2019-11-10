@@ -121,5 +121,7 @@ return [
   'location' => 'Lokalizacja',
   'delete_confirm' => 'Czy napewno chcesz usunać',
   'edit_confirm' => 'Czy na pewno chcesz zaktualizować',
-  'salary_negotiable' => 'Stawka do negocjacji?'
+  'salary_negotiable' => 'Stawka do negocjacji?',
+  'dashboard' => 'Panel',
+  'login-message' => 'Logowanie powiodło się.'
 ];

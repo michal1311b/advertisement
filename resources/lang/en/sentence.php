@@ -121,5 +121,7 @@ return [
   'location' => 'Location',
   'delete_confirm' => 'Are you sure delete',
   'edit_confirm' => 'Are you sure update',
-  'salary_negotiable' => 'Salary negotiable?'
+  'salary_negotiable' => 'Salary negotiable?',
+  'dashboard' => 'Dashboard',
+  'login-message' => 'You are logged in!'
 ];
