@@ -22,10 +22,10 @@
                 <tr>
                     <th scope="col">#</th>
                     <th scope="col">{{ __('Email') }}</th>
-                    <th scope="col">{{ __('First name') }}</th>
+                    <th scope="col">{{ trans('sentence.first_name') }}</th>
                     <th scope="col">{{ trans('sentence.city') }}</th>
                     <th scope="col">{{ trans('sentence.phone') }}</th>
-                    <th scope="col">{{ __('Reply') }}</th>
+                    <th scope="col">{{ trans('sentence.reply') }}</th>
                 </tr>
             </thead>
             <tbody>
@@ -38,12 +38,12 @@
                         <td>{{ $contact->city }}</td>
                         <td>{{ $contact->phone }}</td>
                         <td>
-                            <a href="{{ route('user-reply', $contact->id) }}" class="btn btn-success">{{ __('Reply') }}</a>
+                            <a href="{{ route('user-reply', $contact->id) }}" class="btn btn-success">{{ trans('sentence.reply') }}</a>
                         </td>
                     </tr>
                     <tr>
                         <td colspan="5">
-                            <strong>{{ __('Message:') }}</strong>
+                            <strong>{{ trans('sentence.message') }}</strong>
                             {!! $contact->message !!}
                         </td>
                     </tr>
@@ -51,7 +51,7 @@
             @else
                 <tr>
                     <td colspan="5">
-                        <strong>{{ __('No messages') }}</strong>
+                        <strong>{{ trans('sentence.no-message') }}</strong>
                     </td>
                 </tr>
             @endif

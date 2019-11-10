@@ -23,31 +23,31 @@
         <div class="col-12">
             <strong>{{ __('Email:') }}</strong> {{ $contact->email }}
             <br>
-            <strong>{{ __('First Name:') }}</strong> {{ $contact->first_name }}
+            <strong>{{ trans('sentence.first_name') }}</strong> {{ $contact->first_name }}
             <br>
             <strong>{{ trans('sentence.city') }}</strong> {{ $contact->city }}
             <br>
             <strong>{{ trans('sentence.phone') }}</strong> {{ $contact->phone }}
             <br>
-            <strong>{{ __('Message:') }}</strong> {!! $contact->message !!}
+            <strong>{{ trans('sentence.message') }}</strong> {!! $contact->message !!}
             <br>
-            <strong>{{ __('Files:') }}</strong> 
+            <strong>{{ trans('sentence.files') }}</strong> 
             @if($contact->cv)
                 <a href="{{ $contact->cv }}" _target="blank">{{ __('Open') }}</a>
             @else
-                {{ __('There in no file') }}
+                {{ trans('sentence.no-files') }}
             @endif
             <hr>
             @if(count($contact->replies) > 0)
-                <strong>{{ __('Reply\'s count:') }}</strong> {{ count($contact->replies) }}<br>
+                <strong>{{ trans('sentence.replies') }}</strong> {{ count($contact->replies) }}<br>
                 @foreach($contact->replies as $reply)
                     <strong>{{ __('Email:') }}</strong> {{ $reply->email }}
                     <br><br>
-                    <strong>{{ __('Message:') }}</strong> {!! $reply->message !!}
+                    <strong>{{ trans('sentence.message') }}</strong> {!! $reply->message !!}
                     <hr>
                 @endforeach
             @else
-                {{ __('No replies') }}
+                {{ trans('sentence.no-reply') }}
             @endif
         </div>
         <div class="col-12">
