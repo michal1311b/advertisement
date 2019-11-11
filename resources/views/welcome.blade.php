@@ -71,12 +71,47 @@
                 <div class="card-body">
                     <div class="container-fluid">
                         <div class="row">
-                            <div class="col-12">
+                            <div class="col-12 col-md-6">
                                 <div class="content">
                                     <div class="title m-b-md">
-                                        {{ __('Career in medicine') }}
+                                        <h3>
+                                            {{ trans('sentence.homepage.title') }}
+                                        </h3>
+                                        <h6>
+                                            {{ trans('sentence.homepage.subtitle') }}
+                                        </h6>
+                                    </div>
+                                    <div>
+                                        <a href="{{ route('register') }}" class="btn btn-primary">
+                                            {{ trans('sentence.register') }}
+                                        </a>
                                     </div>
                                 </div>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <img src="{{ asset('images/devices.png') }}" alt="Devices" class="w-100">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-body">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-12 col-md-6 order-1 order-md-2">
+                                <div class="content">
+                                    <div class="title m-b-md">
+                                        <h3>
+                                            {{ trans('sentence.homepage.what.it') }}
+                                        </h3>
+                                        <h6>
+                                            {{ trans('sentence.homepage.employmed') }}
+                                        </h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 order-2 order-md-1">
+                                <img src="{{ asset('images/doctor-main.jpg') }}" alt="Doctor main page" class="w-100">
                             </div>
                         </div>
                     </div>

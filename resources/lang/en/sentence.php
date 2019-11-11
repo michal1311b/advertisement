@@ -3,6 +3,10 @@
 return [
   'welcome' => 'Welcome Friend',
   'homepage' => 'Homepage',
+  'homepage.title' => 'EmployMed - job board for medicine',
+  'homepage.subtitle' => 'EmployMed is a breakthrough solution for doctors and medical facilities that will improve the recruitment process. The portal will match job offers to the preferences of doctors.',
+  'homepage.what.it' => 'What is EmployMed?',
+  'homepage.employmed' => 'EmployMed is a website. The idea to create this solution came from the medical community. Our mission is to improve the process of looking for work by doctors and to ensure continuity of medical care in facilities that face staffing problems.', 
   'polish' => 'Polish',
   'english' => 'English',
   'language' => 'Language',

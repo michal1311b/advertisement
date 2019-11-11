@@ -3,6 +3,10 @@
 return [
   'welcome' => 'Witaj ',
   'homepage' => 'Strona główna',
+  'homepage.title' => 'EmployMed - platforma z ofertami pracy dla lekarzy',
+  'homepage.subtitle' => 'EmployMed to przełomowe rozwiązanie dla lekarzy i placówek medycznych, które usprawni proces rekrutacji. Aplikacja dopasuje oferty pracy do preferencji lekarzy.',
+  'homepage.what.it' => 'Czy jest EmployMed?',
+  'homepage.employmed' => 'EmployMed to serwis internetowy. Pomysł na stworzenie tego rozwiązania wyszedł ze środowiska lekarskiego. Naszą misją jest usprawnienie procesu poszukiwania pracy przez lekarzy i zapewnienie ciągłości opieki medycznej w placówkach, które borykają się z problemami kadrowymi.',
   'polish' => 'Polski',
   'english' => 'Angielski',
   'language' => 'Język',

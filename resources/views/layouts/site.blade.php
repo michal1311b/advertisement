@@ -42,7 +42,7 @@
     <script src="https://kit.fontawesome.com/96c3aa2e82.js" crossorigin="anonymous"></script>
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css?rand=4') }}" rel="stylesheet">
+    <link href="{{ asset('css/app.css?rand=5') }}" rel="stylesheet">
     @yield('css')
     <script src="https://cdn.tiny.cloud/1/oknjb9412whickdkirspmofjwrqudakcjhdvyf31s6xhshtt/tinymce/5/tinymce.min.js"></script>
     
@@ -150,8 +150,12 @@
 
                 @yield('breadcrumbs')
                 @yield('content')
+                @include('partials.footer')
             </div>
         </div>
+        <a href="javascript:" id="return-to-top">
+            <i class="fas fa-arrow-up"></i>
+        </a>
     </div>
     <script>
         $("#menu-toggle").click(function(e) {
@@ -161,7 +165,7 @@
     </script>
     <!-- Scripts -->
     @yield('scripts')
-    <script src="{{ asset('js/app.js?rand=4') }}" defer></script>
+    <script src="{{ asset('js/app.js?rand=5') }}" defer></script>
 
     @if($app->environment('production'))
         <!-- Global site tag (gtag.js) - Google Analytics -->
