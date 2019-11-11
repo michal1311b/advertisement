@@ -48,7 +48,7 @@ class CategoryController extends Controller
 
             DB::commit();
 
-            session()->flash('success', __('Category created successfully!'));
+            session()->flash('success', trans('sentence.category-create-success'));
 
             return view('admin.categories.index',[
                 'categories' => Category::paginate()
@@ -57,7 +57,7 @@ class CategoryController extends Controller
             Log::info($e);
             DB::rollback();
 
-            session()->flash('danger',  __('Something wrong try again'));
+            session()->flash('danger',  trans('sentence.error-message'));
 
             return back()->withInput($request->all());
         }
@@ -103,14 +103,14 @@ class CategoryController extends Controller
 
             DB::commit();
 
-            session()->flash('success', __('Category updated successfully!'));
+            session()->flash('success', trans('sentence.category-update-success'));
 
             return back();
         } catch(\Exception $e) {
             Log::info($e);
             DB::rollback();
 
-            session()->flash('danger',  __('Something wrong try again'));
+            session()->flash('danger',  trans('sentence.error-message'));
 
             return back()->withInput($request->all());
         }
@@ -126,12 +126,12 @@ class CategoryController extends Controller
     {
         if(count($category->load('posts')->posts) > 0)
         {
-            $message = ['message.error' => __('Nie możesz usunąć tej kategorii, ponieważ jest ona powiązana z produktami.')];
+            $message = ['message.error' => trans('sentence.category-delete-block')];
             return redirect()->route('categories.index')->with($message);
         }
         
         if ($category->delete()) {
-            $message = ['message.success' => __('Usunięto kategorię')];
+            $message = ['message.success' => trans('sentence.delete-category')];
         }
 
         return redirect()->route('categories.index')->with($message);

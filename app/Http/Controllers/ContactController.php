@@ -30,7 +30,7 @@ class ContactController extends Controller
 
         $user->notify(new NewMessage($contact));
 
-        session()->flash('success', __('Message was send successfully!'));
+        session()->flash('success', trans('sentence.message-send'));
 
         return back();
     }

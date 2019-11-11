@@ -56,14 +56,14 @@ class AdvertisementController extends Controller
 
             DB::commit();
 
-            session()->flash('success', __('Advertisement created successfully!'));
+            session()->flash('success', trans('sentence.offer-create-success'));
 
             return back();
         } catch (\Exception $e) {
             Log::info($e);
             DB::rollback();
 
-            session()->flash('danger',  __('Something wrong try again'));
+            session()->flash('danger',  trans('sentence.error-message'));
 
             return back()->withInput($request->all());
         }
@@ -124,7 +124,7 @@ class AdvertisementController extends Controller
         $gallery = Gallery::findOrFail($id);
         $gallery->delete();
 
-        session()->flash('success', __('Photo was deleted successfully!'));
+        session()->flash('success', trans('sentence.delete-photo'));
 
         return back();
     }
@@ -139,14 +139,14 @@ class AdvertisementController extends Controller
 
             DB::commit();
 
-            session()->flash('success', __('Advertisement updated successfully!'));
+            session()->flash('success', trans('sentence.offer-update-success'));
 
             return back();
         } catch (\Exception $e) {
             Log::info($e);
             DB::rollback();
 
-            session()->flash('danger',  __('Something wrong try again'));
+            session()->flash('danger',  trans('sentence.error-message'));
 
             return back()->withInput($request->all());
         }

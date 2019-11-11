@@ -80,7 +80,7 @@ class UserController extends Controller
             $user->specializations()->sync($request->specializations);
         }
 
-        session()->flash('success',  __('Your profile was succesfully updated.'));
+        session()->flash('success',  trans('sentence.profile-update-success'));
 
         return back();
     }

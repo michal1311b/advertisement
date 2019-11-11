@@ -29,7 +29,7 @@
         </div>
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">{{ __('Edit advertisement') }}</div>
+                <div class="card-header">{{ trans('sentence.edit-offer') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('update-advertisement', $advertisement->id) }}" enctype="multipart/form-data">

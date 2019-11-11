@@ -31,7 +31,7 @@ class ExperienceController extends Controller
             Log::info($e);
             DB::rollback();
 
-            session()->flash('danger',  __('Something wrong try again'));
+            session()->flash('danger',  trans('sentence.error-message'));
 
             return back()->withInput($request->all());
         }
@@ -64,7 +64,7 @@ class ExperienceController extends Controller
             Log::info($e);
             DB::rollback();
 
-            session()->flash('danger',  __('Something wrong try again'));
+            session()->flash('danger',  trans('sentence.error-message'));
 
             return back()->withInput($request->all());
         }

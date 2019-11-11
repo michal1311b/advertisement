@@ -24,14 +24,14 @@ class PreferenceController extends Controller
 
             DB::commit();
 
-            session()->flash('success',  __('Your preference was successfully updated.'));
+            session()->flash('success',  trans('sentence.preference-update-success'));
 
             return back();
         } catch(\Exception $e) {
             Log::info($e);
             DB::rollback();
 
-            session()->flash('danger',  __('Something wrong try again'));
+            session()->flash('danger',  trans('sentence.error-message'));
 
             return back()->withInput($request->all());
         }
@@ -43,7 +43,7 @@ class PreferenceController extends Controller
         ->where('user_id', $user->id)->first();
 
         if($newLocation) {
-            session()->flash('error',  __('Location already exists.'));
+            session()->flash('error', trans('sentence.location-exists'));
         
             return back();
         }
@@ -56,7 +56,7 @@ class PreferenceController extends Controller
             'radius' => $request->get('radius')
         ]);
 
-        session()->flash('success',  __('Location added to Your profile.'));
+        session()->flash('success',  trans('sentence.location-add-success'));
 
         return back();
     }
@@ -65,7 +65,7 @@ class PreferenceController extends Controller
     {
         $userLocation = LocationUser::findOrFail($id);
         if ($userLocation->delete()) {
-            session()->flash('success',  __('Prefered location was deleted successfully.'));
+            session()->flash('success',  trans('sentence.delete-prefered-location'));
 
             return back();
         }
@@ -77,7 +77,7 @@ class PreferenceController extends Controller
         ->where('user_id', $id)->first();
 
         if($newLocation) {
-            session()->flash('error',  __('Location already exists.'));
+            session()->flash('error', trans('sentence.location-exists'));
         
             return back();
         }
@@ -89,7 +89,7 @@ class PreferenceController extends Controller
         $userLocation->radius = $request->radius;
         $userLocation->save();
 
-        session()->flash('success',  __('Location was updated successfully.'));
+        session()->flash('success', trans('sentence.location-update-success'));
         
         return back();
     }

@@ -16,7 +16,7 @@ class UserLanguageController extends Controller
         ->where('user_id', $user->id)->first();
 
         if($newLanguage) {
-            session()->flash('error',  __('Language already exists.'));
+            session()->flash('error', trans('sentence.language-exists'));
         
             return back();
         }
@@ -27,7 +27,7 @@ class UserLanguageController extends Controller
             'level' => $request->level
         ]);
 
-        session()->flash('success',  __('Language added to Your profile.'));
+        session()->flash('success',  trans('sentence.language-add-success'));
         
         return back();
     }
@@ -38,7 +38,7 @@ class UserLanguageController extends Controller
         ->where('user_id', $id)->first();
 
         if($newLanguage) {
-            session()->flash('error',  __('Language already exists.'));
+            session()->flash('error',  trans('sentence.language-exists'));
         
             return back();
         }
@@ -50,7 +50,7 @@ class UserLanguageController extends Controller
         $userLanguage->level = $request->level;
         $userLanguage->save();
 
-        session()->flash('success',  __('Language was updated successfully.'));
+        session()->flash('success',  trans('sentence.language-update-success'));
         
         return back();
     }
@@ -59,7 +59,7 @@ class UserLanguageController extends Controller
     {
         $userLanguage = UserLanguage::findOrFail($id);
         if ($userLanguage->delete()) {
-            session()->flash('success',  __('Language was deleted successfully.'));
+            session()->flash('success',  trans('sentence.delete-language'));
 
             return back();
         }

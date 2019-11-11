@@ -24,14 +24,14 @@ class CourseController extends Controller
 
             DB::commit();
 
-            session()->flash('success',  __('Your course was successfully stored.'));
+            session()->flash('success',  trans('sentence.course-create-success'));
 
             return back();
         } catch(\Exception $e) {
             Log::info($e);
             DB::rollback();
 
-            session()->flash('danger',  __('Something wrong try again'));
+            session()->flash('danger',  trans('sentence.error-message'));
 
             return back()->withInput($request->all());
         }
@@ -42,7 +42,7 @@ class CourseController extends Controller
     {
         if($course->delete())
         {
-            session()->flash('success',  __('Your course was successfully deleted.'));
+            session()->flash('success',  trans('sentence.delete-course'));
 
             return back();
         }
@@ -57,14 +57,14 @@ class CourseController extends Controller
 
             DB::commit();
 
-            session()->flash('success',  __('Your course was successfully updated.'));
+            session()->flash('success',  trans('sentence.course-update-success'));
 
             return back();
         } catch(\Exception $e) {
             Log::info($e);
             DB::rollback();
 
-            session()->flash('danger',  __('Something wrong try again'));
+            session()->flash('danger',  trans('sentence.error-message'));
 
             return back()->withInput($request->all());
         }

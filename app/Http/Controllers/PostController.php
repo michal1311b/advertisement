@@ -62,7 +62,7 @@ class PostController extends Controller
 
             DB::commit();
 
-            session()->flash('success',  __('Post created successfully!'));
+            session()->flash('success', trans('sentence.post-create-success'));
 
             return view('admin.posts.create',[
                 'categories' => Category::paginate()
@@ -71,7 +71,7 @@ class PostController extends Controller
             Log::info($e);
             DB::rollback();
 
-            session()->flash('danger',  __('Something wrong try again'));
+            session()->flash('danger', trans('sentence.error-message'));
 
             return back()->withInput($request->all());
         }
@@ -93,7 +93,7 @@ class PostController extends Controller
     public function destroy(Post $post)
     {
         if ($post->delete()) {
-            session()->flash('success', __('Post deleted successfully!'));
+            session()->flash('success', trans('sentence.delete-post'));
         }
 
         return redirect()->route('posts.index');
@@ -164,14 +164,14 @@ class PostController extends Controller
 
             DB::commit();
 
-            session()->flash('success', __('Post updated successfully!'));
+            session()->flash('success', trans('sentence.post-update-success'));
 
             return back();
         } catch(\Exception $e) {
             Log::info($e);
             DB::rollback();
 
-            session()->flash('danger',  __('Something wrong try again'));
+            session()->flash('danger', trans('sentence.error-message'));
 
             return back()->withInput($request->all());
         }

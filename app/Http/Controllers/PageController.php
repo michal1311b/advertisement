@@ -59,14 +59,14 @@ class PageController extends Controller
 
             DB::commit();
 
-            session()->flash('success', __('Page created successfully!'));
+            session()->flash('success', trans('sentence.page-create-success'));
 
             return back();
         } catch(\Exception $e) {
             Log::info($e);
             DB::rollback();
 
-            session()->flash('danger',  __('Something wrong try again'));
+            session()->flash('danger',  trans('sentence.error-message'));
 
             return back()->withInput($request->all());
         }
@@ -115,14 +115,14 @@ class PageController extends Controller
 
             DB::commit();
 
-            session()->flash('success', __('Page updated successfully!'));
+            session()->flash('success', trans('sentence.page-update-success'));
 
             return back();
         } catch(\Exception $e) {
             Log::info($e);
             DB::rollback();
 
-            session()->flash('danger',  __('Something wrong try again'));
+            session()->flash('danger',  trans('sentence.error-message'));
 
             return back()->withInput($request->all());
         }
@@ -138,7 +138,7 @@ class PageController extends Controller
     {
        
         if ($page->delete()) {
-            $message = ['message.success' => __('Usunięto stronę')];
+            $message = ['message.success' => trans('sentence.delete-page')];
         }
 
         return redirect()->route('pages.index')->with($message);

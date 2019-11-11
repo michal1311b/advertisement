@@ -59,7 +59,7 @@
                                     @csrf
                                     
                                     <div class="form-group row">
-                                        <label class="col-12 col-md-3 col-form-label text-md-right">{{ __('Profile Image') }}</label>
+                                        <label class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.profile-image') }}</label>
             
                                         <div class="col-12 col-md-9">
                                             @if($editUser->avatar)

@@ -23,7 +23,7 @@ class CommentController extends Controller
             'posted_at' => $now->toDateString()
         ]);
 
-        session()->flash('success',  __('Comment created successfully!'));
+        session()->flash('success',  trans('sentence.comment-create-success'));
 
         return back();
     }
@@ -37,14 +37,14 @@ class CommentController extends Controller
 
             DB::commit();
 
-            session()->flash('success',  __('Your comment was successfully updated.'));
+            session()->flash('success',  trans('sentence.comment-update-success'));
 
             return back();
         } catch(\Exception $e) {
             Log::info($e);
             DB::rollback();
 
-            session()->flash('danger',  __('Something wrong try again'));
+            session()->flash('danger',  trans('sentence.error-message'));
 
             return back()->withInput($request->all());
         }
@@ -54,7 +54,7 @@ class CommentController extends Controller
     {
         if($comment->delete())
         {
-            session()->flash('success',  __('Your comment was successfully deleted.'));
+            session()->flash('success',  trans('sentence.delete-comment'));
 
             return back();
         }
