@@ -254,6 +254,9 @@ a:hover {
 .slick-slide img
 {
     display: block;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
 }
 .slick-slide.slick-loading img
 {
@@ -274,9 +277,7 @@ a:hover {
 .slick-vertical .slick-slide
 {
     display: block;
-
     height: auto;
-
     border: 1px solid transparent;
 }
 .slick-arrow.slick-hidden {
