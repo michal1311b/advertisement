@@ -91,7 +91,13 @@ class AdvertisementController extends Controller
             Visit::storeVisit($user->id, $advertisement->id, true);
         }
 
-        return view('advertisement.show', compact('advertisement'));
+        $similars = Advertisement::with(['state', 'galleries', 'location'])
+        ->where('specialization_id', $advertisement->specialization_id)
+        ->where('min_salary', '>=', $advertisement->min_salary)
+        ->where('id', '!=', $advertisement->id)
+        ->paginate(3);
+
+        return view('advertisement.show', compact(['advertisement', 'similars']));
     }
 
     public function edit(Request $request, $id)

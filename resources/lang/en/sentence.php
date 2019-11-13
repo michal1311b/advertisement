@@ -171,4 +171,5 @@ return [
   'delete-page' => 'Page was deleted successfully!',
   'delete-post' => 'Post was deleted successfully!',
   'delete-prefered-location' => 'Prefered location was deleted successfully!',
+  'similar' => 'Similar offers'
 ];

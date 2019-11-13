@@ -177,6 +177,47 @@
         <div class="col-md-12">
             @include('partials.contact')
         </div>
+        <div class="col-md-12 py-3">
+            <h4><strong>{{ trans('sentence.similar') }}</strong></h4>
+        </div>
+        <div class="col-md-12">
+            @if(count($similars) > 0)
+                @foreach($similars as $similar)
+                    <!-- List group-->
+                    <ul class="list-group shadow">
+                        <a href="{{ route('show-advertisement', $similar->slug) }}" class="no-decoration"> 
+                            <!-- list group item-->
+                            <li class="list-group-item">
+                                <!-- Custom content-->
+                                <div class="media align-items-lg-center flex-column flex-lg-row p-3">
+                                <div class="media-body order-2 order-lg-1">
+                                    <h5 class="mt-0 font-weight-bold my-2">{{ $similar->title }}</h5>
+                                    <div class="font-italic text-muted mb-2 small ellipsis">{!! $similar->description !!}</div>
+                                    <h6 class="mt-0 font-weight-bold mb-2"><i class="fas fa-map-marker-alt"></i> {{ $similar->location->city }}</h6>
+                                    <h6 class="mt-0 mb-2"><i class="fas fa-user-md"></i> {{ $similar->user->profile->company_name }}</h6>
+                                    <div class="d-flex align-items-center justify-content-between mt-1">
+                                        <h6 class="font-weight-bold"><i class="fas fa-coins"></i> {{ $similar->settlement->name }}: {{ $similar->min_salary }} - {{ $similar->max_salary }} {{ $similar->currency->symbol }}</h6>
+                                    </div>
+                                    <div class="badge badge-secondary">{{ $similar->specialization->name }}</div>
+                                </div>
+                                @if($similar->galleries()->count())
+                                    <img src="{{ $similar->galleries[0]->path }}" width="200" class="ml-lg-5 order-1 order-lg-2" alt="{{$similar->galleries[0]->oldName}}">
+                                @else
+                                    <img src="{{ asset('images/noImage.png') }}" width="200" class="ml-lg-5 order-1 order-lg-2" alt="No image">
+                                @endif
+                                </div>
+                                <!-- End -->
+                            </li>
+                            <!-- End -->
+                        </a>
+                    </ul>
+                    <!-- End -->
+                @endforeach
+                <div class="pt-3">
+                    {{ $similars->links() }}
+                </div>
+            @endif
+        </div>
     </div>
 </div>
 @endsection
