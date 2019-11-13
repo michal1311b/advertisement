@@ -18,8 +18,14 @@ class ReplyController extends Controller
         return view('contact.index', compact('contacts'));
     }
 
-    public function showReply($id)
+    public function showReply($id, Request $request)
     {
+        if($request->has('read')) {
+            $notification = $request->user()->notifications()->where('id', $request->read)->first();
+            if($notification) {
+                $notification->markAsRead();
+            }
+        }
         $contact = Contact::with('replies')->find($id);
 
         return view('contact.reply', compact('contact'));
