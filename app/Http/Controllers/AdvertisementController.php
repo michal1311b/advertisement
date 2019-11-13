@@ -93,6 +93,7 @@ class AdvertisementController extends Controller
 
         $similars = Advertisement::with(['state', 'galleries', 'location'])
         ->where('specialization_id', $advertisement->specialization_id)
+        ->where('settlement_id', '>=', $advertisement->settlement_id)
         ->where('min_salary', '>=', $advertisement->min_salary)
         ->where('id', '!=', $advertisement->id)
         ->paginate(3);
