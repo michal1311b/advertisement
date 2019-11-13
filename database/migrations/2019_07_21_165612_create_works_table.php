@@ -45,6 +45,11 @@ class CreateWorksTable extends Migration
                 'name' => 'Kontrakt (niepełny wymiar)',
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
+            ],
+            [
+                'name' => 'Umowa zlecenie',
+                'created_at' => \Carbon\Carbon::now(),
+                'updated_at' => \Carbon\Carbon::now()
             ]
         ]);
     }
