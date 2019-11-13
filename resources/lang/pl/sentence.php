@@ -58,6 +58,7 @@ return [
   'your-preferences' => 'Dopasowane ogłoszenia',
   'contact-list' => 'Lista wiadomości',
   'reply-form' => 'Formularz odpowiedzi',
+  'contact-form' => 'Formularz kontaktowy',
   'reply' => 'Odpowiedz',
   'no-reply' => 'Brak odpowiedzi',
   'replies' => 'Liczba odpowiedzi',
@@ -171,5 +172,8 @@ return [
   'delete-page' => 'Podstrona została usunięta!',
   'delete-post' => 'Artykuł został usunięty!',
   'delete-prefered-location' => 'Preferowana lokalizacja została usunięta!',
-  'similar' => 'Podobne oferty'
+  'similar' => 'Podobne oferty',
+  'dear' => 'Szanowni Państwo,<br>',
+  'send-cv-message' => 'w odpowiedzi na ogłoszenie rekrutacyjne umieszczone w portalu EmployMed.eu przesyłam swoje CV.<br>',
+  'send-cv-greatings' => 'Serdecznie pozdrawiam,<br>'
 ];

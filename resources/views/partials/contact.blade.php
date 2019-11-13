@@ -1,5 +1,5 @@
 <div class="card">
-    <div class="card-header">{{ __('Contact form') }}</div>
+    <div class="card-header">{{ trans('sentence.contact-form') }}</div>
         <div class="col-md-12">
             @include('partials.validation-errors')
         </div>
@@ -41,7 +41,12 @@
             <div class="form-row">
                 <div class="form-group col-md-12">
                     <label for="message">{{ trans('sentence.message')}}</label>
-                    <textarea id="message" class="form-control @error('message') is-invalid @enderror" name="message" value="{{ old('message') }}" autocomplete="message" autofocus rows="3"></textarea>
+                    <textarea id="message" class="form-control @error('message') is-invalid @enderror" name="message" autocomplete="message" autofocus rows="3">
+                        {!! trans('sentence.dear') !!}
+                        {!! trans('sentence.send-cv-message') !!}
+                        {!! trans('sentence.send-cv-greatings') !!}
+                        {{ auth()->user()->name ?? null }} {{ auth()->user()->profile->last_name ?? null }}, {{ auth()->user()->profile->company_phone1 ?? null }}
+                    </textarea>
                     @error('message')
                         <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
@@ -67,7 +72,7 @@
                     id="term1">
 
                     <label class="form-check-label" for="term1">
-                         {{ __('term1') }}
+                        {{ __('term1') }}
                     </label>
                  </div>
             </div>
