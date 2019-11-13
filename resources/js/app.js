@@ -13,6 +13,7 @@ require('select2');
 require('../../node_modules/bootstrap-select/dist/js/bootstrap-select.min');
 require('../../node_modules/bootstrap-datepicker/dist/js/bootstrap-datepicker');
 require('../../node_modules/bootstrap-slider/dist/bootstrap-slider.min');
+require('slick-carousel');
 
 var notifications = [];
 
@@ -123,6 +124,27 @@ $(document).ready(function() {
         $('body,html').animate({
             scrollTop : 0                       // Scroll to top of body
         }, 500);
+    });
+
+    $('.customer-logos').slick({
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 1000,
+        arrows: false,
+        dots: false,
+            pauseOnHover: false,
+            responsive: [{
+            breakpoint: 768,
+            settings: {
+                slidesToShow: 3
+            }
+        }, {
+            breakpoint: 520,
+            settings: {
+                slidesToShow: 2
+            }
+        }]
     });
 });
 

@@ -164,10 +164,12 @@
             $("#wrapper").toggleClass("toggled");
         });
     </script>
+    
     <!-- Scripts -->
     @yield('scripts')
+    
     <script src="{{ asset('js/app.js?rand=5') }}" defer></script>
-
+    
     @if($app->environment('production'))
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-151388518-1"></script>

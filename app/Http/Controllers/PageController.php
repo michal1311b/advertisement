@@ -5,8 +5,11 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Advertisement;
 use App\Page;
+use App\User;
 use Carbon\Carbon;
 use App\Http\Requests\Admin\Page\StoreRequest;
+use App\Role;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
@@ -18,8 +21,12 @@ class PageController extends Controller
         $advertisements = Advertisement::with(['state', 'galleries', 'location'])
         ->where('created_at', '>', Carbon::now()->subDays(30))->orderBy('id', 'desc')->take(5)->get();
         $expirateDate = Carbon::now()->subDays(30);
+        $companies = User::has('advertisements', '>' , 0)
+        ->withCount('advertisements')
+        ->orderBy('advertisements_count')
+        ->get();
 
-        return view('welcome', compact(['advertisements', 'expirateDate']));
+        return view('welcome', compact(['advertisements', 'expirateDate', 'companies']));
     }
 
     /**
