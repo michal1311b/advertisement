@@ -175,5 +175,6 @@ return [
   'similar' => 'Podobne oferty',
   'dear' => 'Szanowni Państwo,<br>',
   'send-cv-message' => 'w odpowiedzi na ogłoszenie rekrutacyjne umieszczone w portalu EmployMed.eu przesyłam swoje CV.<br>',
-  'send-cv-greatings' => 'Serdecznie pozdrawiam,<br>'
+  'send-cv-greatings' => 'Serdecznie pozdrawiam,<br>',
+  'companies-orderBy-offers' => 'Pracodawcy z największą ilością ofert'
 ];

@@ -175,5 +175,6 @@ return [
   'similar' => 'Similar offers',
   'dear' => 'Dear Sir or Madam,<br>',
   'send-cv-message' => 'in response to the recruitment offer placed on the EmployMed.eu portal, I send my CV.<br>',
-  'send-cv-greatings' => 'Kindest regards,<br>'
+  'send-cv-greatings' => 'Kindest regards,<br>',
+  'companies-orderBy-offers' => 'Employers with the most offers'
 ];

@@ -165,6 +165,9 @@
             <a href="{{ route('advertisement-list') }}" class="btn btn-info border border-warning mr-2 text-white">{{ trans('sentence.watch-all') }}</a>
         </div>
         <div class="col-12 pt-2">
+            <h4>{{ trans('sentence.companies-orderBy-offers') }}</h4>
+        </div>
+        <div class="col-12 pt-2">
             @include('partials.company-slider')
         </div>
     </div>
