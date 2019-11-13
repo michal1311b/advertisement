@@ -8,6 +8,7 @@
 /public/advertisements/*
 /public/uploads/*
 /public/posts/*
+/public/cv/*
 /storage/*.key
 /vendor
 /database/locations.sql
