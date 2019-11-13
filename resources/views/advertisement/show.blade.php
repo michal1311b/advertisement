@@ -177,11 +177,12 @@
         <div class="col-md-12">
             @include('partials.contact')
         </div>
-        <div class="col-md-12 py-3">
-            <h4><strong>{{ trans('sentence.similar') }}</strong></h4>
-        </div>
-        <div class="col-md-12">
-            @if(count($similars) > 0)
+
+        @if(count($similars) > 0)
+            <div class="col-md-12 py-3">
+                <h4><strong>{{ trans('sentence.similar') }}</strong></h4>
+            </div>
+            <div class="col-md-12">
                 @foreach($similars as $similar)
                     <!-- List group-->
                     <ul class="list-group shadow">
@@ -216,8 +217,8 @@
                 <div class="pt-3">
                     {{ $similars->links() }}
                 </div>
-            @endif
-        </div>
+            </div>
+        @endif
     </div>
 </div>
 @endsection
