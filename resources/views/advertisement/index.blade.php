@@ -53,7 +53,7 @@
                                 @if($advertisement->galleries()->count())
                                     <img src="{{ $advertisement->galleries[0]->path }}" width="200" class="ml-lg-5 order-1 order-lg-2" alt="{{$advertisement->galleries[0]->oldName}}">
                                 @else
-                                    <img src="{{ asset('images/noImage.png') }}" width="200" class="ml-lg-5 order-1 order-lg-2" alt="No image">
+                                    <img src="{{ asset('images/logo.png') }}" width="200" class="ml-lg-5 order-1 order-lg-2" alt="No image">
                                 @endif
                                 </div>
                                 <!-- End -->

@@ -32,7 +32,7 @@
                                             @if($post->cover)
                                                 <img src="{{ $post->cover }}" class="card-img" alt="{{ $post->title }}">
                                             @else
-                                                <img src="{{ asset('images/noImage.png') }}" class="card-img" alt="No image">
+                                                <img src="{{ asset('images/logo.png') }}" class="card-img" alt="No image">
                                             @endif
                                         </div>
                                         <div class="col-md-8 pt-3 pt-md-0">

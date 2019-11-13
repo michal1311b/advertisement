@@ -150,13 +150,14 @@
 
                 @yield('breadcrumbs')
                 @yield('content')
-                @include('partials.footer')
+                
             </div>
         </div>
         <a href="javascript:" id="return-to-top">
             <i class="fas fa-arrow-up"></i>
         </a>
     </div>
+    @include('partials.footer')
     <script>
         $("#menu-toggle").click(function(e) {
             e.preventDefault();

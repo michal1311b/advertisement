@@ -46,7 +46,7 @@
                                             @if($pin->post->cover)
                                                 <img src="{{ $pin->post->cover }}" class="card-img" alt="{{ $pin->post->title }}">
                                             @else
-                                                <img src="{{ asset('images/noImage.png') }}" class="card-img" alt="No image">
+                                                <img src="{{ asset('images/logo.png') }}" class="card-img" alt="No image">
                                             @endif
                                         </div>
                                         <div class="col-md-8">
