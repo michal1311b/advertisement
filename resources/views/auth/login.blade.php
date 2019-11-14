@@ -68,8 +68,11 @@
 
                                 <a href="{{ route('login.provider', 'google') }}" 
                                 class="btn btn-secondary">{{ __('Google Sign in') }}</a>
+                            </div>
+                        </div>
 
-
+                        <div class="form-group row my-3">
+                            <div class="col-md-8 offset-md-4">
                                 @if (Route::has('password.request'))
                                     <a class="btn btn-link" href="{{ route('password.request') }}">
                                         {{ trans('sentence.forgot-password') }}
