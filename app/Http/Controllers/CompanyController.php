@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
 
@@ -12,7 +13,9 @@ class CompanyController extends Controller
     {
         $companies = new Collection();
         $users =  User::with(['roles', 'profile'])
-        ->withCount('advertisements')
+        ->withCount(['advertisements' => function($query) {
+            $query->where('created_at', '>', Carbon::now()->subDays(30));
+        }])
         ->orderBy('advertisements_count', 'desc')
         ->get();
         foreach($users as $user)
@@ -32,6 +35,7 @@ class CompanyController extends Controller
             'profile',
             'advertisements' => function($query) {
                 $query->paginate();
+                $query->where('created_at', '>', Carbon::now()->subDays(30));
             },
             'advertisements.specialization',
             'advertisements.location',

@@ -1,5 +1,13 @@
 body {
     text-decoration: none;
+    position: relative;
+    height: auto;
+    min-height: 100%;
+}
+
+#app {
+    padding-bottom: 150px;
+    min-height: 100%;
 }
 
 .gallery-item {
@@ -93,7 +101,10 @@ a:hover {
     -moz-animation: BackgroundAnimation 30s ease infinite;
     -o-animation: BackgroundAnimation 30s ease infinite;
     animation: BackgroundAnimation 30s ease infinite;
-
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
 }
 
 @-webkit-keyframes BackgroundAnimation {
@@ -136,6 +147,7 @@ a:hover {
     -ms-transition: all 0.3s ease;
     -o-transition: all 0.3s ease;
     transition: all 0.3s ease;
+    z-index: 2;
 }
 #return-to-top i {
     color: #fff;

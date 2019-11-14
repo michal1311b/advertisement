@@ -89,9 +89,9 @@
         <main class="py-4" id="main">
             @yield('breadcrumbs')
             @yield('content')
-            @include('partials.footer')
         </main>
     </div>
+    @include('partials.footer')
     <a href="javascript:" id="return-to-top">
         <i class="fas fa-arrow-up"></i>
     </a>

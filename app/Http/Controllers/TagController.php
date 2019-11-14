@@ -6,12 +6,15 @@ use App\Tag;
 use App\Pin;
 use App\Location;
 use App\Specialization;
+use Carbon\Carbon;
 
 class TagController extends Controller
 {
     public function show($slug, $page = 1)
     {
-        $advertisements = Tag::with('advertisement')->where('slug', $slug)->paginate(5);
+        $advertisements = Tag::with(['advertisement' => function($query) {
+            $query->where('created_at', '>', Carbon::now()->subDays(30));
+        }])->where('slug', $slug)->paginate(5);
 
         $locations = Location::all();
         $specializations = Specialization::all();
