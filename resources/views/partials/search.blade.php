@@ -21,10 +21,13 @@
                         @endforeach
                     </select>
                     <div class="input-group-append ml-3">
-                        <input
-                            type="text"
-                            id="range"
-                            name="range">
+                        <div class="form-group">
+                            <input
+                                type="text"
+                                id="range"
+                                name="range" class="form-group">
+                            <label for="range" class="ml-1">{{ trans('sentence.salary') }}</label>
+                        </div>
                     </div>
                 </div>
             </div>
