@@ -73,6 +73,7 @@
                             @endif
 
                             @if(auth()->user()->hasRole('admin'))
+                            <a class="dropdown-item" href="{{ route('users.list') }}">{{ trans('sentence.user-list')}}</a>
                                 <a class="dropdown-item" href="{{ route('categories.create') }}">{{ trans('sentence.category-create')}}</a>
                                 <a class="dropdown-item" href="{{ route('categories.index') }}">{{ trans('sentence.category-list')}}</a>
                                 <a class="dropdown-item" href="{{ route('posts.create') }}">{{ trans('sentence.post-create')}}</a>

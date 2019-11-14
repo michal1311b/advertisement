@@ -122,6 +122,11 @@ Breadcrumbs::for('pages', function ($trail) {
     $trail->push(trans('sentence.pages-list'), route('pages.index'));
 });
 
+Breadcrumbs::for('users', function ($trail) {
+    $trail->parent('home');
+    $trail->push(trans('sentence.user-list'), route('users.list'));
+});
+
 Breadcrumbs::for('site.page', function ($trail, $page) {
     $trail->parent('site.homepage');
     $trail->push($page->title, route('site.page', $page->slug));

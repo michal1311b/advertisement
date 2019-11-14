@@ -18,7 +18,7 @@ class User extends Authenticatable implements MustVerifyEmail, HasLoginsAndDevic
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'term1', 'term2', 'term3', 'avatar'
+        'name', 'email', 'password', 'term1', 'term2', 'term3', 'avatar', 'banned_until'
     ];
 
     /**
@@ -37,6 +37,10 @@ class User extends Authenticatable implements MustVerifyEmail, HasLoginsAndDevic
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
+    ];
+
+    protected $dates = [
+        'banned_until'
     ];
 
     public function roles()

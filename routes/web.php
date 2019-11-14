@@ -121,6 +121,9 @@ Route::group(['prefix' => 'admin'], function () {
         'uses' => 'EmailController@clearSearch'
     ])->middleware(['auth', 'admin', 'verified'])->name('mailTracker_ClearSearch');
     Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
+    Route::get('users', 'AdminController@index')->middleware(['auth', 'admin', 'verified'])->name('users.list');
+    Route::post('block/{user}', 'AdminController@block')->middleware(['auth', 'admin', 'verified'])->name('users.block');
+    Route::post('unblock/{user}', 'AdminController@unblock')->middleware(['auth', 'admin', 'verified'])->name('users.unblock');
 });
 
 Route::group(array('prefix' => 'blog'), function () {
