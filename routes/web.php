@@ -26,6 +26,8 @@ Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('re
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('{slug}', 'PageController@siteShow')->name('site.page');
+Route::get('/company/{user}/show', 'CompanyController@show')->name('company-show');
+Route::get('/company/list', 'CompanyController@index')->name('company-list');
 
 Auth::routes(['verify' => true]);
 

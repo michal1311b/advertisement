@@ -126,3 +126,13 @@ Breadcrumbs::for('site.page', function ($trail, $page) {
     $trail->parent('site.homepage');
     $trail->push($page->title, route('site.page', $page->slug));
 });
+
+Breadcrumbs::for('company-list', function ($trail) {
+    $trail->parent('site.homepage');
+    $trail->push(trans('sentence.company-list'), route('company-list'));
+});
+
+Breadcrumbs::for('company-site', function ($trail, $company) {
+    $trail->parent('company-list');
+    $trail->push(trans('sentence.company-offers') . ' ' . $company->profile->company_name, route('company-show', $company));
+});
