@@ -136,7 +136,8 @@ class PreferenceController extends Controller
                 ->where('work_id', $user->preference->work_id)
                 ->where('currency_id', $user->preference->currency_id)
                 ->whereIn('specialization_id', $user->specializations->pluck('id'))
-                ->where('min_salary', '>=', $user->preference->min_salary)
+                ->where('max_salary', '>', $user->preference->min_salary)
+                ->where('min_salary', '<', $user->preference->min_salary)
                 ->where('created_at', '>', Carbon::now()->subDays(30))
                 ->get();
 
