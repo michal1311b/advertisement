@@ -149,6 +149,8 @@ return [
         'last_name' => 'nazwisko',
         'password' => 'hasło',
         'sex' => 'płeć',
-        'title' => 'tytuł'
+        'title' => 'tytuł',
+        'postCode' => 'kod pocztowy',
+        'description' => 'opis'
     ],
 ];

@@ -43,8 +43,17 @@ class AdvertisementController extends Controller
         $specializations = Specialization::all();
         $currencies = Currency::all();
         $settlements = Settlement::all();
+        $user = auth()->user()->load('profile');
 
-        return view('advertisement.create', compact('works', 'states', 'locations', 'specializations', 'currencies', 'settlements'));
+        return view('advertisement.create', compact(
+            'works',
+            'states',
+            'locations',
+            'specializations',
+            'currencies',
+            'settlements',
+            'user'
+        ));
     }
 
     public function store(StoreRequest $request)

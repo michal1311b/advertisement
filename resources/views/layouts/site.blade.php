@@ -42,7 +42,7 @@
     <script src="https://kit.fontawesome.com/96c3aa2e82.js" crossorigin="anonymous"></script>
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css?rand=7') }}" rel="stylesheet">
+    <link href="{{ asset('css/app.css?rand=8') }}" rel="stylesheet">
     @yield('css')
     <script src="https://cdn.tiny.cloud/1/oknjb9412whickdkirspmofjwrqudakcjhdvyf31s6xhshtt/tinymce/5/tinymce.min.js"></script>
     
@@ -168,7 +168,7 @@
     <!-- Scripts -->
     @yield('scripts')
     
-    <script src="{{ asset('js/app.js?rand=7') }}" defer></script>
+    <script src="{{ asset('js/app.js?rand=8') }}" defer></script>
     
     @if($app->environment('production'))
         <!-- Global site tag (gtag.js) - Google Analytics -->

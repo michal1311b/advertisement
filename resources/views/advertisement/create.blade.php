@@ -49,7 +49,9 @@
                                     <label for="description" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.description') }}</label>
         
                                     <div class="col-12 col-md-9">
-                                        <textarea id="description" class="form-control @error('description') is-invalid @enderror" name="description" value="{{ old('description') }}" autocomplete="description" autofocus rows="3"></textarea>
+                                        <textarea id="description" class="form-control @error('description') is-invalid @enderror" name="description" value="{{ old('description') }}" autocomplete="description" autofocus rows="3">
+                                            {{ old('description') }}
+                                        </textarea>
                                         @error('description')
                                             <div class="alert alert-danger">{{ $message }}</div>
                                         @enderror
@@ -59,7 +61,9 @@
                                     <label for="profits" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.profits') }}</label>
         
                                     <div class="col-12 col-md-9">
-                                        <textarea id="profits" class="form-control @error('profits') is-invalid @enderror" name="profits" value="{{ old('profits') }}" autocomplete="profits" autofocus rows="3"></textarea>
+                                        <textarea id="profits" class="form-control @error('profits') is-invalid @enderror" name="profits" value="{{ old('profits') }}" autocomplete="profits" autofocus rows="3">
+                                            {{ old('profits') }}
+                                        </textarea>
                                         @error('profits')
                                             <div class="alert alert-danger">{{ $message }}</div>
                                         @enderror
@@ -69,7 +73,9 @@
                                     <label for="requirements" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.requirements') }}</label>
         
                                     <div class="col-12 col-md-9">
-                                        <textarea id="requirements" class="form-control @error('requirements') is-invalid @enderror" name="requirements" value="{{ old('requirements') }}" autocomplete="requirements" autofocus rows="3"></textarea>
+                                        <textarea id="requirements" class="form-control @error('requirements') is-invalid @enderror" name="requirements" value="{{ old('requirements') }}" autocomplete="requirements" autofocus rows="3">
+                                            {{ old('requirements') }}
+                                        </textarea>
                                         @error('requirements')
                                             <div class="alert alert-danger">{{ $message }}</div>
                                         @enderror
@@ -87,7 +93,7 @@
                                         <select data-live-search="true" class="form-control @error('work_id') is-invalid @enderror" name="work_id" id="work_id">
                                             <option selected>{{ trans('sentence.choose') }}</option>
                                             @foreach($works as $work)
-                                                <option value="{{ $work->id }}">{{ $work->name }}</option>
+                                                <option {{ old('work_id') == $work->id ? 'selected' : '' }} value="{{ $work->id }}">{{ $work->name }}</option>
                                             @endforeach
                                         </select>
                                         @error('work_id')
@@ -101,7 +107,9 @@
                                         <select data-live-search="true" class="form-control @error('location_id') is-invalid @enderror" name="location_id" id="location_id">
                                             <option selected>{{ trans('sentence.choose') }}</option>
                                             @foreach($locations as $location)
-                                                <option value="{{ $location->id }}">{{ $location->city }}</option>
+                                                <option {{ old('location_id') == $location->id ? 'selected' : '' }} value="{{ $location->id }}">
+                                                    {{ $location->city }}
+                                                </option>
                                             @endforeach
                                         </select>
                                         @error('location_id')
@@ -115,7 +123,7 @@
                                         <select data-live-search="true" class="form-control @error('state_id') is-invalid @enderror" name="state_id" id="state_id">
                                             <option selected>{{ trans('sentence.choose') }}</option>
                                             @foreach($states as $state)
-                                                <option value="{{ $state->id }}">{{ $state->name }}</option>
+                                                <option {{ old('state_id') == $state->id ? 'selected' : '' }} value="{{ $state->id }}">{{ $state->name }}</option>
                                             @endforeach
                                         </select>
                                         @error('state_id')
@@ -127,7 +135,7 @@
                                     <label for="postCode" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.post_code') }}</label>
         
                                     <div class="col-12 col-md-9">
-                                        <input id="post_code" type="text" class="form-control @error('postCode') is-invalid @enderror" name="postCode" value="{{ old('postCode') }}" autocomplete="postCode" autofocus>
+                                        <input id="post_code" type="text" class="form-control @error('postCode') is-invalid @enderror" name="postCode" value="{{ old('postCode') ?? $user->profile->company_post_code }}" autocomplete="postCode" autofocus>
                                         @error('postCode')
                                             <div class="alert alert-danger">{{ $message }}</div>
                                         @enderror
@@ -137,7 +145,7 @@
                                     <label for="street" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.street') }}</label>
         
                                     <div class="col-12 col-md-9">
-                                        <input id="street" type="street" class="form-control @error('street') is-invalid @enderror" name="street" value="{{ old('street') }}" autocomplete="street" autofocus>
+                                        <input id="street" type="street" class="form-control @error('street') is-invalid @enderror" name="street" value="{{ old('street') ?? $user->profile->company_street }}" autocomplete="street" autofocus>
                                         @error('street')
                                             <div class="alert alert-danger">{{ $message }}</div>
                                         @enderror
@@ -147,7 +155,7 @@
                                     <label for="email" class="col-12 col-md-3 col-form-label text-md-right">{{ __('E-mail') }}</label>
         
                                     <div class="col-12 col-md-9">
-                                        <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" autocomplete="email" autofocus>
+                                        <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') ?? $user->email }}" autocomplete="email" autofocus>
                                         @error('email')
                                             <div class="alert alert-danger">{{ $message }}</div>
                                         @enderror
@@ -157,7 +165,7 @@
                                     <label for="phone" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.phone') }}</label>
         
                                     <div class="col-12 col-md-9">
-                                        <input id="phone" type="phone" class="form-control @error('phone') is-invalid @enderror" name="phone" value="{{ old('phone') }}" autocomplete="phone" autofocus>
+                                        <input id="phone" type="phone" class="form-control @error('phone') is-invalid @enderror" name="phone" value="{{ old('phone') ?? $user->profile->company_phone1 }}" autocomplete="phone" autofocus>
                                         @error('phone')
                                             <div class="alert alert-danger">{{ $message }}</div>
                                         @enderror
@@ -174,7 +182,9 @@
                                         <select data-live-search="true" class="form-control @error('specialization_id') is-invalid @enderror" name="specialization_id" id="specialization_id">
                                             <option selected>{{ trans('sentence.choose') }}</option>
                                             @foreach($specializations as $specialization)
-                                                <option value="{{ $specialization->id }}">{{ $specialization->name }}</option>
+                                                <option {{ old('specialization_id') == $specialization->id ? 'selected' : '' }} value="{{ $specialization->id }}">
+                                                    {{ $specialization->name }}
+                                                </option>
                                             @endforeach
                                         </select>
                                         @error('specialization_id')
@@ -196,7 +206,7 @@
                                 <div class="form-group row">
                                     <label for="tags" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.tags') }}</label>
                                     <div class="col-12 col-md-9">
-                                        <input type="text" value="" name="tags[]" id="tags" data-role="tagsinput" class="form-control" />
+                                        <input type="text" value="{{ old('tags[]') }}" name="tags[]" id="tags" data-role="tagsinput" class="form-control" />
                                     </div>
                                 </div>
 
@@ -232,7 +242,9 @@
                                         <select data-live-search="true" class="form-control @error('currency_id') is-invalid @enderror" name="currency_id" id="currency_id">
                                             <option selected>{{ trans('sentence.choose') }}</option>
                                             @foreach($currencies as $currency)
-                                                <option value="{{ $currency->id }}">{{ $currency->symbol }}</option>
+                                                <option {{ old('currency_id') == $currency->id ? 'selected' : '' }} value="{{ $currency->id }}">
+                                                    {{ $currency->symbol }}
+                                                </option>
                                             @endforeach
                                         </select>
                                         @error('currency_id')
@@ -247,7 +259,9 @@
                                         <select data-live-search="true" class="form-control @error('settlement_id') is-invalid @enderror" name="settlement_id" id="settlement_id">
                                             <option selected>{{ trans('sentence.choose') }}</option>
                                             @foreach($settlements as $settlement)
-                                                <option value="{{ $settlement->id }}">{{ $settlement->name }}</option>
+                                                <option {{ old('settlement_id') == $settlement->id ? 'selected' : '' }} value="{{ $settlement->id }}">
+                                                    {{ $settlement->name }}
+                                                </option>
                                             @endforeach
                                         </select>
                                         @error('settlement_id')

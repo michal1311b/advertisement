@@ -157,7 +157,9 @@ return [
         'last_name' => 'last name',
         'password' => 'password',
         'sex' => 'sex',
-        'title' => 'title'
+        'title' => 'title',
+        'postCode' => 'post code',
+        'description' => 'description'
     ],
 
 ];
