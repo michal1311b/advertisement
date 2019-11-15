@@ -128,8 +128,10 @@ class PreferenceController extends Controller
         {
             $userLocalizations = LocationUser::where('user_id', $user->id)
             ->pluck('location_id');
-            
-            $advertisements = Advertisement::whereIn('location_id', $userLocalizations)
+
+            if($userLocalizations->count() > 0)
+            {
+                $advertisements = Advertisement::whereIn('location_id', $userLocalizations)
                 ->where('settlement_id', $user->preference->settlement_id)
                 ->where('work_id', $user->preference->work_id)
                 ->where('currency_id', $user->preference->currency_id)
@@ -138,13 +140,14 @@ class PreferenceController extends Controller
                 ->where('created_at', '>', Carbon::now()->subDays(30))
                 ->get();
 
-            if($advertisements->count() > 0)
-            {
-                foreach($advertisements as $advertisement) {
-                    UserAdvertisement::create([
-                        'user_id' => $user->id,
-                        'advertisement_id' => $advertisement->id
-                    ]);
+                if($advertisements->count() > 0)
+                {
+                    foreach($advertisements as $advertisement) {
+                        UserAdvertisement::create([
+                            'user_id' => $user->id,
+                            'advertisement_id' => $advertisement->id
+                        ]);
+                    }
                 }
             }
         }
