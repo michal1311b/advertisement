@@ -24,7 +24,7 @@ class StoreRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required|min:3|max:190',
+            'title' => 'required|min:3|max:190|unique:advertisements',
             'description' => 'required|min:3',
             'work_id' => 'required|exists:works,id',
             'state_id' => 'required|exists:states,id',

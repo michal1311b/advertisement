@@ -24,7 +24,7 @@ class UpdateRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required|max:190',
+            'title' => 'required|max:190|unique:posts',
             'body' => 'required|max:65000',
             'category_id' => 'required|exists:categories,id',
             'cover' => 'image',

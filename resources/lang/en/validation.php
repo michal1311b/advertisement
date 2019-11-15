@@ -156,7 +156,8 @@ return [
         'first_name' => 'first name',
         'last_name' => 'last name',
         'password' => 'password',
-        'sex' => 'sex'
+        'sex' => 'sex',
+        'title' => 'title'
     ],
 
 ];
