@@ -194,5 +194,20 @@
     </script>
     <!-- Go to www.addthis.com/dashboard to customize your tools -->
     <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5dc7278fb46e12ce"></script>
+
+    <!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
+    <script type="text/javascript">
+        window.cookieconsent_options = {
+            "message": "Na naszej stronie internetowej używamy plików cookies. Brak ograniczenia/wyłączenia cookies w&nbsp;przeglądarce internetowej oznacza zgodę na takie wykorzystanie. Szczegółowe informacje w&nbsp;naszej",
+            "dismiss": "Akceptuję",
+            "learnMore": "Polityce prywatności",
+            "link": "/",
+            "theme": "dark-bottom",
+            "target": "_blank"
+        };
+    </script>
+
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/1.0.10/cookieconsent.min.js"></script>
+    <!-- End Cookie Consent plugin -->
 </body>
 </html>
