@@ -151,6 +151,5 @@ class PreferenceController extends Controller
                 }
             }
         }
-        \Log::info('Działa');
     }
 }
