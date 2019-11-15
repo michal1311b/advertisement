@@ -8,14 +8,16 @@ use App\Location;
 use App\LocationUser;
 use App\User;
 use App\Preference;
+use App\UserAdvertisement;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
+use App\Http\Requests\Preference\UpdateRequest;
 
 class PreferenceController extends Controller
 {
-    public function update(Preference $preference, Request $request)
+    public function update(Preference $preference, UpdateRequest $request)
     {
         DB::beginTransaction();
 
@@ -96,38 +98,56 @@ class PreferenceController extends Controller
 
     public function showPreferences()
     {
-        $advertisements = null;
-
         $user = Auth()
             ->user()
-            ->load([
-                'doctor',
-                'preference',
-                'specializations'
-            ]);
+            ->load(['doctor']);
 
         if($user->doctor)
         {
-            $userLocalizations = LocationUser::where('user_id', $user->id)->pluck('location_id');
-         
-            foreach ($userLocalizations as $key => $location) {
-                $all_adverts = collect($advertisements)
-                ->merge(Advertisement::with(['galleries', 'specialization'])
-                ->where('location_id', $location)
+            $preData = UserAdvertisement::where('user_id', $user->id)
+            ->with(['advertisements', 'advertisements.galleries'])
+            ->get();
+
+            return view('user.preferences', compact('preData', 'user'));
+        } else {
+            return redirect()->route('home');
+        }
+    }
+
+    public function buildPreferences()
+    {
+        $beginData = UserAdvertisement::truncate();
+
+        $users = User::with(['doctor', 'preference', 'specializations'])
+        ->has('doctor')
+        ->has('preference')
+        ->has('specializations')
+        ->get();
+
+        foreach($users as $user)
+        {
+            $userLocalizations = LocationUser::where('user_id', $user->id)
+            ->pluck('location_id');
+            
+            $advertisements = Advertisement::whereIn('location_id', $userLocalizations)
                 ->where('settlement_id', $user->preference->settlement_id)
                 ->where('work_id', $user->preference->work_id)
                 ->where('currency_id', $user->preference->currency_id)
                 ->whereIn('specialization_id', $user->specializations->pluck('id'))
                 ->where('min_salary', '>=', $user->preference->min_salary)
                 ->where('created_at', '>', Carbon::now()->subDays(30))
-                ->get());
-                $advertisements = $all_adverts;
+                ->get();
+
+            if($advertisements->count() > 0)
+            {
+                foreach($advertisements as $advertisement) {
+                    UserAdvertisement::create([
+                        'user_id' => $user->id,
+                        'advertisement_id' => $advertisement->id
+                    ]);
+                }
             }
-
-            return view('user.preferences', compact('advertisements', 'user'));
-
-        } else {
-            return redirect()->route('home');
         }
+        \Log::info('Działa');
     }
 }

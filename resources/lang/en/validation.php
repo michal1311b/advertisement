@@ -159,7 +159,11 @@ return [
         'sex' => 'sex',
         'title' => 'title',
         'postCode' => 'post code',
-        'description' => 'description'
+        'description' => 'description',
+        'currency_id' => 'currency',
+        'work_id' => 'work',
+        'min_salary' => 'minimal salary',
+        'max_salary' => 'maximum salary'
     ],
 
 ];

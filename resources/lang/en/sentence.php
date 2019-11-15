@@ -21,6 +21,7 @@ return [
   'course-update-success' => 'Course was updated successfully!',
   'experience' => 'Experience',
   'offers' => 'Offers',
+  'no-preffred-offers' => 'No offers found, fill Your preferences.',
   'no-offers' => 'No offers found, sign in to be the first one.',
   'no-companies' => 'No comapnies found, sign in to be the first one.',
   'login' => 'Login',
@@ -190,4 +191,5 @@ return [
   'step1' => 'Step 1',
   'step2' => 'Step 2',
   'step3' => 'Step 3',
+  'preferences' => 'Preferences'
 ];

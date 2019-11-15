@@ -21,6 +21,7 @@ return [
   'course-create-success' => 'Kurs został dodany pomyślnie!',
   'course-update-success' => 'Kurs został zaktualizowany pomyślnie!',
   'offers' => 'Oferty pracy',
+  'no-preffred-offers' => 'Nie znaleziono żadnych ofert, wypełnij preferencje i wróc do tej zakładki.',
   'no-offers' => 'Nie znaleziono żadnych ofert zaloguj się aby dodać pierwszą.',
   'no-companies' => 'Nie znaleziono żadnych firm zarejestruj się aby być pierwszy.',
   'login' => 'Zaloguj się',
@@ -190,4 +191,5 @@ return [
   'step1' => 'Krok 1',
   'step2' => 'Krok 2',
   'step3' => 'Krok 3',
+  'preferences' => 'Preferencje'
 ];

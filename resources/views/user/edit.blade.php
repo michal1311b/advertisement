@@ -41,7 +41,7 @@
                         <a class="nav-link" data-toggle="tab" href="#menu3">{{ trans('sentence.languages') }}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" data-toggle="tab" href="#menu4">{{ __('Preferences') }}</a>
+                        <a class="nav-link" data-toggle="tab" href="#menu4">{{ trans('sentence.preferences') }}</a>
                     </li>
                 @endif
             </ul>

@@ -151,6 +151,10 @@ return [
         'sex' => 'płeć',
         'title' => 'tytuł',
         'postCode' => 'kod pocztowy',
-        'description' => 'opis'
+        'description' => 'opis',
+        'currency_id' => 'waluta',
+        'work_id' => 'rodzaj pracy',
+        'min_salary' => 'minimalna kwota',
+        'max_salary' => 'maksymalna kwota'
     ],
 ];

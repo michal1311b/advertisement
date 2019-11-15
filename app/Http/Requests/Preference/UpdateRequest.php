@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\User;
+namespace App\Http\Requests\Preference;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UploadRequest extends FormRequest
+class UpdateRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,7 +24,10 @@ class UploadRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required'
+            'min_salary' => 'required',
+            'currency_id' => 'required|exists:currencies,id',
+            'settlement_id' => 'required|exists:settlements,id',
+            'work_id' => 'required|exists:works,id',
         ];
     }
 }
