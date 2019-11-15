@@ -20,6 +20,8 @@ Route::get('/verify/subscribtion/{token}', [
     'uses' => 'SubscriberController@verify'
 ]);
 
+Route::get('/build-preferences', 'PreferenceController@buildPreferences')->name('build-preferences');
+
 //Allows to overwrite login and register actions
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
 Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
@@ -88,7 +90,6 @@ Route::group(array('prefix' => 'user'), function () {
     Route::put('/location/{location}/user/{id}', 'PreferenceController@updateLocation')->name('update-user-location');
     Route::delete('/location/{id}', 'PreferenceController@deleteLocation')->name('delete-user-location');
     Route::get('/preferences', 'PreferenceController@showPreferences')->name('user-prefered-locations')->middleware(['auth', 'verified']);
-    Route::get('/build-preferences', 'PreferenceController@buildPreferences')->name('build-preferences');
 });
 
 Route::post('/send-message', 'ContactController@store')->name('send-message');
