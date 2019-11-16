@@ -24,7 +24,7 @@ class CvRequest extends FormRequest
     public function rules()
     {
         return [
-            'cv' => 'required|file',
+            'cv' => 'required|mimes:pdf,docx,doc',
         ];
     }
 }

@@ -57,10 +57,14 @@
                 <div class="form-group col-md-12">
                     <label for="cv">{{ trans('sentence.upload-cv')}}</label>
                     
-                    <input type="file" class="form-control @error('cv') is-invalid @enderror" name="cv" />
-                    @error('cv')
-                        <div class="alert alert-danger">{{ $message }}</div>
-                    @enderror
+                    @if(isset(auth()->user()->doctor) && auth()->user()->doctor->cv)
+                        <a href="{{ auth()->user()->doctor->cv }}" class="btn btn-primary" target="_blank">{{ __('CV') }}</a>
+                    @else
+                        <input type="file" class="form-control @error('cv') is-invalid @enderror" name="cv" required/>
+                        @error('cv')
+                            <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
+                    @endif
                 </div>
             </div>
 

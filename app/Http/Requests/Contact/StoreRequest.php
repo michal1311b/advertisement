@@ -27,7 +27,7 @@ class StoreRequest extends FormRequest
             'email' => 'required|min:3|max:190|email',
             'first_name' => 'required|min:3|max:190',
             'message' => 'required|min:3',
-            'cv' => 'required|mimes:pdf,docx,doc',
+            'cv' => 'mimes:pdf,docx,doc|nullable',
         ];
     }
 }

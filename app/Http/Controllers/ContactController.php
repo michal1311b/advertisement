@@ -15,12 +15,20 @@ class ContactController extends Controller
 {
     public function store(StoreRequest $request)
     {
+        $user = auth()->user();
+
         $now = \Carbon\Carbon::now();
-        $fileData = $request->file('cv');
-        $cv = "http://{$_SERVER['HTTP_HOST']}/" . $fileData->store('/cv' . '/' . Str::random(6) . $now->format('Y-m-d-hh-mm-ss') . Str::random(6), 'public');
         $data = [];
         $data = array_merge($data, $request->all());
-        $data['cv'] = $cv;
+
+        if($user->doctor && $user->doctor->cv)
+        {
+            $data['cv'] = $user->doctor->cv;
+        } else {
+            $fileData = $request->file('cv');
+            $cv = "http://{$_SERVER['HTTP_HOST']}/" . $fileData->store('/cv' . '/' . Str::random(6) . $now->format('Y-m-d-hh-mm-ss') . Str::random(6), 'public');
+            $data['cv'] = $cv;
+        }
 
         $contact = Contact::create($data);
         
