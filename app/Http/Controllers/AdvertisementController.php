@@ -138,6 +138,7 @@ class AdvertisementController extends Controller
     public function deletePhoto($id)
     {
         $gallery = Gallery::findOrFail($id);
+        unlink(public_path($gallery->path));
         $gallery->delete();
 
         session()->flash('success', trans('sentence.delete-photo'));
