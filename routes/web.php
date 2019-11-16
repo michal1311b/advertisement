@@ -90,6 +90,7 @@ Route::group(array('prefix' => 'user'), function () {
     Route::put('/location/{location}/user/{id}', 'PreferenceController@updateLocation')->name('update-user-location');
     Route::delete('/location/{id}', 'PreferenceController@deleteLocation')->name('delete-user-location');
     Route::get('/preferences', 'PreferenceController@showPreferences')->name('user-prefered-locations')->middleware(['auth', 'verified']);
+    Route::post('/file/upload', 'ProfileController@uploadCV')->name('upload-cv')->middleware(['auth', 'verified']);
 });
 
 Route::post('/send-message', 'ContactController@store')->name('send-message');

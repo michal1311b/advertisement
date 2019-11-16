@@ -10,7 +10,8 @@ class Doctor extends Model
         'pwz',
         'birthday',
         'sex',
-        'user_id'
+        'user_id',
+        'cv'
     ];
     
     public function user()

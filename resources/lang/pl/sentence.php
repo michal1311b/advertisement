@@ -157,6 +157,7 @@ return [
   'location-exists' => 'Lokalizacja już została dodana.',
   'location-add-success' => 'Lokalizacja dodana pomyślnie!',
   'location-update-success' => 'Lokalizacja zaktualizowana pomyślnie!',
+  'upload-file-success' => 'Plik dodany pomyślnie',
   'organizer' => 'Organizator',
   'min_salary' => 'Minimalna kwota',
   'max_salary' => 'Maksymalna kwota',

@@ -27,6 +27,7 @@
         "bootstrap-datepicker": "^1.9.0",
         "bootstrap-select": "^1.13.12",
         "bootstrap-slider": "^10.6.2",
+        "dropzone": "^5.5.1",
         "express": "^4.17.1",
         "inputmask": "^4.0.9",
         "ioredis": "^4.14.1",

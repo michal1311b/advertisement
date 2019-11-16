@@ -43,6 +43,9 @@
                     <li class="nav-item">
                         <a class="nav-link" data-toggle="tab" href="#menu4">{{ trans('sentence.preferences') }}</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#menu5">{{ __('CV') }}</a>
+                    </li>
                 @endif
             </ul>
             
@@ -894,6 +897,35 @@
                                             </div>
                                         </div>
                                     @endforeach
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane container fade" id="menu5">
+                        <div class="col-md-12 py-3">
+                            <div class="card">
+                                <div class="card-header">{{ __('CV') }}</div>
+
+                                <div class="card-body">
+                                    @if($editUser->doctor->cv !== null)
+                                        <a href="{{ $editUser->doctor->cv }}" class="btn btn-primary" target="_blank">{{ __('CV') }}</a>
+                                    @else
+                                        <form method="POST" action="{{ route('upload-cv') }}" aria-label="{{ __('Upload') }}" enctype="multipart/form-data">
+                                            @csrf
+                                            <div class="form-group row mb-0">
+                                                <div class="col-md-8 offset-md-4">
+                                                    <input type="file" class="dropzone" id="dropzone" name="cv">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row mb-0">
+                                                <div class="col-md-8 offset-md-4">
+                                                    <button type="submit" class="btn btn-primary">
+                                                        {{ trans('sentence.btn-update') }}
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    @endif
                                 </div>
                             </div>
                         </div>
