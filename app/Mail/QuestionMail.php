@@ -30,7 +30,7 @@ class QuestionMail extends Mailable
      */
     public function build()
     {
-        return $this->subject('Message from your advertisement')
+        return $this->subject(trans('sentence.apply-email-title'))
                     ->from('mailer@wp.pl')
                     ->view('emails.question')
                     ->with([

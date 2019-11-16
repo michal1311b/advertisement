@@ -359,7 +359,7 @@
                                                         type="checkbox" name="until_now" id="until_now" value="1"
                                                         {{ old('until_now', 0)  == 1 ? 'checked' : '' }}>
                                                         <label class="form-check-label" for="until_now">
-                                                        {{ __('until now?') }}
+                                                        {{ trans('sentence.until') }}
                                                         </label>
                                                     </div>
                                                 </div>
@@ -911,7 +911,7 @@
                                         <div class="btn-group" role="group" aria-label="Basic example">
                                             <a href="{{ $editUser->doctor->cv }}" class="btn btn-primary" target="_blank">{{ __('CV') }}</a>
                                             <button class="btn btn-danger" data-toggle="modal"
-                                                data-target="#modalremovecv{{$editUser->doctor->id}}">Delete</i>
+                                                data-target="#modalremovecv{{$editUser->doctor->id}}">{{ trans('sentence.btn-delete') }}</i>
                                             </button>
 
                                             @include('partials.confirmation', [

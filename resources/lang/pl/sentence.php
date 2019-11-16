@@ -193,5 +193,9 @@ return [
   'step1' => 'Krok 1',
   'step2' => 'Krok 2',
   'step3' => 'Krok 3',
-  'preferences' => 'Preferencje'
+  'preferences' => 'Preferencje',
+  'apply-email-title' => 'EmployMed - Odpowiedź na Twoje ogłoszenie',
+  'reply-email-title' => 'EmployMed - Odpowiedź na Twoje zgłoszenie',
+  'register-subscribtion-thanks' => 'Dziękujemy za rejestrację do newslettera. Kliknij link poniżej, aby potwierdzić subskrypcję.',
+  'confirm-link' => 'Tutaj znajduję się link do potwierdzenia: '
 ];

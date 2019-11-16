@@ -1,9 +1,9 @@
 @component('mail::message')
-Thanks for register to newsletter click link below to confirm subscrbtion.
+{{ trans('sentence.register-subscribtion-thanks') }}
 
 <br>
 <br>
-Here is answer link: 
+{{ trans('sentence.confirm-link') }}
 <a href="{{ url('verify/subscribtion/' . $token) }}">Click</a>
 
 @endcomponent

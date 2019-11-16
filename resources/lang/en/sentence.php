@@ -193,5 +193,9 @@ return [
   'step1' => 'Step 1',
   'step2' => 'Step 2',
   'step3' => 'Step 3',
-  'preferences' => 'Preferences'
+  'preferences' => 'Preferences',
+  'apply-email-title' => 'EmployMed - Reply to your publication',
+  'reply-email-title' => 'EmployMed - Reply to your report',
+  'register-subscribtion-thanks' => 'Thanks for register to newsletter click link below to confirm subscrbtion.',
+  'confirm-link' => 'Here is answer link: '
 ];
