@@ -824,7 +824,7 @@
                                         </div>
             
                                         <div class="form-group row">
-                                            <label class="col-12 col-md-3 col-form-label text-md-right" for="currency_id">{{ trans('sentence.radius') }}</label>
+                                            <label class="col-12 col-md-3 col-form-label text-md-right" for="radius">{{ trans('sentence.radius') }}</label>
                                             <div class="col-12 col-md-9">
                                                 <select data-live-search="true" class="form-control @error('radius') is-invalid @enderror" name="radius" id="radius" required>
                                                     <option selected value="">{{ trans('sentence.choose') }}</option>
