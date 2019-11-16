@@ -200,5 +200,6 @@ return [
   'apply-email-title' => 'EmployMed - Reply to your publication',
   'reply-email-title' => 'EmployMed - Reply to your report',
   'register-subscribtion-thanks' => 'Thanks for register to newsletter click link below to confirm subscrbtion.',
-  'confirm-link' => 'Here is answer link: '
+  'confirm-link' => 'Here is answer link: ',
+  'add-cv-file' => 'Add your Cv file'
 ];

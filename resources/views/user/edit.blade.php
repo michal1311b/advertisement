@@ -929,10 +929,11 @@
                                             @csrf
                                             <div class="form-group row mb-0">
                                                 <div class="col-md-8 offset-md-4">
+                                                    <div class="pb-3">{{ trans('sentence.add-cv-file') }}</div>
                                                     <input type="file" class="dropzone" id="dropzone" name="cv">
                                                 </div>
                                             </div>
-                                            <div class="form-group row mb-0">
+                                            <div class="form-group row mt-3">
                                                 <div class="col-md-8 offset-md-4">
                                                     <button type="submit" class="btn btn-primary">
                                                         {{ trans('sentence.btn-update') }}

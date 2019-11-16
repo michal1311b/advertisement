@@ -303,6 +303,12 @@ a:hover {
 }
 
 .dropzone {
-    margin-bottom: 20px;
-    min-height: auto;
+    background: white;
+    border-radius: 5px;
+    border: 2px dashed rgb(0, 135, 247);
+    border-image: none;
+    width: 100%;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
 }

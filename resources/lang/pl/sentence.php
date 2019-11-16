@@ -200,5 +200,6 @@ return [
   'apply-email-title' => 'EmployMed - Odpowiedź na Twoje ogłoszenie',
   'reply-email-title' => 'EmployMed - Odpowiedź na Twoje zgłoszenie',
   'register-subscribtion-thanks' => 'Dziękujemy za rejestrację do newslettera. Kliknij link poniżej, aby potwierdzić subskrypcję.',
-  'confirm-link' => 'Tutaj znajduję się link do potwierdzenia: '
+  'confirm-link' => 'Tutaj znajduję się link do potwierdzenia: ',
+  'add-cv-file' => 'Dodaj swój plik z CV'
 ];
