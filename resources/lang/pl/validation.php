@@ -155,6 +155,10 @@ return [
         'currency_id' => 'waluta',
         'work_id' => 'rodzaj pracy',
         'min_salary' => 'minimalna kwota',
-        'max_salary' => 'maksymalna kwota'
+        'max_salary' => 'maksymalna kwota',
+        'company_name' => 'nazwa firmy',
+        'company_street' => 'adres firmy',
+        'company_post_code' => 'kod pocztowy firmy',
+        'company_nip' => 'NIP',
     ],
 ];

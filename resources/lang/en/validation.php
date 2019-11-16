@@ -163,7 +163,11 @@ return [
         'currency_id' => 'currency',
         'work_id' => 'work',
         'min_salary' => 'minimal salary',
-        'max_salary' => 'maximum salary'
+        'max_salary' => 'maximum salary',
+        'company_name' => 'company name',
+        'company_street' => 'company street',
+        'company_post_code' => 'company post code',
+        'company_nip' => 'company nip',
     ],
 
 ];
