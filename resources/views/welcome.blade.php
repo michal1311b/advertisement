@@ -33,22 +33,22 @@
       <div class="carousel-item active">
         <img class="d-block w-100" src="{{ asset('images/main1.jpg') }}" alt="Main 1">
         <div class="carousel-caption d-none d-md-block text-dark">
-          <h5>Second slide label</h5>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <h6>{{ trans('sentence.homepage.title') }}</h6>
+            <span>{{ trans('sentence.homepage.slide1') }}</span>
         </div>
       </div>
       <div class="carousel-item">
         <img class="d-block w-100" src="{{ asset('images/main2.jpg') }}" alt="Main 2">
         <div class="carousel-caption d-none d-md-block text-dark">
-          <h5>Second slide label</h5>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <h6>{{ trans('sentence.homepage.title') }}</h6>
+            <span>{{ trans('sentence.homepage.slide2') }}</span>
         </div>
       </div>
       <div class="carousel-item">
         <img class="d-block w-100" src="{{ asset('images/main3.png') }}" alt="Main 3">
         <div class="carousel-caption d-none d-md-block text-dark">
-          <h5>Second slide label</h5>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <h6>{{ trans('sentence.homepage.title') }}</h6>
+            <span>{{ trans('sentence.homepage.slide3') }}</span>
         </div>
       </div>
     </div>
