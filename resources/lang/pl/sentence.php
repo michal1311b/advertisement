@@ -158,6 +158,7 @@ return [
   'location-add-success' => 'Lokalizacja dodana pomyślnie!',
   'location-update-success' => 'Lokalizacja zaktualizowana pomyślnie!',
   'upload-file-success' => 'Plik dodany pomyślnie',
+  'delete-file-success' => 'Plik został usunięty',
   'organizer' => 'Organizator',
   'min_salary' => 'Minimalna kwota',
   'max_salary' => 'Maksymalna kwota',

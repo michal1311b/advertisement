@@ -184,6 +184,7 @@ return [
   'delete-post' => 'Post was deleted successfully!',
   'delete-prefered-location' => 'Prefered location was deleted successfully!',
   'upload-file-success' => 'File uploaded with success',
+  'delete-file-success' => 'File was deleted with success',
   'similar' => 'Similar offers',
   'dear' => 'Dear Sir or Madam,<br>',
   'send-cv-message' => 'in response to the recruitment offer placed on the EmployMed.eu portal, I send my CV.<br>',

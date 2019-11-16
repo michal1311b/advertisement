@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Doctor;
+use App\Http\Requests\User\CvRequest;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class ProfileController extends Controller
 {
-    public function uploadCV(Request $request)
+    public function uploadCV(CvRequest $request)
     {
         $user = auth()->user();
 
@@ -23,5 +26,18 @@ class ProfileController extends Controller
 
             return back();
         }
+    }
+
+    public function deleteCV(Doctor $doctor)
+    {
+        $path = str_replace(config('app.url'), '' , $doctor->cv);
+        unlink(public_path($path));
+
+        $doctor->cv = null;
+        $doctor->save();
+
+        session()->flash('success', trans('sentence.delete-file-success'));
+
+        return back();
     }
 }

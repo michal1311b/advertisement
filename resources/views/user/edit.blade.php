@@ -908,7 +908,22 @@
 
                                 <div class="card-body">
                                     @if($editUser->doctor->cv !== null)
-                                        <a href="{{ $editUser->doctor->cv }}" class="btn btn-primary" target="_blank">{{ __('CV') }}</a>
+                                        <div class="btn-group" role="group" aria-label="Basic example">
+                                            <a href="{{ $editUser->doctor->cv }}" class="btn btn-primary" target="_blank">{{ __('CV') }}</a>
+                                            <button class="btn btn-danger" data-toggle="modal"
+                                                data-target="#modalremovecv{{$editUser->doctor->id}}">Delete</i>
+                                            </button>
+
+                                            @include('partials.confirmation', [
+                                                'url' => route('delete-user-cv', $editUser->doctor),
+                                                'method' => 'DELETE',
+                                                'title' => trans('sentence.btn-delete') . " CV",
+                                                "description" => trans('sentence.delete_confirm') ." CV?",
+                                                "description_parameters" => [],
+                                                'button' => trans('sentence.btn-delete'),
+                                                'modalKey' => "removecv".$editUser->doctor->id
+                                            ])
+                                        </div>
                                     @else
                                         <form method="POST" action="{{ route('upload-cv') }}" aria-label="{{ __('Upload') }}" enctype="multipart/form-data">
                                             @csrf

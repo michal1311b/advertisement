@@ -91,6 +91,7 @@ Route::group(array('prefix' => 'user'), function () {
     Route::delete('/location/{id}', 'PreferenceController@deleteLocation')->name('delete-user-location');
     Route::get('/preferences', 'PreferenceController@showPreferences')->name('user-prefered-locations')->middleware(['auth', 'verified']);
     Route::post('/file/upload', 'ProfileController@uploadCV')->name('upload-cv')->middleware(['auth', 'verified']);
+    Route::delete('/cv/{doctor}', 'ProfileController@deleteCV')->name('delete-user-cv')->middleware(['auth', 'verified']);
 });
 
 Route::post('/send-message', 'ContactController@store')->name('send-message');
