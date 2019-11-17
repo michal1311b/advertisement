@@ -132,6 +132,7 @@ Route::group(['prefix' => 'admin'], function () {
 
 Route::group(array('prefix' => 'blog'), function () {
     Route::get('/list', 'BlogController@index')->name('blog.index');
+    Route::get('/list/{category}', 'BlogController@indexCategory')->name('blog.category');
     Route::get('/show/{slug}', 'BlogController@show')->name('blog.show');
     Route::get('/tag/{tagSlug}/{page?}', [
         'as' => 'postTag',

@@ -159,9 +159,11 @@ $(document).ready(function() {
     window.Dropzone = require('dropzone');
     Dropzone.autoDiscover = false;
 
+    console.log(document.getElementById('template-preview').innerHTML);
+
     Dropzone.options.dropzone = {
         previewTemplate: document.getElementById('template-preview').innerHTML,
-        previewsContainer: '#template-preview',
+        previewsContainer: '.dropzone-previews',
         createImageThumbnails: true,
         thumbnailHeight: 120,
         thumbnailWidth: 120,

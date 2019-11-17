@@ -47,6 +47,12 @@
                             <div class="col-12">
                                 <ul class="list-group">
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        {{ trans('sentence.category') }}
+                                        <a href="{{ route('blog.category', $post->category) }}">
+                                            <span class="badge badge-pill badge-primary text-white">{{ $post->category->name }}</span>
+                                        </a>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
                                         {{ trans('sentence.created_at') }}
                                         <span class="badge badge-pill">{{ $post->created_at }}</span>
                                     </li>

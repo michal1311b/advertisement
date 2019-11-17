@@ -20,6 +20,25 @@
         <div class="col-md-12">
             @include('partials.message')
         </div>
+        @if(count($categories) > 0)
+            <div class="col-md-12 py-3">
+                <ul class="nav nav-pills nav-fill">
+                    @foreach($categories as $cat)
+                        <li class="nav-item px-2">
+                            <a class="nav-link 
+                                @if(isset($category))
+                                    @if($cat->id === $category->id)
+                                        active
+                                    @endif
+                                @endif"
+                                href="{{ route('blog.category', $cat->id) }}">
+                                {{ $cat->name }}
+                            </a>
+                        </li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
         @if(count($posts) > 0)
             @foreach($posts as $post)
                 @if($post->is_published === 1)

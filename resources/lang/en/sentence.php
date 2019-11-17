@@ -73,6 +73,7 @@ return [
   'no-reply' => 'No replies',
   'reply-send-success' => 'Reply was send successfully',
   'replies' => 'Replies count',
+  'category' => 'Category',
   'category-list' => 'List of Categories',
   'category-create' => 'Create Category',
   'category-create-success' => 'Category created successfully!',

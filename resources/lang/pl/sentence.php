@@ -73,6 +73,7 @@ return [
   'no-reply' => 'Brak odpowiedzi',
   'replies' => 'Liczba odpowiedzi',
   'reply-send-success' => 'Odpowiedź została wysłana pomyślnie',
+  'category' => 'Kategoria',
   'category-list' => 'Kategorie',
   'category-create' => 'Stwórz kategorie',
   'category-create-success' => 'Kategoria została dodana pomyślnie!',
