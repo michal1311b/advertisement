@@ -23,7 +23,6 @@ class SpecializationTableSeeder extends Seeder
         Specialization::create(['name' => 'Chirurgia ogólna', 'slug' => str_slug('Chirurgia ogólna')]);
         Specialization::create(['name' => 'Chirurgia onkologiczna', 'slug' => str_slug('Chirurgia onkologiczna')]);
         Specialization::create(['name' => 'Chirurgia plastyczna', 'slug' => str_slug('Chirurgia plastyczna')]);
-        Specialization::create(['name' => 'Chirurgia szczękowo-twarzowa', 'slug' => str_slug('Chirurgia szczękowo-twarzowa')]);
         Specialization::create(['name' => 'Choroby płuc', 'slug' => str_slug('Choroby płuc')]);
         Specialization::create(['name' => 'Choroby płuc dzieci', 'slug' => str_slug('Choroby płuc dzieci')]);
         Specialization::create(['name' => 'Choroby wewnętrzne', 'slug' => str_slug('Choroby wewnętrzne')]);
@@ -34,7 +33,6 @@ class SpecializationTableSeeder extends Seeder
         Specialization::create(['name' => 'Endokrynologia', 'slug' => str_slug('Endokrynologia')]);
         Specialization::create(['name' => 'Endokrynologia ginekologiczna i rozrodczość', 'slug' => str_slug('Endokrynologia ginekologiczna i rozrodczość')]);
         Specialization::create(['name' => 'Endokrynologia i diabetologia dzieciąca', 'slug' => str_slug('Endokrynologia i diabetologia dzieciąca')]);
-        Specialization::create(['name' => 'Epidemiologia', 'slug' => str_slug('Epidemiologia')]);
         Specialization::create(['name' => 'Farmakologia kliniczna', 'slug' => str_slug('Farmakologia kliniczna')]);
         Specialization::create(['name' => 'Gastroenterologia', 'slug' => str_slug('Gastroenterologia')]);
         Specialization::create(['name' => 'Gastroenterologia dziecięca', 'slug' => str_slug('Gastroenterologia dziecięca')]);
@@ -88,5 +86,13 @@ class SpecializationTableSeeder extends Seeder
         Specialization::create(['name' => 'Urologia', 'slug' => str_slug('Urologia')]);
         Specialization::create(['name' => 'Urologia dziecięca', 'slug' => str_slug('Urologia dziecięca')]);
         Specialization::create(['name' => 'Zdrowie publiczne', 'slug' => str_slug('Zdrowie publiczne')]);
+        Specialization::create(['name' => 'Epidemiologia', 'slug' => str_slug('Epidemiologia')]);
+        Specialization::create(['name' => 'Chirurgia stomatologiczna', 'slug' => str_slug('Chirurgia stomatologiczna')]);
+        Specialization::create(['name' => 'Chirurgia szczękowo-twarzowa', 'slug' => str_slug('Chirurgia szczękowo-twarzowa')]);
+        Specialization::create(['name' => 'Ortodoncja', 'slug' => str_slug('Ortodoncja')]);
+        Specialization::create(['name' => 'Periodontologia', 'slug' => str_slug('Periodontologia')]);
+        Specialization::create(['name' => 'Protetyka stomatologiczna', 'slug' => str_slug('Protetyka stomatologiczna')]);
+        Specialization::create(['name' => 'Stomatologia zachowawcza z endodoncją', 'slug' => str_slug('Stomatologia zachowawcza z endodoncją')]);
+        Specialization::create(['name' => 'Stomatologia dziecięca', 'slug' => str_slug('Stomatologia dziecięca')]);
     }
 }

@@ -1,7 +1,7 @@
 @extends('layouts.site')
 
 @section('title')
-    {{ __('Employmed - Find better, well-paid jobs in medicine. Closer than you think.') }}
+    {{ __('EmployMed - Find better, well-paid jobs in medicine. Closer than you think.') }}
 @endsection
 
 @section('description')

@@ -179,6 +179,7 @@ return [
   'confirm_password' => 'Confirm Password',
   'birthday' => 'Birthday',
   'doctor' => 'Doctor',
+  'dentist' => 'Dentist',
   'visits' => 'Visits:',
   'error-message' => 'Something wrong try again',
   'profile-image' => 'Profile image',

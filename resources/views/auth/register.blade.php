@@ -19,6 +19,9 @@
                         <a class="nav-link active" id="doctor-tab" data-toggle="tab" href="#doctor" role="tab" aria-controls="doctor" aria-selected="true">{{ trans('sentence.doctor') }}</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" id="dentist-tab" data-toggle="tab" href="#dentist" role="tab" aria-controls="dentist" aria-selected="true">{{ trans('sentence.dentist') }}</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" id="company-tab" data-toggle="tab" href="#company" role="tab" aria-controls="company" aria-selected="false">{{ trans('sentence.company') }}</a>
                     </li>
                 </ul>
@@ -127,7 +130,182 @@
                                         <select multiple="multiple"
                                                 class="form-control{{ $errors->has('specializations') ? ' is-invalid' : '' }}"
                                                 id="specializations" name="specializations[]">
-                                            @foreach ($specializations as $key => $specialization)
+                                            @foreach ($specializations->take(75) as $key => $specialization)
+                                                <option value="{{ $specialization->id }}">{{ $specialization->name }}</option>
+                                            @endforeach
+                                        </select>
+                                        @if ($errors->has('specializations'))
+                                            <span class="invalid-feedback" role="alert">
+                                                {{  $errors->first('specializations') }}
+                                            </span>
+                                        @endif
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <div class="col-sm-4"></div>
+                                    <div class="col-sm-8">
+                                        <div class="form-check">
+                                            <input name="term1" type="hidden" value="0">
+                                            <input class="form-check-input" 
+                                            type="checkbox" name="term1" id="term1" value="1"
+                                            {{ old('term1', 0)  == 1 ? 'checked' : '' }}>
+                                            <label class="form-check-label" for="term1">
+                                            {{ __('term1') }}
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <div class="col-sm-4"></div>
+                                    <div class="col-sm-8">
+                                        <div class="form-check">
+                                            <input name="term2" type="hidden" value="0">
+                                            <input class="form-check-input" 
+                                            type="checkbox" name="term2" id="term2" value="1"
+                                            {{ old('term2', 0)  == 1 ? 'checked' : '' }}>
+                                            <label class="form-check-label" for="term2">
+                                            {{ __('term2') }}
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <div class="col-sm-4"></div>
+                                    <div class="col-sm-8">
+                                        <div class="form-check">
+                                            <input name="term3" type="hidden" value="0">
+                                            <input class="form-check-input" 
+                                            type="checkbox" name="term3" id="term3" value="1"
+                                            {{ old('term3', 0)  == 1 ? 'checked' : '' }}>
+                                            <label class="form-check-label" for="term3">
+                                            {{ __('term3') }}
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row mb-0">
+                                    <div class="col-md-6 offset-md-4">
+                                        <button type="submit" class="btn btn-primary">
+                                            {{ trans('sentence.register') }}
+                                        </button>
+
+                                        <a href="{{ route('login.provider', 'google') }}" 
+                                        class="btn btn-secondary">{{ __('Google Sign in') }}</a>
+
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade show active" id="dentist" role="tabpanel" aria-labelledby="dentist-tab">
+                        <div class="card-body">
+                            <form method="POST" action="{{ route('register') }}">
+                                @csrf
+
+                                <div class="form-group row">
+                                    <input id="type" type="hidden" class="form-control" name="type" value="doctor" required autocomplete="type" autofocus>
+                                    <label for="pwz" class="col-md-4 col-form-label text-md-right">{{ __('PWZ') }}</label>
+
+                                    <div class="col-md-6">
+                                        <input id="pwz" type="number" class="form-control @error('pwz') is-invalid @enderror" name="pwz" value="{{ old('pwz') }}" required autocomplete="pwz" autofocus>
+
+                                        @error('pwz')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="birthday" class="col-md-4 col-form-label text-md-right">{{ trans('sentence.birthday') }}</label>
+
+                                    <div class="col-md-6">
+                                        <input id="birthday_d" type="text" class="form-control @error('birthday') is-invalid @enderror" name="birthday" value="{{ old('birthday') }}" required autocomplete="birthday" autofocus>
+
+                                        @error('birthday')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="name" class="col-md-4 col-form-label text-md-right">{{ trans('sentence.first_name') }}</label>
+
+                                    <div class="col-md-6">
+                                        <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+
+                                        @error('name')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail') }}</label>
+
+                                    <div class="col-md-6">
+                                        <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+
+                                        @error('email')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="password" class="col-md-4 col-form-label text-md-right">{{ trans('sentence.password') }}</label>
+
+                                    <div class="col-md-6">
+                                        <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+
+                                        @error('password')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ trans('sentence.confirm_password') }}</label>
+
+                                    <div class="col-md-6">
+                                        <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-md-4 col-form-label text-md-right" for="sex">{{ trans('sentence.sex') }}</label>
+                                    <div class="col-md-6">
+                                        <select data-live-search="true" class="form-control @error('sex') is-invalid @enderror" name="sex" id="sex">
+                                            <option selected>{{ trans('sentence.choose') }}</option>
+                                            <option value="male">{{ trans('sentence.male') }}</option>
+                                            <option value="female">{{ trans('sentence.female') }}</option>
+                                        </select>
+                                        @error('sex')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="specializations" class="col-md-4 col-form-label text-md-right">{{trans('sentence.specializations')}}</label>
+                                    <div class="col-md-6">
+                                        <select multiple="multiple"
+                                                class="form-control{{ $errors->has('specializations') ? ' is-invalid' : '' }}"
+                                                id="specializations_d" name="specializations[]">
+                                            @foreach ($specializations->reverse()->take(9) as $key => $specialization)
                                                 <option value="{{ $specialization->id }}">{{ $specialization->name }}</option>
                                             @endforeach
                                         </select>

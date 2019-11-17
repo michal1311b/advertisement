@@ -181,6 +181,7 @@ return [
   'confirm_password' => 'Potwierdź hasło',
   'birthday' => 'Data urodzenia',
   'doctor' => 'Lekarz',
+  'dentist' => 'Dentysta',
   'visits' => 'Odwiedzin:',
   'error-message' => 'Coś poszło nie tak spróbuj ponownie.',
   'profile-image' => 'Zdjęcie profilowe',
