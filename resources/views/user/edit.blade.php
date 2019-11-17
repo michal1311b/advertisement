@@ -925,6 +925,7 @@
                                             ])
                                         </div>
                                     @else
+                                        <div id="dropzone-previews"></div>
                                         <form method="POST" action="{{ route('upload-cv') }}" aria-label="{{ __('Upload') }}" enctype="multipart/form-data">
                                             @csrf
                                             <div class="form-group row mb-0">
