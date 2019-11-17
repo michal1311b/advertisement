@@ -4,6 +4,7 @@ use Illuminate\Database\Seeder;
 use App\User;
 use App\Role;
 use App\Doctor;
+use App\Preference;
 
 class UserTableSeeder extends Seeder
 {
@@ -34,6 +35,10 @@ class UserTableSeeder extends Seeder
         $doctor->birthday = '1965-05-18';
         $doctor->user_id = $employee->id;
         $doctor->save();
+
+        $preference = new Preference();
+        $preference->user_id = $employee->id;
+        $preference->save();
 
         $manager = new User();
         $manager->name = 'Manager Name';
