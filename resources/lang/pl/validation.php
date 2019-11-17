@@ -154,6 +154,7 @@ return [
         'postCode' => 'kod pocztowy',
         'description' => 'opis',
         'currency_id' => 'waluta',
+        'category_id' => 'kategoria',
         'work_id' => 'rodzaj pracy',
         'min_salary' => 'minimalna kwota',
         'max_salary' => 'maksymalna kwota',
@@ -177,6 +178,7 @@ return [
         'location_id' => 'lokalizacja',
         'radius' => 'promień',
         'message' => 'wiadomość',
-        'specializations' => 'specjalizacje'
+        'specializations' => 'specjalizacje',
+        'cover' => 'zdjęcie promujące'
     ],
 ];

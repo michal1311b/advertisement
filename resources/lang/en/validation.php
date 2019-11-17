@@ -185,7 +185,8 @@ return [
         'location_id' => 'location',
         'radius' => 'radius',
         'message' => 'message',
-        'specializations' => 'specializations'
+        'specializations' => 'specializations',
+        'cover' => 'cover'
     ],
 
 ];

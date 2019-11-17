@@ -25,7 +25,7 @@
         </div>
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">{{ __('Create post') }}</div>
+                <div class="card-header">{{ trans('sentence.post-create') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('posts.store') }}" enctype="multipart/form-data">
@@ -46,7 +46,9 @@
                             <label for="body" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.body') }}</label>
 
                             <div class="col-12 col-md-9">
-                                <textarea id="body" type="body" class="form-control @error('body') is-invalid @enderror" name="body" value="{{ old('body') }}" autocomplete="body" autofocus rows="3"></textarea>
+                                <textarea id="body" type="body" class="form-control @error('body') is-invalid @enderror" name="body" autocomplete="body" autofocus rows="3">
+                                    {{ old('body') }}
+                                </textarea>
                                 @error('body')
                                     <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
@@ -62,20 +64,20 @@
                                     type="checkbox" name="is_published" id="is_published" value="1"
                                     {{ old('is_published', 0)  == 1 ? 'checked' : '' }}>
                                     <label class="form-check-label" for="is_published">
-                                     {{ __('publish now?') }}
+                                     {{ trans('sentence.published') }}
                                     </label>
                                 </div>
                             </div>
                         </div>
 
                         <div class="form-group row">
-                            <label class="col-12 col-md-3 col-form-label text-md-right" for="category_id">{{ __('Category') }}</label>
+                            <label class="col-12 col-md-3 col-form-label text-md-right" for="category_id">{{ trans('sentence.category') }}</label>
                             <div class="col-12 col-md-9">
                                 <select data-live-search="true" class="form-control @error('category_id') is-invalid @enderror" name="category_id" id="category_id">
-                                    <option selected>Choose...</option>
+                                    <option selected value="">{{ trans('sentence.choose') }}</option>
                                     @foreach($categories as $category)
                                         @if($category->is_active === 1)
-                                            <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                            <option {{ old('category_id') == $category->id ? 'selected' : '' }} value="{{ $category->id }}">{{ $category->name }}</option>
                                         @else
                                             <option value="{{ $category->id }}" disabled>{{ $category->name }}</option>
                                         @endif
@@ -88,7 +90,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label class="col-12 col-md-3 col-form-label text-md-right" for="cover">{{ __('Upload cover image') }}</label>
+                            <label class="col-12 col-md-3 col-form-label text-md-right" for="cover">{{ trans('sentence.upload-image') }}</label>
                             <div class="col-12 col-md-9">
                                 <input type="file" class="form-control @error('cover') is-invalid @enderror" name="cover" />
                                 @error('cover')
