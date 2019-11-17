@@ -88,6 +88,7 @@ return [
   'btn-create' => 'Create',
   'bit-add' => 'Add',
   'btn-update' => 'Update',
+  'btn-upload' => 'Upload',
   'btn-delete' => 'Delete',
   'btn-ban' => 'Ban ',
   'btn-unban' => 'Unban ',

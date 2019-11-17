@@ -88,6 +88,7 @@ return [
   'btn-create' => 'Stwórz',
   'bit-add' => 'Dodaj',
   'btn-update' => 'Aktualizuj',
+  'btn-upload' => 'Dodaj plik',
   'btn-delete' => 'Usuń ',
   'btn-ban' => 'Zablokuj ',
   'btn-unban' => 'Odblokuj ',

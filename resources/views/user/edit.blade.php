@@ -933,13 +933,28 @@
                                                     <div class="pb-3">{{ trans('sentence.add-cv-file') }}</div>
                                                     <input type="file" class="dropzone" id="dropzone" name="cv">
 
-                                                    <div id="onyx-dropzone-template"></div>
+                                                    <div id="template-preview">
+                                                        <div class="dz-preview dz-file-preview well" id="dz-preview-template">
+                                                            <div class="dz-details">
+                                                                <div class="dz-filename">
+                                                                    <span data-dz-name></span>
+                                                                </div>
+                                                                <div class="dz-size" data-dz-size></div>
+                                                            </div>
+                                                            <div class="dz-progress">
+                                                                <span class="dz-upload" data-dz-uploadprogress></span>
+                                                            </div>
+                                                            <div class="dz-success-mark"><span></span></div>
+                                                            <div class="dz-error-mark"><span></span></div>
+                                                            <div class="dz-error-message"><span data-dz-errormessage></span></div>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                             <div class="form-group row mt-3">
                                                 <div class="col-md-8 offset-md-4">
                                                     <button type="submit" class="btn btn-primary">
-                                                        {{ trans('sentence.btn-update') }}
+                                                        {{ trans('sentence.btn-upload') }}
                                                     </button>
                                                 </div>
                                             </div>

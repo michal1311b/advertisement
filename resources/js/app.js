@@ -160,8 +160,8 @@ $(document).ready(function() {
     Dropzone.autoDiscover = false;
 
     Dropzone.options.dropzone = {
-        previewsContainer: "#dropzone-previews",
-        previewTemplate: document.querySelector('#dropzone-previews').innerHTML,
+        previewTemplate: document.getElementById('template-preview').innerHTML,
+        previewsContainer: '#template-preview',
         createImageThumbnails: true,
         thumbnailHeight: 120,
         thumbnailWidth: 120,
@@ -202,18 +202,19 @@ $(document).ready(function() {
             return false;
         }
     };
+});
 
-    var minSteps = 6,
-    maxSteps = 60,
-    timeBetweenSteps = 100,
-    bytesPerStep = 100000;
+var minSteps = 6,
+maxSteps = 60,
+timeBetweenSteps = 100,
+bytesPerStep = 100000;
 
-    dropzone.uploadFiles = function(files) {
+dropzone.uploadFiles = function(files) {
     var self = this;
 
-    for (var i = 0; i < files.length; i++) {
-        var file = files[i];
-        totalSteps = Math.round(Math.min(maxSteps, Math.max(minSteps, file.size / bytesPerStep)));
+for (var i = 0; i < files.length; i++) {
+    var file = files[i];
+    totalSteps = Math.round(Math.min(maxSteps, Math.max(minSteps, file.size / bytesPerStep)));
 
         for (var step = 0; step < totalSteps; step++) {
             var duration = timeBetweenSteps * (step + 1);
@@ -237,8 +238,7 @@ $(document).ready(function() {
             }(file, totalSteps, step), duration);
         }
     }
-    }
-});
+}
 
 function addNotifications(newNotifications, target) {
     notifications = _.concat(notifications, newNotifications);

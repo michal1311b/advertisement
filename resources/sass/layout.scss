@@ -312,3 +312,24 @@ a:hover {
     margin-left: auto;
     margin-right: auto;
 }
+
+.uploaded-image {
+    border-bottom: 1px solid #eee;
+
+    .dz-progress {
+        display: block;
+        height: 5px;
+        .dz-upload {
+            display: block;
+            height: 100%;
+            background: #b7e2b7;
+            width: 0;
+        }
+    }
+    .dz-error-message {
+        color: red;
+    }
+    &.dz-complete .dz-progress {
+        display: none;
+    }
+}
