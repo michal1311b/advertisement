@@ -111,7 +111,7 @@ return [
   'subscribe' => 'Zapisz się',
   'specializations' => 'Specializacje',
   'specializations.pending' => 'Specializacje (w trakcie)',
-  'specialization' => 'Specializacja',
+  'specialization' => 'Specjalizacja',
   'user-profile' => 'Profil',
   'user-message' => 'Skrzynka wiadomości',
   'user-offers' => 'Twoje ogłoszenia',
