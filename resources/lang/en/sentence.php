@@ -110,6 +110,7 @@ return [
   'responsibilities' => 'Responsibilities',
   'subscribe' => 'Subscribe',
   'specializations' => 'Specializations',
+  'specializations.pending' => 'Specializations pending',
   'specialization' => 'Specialization',
   'user-profile' => 'User profile',
   'user-message' => 'User message box',

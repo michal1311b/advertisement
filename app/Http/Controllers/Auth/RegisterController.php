@@ -16,6 +16,8 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Auth\Events\Registered;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 
 class RegisterController extends Controller
 {
@@ -90,84 +92,107 @@ class RegisterController extends Controller
      */
     public function register(Request $request)
     {
-        if($request->type === 'doctor')
-        {
-            if(!$this->validateNil($request->pwz, $request->birthday))
+        DB::beginTransaction();
+
+        try {
+            if($request->type === 'doctor')
             {
-                return back()->withErrors([
-                    'message' => 'Walidacja w NIL się nie powiodła.'
-                ])->withInput($request->all());
+                if(!$this->validateNil($request->pwz, $request->birthday))
+                {
+                    return back()->withErrors([
+                        'message' => 'Walidacja w NIL się nie powiodła.'
+                    ])->withInput($request->all());
+                }
+
+                if(!isset($request->specializations) && !isset($request->specializationsp))
+                {
+                    return back()->withErrors([
+                        'message' => 'Musisz wybrać co najmniej jedną specializację'
+                    ])->withInput($request->all());
+                }
+
+                $this->validator($request->all())->validate();
+
+                event(new Registered($user = User::create([
+                    'name' => $request->name,
+                    'email' => $request->email,
+                    'password' => Hash::make($request->password),
+                    'avatar' => '/images'. '/' .  $request->sex . '.png',
+                    'term1' => $request->term1,
+                    'term2' => $request->term2,
+                    'term3' => $request->term3
+                ])));
+
+                $doctor = Doctor::create([
+                    'user_id' => $user->id,
+                    'pwz' => $request->pwz,
+                    'sex' => $request->sex,
+                    'birthday' => $request->birthday
+                ]);
+
+                if(isset($request->specializations))
+                {
+                    $user->specializations()->attach($request->get('specializations'));
+                }
+                
+                if(isset($request->specializationsp))
+                {
+                    $user->specializations()->attach($request->get('specializationsp'), [
+                        'is_pending' => 1
+                    ]);
+                }
+
+                $profile = Profile::create([
+                    'user_id' => $user->id
+                ]);
+
+                $preference = Preference::create([
+                    'user_id' => $user->id
+                ]);
+            } else {
+                $this->validator($request->all())->validate();
+
+                event(new Registered($user = User::create([
+                    'name' => $request->name,
+                    'email' => $request->email,
+                    'password' => Hash::make($request->password),
+                    'avatar' => '/images/chicken-at-facebook.jpg',
+                    'term1' => $request->term1,
+                    'term2' => $request->term2,
+                    'term3' => $request->term3
+                ])));
+
+                $profile = Profile::create([
+                    'user_id' => $user->id,
+                    'street' => $request->street,
+                    'post_code' => $request->post_code,
+                    'city' => $request->city,
+                    'last_name' => $request->last_name,
+                    'company_name' => $request->company_name,
+                    'company_street' => $request->company_street,
+                    'company_post_code' => $request->company_post_code,
+                    'company_city' => $request->company_city,
+                    'company_nip' => $request->company_nip
+                ]);
             }
 
-            if(!isset($request->specializations))
-            {
-                return back()->withErrors([
-                    'message' => 'Musisz wybrać co najmniej jedną specializację'
-                ])->withInput($request->all());
-            }
+            $user
+                ->roles()
+                ->attach(Role::where('name', $request->type)->first());
 
-            $this->validator($request->all())->validate();
+            DB::commit();
 
-            event(new Registered($user = User::create([
-                'name' => $request->name,
-                'email' => $request->email,
-                'password' => Hash::make($request->password),
-                'avatar' => '/images'. '/' .  $request->sex . '.png',
-                'term1' => $request->term1,
-                'term2' => $request->term2,
-                'term3' => $request->term3
-            ])));
+            session()->flash('success', 'You account was created. Please verify your email.');
 
-            $doctor = Doctor::create([
-                'user_id' => $user->id,
-                'pwz' => $request->pwz,
-                'sex' => $request->sex,
-                'birthday' => $request->birthday
-            ]);
-
-            $user->specializations()->attach($request->get('specializations'));
-
-            $profile = Profile::create([
-                'user_id' => $user->id
-            ]);
-
-            $preference = Preference::create([
-                'user_id' => $user->id
-            ]);
-        } else {
-            $this->validator($request->all())->validate();
-
-            event(new Registered($user = User::create([
-                'name' => $request->name,
-                'email' => $request->email,
-                'password' => Hash::make($request->password),
-                'avatar' => '/images/chicken-at-facebook.jpg',
-                'term1' => $request->term1,
-                'term2' => $request->term2,
-                'term3' => $request->term3
-            ])));
-
-            $profile = Profile::create([
-                'user_id' => $user->id,
-                'street' => $request->street,
-                'post_code' => $request->post_code,
-                'city' => $request->city,
-                'last_name' => $request->last_name,
-                'company_name' => $request->company_name,
-                'company_street' => $request->company_street,
-                'company_post_code' => $request->company_post_code,
-                'company_city' => $request->company_city,
-                'company_nip' => $request->company_nip
-            ]);
-        }
-
-        $user
-            ->roles()
-            ->attach(Role::where('name', $request->type)->first());
-
-        session()->flash('success', 'You account was created. Please verify your email.');
-
-        return $this->registered($request, $user)
+            return $this->registered($request, $user)
             ?: redirect($this->redirectPath());
+        } catch (\Exception $e) {
+            Log::info($e);
+            DB::rollback();
+
+            session()->flash('error',  trans('sentence.error-message'));
+
+            return back()->withInput($request->all());
+        }
     }
 }

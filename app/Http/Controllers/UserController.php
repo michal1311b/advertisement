@@ -24,7 +24,7 @@ class UserController extends Controller
 {
     public function edit(User $user)
     {
-        $editUser = Auth::user()->load(['doctor', 'profile', 'specializations', 'experiences', 'courses', 'preference']);
+        $editUser = Auth::user()->load(['doctor', 'profile', 'finishedSpecializations', 'pendingSpecializations', 'experiences', 'courses', 'preference']);
         $user = Auth::user();
         $user->checkAuthorization($editUser->id, $user->id);
         $specializations = Specialization::all();
@@ -75,9 +75,24 @@ class UserController extends Controller
         $profile = $user->profile()->get();
         $profile[0]->update($request->all());
 
-        if(isset($request->specializations))
+        $specializations = $request->input('specializations') ?? [];
+        $pending_specializations = $request->input('specializationsp') ?? [];
+
+        if($pending_specializations && count($pending_specializations))
         {
-            $user->specializations()->sync($request->specializations);
+            array_merge($specializations, $pending_specializations);
+
+            foreach ($pending_specializations as $specialization) {
+                $specializations[$specialization] = ['is_pending' => true];
+            }
+        }
+
+        //user is update by patch method
+        //sometimes there are no specializations or pending specializations input
+        //we don't want to erase user specializations in that case
+        if($specializations)
+        {
+            $user->specializations()->sync($specializations);
         }
 
         session()->flash('success',  trans('sentence.profile-update-success'));

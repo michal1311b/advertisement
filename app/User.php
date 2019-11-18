@@ -85,7 +85,23 @@ class User extends Authenticatable implements MustVerifyEmail, HasLoginsAndDevic
 
     public function specializations()
     {
-        return $this->belongsToMany(Specialization::class)->withTimestamps();
+        return $this->belongsToMany(Specialization::class)
+        ->withPivot('is_pending')
+        ->withTimestamps();
+    }
+
+    public function finishedSpecializations()
+    {
+        return $this->belongsToMany(Specialization::class)
+        ->wherePivot('is_pending', false)
+        ->withTimestamps();
+    }
+
+    public function pendingSpecializations()
+    {
+        return $this->belongsToMany(Specialization::class)
+        ->wherePivot('is_pending', true)
+        ->withTimestamps();
     }
 
     public function languages()

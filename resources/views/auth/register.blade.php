@@ -143,6 +143,24 @@
                                 </div>
 
                                 <div class="form-group row">
+                                    <label for="specializations" class="col-md-4 col-form-label text-md-right">{{trans('sentence.specializations.pending')}}</label>
+                                    <div class="col-md-6">
+                                        <select multiple="multiple"
+                                                class="form-control{{ $errors->has('specializations') ? ' is-invalid' : '' }}"
+                                                id="specializationsp" name="specializationsp[]">
+                                            @foreach ($specializations->take(75) as $key => $specialization)
+                                                <option value="{{ $specialization->id }}">{{ $specialization->name }}</option>
+                                            @endforeach
+                                        </select>
+                                        @if ($errors->has('specializations'))
+                                            <span class="invalid-feedback" role="alert">
+                                                {{  $errors->first('specializations') }}
+                                            </span>
+                                        @endif
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
                                     <div class="col-sm-4"></div>
                                     <div class="col-sm-8">
                                         <div class="form-check">
@@ -305,6 +323,24 @@
                                         <select multiple="multiple"
                                                 class="form-control{{ $errors->has('specializations') ? ' is-invalid' : '' }}"
                                                 id="specializations_d" name="specializations[]">
+                                            @foreach ($specializations->reverse()->take(9) as $key => $specialization)
+                                                <option value="{{ $specialization->id }}">{{ $specialization->name }}</option>
+                                            @endforeach
+                                        </select>
+                                        @if ($errors->has('specializations'))
+                                            <span class="invalid-feedback" role="alert">
+                                                {{  $errors->first('specializations') }}
+                                            </span>
+                                        @endif
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="specializationsp" class="col-md-4 col-form-label text-md-right">{{trans('sentence.specializations.pending')}}</label>
+                                    <div class="col-md-6">
+                                        <select multiple="multiple"
+                                                class="form-control{{ $errors->has('specializations') ? ' is-invalid' : '' }}"
+                                                id="specializations_dp" name="specializationsp[]">
                                             @foreach ($specializations->reverse()->take(9) as $key => $specialization)
                                                 <option value="{{ $specialization->id }}">{{ $specialization->name }}</option>
                                             @endforeach

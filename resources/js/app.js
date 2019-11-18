@@ -79,7 +79,15 @@ $(document).ready(function() {
         width: '100%'
     });
 
+    $('#specializationsp').select2({
+        width: '100%'
+    });
+
     $('#specializations_d').select2({
+        width: '100%'
+    });
+
+    $('#specializations_dp').select2({
         width: '100%'
     });
 
@@ -166,8 +174,6 @@ $(document).ready(function() {
 
     window.Dropzone = require('dropzone');
     Dropzone.autoDiscover = false;
-
-    console.log(document.getElementById('template-preview').innerHTML);
 
     Dropzone.options.dropzone = {
         previewTemplate: document.getElementById('template-preview').innerHTML,

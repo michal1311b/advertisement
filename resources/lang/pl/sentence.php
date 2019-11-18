@@ -110,6 +110,7 @@ return [
   'responsibilities' => 'Zakres obowiązków',
   'subscribe' => 'Zapisz się',
   'specializations' => 'Specializacje',
+  'specializations.pending' => 'Specializacje (w trakcie)',
   'specialization' => 'Specializacja',
   'user-profile' => 'Profil',
   'user-message' => 'Skrzynka wiadomości',
