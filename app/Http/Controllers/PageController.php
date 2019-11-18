@@ -8,6 +8,7 @@ use App\Page;
 use App\User;
 use Carbon\Carbon;
 use App\Http\Requests\Admin\Page\StoreRequest;
+use App\Http\Requests\Admin\Page\UploadRequest;
 use App\Role;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Config;
@@ -113,7 +114,7 @@ class PageController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Page $page, StoreRequest $request)
+    public function update(Page $page, UploadRequest $request)
     {
         DB::beginTransaction();
 

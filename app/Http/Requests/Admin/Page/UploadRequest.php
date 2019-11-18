@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\Admin\Post;
+namespace App\Http\Requests\Admin\Page;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdateRequest extends FormRequest
+class UploadRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,9 +25,8 @@ class UpdateRequest extends FormRequest
     {
         return [
             'title' => 'required|max:190',
+            'shot_description' => 'required|max:190',
             'body' => 'required|max:65000',
-            'category_id' => 'required|exists:categories,id',
-            'cover' => 'image',
         ];
     }
 }

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Category;
 use App\Http\Requests\Admin\Category\StoreRequest;
+use App\Http\Requests\Admin\Category\UploadRequest;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
@@ -94,7 +95,7 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Category $category, StoreRequest $request)
+    public function update(Category $category, UploadRequest $request)
     {
         DB::beginTransaction();
 

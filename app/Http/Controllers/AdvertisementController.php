@@ -12,6 +12,7 @@ use App\Location;
 use App\State;
 use App\Gallery;
 use App\Http\Requests\Advertisement\StoreRequest;
+use App\Http\Requests\Advertisement\UploadRequest;
 use App\Jobs\SendEmailJob;
 use App\Http\Service\Visit;
 use App\Settlement;
@@ -146,7 +147,7 @@ class AdvertisementController extends Controller
         return back();
     }
 
-    public function update(StoreRequest $request, $id)
+    public function update(UploadRequest $request, $id)
     {
         DB::beginTransaction();
 
