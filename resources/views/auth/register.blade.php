@@ -201,7 +201,7 @@
                             </form>
                         </div>
                     </div>
-                    <div class="tab-pane fade show active" id="dentist" role="tabpanel" aria-labelledby="dentist-tab">
+                    <div class="tab-pane fade show" id="dentist" role="tabpanel" aria-labelledby="dentist-tab">
                         <div class="card-body">
                             <form method="POST" action="{{ route('register') }}">
                                 @csrf
