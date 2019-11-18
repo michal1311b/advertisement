@@ -129,9 +129,28 @@ class PreferenceController extends Controller
             $userLocalizations = LocationUser::where('user_id', $user->id)
             ->pluck('location_id');
 
+            $dataForRadius = LocationUser::where('user_id', $user->id)
+            ->get();
+
             if($userLocalizations->count() > 0)
             {
-                $advertisements = Advertisement::whereIn('location_id', $userLocalizations)
+                $locationData = [];
+                foreach($dataForRadius as $loc)
+                {
+                    $searching_point = Location::find($loc->id);
+
+                    $raw = DB::raw('( 6371 * acos( cos( radians(' . $searching_point->latitude . ') ) * cos( radians( latitude ) ) * cos( radians( longitude ) - radians(' . $searching_point->longitude . ') ) + sin( radians(' . $searching_point->latitude . ') ) * sin( radians( latitude ) ) ) )  AS distance');
+
+                    $locations = DB::table('locations')->select('*', $raw)
+                    ->orderBy('distance', 'ASC')
+                    ->having('distance', '<=', $loc->radius)->pluck('id');
+
+                    $locationData = $locations->toArray();
+                }
+
+                $locationIds = array_unique(array_merge($locationData, $userLocalizations->toArray()));
+
+                $advertisements = Advertisement::whereIn('location_id', $locationIds)
                 ->where('settlement_id', $user->preference->settlement_id)
                 ->where('work_id', $user->preference->work_id)
                 ->where('currency_id', $user->preference->currency_id)
