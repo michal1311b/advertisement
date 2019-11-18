@@ -19,7 +19,7 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">{{ __('Show post:') }} <strong>{{ $post->title }}</strong></div>
+                <div class="card-header"><strong>{{ $post->title }}</strong></div>
 
                 <div class="card-body">
                     <div class="container-fluid">
@@ -27,25 +27,25 @@
                             <div class="col-12 pb-2">
                                 <div class="btn-toolbar justify-content-between" role="toolbar" aria-label="Toolbar with button groups">
                                     <div class="btn-group" role="group" aria-label="First group">
-                                        <strong>Posted by: </strong> {{ $post->user->name }}
+                                        <strong>{{ trans('sentence.post-by') }}</strong>&nbsp;{{ $post->user->name }}
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-12 pb-2">
+                            <div class="col-12 col-md-6 pb-2">
                                 <img src="{{ $post->cover }}" class="w-100" alt="{{ $post->title }}"/>
                             </div>
-                            <div class="col-12 pb-2">
-                                {{ trans('sentence.tags') }}
-                                @foreach($post->pins as $pin)
-                                    <a href="{{ route('postTag', ['tagSlug' => $pin->slug]) }}">
-                                        <span class="badge badge-pill badge-info text-white">
-                                            {{ $pin->name }}
-                                        </span>
-                                    </a>
-                                @endforeach
-                            </div>
-                            <div class="col-12">
+                            <div class="col-12 col-md-6">
                                 <ul class="list-group">
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        {{ trans('sentence.tags') }}
+                                        @foreach($post->pins as $pin)
+                                            <a href="{{ route('postTag', ['tagSlug' => $pin->slug]) }}">
+                                                <span class="badge badge-pill badge-info text-white">
+                                                    {{ $pin->name }}
+                                                </span>
+                                            </a>
+                                        @endforeach
+                                    </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
                                         {{ trans('sentence.category') }}
                                         <a href="{{ route('blog.category', $post->category) }}">
