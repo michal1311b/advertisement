@@ -42,7 +42,7 @@
     <script src="https://kit.fontawesome.com/96c3aa2e82.js" crossorigin="anonymous"></script>
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css?rand=9') }}" rel="stylesheet">
+    <link href="{{ asset('css/app.css?rand=10') }}" rel="stylesheet">
     @yield('css')
     <script src="https://cdn.tiny.cloud/1/oknjb9412whickdkirspmofjwrqudakcjhdvyf31s6xhshtt/tinymce/5/tinymce.min.js"></script>
     
@@ -168,7 +168,7 @@
     <!-- Scripts -->
     @yield('scripts')
     
-    <script src="{{ asset('js/app.js?rand=9') }}" defer></script>
+    <script src="{{ asset('js/app.js?rand=10') }}" defer></script>
     
     @if($app->environment('production'))
         <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -181,17 +181,6 @@
             gtag('config', 'UA-151388518-1');
         </script>
     @endif
-    <script>
-        if ('serviceWorker' in navigator) {
-            console.log("Will the service worker register?");
-            navigator.serviceWorker.register('service-worker.js')
-            .then(function(reg){
-                console.log("Yes, it did.");
-            }).catch(function(err) {
-                console.log("No it didn't. This happened:", err)
-            });
-        }
-    </script>
     <!-- Go to www.addthis.com/dashboard to customize your tools -->
     <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5dc7278fb46e12ce"></script>
 
