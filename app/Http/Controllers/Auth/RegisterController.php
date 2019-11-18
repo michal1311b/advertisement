@@ -184,8 +184,7 @@ class RegisterController extends Controller
 
             session()->flash('success', 'You account was created. Please verify your email.');
 
-            return $this->registered($request, $user)
-            ?: redirect($this->redirectPath());
+            return back();
         } catch (\Exception $e) {
             Log::info($e);
             DB::rollback();
