@@ -186,7 +186,7 @@
                 @foreach($similars as $similar)
                     <!-- List group-->
                     <ul class="list-group shadow">
-                        <a href="{{ route('show-advertisement', $similar->slug) }}" class="no-decoration"> 
+                        <a href="{{ route('show-advertisement', ['id' => $similar->id, 'slug' => $similar->slug]) }}" class="no-decoration"> 
                             <!-- list group item-->
                             <li class="list-group-item">
                                 <!-- Custom content-->

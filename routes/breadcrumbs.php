@@ -16,7 +16,7 @@ Breadcrumbs::for('advertisement', function ($trail) {
 
 Breadcrumbs::for('advertisement-article', function ($trail, $advertisment) {
     $trail->parent('advertisement');
-    $trail->push($advertisment->title, route('show-advertisement', $advertisment));
+    $trail->push($advertisment->title, route('show-advertisement', ['id' => $advertisment->id, 'slug' => $advertisment->slug]));
 });
 
 Breadcrumbs::for('advertisement-edit', function ($trail, $advertisment) {

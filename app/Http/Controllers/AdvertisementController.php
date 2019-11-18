@@ -79,7 +79,7 @@ class AdvertisementController extends Controller
         }
     }
 
-    public function show($slug)
+    public function show($id, $slug)
     {
         $advertisement = Advertisement::whereSlug($slug)
             ->with([

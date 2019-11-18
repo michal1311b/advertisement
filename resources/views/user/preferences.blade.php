@@ -31,7 +31,7 @@
                 @foreach($preData as $data)
                     <!-- List group-->
                     <ul class="list-group shadow">
-                        <a href="{{ route('show-advertisement', $data->advertisements->slug) }}" class="no-decoration"> 
+                        <a href="{{ route('show-advertisement', ['id' => $data->advertisements->id, 'slug' => $data->advertisements->slug]) }}" class="no-decoration"> 
                             <!-- list group item-->
                             <li class="list-group-item">
                                 <!-- Custom content-->

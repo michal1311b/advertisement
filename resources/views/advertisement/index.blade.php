@@ -35,7 +35,7 @@
                 @foreach($advertisements as $advertisement)
                     <!-- List group-->
                     <ul class="list-group shadow">
-                        <a href="{{ route('show-advertisement', $advertisement->slug) }}" class="no-decoration"> 
+                        <a href="{{ route('show-advertisement', ['id' => $advertisement->id, 'slug' => $advertisement->slug]) }}" class="no-decoration"> 
                             <!-- list group item-->
                             <li class="list-group-item">
                                 <!-- Custom content-->
@@ -84,7 +84,7 @@ markers = [
             "name": "{{ $advertisement->location->city }}",
             "lat": {{ $advertisement->location->latitude }},
             "lng": {{ $advertisement->location->longitude }},
-            "slug": "{{ route('show-advertisement', $advertisement->slug) }}",
+            "slug": "{{ route('show-advertisement', ['id' => $advertisement->id, 'slug' => $advertisement->slug]) }}",
             "min_salary": {{ $advertisement->min_salary }},
             "max_salary": {{ $advertisement->max_salary }},
             "currency": "{{ $advertisement->currency->symbol }}",
