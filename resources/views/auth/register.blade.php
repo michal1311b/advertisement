@@ -115,8 +115,8 @@
                                     <div class="col-md-6">
                                         <select data-live-search="true" class="form-control @error('sex') is-invalid @enderror" name="sex" id="sex">
                                             <option selected>{{ trans('sentence.choose') }}</option>
-                                            <option value="male">{{ trans('sentence.male') }}</option>
-                                            <option value="female">{{ trans('sentence.female') }}</option>
+                                            <option {{ old('sex') == 'male' ? 'selected' : '' }} value="male">{{ trans('sentence.male') }}</option>
+                                            <option {{ old('sex') == 'female' ? 'selected' : '' }} value="female">{{ trans('sentence.female') }}</option>
                                         </select>
                                         @error('sex')
                                             <div class="alert alert-danger">{{ $message }}</div>
@@ -307,9 +307,9 @@
                                     <label class="col-md-4 col-form-label text-md-right" for="sex">{{ trans('sentence.sex') }}</label>
                                     <div class="col-md-6">
                                         <select data-live-search="true" class="form-control @error('sex') is-invalid @enderror" name="sex" id="sex">
-                                            <option selected>{{ trans('sentence.choose') }}</option>
-                                            <option value="male">{{ trans('sentence.male') }}</option>
-                                            <option value="female">{{ trans('sentence.female') }}</option>
+                                            <option>{{ trans('sentence.choose') }}</option>
+                                            <option {{ old('sex') == 'male' ? 'selected' : '' }} value="male">{{ trans('sentence.male') }}</option>
+                                            <option {{ old('sex') == 'female' ? 'selected' : '' }} value="female">{{ trans('sentence.female') }}</option>
                                         </select>
                                         @error('sex')
                                             <div class="alert alert-danger">{{ $message }}</div>
