@@ -53,6 +53,9 @@
                                         <h6 class="font-weight-bold my-2"><i class="fas fa-coins"></i> {{ $advertisement->advertisement->settlement->name }}: {{ $advertisement->advertisement->min_salary }} - {{ $advertisement->advertisement->max_salary }} {{ $advertisement->advertisement->currency->symbol }}</h6>
                                     </div>
                                     <div class="badge badge-secondary">{{ $advertisement->advertisement->specialization->name }}</div>
+                                    <div>
+                                        {{ trans('sentence.expired_at') }} <div class="badge badge-primary">{{ $advertisement->advertisement->expired_at }}</div>
+                                    </div>
                                 </div>
                                 @if($advertisement->advertisement->galleries()->count())
                                     <img src="{{ $advertisement->advertisement->galleries[0]->path }}" width="200" class="ml-lg-5 order-1 order-lg-2" alt="{{$advertisement->advertisement->galleries[0]->oldName}}">

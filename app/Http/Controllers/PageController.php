@@ -20,14 +20,13 @@ class PageController extends Controller
     public function siteIndex()
     {
         $advertisements = Advertisement::with(['state', 'galleries', 'location'])
-        ->where('created_at', '>', Carbon::now()->subDays(30))->orderBy('id', 'desc')->take(5)->get();
-        $expirateDate = Carbon::now()->subDays(30);
+        ->where('expired_at', '>', Carbon::now())->orderBy('id', 'desc')->take(5)->get();
         $companies = User::has('advertisements', '>' , 0)
         ->withCount('advertisements')
         ->orderBy('advertisements_count')
         ->get();
 
-        return view('welcome', compact(['advertisements', 'expirateDate', 'companies']));
+        return view('welcome', compact(['advertisements', 'companies']));
     }
 
     /**

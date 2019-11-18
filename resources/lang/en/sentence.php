@@ -128,6 +128,7 @@ return [
   'salary' => 'Salary',
   'created_at' => 'Created at',
   'updated_at' => 'Updated at',
+  'expired_at' => 'Expired at',
   'settlement' => 'Settlement',
   'requirements' => 'Requirements',
   'profits' => 'Profits',

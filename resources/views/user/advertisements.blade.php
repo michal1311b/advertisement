@@ -44,6 +44,9 @@
                                             <h6 class="font-weight-bold ml-3 my-2"><i class="fas fa-eye"></i> {{ trans('sentence.visits') }} {{ count($advertisement->visits) }}</h6>
                                         </div>
                                         <div class="badge badge-secondary">{{ $advertisement->specialization->name }}</div>
+                                        <div>
+                                            {{ trans('sentence.expired_at') }} <div class="badge badge-primary">{{ $advertisement->expired_at }}</div>
+                                        </div>
                                     </div>
                                     @if($advertisement->galleries()->count())
                                         <img src="{{ $advertisement->galleries[0]->path }}" width="200" class="ml-lg-5 order-1 order-lg-2" alt="{{$advertisement->galleries[0]->oldName}}">

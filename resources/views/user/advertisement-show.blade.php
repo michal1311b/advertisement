@@ -59,6 +59,10 @@
                                         <span class="badge badge-pill">{{ $advertisement->created_at }}</span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        {{ trans('sentence.expired_at') }}
+                                        <span class="badge badge-pill badge-primary">{{ $advertisement->expired_at }}</span>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
                                         {{ trans('sentence.phone') }}
                                         <span class="badge badge-pill">{{ $advertisement->phone }}</span>
                                     </li>

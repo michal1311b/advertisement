@@ -128,6 +128,7 @@ return [
   'salary' => 'Wynagrodzenie',
   'created_at' => 'Utworzono',
   'updated_at' => 'Zaktualizowano',
+  'expired_at' => 'Wygasa',
   'settlement' => 'Rodzaj umowy',
   'requirements' => 'Wymagania',
   'profits' => 'Benefity',

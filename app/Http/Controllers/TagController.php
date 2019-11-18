@@ -13,7 +13,7 @@ class TagController extends Controller
     public function show($slug, $page = 1)
     {
         $advertisements = Tag::with(['advertisement' => function($query) {
-            $query->where('created_at', '>', Carbon::now()->subDays(30));
+            $query->where('expired_at', '>', Carbon::now());
         }])->where('slug', $slug)->paginate(5);
 
         $locations = Location::all();

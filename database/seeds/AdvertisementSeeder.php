@@ -64,6 +64,7 @@ class AdvertisementSeeder extends Seeder
             $advertisement->term3 = 1;
             $advertisement->negotiable = 0;
             $advertisement->slug = str_slug($title, '-');
+            $advertisement->expired_at = Carbon::now()->addDays(30);
 
             $advertisement->save();
 

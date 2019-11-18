@@ -33,7 +33,8 @@ class Advertisement extends Model
         'term2',
         'term3',
         'negotiable',
-        'slug'
+        'slug',
+        'expired_at'
     ];
 
     public static function uploadDir()
@@ -121,6 +122,7 @@ class Advertisement extends Model
         $entry->term2 = $attributes['term2'];
         $entry->term3 = $attributes['term3'];
         $entry->negotiable = $attributes['negotiable'];
+        $entry->expired_at = Carbon::now()->addDays(30);
         $entry->slug = $attributes['slug'];
         $entry->save();
 

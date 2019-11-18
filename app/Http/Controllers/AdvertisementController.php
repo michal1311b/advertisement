@@ -27,7 +27,7 @@ class AdvertisementController extends Controller
     public function index()
     {
         $advertisements = Advertisement::with(['state', 'galleries', 'location'])
-        ->where('created_at', '>', Carbon::now()->subDays(30))->paginate(5);
+        ->where('expired_at', '>', Carbon::now())->paginate(5);
         $locations = Location::all();
         $specializations = Specialization::all();
         $expirateDate = Carbon::now()->subDays(30);
@@ -106,6 +106,7 @@ class AdvertisementController extends Controller
         ->where('settlement_id', $advertisement->settlement_id)
         ->where('min_salary', '>=', $advertisement->min_salary)
         ->where('id', '!=', $advertisement->id)
+        ->where('expired_at', '>', Carbon::now())
         ->paginate(3);
 
         return view('advertisement.show', compact(['advertisement', 'similars']));
@@ -199,6 +200,7 @@ class AdvertisementController extends Controller
         if ($request->input('location_id') !== null) {
             $location = Location::find($request->input('location_id'));
             $advertisements = Advertisement::where('location_id', $location->id)
+                ->where('expired_at', '>', Carbon::now())
                 ->where('min_salary', '>=', $range[0])
                 ->where('max_salary', '<=', $range[1]);
         }
@@ -206,6 +208,7 @@ class AdvertisementController extends Controller
         if ($request->input('specialization_id') !== null) {
             $specialization = Specialization::find($request->input('specialization_id'));
             $advertisements = Advertisement::where('specialization_id', $specialization->id)
+                ->where('expired_at', '>', Carbon::now())
                 ->where('min_salary', '>=', $range[0])
                 ->where('max_salary', '<=', $range[1]);
         }
@@ -214,6 +217,7 @@ class AdvertisementController extends Controller
             $specialization = Specialization::find($request->input('specialization_id'));
             $location = Location::find($request->input('location_id'));
             $advertisements = Advertisement::where('specialization_id', $specialization->id)
+                ->where('expired_at', '>', Carbon::now())
                 ->where('location_id', $location->id)
                 ->where('min_salary', '>=', $range[0])
                 ->where('max_salary', '<=', $range[1]);
@@ -221,7 +225,8 @@ class AdvertisementController extends Controller
 
         if (($request->input('location_id') === null) && ($request->input('specialization_id') === null)) {
             $advertisements = Advertisement::where('min_salary', '>=', ($range[0] ?? 0))
-                ->where('max_salary', '<=', ($range[1] ?? 1000));
+                ->where('max_salary', '<=', ($range[1] ?? 1000))
+                ->where('expired_at', '>', Carbon::now());
         }
 
         $locations = Location::all();
