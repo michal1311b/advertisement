@@ -33,7 +33,7 @@ class PreferenceController extends Controller
             Log::info($e);
             DB::rollback();
 
-            session()->flash('danger',  trans('sentence.error-message'));
+            session()->flash('error',  trans('sentence.error-message'));
 
             return back()->withInput($request->all());
         }
