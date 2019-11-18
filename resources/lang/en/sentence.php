@@ -207,5 +207,7 @@ return [
   'reply-email-title' => 'EmployMed - Reply to your report',
   'register-subscribtion-thanks' => 'Thanks for register to newsletter click link below to confirm subscrbtion.',
   'confirm-link' => 'Here is answer link: ',
-  'add-cv-file' => 'Add your Cv file'
+  'add-cv-file' => 'Add your Cv file',
+  'nil-validation-faild' => 'Validation at NIL failed.',
+  'one-specialization-at-least' => 'You must select at least one specialization'
 ];

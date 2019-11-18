@@ -207,5 +207,7 @@ return [
   'reply-email-title' => 'EmployMed - Odpowiedź na Twoje zgłoszenie',
   'register-subscribtion-thanks' => 'Dziękujemy za rejestrację do newslettera. Kliknij link poniżej, aby potwierdzić subskrypcję.',
   'confirm-link' => 'Tutaj znajduję się link do potwierdzenia: ',
-  'add-cv-file' => 'Dodaj swój plik z CV'
+  'add-cv-file' => 'Dodaj swój plik z CV',
+  'nil-validation-faild' => 'Walidacja w NIL się nie powiodła.',
+  'one-specialization-at-least' => 'Musisz wybrać co najmniej jedną specializację'
 ];

@@ -100,14 +100,14 @@ class RegisterController extends Controller
                 if(!$this->validateNil($request->pwz, $request->birthday))
                 {
                     return back()->withErrors([
-                        'message' => 'Walidacja w NIL się nie powiodła.'
+                        'message' => trans('sentence.nil-validation-faild')
                     ])->withInput($request->all());
                 }
 
                 if(!isset($request->specializations) && !isset($request->specializationsp))
                 {
                     return back()->withErrors([
-                        'message' => 'Musisz wybrać co najmniej jedną specializację'
+                        'message' => trans('sentence.one-specialization-at-least')
                     ])->withInput($request->all());
                 }
 
