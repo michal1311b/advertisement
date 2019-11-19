@@ -10,6 +10,7 @@ class Page extends Model
         'title',
         'shot_description',
         'body',
+        'is_active',
         'slug'
     ];
 
@@ -20,6 +21,7 @@ class Page extends Model
         $entry->title = $attributes['title'];
         $entry->body = $attributes['body'];
         $entry->shot_description = $attributes['shot_description'];
+        $entry->is_active = $attributes['is_active'];
         $entry->slug = $attributes['slug'];
         $entry->save();
     }
