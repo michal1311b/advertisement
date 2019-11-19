@@ -12,8 +12,12 @@ class StaticQuestionnaire extends Model
         'specialization_id',
         'specializationp_id',
         'worktime',
+        'workplace',
+        'workplace_extra',
         'description',
         'criteria',
+        'social_media_extra',
+        'social_media',
         'email',
         'term1'
     ];

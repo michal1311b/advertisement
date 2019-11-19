@@ -223,5 +223,9 @@ return [
   'main-problems-in-medicine' => 'What are your biggest problems when looking for a doctor?',
   'main-criteria-to-send-cv' => 'What criteria of the offer decide that you will send your CV?',
   'static-quiestionnaire-title' => 'Survey on the work of a doctor',
-  'questionnaire-thanks' => 'Thank you for completing the survey'
+  'questionnaire-thanks' => 'Thank you for completing the survey',
+  'social-media-quiestion' => 'Where do you usually look for job offers?',
+  'job-placement-services' => 'Job placement services',
+  'industry-press' => 'Industry press',
+  'consultation' => 'Consultation'
 ];

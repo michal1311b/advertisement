@@ -207,6 +207,40 @@
                             </div>
                         </div>
 
+                        <div class="form-group">
+                            <h5><span class="grey">9</span>{{ trans('sentence.social-media-quiestion') }}</h5>
+                            <div class="form-check radio">
+                                <input class="form-check-input" type="radio" value="Facebook" id="facebook" name="social_media">
+                                <label class="form-check-label radio-label" for="facebook">
+                                    {{ __('Facebook') }}
+                                </label>
+                            </div>
+                            <div class="form-check radio">
+                                <input class="form-check-input" type="radio" value="Serwisy pośrednictwa pracy" id="job-placement-services" name="social_media">
+                                <label class="form-check-label radio-label" for="job-placement-services">
+                                    {{ trans('sentence.job-placement-services') }}
+                                </label>
+                            </div>
+                            <div class="form-check radio">
+                                <input class="form-check-input" type="radio" value="Prasa branżowa" id="industry-press" name="social_media">
+                                <label class="form-check-label radio-label" for="industry-press">
+                                    {{ trans('sentence.industry-press') }}
+                                </label>
+                            </div>
+                            <div class="form-check radio">
+                                <input class="form-check-input" type="radio" value="Konsylium" id="consultation" name="social_media">
+                                <label class="form-check-label radio-label" for="consultation">
+                                    {{ trans('sentence.consultation') }}
+                                </label>
+                            </div>
+                            <div class="form-check radio">
+                                <label class="form-check-label radio-label" for="something-else">
+                                    {{ trans('sentence.something-else') }}
+                                </label>
+                                <input class="form-control" type="text" value="" id="something-else" name="social_media_extra">
+                            </div>
+                        </div>
+
                         <div class="form-group row">
                             <label for="email" class="col-12 col-form-label">
                                 <h5><span class="grey">10</span>{{ __('Email') }}</h5>
@@ -231,21 +265,6 @@
                                         {{ __('term1') }}
                                     </label>
                                 </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-3">
-                            <div class="col-12">
-                                <div class="pt-3">
-                                    {!! NoCaptcha::renderJs() !!}
-                                    {!! NoCaptcha::display(['data-theme' => 'dark']) !!}
-                                </div>
-                        
-                                @if ($errors->has('g-recaptcha-response'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('g-recaptcha-response') }}</strong>
-                                    </span>
-                                @endif
                             </div>
                         </div>
 

@@ -17,9 +17,13 @@ class CreateStaticQuestionnairesTable extends Migration
             $table->bigIncrements('id');
             $table->string('sex');
             $table->string('age');
-            $table->bigInteger('specialization_id')->unsigned();
-            $table->bigInteger('specializationp_id')->unsigned();
+            $table->bigInteger('specialization_id')->unsigned()->nullable();
+            $table->bigInteger('specializationp_id')->unsigned()->nullable();
+            $table->string('workplace')->nullable();
+            $table->string('workplace_extra')->nullable();
             $table->string('worktime');
+            $table->string('social_media')->nullable();
+            $table->string('social_media_extra')->nullable();
             $table->text('description');
             $table->text('criteria');
             $table->string('email');

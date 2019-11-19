@@ -223,5 +223,9 @@ return [
   'main-problems-in-medicine' => 'Jakie są według Pana/Pani największe problemy przy szukaniu pracy przez lekarzy?',
   'main-criteria-to-send-cv' => 'Jakie kryteria oferty decydują o tym że Pan/Pani wyśle swoje cv?',
   'static-quiestionnaire-title' => 'Ankieta na temat pracy lekarza',
-  'questionnaire-thanks' => 'Dziękujemy za wypełnienie ankiety'
+  'questionnaire-thanks' => 'Dziękujemy za wypełnienie ankiety',
+  'social-media-quiestion' => 'Gdzie najczęściej szukasz ofert pracy?',
+  'job-placement-services' => 'Serwisy pośrednictwa pracy',
+  'industry-press' => 'Prasa branżowa',
+  'consultation' => 'Konsylium'
 ];
