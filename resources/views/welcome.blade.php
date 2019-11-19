@@ -157,8 +157,8 @@
                     <!-- End -->
                 @endforeach
             @else
-                <div class="col-12">
-                    <a href="{{ route('advertisement-create') }}">
+                <div class="col-12 py-3">
+                    <a href="{{ route('create-advertisement') }}">
                         <h4>{{ trans('sentence.no-offers') }}</h4>
                     </a>
                 </div>
