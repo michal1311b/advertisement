@@ -11,26 +11,17 @@
                 <div class="card-header">Create advertisement</div>
 
                 <div class="card-body">
-                    <form method="POST" id="dynamic_form">
-                        <table class="table table-bordered table-striped" id="user_table">
-                            <thead>
-                                <tr>
-                                    <td colspan="3">
-                                        <input id="title" type="title" class="form-control @error('title') is-invalid @enderror" name="title" value="{{ old('title') }}" autocomplete="title" autofocus>
-                                    </td>
-                                </tr>
-                            </thead>
-                            <tbody class="answerContainer"></tbody>
-                           <tfoot>
-                                <tr>
-                                    <td colspan="2" align="right">&nbsp;</td>
-                                    <td>
-                                        @csrf
-                                        <input type="submit" name="save" id="save" class="btn btn-primary" value="Save" />
-                                    </td>
-                                </tr>
-                            </tfoot>
-                        </table>
+                    <form method="POST" action="{{ route('questionnaire.store') }}">
+                        <div class="form-group row">
+                            <label for="title" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.title') }}</label>
+
+                            <div class="col-12 col-md-9">
+                                <input id="title" type="title" class="form-control @error('title') is-invalid @enderror" name="title" value="{{ old('title') }}" autocomplete="title" autofocus>
+                                @error('title')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
+                        </div>
                     </form>
                 </div>
             </div>

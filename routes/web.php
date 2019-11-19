@@ -16,6 +16,9 @@ Route::get('lang/{locale}', 'LanguageController@lang')->name('locale');
 
 Route::post('/subscribe', 'SubscriberController@store')->name('subscribe');
 
+Route::get('/ankieta-na-temat-pracy-lekarza', 'StaticQuestionnaireController@show')->name('static.questionnaire.show');
+Route::post('/ankieta-na-temat-pracy-lekarza', 'StaticQuestionnaireController@store')->name('static.questionnaire.store');
+
 Route::get('/verify/subscribtion/{token}', [
     'uses' => 'SubscriberController@verify'
 ]);
