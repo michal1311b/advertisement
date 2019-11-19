@@ -10,6 +10,6 @@
 </div>
 <div class="list-group list-group-flush">
     @foreach(\App\Page::where('is_active', 1)->get() as $page)
-        <a href="{{ route('site.page', $page->slug) }}" class="list-group-item list-group-item-action bg-light">{{ $page->title }}</a>
+        <a href="{{ route('site.page', $page->slug) }}" class="list-group-item list-group-item-action bg-light {{ Request::is($page->slug) ? 'text-primary active' : null }}">{{ $page->title }}</a>
     @endforeach
 </div>
