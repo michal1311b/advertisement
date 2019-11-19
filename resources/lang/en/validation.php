@@ -186,7 +186,10 @@ return [
         'radius' => 'radius',
         'message' => 'message',
         'specializations' => 'specializations',
-        'cover' => 'cover'
+        'cover' => 'cover',
+        'age' => 'age',
+        'criteria' => 'criteria',
+        'worktime' => 'worktime'
     ],
 
 ];

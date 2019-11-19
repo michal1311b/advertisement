@@ -179,6 +179,9 @@ return [
         'radius' => 'promień',
         'message' => 'wiadomość',
         'specializations' => 'specjalizacje',
-        'cover' => 'zdjęcie promujące'
+        'cover' => 'zdjęcie promujące',
+        'age' => 'wiek',
+        'criteria' => 'kryteria',
+        'worktime' => 'czas pracy'
     ],
 ];
