@@ -137,19 +137,25 @@ class PreferenceController extends Controller
                 $locationData = [];
                 foreach($dataForRadius as $loc)
                 {
-                    $searching_point = Location::find($loc->id);
+                    $searching_point = Location::find($loc->location_id);
 
-                    $raw = DB::raw('( 6371 * acos( cos( radians(' . $searching_point->latitude . ') ) * cos( radians( latitude ) ) * cos( radians( longitude ) - radians(' . $searching_point->longitude . ') ) + sin( radians(' . $searching_point->latitude . ') ) * sin( radians( latitude ) ) ) )  AS distance');
-
+                    $raw = DB::raw('(6371 * acos( cos( radians(' . $searching_point->latitude . ') ) * cos( radians( latitude ) ) * cos( radians( longitude ) - radians(' . $searching_point->longitude . ') ) + sin( radians(' . $searching_point->latitude . ') ) * sin( radians( latitude ) ) ) )  AS distance');
+                   
                     $locations = DB::table('locations')->select('*', $raw)
                     ->orderBy('distance', 'ASC')
-                    ->having('distance', '<=', $loc->radius)->pluck('id');
+                    ->get();
 
-                    $locationData = $locations->toArray();
+                    foreach($locations->toArray() as $distance)
+                    {
+                        if($distance->distance <= $loc->radius)
+                        {
+                            array_push($locationData, $distance->id);
+                        }
+                    }
                 }
-
+                
                 $locationIds = array_unique(array_merge($locationData, $userLocalizations->toArray()));
-
+  
                 $advertisements = Advertisement::whereIn('location_id', $locationIds)
                 ->where('settlement_id', $user->preference->settlement_id)
                 ->where('work_id', $user->preference->work_id)
