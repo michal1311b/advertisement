@@ -106,6 +106,12 @@
                                     </div>
                                 @endif
                             @endforeach
+
+                            <div class="row">
+                                <div class="col-12">
+                                    {{ $candidates->links() }}
+                                </div>
+                            </div>
                         @else
                             <div class="row">
                                 <div class="col-12">

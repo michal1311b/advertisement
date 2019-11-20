@@ -135,7 +135,7 @@ class UserController extends Controller
                 $query->whereNotNull('cv');
                 $query->where('share', 1);
             }
-        ])->get();
+        ])->paginate(5);
         
         return view('user.advertisement-show', compact([
             'advertisement',
