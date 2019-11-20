@@ -75,7 +75,7 @@ Route::group(array('prefix' => 'user'), function () {
     Route::get('/{user}/edit', 'UserController@edit')->name('edit-user')->middleware(['auth', 'verified']);
     Route::put('/update/{user}', 'UserController@update')->name('update-user');
     Route::get('/offers', 'UserController@getUserAdvertisements')->name('user-advertisement-list')->middleware(['auth', 'verified']);
-    Route::get('/offer/show/{slug}', 'UserController@showUserAdvertisement')->name('user-advertisement-show')->middleware(['auth', 'verified']);
+    Route::get('/offer/show/{advertisement}/{slug}', 'UserController@showUserAdvertisement')->name('user-advertisement-show')->middleware(['auth', 'verified']);
     Route::get('/contacts', 'ReplyController@index')->name('user-contact')->middleware(['auth', 'verified']);
     Route::get('/contacts/{id}/reply', 'ReplyController@showReply')->name('user-reply')->middleware(['auth', 'verified']);
     Route::post('/send-reply', 'ReplyController@sendReply')->name('send-reply')->middleware(['auth', 'verified']);

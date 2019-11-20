@@ -111,7 +111,7 @@ class UserController extends Controller
         return view('user.advertisements', compact('advertisements'));
     }
 
-    public function showUserAdvertisement($slug)
+    public function showUserAdvertisement(Advertisement $advertisement, $slug)
     {
         $user = Auth::user();
         $advertisement = Advertisement::whereSlug($slug)

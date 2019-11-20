@@ -36,7 +36,7 @@ Breadcrumbs::for('user-advertisements', function ($trail) {
 
 Breadcrumbs::for('user-advertisement-article', function ($trail, $advertisment) {
     $trail->parent('user-advertisements');
-    $trail->push($advertisment->title, route('user-advertisement-show', $advertisment));
+    $trail->push($advertisment->title, route('user-advertisement-show', [$advertisment, $advertisment->slug]));
 });
 
 Breadcrumbs::for('user-preferences', function ($trail) {
