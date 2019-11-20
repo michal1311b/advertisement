@@ -218,6 +218,8 @@ $(document).ready(function() {
             return false;
         }
     };
+
+    $(".blue-tooltip").tooltip({});
 });
 
 var minSteps = 6,
