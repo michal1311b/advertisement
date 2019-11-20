@@ -140,7 +140,7 @@
                                         </div>
                                         <div class="badge badge-secondary">{{ $advertisement->specialization->name }}</div>
                                         <div>
-                                            {{ trans('sentence.expired_at') }} <div class="badge badge-primary">{{ $advertisement->expired_at }}</div>
+                                            <i class="fas fa-calendar-day"></i> {{ trans('sentence.expired_at') }} <div class="badge badge-primary">{{ $advertisement->expired_at }}</div>
                                         </div>
                                     </div>
                                     @if($advertisement->galleries()->count())
