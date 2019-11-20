@@ -93,6 +93,7 @@ return [
   'btn-delete' => 'Delete',
   'btn-ban' => 'Ban ',
   'btn-unban' => 'Unban ',
+  'btn-details' => 'Details ',
   'first_name' => 'First name',
   'last_name' => 'Last name',
   'name' => 'Name',
@@ -111,6 +112,7 @@ return [
   'subscribe' => 'Subscribe',
   'specializations' => 'Specializations',
   'specializations.pending' => 'Specializations pending',
+  'pending' => 'Pending',
   'specialization' => 'Specialization',
   'user-profile' => 'User profile',
   'user-message' => 'User message box',
@@ -227,5 +229,6 @@ return [
   'social-media-quiestion' => 'Where do you usually look for job offers?',
   'job-placement-services' => 'Job placement services',
   'industry-press' => 'Industry press',
-  'consultation' => 'Consultation'
+  'consultation' => 'Consultation',
+  'no-candidates' => 'No matching candidates'
 ];

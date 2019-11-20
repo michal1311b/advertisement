@@ -93,6 +93,7 @@ return [
   'btn-delete' => 'Usuń ',
   'btn-ban' => 'Zablokuj ',
   'btn-unban' => 'Odblokuj ',
+  'btn-details' => 'Szczegóły',
   'first_name' => 'Imię',
   'last_name' => 'Nazwisko',
   'name' => 'Nazwa',
@@ -111,6 +112,7 @@ return [
   'subscribe' => 'Zapisz się',
   'specializations' => 'Specjalizacje',
   'specializations.pending' => 'Specjalizacje (w trakcie)',
+  'pending' => 'W trakcie',
   'specialization' => 'Specjalizacja',
   'user-profile' => 'Profil',
   'user-message' => 'Skrzynka wiadomości',
@@ -227,5 +229,6 @@ return [
   'social-media-quiestion' => 'Gdzie najczęściej Pan/Pani szuka ofert pracy?',
   'job-placement-services' => 'Serwisy pośrednictwa pracy',
   'industry-press' => 'Prasa branżowa',
-  'consultation' => 'Konsylium'
+  'consultation' => 'Konsylium',
+  'no-candidates' => 'Brak dopasowanych kandydatów'
 ];

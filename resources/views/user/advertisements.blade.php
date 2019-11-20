@@ -75,6 +75,8 @@
                             'button' => trans('sentence.btn-delete'),
                             'modalKey' => "remove".$advertisement->id
                         ])
+
+                        <a href="{{ route('user-advertisement-show', $advertisement->slug) }}" class="btn btn-info border border-warning ml-2 text-white">{{ trans('sentence.btn-details') }}</a>
                     </div>
                 @endforeach
                 <div class="pt-3">

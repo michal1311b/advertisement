@@ -19,6 +19,7 @@ use App\LocationUser;
 use App\Work;
 use App\Settlement;
 use App\Currency;
+use App\UserAdvertisement;
 
 class UserController extends Controller
 {
@@ -114,17 +115,31 @@ class UserController extends Controller
     {
         $user = Auth::user();
         $advertisement = Advertisement::whereSlug($slug)
-        ->with([
-            'galleries',
-            'user',
-            'work',
-            'state',
-            'tags'
-        ])
         ->where('user_id', '=', $user->id)
         ->firstOrFail();
+
+        $data = UserAdvertisement::where('advertisement_id', $advertisement->id)
+        ->pluck('user_id')->toArray();
+
+        $candidates = User::whereIn('id', $data)
+        ->with([
+            'profile',
+            'specializations',
+            'courses' => function($query) {
+                $query->orderBy('end_date', 'desc');
+            },
+            'experiences' => function($query) {
+                $query->orderBy('end_date', 'desc');
+            },
+            'doctor' => function($query) {
+                $query->whereNotNull('cv');
+            }
+        ])->get();
         
-        return view('user.advertisement-show', compact('advertisement'));
+        return view('user.advertisement-show', compact([
+            'advertisement',
+            'candidates'
+        ]));
     }
 
     public function follow(User $user)

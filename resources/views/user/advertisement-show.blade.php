@@ -28,73 +28,91 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header"> {{ trans('sentence.offer-show') }} <strong>{{ $advertisement->title }}</strong></div>
+                <div class="card-header"> {{ trans('sentence.btn-details') }} <strong>{{ $advertisement->title }}</strong></div>
 
                 <div class="card-body">
                     <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-12 pb-2">
-                                <div class="btn-group btn-group-toggle">
-                                    <a href="{{ route('edit-advertisement', $advertisement->id) }}" class="btn btn-info border border-warning mr-2">{{ trans('sentence.btn-edit') }}</a>
-                                </div>  
-                            </div>
-                            <div class="col-12 pb-2">
-                                {{ trans('sentence.tags') }}
-                                @foreach($advertisement->tags as $tag)
-                                    <span class="badge badge-pill badge-info">{{ $tag->name }}</span>
-                                @endforeach
-                            </div>
-                            <div class="col-12">
-                                <ul class="list-group">
-                                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        {{ trans('sentence.city') }}
-                                        <span class="badge badge-pill">{{ $advertisement->city }}</span>
-                                    </li>
-                                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        {{ trans('sentence.state') }}
-                                        <span class="badge badge-pill">{{ $advertisement->state->name }}</span>
-                                    </li>
-                                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        {{ trans('sentence.created_at') }}
-                                        <span class="badge badge-pill">{{ $advertisement->created_at }}</span>
-                                    </li>
-                                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        {{ trans('sentence.expired_at') }}
-                                        <span class="badge badge-pill badge-primary">{{ $advertisement->expired_at }}</span>
-                                    </li>
-                                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        {{ trans('sentence.phone') }}
-                                        <span class="badge badge-pill">{{ $advertisement->phone }}</span>
-                                    </li>
-                                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        {{ __('{{ trans('sentence.work-category') }}:') }}
-                                        <span class="badge badge-pill">{{ $advertisement->work->name }}</span>
-                                    </li>
-                                </ul>
-
-                                <h4><strong>{{ trans('sentence.description') }}</strong></h4>
-                                {!! $advertisement->description !!}
-                            </div>
-                            <div class="col-12">
-                                <div id="advertisementCarousel" class="carousel slide" data-ride="carousel">
-                                    <div class="carousel-inner">
-                                        @foreach($advertisement->galleries as $image)
-                                            <div class="carousel-item {{ $loop->first ? 'active' : '' }}" data-interval="10000">
-                                                <img src="{{ $image->path }}" class="d-block w-100" alt="{{ $image->oldName }}">
+                        @if(count($candidates) > 0)
+                            @foreach($candidates as $candidate)
+                                @if($candidate->doctor !== null)
+                                    <div class="row profile">
+                                        <div class="col-12 col-md-4">
+                                            <div class="profile-sidebar">
+                                                <!-- SIDEBAR USERPIC -->
+                                                <div class="profile-userpic">
+                                                    <img src="{{ $candidate->avatar }}" class="img-responsive" alt="">
+                                                </div>
+                                                <!-- END SIDEBAR USERPIC -->
+                                                <!-- SIDEBAR USER TITLE -->
+                                                <div class="profile-usertitle">
+                                                    <div class="profile-usertitle-name">
+                                                        {{ $candidate->name }} {{ $candidate->profile->last_name }}
+                                                    </div>
+                                                    <div class="profile-usertitle-job">
+                                                        <div>{{ trans('sentence.specializations') }}</div>
+                                                        @if(count($candidate->specializations) > 0)
+                                                            <ul>
+                                                                @foreach($candidate->specializations as $specialization)
+                                                                    <li>
+                                                                        {{ $specialization->name }}
+                                                                        @if($specialization->pivot->is_pending)
+                                                                            ({{ trans('sentence.pending') }})
+                                                                        @endif
+                                                                    </li>
+                                                                @endforeach
+                                                            </ul>
+                                                        @endif
+                                                    </div>
+                                                </div>
+                                                <!-- END SIDEBAR USER TITLE -->
                                             </div>
-                                        @endforeach
+                                        </div>
+                                        <div class="col-12 col-md-8">
+                                            <div class="profile-content">
+                                                <a href="{{ $candidate->doctor->cv }}" class="btn btn-primary" target="_blank">{{ __('CV') }}</a>
+                                                <ul class="nav pt-3">
+                                                    <li>{{ $candidate->profile->post_code }} {{ $candidate->profile->city }}</li>
+                                                </ul>
+
+                                                @if(count($candidate->courses) > 0)
+                                                    <div class="font-weight-bolder">{{ trans('sentence.courses') }}</div>
+                                                    <ul>
+                                                        @foreach($candidate->courses as $course)
+                                                            <li>
+                                                                {{ $course->name }}, {{ $course->organizer }}, {{ $course->start_date }} - {{ $course->end_date }}
+                                                            </li>
+                                                        @endforeach
+                                                    </ul>
+                                                @endif
+
+                                                @if(count($candidate->experiences) > 0)
+                                                    <div class="font-weight-bolder">{{ trans('sentence.experience') }}</div>
+                                                    <ul>
+                                                        @foreach($candidate->experiences as $experience)
+                                                            <li>
+                                                                <div>
+                                                                    {{ $experience->workplace }}, {{ $experience->exp_city }}, {{ $experience->exp_company_name }}, {{ $experience->start_date }} - {{ $experience->end_date }}
+                                                                </div>
+                                                                <div>
+                                                                    <strong>{{ trans('sentence.responsibilities') }}</strong>
+                                                                </div>
+                                                                <div>{!! $experience->responsibility !!}</div>
+                                                            </li>
+                                                        @endforeach
+                                                    </ul>
+                                                @endif
+                                            </div>
+                                        </div>
                                     </div>
-                                    <a class="carousel-control-prev" href="#advertisementCarousel" role="button" data-slide="prev">
-                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                        <span class="sr-only">Previous</span>
-                                    </a>
-                                    <a class="carousel-control-next" href="#advertisementCarousel" role="button" data-slide="next">
-                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                        <span class="sr-only">Next</span>
-                                    </a>
+                                @endif
+                            @endforeach
+                        @else
+                            <div class="row">
+                                <div class="col-12">
+                                    {{ trans('sentence.no-candidates') }}
                                 </div>
                             </div>
-                        </div>
+                        @endif
                     </div>
                 </div>
             </div>
