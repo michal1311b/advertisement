@@ -79,6 +79,26 @@ a:hover {
     height: 25px;
 }
 
+.warning {
+    text-decoration: none;
+    padding: 10px 16px;
+    position: relative;
+    display: inline-block;
+    border-radius: 2px;
+}
+  
+.warning .badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    padding: 8px 6px;
+    border-radius: 50%;
+    background-color: red;
+    color: white;
+    width: 25px;
+    height: 25px;
+}
+
 .slider.slider-horizontal:hover, .slider.slider-vertical:hover {
     .tooltip.tooltip-main {
         opacity: 0.7 !important;
@@ -509,3 +529,7 @@ $color2: #3197EE;
     margin-left: -2px;
 }
   
+.blue-tooltip + .tooltip > .tooltip-inner {
+    background-color: rgb(3, 46, 236);
+    color: #eee;
+}

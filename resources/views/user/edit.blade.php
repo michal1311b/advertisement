@@ -32,19 +32,49 @@
                 </li>
                 @if($editUser->doctor)
                     <li class="nav-item">
-                        <a class="nav-link" data-toggle="tab" href="#menu1">{{ trans('sentence.experience') }}</a>
+                        <a class="nav-link warning" data-toggle="tab" href="#menu1">
+                            {{ trans('sentence.experience') }} 
+                            @if(count($editUser->experiences) == 0)
+                                <span class="badge blue-tooltip" data-toggle="tooltip" title="{{ trans('sentence.fill-experience') }}">!</span>
+                            @endif
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" data-toggle="tab" href="#menu2">{{ trans('sentence.courses') }}</a>
+                        <a class="nav-link warning" data-toggle="tab" href="#menu2">
+                            {{ trans('sentence.courses') }} 
+                            @if(count($editUser->courses) == 0)
+                                <span class="badge blue-tooltip" data-toggle="tooltip" title="{{ trans('sentence.fill-courses') }}">!</span>
+                            @endif
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" data-toggle="tab" href="#menu3">{{ trans('sentence.languages') }}</a>
+                        <a class="nav-link warning" data-toggle="tab" href="#menu3">
+                            {{ trans('sentence.languages') }} 
+                            @if(count($userLanguages) == 0)
+                                <span class="badge blue-tooltip" data-toggle="tooltip" title="{{ trans('sentence.fill-languages') }}">!</span>
+                            @endif
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" data-toggle="tab" href="#menu4">{{ trans('sentence.preferences') }}</a>
+                        <a class="nav-link warning" data-toggle="tab" href="#menu4">
+                            {{ trans('sentence.preferences') }} 
+                            @if(
+                                !$editUser->preference->work_id ||
+                                !$editUser->preference->settlement_id ||
+                                !$editUser->preference->currency_id ||
+                                !$editUser->preference->min_salary ||
+                                count($userLocations) == 0)
+                                <span class="badge blue-tooltip" data-toggle="tooltip" title="{{ trans('sentence.fill-preferences') }}">!</span>
+                            @endif
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" data-toggle="tab" href="#menu5">{{ __('CV') }}</a>
+                        <a class="nav-link warning" data-toggle="tab" href="#menu5">
+                            {{ __('CV') }} 
+                            @if($editUser->doctor->cv === null)
+                                <span class="badge blue-tooltip" data-toggle="tooltip" title="{{ trans('sentence.add-cv') }}">!</span>
+                            @endif
+                        </a>
                     </li>
                 @endif
             </ul>

@@ -230,5 +230,10 @@ return [
   'job-placement-services' => 'Serwisy pośrednictwa pracy',
   'industry-press' => 'Prasa branżowa',
   'consultation' => 'Konsylium',
-  'no-candidates' => 'Brak dopasowanych kandydatów'
+  'no-candidates' => 'Brak dopasowanych kandydatów',
+  'add-cv' => 'Dodaj swoje CV',
+  'fill-preferences' => 'Uzupełnij preferencje',
+  'fill-languages'  => 'Uzupełnij języki obce',
+  'fill-courses'  => 'Uzupełnij odbyte kursy',
+  'fill-experience'  => 'Uzupełnij doświadczenie zawodowe',
 ];

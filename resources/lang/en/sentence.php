@@ -230,5 +230,10 @@ return [
   'job-placement-services' => 'Job placement services',
   'industry-press' => 'Industry press',
   'consultation' => 'Consultation',
-  'no-candidates' => 'No matching candidates'
+  'no-candidates' => 'No matching candidates',
+  'add-cv' => 'Add your CV',
+  'fill-preferences' => 'Complete your preferences',
+  'fill-languages'  => 'Complete your languages',
+  'fill-courses'  => 'Complete your courses',
+  'fill-experience'  => 'Complete your experience',
 ];
