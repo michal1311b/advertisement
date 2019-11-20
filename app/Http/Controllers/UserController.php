@@ -133,6 +133,7 @@ class UserController extends Controller
             },
             'doctor' => function($query) {
                 $query->whereNotNull('cv');
+                $query->where('share', 1);
             }
         ])->get();
         

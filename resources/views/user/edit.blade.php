@@ -24,6 +24,18 @@
             @include('partials.message')
         </div>
 
+        @if($editUser->doctor)
+            <div class="col-md-12 text-right">
+                <form method="POST" action="{{ route('share-profile', $editUser) }}">
+                    <input type="hidden" name="_method" value="PUT">
+                    @csrf
+                    <button type="submit" class="btn {{ $editUser->doctor->share ? 'btn-danger' : 'btn-primary' }}">
+                        {{ $editUser->doctor->share ? trans('sentence.btn-unshare') : trans('sentence.btn-share') }}
+                    </button>
+                </form>
+            </div>
+        @endif
+
         <div class="col-md-12 py-3">
               <!-- Nav tabs -->
             <ul class="nav nav-tabs">

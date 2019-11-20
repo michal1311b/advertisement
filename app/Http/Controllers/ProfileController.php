@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Doctor;
 use App\Http\Requests\User\CvRequest;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 
@@ -37,6 +38,24 @@ class ProfileController extends Controller
         $doctor->save();
 
         session()->flash('success', trans('sentence.delete-file-success'));
+
+        return back();
+    }
+
+    public function share(User $user)
+    {
+        if($user->doctor->share === 0)
+        {
+            $user->doctor->share = 1;
+            $user->doctor->save();
+
+            session()->flash('success', trans('sentence.share-profile-success'));
+        } else {
+            $user->doctor->share = 0;
+            $user->doctor->save();
+
+            session()->flash('success', trans('sentence.unshare-profile-success'));
+        }
 
         return back();
     }
