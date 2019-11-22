@@ -73,6 +73,8 @@ class ContactController extends Controller
 
             $user->notify(new NewMessage($contact));
 
+            DB::commit();
+
             session()->flash('success', trans('sentence.message-send'));
 
             return back();
