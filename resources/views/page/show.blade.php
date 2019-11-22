@@ -12,7 +12,7 @@
 <div class="container">
     <div class="row">
         <div class="col-xs-12">
-            {!! Breadcrumbs::render('site.page', $room) !!}
+            {!! Breadcrumbs::render('site.page', $page) !!}
         </div>
     </div>	
 </div>
