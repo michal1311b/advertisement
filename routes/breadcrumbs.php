@@ -49,6 +49,16 @@ Breadcrumbs::for('contacts', function ($trail) {
     $trail->push(trans('sentence.contact-list'), route('user-contact'));
 });
 
+Breadcrumbs::for('rooms', function ($trail) {
+    $trail->parent('home');
+    $trail->push(trans('sentence.contact-list'), route('user-rooms'));
+});
+
+Breadcrumbs::for('room', function ($trail, $room) {
+    $trail->parent('rooms');
+    $trail->push(trans('sentence.reply-form'), route('show-room', $room));
+});
+
 Breadcrumbs::for('reply', function ($trail) {
     $trail->parent('contacts');
     $trail->push(trans('sentence.reply-form'), route('user-reply'));

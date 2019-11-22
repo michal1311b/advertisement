@@ -12,7 +12,7 @@
 <div class="container">
     <div class="row">
         <div class="col-xs-12">
-            {!! Breadcrumbs::render('site.page', $page) !!}
+            {!! Breadcrumbs::render('site.page', $room) !!}
         </div>
     </div>	
 </div>
@@ -23,7 +23,11 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">{{ $page->title }}</strong></div>
+                <div class="card-header">
+                    <strong>
+                        {{ $page->title }}
+                    </strong>
+                </div>
 
                 <div class="card-body">
                     <div class="container-fluid">

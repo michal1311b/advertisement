@@ -21,7 +21,8 @@ class PagesTableSeeder extends Seeder
                 'title' => $title,
                 'shot_description' => $faker->sentence(10),
                 'body' => $faker->paragraph(4),
-                'slug' => str_slug($title, '-')
+                'slug' => str_slug($title, '-'),
+                'is_active' => true
             ]);
         }
     }

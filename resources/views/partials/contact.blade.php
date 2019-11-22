@@ -7,10 +7,8 @@
             @include('partials.message')
         </div>
         <div class="card-body">
-            <form method="POST" action="{{ route('send-message') }}" enctype="multipart/form-data">
+            <form method="POST" action="{{ route('send-message', $advertisement->id) }}" enctype="multipart/form-data">
                 @csrf
-                <input type="hidden" name="advertisement_id" value="{{ $advertisement->id }}">
-                <input type="hidden" name="user_id" value="{{ $advertisement->user_id }}">
                 <input type="hidden" name="emailType" value="QuestionMail">
                 <div class="form-row">
                     <div class="form-group col-md-6">

@@ -96,9 +96,12 @@ Route::group(array('prefix' => 'user'), function () {
     Route::post('/file/upload', 'ProfileController@uploadCV')->name('upload-cv')->middleware(['auth', 'verified']);
     Route::delete('/cv/{doctor}', 'ProfileController@deleteCV')->name('delete-user-cv')->middleware(['auth', 'verified']);
     Route::put('/share-profile/{user}', 'ProfileController@share')->name('share-profile')->middleware(['auth', 'verified']);
+    Route::get('/rooms', 'RoomController@index')->name('user-rooms')->middleware(['auth', 'verified']);
+    Route::get('/rooms/{room}', 'RoomController@show')->name('show-room')->middleware(['auth', 'verified']);
+    Route::post('/message/{room}', 'RoomController@reply')->name('reply-room')->middleware(['auth', 'verified']);
 });
 
-Route::post('/send-message', 'ContactController@store')->name('send-message');
+Route::post('/send-message/{advertisement}', 'ContactController@store')->name('send-message');
 
 Route::group(array('prefix' => 'questionnaire'), function () {
     Route::get('/create', 'QuestionnaireController@create')->name('questionnaire.create');

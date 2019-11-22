@@ -20,7 +20,8 @@ var notifications = [];
 const NOTIFICATION_TYPES = {
     follow: 'App\\Notifications\\UserFollowed',
     newPost: 'App\\Notifications\\NewPost',
-    newMessage: 'App\\Notifications\\NewMessage'
+    newMessage: 'App\\Notifications\\NewMessage',
+    chatMessage: 'App\\Notifications\\ConversationNotification',
 };
 
 $(document).ready(function() {
@@ -298,6 +299,9 @@ function routeNotification(notification) {
     } else if(notification.type === NOTIFICATION_TYPES.newMessage) {
         const contactId = notification.data.contact_id;
         to = `user/contacts/${contactId}/reply` + read;
+    } else if(notification.type === NOTIFICATION_TYPES.chatMessage) {
+        const roomId = notification.data.room_id;
+        to = `user/rooms/${roomId}` + read;
     }
 
     return '/' + to;
@@ -315,6 +319,8 @@ function makeNotificationText(notification) {
     } else if(notification.type === NOTIFICATION_TYPES.newMessage) {
         const email = notification.data.email;
         text += `<li class="dropdown-header"><strong>${email}</strong> send You a message</li>`;
+    } else if(notification.type === NOTIFICATION_TYPES.chatMessage) {
+        text += `<li class="dropdown-header">New message</li>`;
     }
     return text;
 }

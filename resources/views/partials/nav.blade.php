@@ -61,7 +61,7 @@
     
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="{{ route('edit-user', auth()->user()->id) }}">{{ trans('sentence.user-profile')}}</a>
-                            <a class="dropdown-item" href="{{ route('user-contact') }}">{{ trans('sentence.user-message')}}</a>
+                            <a class="dropdown-item" href="{{ route('user-rooms') }}">{{ trans('sentence.user-message')}}</a>
                             @if(auth()->user()->hasRole('doctor'))
                                 <a class="dropdown-item" href="{{ route('user-prefered-locations') }}">{{ trans('sentence.your-preferences')}}</a>
                             @endif
