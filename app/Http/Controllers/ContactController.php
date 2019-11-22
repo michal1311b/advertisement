@@ -9,7 +9,9 @@ use App\User;
 use App\Http\Service\Mailer;
 use App\Notifications\NewMessage;
 use App\Http\Requests\Contact\StoreRequest;
+use App\Mail\ApplicationEmail;
 use App\Message;
+use App\Notifications\ConversationNotification;
 use App\Room;
 use App\RoomUser;
 use Illuminate\Support\Str;
@@ -69,9 +71,12 @@ class ContactController extends Controller
             
             // $this->sendEmail($contact, $advertisement->user_id);
 
-            $user = User::find($advertisement->user_id);
+            $user_owner = User::find($advertisement->user_id);
 
-            $user->notify(new NewMessage($contact));
+            \Mail::to($user_owner->email)
+            ->send(new ApplicationEmail($user->doctor, $room));
+
+            $user_owner->notify(new ConversationNotification($message, $user));
 
             DB::commit();
 
