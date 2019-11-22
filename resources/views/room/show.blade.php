@@ -24,7 +24,10 @@
         @foreach($messages as $message)
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header">{{ $message->user->name }}</div>
+                    <div class="card-header">
+                        <img src="{{ asset($message->user->avatar) }}" alt="avatar" class="user-avatar user-avatar--smaller">
+                        {{ $message->user->name }}
+                    </div>
 
                     <div class="card-body">
                         <div class="container-fluid">
