@@ -25,6 +25,7 @@ const NOTIFICATION_TYPES = {
 };
 
 $(document).ready(function() {
+    window.scrollTo(0, 0);
     var mySlider = $("#range").bootstrapSlider({
         min: 0,
         max: 1000,
