@@ -21,7 +21,8 @@ Breadcrumbs::for('advertisement-article', function ($trail, $advertisment) {
 
 Breadcrumbs::for('advertisement-edit', function ($trail, $advertisment) {
     $trail->parent('home');
-    $trail->push(trans('sentence.edit') . $advertisment->title, route('edit-advertisement', $advertisment));
+    $trail->push(trans('sentence.user-offers'), route('user-advertisement-list'));
+    $trail->push(trans('sentence.edit') . ' ' . $advertisment->title, route('edit-advertisement', $advertisment));
 });
 
 Breadcrumbs::for('edit-user', function ($trail, $user) {
