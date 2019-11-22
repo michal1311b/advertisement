@@ -240,5 +240,6 @@ return [
   'fill-languages'  => 'Complete your languages',
   'fill-courses'  => 'Complete your courses',
   'fill-experience'  => 'Complete your experience',
-  'room_name' => 'Chat room name'
+  'room_name' => 'Chat room name',
+  'cookies-policy' => 'Cookies policy'
 ];

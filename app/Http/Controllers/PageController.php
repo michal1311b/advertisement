@@ -150,4 +150,9 @@ class PageController extends Controller
 
         return redirect()->route('pages.index')->with($message);
     }
+
+    public function cookies()
+    {
+        return view('cookies');
+    }
 }

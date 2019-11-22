@@ -240,5 +240,6 @@ return [
   'fill-languages'  => 'Uzupełnij języki obce',
   'fill-courses'  => 'Uzupełnij odbyte kursy',
   'fill-experience'  => 'Uzupełnij doświadczenie zawodowe',
-  'room_name' => 'Nazwa czatu'
+  'room_name' => 'Nazwa czatu',
+  'cookies-policy' => 'Polityka cookies'
 ];

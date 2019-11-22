@@ -174,6 +174,8 @@ $(document).ready(function() {
         window.scrollTo(0, 0);
     });
 
+    $(".blue-tooltip").tooltip({});
+
     window.Dropzone = require('dropzone');
     Dropzone.autoDiscover = false;
 
@@ -220,8 +222,6 @@ $(document).ready(function() {
             return false;
         }
     };
-
-    $(".blue-tooltip").tooltip({});
 });
 
 var minSteps = 6,

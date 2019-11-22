@@ -19,6 +19,8 @@ Route::post('/subscribe', 'SubscriberController@store')->name('subscribe');
 Route::get('/ankieta-na-temat-pracy-lekarza', 'StaticQuestionnaireController@show')->name('static.questionnaire.show');
 Route::post('/ankieta-na-temat-pracy-lekarza', 'StaticQuestionnaireController@store')->name('static.questionnaire.store');
 
+Route::get('/polityka-cookies', 'PageController@cookies')->name('cookies.show');
+
 Route::get('/verify/subscribtion/{token}', [
     'uses' => 'SubscriberController@verify'
 ]);

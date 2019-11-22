@@ -190,7 +190,7 @@
             "message": "Na naszej stronie internetowej używamy plików cookies. Brak ograniczenia/wyłączenia cookies w&nbsp;przeglądarce internetowej oznacza zgodę na takie wykorzystanie. Szczegółowe informacje w&nbsp;naszej",
             "dismiss": "Akceptuję",
             "learnMore": "Polityce prywatności",
-            "link": "/",
+            "link": "/polityka-cookies",
             "theme": "dark-bottom",
             "target": "_blank"
         };
