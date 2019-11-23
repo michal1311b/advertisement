@@ -168,7 +168,7 @@
                                     <div class="col-sm-8">
                                         <div class="form-check">
                                             <input name="term1" type="hidden" value="0">
-                                            <input class="form-check-input" 
+                                            <input class="form-check-input" required
                                             type="checkbox" name="term1" id="term1l" value="1"
                                             {{ old('term1', 0)  == 1 ? 'checked' : '' }}>
                                             <label class="form-check-label" for="term1l">
@@ -183,7 +183,7 @@
                                     <div class="col-sm-8">
                                         <div class="form-check">
                                             <input name="term2" type="hidden" value="0">
-                                            <input class="form-check-input" 
+                                            <input class="form-check-input" required
                                             type="checkbox" name="term2" id="term2l" value="1"
                                             {{ old('term2', 0)  == 1 ? 'checked' : '' }}>
                                             <label class="form-check-label" for="term2l">
@@ -198,7 +198,7 @@
                                     <div class="col-sm-8">
                                         <div class="form-check">
                                             <input name="term3" type="hidden" value="0">
-                                            <input class="form-check-input" 
+                                            <input class="form-check-input" required
                                             type="checkbox" name="term3" id="term3l" value="1"
                                             {{ old('term3', 0)  == 1 ? 'checked' : '' }}>
                                             <label class="form-check-label" for="term3l">
@@ -357,7 +357,7 @@
                                     <div class="col-sm-8">
                                         <div class="form-check">
                                             <input name="term1" type="hidden" value="0">
-                                            <input class="form-check-input" 
+                                            <input class="form-check-input" required
                                             type="checkbox" name="term1" id="term1d" value="1"
                                             {{ old('term1', 0)  == 1 ? 'checked' : '' }}>
                                             <label class="form-check-label" for="term1d">
@@ -372,7 +372,7 @@
                                     <div class="col-sm-8">
                                         <div class="form-check">
                                             <input name="term2" type="hidden" value="0">
-                                            <input class="form-check-input" 
+                                            <input class="form-check-input" required
                                             type="checkbox" name="term2" id="term2d" value="1"
                                             {{ old('term2', 0)  == 1 ? 'checked' : '' }}>
                                             <label class="form-check-label" for="term2d">
@@ -387,7 +387,7 @@
                                     <div class="col-sm-8">
                                         <div class="form-check">
                                             <input name="term3" type="hidden" value="0">
-                                            <input class="form-check-input" 
+                                            <input class="form-check-input" required
                                             type="checkbox" name="term3" id="term3d" value="1"
                                             {{ old('term3', 0)  == 1 ? 'checked' : '' }}>
                                             <label class="form-check-label" for="term3d">
@@ -556,7 +556,7 @@
                                     <div class="col-sm-8">
                                         <div class="form-check">
                                             <input name="term1" type="hidden" value="0">
-                                            <input class="form-check-input" 
+                                            <input class="form-check-input" required
                                             type="checkbox" name="term1" id="term1c" value="1"
                                             {{ old('term1', 0)  == 1 ? 'checked' : '' }}>
                                             <label class="form-check-label" for="term1c">
@@ -571,7 +571,7 @@
                                     <div class="col-sm-8">
                                         <div class="form-check">
                                             <input name="term2" type="hidden" value="0">
-                                            <input class="form-check-input" 
+                                            <input class="form-check-input" required
                                             type="checkbox" name="term2" id="term2c" value="1"
                                             {{ old('term2', 0)  == 1 ? 'checked' : '' }}>
                                             <label class="form-check-label" for="term2c">
@@ -586,7 +586,7 @@
                                     <div class="col-sm-8">
                                         <div class="form-check">
                                             <input name="term3" type="hidden" value="0">
-                                            <input class="form-check-input" 
+                                            <input class="form-check-input" required
                                             type="checkbox" name="term3" id="term3c" value="1"
                                             {{ old('term3', 0)  == 1 ? 'checked' : '' }}>
                                             <label class="form-check-label" for="term3c">
