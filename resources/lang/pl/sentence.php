@@ -184,7 +184,7 @@ return [
   'salary_negotiable' => 'Stawka do negocjacji?',
   'dashboard' => 'Panel',
   'login-message' => 'Logowanie powiodło się.',
-  'male' => 'mężyczyzna',
+  'male' => 'mężczyzna',
   'female' => 'kobieta',
   'confirm_password' => 'Potwierdź hasło',
   'birthday' => 'Data urodzenia',
