@@ -244,5 +244,6 @@ return [
   'cookies-policy' => 'Polityka cookies',
   'regulation' => 'Regulamin',
   'accept' => 'Akceptuję',
-  'data-conversion' => 'Wyrażam zgodę na przetwarzanie moich danych osobowych przez Administratora'
+  'data-conversion' => 'Wyrażam zgodę na przetwarzanie moich danych osobowych przez Administratora',
+  'invalid-nip' => 'Nieprawidłowy numer NIP'
 ];

@@ -244,5 +244,6 @@ return [
   'cookies-policy' => 'Cookies policy',
   'regulation' => 'Regulation',
   'accept' => 'Accept',
-  'data-conversion' => 'I agree to the processing of my personal data by Administrator'
+  'data-conversion' => 'I agree to the processing of my personal data by Administrator',
+  'invalid-nip' => 'NIP number is invalid'
 ];
