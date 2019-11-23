@@ -20,6 +20,7 @@ Route::get('/ankieta-na-temat-pracy-lekarza', 'StaticQuestionnaireController@sho
 Route::post('/ankieta-na-temat-pracy-lekarza', 'StaticQuestionnaireController@store')->name('static.questionnaire.store');
 
 Route::get('/polityka-cookies', 'PageController@cookies')->name('cookies.show');
+Route::get('/regulamin', 'PageController@showRegulation')->name('regulation.show');
 
 Route::get('/verify/subscribtion/{token}', [
     'uses' => 'SubscriberController@verify'

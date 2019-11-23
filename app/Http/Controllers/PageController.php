@@ -155,4 +155,9 @@ class PageController extends Controller
     {
         return view('cookies');
     }
+
+    public function showRegulation()
+    {
+        return view('regulation');
+    }
 }
