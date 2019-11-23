@@ -169,9 +169,9 @@
                                         <div class="form-check">
                                             <input name="term1" type="hidden" value="0">
                                             <input class="form-check-input" 
-                                            type="checkbox" name="term1" id="term1" value="1"
+                                            type="checkbox" name="term1" id="term1l" value="1"
                                             {{ old('term1', 0)  == 1 ? 'checked' : '' }}>
-                                            <label class="form-check-label" for="term1">
+                                            <label class="form-check-label" for="term1l">
                                             {{ trans('sentence.accept') }} <a href="{{ route('regulation.show') }}" class="text-lowercase">{{ trans('sentence.regulation') }}</a> {{ __('EmployMed.eu') }}
                                             </label>
                                         </div>
@@ -184,9 +184,9 @@
                                         <div class="form-check">
                                             <input name="term2" type="hidden" value="0">
                                             <input class="form-check-input" 
-                                            type="checkbox" name="term2" id="term2" value="1"
+                                            type="checkbox" name="term2" id="term2l" value="1"
                                             {{ old('term2', 0)  == 1 ? 'checked' : '' }}>
-                                            <label class="form-check-label" for="term2">
+                                            <label class="form-check-label" for="term2l">
                                                 {{ trans('sentence.accept') }} <a href="{{ route('cookies.show') }}" class="text-lowercase">{{ trans('sentence.cookies-policy') }}</a> {{ __('EmployMed.eu') }}
                                             </label>
                                         </div>
@@ -199,9 +199,9 @@
                                         <div class="form-check">
                                             <input name="term3" type="hidden" value="0">
                                             <input class="form-check-input" 
-                                            type="checkbox" name="term3" id="term3" value="1"
+                                            type="checkbox" name="term3" id="term3l" value="1"
                                             {{ old('term3', 0)  == 1 ? 'checked' : '' }}>
-                                            <label class="form-check-label" for="term3">
+                                            <label class="form-check-label" for="term3l">
                                                 {{ trans('sentence.data-conversion') }} {{ __('EmployMed.eu') }}
                                             </label>
                                         </div>
@@ -358,9 +358,9 @@
                                         <div class="form-check">
                                             <input name="term1" type="hidden" value="0">
                                             <input class="form-check-input" 
-                                            type="checkbox" name="term1" id="term1" value="1"
+                                            type="checkbox" name="term1" id="term1d" value="1"
                                             {{ old('term1', 0)  == 1 ? 'checked' : '' }}>
-                                            <label class="form-check-label" for="term1">
+                                            <label class="form-check-label" for="term1d">
                                             {{ trans('sentence.accept') }} <a href="{{ route('regulation.show') }}" class="text-lowercase">{{ trans('sentence.regulation') }}</a> {{ __('EmployMed.eu') }}
                                             </label>
                                         </div>
@@ -373,9 +373,9 @@
                                         <div class="form-check">
                                             <input name="term2" type="hidden" value="0">
                                             <input class="form-check-input" 
-                                            type="checkbox" name="term2" id="term2" value="1"
+                                            type="checkbox" name="term2" id="term2d" value="1"
                                             {{ old('term2', 0)  == 1 ? 'checked' : '' }}>
-                                            <label class="form-check-label" for="term2">
+                                            <label class="form-check-label" for="term2d">
                                                 {{ trans('sentence.accept') }} <a href="{{ route('cookies.show') }}" class="text-lowercase">{{ trans('sentence.cookies-policy') }}</a> {{ __('EmployMed.eu') }}
                                             </label>
                                         </div>
@@ -388,9 +388,9 @@
                                         <div class="form-check">
                                             <input name="term3" type="hidden" value="0">
                                             <input class="form-check-input" 
-                                            type="checkbox" name="term3" id="term3" value="1"
+                                            type="checkbox" name="term3" id="term3d" value="1"
                                             {{ old('term3', 0)  == 1 ? 'checked' : '' }}>
-                                            <label class="form-check-label" for="term3">
+                                            <label class="form-check-label" for="term3d">
                                                 {{ trans('sentence.data-conversion') }} {{ __('EmployMed.eu') }}
                                             </label>
                                         </div>
@@ -557,9 +557,9 @@
                                         <div class="form-check">
                                             <input name="term1" type="hidden" value="0">
                                             <input class="form-check-input" 
-                                            type="checkbox" name="term1" id="term1" value="1"
+                                            type="checkbox" name="term1" id="term1c" value="1"
                                             {{ old('term1', 0)  == 1 ? 'checked' : '' }}>
-                                            <label class="form-check-label" for="term1">
+                                            <label class="form-check-label" for="term1c">
                                             {{ trans('sentence.accept') }} <a href="{{ route('regulation.show') }}" class="text-lowercase">{{ trans('sentence.regulation') }}</a> {{ __('EmployMed.eu') }}
                                             </label>
                                         </div>
@@ -572,9 +572,9 @@
                                         <div class="form-check">
                                             <input name="term2" type="hidden" value="0">
                                             <input class="form-check-input" 
-                                            type="checkbox" name="term2" id="term2" value="1"
+                                            type="checkbox" name="term2" id="term2c" value="1"
                                             {{ old('term2', 0)  == 1 ? 'checked' : '' }}>
-                                            <label class="form-check-label" for="term2">
+                                            <label class="form-check-label" for="term2c">
                                                 {{ trans('sentence.accept') }} <a href="{{ route('cookies.show') }}" class="text-lowercase">{{ trans('sentence.cookies-policy') }}</a> {{ __('EmployMed.eu') }}
                                             </label>
                                         </div>
@@ -587,9 +587,9 @@
                                         <div class="form-check">
                                             <input name="term3" type="hidden" value="0">
                                             <input class="form-check-input" 
-                                            type="checkbox" name="term3" id="term3" value="1"
+                                            type="checkbox" name="term3" id="term3c" value="1"
                                             {{ old('term3', 0)  == 1 ? 'checked' : '' }}>
-                                            <label class="form-check-label" for="term3">
+                                            <label class="form-check-label" for="term3c">
                                                 {{ trans('sentence.data-conversion') }} {{ __('EmployMed.eu') }}
                                             </label>
                                         </div>
