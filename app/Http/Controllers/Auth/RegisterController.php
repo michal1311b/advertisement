@@ -115,6 +115,7 @@ class RegisterController extends Controller
      */
     public function register(Request $request)
     {
+        $this->validator($request->all())->validate();
         DB::beginTransaction();
 
         try {
@@ -133,8 +134,6 @@ class RegisterController extends Controller
                         'message' => trans('sentence.one-specialization-at-least')
                     ])->withInput($request->all());
                 }
-
-                $this->validator($request->all())->validate();
 
                 event(new Registered($user = User::create([
                     'name' => $request->name,
@@ -173,7 +172,6 @@ class RegisterController extends Controller
                     'user_id' => $user->id
                 ]);
             } else {
-                $this->validator($request->all())->validate();
                 if(!$this->CheckNIP($request->get('company_nip')))
                 {
                     session()->flash('error',  trans('sentence.invalid-nip'));
