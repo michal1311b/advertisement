@@ -115,6 +115,7 @@ return [
     'uploaded'             => 'Nie udało się wgrać pliku :attribute.',
     'url'                  => 'Format :attribute jest nieprawidłowy.',
     'uuid'                 => ':attribute musi być poprawnym identyfikatorem UUID.',
+    'greater_than_field' => ':attribute musi być większy od wartości minimalnej',
     /*
     |--------------------------------------------------------------------------
     | Custom Validation Language Lines
