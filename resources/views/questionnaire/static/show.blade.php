@@ -258,11 +258,11 @@
                             <div class="col-sm-12">
                                 <div class="form-check">
                                     <input name="term1" type="hidden" value="0">
-                                    <input class="form-check-input" 
+                                    <input class="form-check-input" required
                                         type="checkbox" name="term1" id="term1" value="1"
                                         {{ old('term1', 0)  == 1 ? 'checked' : '' }}>
                                     <label class="form-check-label radio-label" for="term1">
-                                        {{ __('term1') }}
+                                        {{ trans('sentence.accept') }} <a href="{{ route('regulation.show') }}" class="text-lowercase">{{ trans('sentence.regulation') }}</a> {{ __('EmployMed.eu') }}
                                     </label>
                                 </div>
                             </div>

@@ -245,5 +245,6 @@ return [
   'regulation' => 'Regulation',
   'accept' => 'Accept',
   'data-conversion' => 'I agree to the processing of my personal data by Administrator',
-  'invalid-nip' => 'NIP number is invalid'
+  'invalid-nip' => 'NIP number is invalid',
+  'rodo-term' => 'I consent to the processing of my personal data for the purpose of recruitment in accordance with art. 6 clause 1 lit. a Regulation of the European Parliament and of the Council (EU) 2016/679 of 27 April 2016 on the protection of individuals with regard to the processing of personal data and on the free movement of such data and repealing Directive 95/46 / EC (General Data Protection Regulation)'
 ];
