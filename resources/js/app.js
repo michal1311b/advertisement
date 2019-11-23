@@ -57,6 +57,10 @@ $(document).ready(function() {
         "clearIncomplete": true
     }).mask($('#post_code'));
 
+    Inputmask("99-999", {
+        "clearIncomplete": true
+    }).mask($('#company_post_code'));
+
     $('.start_date').datepicker({
         format: 'yyyy-mm-dd'
     });

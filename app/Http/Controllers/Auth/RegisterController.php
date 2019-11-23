@@ -77,7 +77,6 @@ class RegisterController extends Controller
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
     }
-
     public function validateNil($pwz, $dob)
     {
         $resp = json_decode(file_get_contents('https://nil.lptgroup.pl/validate/' . $pwz . '/' . str_replace("-", "", $dob)));
