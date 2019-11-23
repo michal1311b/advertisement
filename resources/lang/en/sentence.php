@@ -242,5 +242,7 @@ return [
   'fill-experience'  => 'Complete your experience',
   'room_name' => 'Chat room name',
   'cookies-policy' => 'Cookies policy',
-  'regulation' => 'Regulation'
+  'regulation' => 'Regulation',
+  'accept' => 'Accept',
+  'data-conversion' => 'I agree to the processing of my personal data by Administrator'
 ];

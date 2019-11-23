@@ -294,7 +294,7 @@
                                                 type="checkbox" name="term1" id="term1" value="1"
                                                 {{ old('term1', 0)  == 1 ? 'checked' : '' }}>
                                             <label class="form-check-label" for="term1">
-                                                {{ __('term1') }}
+                                                {{ trans('sentence.accept') }} <a href="{{ route('regulation.show') }}" class="text-lowercase">{{ trans('sentence.regulation') }}</a> {{ __('EmployMed.eu') }}
                                             </label>
                                         </div>
                                     </div>
@@ -309,7 +309,7 @@
                                                 type="checkbox" name="term2" id="term2" value="1"
                                                 {{ old('term2', 0)  == 1 ? 'checked' : '' }}>
                                             <label class="form-check-label" for="term2">
-                                                {{ __('term2') }}
+                                                {{ trans('sentence.accept') }} <a href="{{ route('cookies.show') }}" class="text-lowercase">{{ trans('sentence.cookies-policy') }}</a> {{ __('EmployMed.eu') }}
                                             </label>
                                         </div>
                                     </div>
@@ -324,7 +324,7 @@
                                                 type="checkbox" name="term3" id="term3" value="1"
                                                 {{ old('term3', 0)  == 1 ? 'checked' : '' }}>
                                             <label class="form-check-label" for="term3">
-                                                {{ __('term3') }}
+                                                {{ trans('sentence.data-conversion') }} {{ __('EmployMed.eu') }}
                                             </label>
                                         </div>
                                     </div>

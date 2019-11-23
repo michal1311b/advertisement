@@ -242,5 +242,7 @@ return [
   'fill-experience'  => 'Uzupełnij doświadczenie zawodowe',
   'room_name' => 'Nazwa czatu',
   'cookies-policy' => 'Polityka cookies',
-  'regulation' => 'Regulamin'
+  'regulation' => 'Regulamin',
+  'accept' => 'Akceptuję',
+  'data-conversion' => 'Wyrażam zgodę na przetwarzanie moich danych osobowych przez Administratora'
 ];
