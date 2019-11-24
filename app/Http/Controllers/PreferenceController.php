@@ -156,15 +156,27 @@ class PreferenceController extends Controller
                 
                 $locationIds = array_unique(array_merge($locationData, $userLocalizations->toArray()));
   
-                $advertisements = Advertisement::whereIn('location_id', $locationIds)
-                ->where('settlement_id', $user->preference->settlement_id)
-                ->where('work_id', $user->preference->work_id)
-                ->where('currency_id', $user->preference->currency_id)
-                ->whereIn('specialization_id', $user->specializations->pluck('id'))
-                ->where('max_salary', '>', $user->preference->min_salary)
-                ->where('min_salary', '<', $user->preference->min_salary)
-                ->where('created_at', '>', Carbon::now()->subDays(30))
-                ->get();
+                if($user->preference->work_id === 1)
+                {
+                    $advertisements = Advertisement::whereIn('location_id', $locationIds)
+                    ->where('settlement_id', $user->preference->settlement_id)
+                    ->where('currency_id', $user->preference->currency_id)
+                    ->whereIn('specialization_id', $user->specializations->pluck('id'))
+                    ->where('max_salary', '>', $user->preference->min_salary)
+                    ->where('min_salary', '<', $user->preference->min_salary)
+                    ->where('created_at', '>', Carbon::now()->subDays(30))
+                    ->get();
+                } else {
+                    $advertisements = Advertisement::whereIn('location_id', $locationIds)
+                    ->where('settlement_id', $user->preference->settlement_id)
+                    ->where('work_id', $user->preference->work_id)
+                    ->where('currency_id', $user->preference->currency_id)
+                    ->whereIn('specialization_id', $user->specializations->pluck('id'))
+                    ->where('max_salary', '>', $user->preference->min_salary)
+                    ->where('min_salary', '<', $user->preference->min_salary)
+                    ->where('created_at', '>', Carbon::now()->subDays(30))
+                    ->get();
+                }
 
                 if($advertisements->count() > 0)
                 {
