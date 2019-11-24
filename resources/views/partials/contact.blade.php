@@ -56,7 +56,7 @@
                     <label for="cv">{{ trans('sentence.upload-cv')}}</label>
                     
                     @if(isset(auth()->user()->doctor) && auth()->user()->doctor->cv)
-                        <a href="{{ auth()->user()->doctor->cv }}" class="btn btn-primary" target="_blank">{{ __('CV') }}</a>
+                        <a href="{{ auth()->user()->doctor->cv }}" class="btn btn-primary" target="_blank">{{ trans('sentence.show-cv') }}</a>
                     @else
                         <input type="file" class="form-control @error('cv') is-invalid @enderror" name="cv" required/>
                         @error('cv')

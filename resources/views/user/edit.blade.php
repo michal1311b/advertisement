@@ -74,9 +74,16 @@
                                 !$editUser->preference->work_id ||
                                 !$editUser->preference->settlement_id ||
                                 !$editUser->preference->currency_id ||
-                                !$editUser->preference->min_salary ||
-                                count($userLocations) == 0)
+                                !$editUser->preference->min_salary)
                                 <span class="badge blue-tooltip" data-toggle="tooltip" title="{{ trans('sentence.fill-preferences') }}">!</span>
+                            @endif
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link warning" data-toggle="tab" href="#menu4a">
+                            {{ trans('sentence.locations') }} 
+                            @if(count($userLocations) == 0)
+                                <span class="badge blue-tooltip" data-toggle="tooltip" title="{{ trans('sentence.fill-locations') }}">!</span>
                             @endif
                         </a>
                     </li>
@@ -125,7 +132,6 @@
                                             @enderror
                                         </div>
                                     </div>
-            
             
                                     <div class="form-group row">
                                         @if($editUser->provider_name)
@@ -786,6 +792,25 @@
                                         <input type="hidden" name="_method" value="PUT">
                                         @csrf
                                         <div class="form-group row">
+                                            <label class="col-12 col-md-3 col-form-label text-md-right" for="settlement_id">{{ trans('sentence.settlement') }}</label>
+                                            <div class="col-12 col-md-9">
+                                                <select data-live-search="true" class="form-control @error('settlement_id') is-invalid @enderror" name="settlement_id" id="settlement_id">
+                                                    <option selected value="">{{ trans('sentence.choose') }}</option>
+                                                    @foreach($settlements as $settlement)
+                                                        @if($editUser->preference->settlement_id === $settlement->id)
+                                                            <option value="{{ $settlement->id }}" selected>{{ $settlement->name }}</option>
+                                                        @else
+                                                            <option value="{{ $settlement->id }}">{{ $settlement->name }}</option>
+                                                        @endif
+                                                    @endforeach
+                                                </select>
+                                                @error('settlement_id')
+                                                    <div class="alert alert-danger">{{ $message }}</div>
+                                                @enderror
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="form-group row">
                                             <label for="min_salary" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.min_salary') }}</label>
                 
                                             <div class="col-12 col-md-9">
@@ -810,25 +835,6 @@
                                                     @endforeach
                                                 </select>
                                                 @error('currency_id')
-                                                    <div class="alert alert-danger">{{ $message }}</div>
-                                                @enderror
-                                            </div>
-                                        </div>
-            
-                                        <div class="form-group row">
-                                            <label class="col-12 col-md-3 col-form-label text-md-right" for="settlement_id">{{ trans('sentence.settlement') }}</label>
-                                            <div class="col-12 col-md-9">
-                                                <select data-live-search="true" class="form-control @error('settlement_id') is-invalid @enderror" name="settlement_id" id="settlement_id">
-                                                    <option selected value="">{{ trans('sentence.choose') }}</option>
-                                                    @foreach($settlements as $settlement)
-                                                        @if($editUser->preference->settlement_id === $settlement->id)
-                                                            <option value="{{ $settlement->id }}" selected>{{ $settlement->name }}</option>
-                                                        @else
-                                                            <option value="{{ $settlement->id }}">{{ $settlement->name }}</option>
-                                                        @endif
-                                                    @endforeach
-                                                </select>
-                                                @error('settlement_id')
                                                     <div class="alert alert-danger">{{ $message }}</div>
                                                 @enderror
                                             </div>
@@ -864,7 +870,9 @@
                                 </div>
                             </div>
                         </div>
-
+                    </div>
+                    <div class="tab-pane container fade" id="menu4a">
+                    
                         <div class="col-md-12 py-3">
                             <div class="card">
                                 <div class="card-header">{{ trans('sentence.edit-prefered-location') }}</div>
@@ -974,7 +982,7 @@
                                 <div class="card-body">
                                     @if($editUser->doctor->cv !== null)
                                         <div class="btn-group" role="group" aria-label="Basic example">
-                                            <a href="{{ $editUser->doctor->cv }}" class="btn btn-primary" target="_blank">{{ __('CV') }}</a>
+                                            <a href="{{ $editUser->doctor->cv }}" class="btn btn-primary" target="_blank">{{ trans('sentence.show-cv') }}</a>
                                             <button class="btn btn-danger" data-toggle="modal"
                                                 data-target="#modalremovecv{{$editUser->doctor->id}}">{{ trans('sentence.btn-delete') }}</i>
                                             </button>
