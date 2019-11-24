@@ -252,7 +252,13 @@ L.tileLayer( 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 for ( var i=0; i < markers.length; ++i ) 
 {
-   L.marker( [markers[i].lat, markers[i].lng] )
+    let icon = L.icon({ 
+        iconUrl: '{{ URL::asset('/images/icons/') }}' + '/' + i + '.jpg',
+        iconSize: [26, 26],
+    });
+   L.marker( 
+       [markers[i].lat, markers[i].lng],
+       { icon: icon })
       .bindPopup( markers[i].name + ': ' + markers[i].min_salary + '-' + markers[i].max_salary + ' ' + markers[i].currency )
       .addTo( map );
 }
