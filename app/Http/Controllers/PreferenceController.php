@@ -156,7 +156,7 @@ class PreferenceController extends Controller
                 
                 $locationIds = array_unique(array_merge($locationData, $userLocalizations->toArray()));
   
-                if($user->preference->work_id === 1)
+                if($user->preference->work_id == 1)
                 {
                     $advertisements = Advertisement::whereIn('location_id', $locationIds)
                     ->where('settlement_id', $user->preference->settlement_id)
