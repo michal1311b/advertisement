@@ -16,11 +16,11 @@
                             {{ trans('sentence.language')}} <span class="caret"></span>
                     </a>
                     @switch($locale)
-                        @case('pl')
-                        <img src="{{asset('images/pl.png')}}" width="20px" height="20x"> {{ trans('sentence.polish')}}
+                        @case('en')
+                        <img src="{{asset('images/uk.png')}}" width="20px" height="20x"> {{ trans('sentence.english')}}
                         @break
                         @default
-                        <img src="{{asset('images/uk.png')}}" width="20px" height="20x"> {{ trans('sentence.english')}}
+                        <img src="{{asset('images/pl.png')}}" width="20px" height="20x"> {{ trans('sentence.polish')}}
                     @endswitch
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="{{ route('locale', 'en') }}"><img src="{{asset('images/uk.png')}}" width="20px" height="20x"> {{ trans('sentence.english')}}</a>
@@ -32,6 +32,20 @@
             <!-- Right Side Of Navbar -->
             <ul class="navbar-nav ml-auto">
                 <!-- Authentication Links -->
+                <li class="nav-item">
+                    <a href="{{ route('company-list') }}" class="nav-link">{{ trans('sentence.company-list') }}</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('advertisement-list') }}" class="nav-link">{{ trans('sentence.offers') }}</a>
+                </li>
+                @guest
+                @else
+                    @if(auth()->user()->hasRole('doctor'))
+                        <li class="nav-item">
+                            <a href="{{ route('user-prefered-locations') }}" class="nav-link">{{ trans('sentence.your-preferences')}}</a>
+                        </li>
+                    @endif
+                @endguest
                 @guest
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('login') }}">{{ trans('sentence.login')}}</a>
@@ -62,9 +76,6 @@
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="{{ route('edit-user', auth()->user()->id) }}">{{ trans('sentence.user-profile')}}</a>
                             <a class="dropdown-item" href="{{ route('user-rooms') }}">{{ trans('sentence.user-message')}}</a>
-                            @if(auth()->user()->hasRole('doctor'))
-                                <a class="dropdown-item" href="{{ route('user-prefered-locations') }}">{{ trans('sentence.your-preferences')}}</a>
-                            @endif
                             <a class="dropdown-item" href="{{ route('advertisement-list') }}">{{ trans('sentence.offers-list')}}</a>
                             
                             @if(auth()->user()->hasRole('admin') || auth()->user()->hasRole('company'))
