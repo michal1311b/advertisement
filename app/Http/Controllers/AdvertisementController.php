@@ -232,7 +232,7 @@ class AdvertisementController extends Controller
         $locations = Location::all();
         $specializations = Specialization::all();
 
-        $advertisements = $advertisements->paginate(5);
+        $advertisements = $advertisements->paginate();
 
         return view('advertisement.index', compact(['advertisements', 'locations', 'specializations']));
     }
