@@ -88,6 +88,7 @@ markers = [
         {
             "id": "{{ $advertisement->specialization->id }}",
             "name": "{{ $advertisement->location->city }}",
+            "street": "{{ $advertisement->street }}",
             "lat": {{ $advertisement->location->latitude }},
             "lng": {{ $advertisement->location->longitude }},
             "slug": "{{ route('show-advertisement', ['id' => $advertisement->id, 'slug' => $advertisement->slug]) }}",
@@ -117,7 +118,7 @@ for ( var i=0; i < markers.length; ++i )
    L.marker( 
        [markers[i].lat, markers[i].lng],
        { icon: icon })
-      .bindPopup( '<a href="' + markers[i].slug + '" target="_blank">' + markers[i].name + ': ' + markers[i].min_salary + '-' + markers[i].max_salary + ' ' + markers[i].currency + '</a>' )
+      .bindPopup( '<a href="' + markers[i].slug + '" target="_blank">' + markers[i].name + ', ' + markers[i].street + ': ' + markers[i].min_salary + '-' + markers[i].max_salary + ' ' + markers[i].currency + '</a>' )
       .addTo( map );
 }
 </script>
