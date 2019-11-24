@@ -90,12 +90,16 @@
                             <div class="col-12">
                                 <ul class="list-group">
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        {{ __('Logo:') }}
+                                        {{ __('Logo') }}
                                         <span class="badge badge-pill"><img class="user-avatar--smaller" src="{{ $advertisement->user->avatar }}" /></span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
                                         {{ trans('sentence.city') }}
                                         <span class="badge badge-pill">{{ $advertisement->location->city }}</span>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        {{ trans('sentence.street') }}
+                                        <span class="badge badge-pill">{{ $advertisement->street }}</span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
                                         {{ trans('sentence.state') }}
