@@ -164,7 +164,7 @@ class PreferenceController extends Controller
                     ->whereIn('specialization_id', $user->specializations->pluck('id'))
                     ->where('max_salary', '>', $user->preference->min_salary)
                     ->where('min_salary', '<', $user->preference->min_salary)
-                    ->where('created_at', '>', Carbon::now()->subDays(30))
+                    ->where('expired_at', '>', Carbon::now()->subDays(30))
                     ->get();
                 } else {
                     $advertisements = Advertisement::whereIn('location_id', $locationIds)
@@ -174,7 +174,7 @@ class PreferenceController extends Controller
                     ->whereIn('specialization_id', $user->specializations->pluck('id'))
                     ->where('max_salary', '>', $user->preference->min_salary)
                     ->where('min_salary', '<', $user->preference->min_salary)
-                    ->where('created_at', '>', Carbon::now()->subDays(30))
+                    ->where('expired_at', '>', Carbon::now()->subDays(30))
                     ->get();
                 }
 
