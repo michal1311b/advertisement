@@ -111,6 +111,7 @@
 markers = [
     @foreach($user->advertisements as $advertisement)
         {
+            "id": "{{ $advertisement->specialization->id }}",
             "name": "{{ $advertisement->location->city }}",
             "lat": {{ $advertisement->location->latitude }},
             "lng": {{ $advertisement->location->longitude }},
@@ -135,7 +136,7 @@ L.tileLayer( 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 for ( var i=0; i < markers.length; ++i ) 
 {
     let icon = L.icon({ 
-        iconUrl: '{{ URL::asset('/images/icons/') }}' + '/' + i + '.jpg',
+        iconUrl: '{{ URL::asset('/images/icons/') }}' + '/' + markers[i].id + '.jpg',
         iconSize: [26, 26],
     });
    L.marker( 

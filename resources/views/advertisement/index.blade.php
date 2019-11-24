@@ -86,6 +86,7 @@
 markers = [
     @foreach($advertisements as $advertisement)
         {
+            "id": "{{ $advertisement->specialization->id }}",
             "name": "{{ $advertisement->location->city }}",
             "lat": {{ $advertisement->location->latitude }},
             "lng": {{ $advertisement->location->longitude }},
@@ -97,10 +98,10 @@ markers = [
    @endforeach
 ];
 var map = L.map( 'map', {
-        center: [52.237049, 21.017532],
-        minZoom: 2,
-        zoom: 6
-    });
+    center: [52.237049, 21.017532],
+    minZoom: 2,
+    zoom: 6
+});
 
 L.tileLayer( 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
@@ -110,7 +111,7 @@ L.tileLayer( 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 for ( var i=0; i < markers.length; ++i ) 
 {
     let icon = L.icon({ 
-        iconUrl: '{{ URL::asset('/images/icons/') }}' + '/' + i + '.jpg',
+        iconUrl: '{{ URL::asset('/images/icons/') }}' + '/' + markers[i].id + '.jpg',
         iconSize: [26, 26],
     });
    L.marker( 
