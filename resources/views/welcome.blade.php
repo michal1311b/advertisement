@@ -71,6 +71,26 @@
                 <div class="card-body">
                     <div class="container-fluid">
                         <div class="row">
+                            <div class="col-12">
+                                <div class="btn-group" role="group" aria-label="Basic example">
+                                    <a href="#gear" class="btn btn-secondary kreep">
+                                        <i class="fas fa-cogs"></i>
+                                    </a>
+                                    <a href="#hourglass" class="btn btn-secondary wiggle">
+                                        <i class="fas fa-hourglass-half"></i>
+                                    </a>
+                                    <a href="#money" class="btn btn-secondary kreep">
+                                        <i class="fas fa-file-invoice-dollar"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-body">
+                    <div class="container-fluid">
+                        <div class="row">
                             <div class="col-12 col-md-6">
                                 <div class="content">
                                     <div class="title m-b-md">
@@ -117,13 +137,14 @@
                     </div>
                 </div>
 
-                <div class="card-body">
+                <div class="card-body" id="gear">
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-12">
                                 <div class="content">
                                     <div class="title m-b-md">
                                         <h3>
+                                            <i class="fas fa-cogs"></i>
                                             {{ trans('sentence.homepage.how.it.works') }}
                                         </h3>
                                         <h6>
@@ -136,13 +157,14 @@
                     </div>
                 </div>
 
-                <div class="card-body">
+                <div class="card-body" id="hourglass">
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-12">
                                 <div class="content">
                                     <div class="title m-b-md">
                                         <h3>
+                                            <i class="fas fa-hourglass-half"></i>
                                             {{ trans('sentence.homepage.for.doctor.stomatologist') }}
                                         </h3>
                                         <h6>
@@ -155,13 +177,14 @@
                     </div>
                 </div>
 
-                <div class="card-body">
+                <div class="card-body" id="money">
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-12">
                                 <div class="content">
                                     <div class="title m-b-md">
                                         <h3>
+                                            <i class="fas fa-file-invoice-dollar"></i>
                                             {{ trans('sentence.homepage.for.employer') }}
                                         </h3>
                                         <h6>
