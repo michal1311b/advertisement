@@ -136,7 +136,7 @@ class Advertisement extends Model
                     $fileData->newName = $now->getTimestamp() . $entry->generateRandomString();
                     $fileData->size = $gallery->getClientSize();
                     $fileData->mimeType = $gallery->getClientMimeType();
-                    $fileData->path = "http://{$_SERVER['HTTP_HOST']}/" .$gallery->store(self::uploadDir() . '/' . $entry->id . '_' . $now->format('Y-m-d'), 'public');
+                    $fileData->path = "https://{$_SERVER['HTTP_HOST']}/" .$gallery->store(self::uploadDir() . '/' . $entry->id . '_' . $now->format('Y-m-d'), 'public');
                     $fileData->advertisement_id = $entry->id;
                     $entry->galleries()->save($fileData);
                 }
@@ -173,7 +173,7 @@ class Advertisement extends Model
                     $fileData->newName = $now->getTimestamp() . $this->generateRandomString();
                     $fileData->size = $gallery->getClientSize();
                     $fileData->mimeType = $gallery->getClientMimeType();
-                    $fileData->path = "http://{$_SERVER['HTTP_HOST']}/" .$gallery->store(self::uploadDir() . '/' . $this->id . '_' . $now->format('Y-m-d'), 'public');
+                    $fileData->path = "https://{$_SERVER['HTTP_HOST']}/" .$gallery->store(self::uploadDir() . '/' . $this->id . '_' . $now->format('Y-m-d'), 'public');
                     $fileData->advertisement_id = $this->id;
                     $this->galleries()->save($fileData);
                 }
