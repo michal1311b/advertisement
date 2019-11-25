@@ -116,6 +116,63 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="card-body">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="content">
+                                    <div class="title m-b-md">
+                                        <h3>
+                                            {{ trans('sentence.homepage.how.it.works') }}
+                                        </h3>
+                                        <h6>
+                                            {{ trans('sentence.homepage.how.it.works.explain') }}
+                                        </h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-body">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="content">
+                                    <div class="title m-b-md">
+                                        <h3>
+                                            {{ trans('sentence.homepage.for.doctor.stomatologist') }}
+                                        </h3>
+                                        <h6>
+                                            {{ trans('sentence.homepage.for.doctor.stomatologist.explain') }}
+                                        </h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-body">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="content">
+                                    <div class="title m-b-md">
+                                        <h3>
+                                            {{ trans('sentence.homepage.for.employer') }}
+                                        </h3>
+                                        <h6>
+                                            {{ trans('sentence.homepage.for.employer.explain') }}
+                                        </h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
