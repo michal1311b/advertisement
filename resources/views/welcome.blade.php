@@ -146,7 +146,7 @@
                                             {{ trans('sentence.homepage.for.doctor.stomatologist') }}
                                         </h3>
                                         <h6>
-                                            {{ trans('sentence.homepage.for.doctor.stomatologist.explain') }}
+                                            {!! trans('sentence.homepage.for.doctor.stomatologist.explain') !!}
                                         </h6>
                                     </div>
                                 </div>
@@ -165,7 +165,7 @@
                                             {{ trans('sentence.homepage.for.employer') }}
                                         </h3>
                                         <h6>
-                                            {{ trans('sentence.homepage.for.employer.explain') }}
+                                            {!! trans('sentence.homepage.for.employer.explain') !!}
                                         </h6>
                                     </div>
                                 </div>
