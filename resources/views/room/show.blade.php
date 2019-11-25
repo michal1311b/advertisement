@@ -35,7 +35,7 @@
                                 <div class="col-12">
                                     {!! $message->message !!}
                                     @if($message->user->doctor && $message->user->doctor->cv && $loop->index === 0)
-                                        <a href="{{$message->user->doctor->cv}}" class="btn btn-primary">{{ __('CV') }}</a>
+                                        <a href="{{$message->user->doctor->cv}}" class="btn btn-primary">{{ trans('sentence.show-cv') }}</a>
                                     @endif
                                 </div>
                             </div>

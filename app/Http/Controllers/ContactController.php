@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Advertisement;
+use App\Application;
 use Illuminate\Http\Request;
 use App\Contact;
 use App\User;
@@ -23,10 +24,22 @@ class ContactController extends Controller
 {
     public function store(StoreRequest $request, Advertisement $advertisement)
     {
+        $user = auth()->user();
+
+        if($this->checkApplication($user, $advertisement))
+        {
+            session()->flash('error', trans('sentence.applied-again'));
+
+            return back();
+        }
+
         DB::beginTransaction();
 
         try {
-            $user = auth()->user();
+            Application::create([
+                'user_id' => $user->id,
+                'advertisement_id' => $advertisement->id
+            ]);
 
             $now = Carbon::now();
             $data = [];
@@ -90,6 +103,17 @@ class ContactController extends Controller
             session()->flash('error',  trans('sentence.error-message'));
 
             return back()->withInput($request->all());
+        }
+    }
+
+    private function checkApplication($user, $advertisement)
+    {
+        $application = Application::where('user_id', $user->id)
+        ->where('advertisement_id', $advertisement->id)->get();
+
+        if(count($application))
+        {
+            return true;
         }
     }
 
