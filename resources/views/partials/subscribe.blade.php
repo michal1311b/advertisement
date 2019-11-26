@@ -1,4 +1,5 @@
 <form method="POST" action="{{ route('subscribe') }}">
+    @honeypot
     @csrf
     <div class="col-md-12">
         @include('partials.message')
