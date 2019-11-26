@@ -246,7 +246,7 @@ class RegisterController extends Controller
             $long = $data['lon'];
             
             Location::create([
-                'city' => $city,
+                'city' => ucfirst($city),
                 'longitude' => $long,
                 'latitude' => $lat
             ]);
