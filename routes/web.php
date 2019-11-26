@@ -16,7 +16,7 @@ Route::get('/', 'PageController@siteIndex')->name('homepage');
 
 Route::get('lang/{locale}', 'LanguageController@lang')->name('locale');
 
-Route::post('/subscribe', 'SubscriberController@store')->name('subscribe');
+Route::post('/subscribe', 'SubscriberController@store')->name('subscribe')->middleware(ProtectAgainstSpam::class);
 
 Route::get('/ankieta-na-temat-pracy-lekarza', 'StaticQuestionnaireController@show')->name('static.questionnaire.show');
 Route::post('/ankieta-na-temat-pracy-lekarza', 'StaticQuestionnaireController@store')->name('static.questionnaire.store');

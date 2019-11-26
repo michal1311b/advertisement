@@ -31,12 +31,9 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-12 col-md-6 pb-2">
-                                <img src="{{ $post->cover }}" class="w-100" alt="{{ $post->title }}"/>
-                            </div>
-                            <div class="col-12 col-md-6">
+                            <div class="col-12 pb-2">
                                 <ul class="list-group">
-                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <li class="list-group-item d-inline-block">
                                         {{ trans('sentence.tags') }}
                                         @foreach($post->pins as $pin)
                                             <a href="{{ route('postTag', ['tagSlug' => $pin->slug]) }}">
@@ -46,6 +43,13 @@
                                             </a>
                                         @endforeach
                                     </li>
+                                </ul>
+                            </div>
+                            <div class="col-12 col-md-6 pb-2">
+                                <img src="{{ $post->cover }}" class="w-100" alt="{{ $post->title }}"/>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <ul class="list-group">
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
                                         {{ trans('sentence.category') }}
                                         <a href="{{ route('blog.category', $post->category) }}">

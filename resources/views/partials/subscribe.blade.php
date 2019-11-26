@@ -24,17 +24,6 @@
                 {{  $errors->first('specializations') }}
             </span>
         @endif
-
-        <div class="pt-3">
-            {!! NoCaptcha::renderJs() !!}
-            {!! NoCaptcha::display(['data-theme' => 'dark']) !!}
-        </div>
-
-        @if ($errors->has('g-recaptcha-response'))
-            <span class="help-block">
-                <strong>{{ $errors->first('g-recaptcha-response') }}</strong>
-            </span>
-        @endif
         
         <div class="form-check pt-3">
             <input name="term1" type="hidden" value="0">
@@ -42,7 +31,7 @@
             type="checkbox" name="term1" id="term1" value="1"
             {{ old('term1', 0)  == 1 ? 'checked' : '' }}>
             <label class="form-check-label" for="term1">
-                {{ __('term1') }}
+                {{ trans('sentence.newsletter-term') }}
             </label>
         </div>
     </div>

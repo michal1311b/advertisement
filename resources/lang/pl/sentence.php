@@ -257,5 +257,6 @@ return [
   'data-conversion' => 'Wyrażam zgodę na przetwarzanie moich danych osobowych przez Administratora',
   'invalid-nip' => 'Nieprawidłowy numer NIP',
   'rodo-term' => 'Wyrażam zgodę na przetwarzanie moich danych osobowych w celu rekrutacji zgodnie z art. 6 ust. 1 lit. a Rozporządzenia Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. w sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych i w sprawie swobodnego przepływu takich danych oraz uchylenia dyrektywy 95/46/WE (ogólne rozporządzenie o ochronie danych)',
-  'applied-again' => 'Na to ogłoszenie aplikacja została już złożona.'
+  'applied-again' => 'Na to ogłoszenie aplikacja została już złożona.',
+  'newsletter-term' => 'Wyrażam zgodę na przesyłanie informacji handlowej środkami komunikacji elektronicznej, w tym na podany przeze mnie w trakcie rejestracji adres poczty elektronicznej, przez: Administratora EmployMed, zgodnie z ustawą z dnia 18 lipca 2002 r. o świadczeniu usług drogą elektroniczną (Dz. U. z 2002 r. Nr 144, poz. 1204 z późn. zm.).'
 ];
