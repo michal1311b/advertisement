@@ -325,7 +325,7 @@ function makeNotificationText(notification) {
         const email = notification.data.email;
         text += `<li class="dropdown-header"><strong>${email}</strong> send You a message</li>`;
     } else if(notification.type === NOTIFICATION_TYPES.chatMessage) {
-        text += `<li class="dropdown-header">New message</li>`;
+        text += `<li class="dropdown-header">You have new application</li>`;
     }
     return text;
 }

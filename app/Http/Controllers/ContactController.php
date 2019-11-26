@@ -10,11 +10,13 @@ use App\User;
 use App\Http\Service\Mailer;
 use App\Notifications\NewMessage;
 use App\Http\Requests\Contact\StoreRequest;
+use App\Http\Requests\SiteContact\StoreRequest as SiteRequest;
 use App\Mail\ApplicationEmail;
 use App\Message;
 use App\Notifications\ConversationNotification;
 use App\Room;
 use App\RoomUser;
+use App\SiteContact;
 use Illuminate\Support\Str;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
@@ -114,6 +116,33 @@ class ContactController extends Controller
         if(count($application))
         {
             return true;
+        }
+    }
+
+    public function show()
+    {
+        return view('contact.show');
+    }
+
+    public function sendForm(SiteRequest $request)
+    {
+        DB::beginTransaction();
+
+        try { 
+            SiteContact::create($request->all());
+
+            DB::commit();
+
+            session()->flash('success', trans('sentence.message-send'));
+
+            return back();
+        } catch (\Exception $e) {
+            Log::info($e);
+            DB::rollback();
+
+            session()->flash('error',  trans('sentence.error-message'));
+
+            return back()->withInput($request->all());
         }
     }
 
