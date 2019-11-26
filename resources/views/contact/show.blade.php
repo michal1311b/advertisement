@@ -1,7 +1,7 @@
 @extends('layouts.site')
 
 @section('title')
-    {{ trans('contact.form') }}
+    {{ trans('sentence.contact-form') }}
 @endsection
 
 @section('breadcrumbs')

@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+<nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm sticky-top">
     <div class="container">
         <a class="navbar-brand" href="{{ url('/') }}">
             <img src="{{ asset('images/logo.png') }}" class="w-100 logo" alt="EmployMed Logo"/>
@@ -37,6 +37,11 @@
                 </li>
                 <li class="nav-item">
                     <a href="{{ route('advertisement-list') }}" class="nav-link">{{ trans('sentence.offers') }}</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('create-advertisement') }}" class="btn btn-success">
+                        <i class="fas fa-plus-circle"></i>
+                    </a>
                 </li>
                 @guest
                 @else
