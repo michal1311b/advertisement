@@ -28,6 +28,7 @@
                 </div>
                 <div class="card-body">
                     <form method="POST" action="{{ route('contact.store') }}">
+                        @honeypot
                         @csrf
                         <div class="form-row">
                             <div class="form-group col-md-6">
