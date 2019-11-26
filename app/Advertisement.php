@@ -34,7 +34,9 @@ class Advertisement extends Model
         'term3',
         'negotiable',
         'slug',
-        'expired_at'
+        'expired_at',
+        'longitude',
+        'latitude'
     ];
 
     public static function uploadDir()
@@ -99,6 +101,9 @@ class Advertisement extends Model
 
     public static function create(array $attributes = [])
     {
+        $latLon = self::get_lat_long($attributes['street'], $attributes['location_id']);
+        $latLonData = explode(',', $latLon);
+
         $attributes['slug'] = self::getUniqueSlug($attributes['title']);
         $entry = new Advertisement();
         $entry->title = $attributes['title'];
@@ -124,6 +129,8 @@ class Advertisement extends Model
         $entry->negotiable = $attributes['negotiable'];
         $entry->expired_at = Carbon::now()->addDays(30);
         $entry->slug = $attributes['slug'];
+        $entry->latitude = $latLonData[0];
+        $entry->longitude = $latLonData[1];
         $entry->save();
 
         $now = Carbon::now();
@@ -159,6 +166,11 @@ class Advertisement extends Model
 
     public function update(array $attributes = [], array $options = [])
     {
+        $latLon = self::get_lat_long($attributes['street'], $attributes['location_id']);
+        $latLonData = explode(',', $latLon);
+        $attributes['latitude'] = $latLonData[0];
+        $attributes['longitude'] = $latLonData[1];
+
         if($this->title !== $attributes['title']) {
             $attributes['slug'] = self::getUniqueSlug($attributes['title']);
         }
@@ -218,5 +230,54 @@ class Advertisement extends Model
     private static function getUniqueSlug($title)
     {
         return str_slug($title, '-');
+    }
+
+    protected static function get_lat_long($address, $city){
+        $location = Location::where('id', $city)->count();
+        $ct = Location::where('id', $city)->first();
+        
+        if($location === 0) {
+            $opts = array(
+                'http' => array(
+                    'header' => "User-Agent: StevesCleverAddressScript 3.7.6\r\n"
+            ));
+
+            $context = stream_context_create($opts);
+            $address = str_replace(" ", "+", $address);
+            $trimCity = trim($city);
+            $cityUrl = str_replace(" ", "+", $trimCity);
+            $json = file_get_contents("https://nominatim.openstreetmap.org/search?q=$address,+$cityUrl&format=json&polygon=1&addressdetails=1", false, $context);
+            $json = json_decode($json);
+            $data = get_object_vars($json[0]);
+
+            $lat = $data['lat'];
+            $long = $data['lon'];
+            
+            Location::create([
+                'city' => ucfirst($city),
+                'longitude' => $long,
+                'latitude' => $lat
+            ]);
+
+            return $lat.','.$long;
+        } else {
+            $opts = array(
+                'http' => array(
+                    'header' => "User-Agent: StevesCleverAddressScript 3.7.6\r\n"
+            ));
+
+            $context = stream_context_create($opts);
+            $address = str_replace(" ", "+", $address);
+            $trimCity = trim($ct->city);
+            $cityUrl = str_replace(" ", "+", $trimCity);
+            $json = file_get_contents("https://nominatim.openstreetmap.org/search?q=$address,+$cityUrl&format=json&polygon=1&addressdetails=1", false, $context);
+            $json = json_decode($json);
+            $data = get_object_vars($json[0]);
+
+            $lat = $data['lat'];
+            $long = $data['lon'];
+
+            return $lat.','.$long;
+        }
     }
 }
