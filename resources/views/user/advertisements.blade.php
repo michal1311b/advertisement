@@ -26,6 +26,9 @@
 @section('content')
 <div class="container">
     <div class="row">
+        <div class="col-md-12">
+            @include('partials.message')
+        </div>
         <div class="col-lg-12 mx-auto">
             @if(count($advertisements) > 0)
                 @foreach($advertisements as $advertisement)

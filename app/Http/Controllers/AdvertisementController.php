@@ -174,13 +174,10 @@ class AdvertisementController extends Controller
     public function delete($id)
     {
         $advertisement = Advertisement::with(['tags', 'galleries'])->findOrFail($id);
-        foreach ($advertisement->tags as $tag) {
-            $tag->delete();
-        }
-        foreach ($advertisement->galleries as $gallery) {
-            $gallery->delete();
-        }
+        
         if ($advertisement->delete()) {
+            session()->flash('success',  trans('sentence.delete-offer'));
+
             return back();
         }
     }

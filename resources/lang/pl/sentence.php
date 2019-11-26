@@ -207,6 +207,7 @@ return [
   'delete-language' => 'Język został usunięty!',
   'delete-page' => 'Podstrona została usunięta!',
   'delete-post' => 'Artykuł został usunięty!',
+  'delete-offer' => 'Ogłoszenie zostało usunięte!',
   'delete-prefered-location' => 'Preferowana lokalizacja została usunięta!',
   'similar' => 'Podobne oferty',
   'dear' => 'Szanowni Państwo,<br>',

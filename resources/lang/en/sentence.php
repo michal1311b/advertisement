@@ -205,6 +205,7 @@ return [
   'delete-language' => 'Language was deleted successfully!',
   'delete-page' => 'Page was deleted successfully!',
   'delete-post' => 'Post was deleted successfully!',
+  'delete-offer' => 'Offer was deleted successfully!',
   'delete-prefered-location' => 'Prefered location was deleted successfully!',
   'upload-file-success' => 'File uploaded with success',
   'delete-file-success' => 'File was deleted with success',
