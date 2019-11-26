@@ -212,7 +212,7 @@ class RegisterController extends Controller
 
             DB::commit();
 
-            session()->flash('success', 'You account was created. Please verify your email.');
+            session()->flash('success', trans('sentence.account-create-success'));
 
             return back();
         } catch (\Exception $e) {
@@ -237,7 +237,6 @@ class RegisterController extends Controller
             $context = stream_context_create($opts);
             $address = str_replace(" ", "+", $address);
             $json = file_get_contents("https://nominatim.openstreetmap.org/search?q=$address,+$city&format=json&polygon=1&addressdetails=1", false, $context);
-            
             $json = json_decode($json);
             $data = get_object_vars($json[0]);
 
