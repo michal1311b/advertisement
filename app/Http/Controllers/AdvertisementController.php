@@ -28,7 +28,7 @@ class AdvertisementController extends Controller
     {
         $advertisements = Advertisement::with(['state', 'galleries', 'location'])
         ->where('expired_at', '>', Carbon::now())->paginate(5);
-        $locations = Location::all();
+        $locations = Location::get(['id', 'city']);
         $specializations = Specialization::all();
         $expirateDate = Carbon::now()->subDays(30);
 
@@ -40,7 +40,7 @@ class AdvertisementController extends Controller
 
         $works = Work::all();
         $states = State::all();
-        $locations = Location::all();
+        $locations = Location::get(['id', 'city']);
         $specializations = Specialization::all();
         $currencies = Currency::all();
         $settlements = Settlement::all();
@@ -122,7 +122,7 @@ class AdvertisementController extends Controller
 
         $works = Work::all();
         $states = State::all();
-        $locations = Location::all();
+        $locations = Location::get(['id', 'city']);
         $specializations = Specialization::all();
         $currencies = Currency::all();
         $settlements = Settlement::all();
