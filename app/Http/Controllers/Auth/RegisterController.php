@@ -229,7 +229,6 @@ class RegisterController extends Controller
         $location = Location::where('city', $city)->count();
         
         if($location === 0) {
-            Log::info(33);
             $opts = array(
                 'http' => array(
                     'header' => "User-Agent: StevesCleverAddressScript 3.7.6\r\n"
