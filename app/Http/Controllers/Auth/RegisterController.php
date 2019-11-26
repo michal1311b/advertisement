@@ -10,6 +10,7 @@ use App\Role;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
+use App\Location;
 use App\Preference;
 use App\Specialization;
 use Illuminate\Support\Facades\Hash;
@@ -172,6 +173,9 @@ class RegisterController extends Controller
                     'user_id' => $user->id
                 ]);
             } else {
+                $latLong = $this->get_lat_long($request->company_street, $request->company_city);
+                // Log::info($latLong);
+
                 if(!$this->CheckNIP($request->get('company_nip')))
                 {
                     session()->flash('error',  trans('sentence.invalid-nip'));
@@ -219,5 +223,35 @@ class RegisterController extends Controller
 
             return back()->withInput($request->all());
         }
+    }
+
+    protected function get_lat_long($address, $city){
+        $location = Location::where('city', $city)->count();
+        
+        if($location === 0) {
+            Log::info(33);
+            $opts = array(
+                'http' => array(
+                    'header' => "User-Agent: StevesCleverAddressScript 3.7.6\r\n"
+            ));
+
+            $context = stream_context_create($opts);
+            $address = str_replace(" ", "+", $address);
+            $json = file_get_contents("https://nominatim.openstreetmap.org/search?q=$address,+$city&format=json&polygon=1&addressdetails=1", false, $context);
+            
+            $json = json_decode($json);
+            $data = get_object_vars($json[0]);
+
+            $lat = $data['lat'];
+            $long = $data['lon'];
+            
+            Location::create([
+                'city' => $city,
+                'longitude' => $long,
+                'latitude' => $lat
+            ]);
+
+            return $lat.','.$long;
+        } 
     }
 }
