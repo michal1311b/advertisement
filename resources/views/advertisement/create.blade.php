@@ -36,7 +36,7 @@
                         <div class="tab-content">
                             <div class="tab-pane container active" id="step1">
                                 <div class="form-group row">
-                                    <label for="title" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.title') }}</label>
+                                    <label for="title" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.title') }} <span class="text-danger font-weight-bolder">*</span></label>
         
                                     <div class="col-12 col-md-9">
                                         <input id="title" type="title" class="form-control @error('title') is-invalid @enderror" name="title" value="{{ old('title') }}" autocomplete="title" autofocus>
@@ -46,7 +46,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label for="description" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.description') }}</label>
+                                    <label for="description" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.description') }} <span class="text-danger font-weight-bolder">*</span></label>
         
                                     <div class="col-12 col-md-9">
                                         <textarea id="description" class="form-control @error('description') is-invalid @enderror" name="description" value="{{ old('description') }}" autocomplete="description" autofocus rows="3">
@@ -88,7 +88,7 @@
                             </div>
                             <div class="tab-pane container" id="step2">
                                 <div class="form-group row">
-                                    <label class="col-12 col-md-3 col-form-label text-md-right" for="work_id">{{ trans('sentence.work-category') }}</label>
+                                    <label class="col-12 col-md-3 col-form-label text-md-right" for="work_id">{{ trans('sentence.work-category') }} <span class="text-danger font-weight-bolder">*</span></label>
                                     <div class="col-12 col-md-9">
                                         <select data-live-search="true" class="form-control @error('work_id') is-invalid @enderror" name="work_id" id="work_id">
                                             <option selected>{{ trans('sentence.choose') }}</option>
@@ -102,7 +102,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label class="col-12 col-md-3 col-form-label text-md-right" for="location_id">{{ trans('sentence.location') }}</label>
+                                    <label class="col-12 col-md-3 col-form-label text-md-right" for="location_id">{{ trans('sentence.location') }} <span class="text-danger font-weight-bolder">*</span></label>
                                     <div class="col-12 col-md-9">
                                         <select data-live-search="true" class="form-control @error('location_id') is-invalid @enderror" name="location_id" id="location_id">
                                             <option selected>{{ trans('sentence.choose') }}</option>
@@ -118,7 +118,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label class="col-12 col-md-3 col-form-label text-md-right" for="state_id">{{ trans('sentence.state') }}</label>
+                                    <label class="col-12 col-md-3 col-form-label text-md-right" for="state_id">{{ trans('sentence.state') }} <span class="text-danger font-weight-bolder">*</span></label>
                                     <div class="col-12 col-md-9">
                                         <select data-live-search="true" class="form-control @error('state_id') is-invalid @enderror" name="state_id" id="state_id">
                                             <option selected>{{ trans('sentence.choose') }}</option>
@@ -132,7 +132,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label for="postCode" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.post_code') }}</label>
+                                    <label for="postCode" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.post_code') }} <span class="text-danger font-weight-bolder">*</span></label>
         
                                     <div class="col-12 col-md-9">
                                         <input id="post_code" type="text" class="form-control @error('postCode') is-invalid @enderror" name="postCode" value="{{ old('postCode') ?? $user->profile->company_post_code }}" autocomplete="postCode" autofocus>
@@ -142,7 +142,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label for="street" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.street') }}</label>
+                                    <label for="street" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.street') }} <span class="text-danger font-weight-bolder">*</span></label>
         
                                     <div class="col-12 col-md-9">
                                         <input id="street" type="street" class="form-control @error('street') is-invalid @enderror" name="street" value="{{ old('street') ?? $user->profile->company_street }}" autocomplete="street" autofocus>
@@ -162,7 +162,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label for="phone" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.phone') }}</label>
+                                    <label for="phone" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.phone') }} <span class="text-danger font-weight-bolder">*</span></label>
         
                                     <div class="col-12 col-md-9">
                                         <input id="phone" type="phone" class="form-control @error('phone') is-invalid @enderror" name="phone" value="{{ old('phone') ?? $user->profile->company_phone1 }}" autocomplete="phone" autofocus>
@@ -177,7 +177,7 @@
                             </div>
                             <div class="tab-pane container" id="step3">
                                 <div class="form-group row">
-                                    <label class="col-12 col-md-3 col-form-label text-md-right" for="specialization_id">{{ trans('sentence.specialization') }}</label>
+                                    <label class="col-12 col-md-3 col-form-label text-md-right" for="specialization_id">{{ trans('sentence.specialization') }} <span class="text-danger font-weight-bolder">*</span></label>
                                     <div class="col-12 col-md-9">
                                         <select data-live-search="true" class="form-control @error('specialization_id') is-invalid @enderror" name="specialization_id" id="specialization_id">
                                             <option selected>{{ trans('sentence.choose') }}</option>
@@ -211,7 +211,7 @@
                                 </div>
 
                                 <div class="form-group row">
-                                    <label for="min_salary" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.min_salary') }}</label>
+                                    <label for="min_salary" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.min_salary') }} <span class="text-danger font-weight-bolder">*</span></label>
 
                                     <div class="col-12 col-md-9">
                                         <input min="0"
@@ -224,7 +224,7 @@
                                 </div>
 
                                 <div class="form-group row">
-                                    <label for="max_salary" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.max_salary') }}</label>
+                                    <label for="max_salary" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.max_salary') }} <span class="text-danger font-weight-bolder">*</span></label>
 
                                     <div class="col-12 col-md-9">
                                         <input min="0"
@@ -237,7 +237,7 @@
                                 </div>
 
                                 <div class="form-group row">
-                                    <label class="col-12 col-md-3 col-form-label text-md-right" for="currency_id">{{ trans('sentence.currency') }}</label>
+                                    <label class="col-12 col-md-3 col-form-label text-md-right" for="currency_id">{{ trans('sentence.currency') }} <span class="text-danger font-weight-bolder">*</span></label>
                                     <div class="col-12 col-md-9">
                                         <select data-live-search="true" class="form-control @error('currency_id') is-invalid @enderror" name="currency_id" id="currency_id">
                                             <option selected>{{ trans('sentence.choose') }}</option>
@@ -254,7 +254,7 @@
                                 </div>
 
                                 <div class="form-group row">
-                                    <label class="col-12 col-md-3 col-form-label text-md-right" for="settlement_id">{{ trans('sentence.settlement') }}</label>
+                                    <label class="col-12 col-md-3 col-form-label text-md-right" for="settlement_id">{{ trans('sentence.settlement') }} <span class="text-danger font-weight-bolder">*</span></label>
                                     <div class="col-12 col-md-9">
                                         <select data-live-search="true" class="form-control @error('settlement_id') is-invalid @enderror" name="settlement_id" id="settlement_id">
                                             <option selected>{{ trans('sentence.choose') }}</option>
