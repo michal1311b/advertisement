@@ -14,7 +14,7 @@ class CompanyController extends Controller
         $companies = new Collection();
         $users =  User::with(['roles', 'profile'])
         ->withCount(['advertisements' => function($query) {
-            $query->where('created_at', '>', Carbon::now()->subDays(30));
+            $query->where('expired_at', '>', Carbon::now());
         }])
         ->orderBy('advertisements_count', 'desc')
         ->get();
