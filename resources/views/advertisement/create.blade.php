@@ -204,7 +204,9 @@
                                 </div>
 
                                 <div class="form-group row">
-                                    <label for="tags" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.tags') }}</label>
+                                    <label for="tags" class="col-12 col-md-3 col-form-label text-md-right warning">
+                                        {{ trans('sentence.tags') }} <span class="badge blue-tooltip" data-toggle="tooltip" title="{{ trans('sentence.tags-info') }}">!</span>
+                                    </label>
                                     <div class="col-12 col-md-9">
                                         <input type="text" value="{{ old('tags[]') }}" name="tags[]" id="tags" data-role="tagsinput" class="form-control" />
                                     </div>
