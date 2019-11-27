@@ -38,13 +38,15 @@
                 <li class="nav-item">
                     <a href="{{ route('advertisement-list') }}" class="nav-link">{{ trans('sentence.offers') }}</a>
                 </li>
-                <li class="nav-item">
-                    <a href="{{ route('create-advertisement') }}" class="btn btn-success">
-                        <i class="fas fa-plus-circle"></i>
-                    </a>
-                </li>
                 @guest
                 @else
+                    @if(auth()->user()->hasRole('admin') || auth()->user()->hasRole('company'))
+                        <li class="nav-item">
+                            <a href="{{ route('create-advertisement') }}" class="btn btn-success">
+                                <i class="fas fa-plus-circle"></i>
+                            </a>
+                        </li>
+                    @endif
                     @if(auth()->user()->hasRole('doctor'))
                         <li class="nav-item">
                             <a href="{{ route('user-prefered-locations') }}" class="nav-link">{{ trans('sentence.your-preferences')}}</a>

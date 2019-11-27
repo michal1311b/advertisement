@@ -88,7 +88,7 @@
                             </div>
                             <div class="tab-pane container" id="step2">
                                 <div class="form-group row">
-                                    <label class="col-12 col-md-3 col-form-label text-md-right" for="work_id">{{ trans('sentence.work-category') }} <span class="text-danger font-weight-bolder">*</span></label>
+                                    <label class="col-12 col-md-3 col-form-label text-md-right" for="work_id">{{ trans('sentence.settlement') }} <span class="text-danger font-weight-bolder">*</span></label>
                                     <div class="col-12 col-md-9">
                                         <select data-live-search="true" class="form-control @error('work_id') is-invalid @enderror" name="work_id" id="work_id">
                                             <option selected>{{ trans('sentence.choose') }}</option>
@@ -254,7 +254,7 @@
                                 </div>
 
                                 <div class="form-group row">
-                                    <label class="col-12 col-md-3 col-form-label text-md-right" for="settlement_id">{{ trans('sentence.settlement') }} <span class="text-danger font-weight-bolder">*</span></label>
+                                    <label class="col-12 col-md-3 col-form-label text-md-right" for="settlement_id">{{ trans('sentence.work-category') }} <span class="text-danger font-weight-bolder">*</span></label>
                                     <div class="col-12 col-md-9">
                                         <select data-live-search="true" class="form-control @error('settlement_id') is-invalid @enderror" name="settlement_id" id="settlement_id">
                                             <option selected>{{ trans('sentence.choose') }}</option>

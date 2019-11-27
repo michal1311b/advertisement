@@ -122,7 +122,7 @@
                                         <span class="badge badge-pill">{{ $advertisement->phone }}</span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        {{ trans('sentence.work-category') }}
+                                        {{ trans('sentence.settlement') }}
                                         <span class="badge badge-pill">{{ $advertisement->work->name }}</span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
@@ -130,7 +130,7 @@
                                         <span class="badge badge-pill">{{ $advertisement->min_salary }} - {{ $advertisement->max_salary }} {{ $advertisement->currency->symbol }}</span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        {{ trans('sentence.settlement') }}
+                                        {{ trans('sentence.work-category') }}
                                         <span class="badge badge-pill">{{ $advertisement->settlement->name }}</span>
                                     </li>
                                 </ul>
