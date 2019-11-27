@@ -636,7 +636,7 @@
                                         do przenoszenia danych. Jednakże wykonanie niektórych żądań, tj. usunięcie, wniesienie sprzeciwu, przeniesienie danych uniemożliwia wykonanie Umowy i powoduje jej rozwiązanie.</li>
                                     <li>Użytkownik ma prawo do wniesienia skargi do organu nadzorczego.</li>
                                     <li>Żądania w zakresie przetwarzania danych osobowych należy zgłaszać na adres e-mail podany w ust.1 powyżej.</li>
-                                    <li>Dane osobowe przetwarzane są w sposób niezautomatyzowany. Nie dokonuje się profilowania.</li>
+                                    <li>Dane osobowe przetwarzane są w sposób zautomatyzowany. Dokonuje się profilowanie.</li>
                                     <li>Administrator opracował i wdrożył Politykę bezpieczeństwa danych osobowych zgodną z RODO.</li>
                                     <li>W celu skorzystania z prawa domagania się zmiany, poprawienia lub usunięcia danych
                                         z <a href="{{ route('homepage') }}">EmployMed.eu</a> Użytkownik powinien przesłać do Usługodawcy pocztą elektroniczną stosowne żądanie wraz z podaniem imienia i nazwiska Użytkownika.</li>
