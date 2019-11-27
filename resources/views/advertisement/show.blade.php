@@ -74,8 +74,8 @@
                                 </div>
                             </div>
                             <div class="col-12 pb-2">
-                                {{ trans('sentence.tags') }}
-                                @if(isset($advertisement->tags))
+                                @if($advertisement->tags->count() > 0 && $advertisement->tags[0]->name !== '')
+                                    {{ trans('sentence.tags') }}
                                     @foreach($advertisement->tags as $tag)
                                         <a href="{{ route('advertisementTag', ['tagSlug' => $tag->slug]) }}">
                                             <span class="badge badge-pill badge-info text-white">
