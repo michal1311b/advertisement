@@ -32,11 +32,6 @@ class CreateSettlementsTable extends Migration
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'name' => 'NFZ (punkty)',
-                'created_at' => \Carbon\Carbon::now(),
-                'updated_at' => \Carbon\Carbon::now()
-            ],
-            [
                 'name' => 'Etat',
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
