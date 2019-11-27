@@ -123,7 +123,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label for="name" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.name') }}</label>
+                                        <label for="name" class="col-12 col-md-3 col-form-label text-md-right">{{ $editUser->doctor ? trans('sentence.first_name') : trans('sentence.name') }}</label>
             
                                         <div class="col-12 col-md-9">
                                             <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ $editUser->name }}" autocomplete="name" autofocus>
