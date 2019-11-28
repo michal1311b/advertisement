@@ -262,5 +262,11 @@ return [
   'applied-again' => 'Na to ogłoszenie aplikacja została już złożona.',
   'newsletter-term' => 'Wyrażam zgodę na przesyłanie informacji handlowej środkami komunikacji elektronicznej, w tym na podany przeze mnie w trakcie rejestracji adres poczty elektronicznej, przez: Administratora EmployMed, zgodnie z ustawą z dnia 18 lipca 2002 r. o świadczeniu usług drogą elektroniczną (Dz. U. z 2002 r. Nr 144, poz. 1204 z późn. zm.).',
   'account-create-success' => 'Twoje konto zostało utworzone. Sprawdź swój adres e-mail, aby aktywować konto w serwisie EmployMed. Sprawdź także folder SPAM!',
-  'tags-info' => 'Dodaj słowa kluczowe oddzielając je przecinkami, aby lepiej dopasować ogłoszenie do pracowników.'
+  'tags-info' => 'Dodaj słowa kluczowe oddzielając je przecinkami, aby lepiej dopasować ogłoszenie do pracowników.',
+  'mailinglist-list' => 'Listy mailingowe',
+  'mailinglist-create' => 'Dodaj listę mailingową',
+  'mailinglist-create-success' => 'Lista mailingowa została dodana pomyślnie!',
+  'mailinglist-update-success' => 'Lista mailingowa została zaktualizowana pomyślnie!',
+  'mailinglist-delete-block' => 'Nie możesz usunąć tej listy mailingowej, ponieważ jest ona powiązana z adresatami i newsletterami.',
+  'delete-mailinglist' => 'Lista mailingowa została usunięta pomyślnie!',
 ];

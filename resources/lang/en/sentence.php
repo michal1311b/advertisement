@@ -263,4 +263,10 @@ return [
   'newsletter-term' => 'I consent to sending commercial information by electronic means of communication, including the e-mail address provided by me during registration, by: the EmployMed Administrator, in accordance with the Act of 18 July 2002 on the provision of electronic services (Journal of Laws of 2002 No. 144, item 1204, as amended).',
   'account-create-success' => 'Your account has been created. Check your email address to activate your account on EmployMed. Also check the SPAM folder!',
   'tags-info' => 'Add keywords separated by commas to better match the advertisement to the employees.',
+  'mailinglist-list' => 'Mailing List',
+  'mailinglist-create' => 'Create mailing list',
+  'mailinglist-create-success' => 'Mailing list was created successfully!',
+  'mailinglist-update-success' => 'Mailing list was updated successfully!',
+  'mailinglist-delete-block' => 'You cannot delete this mailing list because it is associated with recipients and newsletters.',
+  'delete-mailinglist' => 'Mailing list was deleted successfully!',
 ];
