@@ -183,6 +183,7 @@ return [
         'cover' => 'zdjęcie promujące',
         'age' => 'wiek',
         'criteria' => 'kryteria',
-        'worktime' => 'czas pracy'
+        'worktime' => 'czas pracy',
+        'galleries.*' => 'zdjęcie promujące'
     ],
 ];

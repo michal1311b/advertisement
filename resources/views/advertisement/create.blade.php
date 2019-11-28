@@ -194,7 +194,7 @@
                                 </div>
 
                                 <div class="form-group row">
-                                    <label class="col-12 col-md-3 col-form-label text-md-right" for="galleries">{{ trans('sentence.upload-files') }}</label>
+                                    <label class="col-12 col-md-3 col-form-label text-md-right" for="galleries">{{ trans('sentence.upload-image') }}</label>
                                     <div class="col-12 col-md-9">
                                         <input type="file" class="form-control @error('galleries') is-invalid @enderror" name="galleries[]" multiple />
                                         @error('galleries')

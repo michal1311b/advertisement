@@ -189,7 +189,8 @@ return [
         'cover' => 'cover',
         'age' => 'age',
         'criteria' => 'criteria',
-        'worktime' => 'worktime'
+        'worktime' => 'worktime',
+        'galleries.*' => 'zdjęcie promujące'
     ],
 
 ];

@@ -100,6 +100,7 @@ return [
   'btn-ban' => 'Ban ',
   'btn-unban' => 'Unban ',
   'btn-details' => 'Details ',
+  'btn-matching' => 'Matched candidates',
   'btn-share' => 'Share profile',
   'btn-unshare' => 'Profile unshared',
   'first_name' => 'First name',
@@ -261,5 +262,5 @@ return [
   'applied-again' => 'An application has already been submitted for this advertisement.',
   'newsletter-term' => 'I consent to sending commercial information by electronic means of communication, including the e-mail address provided by me during registration, by: the EmployMed Administrator, in accordance with the Act of 18 July 2002 on the provision of electronic services (Journal of Laws of 2002 No. 144, item 1204, as amended).',
   'account-create-success' => 'You account was created. Please verify your email.',
-  'tags-info' => 'Add keywords separated by commas to better match the advertisement to the employees.'
+  'tags-info' => 'Add keywords separated by commas to better match the advertisement to the employees.',
 ];

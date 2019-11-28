@@ -102,6 +102,7 @@ return [
   'btn-details' => 'Szczegóły',
   'btn-share' => 'Udostępnij profil',
   'btn-unshare' => 'Przestań udostępniać profil',
+  'btn-matching' => 'Dopasowani kandydaci',
   'first_name' => 'Imię',
   'last_name' => 'Nazwisko',
   'name' => 'Nazwa',
