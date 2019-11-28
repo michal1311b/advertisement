@@ -261,6 +261,6 @@ return [
   'rodo-term' => 'I consent to the processing of my personal data for the purpose of recruitment in accordance with art. 6 clause 1 lit. a Regulation of the European Parliament and of the Council (EU) 2016/679 of 27 April 2016 on the protection of individuals with regard to the processing of personal data and on the free movement of such data and repealing Directive 95/46 / EC (General Data Protection Regulation)',
   'applied-again' => 'An application has already been submitted for this advertisement.',
   'newsletter-term' => 'I consent to sending commercial information by electronic means of communication, including the e-mail address provided by me during registration, by: the EmployMed Administrator, in accordance with the Act of 18 July 2002 on the provision of electronic services (Journal of Laws of 2002 No. 144, item 1204, as amended).',
-  'account-create-success' => 'You account was created. Please verify your email.',
+  'account-create-success' => 'Your account has been created. Check your email address to activate your account on EmployMed. Also check the SPAM folder!',
   'tags-info' => 'Add keywords separated by commas to better match the advertisement to the employees.',
 ];
