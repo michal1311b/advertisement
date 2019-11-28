@@ -45,7 +45,7 @@
                                             <li>Prowadzenie systemu komentarzy</li>
                                             <li>Prowadzenie rozmów typu chat online</li>
                                             <li>Prowadzenie systemu ogłoszeń drobnych</li>
-                                            <li>Prezentacja profil użytkownika innym użytkownikom</li>
+                                            <li>Prezentacja profilu użytkownika innym użytkownikom</li>
                                             <li>Wyświetlanie ogłoszeń użytkowników</li>
                                             <li>Prezentacja oferty lub informacji</li>
                                         </ul>
