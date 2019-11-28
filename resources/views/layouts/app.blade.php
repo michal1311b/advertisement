@@ -54,7 +54,7 @@
     <script>
         tinymce.init({
             selector: 'textarea',
-            plugins: 'autoresize image table',
+            plugins: 'autoresize image table link',
             paste_data_images: true,
             toolbar1: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
             extended_valid_elements: 'span[*]', // Needed to retain spans without attributes these are removed by default
