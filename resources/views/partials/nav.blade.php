@@ -95,6 +95,7 @@
                                 <a class="dropdown-item" href="{{ route('categories.index') }}">{{ trans('sentence.category-list')}}</a>
                                 <a class="dropdown-item" href="{{ route('posts.index') }}">{{ trans('sentence.posts-list')}}</a>
                                 <a class="dropdown-item" href="{{ route('pages.index') }}">{{ trans('sentence.pages-list')}}</a>
+                                <a class="dropdown-item" href="{{ route('newsletters.index') }}">{{ trans('sentence.newsletters-list')}}</a>
                                 <a class="dropdown-item" href="{{ route('mailinglists.index') }}">{{ trans('sentence.mailinglist-list')}}</a>
                                 <a class="dropdown-item" href="{{ route('recipients.index') }}">{{ trans('sentence.recipients-list')}}</a>
                                 <a class="dropdown-item" href="{{ route('mailTracker_Index') }}">{{ trans('sentence.email-tracker')}}</a>
