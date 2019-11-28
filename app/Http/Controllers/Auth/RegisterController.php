@@ -186,7 +186,7 @@ class RegisterController extends Controller
                     'name' => $request->name,
                     'email' => $request->email,
                     'password' => Hash::make($request->password),
-                    'avatar' => '/images/chicken-at-facebook.jpg',
+                    'avatar' => '/images/company_avatar.jpg',
                     'term1' => $request->term1,
                     'term2' => $request->term2,
                     'term3' => $request->term3
