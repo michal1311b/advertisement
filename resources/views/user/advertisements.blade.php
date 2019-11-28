@@ -80,7 +80,7 @@
                         ])
 
                         <a href="{{ route('user-advertisement-show', ['advertisement' => $advertisement, 'slug' => $advertisement->slug]) }}" class="btn btn-info border border-warning ml-2 text-white">
-                            {{ trans('sentence.btn-details') }}
+                            {{ trans('sentence.btn-matching') }}
                         </a>
                     </div>
                 @endforeach
