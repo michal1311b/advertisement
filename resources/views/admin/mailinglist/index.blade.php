@@ -21,8 +21,11 @@
 @section('content')
 <div class="container">
     <div class="row">
+        <div class="col-md-12">
+            @include('partials.message')
+        </div>
         <div class="col-12 text-right">
-        <a href="{{ route('mailinglists.create') }}" class="btn btn-success">{{trans('sentence.btn-create')}}</a>
+            <a href="{{ route('mailinglists.create') }}" class="btn btn-success">{{trans('sentence.btn-create')}}</a>
         </div>
         <div class="col-12">
             <table class="table">
@@ -63,7 +66,7 @@
                 @else
                     <tr>
                         <td colspan="5">
-                            <strong>{{__('No categoires')}}</strong>
+                            <strong>{{__('No mailing lists')}}</strong>
                         </td>
                     </tr>
                 @endif

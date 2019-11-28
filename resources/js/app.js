@@ -61,6 +61,10 @@ $(document).ready(function() {
         "clearIncomplete": true
     }).mask($('#company_post_code'));
 
+    Inputmask("99:99:99", {
+        "clearIncomplete": true
+    }).mask($('#time'));
+
     $('.start_date').datepicker({
         format: 'yyyy-mm-dd'
     });
@@ -78,6 +82,10 @@ $(document).ready(function() {
         format: 'yyyy-mm-dd'
     });
     $('#end_course').datepicker({
+        format: 'yyyy-mm-dd'
+    });
+
+    $('#sending_date').datepicker({
         format: 'yyyy-mm-dd'
     });
     

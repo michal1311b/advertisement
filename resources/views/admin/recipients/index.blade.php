@@ -70,7 +70,7 @@
                 @else
                     <tr>
                         <td colspan="5">
-                            <strong>{{__('No categoires')}}</strong>
+                            <strong>{{__('No posts')}}</strong>
                         </td>
                     </tr>
                 @endif

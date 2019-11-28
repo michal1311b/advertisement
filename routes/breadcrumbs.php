@@ -131,6 +131,17 @@ Breadcrumbs::for('recipients.edit', function ($trail, $recipient) {
     $trail->push(trans('sentence.edit') . $recipient->email, route('recipients.edit', $recipient));
 });
 
+Breadcrumbs::for('newsletters', function ($trail) {
+    $trail->parent('home');
+    $trail->push(trans('sentence.newsletters-list'), route('newsletters.index'));
+});
+
+Breadcrumbs::for('newsletter.create', function ($trail) {
+    $trail->parent('home');
+    $trail->push(trans('sentence.newsletters-list'), route('newsletters.index'));
+    $trail->push(trans('sentence.newsletters-create'), route('newsletters.create'));
+});
+
 Breadcrumbs::for('posts.create', function ($trail) {
     $trail->parent('home');
     $trail->push(trans('sentence.posts-list'), route('posts.index'));

@@ -274,4 +274,12 @@ return [
   'recipient-create-success' => 'Odbiorca został dodany pomyślnie!',
   'recipient-update-success' => 'Odbiorca został zaktualizowany pomyślnie!',
   'recipient-delete' => 'Odbiorca został usunięty pomyślnie!',
+  'subject' => 'Temat wiadomości',
+  'newsletters-create' => 'Dodaj newsletter',
+  'newsletters-list' => 'Lista newsletterów',
+  'sending_date' => 'Data wysyłki',
+  'time' => 'Czas',
+  'newsletter-delete' => 'Newsletter został usunięty pomyślnie!',
+  'newsletter-create-success' => 'Newsletter został dodany pomyślnie!',
+  'newsletter-update-success' => 'Newsletter został zaktualizowany pomyślnie!',
 ];

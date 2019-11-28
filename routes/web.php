@@ -137,6 +137,7 @@ Route::group(['prefix' => 'admin'], function () {
     Route::resource('pages', 'PageController')->middleware(['auth', 'admin', 'verified']);
     Route::resource('mailinglists', 'MailinglistController')->middleware(['auth', 'admin', 'verified']);
     Route::resource('recipients', 'RecipientController')->middleware(['auth', 'admin', 'verified']);
+    Route::resource('newsletters', 'NewsletterController')->middleware(['auth', 'admin', 'verified']);
     Route::get('/email-manager', [
         'uses' => 'EmailController@getIndex'
     ])->middleware(['auth', 'admin', 'verified'])->name('mailTracker_Index');

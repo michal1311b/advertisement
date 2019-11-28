@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    {{ __('page list') }}
+    {{ __('newsletter list') }}
 @endsection
 
 @section('css')
@@ -12,7 +12,7 @@
 <div class="container">
     <div class="row">
         <div class="col-xs-12">
-            {!! Breadcrumbs::render('pages') !!}
+            {!! Breadcrumbs::render('newsletters') !!}
         </div>
     </div>	
 </div>
@@ -21,8 +21,11 @@
 @section('content')
 <div class="container">
     <div class="row">
+        <div class="col-md-12">
+            @include('partials.message')
+        </div>
         <div class="col-12 text-right">
-        <a href="{{ route('pages.create') }}" class="btn btn-success">{{trans('sentence.btn-create')}}</a>
+            <a href="{{ route('newsletters.create') }}" class="btn btn-success">{{trans('sentence.btn-create')}}</a>
         </div>
         <div class="col-12">
             <table class="table">
@@ -30,32 +33,36 @@
                     <tr>
                         <th scope="col">#</th>
                         <th scope="col">{{trans('sentence.title')}}</th>
+                        <th scope="col">{{trans('sentence.subject')}}</th>
+                        <th scope="col">{{trans('sentence.sending_date')}}</th>
                         <th scope="col">{{trans('sentence.edit')}}</th>
                         <th scope="col">{{trans('sentence.btn-delete')}}</th>
                     </tr>
                 </thead>
                 <tbody>
-                @if(count($pages) > 0)
-                    @foreach($pages as $page)
+                @if(count($newsletters) > 0)
+                    @foreach($newsletters as $newsletter)
                         <tr>
-                            <th scope="row">{{ $page->id }}</th>
-                            <td>{{ $page->title }}</td>
+                            <th scope="row">{{ $newsletter->id }}</th>
+                            <td>{{ $newsletter->title }}</td>
+                            <td>{{ $newsletter->subject }}</td>
+                            <td>{{ $newsletter->sending_date }}</td>
                             <td>
-                                <a href="{{ route('pages.edit' , $page) }}" class="btn btn-success">{{trans('sentence.edit')}}</a>
+                                <a href="{{ route('newsletters.edit' , $newsletter) }}" class="btn btn-success">Edit</a>
                             </td>
                             <td>
                                 <button class="btn btn-danger" data-toggle="modal"
-                                    data-target="#modalremove{{$page->id}}">{{trans('sentence.btn-delete')}}</i>
+                                    data-target="#modalremove{{$newsletter->id}}">Delete</i>
                                 </button>
 
                                 @include('partials.confirmation', [
-                                    'url' => route('pages.destroy', $page->id),
+                                    'url' => route('newsletters.destroy', $newsletter->id),
                                     'method' => 'DELETE',
-                                    'title' => "Usuń stronę",
-                                    "description" => "Czy na pewno chcesz usunąć tę stronę?",
+                                    'title' => "Usuń newsletter",
+                                    "description" => "Czy na pewno chcesz usunąć ten newsletter?",
                                     "description_parameters" => [],
                                     'button' => trans('sentence.btn-delete'),
-                                    'modalKey' => "remove".$page->id
+                                    'modalKey' => "remove".$newsletter->id
                                 ])
                             </td>
                         </tr>
@@ -63,7 +70,7 @@
                 @else
                     <tr>
                         <td colspan="5">
-                            <strong>{{__('No pages')}}</strong>
+                            <strong>{{__('No newsletters')}}</strong>
                         </td>
                     </tr>
                 @endif
@@ -71,9 +78,9 @@
             </table>
         </div>
 
-        @if($pages->lastPage() > 1)
+        @if($newsletters->lastPage() > 1)
             <div class="card-footer">
-                {{ $pages->links() }}
+                {{ $newsletters->links() }}
             </div>
         @endif
         

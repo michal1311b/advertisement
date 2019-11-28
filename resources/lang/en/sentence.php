@@ -274,4 +274,12 @@ return [
   'recipient-create-success' => 'Recipient was created successfully!',
   'recipient-update-success' => 'Recipient was updated successfully!',
   'recipient-delete' => 'Recipient was deleted successfully!',
+  'subject' => 'Subject',
+  'newsletters-create' => 'Create newsletter',
+  'newsletters-list' => 'Newsletters list',
+  'sending_date' => 'Sending date',
+  'time' => 'Time',
+  'newsletter-delete' => 'Newsletter was deleted successfully!',
+  'newsletter-create-success' => 'Newsletter was created successfully!',
+  'newsletter-update-success' => 'Newsletter was updated successfully!',
 ];
