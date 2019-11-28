@@ -114,6 +114,23 @@ Breadcrumbs::for('mailinglist.edit', function ($trail, $mailinglist) {
     $trail->push(trans('sentence.edit') . $mailinglist->title, route('mailinglists.edit', $mailinglist));
 });
 
+Breadcrumbs::for('recipient.create', function ($trail) {
+    $trail->parent('home');
+    $trail->push(trans('sentence.recipients-list'), route('recipients.index'));
+    $trail->push(trans('sentence.recipients-create'), route('recipients.create'));
+});
+
+Breadcrumbs::for('recipients', function ($trail) {
+    $trail->parent('home');
+    $trail->push(trans('sentence.recipients-list'), route('recipients.index'));
+});
+
+Breadcrumbs::for('recipients.edit', function ($trail, $recipient) {
+    $trail->parent('home');
+    $trail->push(trans('sentence.recipients-list'), route('recipients.index'));
+    $trail->push(trans('sentence.edit') . $recipient->email, route('recipients.edit', $recipient));
+});
+
 Breadcrumbs::for('posts.create', function ($trail) {
     $trail->parent('home');
     $trail->push(trans('sentence.posts-list'), route('posts.index'));

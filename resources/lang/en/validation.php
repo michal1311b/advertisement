@@ -190,7 +190,8 @@ return [
         'age' => 'age',
         'criteria' => 'criteria',
         'worktime' => 'worktime',
-        'galleries.*' => 'zdjęcie promujące'
+        'galleries.*' => 'zdjęcie promujące',
+        'mailinglist_id' => 'mailing list'
     ],
 
 ];

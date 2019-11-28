@@ -100,6 +100,7 @@ $(document).ready(function() {
     $('#work_id').selectpicker();
     $('#state_id').selectpicker();
     $('#category_id').selectpicker();
+    $('#mailinglist_id').selectpicker();
     $('#location_id').selectpicker({
         width: '100%'
     });

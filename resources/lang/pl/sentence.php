@@ -269,4 +269,9 @@ return [
   'mailinglist-update-success' => 'Lista mailingowa została zaktualizowana pomyślnie!',
   'mailinglist-delete-block' => 'Nie możesz usunąć tej listy mailingowej, ponieważ jest ona powiązana z adresatami i newsletterami.',
   'delete-mailinglist' => 'Lista mailingowa została usunięta pomyślnie!',
+  'recipients-list' => 'Lista odbiorców',
+  'recipients-create' => 'Dodaj odbiorcę',
+  'recipient-create-success' => 'Odbiorca został dodany pomyślnie!',
+  'recipient-update-success' => 'Odbiorca został zaktualizowany pomyślnie!',
+  'recipient-delete' => 'Odbiorca został usunięty pomyślnie!',
 ];

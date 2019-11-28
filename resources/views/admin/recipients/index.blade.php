@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    {{ __('Category list') }}
+    {{ __('recipient list') }}
 @endsection
 
 @section('css')
@@ -12,7 +12,7 @@
 <div class="container">
     <div class="row">
         <div class="col-xs-12">
-            {!! Breadcrumbs::render('categories') !!}
+            {!! Breadcrumbs::render('recipients') !!}
         </div>
     </div>	
 </div>
@@ -25,43 +25,45 @@
             @include('partials.message')
         </div>
         <div class="col-12 text-right">
-            <a href="{{ route('categories.create') }}" class="btn btn-success">{{trans('sentence.btn-create')}}</a>
+            <a href="{{ route('recipients.create') }}" class="btn btn-success">{{trans('sentence.btn-create')}}</a>
         </div>
         <div class="col-12">
             <table class="table">
                 <thead>
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col">{{trans('sentence.name')}}</th>
-                        <th scope="col">{{__('Is active?')}}</th>
+                        <th scope="col">{{ __('Email') }}</th>
                         <th scope="col">{{trans('sentence.edit')}}</th>
                         <th scope="col">{{trans('sentence.btn-delete')}}</th>
+                        <th scope="col">{{trans('sentence.mailinglist-list')}}</th>
                     </tr>
                 </thead>
                 <tbody>
-                @if(count($categories) > 0)
-                    @foreach($categories as $category)
+                @if(count($recipients) > 0)
+                    @foreach($recipients as $recipient)
                         <tr>
-                            <th scope="row">{{ $category->id }}</th>
-                            <td>{{ $category->name }}</td>
-                            <td>{{ $category->is_active }}</td>
+                            <th scope="row">{{ $recipient->id }}</th>
+                            <td>{{ $recipient->email }}</td>
                             <td>
-                                <a href="{{ route('categories.edit' , $category) }}" class="btn btn-success">Edit</a>
+                                <a href="{{ route('recipients.edit' , $recipient) }}" class="btn btn-success">{{trans('sentence.edit')}}</a>
                             </td>
                             <td>
                                 <button class="btn btn-danger" data-toggle="modal"
-                                    data-target="#modalremove{{$category->id}}">Delete</i>
+                                    data-target="#modalremove{{$recipient->id}}">{{trans('sentence.btn-delete')}}</i>
                                 </button>
 
                                 @include('partials.confirmation', [
-                                    'url' => route('categories.destroy', $category->id),
+                                    'url' => route('recipients.destroy', $recipient->id),
                                     'method' => 'DELETE',
-                                    'title' => "Usuń kategorię",
-                                    "description" => "Czy na pewno chcesz usunąć tę kategorię?",
+                                    'title' => "Usuń odbiorcę",
+                                    "description" => "Czy na pewno chcesz usunąć tego odbiorcę?",
                                     "description_parameters" => [],
                                     'button' => trans('sentence.btn-delete'),
-                                    'modalKey' => "remove".$category->id
+                                    'modalKey' => "remove".$recipient->id
                                 ])
+                            </td>
+                            <td>
+                                {{ $recipient->mailinglist->title }}
                             </td>
                         </tr>
                     @endforeach
@@ -76,9 +78,9 @@
             </table>
         </div>
 
-        @if($categories->lastPage() > 1)
+        @if($recipients->lastpage() > 1)
             <div class="card-footer">
-                {{ $categories->links() }}
+                {{ $recipients->links() }}
             </div>
         @endif
         

@@ -91,15 +91,12 @@
                             @endif
 
                             @if(auth()->user()->hasRole('admin'))
-                            <a class="dropdown-item" href="{{ route('users.list') }}">{{ trans('sentence.user-list')}}</a>
-                                <a class="dropdown-item" href="{{ route('categories.create') }}">{{ trans('sentence.category-create')}}</a>
+                                <a class="dropdown-item" href="{{ route('users.list') }}">{{ trans('sentence.user-list')}}</a>
                                 <a class="dropdown-item" href="{{ route('categories.index') }}">{{ trans('sentence.category-list')}}</a>
-                                <a class="dropdown-item" href="{{ route('posts.create') }}">{{ trans('sentence.post-create')}}</a>
                                 <a class="dropdown-item" href="{{ route('posts.index') }}">{{ trans('sentence.posts-list')}}</a>
-                                <a class="dropdown-item" href="{{ route('pages.create') }}">{{ trans('sentence.pages-create')}}</a>
                                 <a class="dropdown-item" href="{{ route('pages.index') }}">{{ trans('sentence.pages-list')}}</a>
-                                <a class="dropdown-item" href="{{ route('mailinglists.create') }}">{{ trans('sentence.mailinglist-create')}}</a>
                                 <a class="dropdown-item" href="{{ route('mailinglists.index') }}">{{ trans('sentence.mailinglist-list')}}</a>
+                                <a class="dropdown-item" href="{{ route('recipients.index') }}">{{ trans('sentence.recipients-list')}}</a>
                                 <a class="dropdown-item" href="{{ route('mailTracker_Index') }}">{{ trans('sentence.email-tracker')}}</a>
                             @endif
                             <a class="dropdown-item" href="{{ route('logout') }}"

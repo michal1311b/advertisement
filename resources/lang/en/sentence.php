@@ -269,4 +269,9 @@ return [
   'mailinglist-update-success' => 'Mailing list was updated successfully!',
   'mailinglist-delete-block' => 'You cannot delete this mailing list because it is associated with recipients and newsletters.',
   'delete-mailinglist' => 'Mailing list was deleted successfully!',
+  'recipients-list' => 'Recipients list',
+  'recipients-create' => 'Create recipient',
+  'recipient-create-success' => 'Recipient was created successfully!',
+  'recipient-update-success' => 'Recipient was updated successfully!',
+  'recipient-delete' => 'Recipient was deleted successfully!',
 ];

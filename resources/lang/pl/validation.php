@@ -184,6 +184,7 @@ return [
         'age' => 'wiek',
         'criteria' => 'kryteria',
         'worktime' => 'czas pracy',
-        'galleries.*' => 'zdjęcie promujące'
+        'galleries.*' => 'zdjęcie promujące',
+        'mailinglist_id' => 'lista mailowa'
     ],
 ];
