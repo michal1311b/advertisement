@@ -78,7 +78,7 @@ class NewsletterController extends Controller
         ->where('sending_date', '<', date('Y-m-d H:i:s'))
         ->first();
 
-        if($newsletter)
+        if(isset($newsletter))
         {
             Log::info(6);
             $newsletter = $newsletter->load(['mailinglist', 'mailinglist.recipients']);
