@@ -7,6 +7,7 @@ use App\Http\Requests\Newsletter\StoreRequest;
 use App\Mail\NewsletterMail;
 use App\Newsletter;
 use App\Recipient;
+use Illuminate\Support\Facades\Log;
 
 class NewsletterController extends Controller
 {
