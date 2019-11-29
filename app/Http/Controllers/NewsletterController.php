@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Mailinglist;
 use App\Http\Requests\Newsletter\StoreRequest;
+use App\Mail\NewsletterMail;
 use App\Newsletter;
+use App\Recipient;
 
 class NewsletterController extends Controller
 {
@@ -67,5 +69,37 @@ class NewsletterController extends Controller
         session()->flash('success', trans('sentence.newsletter-update-success'));
 
         return back();
+    }
+
+    public function send()
+    {
+        $newsletter = Newsletter::where('sent', 0)
+        ->where('sending_date', '<', date('Y-m-d H:i:s'))
+        ->first();
+
+        if($newsletter)
+        {
+            $newsletter = $newsletter->load(['mailinglist', 'mailinglist.recipients']);
+            $mailinglist = $newsletter->mailinglist;
+            
+            $recipients_ids = $mailinglist->recipients->pluck('id');
+            $recipients = Recipient::limit(250)->find($recipients_ids);
+            
+            if( !$recipients->count() || $recipients->count() < 250 )
+            {
+                $newsletter->sent = 1;
+                $newsletter->save();
+            }
+
+            foreach( $recipients as $key => $recipient ){
+                if(filter_var(trim($recipient->email), FILTER_VALIDATE_EMAIL)) {
+                    $body = $newsletter->message;
+                    $subject = $newsletter->subject;
+
+                    \Mail::to($recipient->email)
+                    ->send(new NewsletterMail($body, $subject));
+                }
+            }
+        }
     }
 }
