@@ -77,7 +77,6 @@ class NewsletterController extends Controller
         $newsletter = Newsletter::where('sent', 0)
         ->where('sending_date', '<', date('Y-m-d H:i:s'))
         ->first();
-        Log::info(5);
 
         if($newsletter)
         {
