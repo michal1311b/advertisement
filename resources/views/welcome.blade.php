@@ -131,7 +131,7 @@
                                 </div>
                             </div>
                             <div class="col-12 col-md-6 order-2 order-md-1">
-                                <img src="{{ asset('images/doctor-main.png') }}" alt="Doctor main page" class="w-100">
+                                <img src="{{ asset('images/doctor-main.png') }}" alt="Doctor main page" class="w-100 doctor-main">
                             </div>
                         </div>
                     </div>
