@@ -25,6 +25,7 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         $schedule->call('App\Http\Controllers\PreferenceController@buildPreferences')->everyFiveMinutes();
+        $schedule->call('App\Http\Controllers\NewsletterController@send')->everyFiveMinutes();
     }
 
     /**
