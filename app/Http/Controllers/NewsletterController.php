@@ -80,7 +80,6 @@ class NewsletterController extends Controller
 
         if(isset($newsletter))
         {
-            Log::info(6);
             $newsletter = $newsletter->load(['mailinglist', 'mailinglist.recipients']);
             $mailinglist = $newsletter->mailinglist;
             
@@ -102,7 +101,6 @@ class NewsletterController extends Controller
                     ->send(new NewsletterMail($body, $subject));
                 }
             }
-            Log::info(7);
         }
     }
 }
