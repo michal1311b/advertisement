@@ -282,4 +282,5 @@ return [
   'newsletter-delete' => 'Newsletter został usunięty pomyślnie!',
   'newsletter-create-success' => 'Newsletter został dodany pomyślnie!',
   'newsletter-update-success' => 'Newsletter został zaktualizowany pomyślnie!',
+  'newsletter-sent' => 'Wysłano:'
 ];

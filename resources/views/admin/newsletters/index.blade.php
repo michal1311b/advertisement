@@ -32,11 +32,11 @@
                 <thead>
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col">{{trans('sentence.title')}}</th>
-                        <th scope="col">{{trans('sentence.subject')}}</th>
-                        <th scope="col">{{trans('sentence.sending_date')}}</th>
-                        <th scope="col">{{trans('sentence.edit')}}</th>
-                        <th scope="col">{{trans('sentence.btn-delete')}}</th>
+                        <th scope="col">{{ trans('sentence.title') }}</th>
+                        <th scope="col">{{ trans('sentence.subject') }}</th>
+                        <th scope="col">{{ trans('sentence.sending_date') }}</th>
+                        <th scope="col">{{ trans('sentence.edit') }}</th>
+                        <th scope="col">{{ trans('sentence.btn-delete') }}</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -46,7 +46,13 @@
                             <th scope="row">{{ $newsletter->id }}</th>
                             <td>{{ $newsletter->title }}</td>
                             <td>{{ $newsletter->subject }}</td>
-                            <td>{{ $newsletter->sending_date }}</td>
+                            <td>
+                                @if($newsletter->sent === 1)
+                                    <span class="badge badge-success">{{ trans('sentence.newsletter-sent') }} {{ $newsletter->sending_date }}</span>
+                                @else
+                                    <span class="badge badge-info">{{ trans('sentence.sending_date') }}: {{ $newsletter->sending_date }}</span>
+                                @endif
+                            </td>
                             <td>
                                 <a href="{{ route('newsletters.edit' , $newsletter) }}" class="btn btn-success">Edit</a>
                             </td>

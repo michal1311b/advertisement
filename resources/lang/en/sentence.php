@@ -282,4 +282,5 @@ return [
   'newsletter-delete' => 'Newsletter was deleted successfully!',
   'newsletter-create-success' => 'Newsletter was created successfully!',
   'newsletter-update-success' => 'Newsletter was updated successfully!',
+  'newsletter-sent' => 'Sent:'
 ];
