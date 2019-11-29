@@ -76,9 +76,11 @@ class NewsletterController extends Controller
         $newsletter = Newsletter::where('sent', 0)
         ->where('sending_date', '<', date('Y-m-d H:i:s'))
         ->first();
+        Log::info(5);
 
         if($newsletter)
         {
+            Log::info(6);
             $newsletter = $newsletter->load(['mailinglist', 'mailinglist.recipients']);
             $mailinglist = $newsletter->mailinglist;
             
@@ -100,6 +102,7 @@ class NewsletterController extends Controller
                     ->send(new NewsletterMail($body, $subject));
                 }
             }
+            Log::info(7);
         }
     }
 }
