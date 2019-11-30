@@ -19,7 +19,7 @@ class DatabaseSeeder extends Seeder
         $this->call(LocationTableSeeder::class);
         $this->call(SpecializationTableSeeder::class);
         $this->call(CurrenciesTableSeeder::class);
-        $this->call(AdvertisementSeeder::class);
+        // $this->call(AdvertisementSeeder::class);
         $this->call(CategoriesTableSeeder::class);
         $this->call(LanguagesTableSeeder::class);
         $this->call(PagesTableSeeder::class);
