@@ -127,6 +127,16 @@
 
         gtag('config', 'UA-151388518-1');
         </script>
+
+        <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+        <script>
+            var OneSignal = window.OneSignal || [];
+            OneSignal.push(function() {
+                OneSignal.init({
+                appId: "fa8c4c5b-fe48-4ed0-a13a-1e4d0578e659",
+                });
+            });
+        </script>
     @endif
 </body>
 </html>
