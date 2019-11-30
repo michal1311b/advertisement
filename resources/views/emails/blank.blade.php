@@ -204,6 +204,25 @@
                 <td height="20" bgcolor="#ffffff"></td>
             </tr>
             <tr>
+                <td bgcolor="#ffffff" align="center" valign="top" width="100%">
+                    <table role="presentation" align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
+                        <tr>
+                            <!-- Column : BEGIN -->
+                            <td width="100%" class="stack-column-center">
+                              <table role="presentation" align="CENTER" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                  <tr>
+                                      <td style="font-family: Trebuchet MS;color: #ffffff;" class="center-on-narrow">
+                                          <img src="https://employmed.eu/images/footer.jpg" width="600" height="" alt="EmployMed Footer" border="0" align="center" style="width: 100%; max-width: 600px;" class="g-img">
+                                        </td>
+                                  </tr>
+                              </table>
+                            </td>
+                            <!-- Column : END -->
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
                 <td bgcolor="#ececec" height="10"></td>
             </tr>
         </table>
