@@ -75,7 +75,7 @@ class NewsletterController extends Controller
     public function send()
     {
         $newsletter = Newsletter::where('sent', 0)
-        ->where('sending_date', '<', date('Y-m-d H:i:s'))
+        ->whereDate('sending_date', '<', date('Y-m-d H:i:s'))
         ->first();
 
         if(isset($newsletter))
