@@ -60,7 +60,7 @@
                             <div class="col-12">
                                 <ol>
                                     <li><strong>Aplikacja</strong> – oznacza ogół danych osobowych i informacji, przesyłanych przez Kandydata za pośrednictwem Serwisu, mogących obejmować między innymi: curriculum vitae (CV), list motywacyjny oraz dane osobowe Kandydata.</li>
-                                    <li><strong>Cennik</strong> – oznacza szczegółowy wykaz cen dla Usług odpłatnych znajdujący się w Serwisie pod adresem: <a href="{{ route('homepage') }}">https://employmed.eu</a>.</li>
+                                    {{-- <li><strong>Cennik</strong> – oznacza szczegółowy wykaz cen dla Usług odpłatnych znajdujący się w Serwisie pod adresem: <a href="{{ route('homepage') }}">https://employmed.eu</a>.</li> --}}
                                     <li><strong>Dane Niedozwolone</strong> – oznaczają treści zakazane przez obowiązujące przepisy prawa polskiego i międzynarodowego, w szczególności treści pornograficzne, treści związane z propagowaniem przemocy i nienawiści, treści drastyczne, a także treści powszechnie uznawane za obraźliwie, naganne moralnie, społecznie niewłaściwe, obrażające uczucia religijne, naruszające prawa autorskie lub prawa innych osób, których udostępnianie w ramach Serwisu jest niedozwolone.</li>
                                     <li><strong>Formularz rejestracyjny</strong> – oznacza formularz dostępny w Serwisie umożliwiający zarejestrowanie Konta przez Użytkownika.</li>
                                     <li><strong>Kandydat</strong> – oznacza osobę fizyczną, korzystająca z Serwisu w celu uzyskania kontaktu z potencjalnym Pracodawcą.</li>
@@ -210,7 +210,7 @@
                                 <ol>
                                     <li>Umowa o świadczenie Usług zostaje zawarta w momencie wyświetlenia pierwszego okna Serwisu poprzez wpisanie przez niezarejestrowanego Użytkownika w przeglądarce odpowiedniego adresu internetowego wybranych przez niego stron www zawierających treści udostępniane w ramach Serwisu lub skorzystanie przez niego z przekierowania do takich stron Serwisu, z zastrzeżeniem pkt 3 i 4 poniżej.</li>
                                     <li>Przed zawarciem Umowy Usługodawca udostępnia Użytkownikom nieodpłatnie Regulamin.</li>
-                                    <li>Umowa o świadczenie Usług dotyczących udostępnienia Kandydatom oraz Pracodawcom profilu zostaje zawarta w momencie założenia Konta w Serwisie. Rozwiązanie umowy z Kandydatem/Studentem/Pracodawcą następuje z dniem usunięcia przez niego Konta w Serwisie oraz w sytuacjach opisanych w pkt XII Regulaminu.</li>
+                                    <li>Umowa o świadczenie Usług dotyczących udostępnienia Kandydatom oraz Pracodawcom profilu zostaje zawarta w momencie założenia Konta w Serwisie. Rozwiązanie umowy z Kandydatem/Pracodawcą następuje z dniem usunięcia przez niego Konta w Serwisie oraz w sytuacjach opisanych w pkt XII Regulaminu.</li>
                                     <li>Szczegółowe zasady zawierania i rozwiązywania Umów pomiędzy Usługodawcą a odpowiednio Kandydatem, Pracodawcą, zostały określone w dalszej części Regulaminu.</li>
                                 </ol>
                             </div>
