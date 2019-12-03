@@ -32,7 +32,7 @@
     <div class="carousel-inner">
       <div class="carousel-item active">
         <img class="d-block w-100" src="{{ asset('images/main1.jpg') }}" alt="Main 1">
-        <div class="carousel-caption d-none d-md-block">
+        <div class="carousel-caption d-none d-md-block text-dark font-weight-bolder">
             <h6>{{ trans('sentence.homepage.title') }}</h6>
             <span>{{ trans('sentence.homepage.slide1') }}</span>
         </div>
