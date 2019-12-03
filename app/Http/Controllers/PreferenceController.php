@@ -14,6 +14,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use App\Http\Requests\Preference\UpdateRequest;
+use App\JobNotification;
+use App\Mail\SendEmployeeAlert;
+use App\Mail\SendJobAlert;
 
 class PreferenceController extends Controller
 {
@@ -185,8 +188,40 @@ class PreferenceController extends Controller
                             'user_id' => $user->id,
                             'advertisement_id' => $advertisement->id
                         ]);
+
+                        $notification = JobNotification::where('user_id', $user->id)
+                        ->where('advertisement_id', $advertisement->id)->first();
+                        if(!$notification) {
+                            JobNotification::create([
+                                'user_id' => $user->id,
+                                'advertisement_id' => $advertisement->id
+                            ]);
+                        }
                     }
                 }
+            }
+        }
+    }
+
+    public function sendJobAlert()
+    {
+        $notifications = JobNotification::where('is_send', 0) ->get();
+        if($notifications)
+        {
+            foreach($notifications as $notification)
+            {
+                $user = User::find($notification->user_id);
+                $advertiser = User::find($notification->advertisement->user->id);
+                $advertisement = Advertisement::find($notification->advertisement_id);
+
+                \Mail::to($user->email)->send(new SendJobAlert($user));
+                if($user->doctor->cv !== null && $user->doctor->share === 1)
+                {
+                    \Mail::to($advertiser->email)->send(new SendEmployeeAlert($advertisement));
+                }
+
+                $notification->is_send = 1;
+                $notification->save();
             }
         }
     }

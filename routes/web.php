@@ -29,6 +29,8 @@ Route::get('/send-newsletter', 'NewsletterController@send')->name('newsletter.se
 Route::get('/ankieta-na-temat-pracy-lekarza', 'StaticQuestionnaireController@show')->name('static.questionnaire.show');
 Route::post('/ankieta-na-temat-pracy-lekarza', 'StaticQuestionnaireController@store')->name('static.questionnaire.store');
 
+Route::get('/send-job-alert', 'PreferenceController@sendJobAlert')->name('send.job.alert');
+
 Route::get('/polityka-cookies', 'PageController@cookies')->name('cookies.show');
 Route::get('/regulamin', 'PageController@showRegulation')->name('regulation.show');
 Route::get('/kontakt', 'ContactController@show')->name('contact.show');
