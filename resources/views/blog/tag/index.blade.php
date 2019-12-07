@@ -38,7 +38,7 @@
             @foreach($pins as $pin)
                 @if($pin->post->is_published === 1)
                     <div class="col-12 col-md-6">
-                        <a href="{{ route('blog.show', ['slug' => $pin->post->slug]) }}" class="no-decoration"> 
+                        <a href="{{ route('blog.show', ['slug' => $pin->post->slug]) }}" class="no-decoration" title="{{ $pin->post->title }}"> 
                             <div class="card mb-3">
                                 <div class="card-body">
                                     <div class="row">

@@ -2,6 +2,8 @@
 
 return [
   'welcome' => 'Witaj ',
+  'homepage.site.title' => 'EmployMed - Znajdź lepszą, dobrze płatną pracę w medycynie. Bliżej niż myślisz.',
+  'homepage.site.description' => 'Pierwsza mapa rynku pracy w sektorze medycznym. Chcemy maksymalnie uprościć proces wyszukiwania.',
   'homepage' => 'Strona główna',
   'homepage.title' => 'EmployMed - platforma z ofertami pracy dla lekarzy',
   'homepage.subtitle' => 'EmployMed to nowoczesne narzędzie dla lekarzy, stomatologów i placówek medycznych, które usprawni i przyspieszy proces rekrutacji. Aplikacja dopasuje spersonalizowane oferty pracy do preferencji lekarzy.',

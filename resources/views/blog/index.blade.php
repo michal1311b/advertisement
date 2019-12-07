@@ -43,7 +43,7 @@
             @foreach($posts as $post)
                 @if($post->is_published === 1)
                     <div class="col-12 col-md-6">
-                        <a href="{{ route('blog.show', $post->slug) }}" class="no-decoration"> 
+                        <a href="{{ route('blog.show', $post->slug) }}" class="no-decoration" title="{{ $post->title }}"> 
                             <div class="card mb-3" style="max-width: 640px;">
                                 <div class="card-body">
                                     <div class="row">

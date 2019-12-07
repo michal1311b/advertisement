@@ -1,7 +1,11 @@
 @extends('layouts.app')
 
 @section('title')
-    {{ __('List of offers') }}
+    {{ trans('sentence.company-list') }}
+@endsection
+
+@section('description')
+    {{ trans('sentence.company-list') }}
 @endsection
 
 @section('css')

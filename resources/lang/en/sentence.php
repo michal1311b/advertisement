@@ -2,6 +2,8 @@
 
 return [
   'welcome' => 'Welcome Friend',
+  'homepage.site.title' => 'EmployMed - Find better, well-paid jobs in medicine. Closer than you think.',
+  'homepage.site.description' => 'The first map of the labor market in the medical sector. We want to simplify the search process to minimum.',
   'homepage' => 'Homepage',
   'homepage.title' => 'EmployMed - job board for medicine',
   'homepage.subtitle' => 'EmployMed is a modern tool for doctors, dentists and medical facilities that will streamline and accelerate the recruitment process. The application will adapt personalized job offers to the preferences of doctors.',

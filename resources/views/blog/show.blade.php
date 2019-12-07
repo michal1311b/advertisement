@@ -4,6 +4,10 @@
     {{ $post->title }}
 @endsection
 
+@section('description')
+    {{ $post->title }}
+@endsection
+
 @section('breadcrumbs')
 <div class="container">
     <div class="row">

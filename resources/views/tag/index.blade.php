@@ -39,7 +39,7 @@
             @foreach($advertisements as $advertisement)
                 <!-- List group-->
                 <ul class="list-group shadow">
-                    <a href="{{ route('show-advertisement', ['id' => $advertisement->advertisement->id, 'slug' => $advertisement->advertisement->slug]) }}" class="no-decoration"> 
+                    <a href="{{ route('show-advertisement', ['id' => $advertisement->advertisement->id, 'slug' => $advertisement->advertisement->slug]) }}" class="no-decoration" title="{{ $advertisement->advertisement->title }}"> 
                         <!-- list group item-->
                         <li class="list-group-item">
                             <!-- Custom content-->

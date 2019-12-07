@@ -1,11 +1,11 @@
 @extends('layouts.site')
 
 @section('title')
-    {{ __('EmployMed - Find better, well-paid jobs in medicine. Closer than you think.') }}
+    {{ trans('sentence.homepage.site.title') }}
 @endsection
 
 @section('description')
-    {{ __('The first map of the labor market in the medical sector. We want to simplify the search process to minimum.') }}
+    {{ trans('sentence.homepage.site.description') }}
 @endsection
 
 @section('breadcrumbs')
@@ -205,7 +205,7 @@
                 @foreach($advertisements as $advertisement)
                     <!-- List group-->
                     <ul class="list-group shadow">
-                        <a href="{{ route('show-advertisement', ['id' => $advertisement->id, 'slug' => $advertisement->slug]) }}" class="no-decoration"> 
+                        <a href="{{ route('show-advertisement', ['id' => $advertisement->id, 'slug' => $advertisement->slug]) }}" class="no-decoration" title="{{ $advertisement->title }}"> 
                             <!-- list group item-->
                             <li class="list-group-item">
                                 <!-- Custom content-->
