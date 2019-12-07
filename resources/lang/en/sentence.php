@@ -289,5 +289,7 @@ return [
   'newsletter-sent' => 'Sent:',
   'register-step' => 'Choose register type',
   'as' => 'as',
-  'and' => 'and'
+  'and' => 'and',
+  'register-doctor' => 'Register form Lekarz/Dentysta',
+  'register-company' => 'Registration form for a medical facility/company'
 ];

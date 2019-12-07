@@ -1,7 +1,11 @@
 @extends('layouts.app')
 
 @section('title')
-    {{ __('Blog list') }}
+    {{ __('EmployMed Blog') }}
+@endsection
+
+@section('description')
+    {{ __('EmployMed Blog') }}
 @endsection
 
 @section('css')

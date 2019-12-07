@@ -289,5 +289,7 @@ return [
   'newsletter-sent' => 'Wysłano:',
   'register-step' => 'Wybierz typ konta',
   'as' => 'jako',
-  'and' => 'oraz'
+  'and' => 'oraz',
+  'register-doctor' => 'Formularz rejestracji dla Lekarz/Dentysta',
+  'register-company' => 'Formularz rejestracji dla placówki medycznej/firmy'
 ];

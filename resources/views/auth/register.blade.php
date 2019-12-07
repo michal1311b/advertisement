@@ -1,7 +1,11 @@
 @extends('layouts.app')
 
 @section('title')
-    {{ __('Register form') }}
+    {{ trans('sentence.register-doctor') }}
+@endsection
+
+@section('description')
+    {{ trans('sentence.register-doctor') }}
 @endsection
 
 @section('content')
