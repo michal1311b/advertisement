@@ -2,17 +2,23 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Currency;
 use App\User;
 use App\Doctor;
 use App\Profile;
 use App\Role;
+use App\Advertisement;
+use App\Location;
+use App\Preference;
+use App\Settlement;
+use App\Specialization;
+use App\State;
+use App\Work;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
-use App\Location;
-use App\Preference;
-use App\Specialization;
+use App\Http\Requests\Register\CompanyStoreRequest;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -172,43 +178,11 @@ class RegisterController extends Controller
                 $preference = Preference::create([
                     'user_id' => $user->id
                 ]);
-            } else {
-                $latLong = $this->get_lat_long($request->company_street, $request->company_city);
-                // Log::info($latLong);
-
-                if(!$this->CheckNIP($request->get('company_nip')))
-                {
-                    session()->flash('error',  trans('sentence.invalid-nip'));
-                    return back()->withInput($request->all());
-                }
-
-                event(new Registered($user = User::create([
-                    'name' => $request->name,
-                    'email' => $request->email,
-                    'password' => Hash::make($request->password),
-                    'avatar' => '/images/company_avatar.jpg',
-                    'term1' => $request->term1,
-                    'term2' => $request->term2,
-                    'term3' => $request->term3
-                ])));
-
-                $profile = Profile::create([
-                    'user_id' => $user->id,
-                    'street' => $request->street,
-                    'post_code' => $request->post_code,
-                    'city' => $request->city,
-                    'last_name' => $request->last_name,
-                    'company_name' => $request->company_name,
-                    'company_street' => $request->company_street,
-                    'company_post_code' => $request->company_post_code,
-                    'company_city' => $request->company_city,
-                    'company_nip' => $request->company_nip
-                ]);
             }
 
             $user
                 ->roles()
-                ->attach(Role::where('name', $request->type)->first());
+                ->attach(Role::where('name', 'doctor')->first());
 
             DB::commit();
 
@@ -225,7 +199,7 @@ class RegisterController extends Controller
         }
     }
 
-    protected function get_lat_long($address, $city){
+    protected function get_lat_long($address, $city) {
         $location = Location::where('city', $city)->count();
         
         if($location === 0) {
@@ -251,5 +225,90 @@ class RegisterController extends Controller
 
             return $lat.','.$long;
         } 
+    }
+
+    public function showStep()
+    {
+        return view('auth.register-step');
+    }
+
+    public function showRegisterCompany()
+    {
+        $works = Work::all();
+        $states = State::all();
+        $locations = Location::get(['id', 'city']);
+        $specializations = Specialization::all();
+        $currencies = Currency::all();
+        $settlements = Settlement::all();
+
+        return view('auth.register-company', compact(
+            'works',
+            'states',
+            'locations',
+            'specializations',
+            'currencies',
+            'settlements'
+        ));
+    }
+
+    public function registerCompany(CompanyStoreRequest $request)
+    {
+        if(!$this->CheckNIP($request->get('company_nip')))
+        {
+            session()->flash('error',  trans('sentence.invalid-nip'));
+            return back()->withInput($request->all());
+        }
+
+        DB::beginTransaction();
+
+        try {
+            $latLong = $this->get_lat_long($request->company_street, $request->company_city);
+
+            event(new Registered($user = User::create([
+                'name' => $request->name,
+                'email' => $request->email,
+                'password' => Hash::make($request->password),
+                'avatar' => '/images/company_avatar.jpg',
+                'term1' => $request->term1,
+                'term2' => $request->term2,
+                'term3' => $request->term3
+            ])));
+
+            $profile = Profile::create([
+                'user_id' => $user->id,
+                'street' => $request->street,
+                'post_code' => $request->post_code,
+                'city' => $request->city,
+                'last_name' => $request->last_name,
+                'company_name' => $request->company_name,
+                'company_street' => $request->company_street,
+                'company_post_code' => $request->company_post_code,
+                'company_city' => $request->company_city,
+                'company_nip' => $request->company_nip
+            ]);
+
+            $user
+                ->roles()
+                ->attach(Role::where('name', 'company')->first());
+
+            $data = [];
+            $data = $request->all();
+            $data['user_id'] = $user->id;
+
+            $advertisement = Advertisement::create($data);
+
+            DB::commit();
+
+            session()->flash('success', trans('sentence.account-create-success'));
+
+            return back();
+        } catch (\Exception $e) {
+            Log::info($e);
+            DB::rollback();
+
+            session()->flash('error',  trans('sentence.error-message'));
+
+            return back()->withInput($request->all());
+        }
     }
 }

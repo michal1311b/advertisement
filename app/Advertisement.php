@@ -112,7 +112,7 @@ class Advertisement extends Model
         $entry->requirements = $attributes['requirements'];
         $entry->work_id = $attributes['work_id'];
         $entry->state_id = $attributes['state_id'];
-        $entry->user_id = auth()->user()->id;
+        $entry->user_id = auth()->user()->id ?? $attributes['user_id'];
         $entry->location_id = $attributes['location_id'];
         $entry->specialization_id = $attributes['specialization_id'];
         $entry->currency_id = $attributes['currency_id'];

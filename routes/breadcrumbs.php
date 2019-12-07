@@ -9,6 +9,11 @@ Breadcrumbs::for('site.homepage', function ($trail) {
     $trail->push(trans('sentence.homepage'), route('homepage'));
 });
 
+Breadcrumbs::for('site.register-step', function ($trail) {
+    $trail->push(trans('sentence.register'), route('register.step'));
+});
+
+
 Breadcrumbs::for('cookies', function ($trail) {
     $trail->parent('home');
     $trail->push(trans('sentence.cookies-policy'), route('cookies.show'));

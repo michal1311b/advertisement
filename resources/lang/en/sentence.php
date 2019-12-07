@@ -106,6 +106,7 @@ return [
   'first_name' => 'First name',
   'last_name' => 'Last name',
   'name' => 'Name',
+  'username' => 'User name',
   'city-not-require' => 'City (not required)',
   'phone-not-require' => 'Phone (not required)',
   'upload-cv' => 'Upload CV',
@@ -219,6 +220,7 @@ return [
   'step1' => 'Step 1',
   'step2' => 'Step 2',
   'step3' => 'Step 3',
+  'step4' => 'Krok 4',
   'preferences' => 'Preferences',
   'apply-email-title' => 'EmployMed - Reply to your publication',
   'reply-email-title' => 'EmployMed - Reply to your report',
@@ -282,5 +284,8 @@ return [
   'newsletter-delete' => 'Newsletter was deleted successfully!',
   'newsletter-create-success' => 'Newsletter was created successfully!',
   'newsletter-update-success' => 'Newsletter was updated successfully!',
-  'newsletter-sent' => 'Sent:'
+  'newsletter-sent' => 'Sent:',
+  'register-step' => 'Choose register type',
+  'as' => 'as',
+  'and' => 'and'
 ];

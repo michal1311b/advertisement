@@ -106,6 +106,7 @@ return [
   'first_name' => 'Imię',
   'last_name' => 'Nazwisko',
   'name' => 'Nazwa',
+  'username' => 'Nazwa użytkownika',
   'city-not-require' => 'Miasto (nie wymagane)',
   'phone-not-require' => 'Telefon (nie wymagane)',
   'upload-cv' => 'Dodaj CV',
@@ -219,6 +220,7 @@ return [
   'step1' => 'Krok 1',
   'step2' => 'Krok 2',
   'step3' => 'Krok 3',
+  'step4' => 'Krok 4',
   'preferences' => 'Preferencje',
   'apply-email-title' => 'EmployMed - Odpowiedź na Twoje ogłoszenie',
   'reply-email-title' => 'EmployMed - Odpowiedź na Twoje zgłoszenie',
@@ -282,5 +284,8 @@ return [
   'newsletter-delete' => 'Newsletter został usunięty pomyślnie!',
   'newsletter-create-success' => 'Newsletter został dodany pomyślnie!',
   'newsletter-update-success' => 'Newsletter został zaktualizowany pomyślnie!',
-  'newsletter-sent' => 'Wysłano:'
+  'newsletter-sent' => 'Wysłano:',
+  'register-step' => 'Wybierz typ konta',
+  'as' => 'jako',
+  'and' => 'oraz'
 ];

@@ -102,7 +102,7 @@
                                         </h6>
                                     </div>
                                     <div>
-                                        <a href="{{ route('register') }}" class="btn btn-primary">
+                                        <a href="{{ route('register.step') }}" class="btn btn-primary">
                                             {{ trans('sentence.register') }}
                                         </a>
                                     </div>

@@ -186,6 +186,10 @@ $(document).ready(function() {
         $('#myTab li:eq(2) a').tab('show');
         window.scrollTo(0, 0);
     });
+    $(".go-step4").click(function(){
+        $('#myTab li:eq(3) a').tab('show');
+        window.scrollTo(0, 0);
+    });
 
     $(".blue-tooltip").tooltip({});
 

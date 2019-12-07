@@ -130,6 +130,15 @@
                                         <span class="badge badge-pill">{{ $advertisement->min_salary }} - {{ $advertisement->max_salary }} {{ $advertisement->currency->symbol }}</span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        {{ trans('sentence.salary_negotiable') }}
+                                        @if($advertisement->negotiable === 1)
+                                            <i class="fas fa-clipboard-check"></i>
+                                        @else
+                                            <i class="fas fa-times-circle"></i>
+                                        @endif
+                                        </span>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
                                         {{ trans('sentence.work-category') }}
                                         <span class="badge badge-pill">{{ $advertisement->settlement->name }}</span>
                                     </li>
