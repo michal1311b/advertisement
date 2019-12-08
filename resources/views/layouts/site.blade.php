@@ -44,7 +44,6 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css?rand=15') }}" rel="stylesheet">
     @yield('css')
-    <script src="https://cdn.tiny.cloud/1/oknjb9412whickdkirspmofjwrqudakcjhdvyf31s6xhshtt/tinymce/5/tinymce.min.js"></script>
     
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.css" />
       

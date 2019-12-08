@@ -10,6 +10,7 @@
 @endsection
 
 @section('tinymce')
+<script src="https://cdn.tiny.cloud/1/oknjb9412whickdkirspmofjwrqudakcjhdvyf31s6xhshtt/tinymce/5/tinymce.min.js"></script>
 <script src="{{ asset('js/tinymce2.js') }}"></script>
 @endsection
 
