@@ -59,6 +59,7 @@ class AdvertisementController extends Controller
 
     public function store(StoreRequest $request)
     {
+        Log::info($request->all());
         DB::beginTransaction();
 
         try {

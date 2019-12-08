@@ -253,6 +253,7 @@ class RegisterController extends Controller
 
     public function registerCompany(CompanyStoreRequest $request)
     {
+        Log::info($request->all());
         if(!$this->CheckNIP($request->get('company_nip')))
         {
             session()->flash('error',  trans('sentence.invalid-nip'));
