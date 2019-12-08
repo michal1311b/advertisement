@@ -8,6 +8,10 @@
     {{ __('Chat room') }}
 @endsection
 
+@section('tinymce')
+<script src="{{ asset('js/tinymce2.js') }}"></script>
+@endsection
+
 @section('breadcrumbs')
 <div class="container">
     <div class="row">

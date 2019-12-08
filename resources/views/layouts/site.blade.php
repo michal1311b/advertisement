@@ -42,7 +42,7 @@
     <script src="https://kit.fontawesome.com/96c3aa2e82.js" crossorigin="anonymous"></script>
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css?rand=14') }}" rel="stylesheet">
+    <link href="{{ asset('css/app.css?rand=15') }}" rel="stylesheet">
     @yield('css')
     <script src="https://cdn.tiny.cloud/1/oknjb9412whickdkirspmofjwrqudakcjhdvyf31s6xhshtt/tinymce/5/tinymce.min.js"></script>
     
@@ -53,71 +53,8 @@
 
     <script>
         var LoggedUser = false;
-        tinymce.init({
-            selector: 'textarea',
-            plugins: 'autoresize image',
-            paste_data_images: true,
-            extended_valid_elements: 'span[*]', // Needed to retain spans without attributes these are removed by default
-            formats: {
-                removeformat: [
-                // Configures `clear formatting` to remove specified elements regardless of it's attributes
-                { selector: 'b,strong,em,i,font,u,strike', remove: 'all' },
-
-                // Configures `clear formatting` to remove the class red from spans and if the element then becomes empty i.e has no attributes it gets removed
-                { selector: 'span', classes: 'red', remove: 'empty' },
-
-                // Configures `clear formatting` to remove the class green from spans and if the element then becomes empty it's left intact
-                { selector: 'span', classes: 'green', remove: 'none' }
-                ]
-            }
-        });
     </script>
-    <style>
-        body {
-            overflow-x: hidden;
-        }
-
-        #sidebar-wrapper {
-            min-height: 100vh;
-            margin-left: -15rem;
-            -webkit-transition: margin .25s ease-out;
-            -moz-transition: margin .25s ease-out;
-            -o-transition: margin .25s ease-out;
-            transition: margin .25s ease-out;
-        }
-
-        #sidebar-wrapper .sidebar-heading {
-            padding: 0.875rem 1.25rem;
-            font-size: 1.2rem;
-        }
-
-        #sidebar-wrapper .list-group {
-            width: 15rem;
-        }
-
-        #page-content-wrapper {
-            min-width: 100vw;
-        }
-
-        #wrapper.toggled #sidebar-wrapper {
-            margin-left: 0;
-        }
-
-        @media (min-width: 768px) {
-            #sidebar-wrapper {
-                margin-left: 0;
-            }
-
-            #page-content-wrapper {
-                min-width: 0;
-                width: 100%;
-            }
-
-            #wrapper.toggled #sidebar-wrapper {
-                margin-left: -15rem;
-            }
-        }
-    </style>
+    @yield('tinymce')
     <script>
         window.Laravel = <?php echo json_encode([
             'csrfToken' => csrf_token(),
@@ -168,7 +105,7 @@
     <!-- Scripts -->
     @yield('scripts')
     
-    <script src="{{ asset('js/app.js?rand=14') }}" defer></script>
+    <script src="{{ asset('js/app.js?rand=15') }}" defer></script>
     
     @if($app->environment('production'))
         <!-- Global site tag (gtag.js) - Google Analytics -->

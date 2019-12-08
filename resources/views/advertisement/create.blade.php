@@ -4,6 +4,10 @@
     {{ __('Create offer') }}
 @endsection
 
+@section('tinymce')
+<script src="{{ asset('js/tinymce2.js') }}"></script>
+@endsection
+
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
