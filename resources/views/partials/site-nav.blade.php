@@ -1,6 +1,6 @@
 
 <div class="list-group list-group-flush">
-    <a href="{{ route('blog.index') }}" class="list-group-item list-group-item-action bg-light">{{ __('Blog') }}</a>
+    <a href="https://employmed.eu/blog-employmed" class="list-group-item list-group-item-action bg-light">{{ __('Blog') }}</a>
 </div>
 <div class="list-group list-group-flush">
     <a href="{{ route('advertisement-list') }}" class="list-group-item list-group-item-action bg-light">{{ trans('sentence.offers') }}</a>
