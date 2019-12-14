@@ -171,6 +171,9 @@
                                             {!! trans('sentence.homepage.for.doctor.stomatologist.explain') !!}
                                         </h6>
                                     </div>
+                                    <div class="body embed-responsive embed-responsive-16by9">
+                                        <iframe class="embed-responsive-item" width="560" height="315" src="https://www.youtube.com/embed/rHtmkkAlSnQ?rel=0&modestbranding=1&autohide=1&showinfo=0&controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope;" allowfullscreen></iframe>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -190,6 +193,9 @@
                                         <h6>
                                             {!! trans('sentence.homepage.for.employer.explain') !!}
                                         </h6>
+                                    </div>
+                                    <div class="body embed-responsive embed-responsive-16by9">
+                                        <iframe class="embed-responsive-item" width="560" height="315" src="https://www.youtube.com/embed/4LIjt78_Owg?rel=0&modestbranding=1&autohide=1&showinfo=0&controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                     </div>
                                 </div>
                             </div>
