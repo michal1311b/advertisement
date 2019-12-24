@@ -15,6 +15,45 @@ require('../../node_modules/bootstrap-datepicker/dist/js/bootstrap-datepicker');
 require('../../node_modules/bootstrap-slider/dist/bootstrap-slider.min');
 require('slick-carousel');
 
+window.route = require('./route');
+
+window.Vue = require('vue');
+import languageBundle from '@kirschbaum-development/laravel-translations-loader/php!@kirschbaum-development/laravel-translations-loader';
+import VueI18n from 'vue-i18n';
+Vue.use(VueI18n);
+
+const i18n = new VueI18n({
+    locale: window.Locale,
+    messages: languageBundle,
+})
+/**
+ * The following block of code may be used to automatically register your
+ * Vue components. It will recursively scan this directory for the Vue
+ * components and automatically register them with their "basename".
+ *
+ * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
+ */
+
+const files = require.context('./', true, /\.vue$/i);
+files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
+
+Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+
+import CompanyRegister from './components/CompanyRegister.vue';
+Vue.component('company-register', CompanyRegister);
+
+/**
+ * Next, we will create a fresh Vue application instance and attach it to
+ * the page. Then, you may begin adding components to this application
+ * or customize the JavaScript scaffolding to fit your unique needs.
+ */
+
+const app = new Vue({
+    el: '#app',
+    i18n: i18n
+});
+
+
 var notifications = [];
 
 const NOTIFICATION_TYPES = {
@@ -344,31 +383,3 @@ function makeNotificationText(notification) {
 }
 
 require('./questionnaire');
-
-
-// window.Vue = require('vue');
-
-
-/**
- * The following block of code may be used to automatically register your
- * Vue components. It will recursively scan this directory for the Vue
- * components and automatically register them with their "basename".
- *
- * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
- */
-
-// const files = require.context('./', true, /\.vue$/i);
-// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
-
-// Vue.component('example-component', require('./components/ExampleComponent.vue').default);
-
-
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
-
-// const app = new Vue({
-//     el: '#app',
-// });
