@@ -25,7 +25,11 @@ Vue.use(VueI18n);
 const i18n = new VueI18n({
     locale: window.Locale,
     messages: languageBundle,
-})
+});
+
+Vue.prototype.trans = (key) => {
+    return _.get(window.trans, key, key);
+};
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue

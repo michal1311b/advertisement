@@ -47,7 +47,16 @@
 
     <script type='text/javascript' src='//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js'></script>
     <script>
-        window._translations = {!! cache('translations') !!};
+        window.trans = <?php
+        // copy all translations from /resources/lang/CURRENT_LOCALE/* to global JS variable
+        $lang_files = File::files(resource_path() . '/lang/' . App::getLocale());
+        $trans = [];
+        foreach ($lang_files as $f) {
+            $filename = pathinfo($f)['filename'];
+            $trans[$filename] = trans($filename);
+        }
+        echo json_encode($trans);
+        ?>;
     </script>
     @yield('leaflet')
     <script>
