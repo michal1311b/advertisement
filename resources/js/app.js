@@ -23,13 +23,32 @@ import VueI18n from 'vue-i18n';
 Vue.use(VueI18n);
 
 const i18n = new VueI18n({
-    locale: window.Locale,
+    locale: 'pl',
     messages: languageBundle,
 });
 
 Vue.prototype.trans = (key) => {
     return _.get(window.trans, key, key);
 };
+
+import { ValidationProvider, ValidationObserver, extend, localize } from 'vee-validate';
+import VueTagsInput from '@johmun/vue-tags-input';
+import tinymce from 'vue-tinymce-editor';
+import * as rules from 'vee-validate/dist/rules';
+import en from 'vee-validate/dist/locale/en.json';
+import pl from 'vee-validate/dist/locale/pl.json';
+
+Object.keys(rules).forEach(rule => {
+  extend(rule, rules[rule]);
+});
+Vue.component('ValidationProvider', ValidationProvider);
+Vue.component('ValidationObserver', ValidationObserver);
+Vue.component('VueTagsInput', VueTagsInput);
+Vue.component('tinymce', tinymce);
+i18n.locale = 'en';
+localize(
+    'pl', pl
+);
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
