@@ -123,10 +123,10 @@ class Advertisement extends Model
         $entry->email = $attributes['email'];
         $entry->min_salary = $attributes['min_salary'];
         $entry->max_salary = $attributes['max_salary'];
-        $entry->term1 = $attributes['term1'];
-        $entry->term2 = $attributes['term2'];
-        $entry->term3 = $attributes['term3'];
-        $entry->negotiable = $attributes['negotiable'];
+        $entry->term1 = $attributes['term1'] === true ? 1 : 0;
+        $entry->term2 = $attributes['term2'] === true ? 1 : 0;
+        $entry->term3 = $attributes['term3'] === true ? 1 : 0;
+        $entry->negotiable = $attributes['negotiable'] === true ? 1 : 0;
         $entry->expired_at = Carbon::now()->addDays(30);
         $entry->slug = $attributes['slug'];
         $entry->latitude = $latLonData[0];

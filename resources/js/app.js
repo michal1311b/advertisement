@@ -31,6 +31,11 @@ Vue.prototype.trans = (key) => {
     return _.get(window.trans, key, key);
 };
 
+import Toasted from 'vue-toasted'
+Vue.use(Toasted, {
+  duration: 1000
+})
+
 import { ValidationProvider, ValidationObserver, extend, localize } from 'vee-validate';
 import VueTagsInput from '@johmun/vue-tags-input';
 import tinymce from 'vue-tinymce-editor';
@@ -45,6 +50,7 @@ Vue.component('ValidationProvider', ValidationProvider);
 Vue.component('ValidationObserver', ValidationObserver);
 Vue.component('VueTagsInput', VueTagsInput);
 Vue.component('tinymce', tinymce);
+
 i18n.locale = 'en';
 localize(
     'pl', pl

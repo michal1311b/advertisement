@@ -256,8 +256,10 @@ class RegisterController extends Controller
         Log::info($request->all());
         if(!$this->CheckNIP($request->get('company_nip')))
         {
-            session()->flash('error',  trans('sentence.invalid-nip'));
-            return back()->withInput($request->all());
+            return response()->json([
+                'status' => 422,
+                'message' => trans('sentence.invalid-nip')
+            ]);
         }
 
         DB::beginTransaction();
@@ -270,9 +272,9 @@ class RegisterController extends Controller
                 'email' => $request->email,
                 'password' => Hash::make($request->password),
                 'avatar' => '/images/company_avatar.jpg',
-                'term1' => $request->term1,
-                'term2' => $request->term2,
-                'term3' => $request->term3
+                'term1' => $request->term1 === true ? 1 : 0,
+                'term2' => $request->term2 === true ? 1 : 0,
+                'term3' => $request->term3 === true ? 1 : 0
             ])));
 
             $profile = Profile::create([
@@ -300,15 +302,15 @@ class RegisterController extends Controller
 
             DB::commit();
 
-            session()->flash('success', trans('sentence.account-create-success'));
-
-            return back();
+            return response()->json([
+                'message' =>  trans('sentence.account-create-success')
+            ]);
         } catch (\Exception $e) {
             Log::info($e);
             DB::rollback();
 
             return response()->json([
-                'message' => trans('sentence.error-message')
+                'message' => $e->getMessage()
             ]);
         }
     }

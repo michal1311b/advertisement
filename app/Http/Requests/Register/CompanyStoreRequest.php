@@ -24,8 +24,8 @@ class CompanyStoreRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
+            'name' => 'required|string|max:190',
+            'email' => 'required|email|max:190|unique:users',
             'password' => 'required|string|min:8|confirmed',
             'title' => 'required|min:3|max:190|unique:advertisements',
             'description' => 'required|min:3',

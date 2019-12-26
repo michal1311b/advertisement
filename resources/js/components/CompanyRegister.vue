@@ -1,6 +1,6 @@
 <template>
     <ValidationObserver v-slot="{ handleSubmit }">
-        <form method="POST" @submit.prevent="handleSubmit(submitForm)" novalidate enctype="multipart/form-data">
+        <form method="POST" @submit.prevent="handleSubmit(submitForm)" enctype="multipart/form-data">
             <div class="tab-content" id="myTabContent">
                 <div class="tab-pane fade active show" id="step1" role="tabpanel" aria-labelledby="step1">
                     <div class="card-body">
@@ -264,10 +264,7 @@
                         <div class="form-group row">
                             <label class="col-12 col-md-3 col-form-label text-md-right" for="galleries">{{ trans('sentence.upload-image') }} <span class="text-danger font-weight-bolder">*</span></label>
                             <div class="col-12 col-md-9">
-                                <ValidationProvider :name="trans('sentence.upload-image')" rules="required|mimes:image/*" v-slot="{ errors, validate }">
-                                    <input type="file" class="form-control" name="galleries[]" ref="file" @change="validate; onFileChange();" multiple/>
-                                    <small class="text-danger">{{ errors[0] }}</small>
-                                </ValidationProvider>
+                                <input type="file" class="form-control" name="galleries[]" ref="file" @change="onFileChange();" multiple/>
                             </div>
                         </div>
 
@@ -397,7 +394,7 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-12">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-primary" :disabled="blockBtn === true">
                                     {{ trans('sentence.register') }}
                                 </button>
                             </div>
@@ -413,7 +410,9 @@
     export default {
         data: function() {
             return {
-                // resource: this.$resource('/rejestracja-firma'),
+                blockBtn: false,
+                successOutput: '',
+                errorOutput: '',
                 form: new FormData(),
                 tag: '',
                 workIds: [],
@@ -559,15 +558,19 @@
                 this.form.append('work_id', this.formInputs.work_id);
             },
             submitForm(e) {
-                e.preventDefault();
+                this.blockBtn = true;
                 this.fillFormData();
                 let currentObj = this;
                 axios.post('/rejestracja-firma', this.form)
-                .then(function (response) {
-                    currentObj.output = response.data;
+                .then(response => {
+                    currentObj.successOutput = response.data.message;
+                    this.$toasted.success(currentObj.successOutput);
+                    this.blockBtn = false;
                 })
-                .catch(function (error) {
-                    currentObj.output = error.response.data.errors;
+                .catch(error => {
+                    currentObj.errorOutput = error.response.data.errors.title[0];
+                    this.$toasted.error(currentObj.errorOutput);
+                    this.blockBtn = false;
                 });
             }
         }
