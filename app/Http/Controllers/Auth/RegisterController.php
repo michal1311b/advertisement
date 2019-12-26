@@ -303,6 +303,7 @@ class RegisterController extends Controller
             DB::commit();
 
             return response()->json([
+                'status' => 200,
                 'message' =>  trans('sentence.account-create-success')
             ]);
         } catch (\Exception $e) {

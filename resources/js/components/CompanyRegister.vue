@@ -522,6 +522,38 @@
                 };
                 reader.readAsDataURL(this.$refs.file.files[0]);
             },
+            clearForm() {
+                this.formInputs.name= '';
+                this.formInputs.email= '';
+                this.formInputs.password= '';
+                this.formInputs.password_confirmation= '';
+                this.formInputs.company_name= '';
+                this.formInputs.company_street= '';
+                this.formInputs.company_post_code= '';
+                this.formInputs.company_city= '';
+                this.formInputs.company_nip= '';
+                this.formInputs.title= '';
+                this.formInputs.description= '';
+                this.formInputs.profits= '';
+                this.formInputs.requirements= '';
+                this.formInputs.work_id= '';
+                this.formInputs.location_id= '';
+                this.formInputs.state_id= '';
+                this.formInputs.postCode= '';
+                this.formInputs.street= '';
+                this.formInputs.phone= '';
+                this.formInputs.specialization_id= '';
+                this.formInputs.galleries= [];
+                this.formInputs.tags= [];
+                this.formInputs.min_salary= '';
+                this.formInputs.max_salary= '';
+                this.formInputs.currency_id= '';
+                this.formInputs.settlement_id= '';
+                this.formInputs.negotiable= false;
+                this.formInputs.term1= false;
+                this.formInputs.term2= false;
+                this.formInputs.term3= false;
+            },
             fillFormData() {
                 this.form.append('company_city', this.formInputs.company_city);
                 this.form.append('company_name', this.formInputs.company_name);
@@ -570,6 +602,10 @@
                 .then(response => {
                     currentObj.successOutput = response.data.message;
                     this.$toasted.success(currentObj.successOutput);
+                    if(response.data.status === 200)
+                    {
+                        this.clearForm();
+                    }
                     this.blockBtn = false;
                 })
                 .catch(error => {
