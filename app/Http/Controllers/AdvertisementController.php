@@ -67,16 +67,18 @@ class AdvertisementController extends Controller
 
             DB::commit();
 
-            session()->flash('success', trans('sentence.offer-create-success'));
-
-            return back();
+            return response()->json([
+                'status' => 201,
+                'message' => trans('sentence.offer-create-success')
+            ]);
         } catch (\Exception $e) {
             Log::info($e);
             DB::rollback();
 
-            session()->flash('error',  trans('sentence.error-message'));
-
-            return back()->withInput($request->all());
+            return response()->json([
+                'status' => $e->getCode(),
+                'message' => $e->getMessage()
+            ]);
         }
     }
 

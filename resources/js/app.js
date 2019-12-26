@@ -70,6 +70,8 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 
 import CompanyRegister from './components/CompanyRegister.vue';
 Vue.component('company-register', CompanyRegister);
+import CreateOffer from './components/offers/CreateOffer.vue';
+Vue.component('create-offer', CreateOffer);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
