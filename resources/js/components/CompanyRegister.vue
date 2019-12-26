@@ -515,7 +515,12 @@
                 return this.settlementIds = this.settlementIds.join();
             },
             onFileChange(event) {
-                this.formInputs.galleries[0] = this.$refs.file.files[0];
+                let reader = new FileReader();
+                let vm = this;
+                reader.onload = (e) => {
+                    vm.formInputs.galleries[0] = e.target.result;
+                };
+                reader.readAsDataURL(this.$refs.file.files[0]);
             },
             fillFormData() {
                 this.form.append('company_city', this.formInputs.company_city);
