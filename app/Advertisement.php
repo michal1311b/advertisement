@@ -7,7 +7,6 @@ use App\Gallery;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Facades\Log;
 
 class Advertisement extends Model
 {
@@ -219,7 +218,6 @@ class Advertisement extends Model
             {
                 foreach($attributes['tags'] as $inputtag)
                 {
-                    Log::info($inputtag);
                     $tag = new Tag;
                     $tag->advertisement_id = $this->id;
                     if(is_array($inputtag))
