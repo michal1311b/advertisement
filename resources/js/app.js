@@ -37,7 +37,7 @@ Vue.use(Toasted, {
 })
 
 import { ValidationProvider, ValidationObserver, extend, localize } from 'vee-validate';
-import VueTagsInput from '@johmun/vue-tags-input';
+import { VueTagsInput } from '@johmun/vue-tags-input';
 import tinymce from 'vue-tinymce-editor';
 import * as rules from 'vee-validate/dist/rules';
 import en from 'vee-validate/dist/locale/en.json';
@@ -72,6 +72,8 @@ import CompanyRegister from './components/CompanyRegister.vue';
 Vue.component('company-register', CompanyRegister);
 import CreateOffer from './components/offers/CreateOffer.vue';
 Vue.component('create-offer', CreateOffer);
+import EditOffer from './components/offers/EditOffer.vue';
+Vue.component('edit-offer', EditOffer);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
