@@ -469,8 +469,14 @@
                 axios.post('update', this.formInputs)
                 .then(response => {
                     this.blockBtn = false;
-                    currentObj.successOutput = response.data.message;
-                    this.$toasted.success(currentObj.successOutput);
+                    if(response.data.status === 200 || 201)
+                    {
+                        currentObj.successOutput = response.data.message;
+                        this.$toasted.success(currentObj.successOutput);
+                    } else {
+                        currentObj.errorOutput = response.data.errors.title[0];
+                        this.$toasted.error(currentObj.errorOutput);
+                    }
                 })
                 .catch(error => {
                     this.blockBtn = false;

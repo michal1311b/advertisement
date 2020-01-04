@@ -202,8 +202,6 @@ class Advertisement extends Model
             }
         }
 
-        Log::info($attributes['tags']);
-
         if(isset($attributes['tags'])) {
             foreach($attributes['tags'] as $tag)
             {
@@ -221,10 +219,18 @@ class Advertisement extends Model
             {
                 foreach($attributes['tags'] as $inputtag)
                 {
+                    Log::info($inputtag);
                     $tag = new Tag;
                     $tag->advertisement_id = $this->id;
-                    $tag->name = trim($inputtag['text']);
-                    $tag->slug = self::getUniqueSlug($inputtag['text']);
+                    if(is_array($inputtag))
+                    {
+                        $tag->name = trim($inputtag['text']);
+                        $tag->slug = self::getUniqueSlug($inputtag['text']);
+                    } else {
+                        $tag->name = trim($inputtag);
+                        $tag->slug = self::getUniqueSlug($inputtag);
+                    }
+                    
                     $tag->save();
                 }
             }
