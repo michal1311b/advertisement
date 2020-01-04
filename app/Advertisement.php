@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 use App\Gallery;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Log;
 
 class Advertisement extends Model
 {
@@ -139,11 +141,15 @@ class Advertisement extends Model
             foreach($attributes['galleries'] as $k => $gallery) {
                 if(is_numeric($k)) {
                     $fileData = new Gallery();
-                    $fileData->oldName = $gallery->getClientOriginalName();
+                    $fileData->oldName = '$gallery->getClientOriginalName()';
                     $fileData->newName = $now->getTimestamp() . $entry->generateRandomString();
-                    $fileData->size = $gallery->getClientSize();
-                    $fileData->mimeType = $gallery->getClientMimeType();
-                    $fileData->path = "https://{$_SERVER['HTTP_HOST']}/" .$gallery->store(self::uploadDir() . '/' . $entry->id . '_' . $now->format('Y-m-d'), 'public');
+                    $fileData->size = 666;
+                    $fileData->mimeType = 'png';
+                    @list($type, $gallery) = explode(';', $gallery);
+                    @list(, $gallery) = explode(',', $gallery); 
+
+                    Storage::disk('public')->put(self::uploadDir() . '/' . $fileData->newName. '.png', base64_decode($gallery));
+                    $fileData->path = "https://{$_SERVER['HTTP_HOST']}" . self::uploadDir() . '/' . $fileData->newName. '.png';
                     $fileData->advertisement_id = $entry->id;
                     $entry->galleries()->save($fileData);
                 }
@@ -181,11 +187,15 @@ class Advertisement extends Model
             foreach($attributes['galleries'] as $k => $gallery) {
                 if(is_numeric($k)) {
                     $fileData = new Gallery();
-                    $fileData->oldName = $gallery->getClientOriginalName();
+                    $fileData->oldName = '$gallery->getClientOriginalName()';
                     $fileData->newName = $now->getTimestamp() . $this->generateRandomString();
-                    $fileData->size = $gallery->getClientSize();
-                    $fileData->mimeType = $gallery->getClientMimeType();
-                    $fileData->path = "https://{$_SERVER['HTTP_HOST']}/" .$gallery->store(self::uploadDir() . '/' . $this->id . '_' . $now->format('Y-m-d'), 'public');
+                    $fileData->size = 666;
+                    $fileData->mimeType = 'png';
+                    @list($type, $gallery) = explode(';', $gallery);
+                    @list(, $gallery) = explode(',', $gallery); 
+
+                    Storage::disk('public')->put(self::uploadDir() . '/' . $fileData->newName. '.png', base64_decode($gallery));
+                    $fileData->path = "https://{$_SERVER['HTTP_HOST']}" . self::uploadDir() . '/' . $fileData->newName. '.png';
                     $fileData->advertisement_id = $this->id;
                     $this->galleries()->save($fileData);
                 }
