@@ -37,8 +37,7 @@ class StoreRequest extends FormRequest
             'postCode' => 'required|min:3|max:190',
             'street' => 'required|min:3|max:190',
             'email' => 'required|min:3|max:190',
-            'phone' => 'required|min:3|max:190',
-            'galleries.*' => 'image|mimes:jpg,jpeg,png|max:2000'
+            'phone' => 'required|min:3|max:190'
         ];
     }
 }
