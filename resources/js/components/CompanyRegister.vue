@@ -514,13 +514,14 @@
                 
                 return this.settlementIds = this.settlementIds.join();
             },
-            onFileChange(event) {
+            onFileChange() {
                 let reader = new FileReader();
                 let vm = this;
                 reader.onload = (e) => {
                     vm.formInputs.galleries[0] = e.target.result;
                 };
                 reader.readAsDataURL(this.$refs.file.files[0]);
+                vm.formInputs.galleries[0] = this.$refs.file.files[0];
             },
             clearForm() {
                 this.formInputs.name= '';
@@ -563,11 +564,6 @@
                 this.form.append('currency_id', this.formInputs.currency_id);
                 this.form.append('description', this.formInputs.description);
                 this.form.append('email', this.formInputs.email);
-                for (var key in this.formInputs.galleries) {
-                    if(typeof this.formInputs.galleries[key].name == 'string') {
-                        this.form.append('galleries[' + key + ']', this.formInputs.galleries[key]);
-                    }
-                }
                 this.form.append('location_id', this.formInputs.location_id);
                 this.form.append('max_salary', this.formInputs.max_salary);
                 this.form.append('min_salary', this.formInputs.min_salary);
@@ -593,12 +589,18 @@
                 this.form.append('term3', this.formInputs.term3);
                 this.form.append('title', this.formInputs.title);
                 this.form.append('work_id', this.formInputs.work_id);
+                this.form.append('galleries[0]', this.formInputs.galleries[0]);
             },
             submitForm(e) {
                 this.blockBtn = true;
                 this.fillFormData();
                 let currentObj = this;
-                axios.post('/rejestracja-firma', this.form)
+                axios.post('/rejestracja-firma', this.form,
+                {
+                    headers: {
+                        'Content-Type': 'multipart/form-data'
+                    }
+                })
                 .then(response => {
                     currentObj.successOutput = response.data.message;
                     this.$toasted.success(currentObj.successOutput);
