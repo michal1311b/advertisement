@@ -407,6 +407,7 @@
                     vm.formInputs.galleries[0] = e.target.result;
                 };
                 reader.readAsDataURL(this.$refs.file.files[0]);
+                vm.formInputs.galleries[0] = this.$refs.file.files[0];
             },
             clearForm() {
                 this.formInputs.title= '';
@@ -435,11 +436,7 @@
                 this.form.append('email', this.user.email);
                 this.form.append('currency_id', this.formInputs.currency_id);
                 this.form.append('description', this.formInputs.description);
-                for (var key in this.formInputs.galleries) {
-                    if(typeof this.formInputs.galleries[key].name == 'string') {
-                        this.form.append('galleries[' + key + ']', this.formInputs.galleries[key]);
-                    }
-                }
+                this.form.append('galleries[0]', this.formInputs.galleries[0]);
                 this.form.append('location_id', this.formInputs.location_id);
                 this.form.append('max_salary', this.formInputs.max_salary);
                 this.form.append('min_salary', this.formInputs.min_salary);

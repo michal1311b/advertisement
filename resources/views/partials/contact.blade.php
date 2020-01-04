@@ -39,12 +39,7 @@
             <div class="form-row">
                 <div class="form-group col-md-12">
                     <label for="message">{{ trans('sentence.message')}}</label>
-                    <textarea id="message" class="form-control @error('message') is-invalid @enderror" name="message" autocomplete="message" autofocus rows="3">
-                        {!! trans('sentence.dear') !!}
-                        {!! trans('sentence.send-cv-message') !!}
-                        {!! trans('sentence.send-cv-greatings') !!}
-                        {{ auth()->user()->name ?? null }} {{ auth()->user()->profile->last_name ?? null }}, {{ auth()->user()->profile->company_phone1 ?? null }}
-                    </textarea>
+                    <textarea class="form-control text-left @error('message') is-invalid @enderror" name="message" autocomplete="message" autofocus rows="5">{!! trans('sentence.dear') !!} {!! trans('sentence.send-cv-message') !!} {!! trans('sentence.send-cv-greatings') !!} {{ auth()->user()->name ?? null }} {{ auth()->user()->profile->last_name ?? null }}, {{ auth()->user()->profile->company_phone1 ?? null }}</textarea>
                     @error('message')
                         <div class="alert alert-danger">{{ $message }}</div>
                     @enderror

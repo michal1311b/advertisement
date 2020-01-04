@@ -321,9 +321,9 @@ bytesPerStep = 100000;
 dropzone.uploadFiles = function(files) {
     var self = this;
 
-for (var i = 0; i < files.length; i++) {
-    var file = files[i];
-    totalSteps = Math.round(Math.min(maxSteps, Math.max(minSteps, file.size / bytesPerStep)));
+    for (var i = 0; i < files.length; i++) {
+        var file = files[i];
+        totalSteps = Math.round(Math.min(maxSteps, Math.max(minSteps, file.size / bytesPerStep)));
 
         for (var step = 0; step < totalSteps; step++) {
             var duration = timeBetweenSteps * (step + 1);
