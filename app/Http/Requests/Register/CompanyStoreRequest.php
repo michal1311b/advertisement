@@ -44,8 +44,7 @@ class CompanyStoreRequest extends FormRequest
             'company_post_code' => 'required|min:3|max:190',
             'company_city' => 'required|min:3|max:190',
             'email' => 'required|min:3|max:190',
-            'phone' => 'required|min:3|max:190',
-            'galleries.*' => 'image|mimes:jpg,jpeg,png|max:2000'
+            'phone' => 'required|min:3|max:190'
         ];
     }
 }
