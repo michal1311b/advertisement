@@ -151,7 +151,7 @@ class AdvertisementController extends Controller
         return back();
     }
 
-    public function update(UploadRequest $request, $id)
+    public function update(Request $request, $id)
     {
         DB::beginTransaction();
 
@@ -161,9 +161,10 @@ class AdvertisementController extends Controller
 
             DB::commit();
 
-            session()->flash('success', trans('sentence.offer-update-success'));
-
-            return back();
+            return response()->json([
+                'status' => 201,
+                'message' => trans('sentence.offer-update-success')
+            ]);
         } catch (\Exception $e) {
             Log::info($e);
             DB::rollback();

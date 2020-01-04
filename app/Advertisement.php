@@ -202,23 +202,29 @@ class Advertisement extends Model
             }
         }
 
+        Log::info($attributes['tags']);
+
         if(isset($attributes['tags'])) {
-            $tags = explode(",", $attributes['tags'][0]);
-            foreach($this->tags as $tag)
+            foreach($attributes['tags'] as $tag)
             {
-                $tag->delete();
+                $t = Tag::where('advertisement_id', $this->id)->get();
+                
+                if(isset($t[0])) {
+                    foreach($t as $g){
+                        $g->delete();
+                    }
+                }
             }
             
             $tags = $attributes['tags'];
             if(is_array($tags))
             {
-                $explodedTag = explode(",", $tags[0]);
-                foreach($explodedTag as $k => $tag)
+                foreach($attributes['tags'] as $inputtag)
                 {
                     $tag = new Tag;
                     $tag->advertisement_id = $this->id;
-                    $tag->name = trim($explodedTag[$k]);
-                    $tag->slug = self::getUniqueSlug($explodedTag[$k]);
+                    $tag->name = trim($inputtag['text']);
+                    $tag->slug = self::getUniqueSlug($inputtag['text']);
                     $tag->save();
                 }
             }

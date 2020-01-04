@@ -75,7 +75,7 @@ Route::group(array('prefix' => 'offer'), function () {
     Route::delete('/{id}/delete', 'AdvertisementController@delete')->name('delete-advertisement');
     Route::get('/list', 'AdvertisementController@index')->name('advertisement-list');
     Route::get('/photo/{id}/delete', 'AdvertisementController@deletePhoto')->name('delete-photo');
-    Route::put('/{id}/update', 'AdvertisementController@update')->name('update-advertisement');
+    Route::post('/{id}/update', 'AdvertisementController@update')->name('update-advertisement');
     Route::get('/email', 'AdvertisementController@sendEmail');
     Route::any('/search', 'AdvertisementController@search')->name('search-advertisement');
     Route::get('/tag/{tagSlug}/{page?}', [
