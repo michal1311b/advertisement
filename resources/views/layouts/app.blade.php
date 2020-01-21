@@ -42,7 +42,7 @@
     <script src="https://kit.fontawesome.com/96c3aa2e82.js" crossorigin="anonymous"></script>
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css?rand=15') }}" rel="stylesheet">
+    <link href="{{ asset('css/app.css?rand=16') }}" rel="stylesheet">
     @yield('css')
 
     <script type='text/javascript' src='//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js'></script>
@@ -89,7 +89,7 @@
 
     <!-- Scripts -->
     @yield('scripts')
-    <script src="{{ asset('js/app.js?rand=15') }}" defer></script>
+    <script src="{{ asset('js/app.js?rand=16') }}" defer></script>
 
     @if($app->environment('production'))
         <!-- Global site tag (gtag.js) - Google Analytics -->

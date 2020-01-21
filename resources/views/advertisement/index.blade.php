@@ -123,11 +123,21 @@ for ( var i=0; i < markers.length; ++i )
         iconUrl: '{{ URL::asset('/images/icons/') }}' + '/' + markers[i].id + '.jpg',
         iconSize: [26, 26],
     });
-   L.marker( 
+    // specify popup options 
+    var customOptions =
+    {
+        'maxWidth': '500',
+        'className' : 'custom'
+    }
+    var point = L.marker( 
        [markers[i].lat, markers[i].lng],
-       { icon: icon })
-      .bindPopup( '<a href="' + markers[i].slug + '" target="_blank">' + markers[i].name + ', ' + markers[i].street + ': ' + markers[i].min_salary + '-' + markers[i].max_salary + ' ' + markers[i].currency + '</a>' )
-      .addTo( map );
+       { 
+           icon: icon,
+           title: markers[i].name + ', ' + markers[i].street + ': ' + markers[i].min_salary + '-' + markers[i].max_salary + ' ' + markers[i].currency
+        })
+    .addTo( map )
+    .bindPopup( '<a href="' + markers[i].slug + '" target="_blank">' + markers[i].name + ', ' + markers[i].street + ': ' + markers[i].min_salary + '-' + markers[i].max_salary + ' ' + markers[i].currency + '</a>', customOptions );
+      
 }
 </script>
 @endsection
