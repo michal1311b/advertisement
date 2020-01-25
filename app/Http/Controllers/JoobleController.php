@@ -15,44 +15,54 @@ class JoobleController extends Controller
 
         $inputJob = ["Lekarz", "Stomatolog", "Dentysta"];
         $inputKeyword = array_rand($inputJob, 1);
-        //create request object
-        $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, $url."".$key);
-        curl_setopt($ch, CURLOPT_POST, 1);
         
-        if($inputJob[$inputKeyword] === "Lekarz")
+        for($i=10; $i>2; $i--)
         {
-            curl_setopt($ch, CURLOPT_POSTFIELDS, '{ 
-                "keywords": "Lekarz", 
-                "salary": "3500",
-                "searchMode": "1"
-            }');
-        } else if($inputJob[$inputKeyword] === "Stomatolog") {
-            curl_setopt($ch, CURLOPT_POSTFIELDS, '{ 
-                "keywords": "Stomatolog", 
-                "salary": "3500",
-                "searchMode": "1"
-            }');
-        } else {
-            curl_setopt($ch, CURLOPT_POSTFIELDS, '{ 
-                "keywords": "Dentysta", 
-                "salary": "3500",
-                "searchMode": "1"
-            }');
+            //create request object
+            $ch = curl_init();
+            curl_setopt($ch, CURLOPT_URL, $url."".$key);
+            curl_setopt($ch, CURLOPT_POST, 1);
+
+            if($inputJob[$inputKeyword] === "Lekarz")
+            {
+                curl_setopt($ch, CURLOPT_POSTFIELDS, '{ 
+                    "keywords": "lekarz", 
+                    "salary": "50",
+                    "searchMode": "1",
+                    "page": ' . (string)$i .'
+                }');
+            } else if($inputJob[$inputKeyword] === "Stomatolog") {
+                curl_setopt($ch, CURLOPT_POSTFIELDS, '{ 
+                    "keywords": "lekarz stomatolog", 
+                    "salary": "50",
+                    "searchMode": "1",
+                    "page": ' . (string)$i .'
+                }');
+            } else {
+                curl_setopt($ch, CURLOPT_POSTFIELDS, '{ 
+                    "keywords": "lekarz dentysta", 
+                    "salary": "50",
+                    "searchMode": "1",
+                    "page": ' . (string)$i .'
+                }');
+            }
+            
+            curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/x-www-form-urlencoded'));
+
+            // receive server response ...
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+            $server_output = curl_exec ($ch);
+            curl_close ($ch);
+
+            //print response
+            $data = json_decode($server_output);
+            
+            if(isset($data->jobs))
+            {
+                $this->storePreview($data->jobs);
+            }
         }
-        
-        curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/x-www-form-urlencoded'));
-
-        // receive server response ...
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-
-        $server_output = curl_exec ($ch);
-        curl_close ($ch);
-
-        //print response
-        $data = json_decode($server_output);
-
-        $this->storePreview($data->jobs);
     }
 
     private function storePreview($data)
@@ -82,20 +92,20 @@ class JoobleController extends Controller
                 
                 $first = str_replace('<div class="vacancy-desc_text_wrapper">', '', $dsp[0]);
                 $second = str_replace('<div class="desc_text_paragraph ea_desc">', '', $first);
-            }
-
-            if($jooble !== true && trim($input->salary) !== '') {
-                Jooble::create([
-                    'title' => $input->title,
-                    'description' => trim($second),
-                    'location' => $input->location,
-                    'salary' => $input->salary ?? null,
-                    'source' => $input->source,
-                    'type' => $input->type ?? null,
-                    'link' => $input->link ?? null,
-                    'company' => $input->company ?? null,
-                    'sourceId' =>  $input->id
-                ]);
+            
+                if($jooble !== true && trim($input->salary) !== '') {
+                    Jooble::create([
+                        'title' => $input->title,
+                        'description' => trim($second),
+                        'location' => $input->location,
+                        'salary' => $input->salary ?? null,
+                        'source' => $input->source,
+                        'type' => $input->type ?? null,
+                        'link' => $input->link ?? null,
+                        'company' => $input->company ?? null,
+                        'sourceId' =>  $input->id
+                    ]);
+                }
             }
         }
     }
