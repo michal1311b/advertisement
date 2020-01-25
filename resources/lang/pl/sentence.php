@@ -68,6 +68,7 @@ return [
   'post-by' => 'Dodany przez',
   'no-post' => 'Brak artykułów',
   'edit' => 'Edycja ',
+  'show' => 'Zobacz',
   'user-offers' => 'Twoje ogłoszenia',
   'user-list' => 'Lista użytkowników',
   'user-ban-success' => 'Użytkownik został zablokowany na 14 dni',
@@ -291,5 +292,11 @@ return [
   'as' => 'jako',
   'and' => 'oraz',
   'register-doctor' => 'Formularz rejestracji dla Lekarz/Dentysta',
-  'register-company' => 'Formularz rejestracji dla placówki medycznej/firmy'
+  'register-company' => 'Formularz rejestracji dla placówki medycznej/firmy',
+  'preview-header' => 'To jest tylko szkic jak mogłoby wyglądać Twoje ogłoszenie w EmployMed.eu!',
+  'preview-post-offer' => 'Wystaw ogłoszenie już dziś w serwisie EmployMed.eu',
+  'preview-source' => 'Treść pochodzi z serwisu:',
+  'preview-source-link' => 'kliknij w link do źródła.',
+  'preview-update-success' => 'Dane zostały zaktualizowane pomyślnie',
+  'preview-list' => 'Ogłoszenia z internetu'
 ];

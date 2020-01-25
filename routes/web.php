@@ -18,6 +18,8 @@ Route::get('/sitemap.xml/pins', 'SitemapController@pins');
 Route::get('/sitemap.xml/tags', 'SitemapController@tags');
 Route::get('/sitemap.xml/companies', 'SitemapController@companies');
 
+Route::get('/preview/{jooble}', 'JoobleController@show')->name('preview-show');
+
 Route::get('/', 'PageController@siteIndex')->name('homepage');
 
 Route::get('/rejestracja-krok', 'Auth\RegisterController@showStep')->name('register.step');
@@ -155,10 +157,13 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('/clear', [
         'uses' => 'EmailController@clearSearch'
     ])->middleware(['auth', 'admin', 'verified'])->name('mailTracker_ClearSearch');
-    Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
+    Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index')->middleware(['auth', 'admin', 'verified']);
     Route::get('users', 'AdminController@index')->middleware(['auth', 'admin', 'verified'])->name('users.list');
     Route::post('block/{user}', 'AdminController@block')->middleware(['auth', 'admin', 'verified'])->name('users.block');
     Route::post('unblock/{user}', 'AdminController@unblock')->middleware(['auth', 'admin', 'verified'])->name('users.unblock');
+    Route::get('/preview/{jooble}/edit', 'JoobleController@edit')->middleware(['auth', 'admin', 'verified'])->name('preview-edit');
+    Route::put('/preview/{jooble}', 'JoobleController@update')->name('update-preview');
+    Route::get('/previews', 'JoobleController@index')->middleware(['auth', 'admin', 'verified'])->name('preview-list');
 });
 
 Route::group(array('prefix' => 'blog'), function () {

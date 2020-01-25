@@ -108,6 +108,23 @@ Breadcrumbs::for('categories.edit', function ($trail, $category) {
     $trail->push(trans('sentence.edit') . $category->name, route('categories.edit', $category));
 });
 
+Breadcrumbs::for('jooblies', function ($trail) {
+    $trail->parent('home');
+    $trail->push(trans('sentence.preview-list'), route('preview-list'));
+});
+
+Breadcrumbs::for('preview.edit', function ($trail, $preview) {
+    $trail->parent('home');
+    $trail->push(trans('sentence.preview-list'), route('preview-list'));
+    $trail->push(trans('sentence.edit') . $preview->title, route('preview-edit', $preview));
+});
+
+Breadcrumbs::for('preview-article', function ($trail, $preview) {
+    $trail->parent('home');
+    $trail->push(trans('sentence.preview-list'), route('preview-list'));
+    $trail->push($preview->title, route('preview-show', $preview));
+});
+
 Breadcrumbs::for('mailinglist.create', function ($trail) {
     $trail->parent('home');
     $trail->push(trans('sentence.mailinglist-list'), route('mailinglists.index'));

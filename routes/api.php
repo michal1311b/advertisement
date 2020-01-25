@@ -18,3 +18,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::post('stats', 'StatController@store')->name('store.stats');
+
+Route::get('get-jooble-offers', 'JoobleController@getData');

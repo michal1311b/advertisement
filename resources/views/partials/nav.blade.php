@@ -99,6 +99,7 @@
                                 <a class="dropdown-item" href="{{ route('mailinglists.index') }}">{{ trans('sentence.mailinglist-list')}}</a>
                                 <a class="dropdown-item" href="{{ route('recipients.index') }}">{{ trans('sentence.recipients-list')}}</a>
                                 <a class="dropdown-item" href="{{ route('mailTracker_Index') }}">{{ trans('sentence.email-tracker')}}</a>
+                                <a class="dropdown-item" href="{{ route('preview-list') }}">{{ trans('sentence.preview-list')}}</a>
                             @endif
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                 onclick="event.preventDefault();

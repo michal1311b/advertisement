@@ -68,6 +68,7 @@ return [
   'post-by' => 'Posted by',
   'no-post' => 'No posts found',
   'edit' => 'Edit',
+  'show' => 'Show',
   'user-offers' => 'User List of Advertisements',
   'user-list' => 'Users list',
   'user-ban-success' => 'User banned for 14 days',
@@ -291,5 +292,11 @@ return [
   'as' => 'as',
   'and' => 'and',
   'register-doctor' => 'Register form Lekarz/Dentysta',
-  'register-company' => 'Registration form for a medical facility/company'
+  'register-company' => 'Registration form for a medical facility/company',
+  'preview-header' => 'This is just a sketch of what your advert on EmployMed.eu could look like!',
+  'preview-post-offer' => 'Place an offer today on EmployMed.eu',
+  'preview-source' => 'Content comes from the site:',
+  'preview-source-link' => 'click on the link to the source.',
+  'preview-update-success' => 'Data was updated successfully',
+  'preview-list' => 'Offers from internet'
 ];
