@@ -95,6 +95,7 @@
 
 @section('scripts')
 <script>
+document.getElementById('map').innerHTML = "<div id='map' style='width: 100%; height: 100%;'></div>";
 markers = [
     @foreach($advertisements as $advertisement)
         {
@@ -141,7 +142,6 @@ for ( var i=0; i < markers.length; ++i )
         })
     .addTo( map )
     .bindPopup( '<a href="' + markers[i].slug + '" target="_blank">' + markers[i].name + ', ' + markers[i].street + ': ' + markers[i].min_salary + '-' + markers[i].max_salary + ' ' + markers[i].currency + '</a>', customOptions );
-      
 }
 </script>
 @endsection

@@ -121,6 +121,7 @@
 
 @section('scripts')
 <script>
+document.getElementById('map').innerHTML = "<div id='map' style='width: 100%; height: 100%;'></div>";
 markers = [
     @foreach($user->advertisements as $advertisement)
         {
