@@ -9,8 +9,8 @@
 @endsection
 
 @section('leaflet')
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.6.0/leaflet.css" />
-    <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.6.0/leaflet.js'></script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.css" />
+    <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.js'></script>
 @endsection
 
 @section('css')
