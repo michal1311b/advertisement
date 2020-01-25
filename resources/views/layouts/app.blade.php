@@ -58,7 +58,6 @@
         echo json_encode($trans);
         ?>;
     </script>
-    @yield('leaflet')
     <script>
         var LoggedUser = false;
     </script>
@@ -72,6 +71,7 @@
             window.Laravel.userId = <?php echo auth()->user()->id; ?>
         </script>
     @endif
+    @yield('leaflet')
 </head>
 <body>
     <div id="app">

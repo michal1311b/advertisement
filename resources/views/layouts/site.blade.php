@@ -47,7 +47,7 @@
       
     <script type='text/javascript' src='//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js'></script>
 
-    @yield('leaflet')
+    
     <script>
         var LoggedUser = false;
     </script>
@@ -63,6 +63,7 @@
             window.Laravel.userId = <?php echo auth()->user()->id; ?>
         </script>
     @endif
+    @yield('leaflet')
 </head>
 <body>
     <div id="app">
