@@ -121,7 +121,6 @@ Breadcrumbs::for('preview.edit', function ($trail, $preview) {
 
 Breadcrumbs::for('preview-article', function ($trail, $preview) {
     $trail->parent('home');
-    $trail->push(trans('sentence.preview-list'), route('preview-list'));
     $trail->push($preview->title, route('preview-show', $preview));
 });
 
