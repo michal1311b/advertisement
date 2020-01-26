@@ -99,7 +99,8 @@
         });
     </script>
 
-    
+    <script src="{{ asset('js/app.js?rand=17') }}" defer></script>
+
     <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
     integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
     crossorigin=""></script>
@@ -109,9 +110,6 @@
     
     <!-- Scripts -->
     @yield('scripts')
-    
-    <script src="{{ asset('js/app.js?rand=17') }}" defer></script>
-    
     @if($app->environment('production'))
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-151388518-1"></script>
