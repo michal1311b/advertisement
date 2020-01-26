@@ -33,6 +33,7 @@
         "express": "^4.17.1",
         "inputmask": "^4.0.9",
         "ioredis": "^4.14.1",
+        "leaflet": "^1.6.0",
         "select2": "^4.0.11",
         "slick-carousel": "^1.8.1",
         "socket.io": "^2.3.0",
