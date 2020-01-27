@@ -14,7 +14,6 @@ require('../../node_modules/bootstrap-select/dist/js/bootstrap-select.min');
 require('../../node_modules/bootstrap-datepicker/dist/js/bootstrap-datepicker');
 require('../../node_modules/bootstrap-slider/dist/bootstrap-slider.min');
 require('slick-carousel');
-require('../../node_modules/leaflet/dist/leaflet');
 
 window.route = require('./route');
 

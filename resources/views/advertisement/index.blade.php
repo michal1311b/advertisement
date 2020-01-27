@@ -86,60 +86,58 @@
 @endsection
 
 @section('scripts')
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
-  integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
-  crossorigin=""/>
-<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
-  integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
-  crossorigin=""></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.6.0/leaflet.css" integrity="sha256-SHMGCYmST46SoyGgo4YR/9AlK1vf3ff84Aq9yK4hdqM=" crossorigin="anonymous" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.6.0/leaflet.js" integrity="sha256-fNoRrwkP2GuYPbNSJmMJOCyfRB2DhPQe0rGTgzRsyso=" crossorigin="anonymous"></script>
 <script>
-document.getElementById('map').innerHTML = "<div id='map' style='width: 100%; height: 100%;'></div>";
-markers = [
-    @foreach($advertisements as $advertisement)
-        {
-            "id": "{{ $advertisement->specialization->id }}",
-            "name": "{{ $advertisement->location->city }}",
-            "street": "{{ $advertisement->street }}",
-            "lat": {{ $advertisement->latitude }},
-            "lng": {{ $advertisement->longitude }},
-            "slug": "{{ route('show-advertisement', ['id' => $advertisement->id, 'slug' => $advertisement->slug]) }}",
-            "min_salary": {{ $advertisement->min_salary }},
-            "max_salary": {{ $advertisement->max_salary }},
-            "currency": "{{ $advertisement->currency->symbol }}",
-        },
-   @endforeach
-];
-var map = L.map( 'map', {
-    center: [52.237049, 21.017532],
-    minZoom: 2,
-    zoom: 6
-});
-
-L.tileLayer( 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-    subdomains: ['a','b','c']
-}).addTo( map );
-
-for ( var i=0; i < markers.length; ++i ) 
-{
-    let icon = L.icon({ 
-        iconUrl: '{{ URL::asset('/images/icons/') }}' + '/' + markers[i].id + '.jpg',
-        iconSize: [26, 26],
+$(document).ready(function() {
+// document.getElementById('map').innerHTML = "<div id='map' style='width: 100%; height: 100%;'></div>";
+    markers = [
+        @foreach($advertisements as $advertisement)
+            {
+                "id": "{{ $advertisement->specialization->id }}",
+                "name": "{{ $advertisement->location->city }}",
+                "street": "{{ $advertisement->street }}",
+                "lat": {{ $advertisement->latitude }},
+                "lng": {{ $advertisement->longitude }},
+                "slug": "{{ route('show-advertisement', ['id' => $advertisement->id, 'slug' => $advertisement->slug]) }}",
+                "min_salary": {{ $advertisement->min_salary }},
+                "max_salary": {{ $advertisement->max_salary }},
+                "currency": "{{ $advertisement->currency->symbol }}",
+            },
+    @endforeach
+    ];
+    var map = L.map( 'map', {
+        center: [52.237049, 21.017532],
+        minZoom: 2,
+        zoom: 6
     });
-    // specify popup options 
-    var customOptions =
+
+    L.tileLayer( 'https://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.osm.org/copyright">OpenStreetMap</a>',
+        subdomains: ['a','b','c']
+    }).addTo( map );
+
+    for ( var i=0; i < markers.length; ++i ) 
     {
-        'maxWidth': '500',
-        'className' : 'custom'
+        let icon = L.icon({ 
+            iconUrl: '{{ URL::asset('/images/icons/') }}' + '/' + markers[i].id + '.jpg',
+            iconSize: [26, 26],
+        });
+        // specify popup options 
+        var customOptions =
+        {
+            'maxWidth': '500',
+            'className' : 'custom'
+        }
+        var point = L.marker( 
+        [markers[i].lat, markers[i].lng],
+        { 
+            icon: icon,
+            title: markers[i].name + ', ' + markers[i].street + ': ' + markers[i].min_salary + '-' + markers[i].max_salary + ' ' + markers[i].currency
+            })
+        .addTo( map )
+        .bindPopup( '<a href="' + markers[i].slug + '" target="_blank">' + markers[i].name + ', ' + markers[i].street + ': ' + markers[i].min_salary + '-' + markers[i].max_salary + ' ' + markers[i].currency + '</a>', customOptions );
     }
-    var point = L.marker( 
-       [markers[i].lat, markers[i].lng],
-       { 
-           icon: icon,
-           title: markers[i].name + ', ' + markers[i].street + ': ' + markers[i].min_salary + '-' + markers[i].max_salary + ' ' + markers[i].currency
-        })
-    .addTo( map )
-    .bindPopup( '<a href="' + markers[i].slug + '" target="_blank">' + markers[i].name + ', ' + markers[i].street + ': ' + markers[i].min_salary + '-' + markers[i].max_salary + ' ' + markers[i].currency + '</a>', customOptions );
-}
+});
 </script>
 @endsection
