@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Jooble;
+use App\Specialization;
 use DOMDocument;
 use Illuminate\Http\Request;
 
@@ -16,36 +17,33 @@ class JoobleController extends Controller
         $inputJob = ["Lekarz", "Stomatolog", "Dentysta"];
         $inputKeyword = array_rand($inputJob, 1);
         
-        for($i=10; $i>2; $i--)
+        for($i=10; $i>=0; $i--)
         {
             //create request object
             $ch = curl_init();
             curl_setopt($ch, CURLOPT_URL, $url."".$key);
             curl_setopt($ch, CURLOPT_POST, 1);
+            
+            $specializations = [
+                "okulista",
+                "ortopeda",
+                "pediatra",
+                "psychiatra",
+                "dermatolog",
+                "alergolog",
+                "lekarz rodzinny",
+                "kardiolog",
+                "ginekolog",
+                "internista",
+                "geriatra"
+            ];
 
-            if($inputJob[$inputKeyword] === "Lekarz")
-            {
-                curl_setopt($ch, CURLOPT_POSTFIELDS, '{ 
-                    "keywords": "lekarz", 
-                    "salary": "50",
-                    "searchMode": "1",
-                    "page": ' . (string)$i .'
-                }');
-            } else if($inputJob[$inputKeyword] === "Stomatolog") {
-                curl_setopt($ch, CURLOPT_POSTFIELDS, '{ 
-                    "keywords": "lekarz stomatolog", 
-                    "salary": "50",
-                    "searchMode": "1",
-                    "page": ' . (string)$i .'
-                }');
-            } else {
-                curl_setopt($ch, CURLOPT_POSTFIELDS, '{ 
-                    "keywords": "lekarz dentysta", 
-                    "salary": "50",
-                    "searchMode": "1",
-                    "page": ' . (string)$i .'
-                }');
-            }
+            curl_setopt($ch, CURLOPT_POSTFIELDS, '{ 
+                "keywords": ' . $specializations[$i] .', 
+                "salary": "50",
+                "searchMode": "1",
+                "page": ' . (string)$i .'
+            }');
             
             curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/x-www-form-urlencoded'));
 
