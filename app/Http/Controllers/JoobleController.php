@@ -19,11 +19,6 @@ class JoobleController extends Controller
         
         for($i=10; $i>=0; $i--)
         {
-            //create request object
-            $ch = curl_init();
-            curl_setopt($ch, CURLOPT_URL, $url."".$key);
-            curl_setopt($ch, CURLOPT_POST, 1);
-            
             $specializations = [
                 "okulista",
                 "ortopeda",
@@ -38,27 +33,34 @@ class JoobleController extends Controller
                 "geriatra"
             ];
 
-            curl_setopt($ch, CURLOPT_POSTFIELDS, '{ 
-                "keywords": ' . $specializations[$i] .', 
-                "salary": "50",
-                "searchMode": "1",
-                "page": ' . (string)$i .'
-            }');
-            
-            curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/x-www-form-urlencoded'));
+            foreach($specializations as $specialization)
+                //create request object
+                $ch = curl_init();
+                curl_setopt($ch, CURLOPT_URL, $url."".$key);
+                curl_setopt($ch, CURLOPT_POST, 1);
 
-            // receive server response ...
-            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+                curl_setopt($ch, CURLOPT_POSTFIELDS, '{ 
+                    "keywords": ' . $specialization .', 
+                    "salary": "50",
+                    "searchMode": "1",
+                    "page": ' . (string)$i .'
+                }');
+                
+                curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/x-www-form-urlencoded'));
 
-            $server_output = curl_exec ($ch);
-            curl_close ($ch);
+                // receive server response ...
+                curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
-            //print response
-            $data = json_decode($server_output);
-            
-            if(isset($data->jobs))
-            {
-                $this->storePreview($data->jobs);
+                $server_output = curl_exec ($ch);
+                curl_close ($ch);
+
+                //print response
+                $data = json_decode($server_output);
+                
+                if(isset($data->jobs))
+                {
+                    $this->storePreview($data->jobs);
+                }
             }
         }
     }
