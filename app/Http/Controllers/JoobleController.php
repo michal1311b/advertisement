@@ -33,7 +33,7 @@ class JoobleController extends Controller
                 "geriatra"
             ];
 
-            foreach($specializations as $specialization)
+            foreach($specializations as $specialization) {
                 //create request object
                 $ch = curl_init();
                 curl_setopt($ch, CURLOPT_URL, $url."".$key);
