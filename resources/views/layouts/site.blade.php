@@ -42,7 +42,7 @@
     <script src="https://kit.fontawesome.com/96c3aa2e82.js" crossorigin="anonymous"></script>
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css?rand=20') }}" rel="stylesheet">
+    <link href="{{ asset('css/app.css?rand=21') }}" rel="stylesheet">
     @yield('css')
       
     <script type='text/javascript' src='//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js'></script>
@@ -99,7 +99,7 @@
         });
     </script>
 
-    <script src="{{ asset('js/app.js?rand=20') }}" defer></script>
+    <script src="{{ asset('js/app.js?rand=21') }}" defer></script>
     
     <!-- Scripts -->
     @yield('scripts')

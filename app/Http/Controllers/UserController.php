@@ -19,7 +19,9 @@ use App\LocationUser;
 use App\Work;
 use App\Settlement;
 use App\Currency;
+use App\State;
 use App\UserAdvertisement;
+use Illuminate\Support\Facades\Auth as FacadesAuth;
 
 class UserController extends Controller
 {
@@ -185,5 +187,37 @@ class UserController extends Controller
         }
 
         return back();
+    }
+
+    public function createSimilarOffer(Advertisement $advertisement)
+    {
+        if($advertisement->user_id !== Auth::user()->id) {
+            return back();
+        }
+
+        $works = Work::all();
+        $states = State::all();
+        $locations = Location::get(['id', 'city']);
+        $specializations = Specialization::all();
+        $currencies = Currency::all();
+        $settlements = Settlement::all();
+
+        $tags_array = [];
+        foreach ($advertisement->tags as $tag) {
+            $tags_array[] = $tag->name;
+        }
+
+        $tags = implode(",", $tags_array);
+
+        return view('advertisement.similar', 
+        compact([
+            'advertisement', 
+            'works', 
+            'states', 
+            'tags', 
+            'locations', 
+            'specializations', 
+            'currencies', 
+            'settlements']));
     }
 }

@@ -122,6 +122,8 @@ Route::group(array('prefix' => 'user'), function () {
     Route::get('/rooms', 'RoomController@index')->name('user-rooms')->middleware(['auth', 'verified']);
     Route::get('/rooms/{room}', 'RoomController@show')->name('show-room')->middleware(['auth', 'verified']);
     Route::post('/message/{room}', 'RoomController@reply')->name('reply-room')->middleware(['auth', 'verified']);
+    Route::get('/create-similar-offer/{advertisement}', 'UserController@createSimilarOffer')->name('user-advertisement-similar')->middleware(['auth', 'verified']);
+    Route::post('/create-similar-offer/create', 'AdvertisementController@store')->name('store-advertisement');
 });
 
 Route::post('/send-message/{advertisement}', 'ContactController@store')->name('send-message');

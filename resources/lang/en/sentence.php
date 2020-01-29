@@ -93,6 +93,7 @@ return [
   'pages-create' => 'Create page',
   'page-create-success' => 'Page created successfully!',
   'page-update-success' => 'Page updated successfully!',
+  'create-again-btn' => 'Load advertisement data again',
   'btn-cancel' => 'Cancel',
   'btn-edit' => 'Edit',
   'btn-create' => 'Create',

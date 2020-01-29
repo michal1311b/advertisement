@@ -93,6 +93,7 @@ return [
   'pages-create' => 'Stwórz podstronę',
   'page-create-success' => 'Podstrona została dodana pomyślnie!',
   'page-update-success' => 'Podstrona została zaktualizowana pomyślnie!',
+  'create-again-btn' => 'Wczytaj dane ogłoszenia ponownie',
   'btn-cancel' => 'Anuluj',
   'btn-edit' => 'Edytuj',
   'btn-create' => 'Stwórz',

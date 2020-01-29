@@ -82,6 +82,8 @@
                         <a href="{{ route('user-advertisement-show', ['advertisement' => $advertisement, 'slug' => $advertisement->slug]) }}" class="btn btn-info border border-warning ml-2 text-white">
                             {{ trans('sentence.btn-matching') }}
                         </a>
+
+                        <a href="{{ route('user-advertisement-similar', $advertisement) }}" class="btn btn-success border border-warning ml-2 text-white">Wystaw podobne ogłoszenie</a>
                     </div>
                 @endforeach
                 <div class="pt-3">

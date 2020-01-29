@@ -74,6 +74,8 @@ import CreateOffer from './components/offers/CreateOffer.vue';
 Vue.component('create-offer', CreateOffer);
 import EditOffer from './components/offers/EditOffer.vue';
 Vue.component('edit-offer', EditOffer);
+import SimilarOffer from './components/offers/SimilarOffer.vue';
+Vue.component('similar-offer', SimilarOffer);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
