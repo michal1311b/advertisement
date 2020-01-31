@@ -102,9 +102,9 @@ $(document).ready(function() {
     window.scrollTo(0, 0);
     var mySlider = $("#range").bootstrapSlider({
         min: 0,
-        max: 1000,
+        max: 100000,
         step: 20,
-        value: [0, 800],
+        value: [0, 16000],
         tooltip: 'always',
         range: true,
         ticks_tooltip: true,
