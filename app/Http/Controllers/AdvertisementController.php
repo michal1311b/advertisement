@@ -124,6 +124,7 @@ class AdvertisementController extends Controller
     public function show($id, $slug)
     {
         $advertisement = Advertisement::whereSlug($slug)
+            ->where('id', $id)
             ->with([
                 'galleries',
                 'user',
