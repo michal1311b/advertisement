@@ -113,6 +113,12 @@
                         </div>
                     </li>
                 @endguest
+                <li class="nav-item">
+                    <a href="https://www.facebook.com/EmployMed" class="nav-link">
+                        <img src="{{asset('images/facebook.png')}}" width="30" height="30" alt="Dołącz do nas na facebooku">    
+                    </a>
+                </li>
+                
             </ul>
         </div>
     </div>
