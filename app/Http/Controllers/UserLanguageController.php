@@ -35,6 +35,7 @@ class UserLanguageController extends Controller
     public function update(Language $language, $id, Request $request)
     {
         $newLanguage = UserLanguage::where('lang_key', $request->lang_key)
+        ->where('level', $request->level)
         ->where('user_id', $id)->first();
 
         if($newLanguage) {
