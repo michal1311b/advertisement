@@ -42,9 +42,7 @@ class PageController extends Controller
             'settlement' => function($query){
                 $query->select('id', 'name');
             }, 
-            'galleries' => function($query){
-                $query->select('id', 'path', 'oldName');
-            },  
+            'galleries',  
             'location' => function($query){
                 $query->select('id', 'city');
             }, 
