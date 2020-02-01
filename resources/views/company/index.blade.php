@@ -55,7 +55,7 @@
                     </ul>
                     <!-- End -->
                 @endforeach
-                <div>
+                <div class="pt-3">
                     {{ $companies->links() }}
                 </div>
             @else
