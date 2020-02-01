@@ -26,7 +26,9 @@
                                 type="text"
                                 id="range"
                                 name="range" class="form-group">
-                            <label for="range" class="ml-3">{{ trans('sentence.salary') }}</label>
+                            <label for="range" class="ml-3">
+                                {{ trans('sentence.salary') }} <span id="val1" class="font-weight-bold"></span> - <span id="val2" class="font-weight-bold"></span>
+                            </label>
                         </div>
                     </div>
                 </div>
