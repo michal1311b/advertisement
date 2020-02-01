@@ -267,6 +267,11 @@ $(document).ready(function() {
 
     $(".blue-tooltip").tooltip({});
 
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+
     var text = window.location.href;
     
     if(text.includes('user') && text.includes('edit'))

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Advertisement;
 use App\Page;
+use App\Profile;
 use App\User;
 use Carbon\Carbon;
 use App\Http\Requests\Admin\Page\StoreRequest;
@@ -19,12 +20,50 @@ class PageController extends Controller
 {
     public function siteIndex()
     {
-        $advertisements = Advertisement::with(['state', 'galleries', 'location'])
-        ->where('expired_at', '>', Carbon::now())->orderBy('id', 'desc')->take(5)->get();
+        $advertisements = Advertisement::select(
+            'id',
+            'slug',
+            'title', 
+            'description', 
+            'min_salary', 
+            'max_salary', 
+            'location_id',
+            'settlement_id',
+            'specialization_id',
+            'currency_id',
+            'state_id',
+            'user_id',
+            'expired_at'
+            )
+        ->with([
+            'state' => function($query){
+                $query->select('id', 'name');
+            }, 
+            'settlement' => function($query){
+                $query->select('id', 'name');
+            }, 
+            'galleries' => function($query){
+                $query->select('id', 'path', 'oldName');
+            },  
+            'location' => function($query){
+                $query->select('id', 'city');
+            }, 
+            'specialization' => function($query){
+                $query->select('id', 'name');
+            },
+            'currency' => function($query){
+                $query->select('id', 'symbol');
+            },
+            'user' => function($query){
+                $query->with('profile');
+            }])
+        ->where('expired_at', '>', Carbon::now())
+        ->orderBy('id', 'desc')->take(5)->get();
+
         $companies = User::has('advertisements', '>' , 0)
         ->withCount('advertisements')
         ->orderBy('advertisements_count')
-        ->get();
+        ->get(['id', 'avatar']);
 
         return view('welcome', compact(['advertisements', 'companies']));
     }

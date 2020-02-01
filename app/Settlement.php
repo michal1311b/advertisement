@@ -10,4 +10,8 @@ class Settlement extends Model
         'name',
     ];
 
+    public function advertisement()
+    {
+        return $this->belongsTo(Advertisement::class);
+    }
 }

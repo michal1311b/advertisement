@@ -26,8 +26,47 @@ class AdvertisementController extends Controller
 {
     public function index()
     {
-        $advertisements = Advertisement::with(['state', 'galleries', 'location'])
-        ->where('expired_at', '>', Carbon::now())->paginate(5);
+        $advertisements = Advertisement::select(
+            'id',
+            'slug',
+            'title', 
+            'description', 
+            'min_salary', 
+            'max_salary', 
+            'location_id',
+            'settlement_id',
+            'specialization_id',
+            'currency_id',
+            'state_id',
+            'user_id',
+            'street',
+            'latitude',
+            'longitude',
+            'expired_at'
+            )
+        ->with([
+            'state' => function($query){
+                $query->select('id', 'name');
+            }, 
+            'settlement' => function($query){
+                $query->select('id', 'name');
+            }, 
+            'galleries',  
+            'location' => function($query){
+                $query->select('id', 'city');
+            }, 
+            'specialization' => function($query){
+                $query->select('id', 'name');
+            },
+            'currency' => function($query){
+                $query->select('id', 'symbol');
+            },
+            'user' => function($query){
+                $query->with('profile');
+            }])
+        ->where('expired_at', '>', Carbon::now())
+        ->paginate(8);
+
         $locations = Location::get(['id', 'city']);
         $specializations = Specialization::all();
         $expirateDate = Carbon::now()->subDays(30);
