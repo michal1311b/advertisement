@@ -26,6 +26,9 @@
     <div class="row">
         <div class="col-lg-12 mx-auto">
             @if(count($companies) > 0)
+                <div>
+                    {{ $companies->links() }}
+                </div>
                 @foreach($companies as $company)
                     <!-- List group-->
                     <ul class="list-group shadow">
@@ -52,6 +55,9 @@
                     </ul>
                     <!-- End -->
                 @endforeach
+                <div>
+                    {{ $companies->links() }}
+                </div>
             @else
                 <div class="col-12">
                     <h4>{{ trans('sentence.no-companies') }}</h4>
