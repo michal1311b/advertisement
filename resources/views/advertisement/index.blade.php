@@ -36,6 +36,9 @@
         <div class="col-lg-12 mx-auto">
             @include('partials.search')
             @if(count($advertisements) > 0)
+                <div class="pt-3">
+                    {{ $advertisements->links() }}
+                </div>
                 @foreach($advertisements as $advertisement)
                     <!-- List group-->
                     <ul class="list-group shadow">
