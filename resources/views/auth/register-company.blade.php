@@ -24,6 +24,15 @@
                 @error('message')
                     <div class="alert alert-danger }}">{!! $message !!}</div>
                 @enderror
+                <div class="px-2 py-2 text-danger font-weight-bold">
+                    {!! trans('sentence.download-helper-info') !!}
+                    <p>
+                        <a href="{{ asset('documents/EmployMed_wzór_formularza.docx') }}" download>
+                            <img src="{{ asset('images/word-icon.png') }}" alt="Microsoft Word" class="logo"/>
+                        </a>
+                    </p>
+                </div>   
+
                 <ul class="nav nav-tabs" id="myTab" role="tablist">
                     <li class="nav-item">
                         <a class="nav-link step1 active" id="step1-tab" data-toggle="tab" href="#step1" role="tab" aria-controls="step1" aria-selected="true">{{ trans('sentence.step1') }}</a>

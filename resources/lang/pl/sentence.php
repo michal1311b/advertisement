@@ -299,5 +299,6 @@ return [
   'preview-source' => 'Treść pochodzi z serwisu:',
   'preview-source-link' => 'kliknij w link do źródła.',
   'preview-update-success' => 'Dane zostały zaktualizowane pomyślnie',
-  'preview-list' => 'Ogłoszenia z internetu'
+  'preview-list' => 'Ogłoszenia z internetu',
+  'download-helper-info' => 'Jeśli masz problem z wypełnieniem formularza, proszę wypełnij plik word i prześlij na adres: <a href="mailto:employmed.eu@gmail.com">employmed.eu@gmail.com</a>. Pomożemy Ci z wystawieniem oferty.'
 ];
