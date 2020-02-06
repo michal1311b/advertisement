@@ -54,9 +54,12 @@
                 :specializations="{{ $specializations }}"
                 :currencies="{{ $currencies }}"
                 :settlements="{{ $settlements }}"></company-register>
-                <p>
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/kSkjnHSg2yY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </p>
+               
+                <div class="col-12 col-md-6">
+                    <div class="body embed-responsive embed-responsive-16by9">
+                        <iframe class="embed-responsive-item" width="560" height="315" src="https://www.youtube.com/embed/kSkjnHSg2yY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

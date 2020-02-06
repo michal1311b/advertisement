@@ -50,6 +50,23 @@
                         </ValidationObserver>
 
                         <div class="form-group row">
+                            <label for="company_nip" class="col-md-4 col-form-label text-md-right">{{ trans('sentence.company_nip') }} <span class="text-danger font-weight-bolder">*</span></label>
+
+                            <div class="col-md-6">
+                                <ValidationProvider :name="trans('sentence.company_nip')" rules="required" v-slot="{ errors }">
+                                    <input id="company_nip" type="number" class="form-control" name="company_nip" v-model="formInputs.company_nip" autocomplete="company_nip" autofocus>
+                                    <small class="text-danger">{{ errors[0] }}</small>
+                                </ValidationProvider>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <div class="col-12 offset-md-4 col-md-8" :disabled="!blockGus">
+                                <span class="btn btn-info" @click="getCompanyData" v-if="(formInputs.company_nip !== '') && (formInputs.company_nip.length === 10)">{{ trans('sentence.btn-gus-data') }}</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
                             <label for="company_name" class="col-md-4 col-form-label text-md-right">{{ trans('sentence.company_name') }} <span class="text-danger font-weight-bolder">*</span></label>
 
                             <div class="col-md-6">
@@ -88,17 +105,6 @@
                             <div class="col-md-6">
                                 <ValidationProvider :name="trans('sentence.company_city')" rules="required|min:3|max:191" v-slot="{ errors }">
                                     <input id="company_city" type="text" class="form-control" name="company_city" v-model="formInputs.company_city" autocomplete="company_city" autofocus>
-                                    <small class="text-danger">{{ errors[0] }}</small>
-                                </ValidationProvider>
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="company_nip" class="col-md-4 col-form-label text-md-right">{{ trans('sentence.company_nip') }} <span class="text-danger font-weight-bolder">*</span></label>
-
-                            <div class="col-md-6">
-                                <ValidationProvider :name="trans('sentence.company_nip')" rules="required" v-slot="{ errors }">
-                                    <input id="company_nip" type="number" class="form-control" name="company_nip" v-model="formInputs.company_nip" autocomplete="company_nip" autofocus>
                                     <small class="text-danger">{{ errors[0] }}</small>
                                 </ValidationProvider>
                             </div>
@@ -410,6 +416,7 @@
     export default {
         data: function() {
             return {
+                blockGus: false,
                 blockBtn: false,
                 successOutput: '',
                 errorOutput: '',
@@ -591,6 +598,42 @@
                 this.form.append('work_id', this.formInputs.work_id);
                 this.form.append('galleries[0]', this.formInputs.galleries[0]);
             },
+            getCompanyData() {
+                this.blockGus = true;
+                axios.get('/get-company-info'+'/' + this.formInputs.company_nip)
+                .then(response => {
+                    if(response.data.data !== false){
+                        this.formInputs.company_name = response.data.data.dane.Nazwa;
+                        this.formInputs.company_city = response.data.data.dane.Miejscowosc;
+                        this.formInputs.company_street = response.data.data.dane.Ulica.replace("ul. ", "");
+                        this.formInputs.company_post_code = response.data.data.dane.KodPocztowy;
+                        this.formInputs.postCode = response.data.data.dane.KodPocztowy;
+                        this.formInputs.street = response.data.data.dane.Ulica.replace("ul. ", "");
+                        this.form.append('company_city', this.formInputs.company_city);
+                        this.form.append('company_street', this.formInputs.company_street);
+                        this.form.append('company_name', this.formInputs.company_name);
+                        this.form.append('company_post_code', this.formInputs.company_post_code);
+                        this.form.append('postCode', this.formInputs.postCode);
+                        this.form.append('street', this.formInputs.street);
+
+                        this.$toasted.info('Uzupełnij numer ulicy w polu Adres firmy', {
+                            duration: 6000
+                        });
+                        this.blockGus = false;
+                    } else {
+                        this.$toasted.error('Nie prawidłowy numer NIP', {
+                            duration: 6000
+                        });
+                        this.blockGus = false;
+                    }
+                })
+                .catch(error => {
+                    this.errorOutput = error.response.data.errors.title[0];
+                    this.$toasted.error(this.errorOutput, {
+                            duration: 6000
+                    });
+                });
+            },
             submitForm(e) {
                 this.blockBtn = true;
                 this.fillFormData();
@@ -603,7 +646,9 @@
                 })
                 .then(response => {
                     currentObj.successOutput = response.data.message;
-                    this.$toasted.success(currentObj.successOutput);
+                    this.$toasted.success(currentObj.successOutput, {
+                        duration: 6000
+                    });
                     if(response.data.status === 200)
                     {
                         this.clearForm();
@@ -612,7 +657,9 @@
                 })
                 .catch(error => {
                     currentObj.errorOutput = error.response.data.errors.title[0];
-                    this.$toasted.error(currentObj.errorOutput);
+                    this.$toasted.error(currentObj.errorOutput, {
+                        duration: 6000
+                    });
                     this.blockBtn = false;
                 });
             }
