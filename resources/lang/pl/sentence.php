@@ -107,6 +107,7 @@ return [
   'btn-share' => 'Udostępnij profil',
   'btn-unshare' => 'Przestań udostępniać profil',
   'btn-matching' => 'Dopasowani kandydaci',
+  'btn-gus-data' => 'Pobierz dane o firmie',
   'first_name' => 'Imię',
   'last_name' => 'Nazwisko',
   'name' => 'Nazwa',

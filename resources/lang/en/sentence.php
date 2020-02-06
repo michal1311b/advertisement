@@ -107,6 +107,7 @@ return [
   'btn-matching' => 'Matched candidates',
   'btn-share' => 'Share profile',
   'btn-unshare' => 'Profile unshared',
+  'btn-gus-data' => 'Get company data',
   'first_name' => 'First name',
   'last_name' => 'Last name',
   'name' => 'Name',
