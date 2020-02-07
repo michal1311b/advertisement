@@ -167,7 +167,7 @@
                                     </div>
                                 @endif
                             </div>
-                            <div class="col-12">
+                            <div class="col-12 col-md-4">
                                 <div id="advertisementCarousel" class="carousel slide" data-ride="carousel">
                                     <div class="carousel-inner">
                                         @foreach($advertisement->galleries as $image)
