@@ -210,7 +210,6 @@
                                 <div class="media align-items-lg-center flex-column flex-lg-row p-3">
                                 <div class="media-body order-2 order-lg-1">
                                     <h5 class="mt-0 font-weight-bold my-2">{{ $similar->title }}</h5>
-                                    <div class="font-italic text-muted mb-2 small ellipsis">{!! $similar->description !!}</div>
                                     <h6 class="mt-0 font-weight-bold mb-2"><i class="fas fa-map-marker-alt"></i> {{ $similar->location->city }}</h6>
                                     <h6 class="mt-0 mb-2"><i class="fas fa-user-md"></i> {{ $similar->user->profile->company_name }}</h6>
                                     <div class="d-flex align-items-center justify-content-between mt-1">

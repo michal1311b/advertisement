@@ -208,40 +208,39 @@
     <div class="row">
         <div class="col-12">
             @if(count($advertisements) > 0)
-                @foreach($advertisements as $advertisement)
-                    <!-- List group-->
-                    <ul class="list-group shadow">
-                        <a href="{{ route('show-advertisement', ['id' => $advertisement->id, 'slug' => $advertisement->slug]) }}" class="no-decoration" title="{{ $advertisement->title }}"> 
-                            <!-- list group item-->
-                            <li class="list-group-item">
-                                <!-- Custom content-->
-                                <div class="media align-items-lg-center flex-column flex-lg-row p-3">
-                                    <div class="media-body order-2 order-lg-1">
-                                        <h5 class="mt-0 font-weight-bold my-2">{{ $advertisement->title }}</h5>
-                                        <div class="font-italic text-muted mb-2 small ellipsis">{!! $advertisement->description !!}</div>
-                                        <h6 class="mt-0 font-weight-bold mb-2"><i class="fas fa-map-marker-alt"></i> {{ $advertisement->location->city }}</h6>
-                                        <h6 class="mt-0 mb-2"><i class="fas fa-user-md"></i> {{ $advertisement->user->profile->company_name }}</h6>
-                                        <div class="d-flex align-items-center justify-content-between mt-1">
-                                            <h6 class="font-weight-bold"><i class="fas fa-coins"></i> {{ $advertisement->settlement->name }}: {{ $advertisement->min_salary }}&nbsp;-&nbsp;{{ $advertisement->max_salary }} {{ $advertisement->currency->symbol }}</h6>
+                <ul class="list-group shadow">
+                    @foreach($advertisements as $advertisement)
+                        <!-- List group-->
+                            <a href="{{ route('show-advertisement', ['id' => $advertisement->id, 'slug' => $advertisement->slug]) }}" class="no-decoration" title="{{ $advertisement->title }}"> 
+                                <!-- list group item-->
+                                <li class="list-group-item">
+                                    <!-- Custom content-->
+                                    <div class="media align-items-lg-center flex-column flex-lg-row p-3">
+                                        <div class="media-body order-2 order-lg-1">
+                                            <h5 class="mt-0 font-weight-bold my-2">{{ $advertisement->title }}</h5>
+                                            <h6 class="mt-0 font-weight-bold mb-2"><i class="fas fa-map-marker-alt"></i> {{ $advertisement->location->city }}</h6>
+                                            <h6 class="mt-0 mb-2"><i class="fas fa-user-md"></i> {{ $advertisement->user->profile->company_name }}</h6>
+                                            <div class="d-flex align-items-center justify-content-between mt-1">
+                                                <h6 class="font-weight-bold"><i class="fas fa-coins"></i> {{ $advertisement->settlement->name }}: {{ $advertisement->min_salary }}&nbsp;-&nbsp;{{ $advertisement->max_salary }} {{ $advertisement->currency->symbol }}</h6>
+                                            </div>
+                                            <div class="badge badge-secondary">{{ $advertisement->specialization->name }}</div>
+                                            <div>
+                                                <i class="fas fa-calendar-day"></i> {{ trans('sentence.expired_at') }} <div class="badge badge-primary">{{ $advertisement->expired_at }}</div>
+                                            </div>
                                         </div>
-                                        <div class="badge badge-secondary">{{ $advertisement->specialization->name }}</div>
-                                        <div>
-                                            <i class="fas fa-calendar-day"></i> {{ trans('sentence.expired_at') }} <div class="badge badge-primary">{{ $advertisement->expired_at }}</div>
-                                        </div>
+                                        @if($advertisement->galleries()->count())
+                                            <img src="{{ $advertisement->galleries[0]->path }}" width="200" class="ml-lg-5 order-1 order-lg-2" alt="{{$advertisement->galleries[0]->oldName}}">
+                                        @else
+                                            <img src="{{ $advertisement->user->avatar }}" width="200" class="ml-lg-5 order-1 order-lg-2" alt="EmployMed">
+                                        @endif
                                     </div>
-                                    @if($advertisement->galleries()->count())
-                                        <img src="{{ $advertisement->galleries[0]->path }}" width="200" class="ml-lg-5 order-1 order-lg-2" alt="{{$advertisement->galleries[0]->oldName}}">
-                                    @else
-                                        <img src="{{ $advertisement->user->avatar }}" width="200" class="ml-lg-5 order-1 order-lg-2" alt="EmployMed">
-                                    @endif
-                                </div>
+                                    <!-- End -->
+                                </li>
                                 <!-- End -->
-                            </li>
-                            <!-- End -->
-                        </a>
-                    </ul>
-                    <!-- End -->
-                @endforeach
+                            </a>
+                        <!-- End -->
+                    @endforeach
+                </ul>
             @else
                 <div class="col-12 py-3">
                     <a href="{{ route('create-advertisement') }}">

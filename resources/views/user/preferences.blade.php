@@ -38,7 +38,6 @@
                                 <div class="media align-items-lg-center flex-column flex-lg-row p-3">
                                     <div class="media-body order-2 order-lg-1">
                                         <h5 class="mt-0 font-weight-bold mb-2">{{ $data->advertisements->title }}</h5>
-                                        <div class="font-italic text-muted mb-0 small ellipsis">{!! $data->advertisements->description !!}</div>
                                         <div class="d-flex align-items-center justify-content-between mt-1">
                                             <h6 class="font-weight-bold my-2"><i class="fas fa-coins"></i> {{ $data->advertisements->settlement->name }}: {{ $data->advertisements->min_salary }} - {{ $data->advertisements->max_salary }} {{ $data->advertisements->currency->symbol }}</h6>
                                         </div>
