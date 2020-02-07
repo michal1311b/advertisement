@@ -172,7 +172,7 @@
                                     <div class="carousel-inner">
                                         @foreach($advertisement->galleries as $image)
                                             <div class="carousel-item {{ $loop->first ? 'active' : '' }}" data-interval="10000">
-                                                <img src="{{ $image->path }}" class="d-block w-100" alt="{{ $image->oldName }}">
+                                                <img src="{{ $image->path }}" class="d-block" width="320" alt="{{ $image->oldName }}">
                                             </div>
                                         @endforeach
                                     </div>
