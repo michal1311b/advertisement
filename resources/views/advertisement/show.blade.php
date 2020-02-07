@@ -192,7 +192,13 @@
             </div>
         </div>
         <div class="col-md-12">
-            @include('partials.contact')
+            @if(Auth::user())
+                @include('partials.contact')
+            @else
+                <div class="alert alert-danger">
+                    <a href="{{ route('login')}}" class="text-white font-weight-bold">{{ trans('sentence.signin-to-apply') }}</a>
+                </div>
+            @endif
         </div>
 
         @if(count($similars) > 0)

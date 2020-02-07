@@ -75,7 +75,7 @@ Route::get('{driver}/callback', 'Auth\LoginController@handleProviderCallback')
 Route::group(array('prefix' => 'offer'), function () {
     Route::get('/create', 'AdvertisementController@create')->name('create-advertisement')->middleware(['auth', 'verified']);
     Route::post('/create', 'AdvertisementController@store')->name('store-advertisement');
-    Route::get('/show/{id}/{slug}', 'AdvertisementController@show')->name('show-advertisement')->middleware(['auth', 'verified']);
+    Route::get('/show/{id}/{slug}', 'AdvertisementController@show')->name('show-advertisement');
     Route::get('/{id}/edit', 'AdvertisementController@edit')->name('edit-advertisement')->middleware(['auth', 'verified']);
     Route::delete('/{id}/delete', 'AdvertisementController@delete')->name('delete-advertisement');
     Route::get('/list', 'AdvertisementController@index')->name('advertisement-list');

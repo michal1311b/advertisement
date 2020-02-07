@@ -137,11 +137,13 @@ class AdvertisementController extends Controller
 
         $user = Auth::user();
         
-        if($user->doctor === null)
+        if(isset($user->doctor) === false && $user)
         {
             Visit::storeVisit($user->id, $advertisement->id);
-        } else {
+        } else if(isset($user->doctor) !== false && $user) {
             Visit::storeVisit($user->id, $advertisement->id, true);
+        } else {
+            Visit::storeVisit(null, $advertisement->id, true);
         }
 
         $similars = Advertisement::with(['state', 'galleries', 'location'])
