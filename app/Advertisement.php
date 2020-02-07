@@ -263,6 +263,7 @@ class Advertisement extends Model
             ));
 
             $context = stream_context_create($opts);
+            $address = str_replace("ul. ", "", $address);
             $address = str_replace(" ", "+", $address);
             $trimCity = trim($city);
             $cityUrl = str_replace(" ", "+", $trimCity);
