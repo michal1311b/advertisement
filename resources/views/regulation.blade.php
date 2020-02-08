@@ -623,7 +623,7 @@
                             <div class="col-12">
                                 <ol>
                                     <li>
-                                        Administratorem danych osobowych dotyczących Użytkowników jest Usługodawca, tj. Michał Biernat. Administrator niniejszym udostępnia dane kontaktowe: adres poczty elektronicznej <a href="contactemploymed@gmail.com">contactemploymed@gmail.com</a>.
+                                        Administratorem danych osobowych dotyczących Użytkowników jest Usługodawca, tj. Adam Biernat. Administrator niniejszym udostępnia dane kontaktowe: adres poczty elektronicznej <a href="contactemploymed@gmail.com">contactemploymed@gmail.com</a>.
                                     </li>
                                     <li>Administrator podejmuje wszelkie działania niezbędne do ochrony danych Użytkownika oraz wszelkich innych danych wprowadzonych przez Użytkownika do Serwisu.</li>
                                     <li>Administrator nie odpowiada za treść danych wprowadzanych przez Użytkownika do Serwisu.</li>

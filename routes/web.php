@@ -28,6 +28,8 @@ Route::get('/', 'PageController@siteIndex')->name('homepage');
 Route::get('/rejestracja-krok', 'Auth\RegisterController@showStep')->name('register.step');
 Route::get('/rejestracja-firma', 'Auth\RegisterController@showRegisterCompany')->name('register.company');
 Route::post('/rejestracja-firma', 'Auth\RegisterController@registerCompany')->name('register.company.post');
+Route::get('/rejestracja-kurs', 'Auth\RegisterController@showRegisterCourse')->name('register.course');
+Route::post('/rejestracja-kurs', 'Auth\RegisterController@registerCourse')->name('register.course.post');
 
 Route::get('lang/{locale}', 'LanguageController@lang')->name('locale');
 

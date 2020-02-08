@@ -35,7 +35,7 @@
                             <div class="col-12">
                                 <ol>
                                     <li>Niniejsza polityka dotyczy Serwisu www, funkcjonującego pod adresem url: <a href="https://employmed.eu"><b>https://employmed.eu</b></a>.</li>
-                                    <li>Operatorem serwisu oraz Administratorem danych osobowych jest: Michał Biernat.</li>
+                                    <li>Operatorem serwisu oraz Administratorem danych osobowych jest: Adam Biernat.</li>
                                     <li>Adres kontaktowy poczty elektronicznej operatora: <a href="mailto:contactemploymed@gmail.com">contactemploymed@gmail.com</a></li>
                                     <li>Operator jest Administratorem Twoich danych osobowych w odniesieniu do danych podanych dobrowolnie w Serwisie.</li>
                                     <li>

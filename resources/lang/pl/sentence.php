@@ -291,6 +291,7 @@ return [
   'newsletter-update-success' => 'Newsletter został zaktualizowany pomyślnie!',
   'newsletter-sent' => 'Wysłano:',
   'register-step' => 'Wybierz typ konta',
+  'register-course' => 'Zarejestruj kurs',
   'as' => 'jako',
   'and' => 'oraz',
   'register-doctor' => 'Formularz rejestracji dla Lekarz/Dentysta',
@@ -302,5 +303,7 @@ return [
   'preview-update-success' => 'Dane zostały zaktualizowane pomyślnie',
   'preview-list' => 'Ogłoszenia z internetu',
   'download-helper-info' => 'Jeśli masz problem z wypełnieniem formularza, proszę wypełnij plik word i prześlij na adres: <a href="mailto:employmed.eu@gmail.com">employmed.eu@gmail.com</a>. Pomożemy Ci z wystawieniem oferty.',
-  'signin-to-apply' => 'Zaloguj się aby aplikować na ofertę'
+  'signin-to-apply' => 'Zaloguj się aby aplikować na ofertę',
+  'price' => 'Cena',
+  'points' => 'Punkty edukacyjne'
 ];

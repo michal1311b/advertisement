@@ -8,6 +8,7 @@ use App\Doctor;
 use App\Profile;
 use App\Role;
 use App\Advertisement;
+use App\CompanyCourse;
 use App\Location;
 use App\Preference;
 use App\Settlement;
@@ -18,6 +19,7 @@ use App\Work;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\CompanyCourse\CompanyCourseRequest;
 use App\Http\Requests\Register\CompanyStoreRequest;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -300,6 +302,79 @@ class RegisterController extends Controller
 
             $advertisement = Advertisement::create($data);
 
+            DB::commit();
+
+            return response()->json([
+                'status' => 200,
+                'message' =>  trans('sentence.account-create-success')
+            ]);
+        } catch (\Exception $e) {
+            Log::info($e);
+            DB::rollback();
+
+            return response()->json([
+                'message' => $e->getMessage()
+            ]);
+        }
+    }
+
+    public function showRegisterCourse()
+    {
+        $specializations = Specialization::all();
+        $currencies = Currency::all();
+        $locations = Location::get(['id', 'city']);
+        $states = State::all();
+
+        return view('auth.register-course', compact([
+            'currencies',
+            'locations',
+            'states',
+            'specializations'
+        ]));
+    }
+
+    public function registerCourse(CompanyCourseRequest $request)
+    {
+        \Log::info($request->all());
+
+        DB::beginTransaction();
+
+        try { 
+            $latLong = $this->get_lat_long($request->company_street, $request->company_city);
+
+            event(new Registered($user = User::create([
+                'name' => $request->name,
+                'email' => $request->email,
+                'password' => Hash::make($request->password),
+                'avatar' => '/images/company_avatar.jpg',
+                'term1' => $request->term1 === true ? 1 : 0,
+                'term2' => $request->term2 === true ? 1 : 0,
+                'term3' => $request->term3 === true ? 1 : 0
+            ])));
+
+            $profile = Profile::create([
+                'user_id' => $user->id,
+                'street' => $request->street,
+                'post_code' => $request->post_code,
+                'city' => $request->city,
+                'last_name' => $request->last_name,
+                'company_name' => $request->company_name,
+                'company_street' => $request->company_street,
+                'company_post_code' => $request->company_post_code,
+                'company_city' => $request->company_city,
+                'company_nip' => $request->company_nip
+            ]);
+
+            $user
+                ->roles()
+                ->attach(Role::where('name', 'company')->first());
+
+            $data = [];
+            $data = $request->all();
+            $data['user_id'] = $user->id;
+
+            $companyCourse = CompanyCourse::create($data);
+            
             DB::commit();
 
             return response()->json([

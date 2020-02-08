@@ -42,6 +42,7 @@ import tinymce from 'vue-tinymce-editor';
 import * as rules from 'vee-validate/dist/rules';
 import en from 'vee-validate/dist/locale/en.json';
 import pl from 'vee-validate/dist/locale/pl.json';
+import Datepicker from 'vuejs-datepicker';
 
 Object.keys(rules).forEach(rule => {
   extend(rule, rules[rule]);
@@ -50,6 +51,7 @@ Vue.component('ValidationProvider', ValidationProvider);
 Vue.component('ValidationObserver', ValidationObserver);
 Vue.component('VueTagsInput', VueTagsInput);
 Vue.component('tinymce', tinymce);
+Vue.component('Datepicker', Datepicker);
 
 i18n.locale = 'en';
 localize(
@@ -76,6 +78,8 @@ import EditOffer from './components/offers/EditOffer.vue';
 Vue.component('edit-offer', EditOffer);
 import SimilarOffer from './components/offers/SimilarOffer.vue';
 Vue.component('similar-offer', SimilarOffer);
+import CourseRegister from './components/CourseRegister.vue';
+Vue.component('course-register', CourseRegister);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

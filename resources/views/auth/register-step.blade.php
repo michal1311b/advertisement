@@ -27,14 +27,19 @@
 
                 <div class="card-body">
                     <div class="row">
-                        <div class="col-12 col-md-6 pb-2 text-center">
+                        <div class="col-12 col-md-4 pb-2 text-center">
                             <a href="{{ route('register') }}" class="btn btn-primary btn-lg">
                                 {{ trans('sentence.register') }} {{ trans('sentence.as') }} {{ trans('sentence.doctor') }}/{{ trans('sentence.dentist') }}
                             </a>
                         </div>
-                        <div class="col-12 col-md-6 pb-2 text-center">
+                        <div class="col-12 col-md-4 pb-2 text-center">
                             <a href="{{ route('register.company') }}" class="btn btn-primary btn-lg">
                                 {{ trans('sentence.register') }} {{ trans('sentence.as') }} {{ trans('sentence.company') }} {{ trans('sentence.and') }} {{ trans('sentence.offer-create') }}
+                            </a>
+                        </div>
+                        <div class="col-12 col-md-4 pb-2 text-center">
+                            <a href="{{ route('register.course') }}" class="btn btn-primary btn-lg">
+                                {{ trans('sentence.register') }} {{ trans('sentence.as') }} {{ trans('sentence.company') }} {{ trans('sentence.and') }} {{ trans('sentence.register-course') }}
                             </a>
                         </div>
                     </div>

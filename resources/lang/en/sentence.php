@@ -291,6 +291,7 @@ return [
   'newsletter-update-success' => 'Newsletter was updated successfully!',
   'newsletter-sent' => 'Sent:',
   'register-step' => 'Choose register type',
+  'register-course' => 'Register course',
   'as' => 'as',
   'and' => 'and',
   'register-doctor' => 'Register form Lekarz/Dentysta',
@@ -302,5 +303,7 @@ return [
   'preview-update-success' => 'Data was updated successfully',
   'preview-list' => 'Offers from internet',
   'download-helper-info' => 'If you have a problem with completing the form, please complete the word file and send it to: <a href="mailto:employmed.eu@gmail.com">employmed.eu@gmail.com</a>. We will help you with the offer.',
-  'signin-to-apply' => 'Sign in to apply for job offer.'
+  'signin-to-apply' => 'Sign in to apply for job offer.',
+  'price' => 'Price',
+  'points' => 'Educational points'
 ];
