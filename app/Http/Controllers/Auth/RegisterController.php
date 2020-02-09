@@ -355,7 +355,7 @@ class RegisterController extends Controller
             $profile = Profile::create([
                 'user_id' => $user->id,
                 'street' => $request->street,
-                'post_code' => $request->post_code,
+                'post_code' => $request->postCode,
                 'city' => $request->city,
                 'last_name' => $request->last_name,
                 'company_name' => $request->company_name,

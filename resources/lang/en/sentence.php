@@ -305,5 +305,7 @@ return [
   'download-helper-info' => 'If you have a problem with completing the form, please complete the word file and send it to: <a href="mailto:employmed.eu@gmail.com">employmed.eu@gmail.com</a>. We will help you with the offer.',
   'signin-to-apply' => 'Sign in to apply for job offer.',
   'price' => 'Price',
-  'points' => 'Educational points'
+  'points' => 'Educational points',
+  'invoice-data' => 'Billing',
+  'invoice-data-info' => 'Please complete if you would like to receive an invoice'
 ];

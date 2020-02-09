@@ -31,6 +31,7 @@ class CreateCompanyCoursesTable extends Migration
             $table->boolean('term3')->defualt(0);
             $table->text('slug');
             $table->text('avatar')->nullable();
+            $table->text('facebook')->nullable();
             $table->bigInteger('state_id')->unsigned();
             $table->bigInteger('location_id')->unsigned();
             $table->bigInteger('user_id')->unsigned();

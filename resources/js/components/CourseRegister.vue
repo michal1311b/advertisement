@@ -319,6 +319,16 @@
                         </div>
 
                         <div class="form-group row">
+                            <label for="facebook" class="col-12 col-md-3 col-form-label text-md-right">Facebook</label>
+
+                            <div class="col-12 col-md-9">
+                                <input  id="facebook" type="text" 
+                                class="form-control" name="facebook" 
+                                v-model="formInputs.facebook" autocomplete="facebook" autofocus>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
                             <div class="col-sm-3"></div>
                             <div class="col-sm-9">
                                 <div class="form-check">
@@ -411,6 +421,7 @@
                     galleries: [],
                     price: '',
                     currency_id: '',
+                    facebook: '',
                     term1: false,
                     term2: false,
                     term3: false
@@ -489,6 +500,7 @@
                 this.formInputs.price= '';
                 this.formInputs.currency_id= '';
                 this.formInputs.points= '';
+                this.formInputs.facebook = '';
                 this.formInputs.term1= false;
                 this.formInputs.term2= false;
                 this.formInputs.term3= false;
@@ -523,6 +535,7 @@
                 this.form.append('start_date', ys + '-' + ms + '-' + ds);
                 this.form.append('end_date', ye + '-' + me + '-' + de);
                 this.form.append('points', this.formInputs.points);
+                this.form.append('facebook', this.formInputs.facebook);
                 this.form.append('term1', this.formInputs.term1);
                 this.form.append('term2', this.formInputs.term2);
                 this.form.append('term3', this.formInputs.term3);

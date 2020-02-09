@@ -30,6 +30,13 @@ Route::get('/rejestracja-firma', 'Auth\RegisterController@showRegisterCompany')-
 Route::post('/rejestracja-firma', 'Auth\RegisterController@registerCompany')->name('register.company.post');
 Route::get('/rejestracja-kurs', 'Auth\RegisterController@showRegisterCourse')->name('register.course');
 Route::post('/rejestracja-kurs', 'Auth\RegisterController@registerCourse')->name('register.course.post');
+Route::get('/lista-kursow', 'CompanyCourseController@index')->name('course.index');
+Route::group(array('prefix' => 'kurs'), function () {
+    Route::get('/show/{id}/{slug}', 'CompanyCourseController@show')->name('show-course');
+    Route::post('/rejestracja-kurs/{course}', 'ParticipantController@store')->name('store-participant');
+});
+
+
 
 Route::get('lang/{locale}', 'LanguageController@lang')->name('locale');
 

@@ -33,7 +33,8 @@ class CompanyCourse extends Model
         'avatar',
         'points',
         'latitude',
-        'longitude'
+        'longitude',
+        'facebook'
     ];
 
     public static function uploadDir()
@@ -61,6 +62,11 @@ class CompanyCourse extends Model
         return $this->belongsTo(Location::class);
     }
 
+    public function specialization()
+    {
+        return $this->belongsTo(Specialization::class);
+    }
+
     public static function create(array $attributes = [])
     {
         $latLon = self::get_lat_long($attributes['street'], $attributes['location_id']);
@@ -83,6 +89,7 @@ class CompanyCourse extends Model
         $entry->phone = $attributes['phone'];
         $entry->points = $attributes['points'];
         $entry->price = $attributes['price'];
+        $entry->facebook = $attributes['facebook'];
         $entry->start_date = date('Y-m-d', $start);
         $entry->end_date = date('Y-m-d', $end);
         $entry->term1 = $attributes['term1'] === true ? 1 : 0;

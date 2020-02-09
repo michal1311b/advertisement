@@ -34,6 +34,16 @@ Breadcrumbs::for('advertisement', function ($trail) {
     $trail->push(trans('sentence.offers-list'), route('advertisement-list'));
 });
 
+Breadcrumbs::for('courses', function ($trail) {
+    $trail->parent('home');
+    $trail->push(trans('sentence.courses'), route('course.index'));
+});
+
+Breadcrumbs::for('course-article', function ($trail, $course) {
+    $trail->parent('courses');
+    $trail->push($course->title, route('show-course', ['id' => $course->id, 'slug' => $course->slug]));
+});
+
 Breadcrumbs::for('advertisement-article', function ($trail, $advertisment) {
     $trail->parent('advertisement');
     $trail->push($advertisment->title, route('show-advertisement', ['id' => $advertisment->id, 'slug' => $advertisment->slug]));
