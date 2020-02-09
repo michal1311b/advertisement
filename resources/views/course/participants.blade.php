@@ -37,6 +37,7 @@
                         <th scope="col">{{ __('Email') }}</th>
                         <th scope="col">{{ trans('sentence.phone') }}</th>
                         <th scope="col">{{ __('Info') }}</th>
+                        <th scope="col">{{ trans('sentence.btn-delete') }}</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -52,6 +53,21 @@
                                 <a href="{{ route('user-course-participant-show', ['companycourse' => $course, 'id' => $participant->id]) }}" class="btn btn-info">
                                     {{ trans('sentence.btn-info') }}
                                 </a>
+                            </td>
+                            <td>
+                                <button class="btn btn-danger" data-toggle="modal"
+                                    data-target="#modalremove{{$participant->id}}">{{ trans('sentence.btn-delete') }}</i>
+                                </button>
+
+                                @include('partials.confirmation', [
+                                    'url' => route('delete-participant', $participant->id),
+                                    'method' => 'DELETE',
+                                    'title' => "Usuń uczestnika",
+                                    "description" => "Czy na pewno chcesz usunąć uczestnika kursu?",
+                                    "description_parameters" => [],
+                                    'button' => trans('sentence.btn-delete'),
+                                    'modalKey' => "remove".$participant->id
+                                ])
                             </td>
                         </tr>
                     @endforeach

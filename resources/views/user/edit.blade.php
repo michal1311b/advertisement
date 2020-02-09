@@ -450,7 +450,7 @@
                                             <div class="form-group row mb-0">
                                                 <div class="col-md-12 text-left">
                                                     <button type="submit" class="btn btn-success">
-                                                        {{ trans('sentence.bit-add') }}
+                                                        {{ trans('sentence.btn-add') }}
                                                     </button>
                                                 </div>
                                             </div>
@@ -601,7 +601,7 @@
                                             <div class="form-group row mb-0">
                                                 <div class="col-md-12 text-left">
                                                     <button type="submit" class="btn btn-success">
-                                                        {{ trans('sentence.bit-add') }}
+                                                        {{ trans('sentence.btn-add') }}
                                                     </button>
                                                 </div>
                                             </div>
@@ -721,7 +721,7 @@
                                             <div class="form-group row mb-0">
                                                 <div class="col-md-12 text-left">
                                                     <button type="submit" class="btn btn-success">
-                                                        {{ trans('sentence.bit-add') }}
+                                                        {{ trans('sentence.btn-add') }}
                                                     </button>
                                                 </div>
                                             </div>
@@ -912,7 +912,7 @@
                                         <div class="form-group row mb-0">
                                             <div class="col-md-12 text-left">
                                                 <button type="submit" class="btn btn-success">
-                                                    {{ trans('sentence.bit-add') }}
+                                                    {{ trans('sentence.btn-add') }}
                                                 </button>
                                             </div>
                                         </div>

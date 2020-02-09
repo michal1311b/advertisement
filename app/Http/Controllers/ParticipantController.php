@@ -33,4 +33,16 @@ class ParticipantController extends Controller
 
         return back();
     }
+
+    public function delete($id)
+    {
+        $participant = Participant::findOrFail($id);
+        
+        if($participant->delete())
+        {
+            session()->flash('success',  trans('sentence.delete-participant'));
+
+            return back();
+        }
+    }
 }
