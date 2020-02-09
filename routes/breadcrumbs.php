@@ -44,6 +44,11 @@ Breadcrumbs::for('course-article', function ($trail, $course) {
     $trail->push($course->title, route('show-course', ['id' => $course->id, 'slug' => $course->slug]));
 });
 
+Breadcrumbs::for('user-courses', function ($trail) {
+    $trail->parent('home');
+    $trail->push(trans('sentence.courses'), route('user-course-list'));
+});
+
 Breadcrumbs::for('advertisement-article', function ($trail, $advertisment) {
     $trail->parent('advertisement');
     $trail->push($advertisment->title, route('show-advertisement', ['id' => $advertisment->id, 'slug' => $advertisment->slug]));
@@ -59,6 +64,12 @@ Breadcrumbs::for('advertisement-edit', function ($trail, $advertisment) {
     $trail->parent('home');
     $trail->push(trans('sentence.user-offers'), route('user-advertisement-list'));
     $trail->push(trans('sentence.edit') . ' ' . $advertisment->title, route('edit-advertisement', $advertisment));
+});
+
+Breadcrumbs::for('course-edit', function ($trail, $course) {
+    $trail->parent('home');
+    $trail->push(trans('sentence.user-courses'), route('user-course-list'));
+    $trail->push(trans('sentence.edit') . ' ' . $course->title, route('edit-course', $course));
 });
 
 Breadcrumbs::for('edit-user', function ($trail, $user) {
@@ -233,6 +244,12 @@ Breadcrumbs::for('pages', function ($trail) {
 Breadcrumbs::for('users', function ($trail) {
     $trail->parent('home');
     $trail->push(trans('sentence.user-list'), route('users.list'));
+});
+
+Breadcrumbs::for('participants', function ($trail, $course) {
+    $trail->parent('home');
+    $trail->push(trans('sentence.courses'), route('user-course-list'));
+    $trail->push(trans('sentence.participants') . ': ' . $course->title, route('user-course-participants', $course));
 });
 
 Breadcrumbs::for('site.page', function ($trail, $page) {

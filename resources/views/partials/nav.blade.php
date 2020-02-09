@@ -88,6 +88,7 @@
                             @if(auth()->user()->hasRole('admin') || auth()->user()->hasRole('company'))
                                 <a class="dropdown-item" href="{{ route('user-advertisement-list') }}">{{ trans('sentence.user-offers')}}</a>
                                 <a class="dropdown-item" href="{{ route('create-advertisement') }}">{{ trans('sentence.offer-create')}}</a>
+                                <a class="dropdown-item" href="{{ route('user-course-list') }}">{{ trans('sentence.user-courses')}}</a>
                             @endif
 
                             @if(auth()->user()->hasRole('admin'))

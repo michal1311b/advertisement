@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use App\Advertisement;
+use App\CompanyCourse;
 use Auth;
 use Image;
 use Illuminate\Support\Facades\Hash;
@@ -209,8 +210,7 @@ class UserController extends Controller
 
         $tags = implode(",", $tags_array);
 
-        return view('advertisement.similar', 
-        compact([
+        return view('advertisement.similar',  compact([
             'advertisement', 
             'works', 
             'states', 
@@ -218,6 +218,23 @@ class UserController extends Controller
             'locations', 
             'specializations', 
             'currencies', 
-            'settlements']));
+            'settlements'
+        ]));
+    }
+
+    public function getUserCourses()
+    {
+        $user = Auth::user();
+        $courses = CompanyCourse::with([
+            'state',
+            'location',
+            'specialization',
+            'user',
+            'currency'
+        ])
+        ->where('user_id', $user->id)
+        ->paginate(5);
+
+        return view('user.courses', compact('courses'));
     }
 }

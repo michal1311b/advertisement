@@ -307,5 +307,8 @@ return [
   'price' => 'Price',
   'points' => 'Educational points',
   'invoice-data' => 'Billing',
-  'invoice-data-info' => 'Please complete if you would like to receive an invoice'
+  'invoice-data-info' => 'Please complete if you would like to receive an invoice',
+  'user-courses' => 'Your courses',
+  'participants' => 'Course participants list',
+  'no-participants' => 'No participants'
 ];

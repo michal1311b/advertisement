@@ -307,5 +307,8 @@ return [
   'price' => 'Cena',
   'points' => 'Punkty edukacyjne',
   'invoice-data' => 'Dane do faktury',
-  'invoice-data-info' => 'Proszę wypełnić w przypadku chęci otrzymania faktury'
+  'invoice-data-info' => 'Proszę wypełnić w przypadku chęci otrzymania faktury',
+  'user-courses' => 'Twoje kursy',
+  'participants' => 'Lista uczestników kursu',
+  'no-participants' => 'Brak uczestników'
 ];

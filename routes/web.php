@@ -33,7 +33,7 @@ Route::post('/rejestracja-kurs', 'Auth\RegisterController@registerCourse')->name
 Route::get('/lista-kursow', 'CompanyCourseController@index')->name('course.index');
 Route::group(array('prefix' => 'kurs'), function () {
     Route::get('/show/{id}/{slug}', 'CompanyCourseController@show')->name('show-course');
-    Route::post('/show/{course}', 'ParticipantController@store')->name('store-participant');
+    Route::post('/show/{comapnycourse}', 'ParticipantController@store')->name('store-participant');
 });
 
 
@@ -136,6 +136,12 @@ Route::group(array('prefix' => 'user'), function () {
     Route::post('/message/{room}', 'RoomController@reply')->name('reply-room')->middleware(['auth', 'verified']);
     Route::get('/create-similar-offer/{advertisement}', 'UserController@createSimilarOffer')->name('user-advertisement-similar')->middleware(['auth', 'verified']);
     Route::post('/create-similar-offer/create', 'AdvertisementController@store')->name('store-advertisement');
+
+    Route::get('/courses', 'UserController@getUserCourses')->name('user-course-list')->middleware(['auth', 'verified']);
+    Route::delete('/courses/{comapnycourse}/delete', 'CompanyCourseController@delete')->name('delete-user-course');
+    Route::get('/participants/{companycourse}/list', 'CompanyCourseController@getCourseParticiapnts')->name('user-course-participants')->middleware(['auth', 'verified']);
+    Route::get('/courses/{companycourse}/edit', 'CompanyCourseController@edit')->name('edit-course')->middleware(['auth', 'verified']);
+    Route::post('/courses/{id}/update', 'CompanyCourseController@update')->name('update-user-course');
 });
 
 Route::post('/send-message/{advertisement}', 'ContactController@store')->name('send-message');

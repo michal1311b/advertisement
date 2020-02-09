@@ -80,6 +80,8 @@ import SimilarOffer from './components/offers/SimilarOffer.vue';
 Vue.component('similar-offer', SimilarOffer);
 import CourseRegister from './components/CourseRegister.vue';
 Vue.component('course-register', CourseRegister);
+import EditCourse from './components/courses/EditCourse.vue';
+Vue.component('edit-course', EditCourse);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

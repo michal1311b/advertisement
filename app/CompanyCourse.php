@@ -109,6 +109,28 @@ class CompanyCourse extends Model
         $entry->save();
     }
 
+    public function update(array $attributes = [], array $options = [])
+    {
+        $latLon = self::get_lat_long($attributes['street'], $attributes['location_id']);
+        $latLonData = explode(',', $latLon);
+        $attributes['latitude'] = $latLonData[0];
+        $attributes['longitude'] = $latLonData[1];
+
+        if($this->title !== $attributes['title']) {
+            $attributes['slug'] = self::getUniqueSlug($attributes['title']);
+        }
+
+        $now = Carbon::now();
+
+        if(isset($attributes['galleries'])) {
+            $newName = $now->getTimestamp() . $this->generateRandomString();
+            Storage::disk('public')->put(self::uploadDir() . '/' . $newName. '.png', base64_decode($attributes['galleries'][0]));
+            $this->avatar = "https://{$_SERVER['HTTP_HOST']}" . self::uploadDir() . '/' . $newName. '.png';
+        }
+
+        parent::update($attributes, $options);
+    }
+
     private function generateRandomString($length = 10) {
         $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
         $charactersLength = strlen($characters);
