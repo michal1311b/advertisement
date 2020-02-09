@@ -42,6 +42,7 @@ class CreateCompanyCoursesTable extends Migration
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('specialization_id')->references('id')->on('specializations');
             $table->foreign('currency_id')->references('id')->on('currencies');
+            $table->softDeletes();
             $table->timestamps();
         });
     }
