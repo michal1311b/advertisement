@@ -67,9 +67,7 @@ class CompanyCourse extends Model
         $latLonData = explode(',', $latLon);
 
         $start = strtotime($attributes['start_date']);
-        // $end = gmdate('Y-m-d H:i:s', $attributes['end_date']);
-        \Log::info($start);
-        \Log::info($end);
+        $end = strtotime($attributes['end_date']);
 
         $attributes['slug'] = self::getUniqueSlug($attributes['title']);
         $entry = new CompanyCourse();
@@ -85,8 +83,8 @@ class CompanyCourse extends Model
         $entry->phone = $attributes['phone'];
         $entry->points = $attributes['points'];
         $entry->price = $attributes['price'];
-        $entry->start_date = date('Y-m-d', $start->format('Y-m-d'));
-        $entry->end_date = date('Y-m-d', $end->format('Y-m-d'));
+        $entry->start_date = date('Y-m-d', $start);
+        $entry->end_date = date('Y-m-d', $end);
         $entry->term1 = $attributes['term1'] === true ? 1 : 0;
         $entry->term2 = $attributes['term2'] === true ? 1 : 0;
         $entry->term3 = $attributes['term3'] === true ? 1 : 0;
