@@ -143,4 +143,11 @@ class CompanyCourseController extends Controller
             return back()->withInput($request->all());
         }
     }
+
+    public function showCourseParticiapnt(CompanyCourse $course, $id)
+    {
+        $participant = Participant::find($id);
+
+        return view('course.participant-show', compact(['course', 'participant']));
+    }
 }

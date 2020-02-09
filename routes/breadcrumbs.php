@@ -44,6 +44,11 @@ Breadcrumbs::for('course-article', function ($trail, $course) {
     $trail->push($course->title, route('show-course', ['id' => $course->id, 'slug' => $course->slug]));
 });
 
+Breadcrumbs::for('participant-info', function ($trail, $participant) {
+    $trail->parent('user-courses');
+    $trail->push($participant->first_name . ' ' . $participant->last_name, route('user-course-participant-show', ['id' => $participant->id, 'course' => $participant->company_course_id]));
+});
+
 Breadcrumbs::for('user-courses', function ($trail) {
     $trail->parent('home');
     $trail->push(trans('sentence.courses'), route('user-course-list'));

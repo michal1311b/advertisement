@@ -98,6 +98,7 @@ return [
   'btn-edit' => 'Edytuj',
   'btn-create' => 'Stwórz',
   'bit-add' => 'Dodaj',
+  'btn-info' => 'Info',
   'btn-update' => 'Aktualizuj',
   'btn-upload' => 'Dodaj plik',
   'btn-delete' => 'Usuń ',

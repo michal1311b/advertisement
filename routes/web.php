@@ -141,6 +141,7 @@ Route::group(array('prefix' => 'user'), function () {
     Route::delete('/courses/{comapnycourse}/delete', 'CompanyCourseController@delete')->name('delete-user-course');
     Route::get('/participants/{companycourse}/list', 'CompanyCourseController@getCourseParticiapnts')->name('user-course-participants')->middleware(['auth', 'verified']);
     Route::get('/courses/{companycourse}/edit', 'CompanyCourseController@edit')->name('edit-course')->middleware(['auth', 'verified']);
+    Route::get('/participants/{companycourse}/list/{id}', 'CompanyCourseController@showCourseParticiapnt')->name('user-course-participant-show')->middleware(['auth', 'verified']);
     Route::post('/courses/{id}/update', 'CompanyCourseController@update')->name('update-user-course');
 });
 

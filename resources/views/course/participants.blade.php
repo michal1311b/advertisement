@@ -36,7 +36,7 @@
                         <th scope="col">{{ trans('sentence.last_name') }}</th>
                         <th scope="col">{{ __('Email') }}</th>
                         <th scope="col">{{ trans('sentence.phone') }}</th>
-                        <th scope="col">{{ trans('sentence.btn-ban') }}</th>
+                        <th scope="col">{{ __('Info') }}</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -49,7 +49,9 @@
                             <td>{{ $participant->email }}</td>
                             <td>{{ $participant->phone }}</td>
                             <td>
-                                
+                                <a href="{{ route('user-course-participant-show', ['companycourse' => $course, 'id' => $participant->id]) }}" class="btn btn-info">
+                                    {{ trans('sentence.btn-info') }}
+                                </a>
                             </td>
                         </tr>
                     @endforeach

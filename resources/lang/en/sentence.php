@@ -98,6 +98,7 @@ return [
   'btn-edit' => 'Edit',
   'btn-create' => 'Create',
   'bit-add' => 'Add',
+  'btn-info' => 'Info',
   'btn-update' => 'Update',
   'btn-upload' => 'Upload',
   'btn-delete' => 'Delete',
