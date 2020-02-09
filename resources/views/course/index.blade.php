@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    {{ trans('sentence.offers-list') }}
+    {{ trans('sentence.courses') }}
 @endsection
 
 @section('description')
@@ -112,8 +112,8 @@ $(document).ready(function() {
         zoom: 6
     });
 
-    L.tileLayer( 'https://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="https://www.osm.org/copyright">OpenStreetMap</a>',
+    L.tileLayer( 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
         subdomains: ['a','b','c']
     }).addTo( map );
 

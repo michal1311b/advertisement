@@ -31,7 +31,6 @@ class StoreRequest extends FormRequest
             'city'=> 'required|max:190',
             'post_code'=> 'required|max:190',
             'phone'=> 'required|max:190',
-            'company_course_id' => 'required|exists:company_courses,id',
         ];
     }
 }

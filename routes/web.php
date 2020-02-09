@@ -33,7 +33,7 @@ Route::post('/rejestracja-kurs', 'Auth\RegisterController@registerCourse')->name
 Route::get('/lista-kursow', 'CompanyCourseController@index')->name('course.index');
 Route::group(array('prefix' => 'kurs'), function () {
     Route::get('/show/{id}/{slug}', 'CompanyCourseController@show')->name('show-course');
-    Route::post('/rejestracja-kurs/{course}', 'ParticipantController@store')->name('store-participant');
+    Route::post('/show/{course}', 'ParticipantController@store')->name('store-participant');
 });
 
 

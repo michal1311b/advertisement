@@ -30,8 +30,8 @@ class CreateParticipantsTable extends Migration
             $table->string('company_phone')->nullable();
             $table->text('comments')->nullable();
             $table->boolean('term1')->defualt(0);
-            $table->bigInteger('company_courses_id')->unsigned();
-            $table->foreign('company_courses_id')->references('id')->on('company_courses');
+            $table->bigInteger('company_course_id')->unsigned();
+            $table->foreign('company_course_id')->references('id')->on('company_courses');
             $table->timestamps();
         });
     }
