@@ -108,7 +108,7 @@
 
                             <div class="col-12 col-md-9">
                                 <ValidationProvider :name="trans('sentence.street')" rules="required|min:3|max:190" v-slot="{ errors }">
-                                    <input id="street" type="street" class="form-control" name="street" v-model="formInputs.street" autocomplete="street" autofocus>
+                                    <input id="street" type="text" class="form-control" name="street" v-model="formInputs.street" autocomplete="street" autofocus>
                                     <small class="text-danger">{{ errors[0] }}</small>
                                 </ValidationProvider>
                             </div>
