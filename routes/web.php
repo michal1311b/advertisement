@@ -108,6 +108,11 @@ Route::group(array('prefix' => 'offer'), function () {
     Route::get('users', 'UserController@read')->name('read');
 });
 
+Route::group(array('prefix' => 'foreign'), function () {
+    Route::get('/create', 'ForeignOfferController@create')->name('create-foreign')->middleware(['auth', 'verified']);
+    Route::post('/create', 'ForeignOfferController@store')->name('store-foreign');
+});
+
 Route::group(array('prefix' => 'user'), function () {
     Route::get('/{user}/edit', 'UserController@edit')->name('edit-user')->middleware(['auth', 'verified']);
     Route::put('/update/{user}', 'UserController@update')->name('update-user');
