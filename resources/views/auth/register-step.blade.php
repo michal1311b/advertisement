@@ -34,7 +34,7 @@
                         </div>
                         <div class="col-12 col-md-4 pb-2 text-center">
                             <a href="{{ route('register.company') }}" class="btn btn-primary btn-lg">
-                                {{ trans('sentence.register') }} {{ trans('sentence.as') }} {{ trans('sentence.company') }} {{ trans('sentence.and') }} {{ trans('sentence.offer-create') }}
+                                {{ trans('sentence.register') }} {{ trans('sentence.as') }} {{ trans('sentence.company') }} {{ trans('sentence.and') }} {{ trans('sentence.offer-create-poland') }}
                             </a>
                         </div>
                         <div class="col-12 col-md-4 pb-2 text-center">

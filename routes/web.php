@@ -111,6 +111,9 @@ Route::group(array('prefix' => 'offer'), function () {
 Route::group(array('prefix' => 'foreign'), function () {
     Route::get('/create', 'ForeignOfferController@create')->name('create-foreign')->middleware(['auth', 'verified']);
     Route::post('/create', 'ForeignOfferController@store')->name('store-foreign');
+    Route::get('/show/{id}/{slug}', 'ForeignOfferController@show')->name('show-foreign');
+    Route::get('/list', 'ForeignOfferController@index')->name('foreign-list');
+    Route::delete('/{id}/delete', 'ForeignOfferController@delete')->name('delete-foreign');
 });
 
 Route::group(array('prefix' => 'user'), function () {
@@ -118,6 +121,7 @@ Route::group(array('prefix' => 'user'), function () {
     Route::put('/update/{user}', 'UserController@update')->name('update-user');
     Route::get('/offers', 'UserController@getUserAdvertisements')->name('user-advertisement-list')->middleware(['auth', 'verified']);
     Route::get('/offer/show/{advertisement}/{slug}', 'UserController@showUserAdvertisement')->name('user-advertisement-show')->middleware(['auth', 'verified']);
+    Route::get('/foreigns', 'UserController@getUserForeigns')->name('user-foreign-list')->middleware(['auth', 'verified']);
     Route::get('/contacts', 'ReplyController@index')->name('user-contact')->middleware(['auth', 'verified']);
     Route::get('/contacts/{id}/reply', 'ReplyController@showReply')->name('user-reply')->middleware(['auth', 'verified']);
     Route::post('/send-reply', 'ReplyController@sendReply')->name('send-reply')->middleware(['auth', 'verified']);

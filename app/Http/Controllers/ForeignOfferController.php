@@ -8,7 +8,9 @@ use App\Http\Requests\Foreign\StoreRequest;
 use App\Settlement;
 use App\Specialization;
 use App\Work;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 
@@ -55,6 +57,41 @@ class ForeignOfferController extends Controller
                 'status' => $e->getCode(),
                 'message' => $e->getMessage()
             ]);
+        }
+    }
+
+    public function show($id, $slug)
+    {
+        $advertisement = ForeignOffer::whereSlug($slug)
+            ->where('id', $id)
+            ->with([
+                'user',
+                'work',
+                'specialization'
+            ])
+            ->firstOrFail();
+
+        $user = Auth::user();
+
+        $similars = ForeignOffer::with(['specialization', 'settlement'])
+        ->where('specialization_id', $advertisement->specialization_id)
+        ->where('settlement_id', $advertisement->settlement_id)
+        ->where('min_salary', '>=', $advertisement->min_salary)
+        ->where('id', '!=', $advertisement->id)
+        ->where('expired_at', '>', Carbon::now())
+        ->paginate(3);
+
+        return view('foreign.show', compact(['advertisement', 'similars']));
+    }
+
+    public function delete($id)
+    {
+        $foreign = ForeignOffer::findOrFail($id);
+        
+        if ($foreign->delete()) {
+            session()->flash('success',  trans('sentence.delete-offer'));
+
+            return back();
         }
     }
 }

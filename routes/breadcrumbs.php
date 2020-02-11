@@ -59,10 +59,26 @@ Breadcrumbs::for('advertisement-article', function ($trail, $advertisment) {
     $trail->push($advertisment->title, route('show-advertisement', ['id' => $advertisment->id, 'slug' => $advertisment->slug]));
 });
 
+Breadcrumbs::for('foreign', function ($trail) {
+    $trail->parent('home');
+    $trail->push(trans('sentence.offers-list'), route('foreign-list'));
+});
+
+Breadcrumbs::for('foreign-article', function ($trail, $advertisement) {
+    $trail->parent('foreign');
+    $trail->push($advertisement->title, route('show-foreign', ['id' => $advertisement->id, 'slug' => $advertisement->slug]));
+});
+
 Breadcrumbs::for('create-offer', function ($trail) {
     $trail->parent('home');
     $trail->push(trans('sentence.user-offers'), route('user-advertisement-list'));
-    $trail->push(trans('sentence.offer-create'), route('create-advertisement'));
+    $trail->push(trans('sentence.offer-create-poland'), route('create-advertisement'));
+});
+
+Breadcrumbs::for('create-offer-foreign', function ($trail) {
+    $trail->parent('home');
+    $trail->push(trans('sentence.user-offers'), route('user-advertisement-list'));
+    $trail->push(trans('sentence.offer-create-foreign'), route('create-advertisement'));
 });
 
 Breadcrumbs::for('advertisement-edit', function ($trail, $advertisment) {
@@ -85,6 +101,11 @@ Breadcrumbs::for('edit-user', function ($trail, $user) {
 Breadcrumbs::for('user-advertisements', function ($trail) {
     $trail->parent('home');
     $trail->push(trans('sentence.user-offers'), route('user-advertisement-list'));
+});
+
+Breadcrumbs::for('user-foreigns', function ($trail) {
+    $trail->parent('home');
+    $trail->push(trans('sentence.user-offers'), route('user-foreign-list'));
 });
 
 Breadcrumbs::for('user-advertisement-article', function ($trail, $advertisment) {

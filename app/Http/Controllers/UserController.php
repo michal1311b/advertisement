@@ -20,6 +20,7 @@ use App\LocationUser;
 use App\Work;
 use App\Settlement;
 use App\Currency;
+use App\ForeignOffer;
 use App\State;
 use App\UserAdvertisement;
 use Illuminate\Support\Facades\Auth as FacadesAuth;
@@ -236,5 +237,14 @@ class UserController extends Controller
         ->paginate(5);
 
         return view('user.courses', compact('courses'));
+    }
+
+    public function getUserForeigns()
+    {
+        $user = Auth::user();
+        $foreigns = ForeignOffer::where('user_id', '=', $user->id)
+        ->paginate(5);
+
+        return view('user.foreigns', compact('foreigns'));
     }
 }

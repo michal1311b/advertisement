@@ -1,14 +1,14 @@
 @extends('layouts.app')
 
 @section('title')
-    {{ trans('sentence.offer-create') }}
+    {{ trans('sentence.offer-create-foreign') }}
 @endsection
 
 @section('breadcrumbs')
 <div class="container">
     <div class="row">
         <div class="col-xs-12">
-            {!! Breadcrumbs::render('create-offer') !!}
+            {!! Breadcrumbs::render('create-offer-foreign') !!}
         </div>
     </div>	
 </div>
@@ -25,10 +25,10 @@
         </div>
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">{{ trans('sentence.offer-create') }}</div>
+                <div class="card-header">{{ trans('sentence.offer-create-foreign') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('store-advertisement') }}" enctype="multipart/form-data">
+                    <form method="POST" action="{{ route('store-foreign') }}" enctype="multipart/form-data">
                         @csrf
 
                         <ul class="nav nav-tabs" id="myTab">
