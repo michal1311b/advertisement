@@ -77,7 +77,7 @@ Breadcrumbs::for('create-offer', function ($trail) {
 
 Breadcrumbs::for('create-offer-foreign', function ($trail) {
     $trail->parent('home');
-    $trail->push(trans('sentence.user-offers'), route('user-foreign-list'));
+    $trail->push(trans('sentence.user-foreigns'), route('user-foreign-list'));
     $trail->push(trans('sentence.offer-create-foreign'), route('create-advertisement'));
 });
 
