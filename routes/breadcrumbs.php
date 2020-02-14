@@ -111,7 +111,7 @@ Breadcrumbs::for('user-advertisements', function ($trail) {
 
 Breadcrumbs::for('user-foreigns', function ($trail) {
     $trail->parent('home');
-    $trail->push(trans('sentence.user-offers'), route('user-foreign-list'));
+    $trail->push(trans('sentence.user-foreigns'), route('user-foreign-list'));
 });
 
 Breadcrumbs::for('user-advertisement-article', function ($trail, $advertisment) {
