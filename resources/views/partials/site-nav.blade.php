@@ -6,6 +6,9 @@
     <a href="{{ route('advertisement-list') }}" class="list-group-item list-group-item-action bg-light">{{ trans('sentence.offers') }}</a>
 </div>
 <div class="list-group list-group-flush">
+    <a href="{{ route('foreign-list') }}" class="list-group-item list-group-item-action bg-light">{{ trans('sentence.foreigns-list') }}</a>
+</div>
+<div class="list-group list-group-flush">
     <a href="{{ route('company-list') }}" class="list-group-item list-group-item-action bg-light">{{ trans('sentence.company-list') }}</a>
 </div>
 <div class="list-group list-group-flush">

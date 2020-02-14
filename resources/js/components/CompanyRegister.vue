@@ -10,7 +10,7 @@
                             <div class="col-md-6">
                                 <ValidationProvider :name="trans('sentence.username')" rules="required|min:3|max:190" v-slot="{ errors }">
                                     <input id="name" type="text" class="form-control" name="name" v-model="formInputs.name" autocomplete="name" autofocus>
-                                    <small class="text-danger">{{ errors[0] }}</small>
+                                    <span class="text-danger">{{ errors[0] }}</span >
                                 </ValidationProvider>
                             </div>
                         </div>
@@ -21,7 +21,7 @@
                             <div class="col-md-6">
                                 <ValidationProvider name="email" rules="required|email" v-slot="{ errors }">
                                     <input id="email" type="email" class="form-control" name="email" v-model="formInputs.email" autocomplete="email">
-                                    <small class="text-danger">{{ errors[0] }}</small>
+                                    <span class="text-danger">{{ errors[0] }}</span >
                                 </ValidationProvider>
                             </div>
                         </div>
@@ -32,7 +32,7 @@
                                 <div class="col-md-6">
                                     <ValidationProvider :name="trans('sentence.password')" rules="required|min:8|confirmed:password-confirm" v-slot="{ errors }">
                                         <input id="password" type="password" class="form-control" name="password" v-model="formInputs.password" autocomplete="new-password">
-                                        <small class="text-danger">{{ errors[0] }}</small>
+                                        <span class="text-danger">{{ errors[0] }}</span >
                                     </ValidationProvider>
                                 </div>
                             </div>
@@ -43,7 +43,7 @@
                                 <div class="col-md-6">
                                     <ValidationProvider :name="trans('sentence.confirm_password')" v-slot="{ errors }" vid="password-confirm">
                                         <input id="password-confirm" type="password" class="form-control" name="password_confirmation" v-model="formInputs.password_confirmation" autocomplete="new-password">
-                                        <small class="text-danger">{{ errors[0] }}</small>
+                                        <span class="text-danger">{{ errors[0] }}</span >
                                     </ValidationProvider>
                                 </div>
                             </div>
@@ -55,7 +55,7 @@
                             <div class="col-md-6">
                                 <ValidationProvider :name="trans('sentence.company_nip')" rules="required" v-slot="{ errors }">
                                     <input id="company_nip" type="number" class="form-control" name="company_nip" v-model="formInputs.company_nip" autocomplete="company_nip" autofocus>
-                                    <small class="text-danger">{{ errors[0] }}</small>
+                                    <span class="text-danger">{{ errors[0] }}</span >
                                 </ValidationProvider>
                             </div>
                         </div>
@@ -72,7 +72,7 @@
                             <div class="col-md-6">
                                 <ValidationProvider :name="trans('sentence.company_name')" rules="required|min:3|max:191" v-slot="{ errors }">
                                     <input id="company_name" type="text" class="form-control" name="company_name" v-model="formInputs.company_name" autocomplete="company_name" autofocus>
-                                    <small class="text-danger">{{ errors[0] }}</small>
+                                    <span class="text-danger">{{ errors[0] }}</span >
                                 </ValidationProvider>
                             </div>
                         </div>
@@ -83,7 +83,7 @@
                             <div class="col-md-6">
                                 <ValidationProvider :name="trans('sentence.company_street')" rules="required|min:3|max:191" v-slot="{ errors }">
                                     <input id="company_street" type="text" class="form-control" name="company_street" v-model="formInputs.company_street" autocomplete="company_street" autofocus>
-                                    <small class="text-danger">{{ errors[0] }}</small>
+                                    <span class="text-danger">{{ errors[0] }}</span >
                                 </ValidationProvider>
                             </div>
                         </div>
@@ -94,7 +94,7 @@
                             <div class="col-md-6">
                                 <ValidationProvider :name="trans('sentence.company_post_code')" rules="required" v-slot="{ errors }">
                                     <input id="company_post_code" type="text" class="form-control" name="company_post_code" v-model="formInputs.company_post_code" autocomplete="company_post_code" autofocus>
-                                    <small class="text-danger">{{ errors[0] }}</small>
+                                    <span class="text-danger">{{ errors[0] }}</span >
                                 </ValidationProvider>
                             </div>
                         </div>
@@ -105,7 +105,7 @@
                             <div class="col-md-6">
                                 <ValidationProvider :name="trans('sentence.company_city')" rules="required|min:3|max:191" v-slot="{ errors }">
                                     <input id="company_city" type="text" class="form-control" name="company_city" v-model="formInputs.company_city" autocomplete="company_city" autofocus>
-                                    <small class="text-danger">{{ errors[0] }}</small>
+                                    <span class="text-danger">{{ errors[0] }}</span >
                                 </ValidationProvider>
                             </div>
                         </div>
@@ -127,7 +127,7 @@
                             <div class="col-12 col-md-9">
                                 <ValidationProvider :name="trans('sentence.title')" rules="required|min:3|max:190" v-slot="{ errors }">
                                     <input id="title" type="title" class="form-control" name="title" v-model="formInputs.title" autocomplete="title" autofocus>
-                                    <small class="text-danger">{{ errors[0] }}</small>
+                                    <span class="text-danger">{{ errors[0] }}</span >
                                 </ValidationProvider>
                             </div>
                         </div>
@@ -178,7 +178,7 @@
                                         <option selected>{{ trans('sentence.choose') }}</option>
                                         <option v-for="work in works" :key="work.id" :value="work.id">{{ work.name }}</option>
                                     </select>
-                                    <small class="text-danger">{{ errors[0] }}</small>
+                                    <span class="text-danger">{{ errors[0] }}</span >
                                 </ValidationProvider>
                             </div>
                         </div>
@@ -192,7 +192,7 @@
                                             {{ location.city }}
                                         </option>
                                     </select>
-                                    <small class="text-danger">{{ errors[0] }}</small>
+                                    <span class="text-danger">{{ errors[0] }}</span >
                                 </ValidationProvider>
                             </div>
                         </div>
@@ -206,7 +206,7 @@
                                             {{ state.name }}
                                         </option>
                                     </select>
-                                    <small class="text-danger">{{ errors[0] }}</small>
+                                    <span class="text-danger">{{ errors[0] }}</span >
                                 </ValidationProvider>
                             </div>
                         </div>
@@ -216,7 +216,7 @@
                             <div class="col-12 col-md-9">
                                 <ValidationProvider :name="trans('sentence.post_code')" rules="required" v-slot="{ errors }">
                                     <input id="post_code" type="text" class="form-control" name="postCode" v-model="formInputs.postCode" autocomplete="postCode" autofocus>
-                                    <small class="text-danger">{{ errors[0] }}</small>
+                                    <span class="text-danger">{{ errors[0] }}</span >
                                 </ValidationProvider>
                             </div>
                         </div>
@@ -226,7 +226,7 @@
                             <div class="col-12 col-md-9">
                                 <ValidationProvider :name="trans('sentence.street')" rules="required|min:3|max:190" v-slot="{ errors }">
                                     <input id="street" type="text" class="form-control" name="street" v-model="formInputs.street" autocomplete="street" autofocus>
-                                    <small class="text-danger">{{ errors[0] }}</small>
+                                    <span class="text-danger">{{ errors[0] }}</span >
                                 </ValidationProvider>
                             </div>
                         </div>
@@ -236,7 +236,7 @@
                             <div class="col-12 col-md-9">
                                 <ValidationProvider :name="trans('sentence.phone')" rules="required|min:3|max:190|integer" v-slot="{ errors }">
                                     <input id="phone" type="number" class="form-control" name="phone" v-model="formInputs.phone" autocomplete="phone" autofocus>
-                                    <small class="text-danger">{{ errors[0] }}</small>
+                                    <span class="text-danger">{{ errors[0] }}</span >
                                 </ValidationProvider>
                             </div>
                         </div>
@@ -262,7 +262,7 @@
                                             {{ specialization.name }}
                                         </option>
                                     </select>
-                                    <small class="text-danger">{{ errors[0] }}</small>
+                                    <span class="text-danger">{{ errors[0] }}</span >
                                 </ValidationProvider>
                             </div>
                         </div>
@@ -295,7 +295,7 @@
                                     <input min="0"
                                     id="min_salary" type="number" 
                                     class="form-control" name="min_salary" v-model="formInputs.min_salary" autocomplete="min_salary" autofocus>
-                                    <small class="text-danger">{{ errors[0] }}</small>
+                                    <span class="text-danger">{{ errors[0] }}</span >
                                 </ValidationProvider>
                             </div>
                         </div>
@@ -308,7 +308,7 @@
                                     <input min="0"
                                     id="max_salary" type="number" 
                                     class="form-control" name="max_salary" v-model="formInputs.max_salary" autocomplete="max_salary" autofocus>
-                                    <small class="text-danger">{{ errors[0] }}</small>
+                                    <span class="text-danger">{{ errors[0] }}</span >
                                 </ValidationProvider>
                             </div>
                         </div>
@@ -323,7 +323,7 @@
                                             {{ currency.symbol }}
                                         </option>
                                     </select>
-                                    <small class="text-danger">{{ errors[0] }}</small>
+                                    <span class="text-danger">{{ errors[0] }}</span >
                                 </ValidationProvider>
                             </div>
                         </div>
@@ -338,7 +338,7 @@
                                             {{ settlement.name }}
                                         </option>
                                     </select>
-                                    <small class="text-danger">{{ errors[0] }}</small>
+                                    <span class="text-danger">{{ errors[0] }}</span >
                                 </ValidationProvider>
                             </div>
                         </div>
@@ -366,7 +366,7 @@
                                         <label class="form-check-label" for="term1">
                                             {{ trans('sentence.accept') }} <a href="/regulamin" class="text-lowercase">{{ trans('sentence.regulation') }}</a> EmployMed.eu
                                         </label>
-                                        <small class="text-danger">{{ errors[0] }}</small>
+                                        <span class="text-danger">{{ errors[0] }}</span >
                                     </ValidationProvider>
                                 </div>
                             </div>

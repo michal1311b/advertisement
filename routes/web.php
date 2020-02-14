@@ -114,6 +114,9 @@ Route::group(array('prefix' => 'foreign'), function () {
     Route::get('/show/{id}/{slug}', 'ForeignOfferController@show')->name('show-foreign');
     Route::get('/list', 'ForeignOfferController@index')->name('foreign-list');
     Route::delete('/{id}/delete', 'ForeignOfferController@delete')->name('delete-foreign');
+    Route::get('/{id}/edit', 'ForeignOfferController@edit')->name('edit-foreign')->middleware(['auth', 'verified']);
+    Route::post('/{id}/update', 'ForeignOfferController@update')->name('update-foreign');
+    Route::any('/search', 'ForeignOfferController@search')->name('search-foreign');
 });
 
 Route::group(array('prefix' => 'user'), function () {

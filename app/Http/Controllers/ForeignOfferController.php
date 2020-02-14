@@ -94,4 +94,111 @@ class ForeignOfferController extends Controller
             return back();
         }
     }
+
+    public function edit(Request $request, $id)
+    {
+        $request->user()->authorizeRoles(['company', 'admin']);
+
+        $foreign = ForeignOffer::find($id);
+        $userId = $foreign->user_id;
+        $request->user()->checkAuthorization($request->user()->id, $userId);
+
+        $works = Work::all();
+        $specializations = Specialization::all();
+        $currencies = Currency::all();
+        $settlements = Settlement::all();
+
+        return view('foreign.edit', compact(['foreign', 'works', 'specializations', 'currencies', 'settlements']));
+    }
+
+    public function update(Request $request, $id)
+    {
+        \Log::info($request->all());
+        DB::beginTransaction();
+
+        try {
+            $advertisement = ForeignOffer::findOrFail($id);
+            $advertisement->update($request->all());
+
+            DB::commit();
+
+            return response()->json([
+                'status' => 201,
+                'message' => trans('sentence.offer-update-success')
+            ]);
+        } catch (\Exception $e) {
+            Log::info($e);
+            DB::rollback();
+
+            session()->flash('error',  trans('sentence.error-message'));
+
+            return back()->withInput($request->all());
+        }
+    }
+
+    public function index()
+    {
+        $foreigns = ForeignOffer::select(
+            'id',
+            'slug',
+            'title', 
+            'description', 
+            'min_salary', 
+            'max_salary', 
+            'settlement_id',
+            'specialization_id',
+            'currency_id',
+            'user_id',
+            'street',
+            'city',
+            'latitude',
+            'longitude',
+            'expired_at'
+            )
+        ->with([
+            'settlement' => function($query){
+                $query->select('id', 'name');
+            },
+            'specialization' => function($query){
+                $query->select('id', 'name');
+            },
+            'currency' => function($query){
+                $query->select('id', 'symbol');
+            },
+            'user' => function($query){
+                $query->with('profile');
+            }])
+        ->where('expired_at', '>', Carbon::now())
+        ->paginate(8);
+
+        $specializations = Specialization::all();
+        $expirateDate = Carbon::now()->subDays(30);
+
+        return view('foreign.index', compact(['foreigns', 'specializations', 'expirateDate']));
+    }
+
+    public function search(Request $request)
+    {
+        $range = explode(',', $request->input('range'));
+
+        if ($request->input('specialization_id') !== null) {
+            $specialization = Specialization::find($request->input('specialization_id'));
+            $foreigns = ForeignOffer::where('specialization_id', $specialization->id)
+                ->where('expired_at', '>', Carbon::now())
+                ->where('min_salary', '>=', $range[0])
+                ->where('max_salary', '<=', $range[1]);
+        }
+
+        if (($request->input('specialization_id') === null)) {
+            $foreigns = ForeignOffer::where('min_salary', '>=', ($range[0] ?? 0))
+                ->where('max_salary', '<=', ($range[1] ?? 1000))
+                ->where('expired_at', '>', Carbon::now());
+        }
+
+        $specializations = Specialization::all();
+
+        $foreigns = $foreigns->paginate();
+
+        return view('foreign.index', compact(['foreigns', 'specializations']));
+    }
 }

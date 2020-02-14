@@ -77,11 +77,11 @@
                             'modalKey' => "remove".$foreign->id
                         ])
 
-                        <a href="{{ route('user-foreign-show', ['foreign' => $foreign, 'slug' => $foreign->slug]) }}" class="btn btn-info border border-warning ml-2 text-white">
+                        {{-- <a href="{{ route('user-foreign-show', ['foreign' => $foreign, 'slug' => $foreign->slug]) }}" class="btn btn-info border border-warning ml-2 text-white">
                             {{ trans('sentence.btn-matching') }}
-                        </a>
+                        </a> --}}
 
-                        <a href="{{ route('user-foreign-similar', $foreign) }}" class="btn btn-success border border-warning ml-2 text-white">Wystaw podobne ogłoszenie</a>
+                        {{-- <a href="{{ route('user-foreign-similar', $foreign) }}" class="btn btn-success border border-warning ml-2 text-white">Wystaw podobne ogłoszenie</a> --}}
                     </div>
                 @endforeach
                 <div class="pt-3">

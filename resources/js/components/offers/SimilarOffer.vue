@@ -8,7 +8,7 @@
                 <div class="col-12 col-md-9">
                     <ValidationProvider :name="trans('sentence.title')" rules="required|min:3|max:190" v-slot="{ errors }">
                         <input id="title" type="text" class="form-control" name="title" v-model="formInputs.title" @focus="onFocus('title')" autocomplete="title" autofocus>
-                        <small class="text-danger">{{ errors[0] }}</small>
+                        <span class="text-danger">{{ errors[0] }}</span >
                     </ValidationProvider>
                 </div>
             </div>
@@ -53,7 +53,7 @@
                             {{ work.name }}
                             </option> 
                         </select>
-                        <small class="text-danger">{{ errors[0] }}</small>
+                        <span class="text-danger">{{ errors[0] }}</span >
                     </ValidationProvider>
                 </div>
             </div>
@@ -73,7 +73,7 @@
                             {{ state.name }}
                             </option> 
                         </select>
-                        <small class="text-danger">{{ errors[0] }}</small>
+                        <span class="text-danger">{{ errors[0] }}</span >
                     </ValidationProvider>
                 </div>
             </div>
@@ -89,7 +89,7 @@
                             <option selected>{{ trans('sentence.choose') }}</option>
                             <option :value="location.id" v-for="location in locations" :key="location.id" selected>{{ location.city }}</option> 
                         </select>
-                        <small class="text-danger">{{ errors[0] }}</small>
+                        <span class="text-danger">{{ errors[0] }}</span >
                     </ValidationProvider>
                 </div>
             </div>
@@ -103,7 +103,7 @@
                         name="postCode" v-model="formInputs.postCode" 
                         @focus="onFocus('postCode')"
                         autocomplete="postCode" autofocus>
-                        <small class="text-danger">{{ errors[0] }}</small>
+                        <span class="text-danger">{{ errors[0] }}</span >
                     </ValidationProvider>
                 </div>
             </div>
@@ -117,7 +117,7 @@
                         name="street" v-model="formInputs.street"
                         @focus="onFocus('street')" 
                         autocomplete="street" autofocus>
-                        <small class="text-danger">{{ errors[0] }}</small>
+                        <span class="text-danger">{{ errors[0] }}</span >
                     </ValidationProvider>
                 </div>
             </div>
@@ -138,7 +138,7 @@
                                 {{ specialization.name }}
                             </option> 
                         </select>
-                        <small class="text-danger">{{ errors[0] }}</small>
+                        <span class="text-danger">{{ errors[0] }}</span >
                     </ValidationProvider>
                 </div>
             </div>
@@ -159,7 +159,7 @@
                         name="email" v-model="formInputs.email" 
                         @focus="onFocus('email')" 
                         autocomplete="email" autofocus>
-                        <small class="text-danger">{{ errors[0] }}</small>
+                        <span class="text-danger">{{ errors[0] }}</span >
                     </ValidationProvider>
                 </div>
             </div>
@@ -175,7 +175,7 @@
                         name="phone" v-model="formInputs.phone" 
                         @focus="onFocus('phone')"  
                         autocomplete="phone" autofocus>
-                        <small class="text-danger">{{ errors[0] }}</small>
+                        <span class="text-danger">{{ errors[0] }}</span >
                     </ValidationProvider>
                 </div>
             </div>
@@ -205,7 +205,7 @@
                             <option selected>{{ trans('sentence.choose') }}</option>
                             <option :value="settlement.id" v-for="settlement in settlements" :key="settlement.id" selected>{{ settlement.name }}</option> 
                         </select>
-                        <small class="text-danger">{{ errors[0] }}</small>
+                        <span class="text-danger">{{ errors[0] }}</span >
                     </ValidationProvider>
                 </div>
             </div>

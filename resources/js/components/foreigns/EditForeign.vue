@@ -59,42 +59,6 @@
             </div>
 
             <div class="form-group row">
-                <label class="col-12 col-md-3 col-form-label text-md-right" for="state_id">{{ trans('sentence.state') }} <span class="text-danger font-weight-bolder">*</span></label>
-                <div class="col-12 col-md-9">
-                    <ValidationProvider :name="trans('sentence.state')" :rules="'oneOf:' + stateIds" v-slot="{ errors }">
-                        <select data-live-search="true" class="form-control" 
-                        name="state_id" id="state_id" v-model="formInputs.state_id" 
-                        @focus="onFocus('state_id')">
-                            <option selected>{{ trans('sentence.choose') }}</option>
-                            <option :value="state.id" 
-                            v-for="state in states"
-                            :selected="state.id === formInputs.state_id" 
-                            :key="state.id">
-                            {{ state.name }}
-                            </option> 
-                        </select>
-                        <span class="text-danger">{{ errors[0] }}</span >
-                    </ValidationProvider>
-                </div>
-            </div>
-
-            <div class="form-group row">
-                <label class="col-12 col-md-3 col-form-label text-md-right" for="location_id">{{ trans('sentence.location') }} <span class="text-danger font-weight-bolder">*</span></label>
-                <div class="col-12 col-md-9">
-                    <ValidationProvider :name="trans('sentence.location')" :rules="'oneOf:' + locationIds" v-slot="{ errors }">
-                        <select data-live-search="true" class="form-control" 
-                        name="location_id" id="location_id"
-                        v-model="formInputs.location_id" 
-                        @focus="onFocus('location_id')">
-                            <option selected>{{ trans('sentence.choose') }}</option>
-                            <option :value="location.id" v-for="location in locations" :key="location.id" selected>{{ location.city }}</option> 
-                        </select>
-                        <span class="text-danger">{{ errors[0] }}</span >
-                    </ValidationProvider>
-                </div>
-            </div>
-
-            <div class="form-group row">
                 <label for="postCode" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.post_code') }} <span class="text-danger font-weight-bolder">*</span></label>
 
                 <div class="col-12 col-md-9">
@@ -123,6 +87,20 @@
             </div>
 
             <div class="form-group row">
+                <label for="city" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.city') }} <span class="text-danger font-weight-bolder">*</span></label>
+
+                <div class="col-12 col-md-9">
+                    <ValidationProvider :name="trans('sentence.city')" rules="required|min:3|max:190" v-slot="{ errors }">
+                        <input id="city" type="text" class="form-control"
+                        name="city" v-model="formInputs.city"
+                        @focus="onFocus('city')" 
+                        autocomplete="city" autofocus>
+                        <span class="text-danger">{{ errors[0] }}</span >
+                    </ValidationProvider>
+                </div>
+            </div>
+
+            <div class="form-group row">
                 <label class="col-12 col-md-3 col-form-label text-md-right" for="specialization_id">{{ trans('sentence.specialization') }} <span class="text-danger font-weight-bolder">*</span></label>
                 <div class="col-12 col-md-9">
                     <ValidationProvider :name="trans('sentence.specialization')" :rules="'oneOf:'+ specializationIds" v-slot="{ errors }">
@@ -140,13 +118,6 @@
                         </select>
                         <span class="text-danger">{{ errors[0] }}</span >
                     </ValidationProvider>
-                </div>
-            </div>
-
-            <div class="form-group row">
-                <label class="col-12 col-md-3 col-form-label text-md-right" for="galleries">{{ trans('sentence.upload-image') }}</label>
-                <div class="col-12 col-md-9">
-                    <input type="file" class="form-control" name="galleries[]" ref="file" @change="onFileChange();" multiple/>
                 </div>
             </div>
 
@@ -177,19 +148,6 @@
                         autocomplete="phone" autofocus>
                         <span class="text-danger">{{ errors[0] }}</span >
                     </ValidationProvider>
-                </div>
-            </div>
-
-            <div class="form-group row">
-                <label for="tags" class="col-12 col-md-3 col-form-label text-md-right">
-                    {{ trans('sentence.tags') }}
-                </label>
-                <div class="col-12 col-md-9">
-                    <vue-tags-input
-                        v-model="tag"
-                        :tags="formInputs.tags"
-                        @tags-changed="newTags => formInputs.tags = newTags"
-                    />
                 </div>
             </div>
 
@@ -268,8 +226,6 @@
 </template>
 
 <script>
-    import { createTags } from '@johmun/vue-tags-input';
-
     export default {
         data: function() {
             return {
@@ -279,8 +235,6 @@
                 form: new FormData(),
                 tag: '',
                 workIds: [],
-                locationIds: [],
-                stateIds: [],
                 specializationIds: [],
                 currencyIds: [],
                 settlementIds: [],
@@ -290,15 +244,12 @@
                     profits: '',
                     requirements: '',
                     work_id: '',
-                    location_id: '',
-                    state_id: '',
                     postCode: '',
                     street: '',
+                    city: '',
                     phone: '',
                     email: '',
                     specialization_id: '',
-                    galleries: [],
-                    tags: [],
                     min_salary: '',
                     max_salary: '',
                     currency_id: '',
@@ -309,17 +260,13 @@
         },
         props: [
             'works',
-            'states',
-            'locations',
             'specializations',
             'currencies',
             'settlements',
-            'advertisement'
+            'foreign'
         ],
         mounted() {
             this.getWorkIds();
-            this.getLocationIds();
-            this.getStateIds();
             this.getSpecializationIds();
             this.getCurrencyIds();
             this.getSettlementIds();
@@ -330,34 +277,25 @@
                 this.focused = e
             },
             fetchData() {
-                this.formInputs.title= this.advertisement.title;
-                this.formInputs.description= this.advertisement.description;
-                this.formInputs.profits= this.advertisement.profits;
-                this.formInputs.requirements= this.advertisement.requirements;
-                this.formInputs.work_id= this.advertisement.work_id;
-                this.formInputs.location_id= this.advertisement.location_id;
-                this.formInputs.state_id= this.advertisement.state_id;
-                this.formInputs.postCode= this.advertisement.postCode;
-                this.formInputs.street= this.advertisement.street;
-                this.formInputs.phone= this.advertisement.phone;
-                this.formInputs.email= this.advertisement.email;
-                this.formInputs.specialization_id= this.advertisement.specialization_id;
-                this.formInputs.min_salary= this.advertisement.min_salary;
-                this.formInputs.max_salary= this.advertisement.max_salary;
-                this.formInputs.currency_id= this.advertisement.currency_id;
-                this.formInputs.settlement_id= this.advertisement.settlement_id;
-                this.formInputs.negotiable= this.advertisement.negotiable;
+                this.formInputs.title= this.foreign.title;
+                this.formInputs.description= this.foreign.description;
+                this.formInputs.profits= this.foreign.profits;
+                this.formInputs.requirements= this.foreign.requirements;
+                this.formInputs.work_id= this.foreign.work_id;
+                this.formInputs.postCode= this.foreign.postCode;
+                this.formInputs.street= this.foreign.street;
+                this.formInputs.city= this.foreign.city;
+                this.formInputs.phone= this.foreign.phone;
+                this.formInputs.email= this.foreign.email;
+                this.formInputs.specialization_id= this.foreign.specialization_id;
+                this.formInputs.min_salary= this.foreign.min_salary;
+                this.formInputs.max_salary= this.foreign.max_salary;
+                this.formInputs.currency_id= this.foreign.currency_id;
+                this.formInputs.settlement_id= this.foreign.settlement_id;
+                this.formInputs.negotiable= this.foreign.negotiable;
                 tinymce.editors[0].setContent(this.formInputs.description, { format: 'raw' });
                 tinymce.editors[1].setContent(this.formInputs.profits, { format: 'raw' });
                 tinymce.editors[2].setContent(this.formInputs.requirements, { format: 'raw' });
-                
-                var tags = [];
-                this.advertisement.tags.forEach(function(item, index) {
-                    tags[index] = item.name;
-                });
-                createTags(tags, [{ type: 'length', rule: /[0-9]/ }])
-
-                this.formInputs.tags = tags;
             },
             getWorkIds() {
                 for(var i=1; i <= this.works.length; i++) {
@@ -365,20 +303,6 @@
                 }
 
                 return this.workIds = this.workIds.join();
-            },
-            getLocationIds() {
-                for(var i=1; i <= this.locations.length; i++) {
-                    this.locationIds.push(i);
-                }
-
-                return this.locationIds = this.locationIds.join();
-            },
-            getStateIds() {
-                for(var i=1; i <= this.states.length; i++) {
-                    this.stateIds.push(i);
-                }
-
-                return this.stateIds = this.stateIds.join();
             },
             getSpecializationIds() {
                 for(var i=1; i <= this.specializations.length; i++) {
@@ -415,14 +339,11 @@
                 this.formInputs.profits= '';
                 this.formInputs.requirements= '';
                 this.formInputs.work_id= '';
-                this.formInputs.location_id= '';
-                this.formInputs.state_id= '';
                 this.formInputs.postCode= '';
                 this.formInputs.street= '';
+                this.formInputs.city= '';
                 this.formInputs.phone= '';
                 this.formInputs.specialization_id= '';
-                this.formInputs.galleries= [];
-                this.formInputs.tags= [];
                 this.formInputs.min_salary= '';
                 this.formInputs.max_salary= '';
                 this.formInputs.currency_id= '';
@@ -436,8 +357,6 @@
                 this.form.append('email', this.formInputs.email);
                 this.form.append('currency_id', this.formInputs.currency_id);
                 this.form.append('description', this.formInputs.description);
-                this.form.append('galleries[0]', this.formInputs.galleries[0]);
-                this.form.append('location_id', this.formInputs.location_id);
                 this.form.append('max_salary', this.formInputs.max_salary);
                 this.form.append('min_salary', this.formInputs.min_salary);
                 this.form.append('negotiable', this.formInputs.negotiable);
@@ -448,13 +367,8 @@
                 this.form.append('requirements', this.formInputs.requirements);
                 this.form.append('settlement_id', this.formInputs.settlement_id);
                 this.form.append('specialization_id', this.formInputs.specialization_id);
-                this.form.append('state_id', this.formInputs.state_id);
                 this.form.append('street', this.formInputs.street);
-                for (var key in this.formInputs.tags) {
-                    if(typeof this.formInputs.tags[key].text == 'string') {
-                        this.form.append('tags[' + key + ']', this.formInputs.tags[key].text);
-                    }
-                }
+                this.form.append('city', this.formInputs.city);
                 this.form.append('term1', this.formInputs.term1);
                 this.form.append('term2', this.formInputs.term2);
                 this.form.append('term3', this.formInputs.term3);

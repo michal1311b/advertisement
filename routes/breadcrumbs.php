@@ -87,6 +87,12 @@ Breadcrumbs::for('advertisement-edit', function ($trail, $advertisment) {
     $trail->push(trans('sentence.edit') . ' ' . $advertisment->title, route('edit-advertisement', $advertisment));
 });
 
+Breadcrumbs::for('foreign-edit', function ($trail, $foreign) {
+    $trail->parent('home');
+    $trail->push(trans('sentence.user-offers'), route('user-foreign-list'));
+    $trail->push(trans('sentence.edit') . ' ' . $foreign->title, route('edit-foreign', $foreign));
+});
+
 Breadcrumbs::for('course-edit', function ($trail, $course) {
     $trail->parent('home');
     $trail->push(trans('sentence.user-courses'), route('user-course-list'));
