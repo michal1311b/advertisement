@@ -12,6 +12,9 @@
     <a href="{{ route('company-list') }}" class="list-group-item list-group-item-action bg-light">{{ trans('sentence.company-list') }}</a>
 </div>
 <div class="list-group list-group-flush">
+    <a href="{{ route('course.index') }}" class="list-group-item list-group-item-action bg-light">{{ trans('sentence.courses') }}</a>
+</div>
+<div class="list-group list-group-flush">
     <a href="{{ route('contact.show') }}" class="list-group-item list-group-item-action bg-light {{ Request::is('kontakt') ? 'text-primary active' : null }}">{{ trans('sentence.contact-form') }}</a>
 </div>
 <div class="list-group list-group-flush">

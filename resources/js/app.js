@@ -82,6 +82,8 @@ import CourseRegister from './components/CourseRegister.vue';
 Vue.component('course-register', CourseRegister);
 import EditCourse from './components/courses/EditCourse.vue';
 Vue.component('edit-course', EditCourse);
+import CreateCourse from './components/courses/CreateCourse.vue';
+Vue.component('course-create', CreateCourse);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

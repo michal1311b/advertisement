@@ -150,4 +150,38 @@ class CompanyCourseController extends Controller
 
         return view('course.participant-show', compact(['course', 'participant']));
     }
+
+    public function create()
+    {
+        $states = State::get(['id', 'name']);
+        $locations = Location::get(['id', 'city']);
+        $specializations = Specialization::get(['id', 'name']);
+        $currencies = Currency::get(['id', 'symbol']);
+
+        return view('course.create', compact(['states', 'locations', 'specializations', 'currencies']));
+    }
+
+    public function store(Request $reuqest)
+    {
+        DB::beginTransaction();
+
+        try {
+            \Log::info($reuqest->all());
+            CompanyCourse::create($reuqest->all());
+            
+            DB::commit();
+
+            return response()->json([
+                'status' => 201,
+                'message' => trans('sentence.offer-update-success')
+            ]);
+        } catch (\Exception $e) {
+            \Log::info($e);
+            DB::rollback();
+
+            session()->flash('error',  trans('sentence.error-message'));
+
+            return back()->withInput($request->all());
+        }
+    }
 }

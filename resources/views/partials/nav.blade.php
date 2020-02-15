@@ -91,10 +91,11 @@
                             
                             @if(auth()->user()->hasRole('admin') || auth()->user()->hasRole('company'))
                                 <a class="dropdown-item" href="{{ route('user-advertisement-list') }}">{{ trans('sentence.user-offers')}}</a>
-                                <a class="dropdown-item" href="{{ route('create-advertisement') }}">{{ trans('sentence.offer-create-poland')}}</a>
+                                <a class="dropdown-item" href="{{ route('create-advertisement') }}">{{ trans('sentence.offer-create-poland')}} <span class="btn btn-success btn-sm"><i class="fas fa-plus-circle"></i></span></a>
                                 <a class="dropdown-item" href="{{ route('user-foreign-list') }}">{{ trans('sentence.user-foreigns')}}</a>
-                                <a class="dropdown-item" href="{{ route('create-foreign') }}">{{ trans('sentence.offer-create-foreign')}}</a>
+                                <a class="dropdown-item" href="{{ route('create-foreign') }}">{{ trans('sentence.offer-create-foreign')}} <span class="btn btn-success btn-sm"><i class="fas fa-plus-circle"></i></span></a>
                                 <a class="dropdown-item" href="{{ route('user-course-list') }}">{{ trans('sentence.user-courses')}}</a>
+                                <a class="dropdown-item" href="{{ route('create-course') }}">{{ trans('sentence.btn-add') }} <span class="text-lowercase">{{ trans('sentence.courses') }} <span class="btn btn-success btn-sm"><i class="fas fa-plus-circle"></i></span></span></a>
                             @endif
 
                             @if(auth()->user()->hasRole('admin'))
