@@ -20,6 +20,7 @@ return [
   'homepage.slide3' => 'Collect the application of candidates in response to your ads, invite candidates for interviews, select employees.', 
   'polish' => 'Polish',
   'english' => 'English',
+  'ukrainian' => 'Ukrainian',
   'language' => 'Language',
   'language-create-success' => 'Language was created successfully!',
   'language-update-success' => 'Language was updated successfully!',

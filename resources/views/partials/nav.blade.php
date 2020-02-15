@@ -19,11 +19,15 @@
                         @case('en')
                         <img src="{{asset('images/uk.png')}}" width="20px" height="20x"> {{ trans('sentence.english')}}
                         @break
+                        @case('ukr')
+                        <img src="{{asset('images/ukr.png')}}" width="20px" height="20x"> {{ trans('sentence.ukrainian')}}
+                        @break
                         @default
                         <img src="{{asset('images/pl.png')}}" width="20px" height="20x"> {{ trans('sentence.polish')}}
                     @endswitch
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="{{ route('locale', 'en') }}"><img src="{{asset('images/uk.png')}}" width="20px" height="20x"> {{ trans('sentence.english')}}</a>
+                        <a class="dropdown-item" href="{{ route('locale', 'ukr') }}"><img src="{{asset('images/ukr.png')}}" width="20px" height="20x"> {{ trans('sentence.ukrainian')}}</a>
                         <a class="dropdown-item" href="{{ route('locale', 'pl') }}"><img src="{{asset('images/pl.png')}}" width="20px" height="20x"> {{ trans('sentence.polish')}}</a>
                     </div>
                 </li>
