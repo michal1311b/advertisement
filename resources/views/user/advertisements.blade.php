@@ -82,7 +82,11 @@
                             {{ trans('sentence.btn-matching') }}
                         </a>
 
-                        <a href="{{ route('user-advertisement-similar', $advertisement) }}" class="btn btn-success border border-warning ml-2 text-white">Wystaw podobne ogłoszenie</a>
+                        <a href="{{ route('user-advertisement-similar', $advertisement) }}" class="btn btn-success border border-warning ml-2 text-white">{{ trans('sentence.btn-create-similar-ofert') }}</a>
+                        
+                        @if($date->diffInDays($advertisement->expired_at) < 7)
+                            <a href="{{ route('user-extend-offer', $advertisement->id) }}" class="btn btn-warning border border-warning ml-2 text-white">{{ trans('sentence.btn-extend-offer') }}</a>
+                        @endif
                     </div>
                 @endforeach
                 <div class="pt-3">

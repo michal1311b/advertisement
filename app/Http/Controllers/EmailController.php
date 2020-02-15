@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Advertisement;
+use App\Mail\ReminderEmail;
 use App\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use jdavidbakr\MailTracker\Model\SentEmail;
 use jdavidbakr\MailTracker\Model\SentEmailUrlClicked;
@@ -49,5 +52,26 @@ class EmailController extends Controller
         session(['mail-tracker-index-search'=>null]);
 
         return redirect(route('mailTracker_Index'));
+    }
+
+    public function sendReminder()
+    {
+        $now = Carbon::now();
+        $addOneWeek = $now->add(7, 'day')->toDateString();
+        
+        $advertisements = Advertisement::where('reminder_send', 0)
+        ->where('expired_at', '=', $addOneWeek)->get();
+
+        if(count($advertisements) > 0)
+        {
+            foreach($advertisements as $advertisement)
+            {
+                \Mail::to($advertisement->user->email)
+                    ->send(new ReminderEmail());
+
+                $advertisement->reminder_send = 1;
+                $advertisement->save();
+            }
+        }
     }
 }

@@ -21,6 +21,8 @@ Route::get('/sitemap.xml/companies', 'SitemapController@companies');
 Route::get('/get-company-info/{nip}', 'GusController@checkNip')->name('get-company-info');
 Route::get('/update-company-info', 'GusController@getGUSData')->name('update-company-info');
 
+Route::get('/send-reminder', 'EmailController@sendReminder')->name('send-reminder');
+
 Route::get('/preview/{jooble}', 'JoobleController@show')->name('preview-show');
 
 Route::get('/', 'PageController@siteIndex')->name('homepage');
@@ -37,8 +39,6 @@ Route::group(array('prefix' => 'kurs'), function () {
     Route::get('/show/{id}/{slug}', 'CompanyCourseController@show')->name('show-course');
     Route::post('/show/{comapnycourse}', 'ParticipantController@store')->name('store-participant');
 });
-
-
 
 Route::get('lang/{locale}', 'LanguageController@lang')->name('locale');
 
@@ -150,6 +150,8 @@ Route::group(array('prefix' => 'user'), function () {
     Route::post('/message/{room}', 'RoomController@reply')->name('reply-room')->middleware(['auth', 'verified']);
     Route::get('/create-similar-offer/{advertisement}', 'UserController@createSimilarOffer')->name('user-advertisement-similar')->middleware(['auth', 'verified']);
     Route::post('/create-similar-offer/create', 'AdvertisementController@store')->name('store-advertisement');
+    Route::get('/extend-offer/{id}', 'AdvertisementController@extendAdvertisement')->name('user-extend-offer')->middleware(['auth', 'verified']);
+
 
     Route::get('/courses', 'UserController@getUserCourses')->name('user-course-list')->middleware(['auth', 'verified']);
     Route::delete('/courses/{comapnycourse}/delete', 'CompanyCourseController@delete')->name('delete-user-course');

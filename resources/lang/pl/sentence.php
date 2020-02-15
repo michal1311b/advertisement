@@ -317,5 +317,8 @@ return [
   'invoice-data-info' => 'Proszę wypełnić w przypadku chęci otrzymania faktury',
   'user-courses' => 'Twoje kursy',
   'participants' => 'Lista uczestników kursu',
-  'no-participants' => 'Brak uczestników'
+  'no-participants' => 'Brak uczestników',
+  'extend-offer-success' => 'Twoje ogłoszenie zostało przedłużone o 30 dni',
+  'btn-create-similar-ofert' => 'Wystaw podobne ogłoszenie',
+  'btn-extend-offer' => 'Przedłuż ogłoszenie'
 ];

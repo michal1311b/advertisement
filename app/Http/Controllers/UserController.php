@@ -23,6 +23,7 @@ use App\Currency;
 use App\ForeignOffer;
 use App\State;
 use App\UserAdvertisement;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth as FacadesAuth;
 
 class UserController extends Controller
@@ -112,7 +113,12 @@ class UserController extends Controller
         ->where('user_id', '=', $user->id)
         ->paginate(5);
 
-        return view('user.advertisements', compact('advertisements'));
+        $date = Carbon::now();
+        
+        return view('user.advertisements', compact([
+            'advertisements',
+            'date'
+        ]));
     }
 
     public function showUserAdvertisement(Advertisement $advertisement, $slug)

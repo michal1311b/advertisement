@@ -317,5 +317,8 @@ return [
   'invoice-data-info' => 'Please complete if you would like to receive an invoice',
   'user-courses' => 'Your courses',
   'participants' => 'Course participants list',
-  'no-participants' => 'No participants'
+  'no-participants' => 'No participants',
+  'extend-offer-success' => 'Your advertisement has been extended by 30 days',
+  'btn-create-similar-ofert' => 'Post a similar job offer',
+  'btn-extend-offer' => 'Extend the advertisement'
 ];

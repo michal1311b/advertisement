@@ -37,7 +37,8 @@ class Advertisement extends Model
         'slug',
         'expired_at',
         'longitude',
-        'latitude'
+        'latitude',
+        'reminder_send'
     ];
 
     public static function uploadDir()

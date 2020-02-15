@@ -317,5 +317,8 @@ return [
   'invoice-data-info' => 'Будь ласка, заповніть, якщо ви хочете отримати рахунок-фактуру',
   'user-courses' => 'Ваші курси',
   'participants' => 'Список учасників курсу',
-  'no-participants' => 'Учасників немає'
+  'no-participants' => 'Учасників немає',
+  'extend-offer-success' => 'Вашу рекламу продовжено на 30 днів',
+  'btn-create-similar-ofert' => 'Опублікуйте аналогічне оголошення',
+  'btn-extend-offer' => 'Розширити рекламу'
 ];

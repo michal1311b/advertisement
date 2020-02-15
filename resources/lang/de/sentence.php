@@ -317,5 +317,8 @@ return [
   'invoice-data-info' => 'Bitte ausfüllen, wenn Sie eine Rechnung erhalten möchten',
   'user-courses' => 'Ihre Kurse',
   'participants' => 'Liste der Kursteilnehmer',
-  'no-participants' => 'Keine Teilnehmer'
+  'no-participants' => 'Keine Teilnehmer',
+  'extend-offer-success' => 'Ihre Anzeige wurde um 30 Tage verlängert',
+  'btn-create-similar-ofert' => 'Veröffentlichen Sie eine ähnliche Anzeige',
+  'btn-extend-offer' => 'Erweitern Sie die Anzeige'
 ];
