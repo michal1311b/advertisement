@@ -21,6 +21,7 @@ return [
   'polish' => 'Polish',
   'english' => 'English',
   'ukrainian' => 'Ukrainian',
+  'germany' => 'Germany',
   'language' => 'Language',
   'language-create-success' => 'Language was created successfully!',
   'language-update-success' => 'Language was updated successfully!',

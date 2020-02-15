@@ -22,6 +22,9 @@
                         @case('ukr')
                         <img src="{{asset('images/ukr.png')}}" width="20px" height="20x"> {{ trans('sentence.ukrainian')}}
                         @break
+                        @case('de')
+                        <img src="{{asset('images/de.png')}}" width="20px" height="20x"> {{ trans('sentence.germany')}}
+                        @break
                         @default
                         <img src="{{asset('images/pl.png')}}" width="20px" height="20x"> {{ trans('sentence.polish')}}
                     @endswitch
@@ -29,6 +32,7 @@
                         <a class="dropdown-item" href="{{ route('locale', 'en') }}"><img src="{{asset('images/uk.png')}}" width="20px" height="20x"> {{ trans('sentence.english')}}</a>
                         <a class="dropdown-item" href="{{ route('locale', 'ukr') }}"><img src="{{asset('images/ukr.png')}}" width="20px" height="20x"> {{ trans('sentence.ukrainian')}}</a>
                         <a class="dropdown-item" href="{{ route('locale', 'pl') }}"><img src="{{asset('images/pl.png')}}" width="20px" height="20x"> {{ trans('sentence.polish')}}</a>
+                        <a class="dropdown-item" href="{{ route('locale', 'de') }}"><img src="{{asset('images/de.png')}}" width="20px" height="20x"> {{ trans('sentence.germany')}}</a>
                     </div>
                 </li>
             </ul>

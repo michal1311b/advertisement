@@ -21,6 +21,7 @@ return [
   'polish' => 'полірувати',
   'english' => 'англійська',
   'ukrainian' => 'український',
+  'germany' => 'німецький',
   'language' => 'мова',
   'language-create-success' => 'Мова додана успішно!',
   'language-update-success' => 'Мова успішно оновлена!',
