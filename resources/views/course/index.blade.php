@@ -70,6 +70,26 @@
                         </a>
                     </ul>
                     <!-- End -->
+                    @if(Auth::user() && Auth::user()->hasRole('admin'))
+                        <div class="col-md-12">
+                            <div class="btn-group btn-group-toggle py-2">
+                                <a href="{{ route('edit-course', $course->id) }}" class="btn btn-info border border-warning mr-2 text-white">{{ trans('sentence.edit') }}</a>
+                                
+                                <button class="btn btn-danger" data-toggle="modal"
+                                    data-target="#modalremove{{$course->id}}">{{ trans('sentence.btn-delete') }}</i>
+                                </button>
+                                @include('partials.confirmation', [
+                                    'url' => route('delete-course', $course->id),
+                                    'method' => 'DELETE',
+                                    'title' => "Usuń kurs",
+                                    "description" => "Czy na pewno chcesz usunąć kurs?",
+                                    "description_parameters" => [],
+                                    'button' => trans('sentence.btn-delete'),
+                                    'modalKey' => "remove".$course->id
+                                ])
+                            </div>
+                        </div>
+                    @endif
                 @endforeach
                 <div class="pt-3">
                     {{ $courses->links() }}

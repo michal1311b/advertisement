@@ -89,8 +89,10 @@ class CompanyCourseController extends Controller
         ]));
     }
 
-    public function edit($id)
+    public function edit(Request $request, $id)
     {
+        $request->user()->authorizeRoles(['company', 'admin']);
+
         $course = CompanyCourse::with([
             'state' => function($query){
                 $query->select('id', 'name');
@@ -105,6 +107,9 @@ class CompanyCourseController extends Controller
                 $query->select('id', 'name');
             }
         ])->findOrFail($id);
+
+        $userId = $course->user_id;
+        $request->user()->checkAuthorization($request->user()->id, $userId);
 
         $states = State::get(['id', 'name']);
         $locations = Location::get(['id', 'city']);

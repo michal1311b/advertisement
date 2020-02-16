@@ -264,7 +264,7 @@ $(document).ready(function() {
         }
     ];
     var map = L.map( 'map', {
-            center: [{{ $advertisement->location->latitude }}, {{ $advertisement->location->longitude }}],
+            center: [{{ $advertisement->latitude }}, {{ $advertisement->longitude }}],
             minZoom: 2,
             zoom: 12
         });

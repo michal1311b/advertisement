@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Support\Facades\Auth;
 use Lab404\AuthChecker\Models\HasLoginsAndDevices;
 use Lab404\AuthChecker\Interfaces\HasLoginsAndDevicesInterface;
 
@@ -153,7 +154,7 @@ class User extends Authenticatable implements MustVerifyEmail, HasLoginsAndDevic
 
     public function checkAuthorization($user, $advertUser)
     {
-        if($user === $advertUser) {
+        if($user === $advertUser || Auth::user()->authorizeRoles(['admin'])) {
             return true;
         }
         else {
