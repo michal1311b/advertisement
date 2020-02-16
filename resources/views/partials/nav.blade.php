@@ -46,6 +46,9 @@
                 <li class="nav-item">
                     <a href="{{ route('advertisement-list') }}" class="nav-link">{{ trans('sentence.offers') }}</a>
                 </li>
+                <li class="d-block d-md-none nav-item">
+                    <a href="{{ route('foreign-list') }}" class="nav-link">{{ trans('sentence.foreigns-list') }}</a>
+                </li>
                 @guest
                 @else
                     @if(auth()->user()->hasRole('admin') || auth()->user()->hasRole('company'))
