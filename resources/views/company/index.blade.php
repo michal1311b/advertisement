@@ -41,6 +41,7 @@
                                         <h5 class="mt-0 font-weight-bold my-2"><i class="fas fa-building"></i> {{ $company->profile->company_name }}</h5>
                                         <h6 class="mt-0 font-weight-bold mb-2"><i class="fas fa-map-marker-alt"></i> {{ $company->profile->company_city }}, {{ $company->profile->company_street }} {{ $company->profile->post_code }}</h6>
                                         <h3><i class="fas fa-globe-europe"></i> {{ trans('sentence.offers') }}: {{ $company->advertisements_count }}</h3>
+                                        <h3><i class="fas fa-globe-europe"></i> {{ trans('sentence.foreigns-list') }}: {{ $company->foreign_offers_count }}</h3>
                                     </div>
                                     @if($company->avatar)
                                         <img src="{{ $company->avatar }}" width="200" class="ml-lg-5 order-1 order-lg-2" alt="{{ $company->profile->company_name }}">

@@ -17,6 +17,9 @@ class CompanyController extends Controller
         ->withCount(['advertisements' => function($query) {
             $query->where('expired_at', '>', Carbon::now());
         }])
+        ->withCount(['foreignOffers' => function($query) {
+            $query->where('expired_at', '>', Carbon::now());
+        }])
         ->orderBy('advertisements_count', 'desc')
         ->get();
         foreach($users as $user)
@@ -54,8 +57,13 @@ class CompanyController extends Controller
             'profile',
             'advertisements' => function($query) {
                 $query->paginate();
-                $query->where('created_at', '>', Carbon::now()->subDays(30));
+                $query->where('expired_at', '>', Carbon::now());
             },
+            'foreignOffers' => function($query) {
+                $query->paginate();
+                $query->where('expired_at', '>', Carbon::now());
+            },
+            'foreignOffers.specialization',
             'advertisements.specialization',
             'advertisements.location',
             'advertisements.galleries']);

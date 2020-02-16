@@ -54,6 +54,11 @@ class User extends Authenticatable implements MustVerifyEmail, HasLoginsAndDevic
         return $this->hasMany(Advertisement::class);
     }
 
+    public function foreignOffers()
+    {
+        return $this->hasMany(ForeignOffer::class);
+    }
+
     public function contacts()
     {
         return $this->hasMany(Contact::class);
