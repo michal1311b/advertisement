@@ -254,7 +254,7 @@ $(document).ready(function() {
     var map2 = L.map( 'map2', {
             center: [54.547049, 25.197532],
             minZoom: 2,
-            zoom: 4
+            zoom: 3
         });
 
     L.tileLayer( 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
