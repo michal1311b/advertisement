@@ -125,7 +125,7 @@
                     {{ $user->profile->company_street ?? '' }},
                     {{ $user->profile->company_post_code ?? '' }}
                     {{ $user->profile->company_city ?? '' }}
-                    <h3><i class="fas fa-globe-europe"></i> {{ trans('sentence.foreigns-list') }}: {{ count($user->advertisements) }}</h3>
+                    <h3><i class="fas fa-globe-europe"></i> {{ trans('sentence.foreigns-list') }}: {{ count($user->foreignOffers) }}</h3>
                 </div>
                 <div class="card-body">
                     @if(count($user->foreignOffers) > 0)
