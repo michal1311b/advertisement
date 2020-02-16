@@ -51,7 +51,7 @@
                     @if(count($user->advertisements) > 0)
                         <ul>
                             @foreach($user->advertisements as $specialization)
-                                <a href="#{{ $specialization->id }}">
+                                <a href="#p{{ $specialization->id }}">
                                     <li>
                                         {{ $specialization->specialization->name }}, {{ $specialization->location->city }}, {{ $specialization->min_salary }}-{{ $specialization->max_salary }} {{ $specialization->currency->symbol }}
                                     </li>
@@ -69,7 +69,7 @@
                     <ul class="list-group shadow">
                         <a href="{{ route('show-advertisement', ['id' => $advertisement->id, 'slug' => $advertisement->slug]) }}" class="no-decoration"> 
                             <!-- list group item-->
-                            <li class="list-group-item" id="{{ $advertisement->id }}">
+                            <li class="list-group-item" id="p{{ $advertisement->id }}">
                                 <!-- Custom content-->
                                 <div class="media align-items-lg-center flex-column flex-lg-row p-3">
                                 <div class="media-body order-2 order-lg-1">
