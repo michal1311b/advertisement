@@ -35,7 +35,7 @@
                 </li>
             </ul>
         </div>
-        @if($advertisements !== null)
+        @if(count($advertisements) > 0)
             <div class="col-lg-12 mx-auto">
                 @foreach($advertisements as $advertisement)
                     <!-- List group-->
