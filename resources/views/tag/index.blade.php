@@ -38,7 +38,7 @@
         @if(count($advertisements) > 0)
             <div class="col-lg-12 mx-auto">
                 @foreach($advertisements as $advertisement)
-                    @if($advertisement !== null)
+                    @if($advertisement->advertisement !== null)
                         <!-- List group-->
                         <ul class="list-group shadow">
                             <a href="{{ route('show-advertisement', ['id' => $advertisement->advertisement->id, 'slug' => $advertisement->advertisement->slug]) }}" class="no-decoration" title="{{ $advertisement->advertisement->title }}"> 
