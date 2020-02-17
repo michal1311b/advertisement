@@ -20,6 +20,8 @@ class TagController extends Controller
         $locations = Location::all();
         $specializations = Specialization::all();
 
+        dd($advertisements);
+
         if ($advertisements) {
             return view('tag.index', compact('advertisements', 'locations', 'specializations'));
         } else {
