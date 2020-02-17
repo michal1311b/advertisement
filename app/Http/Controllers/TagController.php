@@ -22,6 +22,8 @@ class TagController extends Controller
 
         if ($advertisements) {
             return view('tag.index', compact('advertisements', 'locations', 'specializations'));
+        } else {
+            return back();
         }
     }
 
