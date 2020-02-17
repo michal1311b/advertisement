@@ -35,7 +35,7 @@
                 </li>
             </ul>
         </div>
-        @if(count($advertisements) > 0)
+        {{-- @if(count($advertisements) > 0)
             <div class="col-lg-12 mx-auto">
                 @foreach($advertisements as $advertisement)
                     <!-- List group-->
@@ -57,11 +57,11 @@
                                             <i class="fas fa-calendar-day"></i> {{ trans('sentence.expired_at') }} <div class="badge badge-primary">{{ $advertisement->advertisement->expired_at ?? '' }}</div>
                                         </div>
                                     </div>
-                                    {{-- @if($advertisement->advertisement->galleries()->count())
+                                    @if($advertisement->advertisement->galleries()->count())
                                         <img src="{{ $advertisement->advertisement->galleries[0]->path }}" width="200" class="ml-lg-5 order-1 order-lg-2" alt="{{$advertisement->advertisement->galleries[0]->oldName}}">
-                                    @else --}}
+                                    @else
                                         <img src="{{ asset('images/logo.png') }}" width="200" class="ml-lg-5 order-1 order-lg-2" alt="No image">
-                                    {{-- @endif --}}
+                                    @endif
                                 </div>
                                 <!-- End -->
                             </li>
@@ -74,7 +74,7 @@
             <div class="col-12">
                 {{ $advertisements->links() }}
             </div>
-        @endif
+        @endif --}}
     </div>
 </div>
 @endsection
