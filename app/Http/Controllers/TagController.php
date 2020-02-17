@@ -14,6 +14,7 @@ class TagController extends Controller
     {
         $advertisements = Tag::with(['advertisement' => function($query) {
             $query->where('expired_at', '>', Carbon::now());
+            $query->whereNotNull('deleted_at');
         }])->where('slug', $slug)->paginate(5);
 
         $locations = Location::all();

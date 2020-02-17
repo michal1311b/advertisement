@@ -35,7 +35,7 @@
                 </li>
             </ul>
         </div>
-        {{-- @if(count($advertisements) > 0)
+        @if(count($advertisements) > 0)
             <div class="col-lg-12 mx-auto">
                 @foreach($advertisements as $advertisement)
                     <!-- List group-->
@@ -74,7 +74,7 @@
             <div class="col-12">
                 {{ $advertisements->links() }}
             </div>
-        @endif --}}
+        @endif
     </div>
 </div>
 @endsection
