@@ -135,7 +135,12 @@ class PreferenceController extends Controller
             $dataForRadius = LocationUser::where('user_id', $user->id)
             ->get();
 
-            if($userLocalizations->count() > 0)
+            if(
+                $userLocalizations->count() > 0
+                && $user->preference->work_id !== null
+                && $user->preference->settlement_id !== null
+                && $user->preference->currency_id !== null
+                && $user->preference->min_salary !== null)
             {
                 $locationData = [];
                 foreach($dataForRadius as $loc)
