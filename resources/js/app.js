@@ -41,6 +41,8 @@ import { VueTagsInput } from '@johmun/vue-tags-input';
 import tinymce from 'vue-tinymce-editor';
 import * as rules from 'vee-validate/dist/rules';
 import en from 'vee-validate/dist/locale/en.json';
+import de from 'vee-validate/dist/locale/de.json';
+import uk from 'vee-validate/dist/locale/uk.json';
 import pl from 'vee-validate/dist/locale/pl.json';
 import Datepicker from 'vuejs-datepicker';
 
@@ -53,10 +55,24 @@ Vue.component('VueTagsInput', VueTagsInput);
 Vue.component('tinymce', tinymce);
 Vue.component('Datepicker', Datepicker);
 
-i18n.locale = 'en';
-localize(
-    'pl', pl
-);
+if(String(Laravel.Locale) === 'ukr')
+{
+    localize(
+        'uk', uk
+    );
+} else if(String(Laravel.Locale) === 'pl') {
+    localize(
+        'pl', pl
+    );
+} else if(String(Laravel.Locale) === 'en') {
+    localize(
+        'en', en
+    );
+} else if(String(Laravel.Locale) === 'de') {
+    localize(
+        'de', de
+    );
+}
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
