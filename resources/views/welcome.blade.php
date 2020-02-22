@@ -229,7 +229,7 @@
                                             </div>
                                         </div>
                                         @if($advertisement->galleries()->count())
-                                            <img src="{{ $advertisement->galleries[0]->path }}" width="200" class="ml-lg-5 order-1 order-lg-2" alt="{{$advertisement->galleries[0]->oldName}}">
+                                            <img src="{{ $advertisement->galleries[0]->path }}" width="200" class="ml-lg-5 order-1 order-lg-2" alt="{{ $advertisement->user->profile->company_name }}">
                                         @else
                                             <img src="{{ $advertisement->user->avatar }}" width="200" class="ml-lg-5 order-1 order-lg-2" alt="EmployMed">
                                         @endif

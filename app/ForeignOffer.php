@@ -105,8 +105,10 @@ class ForeignOffer extends Model
         $now = Carbon::now();
         $newName = $now->getTimestamp() . $entry->generateRandomString();
 
-        Storage::disk('public')->put(self::uploadDir() . '/' . $newName. '.png', base64_decode($attributes['image_profile'][0]));
-        $entry->image_profile = "https://{$_SERVER['HTTP_HOST']}" . self::uploadDir() . '/' . $newName. '.png';
+        $mimeType = substr($attributes['image_profile'][0], 11, strpos($attributes['image_profile'][0], ';')-11);
+
+        Storage::disk('public')->put(self::uploadDir() . '/' . $newName. '.' . $mimeType, base64_decode($attributes['image_profile'][0]));
+        $entry->image_profile = "https://{$_SERVER['HTTP_HOST']}" . self::uploadDir() . '/' . $newName. '.' . $mimeType;
         $entry->save();
     }
 
