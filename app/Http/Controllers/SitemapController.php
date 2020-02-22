@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Advertisement;
 use App\Category;
+use App\ForeignOffer;
 use App\Pin;
 use App\Post;
 use App\Tag;
@@ -73,6 +74,15 @@ class SitemapController extends Controller
 
         return response()->view('sitemap.pins', [
             'pins' => $pins,
+        ])->header('Content-Type', 'text/xml');
+    }
+
+    public function foreigns()
+    {
+        $foreigns = ForeignOffer::all();
+
+        return response()->view('sitemap.foreigns', [
+            'foreigns' => $foreigns,
         ])->header('Content-Type', 'text/xml');
     }
 }
