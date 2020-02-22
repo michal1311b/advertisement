@@ -323,5 +323,6 @@ return [
   'btn-extend-offer' => 'Extend the advertisement',
   'average-salary' => 'average salary',
   'average-rate-in-employmed' => 'Average rates from Poland in accordance with the offers posted in EmployMed.eu',
-  'logged_in_greeting' => 'Hi can i help you?'
+  'logged-in-greeting' => 'Hi can i help you?',
+  'logged-out-greeting' => 'Thank you for visiting. See you soon.'
 ];

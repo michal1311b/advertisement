@@ -323,5 +323,6 @@ return [
   'btn-extend-offer' => 'Erweitern Sie die Anzeige',
   'average-salary' => 'Durchschnittsrate',
   'average-rate-in-employmed' => 'Durchschnittspreise aus Polen gemäß den in EmployMed.eu veröffentlichten Angeboten',
-  'logged_in_greeting' => 'Hallo kann ich dir helfen?'
+  'logged-in-greeting' => 'Hallo kann ich dir helfen?',
+  'logged-out-greeting' => 'Vielen Dank für Ihren Besuch. Wir sehen uns'
 ];

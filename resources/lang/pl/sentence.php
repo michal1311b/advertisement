@@ -323,5 +323,6 @@ return [
   'btn-extend-offer' => 'Przedłuż ogłoszenie',
   'average-salary' => 'Średnie stawki',
   'average-rate-in-employmed' => 'Średnie stawki z Polski zgodnie z wystawionymi ogłoszeniami w EmployMed.eu',
-  'logged_in_greeting' => 'Cześć w czym mogę pomóc?'
+  'logged-in-greeting' => 'Cześć w czym mogę pomóc?',
+  'logged-out-greeting' => 'Dziękujemy za odwiedziny. Do zobaczenia.'
 ];

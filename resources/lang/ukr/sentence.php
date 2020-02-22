@@ -323,5 +323,6 @@ return [
   'btn-extend-offer' => 'Розширити рекламу',
   'average-salary' => 'середня ставка',
   'average-rate-in-employmed' => 'Середні ціни від Польщі відповідно до пропозицій, розміщених в EmployMed.eu',
-  'logged_in_greeting' => 'Привіт, я можу вам допомогти?'
+  'logged-in-greeting' => 'Привіт, я можу вам допомогти?',
+  'logged-out-greeting' => 'Дякую за відвідування Побачимося'
 ];
