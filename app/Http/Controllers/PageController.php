@@ -197,4 +197,26 @@ class PageController extends Controller
     {
         return view('regulation');
     }
+
+    public function showAverageSalary()
+    {
+        $avgs = Advertisement::select(
+            DB::raw('avg(max_salary) as avg_max'),
+            DB::raw('avg(min_salary) as avg_min'), 
+            'currency_id', 
+            'specialization_id',
+            'work_id',
+            'state_id')
+            ->with(['currency', 'specialization', 'state'])
+            ->groupBy('currency_id')
+            ->groupBy('specialization_id')
+            ->groupBy('state_id')
+            ->groupBy('work_id')
+            ->orderBy('specialization_id')
+            ->orderBy('state_id')
+            ->orderBy('work_id')
+            ->get();
+        
+        return view('page.stats', compact('avgs'));
+    }
 }

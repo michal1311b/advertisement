@@ -320,5 +320,7 @@ return [
   'no-participants' => 'No participants',
   'extend-offer-success' => 'Your advertisement has been extended by 30 days',
   'btn-create-similar-ofert' => 'Post a similar job offer',
-  'btn-extend-offer' => 'Extend the advertisement'
+  'btn-extend-offer' => 'Extend the advertisement',
+  'average-salary' => 'average salary',
+  'average-rate-in-employmed' => 'Average rates from Poland in accordance with the offers posted in EmployMed.eu'
 ];

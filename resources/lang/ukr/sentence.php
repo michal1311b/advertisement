@@ -320,5 +320,7 @@ return [
   'no-participants' => 'Учасників немає',
   'extend-offer-success' => 'Вашу рекламу продовжено на 30 днів',
   'btn-create-similar-ofert' => 'Опублікуйте аналогічне оголошення',
-  'btn-extend-offer' => 'Розширити рекламу'
+  'btn-extend-offer' => 'Розширити рекламу',
+  'average-salary' => 'середня ставка',
+  'average-rate-in-employmed' => 'Середні ціни від Польщі відповідно до пропозицій, розміщених в EmployMed.eu'
 ];

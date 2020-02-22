@@ -22,6 +22,7 @@ Route::get('/get-company-info/{nip}', 'GusController@checkNip')->name('get-compa
 Route::get('/update-company-info', 'GusController@getGUSData')->name('update-company-info');
 
 Route::get('/send-reminder', 'EmailController@sendReminder')->name('send-reminder');
+Route::get('/srednie-stawki', 'PageController@showAverageSalary')->name('average-salary');
 
 Route::get('/preview/{jooble}', 'JoobleController@show')->name('preview-show');
 

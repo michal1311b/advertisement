@@ -320,5 +320,7 @@ return [
   'no-participants' => 'Keine Teilnehmer',
   'extend-offer-success' => 'Ihre Anzeige wurde um 30 Tage verlängert',
   'btn-create-similar-ofert' => 'Veröffentlichen Sie eine ähnliche Anzeige',
-  'btn-extend-offer' => 'Erweitern Sie die Anzeige'
+  'btn-extend-offer' => 'Erweitern Sie die Anzeige',
+  'average-salary' => 'Durchschnittsrate',
+  'average-rate-in-employmed' => 'Durchschnittspreise aus Polen gemäß den in EmployMed.eu veröffentlichten Angeboten'
 ];

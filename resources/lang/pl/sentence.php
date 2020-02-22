@@ -320,5 +320,7 @@ return [
   'no-participants' => 'Brak uczestników',
   'extend-offer-success' => 'Twoje ogłoszenie zostało przedłużone o 30 dni',
   'btn-create-similar-ofert' => 'Wystaw podobne ogłoszenie',
-  'btn-extend-offer' => 'Przedłuż ogłoszenie'
+  'btn-extend-offer' => 'Przedłuż ogłoszenie',
+  'average-salary' => 'Średnie stawki',
+  'average-rate-in-employmed' => 'Średnie stawki z Polski zgodnie z wystawionymi ogłoszeniami w EmployMed.eu'
 ];
