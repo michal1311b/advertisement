@@ -322,5 +322,6 @@ return [
   'btn-create-similar-ofert' => 'Опублікуйте аналогічне оголошення',
   'btn-extend-offer' => 'Розширити рекламу',
   'average-salary' => 'середня ставка',
-  'average-rate-in-employmed' => 'Середні ціни від Польщі відповідно до пропозицій, розміщених в EmployMed.eu'
+  'average-rate-in-employmed' => 'Середні ціни від Польщі відповідно до пропозицій, розміщених в EmployMed.eu',
+  'logged_in_greeting' => 'Привіт, я можу вам допомогти?'
 ];

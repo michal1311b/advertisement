@@ -148,8 +148,8 @@
             <div class="fb-customerchat"
                 attribution=setup_tool
                 page_id="112311090238540"
-                logged_in_greeting="Cześć w czym mogę pomóc?"
-                logged_out_greeting="Cześć w czym mogę pomóc?">
+                logged_in_greeting="{{ trans('sentence.logged_in_greeting') }}"
+                logged_out_greeting="Dziękujemy za odwiedziny. Do zobaczenia.">
         </div>
     @endif
     <!-- Go to www.addthis.com/dashboard to customize your tools -->

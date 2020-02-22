@@ -322,5 +322,6 @@ return [
   'btn-create-similar-ofert' => 'Wystaw podobne ogłoszenie',
   'btn-extend-offer' => 'Przedłuż ogłoszenie',
   'average-salary' => 'Średnie stawki',
-  'average-rate-in-employmed' => 'Średnie stawki z Polski zgodnie z wystawionymi ogłoszeniami w EmployMed.eu'
+  'average-rate-in-employmed' => 'Średnie stawki z Polski zgodnie z wystawionymi ogłoszeniami w EmployMed.eu',
+  'logged_in_greeting' => 'Cześć w czym mogę pomóc?'
 ];

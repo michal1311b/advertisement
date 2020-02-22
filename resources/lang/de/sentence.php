@@ -322,5 +322,6 @@ return [
   'btn-create-similar-ofert' => 'Veröffentlichen Sie eine ähnliche Anzeige',
   'btn-extend-offer' => 'Erweitern Sie die Anzeige',
   'average-salary' => 'Durchschnittsrate',
-  'average-rate-in-employmed' => 'Durchschnittspreise aus Polen gemäß den in EmployMed.eu veröffentlichten Angeboten'
+  'average-rate-in-employmed' => 'Durchschnittspreise aus Polen gemäß den in EmployMed.eu veröffentlichten Angeboten',
+  'logged_in_greeting' => 'Hallo kann ich dir helfen?'
 ];
