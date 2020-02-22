@@ -220,6 +220,12 @@ $(document).ready(function() {
         width: 'fit'
     });
 
+    $(function () {
+        $('#selectBox').change(function () {
+            window.location.hash = '#' + $(this).val();
+        });
+    });
+
     (function () {
         var session_key = window.localStorage.getItem('session_key')
         if (!session_key) {

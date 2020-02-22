@@ -11,6 +11,7 @@ use Carbon\Carbon;
 use App\Http\Requests\Admin\Page\StoreRequest;
 use App\Http\Requests\Admin\Page\UploadRequest;
 use App\Role;
+use App\Specialization;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\DB;
@@ -216,7 +217,9 @@ class PageController extends Controller
             ->orderBy('state_id')
             ->orderBy('work_id')
             ->get();
+
+        $specializations = Specialization::get(['id', 'name']);
         
-        return view('page.stats', compact('avgs'));
+        return view('page.stats', compact(['avgs', 'specializations']));
     }
 }
