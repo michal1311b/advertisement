@@ -186,6 +186,7 @@
                 </label>
                 <div class="col-12 col-md-9">
                     <vue-tags-input
+                        @before-adding-tag="handler => addingTag(handler, index)"
                         v-model="tag"
                         :tags="formInputs.tags"
                         @tags-changed="newTags => formInputs.tags = newTags"
@@ -351,13 +352,11 @@
                 tinymce.editors[1].setContent(this.formInputs.profits, { format: 'raw' });
                 tinymce.editors[2].setContent(this.formInputs.requirements, { format: 'raw' });
                 
-                var tags = [];
+                let tags = [];
                 this.advertisement.tags.forEach(function(item, index) {
                     tags[index] = item.name;
                 });
-                createTags(tags, [{ type: 'length', rule: /[0-9]/ }])
-
-                this.formInputs.tags = tags;
+                this.formInputs.tags = createTags(tags, [{ classes: 'no-number', type: 'length', rule: /[0-9]/ }]);
             },
             getWorkIds() {
                 for(var i=1; i <= this.works.length; i++) {
@@ -408,6 +407,9 @@
                     vm.formInputs.galleries[0] = e.target.result;
                 };
                 reader.readAsDataURL(this.$refs.file.files[0]);
+            },
+            addingTag(handler, myIndex) {
+                handler.addTag(); // tag is only added if the function 'addTag' is invoked
             },
             clearForm() {
                 this.formInputs.title= '';
