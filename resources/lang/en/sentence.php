@@ -326,5 +326,5 @@ return [
   'logged-in-greeting' => 'Hi can i help you?',
   'logged-out-greeting' => 'Thank you for visiting. See you soon.',
   'like' => 'You like this offer!',
-  'dislike' => 'You dislike this offer!'
+  'dislike' => 'Like this offer!'
 ];

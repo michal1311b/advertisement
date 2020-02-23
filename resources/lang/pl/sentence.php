@@ -326,5 +326,5 @@ return [
   'logged-in-greeting' => 'Cześć w czym mogę pomóc?',
   'logged-out-greeting' => 'Dziękujemy za odwiedziny. Do zobaczenia.',
   'like' => 'Lubisz to ogłoszenie!',
-  'dislike' => 'Nie lubisz tego ogłoszenia!'
+  'dislike' => 'Polub to ogłoszenie!'
 ];
