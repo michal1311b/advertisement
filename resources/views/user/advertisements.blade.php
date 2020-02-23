@@ -45,7 +45,10 @@
                                             <h6 class="font-weight-bold my-2"><i class="fas fa-coins"></i> {{ $advertisement->settlement->name }}: {{ $advertisement->min_salary }} - {{ $advertisement->max_salary }} {{ $advertisement->currency->symbol }}</h6>
                                             <h6 class="font-weight-bold ml-3 my-2"><i class="fas fa-eye"></i> {{ trans('sentence.visits') }} {{ count($advertisement->visits) }}</h6>
                                         </div>
-                                        <div class="badge badge-secondary">{{ $advertisement->specialization->name }}</div>
+                                        <div class="d-flex align-items-center justify-content-between mt-1">
+                                            <div class="badge badge-secondary">{{ $advertisement->specialization->name }}</div>
+                                            <h6 class="font-weight-bold ml-3 my-2"><img src="{{ asset('images/like.png') }}" width="30" height="30" alt="Like"> {{ $advertisement->likes_count }}</h6>
+                                        </div>
                                         <div>
                                             <i class="fas fa-calendar-day"></i> {{ trans('sentence.expired_at') }} <div class="badge badge-primary">{{ $advertisement->expired_at }}</div>
                                         </div>

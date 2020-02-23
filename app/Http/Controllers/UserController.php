@@ -110,6 +110,7 @@ class UserController extends Controller
     {
         $user = Auth::user();
         $advertisements = Advertisement::with(['state', 'galleries', 'visits'])
+        ->withCount('likes')
         ->where('user_id', '=', $user->id)
         ->paginate(5);
 
@@ -249,6 +250,7 @@ class UserController extends Controller
     {
         $user = Auth::user();
         $foreigns = ForeignOffer::where('user_id', '=', $user->id)
+        ->withCount('likes')
         ->paginate(5);
 
         return view('user.foreigns', compact('foreigns'));

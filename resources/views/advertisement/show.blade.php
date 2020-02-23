@@ -83,7 +83,7 @@
                                             </a>
                                         @else
                                             <a href="{{ route('offer.like', $advertisement->id) }}" class="no-decoration text-white font-weight-bold">
-                                                <span class="mx-2">Polub to ogłoszenie!</span>
+                                                <span class="mx-2">{{ trans('sentence.dislike') }}</span>
                                                 <img src="{{ asset('images/like.png') }}" width="30" height="30" alt="Dislike">
                                             </a>
                                         @endif
