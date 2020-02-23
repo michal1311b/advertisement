@@ -150,8 +150,8 @@
             <div class="fb-customerchat"
                 attribution=setup_tool
                 page_id="112311090238540"
-                logged_in_greeting="{{ trans('sentence.logged-in-greeting') }}"
-                logged_out_greeting="{{ trans('sentence.logged-out-greeting') }}">
+                logged_in_greeting="{{ trans('sentence.logged-out-greeting') }}"
+                logged_out_greeting="{{ trans('sentence.logged-in-greeting') }}">
         </div>
     @endif
     <!-- Go to www.addthis.com/dashboard to customize your tools -->
