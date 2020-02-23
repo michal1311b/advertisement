@@ -102,9 +102,10 @@ class CompanyCourse extends Model
         $now = Carbon::now();
 
         if(isset($attributes['galleries'])) {
+            $mimeType = substr($attributes['galleries'][0], 11, strpos($attributes['galleries'][0], ';')-11);
             $newName = $now->getTimestamp() . $entry->generateRandomString();
-            Storage::disk('public')->put(self::uploadDir() . '/' . $newName. '.png', base64_decode($attributes['galleries'][0]));
-            $entry->avatar = "https://{$_SERVER['HTTP_HOST']}" . self::uploadDir() . '/' . $newName. '.png';
+            Storage::disk('public')->put(self::uploadDir() . '/' . $newName. '.' . $mimeType, base64_decode($attributes['galleries'][0]));
+            $entry->avatar = "https://{$_SERVER['HTTP_HOST']}" . self::uploadDir() . '/' . $newName. '.' . $mimeType;
         }
         $entry->save();
     }
@@ -123,9 +124,10 @@ class CompanyCourse extends Model
         $now = Carbon::now();
 
         if(isset($attributes['galleries'])) {
+            $mimeType = substr($attributes['galleries'][0], 11, strpos($attributes['galleries'][0], ';')-11);
             $newName = $now->getTimestamp() . $this->generateRandomString();
-            Storage::disk('public')->put(self::uploadDir() . '/' . $newName. '.png', base64_decode($attributes['galleries'][0]));
-            $this->avatar = "https://{$_SERVER['HTTP_HOST']}" . self::uploadDir() . '/' . $newName. '.png';
+            Storage::disk('public')->put(self::uploadDir() . '/' . $newName. '.' . $mimeType, base64_decode($attributes['galleries'][0]));
+            $this->avatar = "https://{$_SERVER['HTTP_HOST']}" . self::uploadDir() . '/' . $newName. '.' . $mimeType;
         }
 
         parent::update($attributes, $options);
