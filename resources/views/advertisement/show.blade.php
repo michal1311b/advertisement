@@ -210,7 +210,7 @@
         </div>
         <div class="col-md-12">
             @if(Auth::user())
-                @include('partials.contact')
+                @include('partials.contact', ['offerType' => 'offer'])
             @else
                 <div class="alert alert-danger">
                     <a href="{{ route('login')}}" class="text-white font-weight-bold">{{ trans('sentence.signin-to-apply') }}</a>

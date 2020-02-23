@@ -9,7 +9,11 @@
         <div class="card-body">
             <form method="POST" action="{{ route('send-message', $advertisement->id) }}" enctype="multipart/form-data">
                 @csrf
-                <input type="hidden" name="emailType" value="QuestionMail">
+                @if($offerType === 'offer')
+                    <input type="hidden" name="emailType" value="offer">
+                @elseif($offerType === 'foreign')
+                    <input type="hidden" name="emailType" value="foreign">
+                @endif
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="email">{{ __('Email') }}</label>

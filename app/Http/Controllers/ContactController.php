@@ -6,6 +6,7 @@ use App\Advertisement;
 use App\Application;
 use Illuminate\Http\Request;
 use App\Contact;
+use App\ForeignApplication;
 use App\User;
 use App\Http\Service\Mailer;
 use App\Notifications\NewMessage;
@@ -28,70 +29,125 @@ class ContactController extends Controller
     {
         $user = auth()->user();
 
-        if($this->checkApplication($user, $advertisement))
+        if($this->checkApplication($user, $advertisement, $request['emailType']))
         {
             session()->flash('error', trans('sentence.applied-again'));
 
             return back();
-        }
-
+        } 
         DB::beginTransaction();
 
         try {
-            Application::create([
-                'user_id' => $user->id,
-                'advertisement_id' => $advertisement->id
-            ]);
-
-            $now = Carbon::now();
-            $data = [];
-            $data = array_merge($data, $request->all());
-
-            if($user->doctor && $user->doctor->cv)
+            if($request['emailType'] === 'offer')
             {
-                $data['cv'] = $user->doctor->cv;
+                Application::create([
+                    'user_id' => $user->id,
+                    'advertisement_id' => $advertisement->id
+                ]);
+    
+                $now = Carbon::now();
+                $data = [];
+                $data = array_merge($data, $request->all());
+    
+                if($user->doctor && $user->doctor->cv)
+                {
+                    $data['cv'] = $user->doctor->cv;
+                } else {
+                    $fileData = $request->file('cv');
+                    $cv = "http://{$_SERVER['HTTP_HOST']}/" . $fileData->store('/cv' . '/' . Str::random(6) . $now->format('Y-m-d-hh-mm-ss') . Str::random(6), 'public');
+                    $user->doctor->cv = $cv;
+                    $user->doctor->save();
+                    $data['cv'] = $cv;
+                }
+    
+                $data['user_id'] = $user->id;
+                $data['advertisement_id'] = $advertisement->id;
+    
+                $contact = Contact::create($data);
+    
+                $room = Room::create([
+                    'name' => 'Chat room ' . $advertisement->title,
+                    'user_id' => $user->id
+                ]);
+    
+                $message = Message::create([
+                    'user_id' => $user->id,
+                    'message' => $contact->message,
+                    'room_id' => $room->id
+                ]);
+    
+                RoomUser::create([
+                    'user_id' => $user->id,
+                    'room_id' => $room->id
+                ]);
+    
+                RoomUser::create([
+                    'user_id' => $advertisement->user_id,
+                    'room_id' => $room->id
+                ]);
+                
+                // $this->sendEmail($contact, $advertisement->user_id);
+    
+                $user_owner = User::find($advertisement->user_id);
+    
+                \Mail::to($user_owner->email)
+                ->send(new ApplicationEmail($user->doctor, $room));
+    
+                $user_owner->notify(new ConversationNotification($message, $user));
             } else {
-                $fileData = $request->file('cv');
-                $cv = "http://{$_SERVER['HTTP_HOST']}/" . $fileData->store('/cv' . '/' . Str::random(6) . $now->format('Y-m-d-hh-mm-ss') . Str::random(6), 'public');
-                $user->doctor->cv = $cv;
-                $user->doctor->save();
-                $data['cv'] = $cv;
+                ForeignApplication::create([
+                    'user_id' => $user->id,
+                    'foreign_offer_id' => $advertisement->id
+                ]);
+    
+                $now = Carbon::now();
+                $data = [];
+                $data = array_merge($data, $request->all());
+    
+                if($user->doctor && $user->doctor->cv)
+                {
+                    $data['cv'] = $user->doctor->cv;
+                } else {
+                    $fileData = $request->file('cv');
+                    $cv = "http://{$_SERVER['HTTP_HOST']}/" . $fileData->store('/cv' . '/' . Str::random(6) . $now->format('Y-m-d-hh-mm-ss') . Str::random(6), 'public');
+                    $user->doctor->cv = $cv;
+                    $user->doctor->save();
+                    $data['cv'] = $cv;
+                }
+    
+                $data['user_id'] = $user->id;
+                $data['foreign_offer_id'] = $advertisement->id;
+    
+                $room = Room::create([
+                    'name' => 'Chat room ' . $advertisement->title,
+                    'user_id' => $user->id
+                ]);
+    
+                $message = Message::create([
+                    'user_id' => $user->id,
+                    'message' => $request['message'],
+                    'room_id' => $room->id
+                ]);
+    
+                RoomUser::create([
+                    'user_id' => $user->id,
+                    'room_id' => $room->id
+                ]);
+    
+                RoomUser::create([
+                    'user_id' => $advertisement->user_id,
+                    'room_id' => $room->id
+                ]);
+                
+                // $this->sendEmail($contact, $advertisement->user_id);
+    
+                $user_owner = User::find($advertisement->user_id);
+    
+                \Mail::to($user_owner->email)
+                ->send(new ApplicationEmail($user->doctor, $room));
+    
+                $user_owner->notify(new ConversationNotification($message, $user));
             }
-
-            $data['user_id'] = $user->id;
-            $data['advertisement_id'] = $advertisement->id;
-
-            $contact = Contact::create($data);
-
-            $room = Room::create([
-                'name' => 'Chat room ' . $advertisement->title,
-                'user_id' => $user->id
-            ]);
-
-            $message = Message::create([
-                'user_id' => $user->id,
-                'message' => $contact->message,
-                'room_id' => $room->id
-            ]);
-
-            RoomUser::create([
-                'user_id' => $user->id,
-                'room_id' => $room->id
-            ]);
-
-            RoomUser::create([
-                'user_id' => $advertisement->user_id,
-                'room_id' => $room->id
-            ]);
-            
-            // $this->sendEmail($contact, $advertisement->user_id);
-
-            $user_owner = User::find($advertisement->user_id);
-
-            \Mail::to($user_owner->email)
-            ->send(new ApplicationEmail($user->doctor, $room));
-
-            $user_owner->notify(new ConversationNotification($message, $user));
 
             DB::commit();
 
@@ -108,10 +164,16 @@ class ContactController extends Controller
         }
     }
 
-    private function checkApplication($user, $advertisement)
+    private function checkApplication($user, $advertisement, $type)
     {
-        $application = Application::where('user_id', $user->id)
-        ->where('advertisement_id', $advertisement->id)->get();
+        if($type === 'offfer')
+        {
+            $application = Application::where('user_id', $user->id)
+            ->where('advertisement_id', $advertisement->id)->get();
+        } else {
+            $application = ForeignApplication::where('user_id', $user->id)
+            ->where('foreign_offer_id', $advertisement->id)->get();
+        }
 
         if(count($application))
         {
