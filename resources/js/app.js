@@ -119,6 +119,7 @@ const NOTIFICATION_TYPES = {
     follow: 'App\\Notifications\\UserFollowed',
     newPost: 'App\\Notifications\\NewPost',
     newMessage: 'App\\Notifications\\NewMessage',
+    newForeignMessage: 'App\\Notifications\\NewForeignMessage',
     chatMessage: 'App\\Notifications\\ConversationNotification',
 };
 
@@ -440,6 +441,7 @@ function makeNotification(notification) {
 
 // get the notification route based on it's type
 function routeNotification(notification) {
+    let to;
     var read = `?read=${notification.id}`;
     if(notification.type === NOTIFICATION_TYPES.follow) {
         to = 'offer/users' + read;
