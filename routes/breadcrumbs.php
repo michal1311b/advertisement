@@ -30,12 +30,12 @@ Breadcrumbs::for('contact-form', function ($trail) {
 });
 
 Breadcrumbs::for('advertisement', function ($trail) {
-    $trail->parent('home');
+    $trail->parent('site.homepage');
     $trail->push(trans('sentence.offers-list'), route('advertisement-list'));
 });
 
 Breadcrumbs::for('courses', function ($trail) {
-    $trail->parent('home');
+    $trail->parent('site.homepage');
     $trail->push(trans('sentence.courses'), route('course.index'));
 });
 
@@ -60,7 +60,7 @@ Breadcrumbs::for('advertisement-article', function ($trail, $advertisment) {
 });
 
 Breadcrumbs::for('foreign', function ($trail) {
-    $trail->parent('home');
+    $trail->parent('site.homepage');
     $trail->push(trans('sentence.offers-list'), route('foreign-list'));
 });
 
