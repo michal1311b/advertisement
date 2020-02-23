@@ -65,7 +65,7 @@
                         </a>
                     </ul>
                     <!-- End -->
-                    <div class="btn-group btn-group-toggle py-2">
+                    <div class="btn-group btn-group-toggle py-2 flex-wrap">
                         <a href="{{ route('edit-advertisement', $advertisement->id) }}" class="btn btn-info border border-warning mr-2 text-white">{{ trans('sentence.edit') }}</a>
 
                         <button class="btn btn-danger" data-toggle="modal"
@@ -81,14 +81,14 @@
                             'modalKey' => "remove".$advertisement->id
                         ])
 
-                        <a href="{{ route('user-advertisement-show', ['advertisement' => $advertisement, 'slug' => $advertisement->slug]) }}" class="btn btn-info border border-warning ml-2 text-white">
+                        <a href="{{ route('user-advertisement-show', ['advertisement' => $advertisement, 'slug' => $advertisement->slug]) }}" class="btn btn-info border border-warning ml-md-2 text-white">
                             {{ trans('sentence.btn-matching') }}
                         </a>
 
-                        <a href="{{ route('user-advertisement-similar', $advertisement) }}" class="btn btn-success border border-warning ml-2 text-white">{{ trans('sentence.btn-create-similar-ofert') }}</a>
+                        <a href="{{ route('user-advertisement-similar', $advertisement) }}" class="btn btn-success border border-warning ml-md-2 text-white">{{ trans('sentence.btn-create-similar-ofert') }}</a>
                         
                         @if($date->diffInDays($advertisement->expired_at) < 7)
-                            <a href="{{ route('user-extend-offer', $advertisement->id) }}" class="btn btn-warning border border-warning ml-2 text-white">{{ trans('sentence.btn-extend-offer') }}</a>
+                            <a href="{{ route('user-extend-offer', $advertisement->id) }}" class="btn btn-warning border border-warning ml-md-2 text-white">{{ trans('sentence.btn-extend-offer') }}</a>
                         @endif
                     </div>
                 @endforeach

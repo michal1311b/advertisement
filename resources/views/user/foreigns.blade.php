@@ -62,7 +62,7 @@
                         </a>
                     </ul>
                     <!-- End -->
-                    <div class="btn-group btn-group-toggle py-2">
+                    <div class="btn-group btn-group-toggle py-2 flex-wrap">
                         <a href="{{ route('edit-foreign', $foreign->id) }}" class="btn btn-info border border-warning mr-2 text-white">{{ trans('sentence.edit') }}</a>
 
                         <button class="btn btn-danger" data-toggle="modal"
