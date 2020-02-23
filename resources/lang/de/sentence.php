@@ -324,5 +324,7 @@ return [
   'average-salary' => 'Durchschnittsrate',
   'average-rate-in-employmed' => 'Durchschnittspreise aus Polen gemäß den in EmployMed.eu veröffentlichten Angeboten',
   'logged-in-greeting' => 'Hallo kann ich dir helfen?',
-  'logged-out-greeting' => 'Vielen Dank für Ihren Besuch. Wir sehen uns'
+  'logged-out-greeting' => 'Vielen Dank für Ihren Besuch. Wir sehen uns',
+  'like' => 'Du magst diese Anzeige!',
+  'dislike' => 'Diese Anzeige gefällt dir nicht!'
 ];

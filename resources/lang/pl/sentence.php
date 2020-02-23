@@ -324,5 +324,7 @@ return [
   'average-salary' => 'Średnie stawki',
   'average-rate-in-employmed' => 'Średnie stawki z Polski zgodnie z wystawionymi ogłoszeniami w EmployMed.eu',
   'logged-in-greeting' => 'Cześć w czym mogę pomóc?',
-  'logged-out-greeting' => 'Dziękujemy za odwiedziny. Do zobaczenia.'
+  'logged-out-greeting' => 'Dziękujemy za odwiedziny. Do zobaczenia.',
+  'like' => 'Lubisz to ogłoszenie!',
+  'dislike' => 'Nie lubisz tego ogłoszenia!'
 ];

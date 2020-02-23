@@ -73,6 +73,23 @@
                                     </div>
                                 </div>
                             </div>
+                            @if(Auth::user() && Auth::user()->hasRole('doctor'))
+                                <div class="col-md-12 py-2">
+                                    <div class="btn-group btn-group-toggle px-2 py-2 text-white @if ($advertisement->isLiked) bg-success @else bg-info @endif">
+                                        @if ($advertisement->isLiked)
+                                            <a href="{{ route('foreign.like', $advertisement->id) }}" class="no-decoration text-white">
+                                                <span class="mx-2">Lubisz to ogłoszenie!</span>
+                                                <img src="{{ asset('images/like.png') }}" width="30" height="30" alt="Like">
+                                            </a>
+                                        @else
+                                            <a href="{{ route('foreign.like', $advertisement->id) }}" class="no-decoration text-white font-weight-bold">
+                                                <span class="mx-2">Polub to ogłoszenie!</span>
+                                                <img src="{{ asset('images/like.png') }}" width="30" height="30" alt="Dislike">
+                                            </a>
+                                        @endif
+                                    </div>
+                                </div>
+                            @endif
                             <div class="col-12">
                                 <ul class="list-group">
                                     <li class="list-group-item d-flex justify-content-between align-items-center">

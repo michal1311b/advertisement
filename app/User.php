@@ -96,6 +96,16 @@ class User extends Authenticatable implements MustVerifyEmail, HasLoginsAndDevic
         ->withTimestamps();
     }
 
+    public function likedAdvertisements()
+    {
+        return $this->morphedByMany('App\Advertisement', 'likeable')->whereDeletedAt(null);
+    }
+
+    public function likedForeignOffers()
+    {
+        return $this->morphedByMany('App\ForeignOffer', 'likeable')->whereDeletedAt(null);
+    }
+
     public function finishedSpecializations()
     {
         return $this->belongsToMany(Specialization::class)

@@ -108,6 +108,7 @@ Route::group(array('prefix' => 'offer'), function () {
     Route::delete('users/{user}/unfollow', 'UserController@unfollow')->name('unfollow');
     Route::get('notifications', 'UserController@notifications');
     Route::get('users', 'UserController@read')->name('read');
+    Route::get('like/{id}', ['as' => 'offer.like', 'uses' => 'LikeController@likeOffer'])->middleware(['auth', 'verified']);
 });
 
 Route::group(array('prefix' => 'foreign'), function () {
@@ -119,6 +120,7 @@ Route::group(array('prefix' => 'foreign'), function () {
     Route::get('/{id}/edit', 'ForeignOfferController@edit')->name('edit-foreign')->middleware(['auth', 'verified']);
     Route::post('/{id}/update', 'ForeignOfferController@update')->name('update-foreign');
     Route::any('/search', 'ForeignOfferController@search')->name('search-foreign');
+    Route::get('like/{id}', ['as' => 'foreign.like', 'uses' => 'LikeController@likeForeign'])->middleware(['auth', 'verified']);
 });
 
 Route::group(array('prefix' => 'user'), function () {

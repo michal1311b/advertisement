@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\Gallery;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
 class Advertisement extends Model
@@ -101,6 +102,18 @@ class Advertisement extends Model
         return $this->belongsTo(Specialization::class);
     }
 
+    public function likes()
+    {
+        return $this->morphToMany('App\User', 'likeable')->whereDeletedAt(null);
+    }
+
+    public function getIsLikedAttribute()
+    {
+        $like = $this->likes()->where('user_id', Auth::id())->first();
+
+        return (!is_null($like)) ? true : false;
+    }
+
     public static function create(array $attributes = [])
     {
         $latLon = self::get_lat_long($attributes['street'], $attributes['location_id']);
@@ -183,7 +196,7 @@ class Advertisement extends Model
 
         $now = Carbon::now();
 
-        if(isset($attributes['galleries']) && $attributes['galleries'][0] !== 'undefined') {
+        if(isset($attributes['galleries'])) {
             foreach($attributes['galleries'] as $k => $gallery) {
                 if(is_numeric($k)) {
                     $fileData = new Gallery();
