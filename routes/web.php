@@ -121,6 +121,9 @@ Route::group(array('prefix' => 'foreign'), function () {
     Route::post('/{id}/update', 'ForeignOfferController@update')->name('update-foreign');
     Route::any('/search', 'ForeignOfferController@search')->name('search-foreign');
     Route::get('like/{id}', ['as' => 'foreign.like', 'uses' => 'LikeController@likeForeign'])->middleware(['auth', 'verified']);
+
+    Route::get('/create-similar-offer/{foreignOffer}', 'UserController@createSimilarForeign')->name('user-foreign-similar')->middleware(['auth', 'verified']);
+    Route::post('/create-similar-offer/create', 'ForeignOfferController@store')->name('store-foreign');
 });
 
 Route::group(array('prefix' => 'user'), function () {
@@ -155,7 +158,6 @@ Route::group(array('prefix' => 'user'), function () {
     Route::get('/create-similar-offer/{advertisement}', 'UserController@createSimilarOffer')->name('user-advertisement-similar')->middleware(['auth', 'verified']);
     Route::post('/create-similar-offer/create', 'AdvertisementController@store')->name('store-advertisement');
     Route::get('/extend-offer/{id}', 'AdvertisementController@extendAdvertisement')->name('user-extend-offer')->middleware(['auth', 'verified']);
-
 
     Route::get('/courses', 'UserController@getUserCourses')->name('user-course-list')->middleware(['auth', 'verified']);
     Route::delete('/courses/{comapnycourse}/delete', 'CompanyCourseController@delete')->name('delete-user-course');

@@ -255,4 +255,25 @@ class UserController extends Controller
 
         return view('user.foreigns', compact('foreigns'));
     }
+
+    public function createSimilarForeign($id)
+    {
+        $foreign = ForeignOffer::find($id);
+        if($foreign->user_id !== Auth::user()->id) {
+            return back();
+        }
+
+        $works = Work::all();
+        $specializations = Specialization::all();
+        $currencies = Currency::all();
+        $settlements = Settlement::all();
+
+        return view('foreign.similar',  compact([
+            'foreign', 
+            'works', 
+            'specializations', 
+            'currencies', 
+            'settlements'
+        ]));
+    }
 }

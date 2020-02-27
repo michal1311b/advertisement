@@ -100,6 +100,8 @@ import EditCourse from './components/courses/EditCourse.vue';
 Vue.component('edit-course', EditCourse);
 import CreateCourse from './components/courses/CreateCourse.vue';
 Vue.component('course-create', CreateCourse);
+import SimilarForeign from './components/foreigns/SimilarForeign.vue';
+Vue.component('similar-foreign', SimilarForeign);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
