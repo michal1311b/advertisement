@@ -326,5 +326,6 @@ return [
   'logged-in-greeting' => 'Cześć w czym mogę pomóc?',
   'logged-out-greeting' => 'Dziękujemy za odwiedziny. Do zobaczenia.',
   'like' => 'Lubisz to ogłoszenie!',
-  'dislike' => 'Polub to ogłoszenie!'
+  'dislike' => 'Polub to ogłoszenie!',
+  'cookie-message' => 'Na naszej stronie internetowej używamy plików cookies. Brak ograniczenia/wyłączenia cookies w&nbsp;przeglądarce internetowej oznacza zgodę na takie wykorzystanie. Szczegółowe informacje w&nbsp;naszej'
 ];

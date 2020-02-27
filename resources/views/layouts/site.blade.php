@@ -160,9 +160,9 @@
     <!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
     <script type="text/javascript">
         window.cookieconsent_options = {
-            "message": "Na naszej stronie internetowej używamy plików cookies. Brak ograniczenia/wyłączenia cookies w&nbsp;przeglądarce internetowej oznacza zgodę na takie wykorzystanie. Szczegółowe informacje w&nbsp;naszej",
-            "dismiss": "Akceptuję",
-            "learnMore": "Polityce prywatności",
+            "message": "{{ trans('sentence.cookie-message') }}",
+            "dismiss": "{{ trans('sentence.accept') }}",
+            "learnMore": "{{ trans('sentence.cookies-policy') }}",
             "link": "/polityka-cookies",
             "theme": "dark-bottom",
             "target": "_blank"
