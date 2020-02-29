@@ -134,6 +134,13 @@
                                         {{ trans('sentence.expired_at') }}
                                         <span class="badge badge-pill badge-primary">{{ $advertisement->expired_at }}</span>
                                     </li>
+
+                                    @if($advertisement->expired_at < \Carbon\Carbon::now())
+                                        <li class="list-group-item d-flex justify-content-between align-items-center font-weight-bold text-danger text-uppercase">
+                                            {{ trans('sentence.offer-archive') }}
+                                            <span class="badge badge-pill"><img class="user-avatar--smaller" src="{{ asset('images/archived.png') }}" /></span>
+                                        </li>
+                                    @endif
                                     {{-- <li class="list-group-item d-flex justify-content-between align-items-center">
                                         {{ trans('sentence.phone') }}
                                         <span class="badge badge-pill">{{ $advertisement->phone }}</span>

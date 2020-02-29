@@ -60,6 +60,7 @@ return [
   'forgot-password' => 'Забули пароль',
   'offers-list' => 'Список пропозицій',
   'offers-archive' => 'Архів роботи',
+  'offer-archive' => 'Архівна пропозиція роботи',
   'foreigns-list' => 'Список пропозицій з-за кордону',
   'offer-create-poland' => 'Додати рекламу з Польщі',
   'offer-create-foreign' => 'Додати рекламу з-за кордону',
