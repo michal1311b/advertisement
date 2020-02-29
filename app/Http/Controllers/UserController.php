@@ -250,6 +250,7 @@ class UserController extends Controller
     {
         $user = Auth::user();
         $foreigns = ForeignOffer::where('user_id', '=', $user->id)
+        ->withCount('foreign_visits')
         ->withCount('likes')
         ->paginate(5);
 

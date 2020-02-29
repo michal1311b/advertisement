@@ -43,7 +43,10 @@
                                         <h5 class="mt-0 font-weight-bold mb-2">{{ $foreign->title }}</h5>
                                         <div class="d-flex align-items-center justify-content-between mt-1">
                                             <h6 class="font-weight-bold my-2"><i class="fas fa-coins"></i> {{ $foreign->settlement->name }}: {{ $foreign->min_salary }} - {{ $foreign->max_salary }} {{ $foreign->currency->symbol }}</h6>
-                                            <h6 class="font-weight-bold ml-3 my-2"><img src="{{ asset('images/like.png') }}" width="30" height="30" alt="Like"> {{ $foreign->likes_count }}</h6>
+                                            <h6 class="font-weight-bold ml-3 my-2">
+                                                <img src="{{ asset('images/like.png') }}" width="30" height="30" alt="Like"> {{ $foreign->likes_count }}
+                                                <br><i class="fas fa-eye"></i> {{ trans('sentence.visits') }} {{ $foreign->foreign_visits_count }}
+                                            </h6>
                                         </div>
                                         <div class="badge badge-secondary">{{ $foreign->specialization->name }}</div>
                                         <div>

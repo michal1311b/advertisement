@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Currency;
 use App\ForeignOffer;
 use App\Http\Requests\Foreign\StoreRequest;
+use App\Http\Service\Visit;
 use App\Settlement;
 use App\Specialization;
 use App\Work;
@@ -72,6 +73,15 @@ class ForeignOfferController extends Controller
             ->firstOrFail();
 
         $user = Auth::user();
+        
+        if(isset($user->doctor) === false && $user)
+        {
+            Visit::storeForeignVisit($user->id, $advertisement->id);
+        } else if(isset($user->doctor) !== false && $user) {
+            Visit::storeForeignVisit($user->id, $advertisement->id, true);
+        } else {
+            Visit::storeForeignVisit(null, $advertisement->id, true);
+        }
 
         $similars = ForeignOffer::with(['specialization', 'settlement'])
         ->where('specialization_id', $advertisement->specialization_id)

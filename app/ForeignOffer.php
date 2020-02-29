@@ -71,6 +71,11 @@ class ForeignOffer extends Model
         return $this->belongsTo(Specialization::class);
     }
 
+    public function foreign_visits()
+    {
+        return $this->hasMany(ForeignVisit::class);
+    }
+
     public function likes()
     {
         return $this->morphToMany('App\User', 'likeable')->whereDeletedAt(null);
