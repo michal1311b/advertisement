@@ -20,7 +20,7 @@
                             <option value="{{ $location->id }}">{{ $location->city }}</option>
                         @endforeach
                     </select>
-                    <div class="input-group-append ml-3">
+                    <div class="input-group-append mx-3">
                         <div class="form-group">
                             <input
                                 type="text"
@@ -31,6 +31,14 @@
                             </label>
                         </div>
                     </div>
+                    <select data-live-search="true" class="form-control @error('currency_id') is-invalid @enderror" name="currency_id" id="currency_ids">
+                        @foreach($currencies as $currency)
+                            <option @if($currency->id === 1) selected @endif
+                                value="{{ $currency->id }}">
+                                {{ $currency->symbol }}
+                            </option>
+                        @endforeach
+                    </select>
                 </div>
             </div>
         </div>

@@ -243,6 +243,9 @@ $(document).ready(function() {
     $('#specialization_ids').selectpicker({
         width: 'fit'
     });
+    $('#currency_ids').selectpicker({
+        width: 'fit'
+    });
 
     $(function () {
         $('#selectBox').change(function () {
