@@ -127,8 +127,7 @@ const NOTIFICATION_TYPES = {
 
 $(document).ready(function() {
     $(document).ready(function () {
-        //Disable cut copy paste
-        $('body').bind('copy', function (e) {
+        $('#description').bind("copy",function(e) {
             e.preventDefault();
         });
     });

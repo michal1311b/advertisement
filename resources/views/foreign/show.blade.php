@@ -153,7 +153,7 @@
                                     <div id="map" style="height: 440px; border: 1px solid #AAA;"></div>
                                 </div>
 
-                                <div class="py-2">
+                                <div class="py-2" id="description">
                                     <h4><strong>{{ trans('sentence.description') }}</strong></h4>
                                     {!! $advertisement->description !!}
                                 </div>
