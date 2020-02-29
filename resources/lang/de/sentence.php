@@ -329,5 +329,6 @@ return [
   'logged-out-greeting' => 'Vielen Dank für Ihren Besuch. Wir sehen uns',
   'like' => 'Du magst diese Anzeige!',
   'dislike' => 'Gefällt mir diese Anzeige!',
-  'cookie-message' => 'Wir verwenden Cookies auf unserer Website. Keine Einschränkung / Ausschluss von Cookies in Ihrem Webbrowser bedeutet, dass Sie einer solchen Verwendung zustimmen. Detaillierte Informationen bei uns'
+  'cookie-message' => 'Wir verwenden Cookies auf unserer Website. Keine Einschränkung / Ausschluss von Cookies in Ihrem Webbrowser bedeutet, dass Sie einer solchen Verwendung zustimmen. Detaillierte Informationen bei uns',
+  'distanceBetween' => 'Sie sind vom Arbeitsplatz weg vom Angebot von '
 ];

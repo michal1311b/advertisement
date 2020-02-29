@@ -126,11 +126,12 @@ const NOTIFICATION_TYPES = {
 };
 
 $(document).ready(function() {
-    $(document).ready(function () {
+    if(window.innerWidth > 756) {
         $('#description').bind("copy",function(e) {
             e.preventDefault();
         });
-    });
+    }
+    
     window.scrollTo(0, 0);
     var mySlider = $("#range").bootstrapSlider({
         min: 0,

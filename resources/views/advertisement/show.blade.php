@@ -170,6 +170,7 @@
 
                                 <div class="py-3">
                                     <div id="map" style="height: 440px; border: 1px solid #AAA;"></div>
+                                    <p id="distance-info" class="pt-3 text-danger"></p>
                                 </div>
 
                                 <div class="py-2" id="description">
@@ -304,13 +305,55 @@ $(document).ready(function() {
             iconUrl: '{{ URL::asset('/images/icons/') }}' + '/' + markers[i].id + '.jpg',
             iconSize: [26, 26],
         });
-    L.marker( 
-        [markers[i].lat, markers[i].lng],
-        { icon: icon })
-        .bindPopup( markers[i].name + ', ' + markers[i].street + ': ' + markers[i].min_salary + '-' + markers[i].max_salary + ' ' + markers[i].currency )
-        .addTo( map );
+        L.marker( 
+            [markers[i].lat, markers[i].lng],
+            { icon: icon })
+            .bindPopup( markers[i].name + ', ' + markers[i].street + ': ' + markers[i].min_salary + '-' + markers[i].max_salary + ' ' + markers[i].currency )
+            .addTo( map );
+
+        navigator.geolocation.getCurrentPosition(function(position) {
+            var lat = position.coords.latitude;
+            var long = position.coords.longitude;
+            
+            var distance = this.distance(
+                {{ $advertisement->latitude }}, 
+                {{ $advertisement->longitude }}, 
+                lat, long, 'K');
+
+                var x = document.getElementById("distance-info");
+                if (navigator.geolocation) {
+                    x.innerHTML = "{{ trans('sentence.distanceBetween') }}" + '' + '<b>'+Math.round(distance, 2) + ' km</b>';
+                } else { 
+                    x.innerHTML = "Geolocation is not supported by this browser.";
+                }
+                
+                
+        });
     }
 });
+
+function distance(lat1, lon1, lat2, lon2, unit) {
+	if ((lat1 == lat2) && (lon1 == lon2)) {
+		return 0;
+	}
+	else {
+		var radlat1 = Math.PI * lat1/180;
+		var radlat2 = Math.PI * lat2/180;
+		var theta = lon1-lon2;
+		var radtheta = Math.PI * theta/180;
+		var dist = Math.sin(radlat1) * Math.sin(radlat2) + Math.cos(radlat1) * Math.cos(radlat2) * Math.cos(radtheta);
+		if (dist > 1) {
+			dist = 1;
+		}
+		dist = Math.acos(dist);
+		dist = dist * 180/Math.PI;
+		dist = dist * 60 * 1.1515;
+		if (unit=="K") { dist = dist * 1.609344 }
+		if (unit=="N") { dist = dist * 0.8684 }
+        
+		return dist;
+	}
+}
 </script>
 <!-- Go to www.addthis.com/dashboard to customize your tools -->
 <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5dc7278fb46e12ce"></script>

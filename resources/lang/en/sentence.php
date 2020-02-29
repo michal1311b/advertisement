@@ -329,5 +329,6 @@ return [
   'logged-out-greeting' => 'Thank you for visiting. See you soon.',
   'like' => 'You like this offer!',
   'dislike' => 'Like this offer!',
-  'cookie-message' => 'We use cookies on our website. No restriction / exclusion of cookies in your web browser means you agree to such use. Detailed information in ours'
+  'cookie-message' => 'We use cookies on our website. No restriction / exclusion of cookies in your web browser means you agree to such use. Detailed information in ours',
+  'distanceBetween' => 'You are away from the workplace from the offer by '
 ];
