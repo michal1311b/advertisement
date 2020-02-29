@@ -126,6 +126,12 @@ const NOTIFICATION_TYPES = {
 };
 
 $(document).ready(function() {
+    $(document).ready(function () {
+        //Disable cut copy paste
+        $('body').bind('copy', function (e) {
+            e.preventDefault();
+        });
+    });
     window.scrollTo(0, 0);
     var mySlider = $("#range").bootstrapSlider({
         min: 0,
