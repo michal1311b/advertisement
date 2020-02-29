@@ -59,6 +59,7 @@ return [
   'remember-me' => 'Zapamiętaj mnie',
   'forgot-password' => 'Zapomniałeś hasła?',
   'offers-list' => 'Lista ofert',
+  'offers-archive' => 'Archiwum ofert',
   'foreigns-list' => 'Lista ofert zza granicy',
   'offer-create-poland' => 'Dodaj ogłoszenie z Polski',
   'offer-create-foreign' => 'Dodaj ogłoszenie zza granicy',

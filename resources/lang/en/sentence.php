@@ -59,6 +59,7 @@ return [
   'remember-me' => 'Remember me',
   'forgot-password' => 'Forgot Your Password?',
   'offers-list' => 'List of Offers from Poland',
+  'offers-archive' => 'Job Archives',
   'foreigns-list' => 'List of Offers from foreign',
   'offer-create-poland' => 'Create Offer from Poland',
   'offer-create-foreign' => 'Create Offer from foreign',

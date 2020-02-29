@@ -92,6 +92,7 @@ Route::group(array('prefix' => 'offer'), function () {
     Route::get('/{id}/edit', 'AdvertisementController@edit')->name('edit-advertisement')->middleware(['auth', 'verified']);
     Route::delete('/{id}/delete', 'AdvertisementController@delete')->name('delete-advertisement');
     Route::get('/list', 'AdvertisementController@index')->name('advertisement-list');
+    Route::get('/archive', 'AdvertisementController@showArchive')->name('advertisement-archive');
     Route::get('/photo/{id}/delete', 'AdvertisementController@deletePhoto')->name('delete-photo');
     Route::post('/{id}/update', 'AdvertisementController@update')->name('update-advertisement');
     Route::get('/email', 'AdvertisementController@sendEmail');

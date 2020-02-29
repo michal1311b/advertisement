@@ -59,6 +59,7 @@ return [
   'remember-me' => 'Erinnere dich an mich',
   'forgot-password' => 'Passwort vergessen',
   'offers-list' => 'Liste der Angebote',
+  'offers-archive' => 'Jobarchiv',
   'foreigns-list' => 'Liste der Angebote aus dem Ausland',
   'offer-create-poland' => 'Fügen Sie eine Anzeige aus Polen hinzu',
   'offer-create-foreign' => 'Werbung aus dem Ausland hinzufügen',

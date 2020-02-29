@@ -59,6 +59,7 @@ return [
   'remember-me' => 'Запам\'ятай мене',
   'forgot-password' => 'Забули пароль',
   'offers-list' => 'Список пропозицій',
+  'offers-archive' => 'Архів роботи',
   'foreigns-list' => 'Список пропозицій з-за кордону',
   'offer-create-poland' => 'Додати рекламу з Польщі',
   'offer-create-foreign' => 'Додати рекламу з-за кордону',

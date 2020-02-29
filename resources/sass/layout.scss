@@ -727,3 +727,10 @@ body {
 .shadow:hover {
     box-shadow: 1rem 1rem 2rem rgba(0, 0, 0, 0.8) !important;
 }
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
