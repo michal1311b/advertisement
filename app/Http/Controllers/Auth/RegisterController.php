@@ -28,6 +28,7 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Storage;
 
 class RegisterController extends Controller
 {
@@ -270,11 +271,24 @@ class RegisterController extends Controller
         try {
             $latLong = $this->get_lat_long($request->company_street, $request->company_city);
 
+            if(isset($request['galleries'][0]))
+            {
+                $mimeType = substr($request['galleries'][0], 11, strpos($request['galleries'][0], ';')-11);
+
+                $newName = new Advertisement();
+                $newName = $newName->generateRandomString();
+
+                Storage::disk('public')->put('/uploads'. '/avatars'. '/' . $newName. '.' . $mimeType, base64_decode($request['galleries'][0]));
+                $avatar = "https://{$_SERVER['HTTP_HOST']}" . '/uploads'. '/avatars' . '/' . $newName. '.' . $mimeType;
+            } else {
+                $avatar = '/images/company_avatar.jpg';
+            }
+
             event(new Registered($user = User::create([
                 'name' => $request->name,
                 'email' => $request->email,
                 'password' => Hash::make($request->password),
-                'avatar' => '/images/company_avatar.jpg',
+                'avatar' => $avatar,
                 'term1' => $request->term1 === true ? 1 : 0,
                 'term2' => $request->term2 === true ? 1 : 0,
                 'term3' => $request->term3 === true ? 1 : 0
@@ -343,11 +357,24 @@ class RegisterController extends Controller
         try { 
             $latLong = $this->get_lat_long($request->company_street, $request->company_city);
 
+            if(isset($request['galleries'][0]))
+            {
+                $mimeType = substr($request['galleries'][0], 11, strpos($request['galleries'][0], ';')-11);
+
+                $newName = new Advertisement();
+                $newName = $newName->generateRandomString();
+
+                Storage::disk('public')->put('/uploads'. '/avatars'. '/' . $newName. '.' . $mimeType, base64_decode($request['galleries'][0]));
+                $avatar = "https://{$_SERVER['HTTP_HOST']}" . '/uploads'. '/avatars' . '/' . $newName. '.' . $mimeType;
+            } else {
+                $avatar = '/images/company_avatar.jpg';
+            }
+
             event(new Registered($user = User::create([
                 'name' => $request->name,
                 'email' => $request->email,
                 'password' => Hash::make($request->password),
-                'avatar' => '/images/company_avatar.jpg',
+                'avatar' => $avatar,
                 'term1' => $request->term1 === true ? 1 : 0,
                 'term2' => $request->term2 === true ? 1 : 0,
                 'term3' => $request->term3 === true ? 1 : 0
@@ -416,11 +443,24 @@ class RegisterController extends Controller
         try { 
             $latLong = $this->get_lat_long($request->company_street, $request->company_city);
 
+            if(isset($request['image_profile'][0]))
+            {
+                $mimeType = substr($request['image_profile'][0], 11, strpos($request['image_profile'][0], ';')-11);
+
+                $newName = new Advertisement();
+                $newName = $newName->generateRandomString();
+
+                Storage::disk('public')->put('/uploads'. '/avatars'. '/' . $newName. '.' . $mimeType, base64_decode($request['image_profile'][0]));
+                $avatar = "https://{$_SERVER['HTTP_HOST']}" . '/uploads'. '/avatars' . '/' . $newName. '.' . $mimeType;
+            } else {
+                $avatar = '/images/company_avatar.jpg';
+            }
+
             event(new Registered($user = User::create([
                 'name' => $request->name,
                 'email' => $request->email,
                 'password' => Hash::make($request->password),
-                'avatar' => '/images/company_avatar.jpg',
+                'avatar' => $avatar,
                 'term1' => $request->term1 === true ? 1 : 0,
                 'term2' => $request->term2 === true ? 1 : 0,
                 'term3' => $request->term3 === true ? 1 : 0

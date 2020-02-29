@@ -59,7 +59,7 @@ class PageController extends Controller
         ->where('expired_at', '>', Carbon::now())
         ->orderBy('id', 'desc')->take(5)->get();
 
-        $companies = User::has('advertisements', '>' , 0)
+        $companies = User::has('advertisements', '>' , 2)
         ->withCount('advertisements')
         ->orderBy('advertisements_count')
         ->get(['id', 'avatar']);
