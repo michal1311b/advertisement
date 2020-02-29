@@ -212,8 +212,8 @@
                                     </div>
                                     <div class="badge badge-secondary">{{ $similar->specialization->name }}</div>
                                 </div>
-                                @if($advertisement->image_profile !== null)
-                                    <img src="{{ $advertisement->image_profile }}" width="200" class="ml-lg-5 order-1 order-lg-2" alt="{{ $similar->title }}">
+                                @if($similar->image_profile !== null)
+                                    <img src="{{ $similar->image_profile }}" width="200" class="ml-lg-5 order-1 order-lg-2" alt="{{ $similar->title }}">
                                 @else
                                     <img src="{{ asset('images/logo.png') }}" width="200" class="ml-lg-5 order-1 order-lg-2" alt="No image">
                                 @endif
