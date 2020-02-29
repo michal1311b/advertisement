@@ -14,6 +14,9 @@
         <loc>{{ config('app.url')}}/sitemap.xml/pins</loc>
     </sitemap>
     <sitemap>
+        <loc>{{ config('app.url')}}/sitemap.xml/foreigns</loc>
+    </sitemap>
+    <sitemap>
         <loc>{{ config('app.url')}}/sitemap.xml/companies</loc>
     </sitemap>
 

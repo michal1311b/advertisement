@@ -9,6 +9,7 @@ use App\Pin;
 use App\Post;
 use App\Tag;
 use App\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\Collection;
 
@@ -83,6 +84,24 @@ class SitemapController extends Controller
 
         return response()->view('sitemap.foreigns', [
             'foreigns' => $foreigns,
+        ])->header('Content-Type', 'text/xml');
+    }
+
+    public function companies()
+    {
+        $companies = new Collection();
+        $users =  User::with(['roles', 'profile'])
+        ->get();
+        foreach($users as $user)
+        {
+            if($user->hasRole('company'))
+            {
+                $companies->push($user);
+            }
+        }
+
+        return response()->view('sitemap.companies', [
+            'companies' => $companies,
         ])->header('Content-Type', 'text/xml');
     }
 }
