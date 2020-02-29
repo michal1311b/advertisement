@@ -4,7 +4,7 @@
         @foreach ($offers as $offer)
             <url>
                 <loc>{{ config('app.url')}}/offer/show/{{ $offer->id }}/{{ $offer->slug }}</loc>
-                <lastmod>{{ $offer->created_at->tz('UTC')->toAtomString() }}</lastmod>
+                <lastmod>{{ $offer->updated_at->tz('UTC')->toAtomString() }}</lastmod>
                 <changefreq>weekly</changefreq>
                 <priority>0.9</priority>
             </url>

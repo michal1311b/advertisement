@@ -4,7 +4,7 @@
         @foreach ($foreigns as $foreign)
             <url>
                 <loc>{{ config('app.url')}}/foreign/show/{{ $foreign->id }}/{{ $foreign->slug }}</loc>
-                <lastmod>{{ $foreign->created_at->tz('UTC')->toAtomString() }}</lastmod>
+                <lastmod>{{ $foreign->updated_at->tz('UTC')->toAtomString() }}</lastmod>
                 <changefreq>weekly</changefreq>
                 <priority>0.9</priority>
             </url>

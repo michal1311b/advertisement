@@ -4,7 +4,7 @@
         @foreach ($tags as $tag)
             <url>
                 <loc>{{ config('app.url')}}/offer/tag/{{ $tag->slug }}</loc>
-                <lastmod>{{ $tag->created_at->tz('UTC')->toAtomString() }}</lastmod>
+                <lastmod>{{ $tag->updated_at->tz('UTC')->toAtomString() }}</lastmod>
                 <changefreq>weekly</changefreq>
                 <priority>0.9</priority>
             </url>

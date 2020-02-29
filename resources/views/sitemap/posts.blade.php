@@ -4,7 +4,7 @@
         @foreach ($posts as $post)
             <url>
                 <loc>{{ config('app.url')}}/blog/show/{{ $post->slug }}</loc>
-                <lastmod>{{ $post->created_at->tz('UTC')->toAtomString() }}</lastmod>
+                <lastmod>{{ $post->updated_at->tz('UTC')->toAtomString() }}</lastmod>
                 <changefreq>weekly</changefreq>
                 <priority>0.9</priority>
             </url>

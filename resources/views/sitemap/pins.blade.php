@@ -4,7 +4,7 @@
         @foreach ($pins as $pin)
             <url>
                 <loc>{{ config('app.url')}}/blog/tag/{{ $pin->slug }}</loc>
-                <lastmod>{{ $pin->created_at->tz('UTC')->toAtomString() }}</lastmod>
+                <lastmod>{{ $pin->updated_at->tz('UTC')->toAtomString() }}</lastmod>
                 <changefreq>weekly</changefreq>
                 <priority>0.9</priority>
             </url>
