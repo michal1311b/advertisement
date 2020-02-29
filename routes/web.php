@@ -125,6 +125,8 @@ Route::group(array('prefix' => 'foreign'), function () {
 
     Route::get('/create-similar-offer/{foreignOffer}', 'UserController@createSimilarForeign')->name('user-foreign-similar')->middleware(['auth', 'verified']);
     Route::post('/create-similar-offer/create', 'ForeignOfferController@store')->name('store-foreign');
+
+    Route::get('/extend-offer/{id}', 'ForeignOfferController@extendAdvertisement')->name('user-extend-foreign')->middleware(['auth', 'verified']);
 });
 
 Route::group(array('prefix' => 'user'), function () {

@@ -253,8 +253,9 @@ class UserController extends Controller
         ->withCount('foreign_visits')
         ->withCount('likes')
         ->paginate(5);
+        $date = Carbon::now();
 
-        return view('user.foreigns', compact('foreigns'));
+        return view('user.foreigns', compact(['foreigns', 'date']));
     }
 
     public function createSimilarForeign($id)

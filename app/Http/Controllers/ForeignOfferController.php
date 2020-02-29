@@ -211,4 +211,26 @@ class ForeignOfferController extends Controller
 
         return view('foreign.index', compact(['foreigns', 'specializations']));
     }
+
+    public function extendAdvertisement($id)
+    {
+        $user_id = Auth::user()->id;
+        $advertisement = ForeignOffer::find($id);
+
+        $now = new Carbon($advertisement->expired_at);
+        
+        $addOneMonth = $now->add(30, 'day')->toDateString();
+
+        if($user_id !== $advertisement->user_id)
+        {
+            return back();
+        } else {
+            $advertisement->expired_at = $addOneMonth;
+            $advertisement->save();
+
+            session()->flash('success',  trans('sentence.extend-offer-success'));
+
+            return back();
+        }
+    }
 }
