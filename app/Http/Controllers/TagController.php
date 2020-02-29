@@ -19,9 +19,10 @@ class TagController extends Controller
 
         $locations = Location::all();
         $specializations = Specialization::all();
+        $currencies = Currency::get(['id', 'symbol']);
 
         if ($advertisements) {
-            return view('tag.index', compact('advertisements', 'locations', 'specializations'));
+            return view('tag.index', compact('advertisements', 'locations', 'specializations', 'currencies'));
         }
     }
 
