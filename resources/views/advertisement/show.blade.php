@@ -376,6 +376,7 @@ $(document).ready(function() {
                             L.latLng(lat, long),
                             L.latLng({{ $advertisement->latitude }}, {{ $advertisement->longitude }})
                         ],
+                        router: L.Routing.mapbox('pk.eyJ1IjoibWljaGFsMTMxMWIiLCJhIjoiY2s3OWIxZ2Y3MG5nMzNmbnllMGtkcm1yYiJ9.SWokiXPeuezvJZpP-6Y-3g'),
                         routeWhileDragging: true,
                         language: "{{ session()->get('locale') }}"
                     }).addTo(map);
