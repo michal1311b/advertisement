@@ -330,5 +330,10 @@ return [
   'like' => 'Lubisz to ogłoszenie!',
   'dislike' => 'Polub to ogłoszenie!',
   'cookie-message' => 'Na naszej stronie internetowej używamy plików cookies. Brak ograniczenia/wyłączenia cookies w&nbsp;przeglądarce internetowej oznacza zgodę na takie wykorzystanie. Szczegółowe informacje w&nbsp;naszej',
-  'distanceBetween' => 'Jesteś oddalony od miejsca pracy z oferty o '
+  'distanceBetween' => 'Jesteś oddalony od miejsca pracy z oferty o ',
+  'fuel-cost' => 'Koszt paliwa',
+  'fuel-avg' => 'Średnie spalanie twojego samochodu',
+  'work-arrive' => 'Liczba dni pracujących w miesiącu',
+  'arrive-cost' => 'Koszt dojazdu:',
+  'btn-count' => 'Oblicz'
 ];

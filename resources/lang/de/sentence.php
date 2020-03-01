@@ -18,7 +18,7 @@ return [
   'homepage.slide1' => 'Finde einen Job in der Nähe.',
   'homepage.slide2' => 'Stellenangebote hinzufügen / Stellenangebote beantragen.',
   'homepage.slide3' => 'Sammeln Sie die Bewerbung von Kandidaten als Antwort auf Ihre Anzeigen, laden Sie Kandidaten zu Interviews ein und wählen Sie Mitarbeiter aus.',
-  'polish' => 'polnisch',
+  'polish' => 'Polnisch',
   'english' => 'Englisch',
   'ukrainian' => 'Ukrainisch',
   'germany' => 'Deutsch',
@@ -330,5 +330,10 @@ return [
   'like' => 'Du magst diese Anzeige!',
   'dislike' => 'Gefällt mir diese Anzeige!',
   'cookie-message' => 'Wir verwenden Cookies auf unserer Website. Keine Einschränkung / Ausschluss von Cookies in Ihrem Webbrowser bedeutet, dass Sie einer solchen Verwendung zustimmen. Detaillierte Informationen bei uns',
-  'distanceBetween' => 'Sie sind vom Arbeitsplatz weg vom Angebot von '
+  'distanceBetween' => 'Sie sind vom Arbeitsplatz weg vom Angebot von ',
+  'fuel-cost' => 'Die Kosten für Kraftstoff',
+  'fuel-avg' => 'Durchschnittlicher Kraftstoffverbrauch Ihres Autos',
+  'work-arrive' => 'Anzahl der Arbeitstage im Monat',
+  'arrive-cost' => 'Reisekosten:',
+  'btn-count' => 'Calculate'
 ];

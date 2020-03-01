@@ -173,6 +173,22 @@
                                     <p id="distance-info" class="pt-3 text-danger"></p>
                                 </div>
 
+                                <div class="py-2 calculator">
+                                    <div class="form-group">
+                                        <div class="pb-2">
+                                        <input type="number" min="0" class="form-control" id="fuelCost" placeholder="{{ trans('sentence.fuel-cost') }}">
+                                        </div>
+                                        <div class="pb-2">
+                                            <input type="number" min="0" class="form-control" id="avgFuel" placeholder="{{ trans('sentence.fuel-avg') }}">
+                                        </div>
+                                        <div class="pb-2">
+                                            <input type="number" min="0" class="form-control" id="daysInWeek" placeholder="{{ trans('sentence.work-arrive') }}"> 
+                                        </div>
+                                        <span class="btn btn-success" onclick="calculate()">{{ trans('sentence.btn-count') }}</span>
+                                    </div>
+                                    <p>{{ trans('sentence.arrive-cost') }} <span id="cost" class="text-info font-weight-bold"></span></p>
+                                </div>
+
                                 <div class="py-2" id="description">
                                     <h4><strong>{{ trans('sentence.description') }}</strong></h4>
                                     {!! $advertisement->description !!}
@@ -275,6 +291,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.6.0/leaflet.js" integrity="sha256-fNoRrwkP2GuYPbNSJmMJOCyfRB2DhPQe0rGTgzRsyso=" crossorigin="anonymous"></script>
 <script>
 $(document).ready(function() {
+    let totalDistance;
+    $( ".calculator" ).hide();
     document.getElementById('map').innerHTML = "<div id='map' style='width: 100%; height: 100%;'></div>";
     markers = [
         {
@@ -320,14 +338,16 @@ $(document).ready(function() {
                 {{ $advertisement->longitude }}, 
                 lat, long, 'K');
 
-                var x = document.getElementById("distance-info");
-                if (navigator.geolocation) {
-                    x.innerHTML = "{{ trans('sentence.distanceBetween') }}" + '' + '<b>'+Math.round(distance, 2) + ' km</b>';
-                } else { 
-                    x.innerHTML = "Geolocation is not supported by this browser.";
-                }
-                
-                
+            this.totalDistance = distance;
+
+            var x = document.getElementById("distance-info");
+            
+            if (navigator.geolocation) {
+                $( ".calculator" ).show();
+                x.innerHTML = "{{ trans('sentence.distanceBetween') }}" + '' + '<b>'+Math.round(distance, 2) + ' km</b>';
+            } else { 
+                x.innerHTML = "Geolocation is not supported by this browser.";
+            }
         });
     }
 });
@@ -353,6 +373,21 @@ function distance(lat1, lon1, lat2, lon2, unit) {
         
 		return dist;
 	}
+}
+
+function calculate()
+{
+    var total;
+    var daysInWeek = document.getElementById("daysInWeek").value;
+    var avgFuel = document.getElementById("avgFuel").value;
+    var fuelCost = document.getElementById("fuelCost").value;
+
+    total = (Math.round(this.totalDistance, 2) * 2 * avgFuel * daysInWeek * fuelCost) / 100;
+
+    total = Math.round(total, 2);
+    
+    var cost = document.getElementById("cost");
+    cost.innerHTML = total;
 }
 </script>
 <!-- Go to www.addthis.com/dashboard to customize your tools -->
