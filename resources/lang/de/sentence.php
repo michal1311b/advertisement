@@ -335,5 +335,6 @@ return [
   'fuel-avg' => 'Durchschnittlicher Kraftstoffverbrauch Ihres Autos',
   'work-arrive' => 'Anzahl der Arbeitstage im Monat',
   'arrive-cost' => 'Reisekosten:',
-  'btn-count' => 'Calculate'
+  'btn-count' => 'Calculate',
+  'you-are-here' => 'Du bist hier'
 ];

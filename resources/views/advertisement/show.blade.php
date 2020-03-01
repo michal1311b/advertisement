@@ -325,7 +325,9 @@ $(document).ready(function() {
         });
         L.marker( 
             [markers[i].lat, markers[i].lng],
-            { icon: icon })
+            { 
+                icon: icon
+             })
             .bindPopup( markers[i].name + ', ' + markers[i].street + ': ' + markers[i].min_salary + '-' + markers[i].max_salary + ' ' + markers[i].currency )
             .addTo( map );
 
@@ -345,6 +347,22 @@ $(document).ready(function() {
             if (navigator.geolocation) {
                 $( ".calculator" ).show();
                 x.innerHTML = "{{ trans('sentence.distanceBetween') }}" + '' + '<b>'+Math.round(distance, 2) + ' km</b>';
+
+                let icon = L.icon({ 
+                    iconUrl: '{{ URL::asset('/images/icons/') }}' + '/human-marker.png',
+                    iconSize: [28, 42],
+                });
+                
+                L.marker( 
+                    [lat, long],
+                    { 
+                        icon: icon,
+                        bounceOnAdd: true,
+                        bounceOnAddOptions: {duration: 3000, height: 50, loop: 2},
+                        bounceOnAddCallback: function() {console.log("done");}
+                 })
+                    .bindPopup( "{{trans('sentence.you-are-here')}}" )
+                    .addTo( map );
             } else { 
                 x.innerHTML = "Geolocation is not supported by this browser.";
             }

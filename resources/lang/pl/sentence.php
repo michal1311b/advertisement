@@ -335,5 +335,6 @@ return [
   'fuel-avg' => 'Średnie spalanie twojego samochodu',
   'work-arrive' => 'Liczba dni pracujących w miesiącu',
   'arrive-cost' => 'Koszt dojazdu:',
-  'btn-count' => 'Oblicz'
+  'btn-count' => 'Oblicz',
+  'you-are-here' => 'Jesteś tutaj'
 ];

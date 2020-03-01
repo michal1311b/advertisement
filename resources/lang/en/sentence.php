@@ -335,5 +335,6 @@ return [
   'fuel-avg' => 'Average fuel consumption of your car',
   'work-arrive' => 'Number of working days in a month',
   'arrive-cost' => 'Travel cost:',
-  'btn-count' => 'Calculate'
+  'btn-count' => 'Calculate',
+  'you-are-here' => 'You are here'
 ];
