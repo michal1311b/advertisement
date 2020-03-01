@@ -377,7 +377,8 @@ $(document).ready(function() {
                             L.latLng(lat, long),
                             L.latLng({{ $advertisement->latitude }}, {{ $advertisement->longitude }})
                         ],
-                        routeWhileDragging: true
+                        routeWhileDragging: true,
+                        language: "{{ session()->get('locale') }}"
                     }).addTo(map);
             } else { 
                 x.innerHTML = "Geolocation is not supported by this browser.";
