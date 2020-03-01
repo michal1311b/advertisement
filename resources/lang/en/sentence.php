@@ -336,5 +336,6 @@ return [
   'work-arrive' => 'Number of working days in a month',
   'arrive-cost' => 'Travel cost:',
   'btn-count' => 'Calculate',
-  'you-are-here' => 'You are here'
+  'you-are-here' => 'You are here',
+  'location-allow-info' => 'Allow you to check your location to provide you with commuting costs in your current advertisement.'
 ];

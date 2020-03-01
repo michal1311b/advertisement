@@ -189,6 +189,10 @@
                                     <p>{{ trans('sentence.arrive-cost') }} <span id="cost" class="text-info font-weight-bold"></span></p>
                                 </div>
 
+                                <div class="py-2 location-info alert alert-info font-weight-bolder">
+                                    {{ trans('sentence.location-allow-info') }}
+                                </div>
+
                                 <div class="py-2" id="description">
                                     <h4><strong>{{ trans('sentence.description') }}</strong></h4>
                                     {!! $advertisement->description !!}
@@ -293,6 +297,7 @@
 $(document).ready(function() {
     let totalDistance;
     $( ".calculator" ).hide();
+    $( ".location-info" ).show();
     document.getElementById('map').innerHTML = "<div id='map' style='width: 100%; height: 100%;'></div>";
     markers = [
         {
@@ -346,6 +351,7 @@ $(document).ready(function() {
             
             if (navigator.geolocation) {
                 $( ".calculator" ).show();
+                $( ".location-info" ).hide();
                 x.innerHTML = "{{ trans('sentence.distanceBetween') }}" + '' + '<b>'+Math.round(distance, 2) + ' km</b>';
 
                 let icon = L.icon({ 

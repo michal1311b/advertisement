@@ -336,5 +336,6 @@ return [
   'work-arrive' => 'Liczba dni pracujących w miesiącu',
   'arrive-cost' => 'Koszt dojazdu:',
   'btn-count' => 'Oblicz',
-  'you-are-here' => 'Jesteś tutaj'
+  'you-are-here' => 'Jesteś tutaj',
+  'location-allow-info' => 'Pozwól na sprawdzenie swojej lokalizacji, aby podać Tobie koszty dojazdów do pracy w aktualnym ogłoszeniu.'
 ];

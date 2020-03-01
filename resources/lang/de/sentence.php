@@ -336,5 +336,6 @@ return [
   'work-arrive' => 'Anzahl der Arbeitstage im Monat',
   'arrive-cost' => 'Reisekosten:',
   'btn-count' => 'Calculate',
-  'you-are-here' => 'Du bist hier'
+  'you-are-here' => 'Du bist hier',
+  'location-allow-info' => 'Sie können Ihren Standort überprüfen, um die Pendelkosten in Ihrer aktuellen Anzeige zu ermitteln.'
 ];
