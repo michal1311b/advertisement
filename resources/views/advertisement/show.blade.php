@@ -293,6 +293,8 @@
 @section('scripts')
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.6.0/leaflet.css" integrity="sha256-SHMGCYmST46SoyGgo4YR/9AlK1vf3ff84Aq9yK4hdqM=" crossorigin="anonymous" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.6.0/leaflet.js" integrity="sha256-fNoRrwkP2GuYPbNSJmMJOCyfRB2DhPQe0rGTgzRsyso=" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-routing-machine/3.2.12/leaflet-routing-machine.css" integrity="sha256-cu3EeyAbdh7FZ58X4+oQz2g30Tw/U+3Utqmr1ETODqQ=" crossorigin="anonymous" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-routing-machine/3.2.12/leaflet-routing-machine.min.js" integrity="sha256-OqfsQXAGfyz0njzJEepuBcQwxXRnv2I3RW70XkpsIbk=" crossorigin="anonymous"></script>
 <script>
 $(document).ready(function() {
     let totalDistance;
@@ -369,6 +371,14 @@ $(document).ready(function() {
                  })
                     .bindPopup( "{{trans('sentence.you-are-here')}}" )
                     .addTo( map );
+
+                    L.Routing.control({
+                        waypoints: [
+                            L.latLng(lat, long),
+                            L.latLng({{ $advertisement->latitude }}, {{ $advertisement->longitude }})
+                        ],
+                        routeWhileDragging: true
+                    }).addTo(map);
             } else { 
                 x.innerHTML = "Geolocation is not supported by this browser.";
             }
