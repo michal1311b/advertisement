@@ -354,7 +354,6 @@ $(document).ready(function() {
             if (navigator.geolocation) {
                 $( ".calculator" ).show();
                 $( ".location-info" ).hide();
-                x.innerHTML = "{{ trans('sentence.distanceBetween') }}" + '' + '<b>'+Math.round(distance, 2) + ' km</b>';
 
                 let icon = L.icon({ 
                     iconUrl: '{{ URL::asset('/images/icons/') }}' + '/human-marker.png',
