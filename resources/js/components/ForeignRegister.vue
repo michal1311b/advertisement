@@ -585,11 +585,19 @@
                 })
                 .then(response => {
                     currentObj.successOutput = response.data.message;
-                    this.$toasted.success(currentObj.successOutput, {
-                        duration: 6000
-                    });
-                    if(response.data.status === 200)
+
+                    if(response.data.message.substring(0,17) === 'Undefined offset:'
+                    || response.data.message.substring(0,17) === 'file_get_contents') {
+                        this.$toasted.success('Nie prawidłowy adres placówki.', {
+                            duration: 6000
+                        });
+                        return;
+                    }
+                    if(response.data.status == 200 || response.data.status == 201)
                     {
+                        this.$toasted.success(currentObj.successOutput, {
+                            duration: 6000
+                        });
                         this.clearForm();
                     }
                     this.blockBtn = false;
