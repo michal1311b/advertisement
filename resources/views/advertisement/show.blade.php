@@ -378,7 +378,7 @@ $(document).ready(function() {
                         ],
                         router: L.Routing.mapbox('pk.eyJ1IjoibWljaGFsMTMxMWIiLCJhIjoiY2s3OWIxZ2Y3MG5nMzNmbnllMGtkcm1yYiJ9.SWokiXPeuezvJZpP-6Y-3g'),
                         routeWhileDragging: true,
-                        language: "{{ session()->get('locale') }}"
+                        language: "{{ session()->get('locale') }}" === "" ? "en" : "{{ session()->get('locale') }}"
                     }).addTo(map);
             } else { 
                 x.innerHTML = "Geolocation is not supported by this browser.";
