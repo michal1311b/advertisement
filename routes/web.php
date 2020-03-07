@@ -24,6 +24,9 @@ Route::get('/update-company-info', 'GusController@getGUSData')->name('update-com
 
 Route::get('/send-reminder', 'EmailController@sendReminder')->name('send-reminder');
 Route::get('/send-foreign-reminder', 'EmailController@sendForeignReminder')->name('send-foreign-reminder');
+Route::get('/send-opinion', 'EmailController@sendOpinionEmail')->name('send-opinion');
+Route::get('/send-opinion/{user}/{opinion}/{type}', 'EmailController@storeOpinion')->name('store-opinion');
+Route::get('/dziekujemy-za-opinie', 'EmailController@thanksOpinion')->name('thanks-opinion');
 Route::get('/srednie-stawki', 'PageController@showAverageSalary')->name('average-salary');
 
 Route::get('/preview/{jooble}', 'JoobleController@show')->name('preview-show');

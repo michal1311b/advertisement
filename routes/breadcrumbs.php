@@ -24,6 +24,11 @@ Breadcrumbs::for('regulation', function ($trail) {
     $trail->push(trans('sentence.regulation'), route('regulation.show'));
 });
 
+Breadcrumbs::for('opinion-summary', function ($trail) {
+    $trail->parent('home');
+    $trail->push(trans('sentence.thanks-for-opinion'), route('thanks-opinion'));
+});
+
 Breadcrumbs::for('contact-form', function ($trail) {
     $trail->parent('home');
     $trail->push(trans('sentence.contact-form'), route('contact.show'));

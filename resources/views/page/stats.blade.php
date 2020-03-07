@@ -1,11 +1,11 @@
 @extends('layouts.site')
 
 @section('title')
-    {{-- {{ $page->title }} --}}
+    {{ trans('sentence.average-rate-in-employmed') }}
 @endsection
 
 @section('description')
-    {{-- {{ $page->shot_description }} --}}
+    {{ trans('sentence.average-rate-in-employmed') }}
 @endsection
 
 @section('breadcrumbs')

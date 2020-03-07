@@ -337,5 +337,8 @@ return [
   'arrive-cost' => 'Travel cost:',
   'btn-count' => 'Calculate',
   'you-are-here' => 'You are here',
-  'location-allow-info' => 'Allow you to check your location to provide you with commuting costs in your current advertisement.'
+  'location-allow-info' => 'Allow you to check your location to provide you with commuting costs in your current advertisement.',
+  'opinion-thanks' => 'Thank you for sharing your opinion with us.',
+  'opinion-thanks-description' => 'Users\' opinions are valuable to us and allow us to better tailor the website help text to their needs. If you haven\'t found the answer to your questions on our website, you can contact our technical support department who will be happy to answer all your questions.',
+  'thanks-for-opinion' => 'Thank you for the feedback'
 ];
