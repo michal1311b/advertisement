@@ -22,6 +22,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CompanyCourse\CompanyCourseRequest;
 use App\Http\Requests\Register\CompanyStoreRequest;
+use App\LocationUser;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -73,9 +74,21 @@ class RegisterController extends Controller
         $works = Work::all();
         $settlements = Settlement::all();
         $currencies = Currency::all();
+        $distances = [
+            ['label' => '+0 km', 'value' => 0],
+            ['label' => '+10 km', 'value' => 10],
+            ['label' => '+20 km', 'value' => 20],
+            ['label' => '+50 km', 'value' => 50],
+            ['label' => '+100 km', 'value' => 100],
+            ['label' => '+150 km', 'value' => 150],
+            ['label' => 'Cała Polska', 'value' => 1000],
+        ];
+        $locations = Location::get(['id', 'city']);
 
         return view('auth.register', compact([
             'currencies',
+            'distances',
+            'locations',
             'settlements',
             'specializations', 
             'works'
@@ -193,6 +206,14 @@ class RegisterController extends Controller
                     'settlement_id' => $request->settlement_id ?? null,
                     'currency_id' => $request->currency_id ?? null,
                     'min_salary' => $request->min_salary ?? null
+                ]);
+
+                $location = Location::find($request->get('user_location_id'));
+
+                LocationUser::create([
+                    'user_id' => $user->id,
+                    'location_id' => $location->id,
+                    'radius' => $request->get('radius')
                 ]);
             }
 

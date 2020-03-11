@@ -170,7 +170,7 @@
                                         <select data-live-search="true" class="form-control @error('work_id') is-invalid @enderror" name="work_id" id="work_id">
                                             <option selected value="">{{ trans('sentence.choose') }}</option>
                                             @foreach($works as $work)
-                                                <option value="{{ $work->id }}" selected>{{ $work->name }}</option>
+                                                <option {{ old('work_id') == $work->id ? 'selected' : '' }} value="{{ $work->id }}">{{ $work->name }}</option>
                                             @endforeach
                                         </select>
                                         @error('work_id')
@@ -185,7 +185,7 @@
                                         <select data-live-search="true" class="form-control @error('settlement_id') is-invalid @enderror" name="settlement_id" id="settlement_id">
                                             <option selected value="">{{ trans('sentence.choose') }}</option>
                                             @foreach($settlements as $settlement)
-                                                <option value="{{ $settlement->id }}" selected>{{ $settlement->name }}</option>
+                                                <option {{ old('settlement_id') == $settlement->id ? 'selected' : '' }} value="{{ $settlement->id }}">{{ $settlement->name }}</option>
                                             @endforeach
                                         </select>
                                         @error('settlement_id')
@@ -198,7 +198,7 @@
                                     <label for="min_salary"  class="col-md-4 col-form-label text-md-right">{{ trans('sentence.min_salary') }}</label>
             
                                     <div class="col-md-6">
-                                        <input id="min_salary" min="0" type="number" class="form-control @error('min_salary') is-invalid @enderror" required name="min_salary" value="" autocomplete="min_salary" autofocus>
+                                        <input id="min_salary" min="0" type="number" class="form-control @error('min_salary') is-invalid @enderror" required name="min_salary" value="{{ old('min_salary') }}" autocomplete="min_salary" autofocus>
                                         @error('min_salary')
                                             <div class="alert alert-danger">{{ $message }}</div>
                                         @enderror
@@ -211,10 +211,40 @@
                                         <select data-live-search="true" class="form-control @error('currency_id') is-invalid @enderror" name="currency_id" id="currency_id">
                                             <option selected value="">{{ trans('sentence.choose') }}</option>
                                             @foreach($currencies as $currency)
-                                                <option value="{{ $currency->id }}">{{ $currency->symbol }}</option>
+                                                <option {{ old('currency_id') == $currency->id ? 'selected' : '' }} value="{{ $currency->id }}">{{ $currency->symbol }}</option>
                                              @endforeach
                                         </select>
                                         @error('currency_id')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-md-4 col-form-label text-md-right" for="location_id">{{ trans('sentence.location') }}</label>
+                                    <div class="col-md-6">
+                                        <select data-live-search="true" class="form-control @error('location_id') is-invalid @enderror" name="user_location_id" id="user_location_id" required>
+                                            <option selected>{{ trans('sentence.choose') }}</option>
+                                            @foreach($locations as $location)
+                                                <option {{ old('user_location_id') == $location->id ? 'selected' : '' }} value="{{ $location->id }}">{{ $location->city }}</option>
+                                            @endforeach
+                                        </select>
+                                        @error('location_id')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+                                </div>
+    
+                                <div class="form-group row">
+                                    <label class="col-md-4 col-form-label text-md-right" for="radius">{{ trans('sentence.radius') }}</label>
+                                    <div class="col-md-6">
+                                        <select data-live-search="true" class="form-control @error('radius') is-invalid @enderror" name="radius" id="radius" required>
+                                            <option selected value="">{{ trans('sentence.choose') }}</option>
+                                            @foreach($distances as $radius)
+                                                <option value="{{ $radius['value'] }}">{{ $radius['label'] }}</option>
+                                            @endforeach
+                                        </select>
+                                        @error('radius')
                                             <div class="alert alert-danger">{{ $message }}</div>
                                         @enderror
                                     </div>
@@ -415,7 +445,7 @@
                                         <select data-live-search="true" class="form-control @error('work_id') is-invalid @enderror" name="work_id" id="work_id">
                                             <option selected value="">{{ trans('sentence.choose') }}</option>
                                             @foreach($works as $work)
-                                                <option value="{{ $work->id }}" selected>{{ $work->name }}</option>
+                                                <option {{ old('work_id') == $work->id ? 'selected' : '' }} value="{{ $work->id }}">{{ $work->name }}</option>
                                             @endforeach
                                         </select>
                                         @error('work_id')
@@ -430,7 +460,7 @@
                                         <select data-live-search="true" class="form-control @error('settlement_id') is-invalid @enderror" name="settlement_id" id="settlement_id">
                                             <option selected value="">{{ trans('sentence.choose') }}</option>
                                             @foreach($settlements as $settlement)
-                                                <option value="{{ $settlement->id }}" selected>{{ $settlement->name }}</option>
+                                                <option {{ old('settlement_id') == $settlement->id ? 'selected' : '' }} value="{{ $settlement->id }}">{{ $settlement->name }}</option>
                                             @endforeach
                                         </select>
                                         @error('settlement_id')
@@ -456,10 +486,40 @@
                                         <select data-live-search="true" class="form-control @error('currency_id') is-invalid @enderror" name="currency_id" id="currency_id">
                                             <option selected value="">{{ trans('sentence.choose') }}</option>
                                             @foreach($currencies as $currency)
-                                                <option value="{{ $currency->id }}">{{ $currency->symbol }}</option>
+                                                <option {{ old('currency_id') == $currency->id ? 'selected' : '' }} value="{{ $currency->id }}">{{ $currency->symbol }}</option>
                                              @endforeach
                                         </select>
                                         @error('currency_id')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-md-4 col-form-label text-md-right" for="location_id">{{ trans('sentence.location') }}</label>
+                                    <div class="col-md-6">
+                                        <select data-live-search="true" class="form-control @error('location_id') is-invalid @enderror" name="user_location_id" id="user_location_id" required>
+                                            <option selected>{{ trans('sentence.choose') }}</option>
+                                            @foreach($locations as $location)
+                                                <option {{ old('user_location_id') == $location->id ? 'selected' : '' }} value="{{ $location->id }}">{{ $location->city }}</option>
+                                            @endforeach
+                                        </select>
+                                        @error('location_id')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+                                </div>
+    
+                                <div class="form-group row">
+                                    <label class="col-md-4 col-form-label text-md-right" for="radius">{{ trans('sentence.radius') }}</label>
+                                    <div class="col-md-6">
+                                        <select data-live-search="true" class="form-control @error('radius') is-invalid @enderror" name="radius" id="radius" required>
+                                            <option selected value="">{{ trans('sentence.choose') }}</option>
+                                            @foreach($distances as $radius)
+                                                <option value="{{ $radius['value'] }}">{{ $radius['label'] }}</option>
+                                            @endforeach
+                                        </select>
+                                        @error('radius')
                                             <div class="alert alert-danger">{{ $message }}</div>
                                         @enderror
                                     </div>
