@@ -70,8 +70,16 @@ class RegisterController extends Controller
     public function showRegistrationForm()
     {
         $specializations = Specialization::all();
+        $works = Work::all();
+        $settlements = Settlement::all();
+        $currencies = Currency::all();
 
-        return view('auth.register', compact('specializations'));
+        return view('auth.register', compact([
+            'currencies',
+            'settlements',
+            'specializations', 
+            'works'
+        ]));
     }
 
     /**
@@ -180,7 +188,11 @@ class RegisterController extends Controller
                 ]);
 
                 $preference = Preference::create([
-                    'user_id' => $user->id
+                    'user_id' => $user->id,
+                    'work_id' => $request->work_id ?? null,
+                    'settlement_id' => $request->settlement_id ?? null,
+                    'currency_id' => $request->currency_id ?? null,
+                    'min_salary' => $request->min_salary ?? null
                 ]);
             }
 
