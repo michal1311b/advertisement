@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Gallery;
+use App\Http\Service\TextService;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Facades\Auth;
@@ -12,6 +13,7 @@ use Illuminate\Support\Facades\Storage;
 class Advertisement extends Model
 {
     use SoftDeletes;
+    use TextService;
     
     protected $fillable = [
         'title',
@@ -119,7 +121,7 @@ class Advertisement extends Model
         $latLon = self::get_lat_long($attributes['street'], $attributes['location_id']);
         $latLonData = explode(',', $latLon);
 
-        $attributes['slug'] = self::getUniqueSlug($attributes['title']);
+        $attributes['slug'] = TextService::getUniqueSlug($attributes['title']);
         $entry = new Advertisement();
         $entry->title = $attributes['title'];
         $entry->description = $attributes['description'];
@@ -155,7 +157,7 @@ class Advertisement extends Model
                 if(is_numeric($k)) {
                     $fileData = new Gallery();
                     $fileData->oldName = '$gallery->getClientOriginalName()';
-                    $fileData->newName = $now->getTimestamp() . $entry->generateRandomString();
+                    $fileData->newName = $now->getTimestamp() . TextService::generateRandomString();
                     $fileData->size = 666;
                     $fileData->mimeType = substr($gallery, 11, strpos($gallery, ';')-11);
                     @list($type, $gallery) = explode(';', $gallery);
@@ -176,7 +178,7 @@ class Advertisement extends Model
                     $tagData = new Tag();
                     $tagData->name = trim($tag);
                     $tagData->advertisement_id = $entry->id;
-                    $tagData->slug = self::getUniqueSlug($tag);
+                    $tagData->slug = TextService::getUniqueSlug($tag);
                     $entry->tags()->save($tagData);
                 }
             }
@@ -191,7 +193,7 @@ class Advertisement extends Model
         $attributes['longitude'] = $latLonData[1];
 
         if($this->title !== $attributes['title']) {
-            $attributes['slug'] = self::getUniqueSlug($attributes['title']);
+            $attributes['slug'] = TextService::getUniqueSlug($attributes['title']);
         }
 
         $now = Carbon::now();
@@ -201,7 +203,8 @@ class Advertisement extends Model
                 if(is_numeric($k)) {
                     $fileData = new Gallery();
                     $fileData->oldName = '$gallery->getClientOriginalName()';
-                    $fileData->newName = $now->getTimestamp() . $this->generateRandomString();
+                    
+                    $fileData->newName = $now->getTimestamp() . TextService::generateRandomString();
                     $fileData->size = 666;
                     $fileData->mimeType = substr($gallery, 11, strpos($gallery, ';')-11);
                     @list($type, $gallery) = explode(';', $gallery);
@@ -237,10 +240,10 @@ class Advertisement extends Model
                     if(is_array($inputtag))
                     {
                         $tag->name = trim($inputtag['text']);
-                        $tag->slug = self::getUniqueSlug($inputtag['text']);
+                        $tag->slug = TextService::getUniqueSlug($inputtag['text']);
                     } else {
                         $tag->name = trim($inputtag);
-                        $tag->slug = self::getUniqueSlug($inputtag);
+                        $tag->slug = TextService::getUniqueSlug($inputtag);
                     }
                     
                     $tag->save();
@@ -249,21 +252,6 @@ class Advertisement extends Model
         }
 
         parent::update($attributes, $options);
-    }
-
-    public function generateRandomString($length = 10) {
-        $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-        $charactersLength = strlen($characters);
-        $randomString = '';
-        for ($i = 0; $i < $length; $i++) {
-            $randomString .= $characters[rand(0, $charactersLength - 1)];
-        }
-        return $randomString;
-    }
-
-    private static function getUniqueSlug($title)
-    {
-        return str_slug($title, '-');
     }
 
     protected static function get_lat_long($address, $city){

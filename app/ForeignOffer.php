@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Http\Service\TextService;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -11,6 +12,7 @@ use Illuminate\Support\Facades\Storage;
 class ForeignOffer extends Model
 {
     use SoftDeletes;
+    use TextService;
     
     protected $fillable = [
         'title',
@@ -93,7 +95,7 @@ class ForeignOffer extends Model
         $latLon = self::get_lat_long($attributes['street'], $attributes['city']);
         $latLonData = explode(',', $latLon);
 
-        $attributes['slug'] = self::getUniqueSlug($attributes['title']);
+        $attributes['slug'] = TextService::getUniqueSlug($attributes['title']);
         $entry = new ForeignOffer();
         $entry->title = $attributes['title'];
         $entry->description = $attributes['description'];
@@ -121,7 +123,7 @@ class ForeignOffer extends Model
         $entry->longitude = $latLonData[1];
 
         $now = Carbon::now();
-        $newName = $now->getTimestamp() . $entry->generateRandomString();
+        $newName = $now->getTimestamp() . TextService::generateRandomString();
 
         if(isset($attributes['image_profile'][0]))
         {
@@ -154,20 +156,5 @@ class ForeignOffer extends Model
         $long = $data['lon'];
 
         return $lat.','.$long;
-    }
-
-    private static function getUniqueSlug($title)
-    {
-        return str_slug($title, '-');
-    }
-
-    private function generateRandomString($length = 10) {
-        $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-        $charactersLength = strlen($characters);
-        $randomString = '';
-        for ($i = 0; $i < $length; $i++) {
-            $randomString .= $characters[rand(0, $charactersLength - 1)];
-        }
-        return $randomString;
     }
 }

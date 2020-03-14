@@ -652,6 +652,8 @@
                         this.$toasted.success('Nie prawidłowy adres placówki.', {
                             duration: 6000
                         });
+                        
+                        this.blockBtn = false;
                         return;
                     }
                     if(response.data.status == 200 || response.data.status == 201)

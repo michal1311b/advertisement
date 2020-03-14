@@ -2,8 +2,8 @@
 
 namespace App;
 
+use App\Http\Service\TextService;
 use Carbon\Carbon;
-use DateTime;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Facades\Storage;
@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Storage;
 class CompanyCourse extends Model
 {
     use SoftDeletes;
+    use TextService;
 
     protected $fillable = [
         'title',
@@ -75,7 +76,7 @@ class CompanyCourse extends Model
         $start = strtotime($attributes['start_date']);
         $end = strtotime($attributes['end_date']);
 
-        $attributes['slug'] = self::getUniqueSlug($attributes['title']);
+        $attributes['slug'] = TextService::getUniqueSlug($attributes['title']);
         $entry = new CompanyCourse();
         $entry->title = $attributes['title'];
         $entry->description = $attributes['description'];
@@ -103,7 +104,7 @@ class CompanyCourse extends Model
 
         if(isset($attributes['galleries'])) {
             $mimeType = substr($attributes['galleries'][0], 11, strpos($attributes['galleries'][0], ';')-11);
-            $newName = $now->getTimestamp() . $entry->generateRandomString();
+            $newName = $now->getTimestamp() . TextService::generateRandomString();
             Storage::disk('public')->put(self::uploadDir() . '/' . $newName. '.' . $mimeType, base64_decode($attributes['galleries'][0]));
             $entry->avatar = "https://{$_SERVER['HTTP_HOST']}" . self::uploadDir() . '/' . $newName. '.' . $mimeType;
         }
@@ -118,34 +119,19 @@ class CompanyCourse extends Model
         $attributes['longitude'] = $latLonData[1];
 
         if($this->title !== $attributes['title']) {
-            $attributes['slug'] = self::getUniqueSlug($attributes['title']);
+            $attributes['slug'] = TextService::getUniqueSlug($attributes['title']);
         }
 
         $now = Carbon::now();
 
         if(isset($attributes['galleries'])) {
             $mimeType = substr($attributes['galleries'][0], 11, strpos($attributes['galleries'][0], ';')-11);
-            $newName = $now->getTimestamp() . $this->generateRandomString();
+            $newName = $now->getTimestamp() . TextService::generateRandomString();
             Storage::disk('public')->put(self::uploadDir() . '/' . $newName. '.' . $mimeType, base64_decode($attributes['galleries'][0]));
             $this->avatar = "https://{$_SERVER['HTTP_HOST']}" . self::uploadDir() . '/' . $newName. '.' . $mimeType;
         }
 
         parent::update($attributes, $options);
-    }
-
-    private function generateRandomString($length = 10) {
-        $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-        $charactersLength = strlen($characters);
-        $randomString = '';
-        for ($i = 0; $i < $length; $i++) {
-            $randomString .= $characters[rand(0, $charactersLength - 1)];
-        }
-        return $randomString;
-    }
-
-    private static function getUniqueSlug($title)
-    {
-        return str_slug($title, '-');
     }
 
     protected static function get_lat_long($address, $city){
