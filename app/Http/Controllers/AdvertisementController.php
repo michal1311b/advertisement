@@ -420,7 +420,13 @@ class AdvertisementController extends Controller
         $locations = Location::get(['id', 'city']);
         $specializations = Specialization::all();
         $currencies = Currency::get(['id', 'symbol']);
+        $states = State::get(['id', 'name']);
 
-        return view('advertisement.archive', compact(['advertisements', 'locations', 'specializations', 'currencies']));
+        return view('advertisement.archive', compact([
+            'advertisements', 
+            'locations', 
+            'specializations', 
+            'currencies',
+            'states']));
     }
 }
