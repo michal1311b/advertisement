@@ -341,5 +341,6 @@ return [
   'opinion-thanks' => 'Thank you for sharing your opinion with us.',
   'opinion-thanks-description' => 'Users\' opinions are valuable to us and allow us to better tailor the website help text to their needs. If you haven\'t found the answer to your questions on our website, you can contact our technical support department who will be happy to answer all your questions.',
   'thanks-for-opinion' => 'Thank you for the feedback',
-  'choose-state' => 'Choose state...'
+  'choose-state' => 'Choose state...',
+  'matching-info' => 'For complete pairing with job offers, you\'ll need to fill out the <b>Preferences</b> and <b>Locations</b> tabs.'
 ];

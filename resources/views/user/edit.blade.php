@@ -36,6 +36,21 @@
             </div>
         @endif
 
+        @if($editUser->doctor)
+            @if(
+                count($userLocations) == 0 ||
+                ($editUser->preference->work_id == null ||
+                $editUser->preference->settlement_id == null ||
+                $editUser->preference->currency_id == null ||
+                $editUser->preference->min_salary == null))
+                <div class="col-md-12 text-center">
+                    <div class="alert alert-info">
+                        {!! trans('sentence.matching-info') !!}
+                    </div>
+                </div>
+            @endif
+        @endif
+
         <div class="col-md-12 py-3">
               <!-- Nav tabs -->
             <ul class="nav nav-tabs">

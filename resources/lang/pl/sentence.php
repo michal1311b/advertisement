@@ -341,5 +341,6 @@ return [
   'opinion-thanks' => 'Dziękujemy za podzielenie się z nami swoją opinią.',
   'opinion-thanks-description' => 'Opinie użytkowników są dla nas cenne i pozwalają nam lepiej dobrać tekst pomocy serwisu do ich potrzeb. Jeśli nie znalazłeś w naszym serwisie odpowiedzi na swoje pytania, możesz skontaktować się z naszym działem obsługi technicznej, który chętnie udzieli odpowiedzi na wszystkie pytania.',
   'thanks-for-opinion' => 'Dziękujemy za opinię',
-  'choose-state' => 'Wybierz województwo...'
+  'choose-state' => 'Wybierz województwo...',
+  'matching-info' => 'Dopełnego sparowania z ofertami pracy potrzebujesz wypełnić zakładki <b>Preferencje</b> oraz <b>Lokalizacje</b>.'
 ];
