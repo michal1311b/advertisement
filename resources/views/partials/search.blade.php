@@ -3,7 +3,7 @@
         {{ csrf_field() }}
         <div class="form-row">
             <div class="form-group">
-                <div class="input-group mb-3">
+                <div class="input-group search-panel mb-3">
                     <div class="input-group-prepend">
                         <button class="btn btn-outline-secondary" type="submit" id="button-addon1">{{ trans('sentence.search') }}</button>
                         <a href="{{ route('advertisement-list') }}" class="btn btn-outline-secondary" id="button-addon2">{{ trans('sentence.clear-search') }}</a>
@@ -18,6 +18,12 @@
                         <option selected value="">{{ trans('sentence.choose-location') }}</option>
                         @foreach($locations as $location)
                             <option value="{{ $location->id }}">{{ $location->city }}</option>
+                        @endforeach
+                    </select>
+                    <select data-live-search="true" class="form-control @error('location_id') is-invalid @enderror" name="state_id" id="state_ids">
+                        <option selected value="">{{ trans('sentence.choose-state') }}</option>
+                        @foreach($states as $state)
+                            <option value="{{ $state->id }}">{{ $state->name }}</option>
                         @endforeach
                     </select>
                     <div class="input-group-append mx-3">

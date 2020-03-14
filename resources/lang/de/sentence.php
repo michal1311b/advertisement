@@ -340,5 +340,6 @@ return [
   'location-allow-info' => 'Sie können Ihren Standort überprüfen, um die Pendelkosten in Ihrer aktuellen Anzeige zu ermitteln.',
   'opinion-thanks' => 'Vielen Dank, dass Sie uns Ihre Meinung mitgeteilt haben.',
   'opinion-thanks-description' => 'Die Meinungen der Benutzer sind für uns wertvoll und ermöglichen es uns, den Hilfetext der Website besser auf ihre Bedürfnisse abzustimmen. Wenn Sie auf unserer Website keine Antwort auf Ihre Fragen gefunden haben, können Sie sich an unseren technischen Support wenden, der Ihnen gerne alle Ihre Fragen beantwortet.',
-  'thanks-for-opinion' => 'Vielen Dank für das Feedback'
+  'thanks-for-opinion' => 'Vielen Dank für das Feedback',
+  'choose-state' => 'Wähle eine Provinz...'
 ];

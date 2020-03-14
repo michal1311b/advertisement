@@ -247,6 +247,9 @@ $(document).ready(function() {
     $('#currency_ids').selectpicker({
         width: 'fit'
     });
+    $('#state_ids').selectpicker({
+        width: 'fit'
+    });
 
     $(function () {
         $('#selectBox').change(function () {

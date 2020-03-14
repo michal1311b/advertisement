@@ -7,6 +7,7 @@ use App\Tag;
 use App\Pin;
 use App\Location;
 use App\Specialization;
+use App\State;
 use Carbon\Carbon;
 
 class TagController extends Controller
@@ -21,9 +22,17 @@ class TagController extends Controller
         $locations = Location::all();
         $specializations = Specialization::all();
         $currencies = Currency::get(['id', 'symbol']);
+        $states = State::get(['id', 'name']);
+
 
         if ($advertisements) {
-            return view('tag.index', compact('advertisements', 'locations', 'specializations', 'currencies'));
+            return view('tag.index', compact(
+                'advertisements', 
+                'locations', 
+                'specializations', 
+                'currencies',
+                'states'
+            ));
         }
     }
 

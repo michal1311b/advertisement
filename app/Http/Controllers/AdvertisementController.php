@@ -70,8 +70,15 @@ class AdvertisementController extends Controller
         $locations = Location::get(['id', 'city']);
         $specializations = Specialization::all();
         $currencies = Currency::get(['id', 'symbol']);
+        $states = State::get(['id', 'name']);
 
-        return view('advertisement.index', compact(['advertisements', 'locations', 'specializations', 'currencies']));
+        return view('advertisement.index', compact([
+            'advertisements', 
+            'locations', 
+            'specializations', 
+            'currencies',
+            'states'
+        ]));
     }
     public function create(Request $request)
     {
@@ -258,9 +265,20 @@ class AdvertisementController extends Controller
                 ->where('currency_id', $request->currency_id);
         }
 
-        if (($request->input('location_id') !== null) && ($request->input('specialization_id') !== null)) {
+        if ($request->input('state_id') !== null) {
+            $state = State::find($request->input('state_id'));
+            $advertisements = Advertisement::where('state_id', $state->id)
+                ->where('expired_at', '>', Carbon::now())
+                ->where('min_salary', '>=', $range[0])
+                ->where('max_salary', '<=', $range[1])
+                ->where('currency_id', $request->currency_id);
+        }
+
+        if (($request->input('location_id') !== null) 
+            && ($request->input('specialization_id') !== null)) {
             $specialization = Specialization::find($request->input('specialization_id'));
             $location = Location::find($request->input('location_id'));
+            
             $advertisements = Advertisement::where('specialization_id', $specialization->id)
                 ->where('expired_at', '>', Carbon::now())
                 ->where('location_id', $location->id)
@@ -269,7 +287,49 @@ class AdvertisementController extends Controller
                 ->where('currency_id', $request->currency_id);
         }
 
-        if (($request->input('location_id') === null) && ($request->input('specialization_id') === null)) {
+        if (($request->input('specialization_id') !== null)
+            && ($request->input('state_id') !== null)) {
+            $specialization = Specialization::find($request->input('specialization_id'));
+            $state = State::find($request->input('state_id'));
+
+            $advertisements = Advertisement::where('specialization_id', $specialization->id)
+                ->where('expired_at', '>', Carbon::now())
+                ->where('state_id', $state->id)
+                ->where('min_salary', '>=', $range[0])
+                ->where('max_salary', '<=', $range[1])
+                ->where('currency_id', $request->currency_id);
+        }
+
+        if (($request->input('location_id') !== null) 
+            && ($request->input('state_id') !== null)) {
+            $location = Location::find($request->input('location_id'));
+            $state = State::find($request->input('state_id'));
+            $advertisements = Advertisement::where('expired_at', '>', Carbon::now())
+                ->where('location_id', $location->id)
+                ->where('state_id', $state->id)
+                ->where('min_salary', '>=', $range[0])
+                ->where('max_salary', '<=', $range[1])
+                ->where('currency_id', $request->currency_id);
+        }
+
+        if (($request->input('location_id') !== null) 
+            && ($request->input('specialization_id') !== null)
+            && ($request->input('state_id') !== null)) {
+            $specialization = Specialization::find($request->input('specialization_id'));
+            $location = Location::find($request->input('location_id'));
+            $state = State::find($request->input('state_id'));
+            $advertisements = Advertisement::where('specialization_id', $specialization->id)
+                ->where('expired_at', '>', Carbon::now())
+                ->where('location_id', $location->id)
+                ->where('state_id', $state->id)
+                ->where('min_salary', '>=', $range[0])
+                ->where('max_salary', '<=', $range[1])
+                ->where('currency_id', $request->currency_id);
+        }
+
+        if (($request->input('location_id') === null) 
+            && ($request->input('specialization_id') === null)
+            && ($request->input('state_id') === null)) {
             $advertisements = Advertisement::where('min_salary', '>=', ($range[0] ?? 0))
                 ->where('max_salary', '<=', ($range[1] ?? 160000))
                 ->where('currency_id', $request->currency_id)
@@ -279,10 +339,17 @@ class AdvertisementController extends Controller
         $locations = Location::all();
         $specializations = Specialization::all();
         $currencies = Currency::get(['id', 'symbol']);
+        $states = State::all();
 
         $advertisements = $advertisements->paginate();
 
-        return view('advertisement.index', compact(['advertisements', 'locations', 'specializations', 'currencies']));
+        return view('advertisement.index', compact([
+            'advertisements', 
+            'locations', 
+            'specializations', 
+            'currencies',
+            'states'
+        ]));
     }
 
     public function extendAdvertisement($id)
