@@ -241,7 +241,7 @@
                 @include('partials.contact', ['offerType' => 'offer'])
             @else
                 <div class="alert alert-danger">
-                    <a href="{{ route('login')}}" class="text-white font-weight-bold">{{ trans('sentence.signin-to-apply') }}</a>
+                    <a href="{{ route('login')}}" class="text-success font-weight-bold">{{ trans('sentence.signin-to-apply') }}</a>
                 </div>
             @endif
         </div>
@@ -294,8 +294,8 @@
             )
                 @include('partials.opinion-form', ['offerType' => 'offer'])
             @else
-                <div class="alert alert-danger">
-                    <a href="{{ route('login')}}" class="text-white font-weight-bold">
+                <div class="alert alert-warning">
+                    <a href="{{ route('login')}}" class="text-dark font-weight-bold">
                         {{ trans('sentence.signin-to-comment') }} {{ trans('sentence.comment-count') }}: ( {{ count($opinions) }} )
                     </a>
                 </div>
