@@ -383,6 +383,7 @@ class AdvertisementController extends Controller
             return back();
         } else {
             $advertisement->expired_at = $addOneMonth;
+            $advertisement->reminder_send = 0;
             $advertisement->save();
 
             session()->flash('success',  trans('sentence.extend-offer-success'));
