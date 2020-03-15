@@ -175,6 +175,9 @@ Route::group(array('prefix' => 'user'), function () {
     Route::get('/participants/{companycourse}/list/{id}', 'CompanyCourseController@showCourseParticiapnt')->name('user-course-participant-show')->middleware(['auth', 'verified']);
     Route::post('/courses/{id}/update', 'CompanyCourseController@update')->name('update-user-course');
     Route::delete('/participant/{participant}/delete', 'ParticipantController@delete')->name('delete-participant');
+
+    Route::post('/opinion-offer/{id}', 'OpinionController@store')->name('opinion-offer');
+    Route::delete('/opinion/{id}/delete', 'OpinionController@delete')->name('delete-opinion');
 });
 
 Route::post('/send-message/{advertisement}', 'ContactController@store')->name('send-message');
@@ -192,7 +195,6 @@ Route::group(array('prefix' => 'language'), function () {
     Route::patch('/{lang_key}/update', 'LanguageController@update')->name('language.update');
     Route::delete('/{lang_key}/delete', 'LanguageController@destroy')->name('language.delete');
 });
-
 
 Route::group(['prefix' => 'admin'], function () {
     Route::resource('posts', 'PostController')->middleware(['auth', 'admin', 'verified']);
@@ -232,4 +234,3 @@ Route::group(array('prefix' => 'blog'), function () {
     Route::put('/comment/{comment}', 'CommentController@update')->name('update-comment');
     Route::delete('/comment/{comment}/delete', 'CommentController@delete')->name('delete-comment');
 });
-

@@ -342,5 +342,9 @@ return [
   'opinion-thanks-description' => 'Users\' opinions are valuable to us and allow us to better tailor the website help text to their needs. If you haven\'t found the answer to your questions on our website, you can contact our technical support department who will be happy to answer all your questions.',
   'thanks-for-opinion' => 'Thank you for the feedback',
   'choose-state' => 'Choose state...',
-  'matching-info' => 'For complete pairing with job offers, you\'ll need to fill out the <b>Preferences</b> and <b>Locations</b> tabs.'
+  'matching-info' => 'For complete pairing with job offers, you\'ll need to fill out the <b>Preferences</b> and <b>Locations</b> tabs.',
+  'signin-to-comment' => 'Log in to add a comment - intended only for the doctor!',
+  'delete-comment' => 'Delete comment',
+  'delete-comment-confirm' => 'Are you sure you want to delete this comment?',
+  'comment-count' => 'Number of Comments'
 ];

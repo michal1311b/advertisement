@@ -15,6 +15,7 @@ use App\Http\Requests\Advertisement\StoreRequest;
 use App\Http\Requests\Advertisement\UploadRequest;
 use App\Jobs\SendEmailJob;
 use App\Http\Service\Visit;
+use App\Opinion;
 use App\Settlement;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
@@ -150,7 +151,7 @@ class AdvertisementController extends Controller
         } else if(isset($user->doctor) !== false && $user) {
             Visit::storeVisit($user->id, $advertisement->id, true);
         } else {
-            Visit::storeVisit(null, $advertisement->id, true);
+            Visit::storeVisit(null, $advertisement->id, false);
         }
 
         $similars = Advertisement::with(['state', 'galleries', 'location'])
@@ -161,7 +162,22 @@ class AdvertisementController extends Controller
         ->where('expired_at', '>', Carbon::now())
         ->paginate(3);
 
-        return view('advertisement.show', compact(['advertisement', 'similars']));
+        $opinions = Opinion::with([
+            'user' => function($query){
+                $query->select('id', 'name', 'avatar');
+            }, 
+            'user.profile'
+        ])
+        ->where('opinionable_type', 'App\Advertisement')
+        ->where('opinionable_id', $id)
+        ->orderby('created_at', 'desc')
+        ->paginate(5);
+
+        return view('advertisement.show', compact([
+            'advertisement', 
+            'similars',
+            'opinions'
+        ]));
     }
 
     public function edit(Request $request, $id)

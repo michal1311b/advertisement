@@ -231,6 +231,21 @@
                 </div>
             </div>
         @endif
+
+        <div class="col-md-12 py-3">
+            @if(
+                (Auth::user() && Auth::user()->hasRole('doctor'))
+                || (Auth::user() && Auth::user()->hasRole('admin'))
+            )
+                @include('partials.opinion-form', ['offerType' => 'foreign'])
+            @else
+                <div class="alert alert-danger">
+                    <a href="{{ route('login')}}" class="text-white font-weight-bold">
+                        {{ trans('sentence.signin-to-comment') }} {{ trans('sentence.comment-count') }}: ( {{ count($opinions) }} )
+                    </a>
+                </div>
+            @endif
+        </div>
     </div>
 </div>
 @endsection

@@ -342,5 +342,9 @@ return [
   'opinion-thanks-description' => 'Die Meinungen der Benutzer sind für uns wertvoll und ermöglichen es uns, den Hilfetext der Website besser auf ihre Bedürfnisse abzustimmen. Wenn Sie auf unserer Website keine Antwort auf Ihre Fragen gefunden haben, können Sie sich an unseren technischen Support wenden, der Ihnen gerne alle Ihre Fragen beantwortet.',
   'thanks-for-opinion' => 'Vielen Dank für das Feedback',
   'choose-state' => 'Wähle eine Provinz...',
-  'matching-info' => 'Für eine vollständige Kopplung mit Stellenangeboten müssen Sie die Registerkarten <b>Einstellungen</b> und <b>Standorte</b> ausfüllen.'
+  'matching-info' => 'Für eine vollständige Kopplung mit Stellenangeboten müssen Sie die Registerkarten <b>Einstellungen</b> und <b>Standorte</b> ausfüllen.',
+  'signin-to-comment' => 'Loggen Sie sich ein, um einen Kommentar hinzuzufügen - nur für den Arzt!',
+  'delete-comment' => 'Kommentar löschen',
+  'delete-comment-confirm' => 'Möchten Sie diesen Kommentar wirklich löschen?',
+  'comment-count' => 'Anzahl der Kommentare'
 ];

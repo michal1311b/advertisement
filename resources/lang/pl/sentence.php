@@ -218,7 +218,7 @@ return [
   'profile-image' => 'Zdjęcie profilowe',
   'delete-photo' => 'Zdjęcie zostało usunięte!',
   'delete-category' => 'Kategoria została usunięta',
-  'delete-comment' => 'Kategoria został usunięty',
+  'delete-comment' => 'Komentarz został usunięty',
   'delete-course' => 'Kurs został usunięty',
   'delete-participant' => 'Uczestnik został usunięty',
   'delete-language' => 'Język został usunięty!',
@@ -342,5 +342,9 @@ return [
   'opinion-thanks-description' => 'Opinie użytkowników są dla nas cenne i pozwalają nam lepiej dobrać tekst pomocy serwisu do ich potrzeb. Jeśli nie znalazłeś w naszym serwisie odpowiedzi na swoje pytania, możesz skontaktować się z naszym działem obsługi technicznej, który chętnie udzieli odpowiedzi na wszystkie pytania.',
   'thanks-for-opinion' => 'Dziękujemy za opinię',
   'choose-state' => 'Wybierz województwo...',
-  'matching-info' => 'Dopełnego sparowania z ofertami pracy potrzebujesz wypełnić zakładki <b>Preferencje</b> oraz <b>Lokalizacje</b>.'
+  'matching-info' => 'Dopełnego sparowania z ofertami pracy potrzebujesz wypełnić zakładki <b>Preferencje</b> oraz <b>Lokalizacje</b>.',
+  'signin-to-comment' => 'Zaloguj się, aby dodać komentarz - przeznaczone wyłącznie dla lekarzy!',
+  'delete-comment' => 'Usuń komentarz',
+  'delete-comment-confirm' => 'Czy na pewno chcesz usunąć ten komentarz?',
+  'comment-count' => 'Liczba komentarzy'
 ];

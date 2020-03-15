@@ -176,7 +176,7 @@
                                 <div class="py-2 calculator">
                                     <div class="form-group">
                                         <div class="pb-2">
-                                        <input type="number" min="0" class="form-control" id="fuelCost" placeholder="{{ trans('sentence.fuel-cost') }}">
+                                            <input type="number" min="0" class="form-control" id="fuelCost" placeholder="{{ trans('sentence.fuel-cost') }}">
                                         </div>
                                         <div class="pb-2">
                                             <input type="number" min="0" class="form-control" id="avgFuel" placeholder="{{ trans('sentence.fuel-avg') }}">
@@ -286,6 +286,21 @@
                 </div>
             </div>
         @endif
+
+        <div class="col-md-12 py-3">
+            @if(
+                (Auth::user() && Auth::user()->hasRole('doctor'))
+                || (Auth::user() && Auth::user()->hasRole('admin'))
+            )
+                @include('partials.opinion-form', ['offerType' => 'offer'])
+            @else
+                <div class="alert alert-danger">
+                    <a href="{{ route('login')}}" class="text-white font-weight-bold">
+                        {{ trans('sentence.signin-to-comment') }} {{ trans('sentence.comment-count') }}: ( {{ count($opinions) }} )
+                    </a>
+                </div>
+            @endif
+        </div>
     </div>
 </div>
 @endsection

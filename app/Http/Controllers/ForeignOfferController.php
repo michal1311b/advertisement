@@ -6,6 +6,7 @@ use App\Currency;
 use App\ForeignOffer;
 use App\Http\Requests\Foreign\StoreRequest;
 use App\Http\Service\Visit;
+use App\Opinion;
 use App\Settlement;
 use App\Specialization;
 use App\Work;
@@ -91,7 +92,22 @@ class ForeignOfferController extends Controller
         ->where('expired_at', '>', Carbon::now())
         ->paginate(3);
 
-        return view('foreign.show', compact(['advertisement', 'similars']));
+        $opinions = Opinion::with([
+            'user' => function($query){
+                $query->select('id', 'name', 'avatar');
+            }, 
+            'user.profile'
+        ])
+        ->where('opinionable_type', 'App\ForeignOffer')
+        ->where('opinionable_id', $id)
+        ->orderby('created_at', 'desc')
+        ->paginate(5);
+
+        return view('foreign.show', compact([
+            'advertisement', 
+            'similars',
+            'opinions'
+        ]));
     }
 
     public function delete($id)
