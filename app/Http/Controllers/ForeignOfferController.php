@@ -102,7 +102,7 @@ class ForeignOfferController extends Controller
         ->where('opinionable_id', $id)
         ->orderby('created_at', 'desc')
         ->orderby('specialization_id', 'desc')
-        ->paginate(5);
+        ->paginate();
 
         return view('foreign.show', compact([
             'advertisement', 
