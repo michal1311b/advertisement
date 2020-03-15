@@ -66,6 +66,7 @@ class AdvertisementController extends Controller
                 $query->with('profile');
             }])
         ->where('expired_at', '>', Carbon::now())
+        ->orderby('specialization_id', 'desc')
         ->paginate(8);
 
         $locations = Location::get(['id', 'city']);
