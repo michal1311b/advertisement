@@ -400,6 +400,24 @@ $(document).ready(function() {
             }
         });
     }
+
+    (function () {
+        var session_key = window.localStorage.getItem('session_key')
+        if (!session_key) {
+          session_key = Math.floor(Date.now() / 1000)
+          window.localStorage.setItem('session_key', session_key)
+        }
+      
+        var payload = {
+          location_id:  {{ $advertisement->location_id }},
+          state_id:  {{ $advertisement->state_id }},
+          specialization_id:  {{ $advertisement->specialization_id }},
+          email: LoggedUser ? LoggedUser.email : null,
+          session_key: session_key
+        }
+      
+        $.post(window.location.protocol + '//' + window.location.host + "/api/visit-tracking", payload);
+    })()
 });
 
 function distance(lat1, lon1, lat2, lon2, unit) {

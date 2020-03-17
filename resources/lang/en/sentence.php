@@ -346,5 +346,7 @@ return [
   'signin-to-comment' => 'Log in to add a comment - intended only for the doctor!',
   'delete-comment' => 'Delete comment',
   'delete-comment-confirm' => 'Are you sure you want to delete this comment?',
-  'comment-count' => 'Number of Comments'
+  'comment-count' => 'Number of Comments',
+  'newest-offers' => 'The latest offers on EmployMed.eu',
+  'interested-offers' => 'Offers that may interest you'
 ];

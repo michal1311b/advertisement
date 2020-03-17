@@ -346,5 +346,7 @@ return [
   'signin-to-comment' => 'Zaloguj się, aby dodać komentarz - przeznaczone wyłącznie dla lekarzy!',
   'delete-comment' => 'Usuń komentarz',
   'delete-comment-confirm' => 'Czy na pewno chcesz usunąć ten komentarz?',
-  'comment-count' => 'Liczba komentarzy'
+  'comment-count' => 'Liczba komentarzy',
+  'newest-offers' => 'Najnowsze oferty w serwisie',
+  'interested-offers' => 'Oferty, które mogą Cię zainteresować'
 ];

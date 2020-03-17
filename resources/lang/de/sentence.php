@@ -346,5 +346,7 @@ return [
   'signin-to-comment' => 'Loggen Sie sich ein, um einen Kommentar hinzuzufügen - nur für den Arzt!',
   'delete-comment' => 'Kommentar löschen',
   'delete-comment-confirm' => 'Möchten Sie diesen Kommentar wirklich löschen?',
-  'comment-count' => 'Anzahl der Kommentare'
+  'comment-count' => 'Anzahl der Kommentare',
+  'newest-offers' => 'Die neuesten Angebote auf EmployMed.eu',
+  'interested-offers' => 'Angebote, die Sie interessieren könnten'
 ];

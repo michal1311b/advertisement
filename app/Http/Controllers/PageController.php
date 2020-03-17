@@ -25,7 +25,6 @@ class PageController extends Controller
             'id',
             'slug',
             'title', 
-            'description', 
             'min_salary', 
             'max_salary', 
             'location_id',

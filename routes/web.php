@@ -19,6 +19,8 @@ Route::get('/sitemap.xml/pins', 'SitemapController@pins');
 Route::get('/sitemap.xml/tags', 'SitemapController@tags');
 Route::get('/sitemap.xml/companies', 'SitemapController@companies');
 
+Route::get('/fb-post', 'FacebookController@storeFacebook');
+
 Route::get('/get-company-info/{nip}', 'GusController@checkNip')->name('get-company-info');
 Route::get('/update-company-info', 'GusController@getGUSData')->name('update-company-info');
 
