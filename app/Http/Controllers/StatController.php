@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Advertisement;
+use App\GeoIP;
 use App\Stat;
 use App\Tracking;
 use Carbon\Carbon;
@@ -13,6 +14,24 @@ class StatController extends Controller
     public function store(Request $request)
     {
         Stat::create($request->all());
+
+        if($request->ip())
+        {
+            $geoIP = unserialize(file_get_contents('http://www.geoplugin.net/php.gp?ip='.$request->ip()));
+            
+            if(is_array($geoIP) && !empty($geoIP))
+            {
+                GeoIP::create([
+                    'ip' => $geoIP['geoplugin_request'],
+                    'city' => $geoIP['geoplugin_city'],
+                    'country' => $geoIP['geoplugin_countryName'],
+                    'longitude' => $geoIP['geoplugin_longitude'],
+                    'latitude' => $geoIP['geoplugin_latitude'],
+                    'email' => $request->get('email'),
+                    'session_key' => $request->get('session_key'),
+                ]);
+            }
+        }
     }
 
     public function tracking(Request $request)
