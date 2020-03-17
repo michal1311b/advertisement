@@ -30,8 +30,8 @@ class StatController extends Controller
             $request->get('email'))
             ->get();
 
-        $locations = $tracked->pluck('location_id');
-        $specializations = $tracked->pluck('specialization_id');
+        $locations = array_unique($tracked->pluck('location_id')->toArray());
+        $specializations = array_unique($tracked->pluck('specialization_id')->toArray());
 
         $advertisements = Advertisement::select(
             'id',
