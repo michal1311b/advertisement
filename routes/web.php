@@ -69,6 +69,7 @@ Route::get('/verify/subscribtion/{token}', [
 ]);
 
 Route::get('/build-preferences', 'PreferenceController@buildPreferences')->name('build-preferences');
+Route::get('/refill-cities', 'GeoIPController@refillCity')->name('refill-cities');
 
 //Allows to overwrite login and register actions
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
@@ -221,6 +222,7 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('/preview/{jooble}/edit', 'JoobleController@edit')->middleware(['auth', 'admin', 'verified'])->name('preview-edit');
     Route::put('/preview/{jooble}', 'JoobleController@update')->name('update-preview');
     Route::get('/previews', 'JoobleController@index')->middleware(['auth', 'admin', 'verified'])->name('preview-list');
+    Route::get('/watch-visitors', 'GeoIPController@showVisitors')->middleware(['auth', 'admin', 'verified'])->name('watch-visitors-on-map');
 });
 
 Route::group(array('prefix' => 'blog'), function () {

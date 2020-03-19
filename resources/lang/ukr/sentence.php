@@ -348,5 +348,6 @@ return [
   'delete-comment-confirm' => 'Ви впевнені, що хочете видалити цей коментар?',
   'comment-count' => 'Кількість коментарів',
   'newest-offers' => 'Останні пропозиції на EmployMed.eu',
-  'interested-offers' => 'Пропозиції, які можуть вас зацікавити'
+  'interested-offers' => 'Пропозиції, які можуть вас зацікавити',
+  'visitors-list' => 'Відвідувачі веб-сайтів'
 ];

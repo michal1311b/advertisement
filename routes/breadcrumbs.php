@@ -39,6 +39,11 @@ Breadcrumbs::for('advertisement', function ($trail) {
     $trail->push(trans('sentence.offers-list'), route('advertisement-list'));
 });
 
+Breadcrumbs::for('visitors', function ($trail) {
+    $trail->parent('site.homepage');
+    $trail->push(trans('sentence.visitors-list'), route('watch-visitors-on-map'));
+});
+
 Breadcrumbs::for('archive', function ($trail) {
     $trail->parent('site.homepage');
     $trail->push(trans('sentence.offers-archive'), route('advertisement-archive'));

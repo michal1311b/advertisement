@@ -348,5 +348,6 @@ return [
   'delete-comment-confirm' => 'Czy na pewno chcesz usunąć ten komentarz?',
   'comment-count' => 'Liczba komentarzy',
   'newest-offers' => 'Najnowsze oferty w serwisie',
-  'interested-offers' => 'Oferty, które mogą Cię zainteresować'
+  'interested-offers' => 'Oferty, które mogą Cię zainteresować',
+  'visitors-list' => 'Odwiedzający stronę'
 ];
