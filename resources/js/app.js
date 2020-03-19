@@ -55,20 +55,22 @@ Vue.component('VueTagsInput', VueTagsInput);
 Vue.component('tinymce', tinymce);
 Vue.component('Datepicker', Datepicker);
 
-if(String(Laravel.Locale) === 'ukr')
+var userLang = navigator.language || navigator.userLanguage; 
+console.log(userLang)
+if(String(Laravel.Locale) === 'ukr' || userLang === 'uk')
 {
     localize(
         'uk', uk
     );
-} else if(String(Laravel.Locale) === 'pl') {
+} else if(String(Laravel.Locale) === 'pl'|| userLang === 'pl-PL') {
     localize(
         'pl', pl
     );
-} else if(String(Laravel.Locale) === 'en') {
+} else if(String(Laravel.Locale) === 'en' || userLang === 'en' || userLang === 'en-GB') {
     localize(
         'en', en
     );
-} else if(String(Laravel.Locale) === 'de') {
+} else if(String(Laravel.Locale) === 'de' || userLang === 'de') {
     localize(
         'de', de
     );
