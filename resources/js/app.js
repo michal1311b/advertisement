@@ -55,8 +55,8 @@ Vue.component('VueTagsInput', VueTagsInput);
 Vue.component('tinymce', tinymce);
 Vue.component('Datepicker', Datepicker);
 
-var userLang = navigator.language || navigator.userLanguage; 
-console.log(userLang)
+var userLang = navigator.language || navigator.userLanguage;
+
 if(String(Laravel.Locale) === 'ukr' || userLang === 'uk')
 {
     localize(

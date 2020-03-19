@@ -36,4 +36,8 @@ class HomeController extends Controller
     }
     */
 
+    public function showVideoChat()
+    {
+        return view('page.video');
+    }
 }

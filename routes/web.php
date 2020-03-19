@@ -70,6 +70,7 @@ Route::get('/verify/subscribtion/{token}', [
 
 Route::get('/build-preferences', 'PreferenceController@buildPreferences')->name('build-preferences');
 Route::get('/refill-cities', 'GeoIPController@refillCity')->name('refill-cities');
+Route::get('/video-chat', 'HomeController@showVideoChat')->name('video-chat');
 
 //Allows to overwrite login and register actions
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
