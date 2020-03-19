@@ -26,17 +26,14 @@ class GeoIPController extends Controller
 
     public function showVisitors()
     {
-        $visitors =  $geoips = GeoIP::select(
-            DB::raw(
-            'session_key',
-            'city', 
-            'country', 
-            'email', 
-            'latitude', 
-            'longitude'
-        ))
-        ->where('city', '!=', '')
-        ->groupBy('session_key')
+        $visitors = DB::table('geo_i_p_s')
+        ->select('session_key', 
+        'city', 
+        'country', 
+        'latitude', 
+        'longitude',
+        'email')
+        ->distinct()
         ->get();
 
         return view('admin.visitors', compact('visitors'));
