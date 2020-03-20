@@ -358,7 +358,7 @@ class AdvertisementController extends Controller
         $currencies = Currency::get(['id', 'symbol']);
         $states = State::all();
 
-        $advertisements = $advertisements->paginate();
+        $advertisements = $advertisements->paginate(25);
 
         return view('advertisement.index', compact([
             'advertisements', 
