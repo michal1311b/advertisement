@@ -42,7 +42,7 @@
     <script src="https://kit.fontawesome.com/96c3aa2e82.js" crossorigin="anonymous"></script>
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css?rand=47') }}" rel="stylesheet">
+    <link href="{{ asset('css/app.css?rand=48') }}" rel="stylesheet">
     @yield('css')
       
     <script type='text/javascript' src='//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js'></script>
@@ -94,7 +94,7 @@
         </a>
     </div>
     @include('partials.footer')
-    <script src="{{ asset('js/app.js?rand=47') }}" defer></script>
+    <script src="{{ asset('js/app.js?rand=48') }}" defer></script>
     
     <!-- Scripts -->
     @yield('scripts')

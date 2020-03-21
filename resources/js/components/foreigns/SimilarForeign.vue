@@ -160,8 +160,11 @@
                         id="settlement_id"
                         v-model="formInputs.settlement_id" 
                         @focus="onFocus('settlement_id')">
-                            <option selected>{{ trans('sentence.choose') }}</option>
-                            <option :value="settlement.id" v-for="settlement in settlements" :key="settlement.id" selected>{{ settlement.name }}</option> 
+                            <option>{{ trans('sentence.choose') }}</option>
+                            <option :value="settlement.id" 
+                            v-for="settlement in settlements" 
+                            :key="settlement.id" 
+                            :selected="settlement.id === formInputs.settlement_id">{{ settlement.name }}</option> 
                         </select>
                         <span class="text-danger">{{ errors[0] }}</span >
                     </ValidationProvider>
