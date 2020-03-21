@@ -152,33 +152,35 @@ class Advertisement extends Model
 
         $now = Carbon::now();
 
-        if(isset($attributes['galleries']) && $attributes['galleries'][0] !== 'undefined') {
-            foreach($attributes['galleries'] as $k => $gallery) {
-                if(is_numeric($k)) {
-                    $fileData = new Gallery();
-                    $fileData->oldName = '$gallery->getClientOriginalName()';
-                    $fileData->newName = $now->getTimestamp() . TextService::generateRandomString();
-                    $fileData->size = 666;
-                    $fileData->mimeType = substr($gallery, 11, strpos($gallery, ';')-11);
-                    @list($type, $gallery) = explode(';', $gallery);
-                    @list(, $gallery) = explode(',', $gallery); 
-
-                    Storage::disk('public')->put(self::uploadDir() . '/' . $fileData->newName. '.' . $fileData->mimeType, base64_decode($gallery));
-                    $fileData->path = "https://{$_SERVER['HTTP_HOST']}" . self::uploadDir() . '/' . $fileData->newName. '.' . $fileData->mimeType;
-                    $fileData->advertisement_id = $entry->id;
-                    $entry->galleries()->save($fileData);
+        if(isset($attributes['galleries']) && isset($attributes['galleries'][0])) {
+            if($attributes['galleries'][0] !== 'undefined') {
+                foreach($attributes['galleries'] as $k => $gallery) {
+                    if(is_numeric($k)) {
+                        $fileData = new Gallery();
+                        $fileData->oldName = '$gallery->getClientOriginalName()';
+                        $fileData->newName = $now->getTimestamp() . TextService::generateRandomString();
+                        $fileData->size = 666;
+                        $fileData->mimeType = substr($gallery, 11, strpos($gallery, ';')-11);
+                        @list($type, $gallery) = explode(';', $gallery);
+                        @list(, $gallery) = explode(',', $gallery); 
+    
+                        Storage::disk('public')->put(self::uploadDir() . '/' . $fileData->newName. '.' . $fileData->mimeType, base64_decode($gallery));
+                        $fileData->path = "https://{$_SERVER['HTTP_HOST']}" . self::uploadDir() . '/' . $fileData->newName. '.' . $fileData->mimeType;
+                        $fileData->advertisement_id = $entry->id;
+                        $entry->galleries()->save($fileData);
+                    }
                 }
             }
         }
         
         if(isset($attributes['tags'])) {
-            $tags = explode(",", $attributes['tags'][0]);
+            $tags = $attributes['tags'];
             foreach($tags as $k => $tag) {
-                if(is_numeric($k)) {
+                if(is_numeric($k) && isset($tag['text'])) {
                     $tagData = new Tag();
-                    $tagData->name = trim($tag);
+                    $tagData->name = trim($tag['text']);
                     $tagData->advertisement_id = $entry->id;
-                    $tagData->slug = TextService::getUniqueSlug($tag);
+                    $tagData->slug = TextService::getUniqueSlug($tag['text']);
                     $entry->tags()->save($tagData);
                 }
             }

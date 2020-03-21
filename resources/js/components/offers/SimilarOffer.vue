@@ -457,11 +457,11 @@
                 this.form.append('specialization_id', this.formInputs.specialization_id);
                 this.form.append('state_id', this.formInputs.state_id);
                 this.form.append('street', this.formInputs.street);
-                for (var key in this.formInputs.tags) {
-                    if(typeof this.formInputs.tags[key].text == 'string') {
-                        this.form.append('tags[' + key + ']', this.formInputs.tags[key].text);
-                    }
-                }
+                // for (var key in this.formInputs.tags) {
+                //     if(typeof this.formInputs.tags[key].text == 'string') {
+                //         this.form.append('tags[' + key + ']', this.formInputs.tags[key].text);
+                //     }
+                // }
                 this.form.append('term1', this.formInputs.term1);
                 this.form.append('term2', this.formInputs.term2);
                 this.form.append('term3', this.formInputs.term3);
@@ -476,16 +476,17 @@
                 axios.post('create', this.formInputs)
                 .then(response => {
                     this.blockBtn = false;
-                    if(response.data.status === 200 || 201)
+                    
+                    if(response.data.message.substring(0,17) === 'Undefined offset:'
+                    || response.data.message.substring(0,17) === 'file_get_contents') {
+                        this.$toasted.success('Nie prawidłowy adres placówki.');
+                        return;
+                    }
+                    if(response.data.status === 200 || response.data.status === 201)
                     {
-                        currentObj.successOutput = response.data.message;
-                        this.$toasted.success(currentObj.successOutput);
+                        this.$toasted.success(response.data.message);
                         this.clearForm();
-
                         this.showCreateSmiilarBtn = true;
-                    } else {
-                        currentObj.errorOutput = response.data.errors.title[0];
-                        this.$toasted.error(currentObj.errorOutput);
                     }
                 })
                 .catch(error => {
