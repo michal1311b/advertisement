@@ -311,7 +311,7 @@ return [
   'preview-source-link' => 'klicken Sie auf den Link zur Quelle.',
   'preview-update-success' => 'Die Daten wurden erfolgreich aktualisiert',
   'preview-list' => 'Ankündigungen aus dem Internet',
-  'download-helper-info' => 'Wenn Sie Probleme beim Ausfüllen des Formulars haben, füllen Sie bitte die Word-Datei aus und senden Sie sie an: <a href="mailto:employmed.eu@gmail.com">employmed.eu@gmail.com</a>. Wir helfen Ihnen mit einem Angebot.',
+  'download-helper-info' => 'Wenn Sie Probleme beim Ausfüllen des Formulars haben, füllen Sie das Formular aus, klicken Sie auf das Word-Symbol und senden Sie die heruntergeladene Datei an die folgende Adresse: employmed.eu@gmail.com. Wir helfen Ihnen mit einem Angebot.',
   'signin-to-apply' => 'Melden Sie sich an, um sich für das Angebot zu bewerben',
   'price' => 'Preis',
   'points' => 'Bildungspunkte',

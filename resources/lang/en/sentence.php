@@ -311,7 +311,7 @@ return [
   'preview-source-link' => 'click on the link to the source.',
   'preview-update-success' => 'Data was updated successfully',
   'preview-list' => 'Offers from internet',
-  'download-helper-info' => 'If you have a problem with completing the form, please complete the word file and send it to: <a href="mailto:employmed.eu@gmail.com">employmed.eu@gmail.com</a>. We will help you with the offer.',
+  'download-helper-info' => 'If you have a problem with completing the form, please fill out the form and click the Word icon, then send the downloaded file to the address: employmed.eu@gmail.com. We will help you with an offer.',
   'signin-to-apply' => 'Sign in to apply for job offer.',
   'price' => 'Price',
   'points' => 'Educational points',

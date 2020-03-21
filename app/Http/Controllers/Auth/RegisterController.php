@@ -271,12 +271,12 @@ class RegisterController extends Controller
 
     public function showRegisterCompany()
     {
-        $works = Work::all();
-        $states = State::all();
+        $works = Work::get(['id', 'name']);
+        $states = State::get(['id', 'name']);
         $locations = Location::get(['id', 'city']);
         $specializations = Specialization::all();
-        $currencies = Currency::all();
-        $settlements = Settlement::all();
+        $currencies = Currency::get(['id', 'name', 'symbol']);
+        $settlements = Settlement::get(['id', 'name']);
 
         return view('auth.register-company', compact(
             'works',

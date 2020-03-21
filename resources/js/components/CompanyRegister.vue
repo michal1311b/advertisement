@@ -1,5 +1,26 @@
 <template>
     <ValidationObserver v-slot="{ handleSubmit }">
+        <div class="px-2 py-2 text-danger font-weight-bold">
+            {{ trans('sentence.download-helper-info') }}
+            <p>
+                <img src="/images/word-icon.png" alt="Microsoft Word" class="logo" @click="exportHTML"/>
+            </p>
+        </div>   
+
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link step1 active" id="step1-tab" data-toggle="tab" href="#step1" role="tab" aria-controls="step1" aria-selected="true">{{ trans('sentence.step1') }}</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link step2" id="step2-tab" data-toggle="tab" href="#step2" role="tab" aria-controls="step2" aria-selected="false">{{ trans('sentence.step2') }}</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link step3" id="step3-tab" data-toggle="tab" href="#step3" role="tab" aria-controls="step3" aria-selected="false">{{ trans('sentence.step3') }}</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link step4" id="step4-tab" data-toggle="tab" href="#step4" role="tab" aria-controls="step4" aria-selected="false">{{ trans('sentence.step4') }}</a>
+            </li>
+        </ul>
         <form method="POST" @submit.prevent="handleSubmit(submitForm)" enctype="multipart/form-data">
             <div class="tab-content" id="myTabContent">
                 <div class="tab-pane fade active show" id="step1" role="tabpanel" aria-labelledby="step1">
@@ -291,9 +312,9 @@
                             <label for="min_salary" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.min_salary') }} <span class="text-danger font-weight-bolder">*</span></label>
 
                             <div class="col-12 col-md-9">
-                                <ValidationProvider :name="trans('sentence.min_salary')" rules="required" v-slot="{ errors }">
-                                    <input min="0"
-                                    id="min_salary" type="number" 
+                                <ValidationProvider :name="trans('sentence.min_salary')" rules="required|numeric" v-slot="{ errors }">
+                                    <input 
+                                    id="min_salary" type="text" 
                                     class="form-control" name="min_salary" v-model="formInputs.min_salary" autocomplete="min_salary" autofocus>
                                     <span class="text-danger">{{ errors[0] }}</span >
                                 </ValidationProvider>
@@ -304,9 +325,9 @@
                             <label for="max_salary" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.max_salary') }} <span class="text-danger font-weight-bolder">*</span></label>
 
                             <div class="col-12 col-md-9">
-                                <ValidationProvider :name="trans('sentence.max_salary')" rules="required" v-slot="{ errors }">
-                                    <input min="0"
-                                    id="max_salary" type="number" 
+                                <ValidationProvider :name="trans('sentence.max_salary')" rules="required|is_not:min_salary|numeric" v-slot="{ errors }">
+                                    <input 
+                                    id="max_salary" type="text" 
                                     class="form-control" name="max_salary" v-model="formInputs.max_salary" autocomplete="max_salary" autofocus>
                                     <span class="text-danger">{{ errors[0] }}</span >
                                 </ValidationProvider>
@@ -479,6 +500,64 @@
             this.getSettlementIds();
         },
         methods: {
+            exportHTML(){
+                this.fillFormData();
+                
+                var header = "<html xmlns:o='urn:schemas-microsoft-com:office:office' "+
+                        "xmlns:w='urn:schemas-microsoft-com:office:word' "+
+                        "xmlns='http://www.w3.org/TR/REC-html40'>"+
+                        "<head><meta charset='utf-8'><title>Export HTML to Word Document with JavaScript</title></head><body>";
+                var footer = "</body></html>";
+
+                var work = (this.formInputs.work_id-1 === -1) ? this.works[0].name : this.works[this.formInputs.work_id-1].name;
+                var location = (this.formInputs.location_id-1 === -1) ? this.locations[0].city : this.locations[this.formInputs.location_id-1].city;
+                var state = (this.formInputs.state_id-1 === -1) ? this.states[0].name : this.states[this.formInputs.state_id-1].name;
+                var specialization = (this.formInputs.specialization_id-1 === -1) ? this.specializations[0].name : this.specializations[this.formInputs.specialization_id-1].name;
+                var currency = (this.formInputs.currency_id-1 === -1) ? this.currencies[0].symbol : this.currencies[this.formInputs.currency_id-1].symbol;
+                var settlement = (this.formInputs.settlement_id-1 === -1) ? this.settlements[0].name : this.settlements[this.formInputs.settlement_id-1].name;
+                var tags;
+                
+                for (var key in this.formInputs.tags) {
+                    if(typeof this.formInputs.tags[key].text == 'string') {
+                        tags += this.formInputs.tags[key].text + ', ';
+                    }
+                }
+
+                var sourceHTML = header+
+                "<p>" + '<b>User name</b>' + ": " + this.formInputs.name + "</p>" +
+                "<p>" + '<b>E-mail</b>' + ": " + this.formInputs.email + "</p>" +
+                "<p>" + '<b>NIP</b>' + ": " + this.formInputs.company_nip + "</p>" +
+                "<p>" + '<b>Company city</b>' + ": " + this.formInputs.company_name + "</p>" +
+                "<p>" + '<b>Company street</b>' + ": " + this.formInputs.company_street + "</p>" +
+                "<p>" + '<b>Company post code</b>' + ": " + this.formInputs.company_post_code + "</p>" +
+                "<p>" + '<b>Company city</b>' + ": " + this.formInputs.company_city + "</p>" +
+                "<p>" + '<b>Title</b>' + ": "+ "</p>" + this.formInputs.title  +
+                "<p>" + '<b>Description</b>' + ": "+ "</p>" + this.formInputs.description  +
+                "<p>" + '<b>Profits</b>' + ": "+ "</p>" + this.formInputs.profits +
+                "<p>" + '<b>Requirements</b>' + ": "+ "</p>" + this.formInputs.requirements  +
+                "<p>" + '<b>Work type</b>' + ": " + work + "</p>" +
+                "<p>" + '<b>Location</b>' + ": " + location + "</p>" +
+                "<p>" + '<b>State</b>' + ": " + state + "</p>" +
+                "<p>" + '<b>Street</b>' + ": " + this.formInputs.street + "</p>" +
+                "<p>" + '<b>Phone</b>' + ": " + this.formInputs.phone + "</p>" +
+                "<p>" + '<b>Specialization</b>' + ": " + specialization + "</p>" +
+                "<p>" + '<b>Tags</b>' + ": " + tags + "</p>" +
+                "<p>" + '<b>Min salary</b>' + ": " + this.formInputs.min_salary + "</p>" +
+                "<p>" + '<b>Max salary</b>' + ": " + this.formInputs.max_salary + "</p>" +
+                "<p>" + '<b>Currency</b>' + ": " + currency + "</p>" +
+                "<p>" + '<b>Settlement</b>' + ": " + settlement + "</p>" +
+                "<p>" + '<b>Negotiable</b>' + ": " + this.formInputs.negotiable + "</p>" +
+                "<p>" + '<b>Logo</b>' + ": " + "</p>" +
+                footer;
+                
+                var source = 'data:application/vnd.ms-word;charset=utf-8,' + encodeURIComponent(sourceHTML);
+                var fileDownload = document.createElement("a");
+                document.body.appendChild(fileDownload);
+                fileDownload.href = source;
+                fileDownload.download = 'document.doc';
+                fileDownload.click();
+                document.body.removeChild(fileDownload);
+            },
             getWorkIds() {
                 for(var i=1; i <= this.works.length; i++) {
                     this.workIds.push(i);
