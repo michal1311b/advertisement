@@ -87,7 +87,9 @@
                         v-model="formInputs.location_id" 
                         @focus="onFocus('location_id')">
                             <option selected>{{ trans('sentence.choose') }}</option>
-                            <option :value="location.id" v-for="location in locations" :key="location.id" selected>{{ location.city }}</option> 
+                            <option :value="location.id" 
+                            v-for="location in locations" :key="location.id" 
+                            :selected="location.id === formInputs.location_id">{{ location.city }}</option> 
                         </select>
                         <span class="text-danger">{{ errors[0] }}</span >
                     </ValidationProvider>
@@ -203,7 +205,11 @@
                         v-model="formInputs.settlement_id" 
                         @focus="onFocus('settlement_id')">
                             <option selected>{{ trans('sentence.choose') }}</option>
-                            <option :value="settlement.id" v-for="settlement in settlements" :key="settlement.id" selected>{{ settlement.name }}</option> 
+                            <option :value="settlement.id" 
+                            v-for="settlement in settlements" :key="settlement.id" 
+                            :selected="settlement.id === formInputs.settlement_id">
+                                {{ settlement.name }}
+                            </option> 
                         </select>
                         <span class="text-danger">{{ errors[0] }}</span >
                     </ValidationProvider>
@@ -236,7 +242,10 @@
                 <div class="col-12 col-md-9">
                     <select data-live-search="true" class="form-control" name="currency_id" id="currency_id">
                         <option selected>{{ trans('sentence.choose') }}</option>
-                        <option :value="currency.id" v-for="currency in currencies" :key="currency.id" selected>{{ currency.name }}</option> 
+                        <option :value="currency.id" 
+                        v-for="currency in currencies" 
+                        :key="currency.id" 
+                        :selected="currency.id === formInputs.currency_id">{{ currency.name }}</option> 
                     </select>
                 </div>
             </div>
@@ -457,11 +466,11 @@
                 this.form.append('specialization_id', this.formInputs.specialization_id);
                 this.form.append('state_id', this.formInputs.state_id);
                 this.form.append('street', this.formInputs.street);
-                // for (var key in this.formInputs.tags) {
-                //     if(typeof this.formInputs.tags[key].text == 'string') {
-                //         this.form.append('tags[' + key + ']', this.formInputs.tags[key].text);
-                //     }
-                // }
+                for (var key in this.formInputs.tags) {
+                    if(typeof this.formInputs.tags[key].text == 'string') {
+                        this.form.append('tags[' + key + ']', this.formInputs.tags[key].text);
+                    }
+                }
                 this.form.append('term1', this.formInputs.term1);
                 this.form.append('term2', this.formInputs.term2);
                 this.form.append('term3', this.formInputs.term3);
