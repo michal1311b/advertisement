@@ -349,5 +349,6 @@ return [
   'comment-count' => 'Number of Comments',
   'newest-offers' => 'The latest offers on EmployMed.eu',
   'interested-offers' => 'Offers that may interest you',
-  'visitors-list' => 'Website visitors'
+  'visitors-list' => 'Website visitors',
+  'visit-company' => 'See other offers of this employer. Click here.'
 ];

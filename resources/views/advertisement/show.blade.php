@@ -43,7 +43,8 @@
                             <div class="col-12 pb-2">
                                 <div class="btn-toolbar justify-content-between" role="toolbar" aria-label="Toolbar with button groups">
                                     <div class="btn-group" role="group" aria-label="First group">
-                                        <strong>{{ trans('sentence.post-by') }}</strong>&nbsp;{{ $advertisement->user->profile->company_name }}
+                                        <strong>{{ trans('sentence.post-by') }}</strong>&nbsp;
+                                        <a href="{{ route('company-show', $advertisement->user) }}" title="{{ $advertisement->user->profile->company_name }}" >{{ $advertisement->user->profile->company_name }}</a>
                                     </div>
                                     <div class="input-group">
                                         @if(Auth::check() && (Auth::user()->id !== $advertisement->user->id))
@@ -108,7 +109,11 @@
                                 <ul class="list-group">
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
                                         {{ __('Logo') }}
-                                        <span class="badge badge-pill"><img class="user-avatar--smaller" src="{{ $advertisement->user->avatar }}" /></span>
+                                        <a href="{{ route('company-show', $advertisement->user) }}" title="{{ $advertisement->user->profile->company_name }}" >
+                                            <span class="badge badge-pill">
+                                                <img class="user-avatar--smaller" alt="{{ $advertisement->user->profile->company_name }} logo" src="{{ $advertisement->user->avatar }}" />
+                                            </span>
+                                        </a>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
                                         {{ trans('sentence.city') }}
@@ -230,6 +235,11 @@
                                         <span class="sr-only">Next</span>
                                     </a>
                                 </div>
+                            </div>
+                            <div class="col-12">
+                                <a href="{{ route('company-show', $advertisement->user) }}" title="{{ $advertisement->user->profile->company_name }}"  class="no-decoration font-weight-bold text-info">
+                                    {{ trans('sentence.visit-company') }}
+                                </a>
                             </div>
                         </div>
                     </div>

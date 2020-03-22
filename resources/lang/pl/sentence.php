@@ -349,5 +349,6 @@ return [
   'comment-count' => 'Liczba komentarzy',
   'newest-offers' => 'Najnowsze oferty w serwisie',
   'interested-offers' => 'Oferty, które mogą Cię zainteresować',
-  'visitors-list' => 'Odwiedzający stronę'
+  'visitors-list' => 'Odwiedzający stronę',
+  'visit-company' => 'Zobacz inne oferty tego pracodawcy. Kliknij tutaj.'
 ];
