@@ -20,7 +20,7 @@
 <div class="list-group list-group-flush">
     <a href="{{ route('advertisement-archive') }}" class="list-group-item list-group-item-action bg-light {{ Request::is('offer/archive') ? 'text-primary active' : null }}">{{ trans('sentence.offers-archive') }}</a>
 </div>
-@if(auth()->user()->hasRole('admin'))
+{{-- @if(auth()->user()->hasRole('admin'))
     <div class="list-group list-group-flush">
         <a class="list-group-item list-group-item-action bg-light {{ Request::is('admin/users') ? 'text-primary active' : null }}" href="{{ route('users.list') }}">{{ trans('sentence.user-list')}}</a>
     </div>
@@ -48,7 +48,7 @@
     <div class="list-group list-group-flush">
         <a class="list-group-item list-group-item-action bg-light {{ Request::is('admin/previews') ? 'text-primary active' : null }}" href="{{ route('preview-list') }}">{{ trans('sentence.preview-list')}}</a>
     </div>
-@endif
+@endif --}}
 @foreach(\App\Page::where('is_active', 1)->get() as $page)
 <div class="list-group list-group-flush">
     <a href="{{ route('site.page', $page->slug) }}" class="list-group-item list-group-item-action bg-light {{ Request::is($page->slug) ? 'text-primary active' : null }}">{{ $page->title }}</a> 
