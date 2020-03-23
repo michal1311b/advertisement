@@ -25,6 +25,14 @@
                             </label>
                         </div>
                     </div>
+                    <select data-live-search="true" class="form-control @error('currency_id') is-invalid @enderror" name="currency_id" id="currency_ids">
+                        @foreach($currencies as $currency)
+                            <option @if($currency->id === 1) selected @endif
+                                value="{{ $currency->id }}">
+                                {{ $currency->symbol }}
+                            </option>
+                        @endforeach
+                    </select>
                 </div>
             </div>
         </div>

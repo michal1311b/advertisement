@@ -199,33 +199,50 @@ class ForeignOfferController extends Controller
 
         $specializations = Specialization::all();
         $expirateDate = Carbon::now()->subDays(30);
+        $currencies = Currency::get(['id', 'symbol']);
 
-        return view('foreign.index', compact(['foreigns', 'specializations', 'expirateDate']));
+        return view('foreign.index', compact([
+            'foreigns', 
+            'specializations', 
+            'expirateDate', 
+            'currencies'
+        ]));
     }
 
     public function search(Request $request)
     {
         $range = explode(',', $request->input('range'));
+        $currency = Currency::find($request->input('currency_id'));
 
         if ($request->input('specialization_id') !== null) {
             $specialization = Specialization::find($request->input('specialization_id'));
+            
             $foreigns = ForeignOffer::where('specialization_id', $specialization->id)
-                ->where('expired_at', '>', Carbon::now())
+                ->where('expired_at', '>', Carbon::now()->toDateString())
                 ->where('min_salary', '>=', $range[0])
-                ->where('max_salary', '<=', $range[1]);
+                ->where('max_salary', '<=', $range[1])
+                ->where('currency_id', $currency->id)
+                ->paginate();
+
+            var_dump(4);
         }
 
         if (($request->input('specialization_id') === null)) {
-            $foreigns = ForeignOffer::where('min_salary', '>=', ($range[0] ?? 0))
-                ->where('max_salary', '<=', ($range[1] ?? 1000))
-                ->where('expired_at', '>', Carbon::now());
+            $foreigns = ForeignOffer::where('min_salary', '>=', $range[0])
+                ->where('max_salary', '<=', $range[1])
+                ->where('expired_at', '>=', Carbon::now()->toDateString())
+                ->where('currency_id', $currency->id)
+                ->paginate();
         }
 
         $specializations = Specialization::all();
+        $currencies = Currency::get(['id', 'symbol']);
 
-        $foreigns = $foreigns->paginate();
-
-        return view('foreign.index', compact(['foreigns', 'specializations']));
+        return view('foreign.index', compact([
+            'foreigns', 
+            'specializations', 
+            'currencies'
+        ]));
     }
 
     public function extendAdvertisement($id)
