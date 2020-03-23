@@ -355,4 +355,5 @@ return [
   'experience-delete-success' => 'Twoje doświadczenie zostało pomyślnie usunięte.',
   'experience-update-success' => 'Twoje doświadczenie zostało pomyślnie zaktualizowane.',
   'no-categories' => 'Brak kategorii',
+  'offers-archive-descripion' => 'Archiwalne ogłoszenia - ogłoszenia, które nie zostały przedłużone, a były dostępne w serwisie EmployMed.eu.'
 ];

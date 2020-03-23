@@ -14,6 +14,7 @@ use Spatie\Honeypot\ProtectAgainstSpam;
 Route::get('/sitemap.xml', 'SitemapController@index');
 Route::get('/sitemap.xml/offers', 'SitemapController@offers');
 Route::get('/sitemap.xml/foreigns', 'SitemapController@foreigns');
+Route::get('/sitemap.xml/archives', 'SitemapController@archives');
 Route::get('/sitemap.xml/posts', 'SitemapController@posts');
 Route::get('/sitemap.xml/pins', 'SitemapController@pins');
 Route::get('/sitemap.xml/tags', 'SitemapController@tags');

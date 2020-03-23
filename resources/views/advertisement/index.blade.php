@@ -46,24 +46,24 @@
                             <!-- list group item-->
                             <li class="list-group-item">
                                 <!-- Custom content-->
-                                <div class="media align-items-lg-center flex-column flex-lg-row p-3">
-                                <div class="media-body order-2 order-lg-1">
-                                    <h5 class="mt-0 font-weight-bold my-2">{{ $advertisement->title }}</h5>
-                                    <h6 class="mt-0 font-weight-bold mb-2"><i class="fas fa-map-marker-alt"></i> {{ $advertisement->location->city }}</h6>
-                                    <h6 class="mt-0 mb-2"><i class="fas fa-user-md"></i> {{ $advertisement->user->profile->company_name }}</h6>
-                                    <div class="d-flex align-items-center justify-content-between mt-1">
-                                        <h6 class="font-weight-bold"><i class="fas fa-coins"></i> {{ $advertisement->settlement->name }}: {{ $advertisement->min_salary }} - {{ $advertisement->max_salary }} {{ $advertisement->currency->symbol }}</h6>
+                                <div class="media align-items-lg-center flex-column flex-lg-row">
+                                    <div class="media-body order-2 order-lg-1">
+                                        <h5 class="mt-0 font-weight-bold my-2">{{ $advertisement->title }}</h5>
+                                        <h6 class="mt-0 font-weight-bold mb-2"><i class="fas fa-map-marker-alt"></i> {{ $advertisement->location->city }}</h6>
+                                        <h6 class="mt-0"><i class="fas fa-user-md"></i> {{ $advertisement->user->profile->company_name }}</h6>
+                                        <div class="d-flex align-items-center justify-content-between mt-1">
+                                            <h6 class="font-weight-bold"><i class="fas fa-coins"></i> {{ $advertisement->settlement->name }}: {{ $advertisement->min_salary }} - {{ $advertisement->max_salary }} {{ $advertisement->currency->symbol }}</h6>
+                                        </div>
+                                        <div class="badge badge-secondary">{{ $advertisement->specialization->name }}</div>
+                                        <div>
+                                            <i class="fas fa-calendar-day"></i> {{ trans('sentence.expired_at') }} <div class="badge badge-primary">{{ $advertisement->expired_at }}</div>
+                                        </div>
                                     </div>
-                                    <div class="badge badge-secondary">{{ $advertisement->specialization->name }}</div>
-                                    <div>
-                                        <i class="fas fa-calendar-day"></i> {{ trans('sentence.expired_at') }} <div class="badge badge-primary">{{ $advertisement->expired_at }}</div>
-                                    </div>
-                                </div>
-                                @if($advertisement->galleries()->count())
-                                    <img src="{{ $advertisement->galleries[0]->path }}" width="200" class="ml-lg-5 order-1 order-lg-2" alt="{{$advertisement->galleries[0]->oldName}}">
-                                @else
-                                    <img src="{{ $advertisement->user->avatar }}" width="200" class="ml-lg-5 order-1 order-lg-2" alt="No image">
-                                @endif
+                                    @if($advertisement->galleries()->count())
+                                        <img src="{{ $advertisement->galleries[0]->path }}" width="200" class="ml-lg-5 order-1 order-lg-2" alt="{{$advertisement->galleries[0]->oldName}}">
+                                    @else
+                                        <img src="{{ $advertisement->user->avatar }}" width="200" class="ml-lg-5 order-1 order-lg-2" alt="No image">
+                                    @endif
                                 </div>
                                 <!-- End -->
                             </li>
@@ -74,7 +74,7 @@
                     @if(Auth::user() && Auth::user()->hasRole('admin'))
                         <div class="col-md-12">
                             <div class="btn-group btn-group-toggle py-2">
-                                <a href="{{ route('edit-advertisement', $advertisement->id) }}" class="btn btn-info border border-warning mr-2 text-white">{{ trans('sentence.edit') }}</a>
+                                <a href="{{ route('edit-advertisement', $advertisement->id) }}" class="btn btn-info border border-warning mr-2 text-white" title="{{ trans('sentence.edit') }}">{{ trans('sentence.edit') }}</a>
                                 
                                 <button class="btn btn-danger" data-toggle="modal"
                                     data-target="#modalremove{{$advertisement->id}}">{{ trans('sentence.btn-delete') }}</i>

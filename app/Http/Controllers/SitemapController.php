@@ -18,6 +18,7 @@ class SitemapController extends Controller
     public function index()
     {
         $advertisements = Advertisement::all()->first();
+        $foreigns = ForeignOffer::all()->first();
         $posts = Post::all()->first();
         $tags = Tag::all()->first();
         $pins = Pin::all()->first();
@@ -34,6 +35,7 @@ class SitemapController extends Controller
 
         return response()->view('sitemap.index', [
             'advertisements' => $advertisements,
+            'foreigns' => $foreigns,
             'posts' => $posts,
             'categories' => $categories,
             'pins' => $pins,
@@ -47,6 +49,17 @@ class SitemapController extends Controller
         $offers = Advertisement::all();
         
         return response()->view('sitemap.offers', [
+            'offers' => $offers,
+        ])->header('Content-Type', 'text/xml');
+    }
+
+    public function archives()
+    {
+        $offers = Advertisement::
+        where('expired_at', '<', Carbon::now())
+        ->get();
+        
+        return response()->view('sitemap.archives', [
             'offers' => $offers,
         ])->header('Content-Type', 'text/xml');
     }

@@ -355,4 +355,5 @@ return [
   'experience-delete-success' => 'Your experience was successfully deleted.',
   'experience-update-success' => 'Your experience was successfully updated.',
   'no-categories' => 'No categories',
+  'offers-archive-descripion' => 'Archival announcements - ads that were not extended but were available on EmployMed.eu.'
 ];
