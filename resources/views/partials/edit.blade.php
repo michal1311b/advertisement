@@ -64,7 +64,7 @@
                         <input name="until_now" type="hidden" value="0">
                         <input class="form-check-input until_now" 
                         type="checkbox" name="until_now" value="1"
-                        {{ old('until_now', 0)  == 1 ? 'checked' : '' }}>
+                        {{ $experience->until_now  == 1 ? 'checked' : '' }}>
                         <label class="form-check-label" for="until_now">
                             {{ trans('sentence.until')}}
                         </label>
