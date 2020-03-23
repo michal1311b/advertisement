@@ -350,5 +350,9 @@ return [
   'newest-offers' => 'Najnowsze oferty w serwisie',
   'interested-offers' => 'Oferty, które mogą Cię zainteresować',
   'visitors-list' => 'Odwiedzający stronę',
-  'visit-company' => 'Zobacz inne oferty tego pracodawcy. Kliknij tutaj.'
+  'visit-company' => 'Zobacz inne oferty tego pracodawcy. Kliknij tutaj.',
+  'experience-store-success' => 'Twoje doświadczenie zostało pomyślnie zapisane.',
+  'experience-delete-success' => 'Twoje doświadczenie zostało pomyślnie usunięte.',
+  'experience-update-success' => 'Twoje doświadczenie zostało pomyślnie zaktualizowane.',
+  'no-categories' => 'Brak kategorii',
 ];

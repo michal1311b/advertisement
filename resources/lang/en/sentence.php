@@ -350,5 +350,9 @@ return [
   'newest-offers' => 'The latest offers on EmployMed.eu',
   'interested-offers' => 'Offers that may interest you',
   'visitors-list' => 'Website visitors',
-  'visit-company' => 'See other offers of this employer. Click here.'
+  'visit-company' => 'See other offers of this employer. Click here.',
+  'experience-store-success' => 'Your experience was successfully stored.',
+  'experience-delete-success' => 'Your experience was successfully deleted.',
+  'experience-update-success' => 'Your experience was successfully updated.',
+  'no-categories' => 'No categories',
 ];

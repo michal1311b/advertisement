@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    {{ __('Edit category ') }}{{ $category->name }}
+    {{ trans('sentence.category-edit') }}{{ $category->name }}
 @endsection
 
 @section('breadcrumbs')

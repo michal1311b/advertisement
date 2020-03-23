@@ -350,5 +350,9 @@ return [
   'newest-offers' => 'Останні пропозиції на EmployMed.eu',
   'interested-offers' => 'Пропозиції, які можуть вас зацікавити',
   'visitors-list' => 'Відвідувачі веб-сайтів',
-  'visit-company' => 'Дивіться інші пропозиції цього роботодавця. Натисніть тут.'
+  'visit-company' => 'Дивіться інші пропозиції цього роботодавця. Натисніть тут.',
+  'experience-store-success' => 'Ваш досвід успішно збережено.',
+  'experience-delete-success' => 'Ваш досвід успішно видалено.',
+  'experience-update-success' => 'Ваш досвід успішно оновлено.',
+  'no-categories' => 'Без категорії',
 ];

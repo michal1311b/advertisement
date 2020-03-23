@@ -1,11 +1,11 @@
 @extends('layouts.site')
 
 @section('title')
-    {{ __('Polityka cookies') }}
+    {{ trans('sentence.cookies-policy') }}
 @endsection
 
 @section('description')
-    {{ __('Polityka cookies') }}
+    {{ trans('sentence.cookies-policy') }}
 @endsection
 
 @section('breadcrumbs')

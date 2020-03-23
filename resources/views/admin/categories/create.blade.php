@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    {{ __('Create category') }}
+    {{ trans('sentence.category-create') }}
 @endsection
 
 @section('breadcrumbs')

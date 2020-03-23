@@ -1,7 +1,7 @@
 @extends('layouts.site')
 
 @section('title')
-    {{ __('Category list') }}
+    {{ trans('sentence.category-list') }}
 @endsection
 
 @section('css')
@@ -68,7 +68,7 @@
                 @else
                     <tr>
                         <td colspan="5">
-                            <strong>{{__('No categoires')}}</strong>
+                            <strong>{{ trans('sentence.no-categories') }}</strong>
                         </td>
                     </tr>
                 @endif
