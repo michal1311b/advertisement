@@ -31,6 +31,7 @@
 
     @if ( $app->environment('production') )
         <meta name="robots" content="index, follow">
+        <script data-ad-client="ca-pub-2054450046880980" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     @else
         <meta name="robots" content="noindex, nofollow">
     @endif
@@ -65,8 +66,6 @@
     <script>
         window.Laravel.Locale = '<?php echo config('app.locale'); ?>';    
     </script>
-
-    <script data-ad-client="ca-pub-2054450046880980" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 </head>
 <body>
     <div id="app">
