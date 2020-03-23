@@ -65,6 +65,8 @@
     <script>
         window.Laravel.Locale = '<?php echo config('app.locale'); ?>';    
     </script>
+
+    <script data-as-client="ca-pub-2054450046880980" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 </head>
 <body>
     <div id="app">
