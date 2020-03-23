@@ -165,7 +165,8 @@ class Advertisement extends Model
                         @list(, $gallery) = explode(',', $gallery); 
     
                         Storage::disk('public')->put(self::uploadDir() . '/' . $fileData->newName. '.' . $fileData->mimeType, base64_decode($gallery));
-                        $fileData->path = "https://{$_SERVER['HTTP_HOST']}" . self::uploadDir() . '/' . $fileData->newName. '.' . $fileData->mimeType;
+                        $isHttp = isset($_SERVER['HTTPS']) ? 'https://' : 'http://';
+                        $fileData->path = $isHttp . "{$_SERVER['HTTP_HOST']}" . self::uploadDir() . '/' . $fileData->newName. '.' . $fileData->mimeType;
                         $fileData->advertisement_id = $entry->id;
                         $entry->galleries()->save($fileData);
                     }
@@ -213,7 +214,8 @@ class Advertisement extends Model
                     @list(, $gallery) = explode(',', $gallery); 
 
                     Storage::disk('public')->put(self::uploadDir() . '/' . $fileData->newName. '.' . $fileData->mimeType, base64_decode($gallery));
-                    $fileData->path = "https://{$_SERVER['HTTP_HOST']}" . self::uploadDir() . '/' . $fileData->newName. '.' . $fileData->mimeType;
+                    $isHttp = isset($_SERVER['HTTPS']) ? 'https://' : 'http://';
+                    $fileData->path = $isHttp . "{$_SERVER['HTTP_HOST']}" . self::uploadDir() . '/' . $fileData->newName. '.' . $fileData->mimeType;
                     $fileData->advertisement_id = $this->id;
                     $this->galleries()->save($fileData);
                 }

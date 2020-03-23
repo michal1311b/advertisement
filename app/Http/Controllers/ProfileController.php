@@ -20,7 +20,9 @@ class ProfileController extends Controller
 
             $path = $request->cv->storeAs('cv', $fileName);
 
-            $user->doctor->cv = "http://{$_SERVER['HTTP_HOST']}/" . $path;
+            $isHttp = isset($_SERVER['HTTPS']) ? 'https://' : 'http://';
+
+            $user->doctor->cv = $isHttp . "{$_SERVER['HTTP_HOST']}/" . $path;
             $user->doctor->save();
 
             session()->flash('success', trans('sentence.upload-file-success'));

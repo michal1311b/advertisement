@@ -106,7 +106,8 @@ class CompanyCourse extends Model
             $mimeType = substr($attributes['galleries'][0], 11, strpos($attributes['galleries'][0], ';')-11);
             $newName = $now->getTimestamp() . TextService::generateRandomString();
             Storage::disk('public')->put(self::uploadDir() . '/' . $newName. '.' . $mimeType, base64_decode($attributes['galleries'][0]));
-            $entry->avatar = "https://{$_SERVER['HTTP_HOST']}" . self::uploadDir() . '/' . $newName. '.' . $mimeType;
+            $isHttp = isset($_SERVER['HTTPS']) ? 'https://' : 'http://';
+            $entry->avatar = $isHttp . "{$_SERVER['HTTP_HOST']}" . self::uploadDir() . '/' . $newName. '.' . $mimeType;
         }
         $entry->save();
     }
@@ -128,7 +129,8 @@ class CompanyCourse extends Model
             $mimeType = substr($attributes['galleries'][0], 11, strpos($attributes['galleries'][0], ';')-11);
             $newName = $now->getTimestamp() . TextService::generateRandomString();
             Storage::disk('public')->put(self::uploadDir() . '/' . $newName. '.' . $mimeType, base64_decode($attributes['galleries'][0]));
-            $this->avatar = "https://{$_SERVER['HTTP_HOST']}" . self::uploadDir() . '/' . $newName. '.' . $mimeType;
+            $isHttp = isset($_SERVER['HTTPS']) ? 'https://' : 'http://';
+            $this->avatar = $isHttp . "{$_SERVER['HTTP_HOST']}" . self::uploadDir() . '/' . $newName. '.' . $mimeType;
         }
 
         parent::update($attributes, $options);

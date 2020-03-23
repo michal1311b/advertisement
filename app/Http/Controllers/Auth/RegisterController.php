@@ -398,7 +398,8 @@ class RegisterController extends Controller
                 $newName = $newName->generateRandomString();
 
                 Storage::disk('public')->put('/uploads'. '/avatars'. '/' . $newName. '.' . $mimeType, base64_decode($request['galleries'][0]));
-                $avatar = "https://{$_SERVER['HTTP_HOST']}" . '/uploads'. '/avatars' . '/' . $newName. '.' . $mimeType;
+                $isHttp = isset($_SERVER['HTTPS']) ? 'https://' : 'http://';
+                $avatar = $isHttp  . "{$_SERVER['HTTP_HOST']}" . '/uploads'. '/avatars' . '/' . $newName. '.' . $mimeType;
             } else {
                 $avatar = '/images/company_avatar.jpg';
             }
@@ -484,7 +485,8 @@ class RegisterController extends Controller
                 $newName = $newName->generateRandomString();
 
                 Storage::disk('public')->put('/uploads'. '/avatars'. '/' . $newName. '.' . $mimeType, base64_decode($request['image_profile'][0]));
-                $avatar = "https://{$_SERVER['HTTP_HOST']}" . '/uploads'. '/avatars' . '/' . $newName. '.' . $mimeType;
+                $isHttp = isset($_SERVER['HTTPS']) ? 'https://' : 'http://';
+                $avatar = $isHttp . "{$_SERVER['HTTP_HOST']}" . '/uploads'. '/avatars' . '/' . $newName. '.' . $mimeType;
             } else {
                 $avatar = '/images/company_avatar.jpg';
             }

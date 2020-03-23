@@ -35,7 +35,8 @@ class PostController extends Controller
         try {
             $now = \Carbon\Carbon::now();
             $fileData = $request->file('cover');
-            $cover = "https://{$_SERVER['HTTP_HOST']}/" . $fileData->store('/posts' . '/' . Str::random(6) . $now->format('Y-m-d-hh-mm-ss') . Str::random(6), 'public');
+            $isHttp = isset($_SERVER['HTTPS']) ? 'https://' : 'http://';
+            $cover = $isHttp . "{$_SERVER['HTTP_HOST']}/" . $fileData->store('/posts' . '/' . Str::random(6) . $now->format('Y-m-d-hh-mm-ss') . Str::random(6), 'public');
 
             $post = Post::create([
                 'title' => $request->get('title'),
@@ -130,7 +131,8 @@ class PostController extends Controller
             {
                 $now = Carbon::now();
                 $fileData = $request->cover;
-                $cover = "https://{$_SERVER['HTTP_HOST']}/" . $fileData->store('/posts' . '/' . Str::random(6) . $now->format('Y-m-d-hh-mm-ss') . Str::random(6), 'public');
+                $isHttp = isset($_SERVER['HTTPS']) ? 'https://' : 'http://';
+                $cover = $isHttp . "{$_SERVER['HTTP_HOST']}/" . $fileData->store('/posts' . '/' . Str::random(6) . $now->format('Y-m-d-hh-mm-ss') . Str::random(6), 'public');
                 $post->cover = $cover;
                 $post->save();
             }
