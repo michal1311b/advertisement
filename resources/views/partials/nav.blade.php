@@ -52,7 +52,7 @@
                 @guest
                 @else
                     @if(auth()->user()->hasRole('admin') || auth()->user()->hasRole('company'))
-                        <li class="nav-item">
+                        <li class="d-none d-lg-block nav-item">
                             <a href="{{ route('create-advertisement') }}" class="btn btn-success" title="{{ trans('sentence.offer-create-poland')}}">
                                 <i class="fas fa-plus-circle"></i>
                             </a>

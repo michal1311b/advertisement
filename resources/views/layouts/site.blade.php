@@ -102,57 +102,22 @@
     @if($app->environment('production'))
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-151388518-1"></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-
-            gtag('config', 'UA-151388518-1');
-        </script>
+        <script src="{{ asset('js/usedInViews/analytics.js') }}" defer></script>
         <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
-        <script>
-            var OneSignal = window.OneSignal || [];
-            OneSignal.push(function() {
-                OneSignal.init({
-                appId: "fa8c4c5b-fe48-4ed0-a13a-1e4d0578e659",
-                });
-            });
-        </script>
+        <script src="{{ asset('js/usedInViews/oneSignal.js') }}" defer>
+
         <!-- Hotjar Tracking Code for https://employmed.eu -->
-        <script>
-            (function(h,o,t,j,a,r){
-                h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-                h._hjSettings={hjid:1603858,hjsv:6};
-                a=o.getElementsByTagName('head')[0];
-                r=o.createElement('script');r.async=1;
-                r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-                a.appendChild(r);
-            })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-        </script>
+        <script src="{{ asset('js/usedInViews/hotjar.js') }}" defer></script>
         <!-- Load Facebook SDK for JavaScript -->
         <div id="fb-root"></div>
-        <script>
-            window.fbAsyncInit = function() {
-            FB.init({
-                xfbml            : true,
-                version          : 'v5.0'
-            });
-            };
+        <script src="{{ asset('js/usedInViews/fbMessenger.js') }}" defer></script>
 
-            (function(d, s, id) {
-                var js, fjs = d.getElementsByTagName(s)[0];
-                if (d.getElementById(id)) return;
-                js = d.createElement(s); js.id = id;
-                js.src = 'https://connect.facebook.net/pl_PL/sdk/xfbml.customerchat.js';
-                fjs.parentNode.insertBefore(js, fjs);
-            }(document, 'script', 'facebook-jssdk'));</script>
-
-            <!-- Your customer chat code -->
-            <div class="fb-customerchat"
-                attribution=setup_tool
-                page_id="112311090238540"
-                logged_in_greeting="{{ trans('sentence.logged-out-greeting') }}"
-                logged_out_greeting="{{ trans('sentence.logged-in-greeting') }}">
+        <!-- Your customer chat code -->
+        <div class="fb-customerchat"
+            attribution=setup_tool
+            page_id="112311090238540"
+            logged_in_greeting="{{ trans('sentence.logged-out-greeting') }}"
+            logged_out_greeting="{{ trans('sentence.logged-in-greeting') }}">
         </div>
     @endif
     <!-- Go to www.addthis.com/dashboard to customize your tools -->
