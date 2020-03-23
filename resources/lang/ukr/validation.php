@@ -185,6 +185,7 @@ return [
         'criteria' => 'критерії',
         'worktime' => 'робочий час',
         'galleries.*' => 'рекламне фото',
-        'mailinglist_id' => 'список пошти'
+        'mailinglist_id' => 'список пошти',
+        'user_location_id' => 'місце'
     ],
 ];

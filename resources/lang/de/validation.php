@@ -185,6 +185,7 @@ return [
         'criteria' => 'Kriterien',
         'worktime' => 'Arbeitszeit',
         'galleries.*' => 'Werbefoto',
-        'mailinglist_id' => 'Mailingliste'
+        'mailinglist_id' => 'Mailingliste',
+        'user_location_id' => 'Lage'
     ],
 ];

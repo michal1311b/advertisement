@@ -165,7 +165,7 @@
                                 </div>
 
                                 <div class="form-group row">
-                                    <label class="col-md-4 col-form-label text-md-right" for="work_id">{{ trans('sentence.settlement') }}</label>
+                                    <label class="col-md-4 col-form-label text-md-right" for="work_id">{{ trans('sentence.settlement') }} <span class="text-danger font-weight-bolder">*</span></label>
                                     <div class="col-md-6">
                                         <select data-live-search="true" class="form-control @error('work_id') is-invalid @enderror" name="work_id" id="work_id">
                                             <option selected value="">{{ trans('sentence.choose') }}</option>
@@ -180,7 +180,7 @@
                                 </div>
 
                                 <div class="form-group row">
-                                    <label class="col-md-4 col-form-label text-md-right" for="settlement_id">{{ trans('sentence.work-category') }}</label>
+                                    <label class="col-md-4 col-form-label text-md-right" for="settlement_id">{{ trans('sentence.work-category') }} <span class="text-danger font-weight-bolder">*</span></label>
                                     <div class="col-md-6">
                                         <select data-live-search="true" class="form-control @error('settlement_id') is-invalid @enderror" name="settlement_id" id="settlement_id">
                                             <option selected value="">{{ trans('sentence.choose') }}</option>
@@ -195,7 +195,7 @@
                                 </div>
 
                                 <div class="form-group row">
-                                    <label for="min_salary"  class="col-md-4 col-form-label text-md-right">{{ trans('sentence.min_salary') }}</label>
+                                    <label for="min_salary"  class="col-md-4 col-form-label text-md-right">{{ trans('sentence.min_salary') }} <span class="text-danger font-weight-bolder">*</span></label>
             
                                     <div class="col-md-6">
                                         <input id="min_salary" min="0" type="number" class="form-control @error('min_salary') is-invalid @enderror" required name="min_salary" value="{{ old('min_salary') }}" autocomplete="min_salary" autofocus>
@@ -206,7 +206,7 @@
                                 </div>
 
                                 <div class="form-group row">
-                                    <label class="col-md-4 col-form-label text-md-right" for="settlement_id">{{ trans('sentence.currency') }}</label>
+                                    <label class="col-md-4 col-form-label text-md-right" for="settlement_id">{{ trans('sentence.currency') }} <span class="text-danger font-weight-bolder">*</span></label>
                                     <div class="col-md-6">
                                         <select data-live-search="true" class="form-control @error('currency_id') is-invalid @enderror" name="currency_id" id="currency_id">
                                             <option selected value="">{{ trans('sentence.choose') }}</option>
@@ -221,27 +221,30 @@
                                 </div>
 
                                 <div class="form-group row">
-                                    <label class="col-md-4 col-form-label text-md-right" for="location_id">{{ trans('sentence.location') }}</label>
+                                    <label class="col-md-4 col-form-label text-md-right" for="user_location_id">{{ trans('sentence.location') }} <span class="text-danger font-weight-bolder">*</span></label>
                                     <div class="col-md-6">
-                                        <select data-live-search="true" class="form-control @error('location_id') is-invalid @enderror" name="user_location_id" id="user_location_id" required>
+                                        <select data-live-search="true" class="form-control @error('user_location_id') is-invalid @enderror" name="user_location_id" id="user_location_id" required>
                                             <option selected>{{ trans('sentence.choose') }}</option>
                                             @foreach($locations as $location)
                                                 <option {{ old('user_location_id') == $location->id ? 'selected' : '' }} value="{{ $location->id }}">{{ $location->city }}</option>
                                             @endforeach
                                         </select>
-                                        @error('location_id')
+                                        @error('user_location_id')
                                             <div class="alert alert-danger">{{ $message }}</div>
                                         @enderror
                                     </div>
                                 </div>
     
                                 <div class="form-group row">
-                                    <label class="col-md-4 col-form-label text-md-right" for="radius">{{ trans('sentence.radius') }}</label>
+                                    <label class="col-md-4 col-form-label text-md-right" for="radius">{{ trans('sentence.radius') }} <span class="text-danger font-weight-bolder">*</span></label>
                                     <div class="col-md-6">
                                         <select data-live-search="true" class="form-control @error('radius') is-invalid @enderror" name="radius" id="radius" required>
                                             <option selected value="">{{ trans('sentence.choose') }}</option>
                                             @foreach($distances as $radius)
-                                                <option value="{{ $radius['value'] }}">{{ $radius['label'] }}</option>
+                                                <option 
+                                                value="{{ $radius['value'] }}"
+                                                {{ old('radius') == $radius['value'] ? 'selected' : '' }}
+                                                >{{ $radius['label'] }}</option>
                                             @endforeach
                                         </select>
                                         @error('radius')
@@ -440,7 +443,7 @@
                                 </div>
 
                                 <div class="form-group row">
-                                    <label class="col-md-4 col-form-label text-md-right" for="work_id">{{ trans('sentence.settlement') }}</label>
+                                    <label class="col-md-4 col-form-label text-md-right" for="work_id">{{ trans('sentence.settlement') }} <span class="text-danger font-weight-bolder">*</span></label>
                                     <div class="col-md-6">
                                         <select data-live-search="true" class="form-control @error('work_id') is-invalid @enderror" name="work_id" id="work_id">
                                             <option selected value="">{{ trans('sentence.choose') }}</option>
@@ -455,7 +458,7 @@
                                 </div>
 
                                 <div class="form-group row">
-                                    <label class="col-md-4 col-form-label text-md-right" for="settlement_id">{{ trans('sentence.work-category') }}</label>
+                                    <label class="col-md-4 col-form-label text-md-right" for="settlement_id">{{ trans('sentence.work-category') }} <span class="text-danger font-weight-bolder">*</span></label>
                                     <div class="col-md-6">
                                         <select data-live-search="true" class="form-control @error('settlement_id') is-invalid @enderror" name="settlement_id" id="settlement_id">
                                             <option selected value="">{{ trans('sentence.choose') }}</option>
@@ -470,7 +473,7 @@
                                 </div>
 
                                 <div class="form-group row">
-                                    <label for="min_salary"  class="col-md-4 col-form-label text-md-right">{{ trans('sentence.min_salary') }}</label>
+                                    <label for="min_salary"  class="col-md-4 col-form-label text-md-right">{{ trans('sentence.min_salary') }} <span class="text-danger font-weight-bolder">*</span></label>
             
                                     <div class="col-md-6">
                                         <input id="min_salary" min="0" type="number" class="form-control @error('min_salary') is-invalid @enderror" name="min_salary" value="" required autocomplete="min_salary" autofocus>
@@ -481,7 +484,7 @@
                                 </div>
                                 
                                 <div class="form-group row">
-                                    <label class="col-md-4 col-form-label text-md-right" for="settlement_id">{{ trans('sentence.currency') }}</label>
+                                    <label class="col-md-4 col-form-label text-md-right" for="settlement_id">{{ trans('sentence.currency') }} <span class="text-danger font-weight-bolder">*</span></label>
                                     <div class="col-md-6">
                                         <select data-live-search="true" class="form-control @error('currency_id') is-invalid @enderror" name="currency_id" id="currency_id">
                                             <option selected value="">{{ trans('sentence.choose') }}</option>
@@ -496,22 +499,22 @@
                                 </div>
 
                                 <div class="form-group row">
-                                    <label class="col-md-4 col-form-label text-md-right" for="location_id">{{ trans('sentence.location') }}</label>
+                                    <label class="col-md-4 col-form-label text-md-right" for="user_location_id">{{ trans('sentence.location') }} <span class="text-danger font-weight-bolder">*</span></label>
                                     <div class="col-md-6">
-                                        <select data-live-search="true" class="form-control @error('location_id') is-invalid @enderror" name="user_location_id" id="user_location_id" required>
+                                        <select data-live-search="true" class="form-control @error('user_location_id') is-invalid @enderror" name="user_location_id" id="user_location_id" required>
                                             <option selected>{{ trans('sentence.choose') }}</option>
                                             @foreach($locations as $location)
                                                 <option {{ old('user_location_id') == $location->id ? 'selected' : '' }} value="{{ $location->id }}">{{ $location->city }}</option>
                                             @endforeach
                                         </select>
-                                        @error('location_id')
+                                        @error('user_location_id')
                                             <div class="alert alert-danger">{{ $message }}</div>
                                         @enderror
                                     </div>
                                 </div>
     
                                 <div class="form-group row">
-                                    <label class="col-md-4 col-form-label text-md-right" for="radius">{{ trans('sentence.radius') }}</label>
+                                    <label class="col-md-4 col-form-label text-md-right" for="radius">{{ trans('sentence.radius') }} <span class="text-danger font-weight-bolder">*</span></label>
                                     <div class="col-md-6">
                                         <select data-live-search="true" class="form-control @error('radius') is-invalid @enderror" name="radius" id="radius" required>
                                             <option selected value="">{{ trans('sentence.choose') }}</option>

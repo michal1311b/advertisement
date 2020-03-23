@@ -21,6 +21,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CompanyCourse\CompanyCourseRequest;
+use App\Http\Requests\Doctor\StoreRequest;
 use App\Http\Requests\Register\CompanyStoreRequest;
 use App\LocationUser;
 use Illuminate\Support\Facades\Hash;
@@ -145,9 +146,8 @@ class RegisterController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function register(Request $request)
+    public function register(StoreRequest $request)
     {
-        $this->validator($request->all())->validate();
         DB::beginTransaction();
 
         try {
