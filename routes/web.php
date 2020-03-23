@@ -173,7 +173,7 @@ Route::group(array('prefix' => 'user'), function () {
     Route::get('/courses', 'UserController@getUserCourses')->name('user-course-list')->middleware(['auth', 'verified']);
     Route::delete('/courses/{comapnycourse}/delete', 'CompanyCourseController@delete')->name('delete-user-course');
     Route::get('/courses/create', 'CompanyCourseController@create')->name('create-course')->middleware(['auth', 'verified']);
-    Route::post('/courses/create', 'CompanyCourseController@store')->name('store-course')->middleware(['auth', 'verified']);
+    Route::post('/courses/create', 'CompanyCourseController@store')->name('store-company-course')->middleware(['auth', 'verified']);
     Route::get('/participants/{companycourse}/list', 'CompanyCourseController@getCourseParticiapnts')->name('user-course-participants')->middleware(['auth', 'verified']);
     Route::get('/courses/{companycourse}/edit', 'CompanyCourseController@edit')->name('edit-course')->middleware(['auth', 'verified']);
     Route::get('/participants/{companycourse}/list/{id}', 'CompanyCourseController@showCourseParticiapnt')->name('user-course-participant-show')->middleware(['auth', 'verified']);

@@ -166,13 +166,13 @@ class CompanyCourseController extends Controller
         return view('course.create', compact(['states', 'locations', 'specializations', 'currencies']));
     }
 
-    public function store(Request $reuqest)
+    public function store(Request $request)
     {
         DB::beginTransaction();
 
         try {
-            \Log::info($reuqest->all());
-            CompanyCourse::create($reuqest->all());
+            \Log::info($request->all());
+            CompanyCourse::create($request->all());
             
             DB::commit();
 
