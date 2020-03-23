@@ -1,16 +1,14 @@
-@extends('layouts.app')
+@extends('layouts.site')
 
 @section('title')
-    {{ __('List of offers') }}
+    {{ trans('sentence.offers-list') }}
+@endsection
+
+@section('description')
+    {{ trans('sentence.homepage.employmed') }}
 @endsection
 
 @section('css')
-<style>
-    .carousel-inner img {
-        width: 100%;
-        height: 100%;
-    }
-</style>
 @endsection
 
 @section('breadcrumbs')
