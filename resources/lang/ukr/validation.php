@@ -153,6 +153,7 @@ return [
         'sex' => 'секс',
         'title' => 'назва',
         'postCode' => 'поштовий індекс',
+        'post_code' => 'поштовий індекс',
         'description' => 'опис',
         'currency_id' => 'валюта',
         'category_id' => 'категорія',

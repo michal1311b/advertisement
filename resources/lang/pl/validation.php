@@ -153,6 +153,7 @@ return [
         'sex' => 'płeć',
         'title' => 'tytuł',
         'postCode' => 'kod pocztowy',
+        'post_code' => 'kod pocztowy',
         'description' => 'opis',
         'currency_id' => 'waluta',
         'category_id' => 'kategoria',

@@ -160,6 +160,7 @@ return [
         'sex' => 'sex',
         'title' => 'title',
         'postCode' => 'post code',
+        'post_code' => 'post code',
         'description' => 'description',
         'currency_id' => 'currency',
         'work_id' => 'work',
