@@ -93,20 +93,20 @@
     
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="{{ route('edit-user', auth()->user()->id) }}" title="{{ trans('sentence.user-profile')}}">{{ trans('sentence.user-profile')}}</a>
-                            <a class="dropdown-item" href="{{ route('user-rooms') }}" title="{{ trans('sentence.user-message')}}">{{ trans('sentence.user-message')}}</a>
-                            <a class="dropdown-item" href="{{ route('advertisement-list') }}" title="{{ trans('sentence.offers-list')}}">{{ trans('sentence.offers-list')}}</a>
+                            <a class="dropdown-item {{ Request::is('user/rooms') ? 'text-white active' : null }}" href="{{ route('user-rooms') }}" title="{{ trans('sentence.user-message')}}">{{ trans('sentence.user-message')}}</a>
+                            <a class="dropdown-item {{ Request::is('offer/list') ? 'text-white active' : null }}" href="{{ route('advertisement-list') }}" title="{{ trans('sentence.offers-list')}}">{{ trans('sentence.offers-list')}}</a>
                             
                             @if(auth()->user()->hasRole('admin') || auth()->user()->hasRole('company'))
-                                <a class="dropdown-item" href="{{ route('user-advertisement-list') }}" title="{{ trans('sentence.user-offers')}}">{{ trans('sentence.user-offers')}}</a>
-                                <a class="dropdown-item" href="{{ route('create-advertisement') }}" title="{{ trans('sentence.offer-create-poland')}}">{{ trans('sentence.offer-create-poland')}} <span class="btn btn-success btn-sm"><i class="fas fa-plus-circle"></i></span></a>
-                                <a class="dropdown-item" href="{{ route('user-foreign-list') }}" title="{{ trans('sentence.user-foreigns')}}">{{ trans('sentence.user-foreigns')}}</a>
-                                <a class="dropdown-item" href="{{ route('create-foreign') }}" title="{{ trans('sentence.offer-create-foreign')}}">{{ trans('sentence.offer-create-foreign')}} <span class="btn btn-success btn-sm"><i class="fas fa-plus-circle"></i></span></a>
-                                <a class="dropdown-item" href="{{ route('user-course-list') }}" title="{{ trans('sentence.user-courses')}}">{{ trans('sentence.user-courses')}}</a>
-                                <a class="dropdown-item" href="{{ route('create-course') }}" title="{{ trans('sentence.btn-add') }} {{ trans('sentence.courses') }}">{{ trans('sentence.btn-add') }} <span class="text-lowercase">{{ trans('sentence.courses') }} <span class="btn btn-success btn-sm"><i class="fas fa-plus-circle"></i></span></span></a>
+                                <a class="dropdown-item {{ Request::is('user/offers') ? 'text-white active' : null }}" href="{{ route('user-advertisement-list') }}" title="{{ trans('sentence.user-offers')}}">{{ trans('sentence.user-offers')}}</a>
+                                <a class="dropdown-item {{ Request::is('offer/create') ? 'text-white active' : null }}" href="{{ route('create-advertisement') }}" title="{{ trans('sentence.offer-create-poland')}}">{{ trans('sentence.offer-create-poland')}} <span class="btn btn-success btn-sm"><i class="fas fa-plus-circle"></i></span></a>
+                                <a class="dropdown-item {{ Request::is('user/foreigns') ? 'text-white active' : null }}" href="{{ route('user-foreign-list') }}" title="{{ trans('sentence.user-foreigns')}}">{{ trans('sentence.user-foreigns')}}</a>
+                                <a class="dropdown-item {{ Request::is('foreign/create') ? 'text-white active' : null }}" href="{{ route('create-foreign') }}" title="{{ trans('sentence.offer-create-foreign')}}">{{ trans('sentence.offer-create-foreign')}} <span class="btn btn-success btn-sm"><i class="fas fa-plus-circle"></i></span></a>
+                                <a class="dropdown-item {{ Request::is('user/courses') ? 'text-white active' : null }}" href="{{ route('user-course-list') }}" title="{{ trans('sentence.user-courses')}}">{{ trans('sentence.user-courses')}}</a>
+                                <a class="dropdown-item {{ Request::is('user/courses/create') ? 'text-white active' : null }}" href="{{ route('create-course') }}" title="{{ trans('sentence.btn-add') }} {{ trans('sentence.courses') }}">{{ trans('sentence.btn-add') }} <span class="text-lowercase">{{ trans('sentence.courses') }} <span class="btn btn-success btn-sm"><i class="fas fa-plus-circle"></i></span></span></a>
                             @endif
 
                             @if(auth()->user()->hasRole('admin'))
-                                <a class="dropdown-item" href="{{ route('watch-visitors-on-map') }}" title="{{ trans('sentence.visitors-list') }}">{{ trans('sentence.visitors-list') }}</a>
+                                <a class="dropdown-item {{ Request::is('admin/watch-visitors') ? 'text-white active' : null }}" href="{{ route('watch-visitors-on-map') }}" title="{{ trans('sentence.visitors-list') }}">{{ trans('sentence.visitors-list') }}</a>
                             @endif
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                 onclick="event.preventDefault();

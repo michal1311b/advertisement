@@ -3,16 +3,16 @@
     <a href="https://employmed.eu/blog-employmed" class="list-group-item list-group-item-action bg-light" title="{{ __('Blog') }}">{{ __('Blog') }}</a>
 </div>
 <div class="list-group list-group-flush">
-    <a href="{{ route('advertisement-list') }}" class="list-group-item list-group-item-action bg-light" title="{{ trans('sentence.offers') }}">{{ trans('sentence.offers') }}</a>
+    <a href="{{ route('advertisement-list') }}" class="list-group-item list-group-item-action bg-light {{ Request::is('offer/list') ? 'text-primary active' : null }}" title="{{ trans('sentence.offers') }}">{{ trans('sentence.offers') }}</a>
 </div>
 <div class="list-group list-group-flush">
-    <a href="{{ route('foreign-list') }}" class="list-group-item list-group-item-action bg-light" title="{{ trans('sentence.foreigns-list') }}">{{ trans('sentence.foreigns-list') }}</a>
+    <a href="{{ route('foreign-list') }}" class="list-group-item list-group-item-action bg-light {{ Request::is('foreign/list') ? 'text-primary active' : null }}" title="{{ trans('sentence.company-list') }}" title="{{ trans('sentence.foreigns-list') }}">{{ trans('sentence.foreigns-list') }}</a>
 </div>
 <div class="list-group list-group-flush">
-    <a href="{{ route('company-list') }}" class="list-group-item list-group-item-action bg-light" title="{{ trans('sentence.company-list') }}">{{ trans('sentence.company-list') }}</a>
+    <a href="{{ route('company-list') }}" class="list-group-item list-group-item-action bg-light {{ Request::is('company/list') ? 'text-primary active' : null }}" title="{{ trans('sentence.company-list') }}">{{ trans('sentence.company-list') }}</a>
 </div>
 <div class="list-group list-group-flush">
-    <a href="{{ route('course.index') }}" class="list-group-item list-group-item-action bg-light" title="{{ trans('sentence.courses') }}">{{ trans('sentence.courses') }}</a>
+    <a href="{{ route('course.index') }}" class="list-group-item list-group-item-action bg-light {{ Request::is('lista-kursow') ? 'text-primary active' : null }}" title="{{ trans('sentence.courses') }}">{{ trans('sentence.courses') }}</a>
 </div>
 <div class="list-group list-group-flush">
     <a href="{{ route('contact.show') }}" class="list-group-item list-group-item-action bg-light {{ Request::is('kontakt') ? 'text-primary active' : null }}" title="{{ trans('sentence.contact-form') }}">{{ trans('sentence.contact-form') }}</a>
