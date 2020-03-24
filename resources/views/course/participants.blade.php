@@ -50,7 +50,8 @@
                             <td>{{ $participant->email }}</td>
                             <td>{{ $participant->phone }}</td>
                             <td>
-                                <a href="{{ route('user-course-participant-show', ['companycourse' => $course, 'id' => $participant->id]) }}" class="btn btn-info">
+
+                                <a href="{{ route('user-course-participant-show', ['companycourse' => $course->id, 'id' => $participant->id]) }}" class="btn btn-info text-white">
                                     {{ trans('sentence.btn-info') }}
                                 </a>
                             </td>

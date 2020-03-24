@@ -150,9 +150,10 @@ class CompanyCourseController extends Controller
         }
     }
 
-    public function showCourseParticiapnt(CompanyCourse $course, $id)
+    public function showCourseParticiapnt($course, $participant)
     {
-        $participant = Participant::find($id);
+        $course = CompanyCourse::find($course);
+        $participant = Participant::find($participant);
 
         return view('course.participant-show', compact(['course', 'participant']));
     }
