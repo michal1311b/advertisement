@@ -355,5 +355,6 @@ return [
   'experience-delete-success' => 'Ihre Erfahrung wurde erfolgreich gelöscht.',
   'experience-update-success' => 'Ihre Erfahrung wurde erfolgreich aktualisiert.',
   'no-categories' => 'Keine Kategorie',
-  'offers-archive-descripion' => 'Archivankündigungen - Anzeigen, die nicht erweitert wurden, aber auf EmployMed.eu verfügbar waren.'
+  'offers-archive-descripion' => 'Archivankündigungen - Anzeigen, die nicht erweitert wurden, aber auf EmployMed.eu verfügbar waren.',
+  'no-courses' => 'Keine Kurse gefunden, melden Sie sich an, um sie zuerst hinzuzufügen.'
 ];

@@ -5,7 +5,7 @@
 @endsection
 
 @section('description')
-    {!! $course->description !!}
+{{ trans('sentence.register-course') }}
 @endsection
 
 @section('breadcrumbs')

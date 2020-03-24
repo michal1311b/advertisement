@@ -355,5 +355,6 @@ return [
   'experience-delete-success' => 'Twoje doświadczenie zostało pomyślnie usunięte.',
   'experience-update-success' => 'Twoje doświadczenie zostało pomyślnie zaktualizowane.',
   'no-categories' => 'Brak kategorii',
-  'offers-archive-descripion' => 'Archiwalne ogłoszenia - ogłoszenia, które nie zostały przedłużone, a były dostępne w serwisie EmployMed.eu.'
+  'offers-archive-descripion' => 'Archiwalne ogłoszenia - ogłoszenia, które nie zostały przedłużone, a były dostępne w serwisie EmployMed.eu.',
+  'no-courses' => 'Nie znaleziono żadnych kursów zaloguj się, aby dodać pierwszy.'
 ];

@@ -1,12 +1,6 @@
 @extends('layouts.app')
 
 @section('css')
-<style>
-    .carousel-inner img {
-        width: 100%;
-        height: 100%;
-    }
-</style>
 @endsection
 
 @section('title')
@@ -14,7 +8,7 @@
 @endsection
 
 @section('description')
-    {{ $course->location->city }}, {{ $course->user->profile->company_name }} {{ $course->user->profile->company_street }}, {{ $course->user->profile->phone }}: {{ __('salary') }}: {{ $course->price }} - {{ $course->max_salary }}
+    {{ $course->location->city }}, {{ $course->user->profile->company_name }} {{ $course->user->profile->company_street }}, {{ $course->user->profile->company_phone1 }}: {{ trans('sentence.price') }}: {{ $course->price }} {{ $course->currency->symbol }}
 @endsection
 
 @section('breadcrumbs')

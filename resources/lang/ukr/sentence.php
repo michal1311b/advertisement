@@ -355,5 +355,6 @@ return [
   'experience-delete-success' => 'Ваш досвід успішно видалено.',
   'experience-update-success' => 'Ваш досвід успішно оновлено.',
   'no-categories' => 'Без категорії',
-  'offers-archive-descripion' => 'Архівні оголошення - оголошення, які не були розширені, але були доступні на EmployMed.eu.'
+  'offers-archive-descripion' => 'Архівні оголошення - оголошення, які не були розширені, але були доступні на EmployMed.eu.',
+  'no-courses' => 'Курсів не знайдено, увійдіть, щоб додати перший.'
 ];

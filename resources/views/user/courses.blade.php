@@ -87,8 +87,8 @@
                 </div>
             @else
                 <div class="col-12">
-                    <a href="{{ route('create-advertisement') }}">
-                        <h4>{{ trans('sentence.no-offers') }}</h4>
+                    <a href="{{ route('store-company-course') }}">
+                        <h4>{{ trans('sentence.no-courses') }}</h4>
                     </a>
                 </div>
             @endif
