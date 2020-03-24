@@ -104,13 +104,6 @@ class CompanyCourse extends Model
         $now = Carbon::now();
 
         if(isset($attributes['galleries'])) {
-            if($entry->avatar !== null)
-            {
-                $path = parse_url($entry->avatar);
-                $image_path = public_path() . $path['path'];
-                unlink($image_path);
-            }
-            
             $mimeType = substr($attributes['galleries'][0], 11, strpos($attributes['galleries'][0], ';')-11);
             $newName = $now->getTimestamp() . TextService::generateRandomString();
             Storage::disk('public')->put(self::uploadDir() . '/' . $newName. '.' . $mimeType, base64_decode($attributes['galleries'][0]));
@@ -135,6 +128,13 @@ class CompanyCourse extends Model
 
         if(isset($attributes['galleries']) && isset($attributes['galleries'][0])) {
             if($attributes['galleries'][0] !== 'undefined') {
+                if($this->avatar !== null)
+                {
+                    $path = parse_url($this->avatar);
+                    $image_path = public_path() . $path['path'];
+                    unlink($image_path);
+                }
+            
                 $mimeType = substr($attributes['galleries'][0], 11, strpos($attributes['galleries'][0], ';')-11);
                 $newName = $now->getTimestamp() . TextService::generateRandomString();
                 $data = substr($attributes['galleries'][0], strpos($attributes['galleries'][0], ',') + 1);
