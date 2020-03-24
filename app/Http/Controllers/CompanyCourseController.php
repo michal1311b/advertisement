@@ -11,8 +11,7 @@ use App\State;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Facades\File;
+use App\Http\Requests\CompanyCourse\StoreRequest;
 
 class CompanyCourseController extends Controller
 {
@@ -168,7 +167,7 @@ class CompanyCourseController extends Controller
         return view('course.create', compact(['states', 'locations', 'specializations', 'currencies']));
     }
 
-    public function store(Request $request)
+    public function store(StoreRequest $request)
     {
         DB::beginTransaction();
 
