@@ -191,7 +191,7 @@
                 <div class="form-group row mb-0">
                     <div class="col-12">
                         <button type="submit" class="btn btn-primary" :disabled="blockBtn === true">
-                            {{ trans('sentence.btn-update') }}
+                            {{ trans('sentence.btn-add') }}
                         </button>
                     </div>
                 </div>

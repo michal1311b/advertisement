@@ -1,6 +1,8 @@
-var text = window.location.href;
+let text = window.location.href;
 
-if(text.includes('user') && text.includes('edit'))
+let pattern = 'user/' + LoggedUser.id + '/edit';
+
+if(text.match(pattern) !== null)
 {
     window.Dropzone = require('dropzone');
     Dropzone.autoDiscover = false;
@@ -53,10 +55,8 @@ var minSteps = 6,
 maxSteps = 60,
 timeBetweenSteps = 100,
 bytesPerStep = 100000;
-
-var text = window.location.href;
-    
-if(text.includes('user') && text.includes('edit'))
+  
+if(text.match(pattern) !== null)
 {
     dropzone.uploadFiles = function(files) {
         var self = this;
