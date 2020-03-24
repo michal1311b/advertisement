@@ -6,7 +6,7 @@
         <div class="col-md-12">
             @include('partials.message')
         </div>
-        <form method="POST" action="{{ route('store-participant', $course) }}" enctype="multipart/form-data">
+        <form method="POST" action="{{ route('store-participant', $course->id) }}" enctype="multipart/form-data">
             @csrf
             <div class="card-body">
                 <div class="form-row">

@@ -8,7 +8,7 @@ use App\Participant;
 
 class ParticipantController extends Controller
 {
-    public function store(StoreRequest $request, CompanyCourse $course)
+    public function store(StoreRequest $request, $id)
     {  
         Participant::create([
             'email' => $request->email,
@@ -25,7 +25,7 @@ class ParticipantController extends Controller
             'company_post_code' => $request->company_post_code,
             'company_phone' => $request->company_phone,
             'comments' => $request->comments,
-            'company_course_id' => $course->id,
+            'company_course_id' => $id,
             'term1' => $request->term1
         ]);
 

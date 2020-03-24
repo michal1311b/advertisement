@@ -46,7 +46,7 @@ Route::post('/rejestracja-zagranica', 'Auth\RegisterController@registerForeign')
 Route::get('/lista-kursow', 'CompanyCourseController@index')->name('course.index');
 Route::group(array('prefix' => 'kurs'), function () {
     Route::get('/show/{id}/{slug}', 'CompanyCourseController@show')->name('show-course');
-    Route::post('/show/{comapnycourse}', 'ParticipantController@store')->name('store-participant');
+    Route::post('/show/{id}', 'ParticipantController@store')->name('store-participant');
 });
 
 Route::get('lang/{locale}', 'LanguageController@lang')->name('locale');
