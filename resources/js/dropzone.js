@@ -2,7 +2,7 @@ let text = window.location.href;
 
 let pattern = 'user/' + LoggedUser.id + '/edit';
 
-if(text.match(pattern) !== null)
+if(text.match(pattern) !== null && LoggedUser.doctor !== null)
 {
     window.Dropzone = require('dropzone');
     Dropzone.autoDiscover = false;
@@ -56,7 +56,7 @@ maxSteps = 60,
 timeBetweenSteps = 100,
 bytesPerStep = 100000;
   
-if(text.match(pattern) !== null)
+if(text.match(pattern) !== null && LoggedUser.doctor !== null)
 {
     dropzone.uploadFiles = function(files) {
         var self = this;
