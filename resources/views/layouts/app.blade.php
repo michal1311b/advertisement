@@ -42,7 +42,7 @@
     <script src="https://kit.fontawesome.com/96c3aa2e82.js" crossorigin="anonymous"></script>
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css?rand=53') }}" rel="stylesheet">
+    <link href="{{ asset('css/app.css?rand=54') }}" rel="stylesheet">
     @yield('css')
 
     <script type='text/javascript' src='//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js'></script>
@@ -90,7 +90,7 @@
         <i class="fas fa-arrow-up"></i>
     </a>
 
-    <script src="{{ asset('js/app.js?rand=53') }}" defer></script>
+    <script src="{{ asset('js/app.js?rand=54') }}" defer></script>
 
     <!-- Scripts -->
     @yield('scripts')
