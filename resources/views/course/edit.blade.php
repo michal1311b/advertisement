@@ -39,6 +39,15 @@
                     :specializations="{{ $specializations }}"
                     :currencies="{{ $currencies }}"></edit-course>
                 </div>
+
+                @if($course->avatar)
+                    <div class="card-footer">
+                        <div class="col-12 col-md-4">
+                            <a href="{{ route('delete-course-photo', $course->id) }}" class="btn btn-danger">{{ trans('sentence.btn-delete') }}</a>
+                            <img src="{{ $course->avatar }}" alt="{{ $course->title }}" class="d-block w-100 py-2 gallery-item"/>
+                        </div>
+                    </div>
+                @endif
             </div>
         </div>
     </div>

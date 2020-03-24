@@ -7,6 +7,7 @@ use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Facades\Storage;
+use Mockery\Undefined;
 
 class CompanyCourse extends Model
 {
@@ -103,6 +104,13 @@ class CompanyCourse extends Model
         $now = Carbon::now();
 
         if(isset($attributes['galleries'])) {
+            if($entry->avatar !== null)
+            {
+                $path = parse_url($entry->avatar);
+                $image_path = public_path() . $path['path'];
+                unlink($image_path);
+            }
+            
             $mimeType = substr($attributes['galleries'][0], 11, strpos($attributes['galleries'][0], ';')-11);
             $newName = $now->getTimestamp() . TextService::generateRandomString();
             Storage::disk('public')->put(self::uploadDir() . '/' . $newName. '.' . $mimeType, base64_decode($attributes['galleries'][0]));
@@ -125,12 +133,17 @@ class CompanyCourse extends Model
 
         $now = Carbon::now();
 
-        if(isset($attributes['galleries'])) {
-            $mimeType = substr($attributes['galleries'][0], 11, strpos($attributes['galleries'][0], ';')-11);
-            $newName = $now->getTimestamp() . TextService::generateRandomString();
-            Storage::disk('public')->put(self::uploadDir() . '/' . $newName. '.' . $mimeType, base64_decode($attributes['galleries'][0]));
-            $isHttp = isset($_SERVER['HTTPS']) ? 'https://' : 'http://';
-            $this->avatar = $isHttp . "{$_SERVER['HTTP_HOST']}" . self::uploadDir() . '/' . $newName. '.' . $mimeType;
+        if(isset($attributes['galleries']) && isset($attributes['galleries'][0])) {
+            if($attributes['galleries'][0] !== 'undefined') {
+                $mimeType = substr($attributes['galleries'][0], 11, strpos($attributes['galleries'][0], ';')-11);
+                $newName = $now->getTimestamp() . TextService::generateRandomString();
+                $data = substr($attributes['galleries'][0], strpos($attributes['galleries'][0], ',') + 1);
+                $data = base64_decode($data);
+                
+                Storage::disk('public')->put(self::uploadDir() . '/' . $newName. '.' . $mimeType, $data);
+                $isHttp = isset($_SERVER['HTTPS']) ? 'https://' : 'http://';
+                $this->avatar = $isHttp . "{$_SERVER['HTTP_HOST']}" . self::uploadDir() . '/' . $newName. '.' . $mimeType;
+            }
         }
 
         parent::update($attributes, $options);

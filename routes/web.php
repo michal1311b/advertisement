@@ -180,6 +180,7 @@ Route::group(array('prefix' => 'user'), function () {
     Route::get('/participants/{companycourse}/list/{id}', 'CompanyCourseController@showCourseParticiapnt')->name('user-course-participant-show')->middleware(['auth', 'verified']);
     Route::post('/courses/{id}/update', 'CompanyCourseController@update')->name('update-user-course');
     Route::delete('/participant/{participant}/delete', 'ParticipantController@delete')->name('delete-participant');
+    Route::get('/photo/{id}/delete', 'CompanyCourseController@deletePhoto')->name('delete-course-photo');
 
     Route::post('/opinion-offer/{id}', 'OpinionController@store')->name('opinion-offer');
     Route::delete('/opinion/{id}/delete', 'OpinionController@delete')->name('delete-opinion');

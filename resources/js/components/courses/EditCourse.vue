@@ -1,6 +1,6 @@
 <template>
     <ValidationObserver v-slot="{ handleSubmit }">
-        <form method="POST" @submit.prevent="handleSubmit(submitForm)" enctype="multipart/form-data">
+        <form @submit.prevent="handleSubmit(submitForm)" enctype="multipart/form-data">
             <div class="card-body">
                 <div class="form-group row">
                     <label for="title" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.title') }} <span class="text-danger font-weight-bolder">*</span></label>
@@ -215,7 +215,7 @@
                 formInputs: {
                     start_date: '',
                     end_date: '',
-                    points: '',
+                    points: 0,
                     title: '',
                     description: '',
                     location_id: '',
@@ -225,7 +225,7 @@
                     phone: '',
                     specialization_id: '',
                     galleries: [],
-                    price: '',
+                    price: 0,
                     currency_id: '',
                     facebook: '',
                     term1: false,
@@ -258,8 +258,8 @@
                 this.formInputs.price = this.course.price;
                 this.formInputs.start_date = this.course.start_date;
                 this.formInputs.end_date = this.course.end_date;
-                this.formInputs.points = this.course.points;
-                this.formInputs.facebook = this.course.facebook;
+                this.formInputs.points = (this.course.points === null) ? 0 : this.course.points;
+                this.formInputs.facebook = (this.course.facebook === null) ? '' : this.course.facebook;
                 this.formInputs.state_id = this.course.state_id;
                 this.formInputs.location_id = this.course.location_id;
                 this.formInputs.specialization_id = this.course.specialization_id;
@@ -354,7 +354,8 @@
                 this.blockBtn = true;
                 this.fillFormData();
                 let currentObj = this;
-                axios.post('/user/courses/'+ this.course.id +'/update', this.form,
+                
+                axios.post('update', this.form,
                 {
                     headers: {
                         'Content-Type': 'multipart/form-data'

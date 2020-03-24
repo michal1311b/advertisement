@@ -11,6 +11,8 @@ use App\State;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
 
 class CompanyCourseController extends Controller
 {
@@ -131,7 +133,7 @@ class CompanyCourseController extends Controller
 
         try {
             $course = CompanyCourse::findOrFail($id);
-            \Log::info($course);
+            \Log::info($request->all());
             $course->update($request->all());
             DB::commit();
 
@@ -187,6 +189,23 @@ class CompanyCourseController extends Controller
             session()->flash('error',  trans('sentence.error-message'));
 
             return back()->withInput($request->all());
+        }
+    }
+
+    public function deletePhoto($id)
+    {
+        $gallery = CompanyCourse::findOrFail($id);
+        $path = parse_url($gallery->avatar);
+        $image_path = public_path() . $path['path'];
+        
+        if(unlink($image_path))
+        {
+            $gallery->avatar = null;
+            $gallery->save();
+            
+            session()->flash('success', trans('sentence.delete-photo'));
+
+            return back();
         }
     }
 }
