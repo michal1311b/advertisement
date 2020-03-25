@@ -8,6 +8,10 @@ Inputmask("99-99-9999", {
     "clearIncomplete": true
 }).mask($('#birthday_d'));
 
+Inputmask("99-99-9999", {
+    "clearIncomplete": true
+}).mask($('#birthday_n'));
+
 Inputmask("99-999", {
     "clearIncomplete": true
 }).mask($('#post_code'));

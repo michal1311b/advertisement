@@ -211,6 +211,7 @@ return [
   'confirm_password' => 'Passwort bestätigen',
   'birthday' => 'Geburtsdatum',
   'doctor' => 'Arzt',
+  'nurse' => 'Krankenschwester',
   'dentist' => 'Zahnarzt',
   'visits' => 'Ansichten:',
   'error-message' => 'Es ist ein Fehler aufgetreten. Bitte überprüfen Sie Ihre Angaben sorgfältig und versuchen Sie es erneut.',

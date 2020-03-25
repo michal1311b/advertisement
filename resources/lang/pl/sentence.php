@@ -212,6 +212,7 @@ return [
   'birthday' => 'Data urodzenia',
   'doctor' => 'Lekarz',
   'dentist' => 'Dentysta',
+  'nurse' => 'Pielęgniarka',
   'visits' => 'Odwiedzin:',
   'error-message' => 'Coś poszło nie tak, sprawdź dokładnie wprowadzone dane i spróbuj ponownie.',
   'error-location' => 'Nieprawidłowe dane lokalizacji firmy',

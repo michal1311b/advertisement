@@ -210,6 +210,7 @@ return [
   'birthday' => 'Birthday',
   'doctor' => 'Doctor',
   'dentist' => 'Dentist',
+  'nurse' => 'Nurse',
   'visits' => 'Visits:',
   'error-message' => 'Something went wrong, please check your details carefully and try again.',
   'error-location' => 'Incorrect business location details',

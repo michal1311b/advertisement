@@ -13,3 +13,11 @@ $('#specializations_d').select2({
 $('#specializations_dp').select2({
     width: '100%'
 });
+
+$('#specializations_n').select2({
+    width: '100%'
+});
+
+$('#specializations_np').select2({
+    width: '100%'
+});
