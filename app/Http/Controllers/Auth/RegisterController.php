@@ -24,6 +24,7 @@ use App\Http\Requests\CompanyCourse\CompanyCourseRequest;
 use App\Http\Requests\Doctor\StoreRequest;
 use App\Http\Requests\Register\CompanyStoreRequest;
 use App\LocationUser;
+use App\Nurse;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -151,75 +152,89 @@ class RegisterController extends Controller
         DB::beginTransaction();
 
         try {
-            if($request->type === 'doctor')
-            {
+            if($request->type === 'doctor') {
                 if(!$this->validateNil($request->pwz, $request->birthday))
                 {
                     return back()->withErrors([
                         'message' => trans('sentence.nil-validation-faild')
                     ])->withInput($request->all());
                 }
+            }
 
-                if(!isset($request->specializations) && !isset($request->specializationsp))
-                {
-                    return back()->withErrors([
-                        'message' => trans('sentence.one-specialization-at-least')
-                    ])->withInput($request->all());
-                }
+            if(!isset($request->specializations) && !isset($request->specializationsp)) {
+                return back()->withErrors([
+                    'message' => trans('sentence.one-specialization-at-least')
+                ])->withInput($request->all());
+            }
 
-                event(new Registered($user = User::create([
-                    'name' => $request->name,
-                    'email' => $request->email,
-                    'password' => Hash::make($request->password),
-                    'avatar' => '/images'. '/' .  $request->sex . '.png',
-                    'term1' => $request->term1,
-                    'term2' => $request->term2,
-                    'term3' => $request->term3
-                ])));
+            event(new Registered($user = User::create([
+                'name' => $request->name,
+                'email' => $request->email,
+                'password' => Hash::make($request->password),
+                'avatar' => '/images'. '/' .  $request->sex . '.png',
+                'term1' => $request->term1,
+                'term2' => $request->term2,
+                'term3' => $request->term3
+            ])));
 
-                $doctor = Doctor::create([
+            if($request->type === 'doctor') {
+                Doctor::create([
                     'user_id' => $user->id,
                     'pwz' => $request->pwz,
                     'sex' => $request->sex,
                     'birthday' => $request->birthday
                 ]);
-
-                if(isset($request->specializations))
-                {
-                    $user->specializations()->attach($request->get('specializations'));
-                }
-                
-                if(isset($request->specializationsp))
-                {
-                    $user->specializations()->attach($request->get('specializationsp'), [
-                        'is_pending' => 1
-                    ]);
-                }
-
-                $profile = Profile::create([
-                    'user_id' => $user->id
-                ]);
-
-                $preference = Preference::create([
+            } else {
+                Nurse::create([
                     'user_id' => $user->id,
-                    'work_id' => $request->work_id ?? null,
-                    'settlement_id' => $request->settlement_id ?? null,
-                    'currency_id' => $request->currency_id ?? null,
-                    'min_salary' => $request->min_salary ?? null
-                ]);
-
-                $location = Location::find($request->get('user_location_id'));
-
-                LocationUser::create([
-                    'user_id' => $user->id,
-                    'location_id' => $location->id,
-                    'radius' => $request->get('radius')
+                    'pwz' => $request->pwz,
+                    'sex' => $request->sex,
+                    'birthday' => $request->birthday
                 ]);
             }
 
-            $user
+            if(isset($request->specializations))
+            {
+                $user->specializations()->attach($request->get('specializations'));
+            }
+            
+            if(isset($request->specializationsp))
+            {
+                $user->specializations()->attach($request->get('specializationsp'), [
+                    'is_pending' => 1
+                ]);
+            }
+
+            $profile = Profile::create([
+                'user_id' => $user->id
+            ]);
+
+            $preference = Preference::create([
+                'user_id' => $user->id,
+                'work_id' => $request->work_id ?? null,
+                'settlement_id' => $request->settlement_id ?? null,
+                'currency_id' => $request->currency_id ?? null,
+                'min_salary' => $request->min_salary ?? null
+            ]);
+
+            $location = Location::find($request->get('user_location_id'));
+
+            LocationUser::create([
+                'user_id' => $user->id,
+                'location_id' => $location->id,
+                'radius' => $request->get('radius')
+            ]);
+            
+            if($request->type === 'doctor')
+            {
+                $user
                 ->roles()
                 ->attach(Role::where('name', 'doctor')->first());
+            } else {
+                $user
+                ->roles()
+                ->attach(Role::where('name', 'nurse')->first());
+            }
 
             DB::commit();
 
@@ -274,7 +289,7 @@ class RegisterController extends Controller
         $works = Work::get(['id', 'name']);
         $states = State::get(['id', 'name']);
         $locations = Location::get(['id', 'city']);
-        $specializations = Specialization::all();
+        $specializations = Specialization::whereIn('type', [1,2])->get();
         $currencies = Currency::get(['id', 'name', 'symbol']);
         $settlements = Settlement::get(['id', 'name']);
 
@@ -456,7 +471,7 @@ class RegisterController extends Controller
     public function showRegisterForeign()
     {
         $works = Work::all();
-        $specializations = Specialization::all();
+        $specializations = Specialization::whereIn('type', [1,2])->get();
         $currencies = Currency::all();
         $settlements = Settlement::all();
 
