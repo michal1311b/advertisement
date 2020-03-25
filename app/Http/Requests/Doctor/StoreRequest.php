@@ -28,7 +28,7 @@ class StoreRequest extends FormRequest
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:8|confirmed',
             'sex' => 'required',
-            'pwz' => 'required|numeric',
+            'pwz' => 'required',
             'birthday' => 'required',
             'work_id' => 'required|exists:works,id',
             'settlement_id' => 'required|exists:settlements,id',
