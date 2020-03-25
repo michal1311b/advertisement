@@ -1,7 +1,11 @@
 @extends('layouts.app')
 
 @section('title')
-    {{ __('User profile') }}
+    {{ trans('sentence.edit') . ' ' . $editUser->name }}
+@endsection
+
+@section('description')
+    {{ trans('sentence.edit') . ' ' . $editUser->name }}
 @endsection
 
 @section('breadcrumbs')
