@@ -144,9 +144,10 @@ class CompanyCourseController extends Controller
             \Log::info($e);
             DB::rollback();
 
-            session()->flash('error',  trans('sentence.error-message'));
-
-            return back()->withInput($request->all());
+            return response()->json([
+                'status' => $e->getCode(),
+                'message' => $e->getMessage()
+            ]);
         }
     }
 
@@ -186,9 +187,10 @@ class CompanyCourseController extends Controller
             \Log::info($e);
             DB::rollback();
 
-            session()->flash('error',  trans('sentence.error-message'));
-
-            return back()->withInput($request->all());
+            return response()->json([
+                'status' => $e->getCode(),
+                'message' => $e->getMessage()
+            ]);
         }
     }
 
