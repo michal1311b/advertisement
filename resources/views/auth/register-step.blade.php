@@ -41,7 +41,7 @@
                     <div class="row">
                         <div class="col-12 col-md-4 pb-2 text-center">
                             <a href="{{ route('register') }}" class="btn btn-primary btn-lg">
-                                {{ trans('sentence.register') }} {{ trans('sentence.as') }} {{ trans('sentence.doctor') }}/{{ trans('sentence.dentist') }}
+                                {{ trans('sentence.register') }} {{ trans('sentence.as') }} {{ trans('sentence.doctor') }}/ {{ trans('sentence.dentist') }}/ {{ trans('sentence.nurse') }}
                             </a>
                         </div>
                         <div class="col-12 col-md-4 pb-2 text-center">
