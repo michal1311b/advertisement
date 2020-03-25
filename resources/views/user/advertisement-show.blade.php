@@ -32,7 +32,7 @@
                     <div class="container-fluid">
                         @if(count($candidates) > 0)
                             @foreach($candidates as $candidate)
-                                @if($candidate->doctor !== null)
+                                @if($candidate->doctor !== null || $candidate->nurse !== null)
                                     <div class="row profile">
                                         <div class="col-12 col-md-4">
                                             <div class="profile-sidebar">
@@ -67,7 +67,12 @@
                                         </div>
                                         <div class="col-12 col-md-8">
                                             <div class="profile-content">
-                                                <a href="{{ $candidate->doctor->cv }}" class="btn btn-primary" target="_blank">{{ __('CV') }}</a>
+                                                @if($candidate->doctor !== null)
+                                                    <a href="{{ $candidate->doctor->cv }}" class="btn btn-primary" target="_blank">{{ __('CV') }}</a>
+                                                @endif
+                                                @if($candidate->nurse !== null)
+                                                    <a href="{{ $candidate->nurse->cv }}" class="btn btn-primary" target="_blank">{{ __('CV') }}</a>
+                                                @endif
                                                 <ul class="nav pt-3">
                                                     <li>{{ $candidate->profile->post_code }} {{ $candidate->profile->city }}</li>
                                                 </ul>
