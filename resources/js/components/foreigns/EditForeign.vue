@@ -383,6 +383,12 @@
                 axios.post('update', this.formInputs)
                 .then(response => {
                     this.blockBtn = false;
+
+                    if(response.data.message.substring(0,17) === 'Undefined offset:'
+                    || response.data.message.substring(0,17) === 'file_get_contents') {
+                        this.$toasted.success('Nie prawidłowy adres placówki.');
+                        return;
+                    }
                     if(response.data.status === 200 || 201)
                     {
                         currentObj.successOutput = response.data.message;
