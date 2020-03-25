@@ -13,6 +13,7 @@ use App\Notifications\NewMessage;
 use App\Http\Requests\Contact\StoreRequest;
 use App\Http\Requests\SiteContact\StoreRequest as SiteRequest;
 use App\Mail\ApplicationEmail;
+use App\Mail\ApplicationNurseMail;
 use App\Message;
 use App\Notifications\ConversationNotification;
 use App\Room;
@@ -49,15 +50,30 @@ class ContactController extends Controller
                 $data = [];
                 $data = array_merge($data, $request->all());
     
-                if($user->doctor && $user->doctor->cv)
-                {
-                    $data['cv'] = $user->doctor->cv;
-                } else {
-                    $fileData = $request->file('cv');
-                    $cv = "http://{$_SERVER['HTTP_HOST']}/" . $fileData->store('/cv' . '/' . Str::random(6) . $now->format('Y-m-d-hh-mm-ss') . Str::random(6), 'public');
-                    $user->doctor->cv = $cv;
-                    $user->doctor->save();
-                    $data['cv'] = $cv;
+                if($user->hasRole('doctor')) {
+                    if($user->doctor && $user->doctor->cv) {
+                        $data['cv'] = $user->doctor->cv;
+                    } else {
+                        $fileData = $request->file('cv');
+                        $isHttp = isset($_SERVER['HTTPS']) ? 'https://' : 'http://';
+                        $cv = $isHttp . "{$_SERVER['HTTP_HOST']}/" . $fileData->store('/cv' . '/' . Str::random(6) . $now->format('Y-m-d-hh-mm-ss') . Str::random(6), 'public');
+                        $user->doctor->cv = $cv;
+                        $user->doctor->save();
+                        $data['cv'] = $cv;
+                    }
+                }
+                
+                if($user->hasRole('nurse')) {
+                    if($user->nurse && $user->nurse->cv) {
+                        $data['cv'] = $user->nurse->cv;
+                    } else {
+                        $fileData = $request->file('cv');
+                        $isHttp = isset($_SERVER['HTTPS']) ? 'https://' : 'http://';
+                        $cv = $isHttp . "{$_SERVER['HTTP_HOST']}/" . $fileData->store('/cv' . '/' . Str::random(6) . $now->format('Y-m-d-hh-mm-ss') . Str::random(6), 'public');
+                        $user->nurse->cv = $cv;
+                        $user->nurse->save();
+                        $data['cv'] = $cv;
+                    }
                 }
     
                 $data['user_id'] = $user->id;
@@ -90,8 +106,13 @@ class ContactController extends Controller
     
                 $user_owner = User::find($advertisement->user_id);
     
-                \Mail::to($user_owner->email)
-                ->send(new ApplicationEmail($user->doctor, $room));
+                if($user->hasRole('doctor')) {
+                    \Mail::to($user_owner->email)
+                    ->send(new ApplicationEmail($user->doctor, $room));
+                } else {
+                    \Mail::to($user_owner->email)
+                    ->send(new ApplicationNurseMail($user->nurse, $room));
+                }
     
                 $user_owner->notify(new ConversationNotification($message, $user));
             } else {
@@ -104,15 +125,30 @@ class ContactController extends Controller
                 $data = [];
                 $data = array_merge($data, $request->all());
     
-                if($user->doctor && $user->doctor->cv)
-                {
-                    $data['cv'] = $user->doctor->cv;
-                } else {
-                    $fileData = $request->file('cv');
-                    $cv = "http://{$_SERVER['HTTP_HOST']}/" . $fileData->store('/cv' . '/' . Str::random(6) . $now->format('Y-m-d-hh-mm-ss') . Str::random(6), 'public');
-                    $user->doctor->cv = $cv;
-                    $user->doctor->save();
-                    $data['cv'] = $cv;
+                if($user->hasRole('doctor')) {
+                    if($user->doctor && $user->doctor->cv) {
+                        $data['cv'] = $user->doctor->cv;
+                    } else {
+                        $fileData = $request->file('cv');
+                        $isHttp = isset($_SERVER['HTTPS']) ? 'https://' : 'http://';
+                        $cv = $isHttp . "{$_SERVER['HTTP_HOST']}/" . $fileData->store('/cv' . '/' . Str::random(6) . $now->format('Y-m-d-hh-mm-ss') . Str::random(6), 'public');
+                        $user->doctor->cv = $cv;
+                        $user->doctor->save();
+                        $data['cv'] = $cv;
+                    }
+                }
+               
+                if($user->hasRole('nurse')) {
+                    if($user->nurse && $user->nurse->cv) {
+                        $data['cv'] = $user->nurse->cv;
+                    } else {
+                        $fileData = $request->file('cv');
+                        $isHttp = isset($_SERVER['HTTPS']) ? 'https://' : 'http://';
+                        $cv = $isHttp . "{$_SERVER['HTTP_HOST']}/" . $fileData->store('/cv' . '/' . Str::random(6) . $now->format('Y-m-d-hh-mm-ss') . Str::random(6), 'public');
+                        $user->nurse->cv = $cv;
+                        $user->nurse->save();
+                        $data['cv'] = $cv;
+                    }
                 }
     
                 $data['user_id'] = $user->id;
@@ -142,10 +178,14 @@ class ContactController extends Controller
                 // $this->sendEmail($contact, $advertisement->user_id);
     
                 $user_owner = User::find($advertisement->user_id);
-    
-                \Mail::to($user_owner->email)
-                ->send(new ApplicationEmail($user->doctor, $room));
-    
+                    
+                if($user->hasRole('doctor')) {
+                    \Mail::to($user_owner->email)
+                    ->send(new ApplicationEmail($user->doctor, $room));
+                } else {
+                    \Mail::to($user_owner->email)
+                    ->send(new ApplicationNurseMail($user->nurse, $room));
+                }
                 $user_owner->notify(new ConversationNotification($message, $user));
             }
 
