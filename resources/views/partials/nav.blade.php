@@ -58,7 +58,7 @@
                             </a>
                         </li>
                     @endif
-                    @if(auth()->user()->hasRole('doctor'))
+                    @if(auth()->user()->hasRole('doctor') || auth()->user()->hasRole('nurse'))
                         <li class="nav-item">
                             <a href="{{ route('user-prefered-locations') }}" class="nav-link" title="{{ trans('sentence.your-preferences')}}">{{ trans('sentence.your-preferences')}}</a>
                         </li>
