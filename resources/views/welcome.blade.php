@@ -140,7 +140,7 @@
                 <div class="card-body" id="gear">
                     <div class="container-fluid">
                         <div class="row">
-                            <div class="col-12">
+                            <div class="col-12 col-md-6 order-2 order-md-1">
                                 <div class="content">
                                     <div class="title m-b-md">
                                         <h3>
@@ -152,6 +152,9 @@
                                         </h6>
                                     </div>
                                 </div>
+                            </div>
+                            <div class="col-12 col-md-6 order-1 order-md-2 text-right">
+                                <img src="{{ asset('images/nurse.png') }}" alt="Nurse main page" class="w-100 doctor-main">
                             </div>
                         </div>
                     </div>
