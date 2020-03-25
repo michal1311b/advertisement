@@ -289,7 +289,7 @@ class RegisterController extends Controller
         $works = Work::get(['id', 'name']);
         $states = State::get(['id', 'name']);
         $locations = Location::get(['id', 'city']);
-        $specializations = Specialization::whereIn('type', [1,2])->get();
+        $specializations = Specialization::all();
         $currencies = Currency::get(['id', 'name', 'symbol']);
         $settlements = Settlement::get(['id', 'name']);
 
@@ -471,7 +471,7 @@ class RegisterController extends Controller
     public function showRegisterForeign()
     {
         $works = Work::all();
-        $specializations = Specialization::whereIn('type', [1,2])->get();
+        $specializations = Specialization::all();
         $currencies = Currency::all();
         $settlements = Settlement::all();
 
