@@ -79,6 +79,11 @@ class User extends Authenticatable implements MustVerifyEmail, HasLoginsAndDevic
         return $this->hasOne(Doctor::class);
     }
 
+    public function nurse()
+    {
+        return $this->hasOne(Nurse::class);
+    }
+
     public function experiences()
     {
         return $this->hasMany(Experience::class);
