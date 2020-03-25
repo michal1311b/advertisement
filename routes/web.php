@@ -162,7 +162,8 @@ Route::group(array('prefix' => 'user'), function () {
     Route::delete('/location/{id}', 'PreferenceController@deleteLocation')->name('delete-user-location');
     Route::get('/preferences', 'PreferenceController@showPreferences')->name('user-prefered-locations')->middleware(['auth', 'verified']);
     Route::post('/file/upload', 'ProfileController@uploadCV')->name('upload-cv')->middleware(['auth', 'verified']);
-    Route::delete('/cv/{doctor}', 'ProfileController@deleteCV')->name('delete-user-cv')->middleware(['auth', 'verified']);
+    Route::delete('/cv/{doctor}/doctor', 'ProfileController@deleteCV')->name('delete-user-cv')->middleware(['auth', 'verified']);
+    Route::delete('/cv/{nurse}/nurse', 'ProfileController@deleteNurseCV')->name('delete-nurse-cv')->middleware(['auth', 'verified']);
     Route::put('/share-profile/{user}', 'ProfileController@share')->name('share-profile')->middleware(['auth', 'verified']);
     Route::get('/rooms', 'RoomController@index')->name('user-rooms')->middleware(['auth', 'verified']);
     Route::get('/rooms/{room}', 'RoomController@show')->name('show-room')->middleware(['auth', 'verified']);
