@@ -86,6 +86,20 @@ class UserController extends Controller
     		$user->avatar = '/uploads/avatars/' . $filename;
         }
 
+        if($user->doctor !== null)
+        {
+            $doctor = $user->doctor()->first();
+            $doctor->sex = $request->sex;
+            $doctor->save();
+        }
+
+        if($user->nurse !== null)
+        {
+            $nurse = $user->nurse()->first();
+            $nurse->sex = $request->sex;
+            $nurse->save();
+        }
+
         $user->name = $request->name;
         $user->password = ($request->password === null) ? $user->password : Hash::make($request->password);
         $user->save();
