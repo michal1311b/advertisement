@@ -44,14 +44,20 @@ class UserController extends Controller
 
         $user = Auth::user();
         $user->checkAuthorization($editUser->id, $user->id);
-        $specializations = Specialization::all();
+        
+        if($user->hasRole('nurse')) {
+            $specializations = Specialization::whereIn('type', [0, 3])->get();
+        } else {
+            $specializations = Specialization::whereIn('type', [0, 1, 2])->get();
+        }
+        
         $languages = Language::all();
         $userLanguages = UserLanguage::where('user_id', $editUser->id)->with('language')->get();
         $userLocations = LocationUser::where('user_id', $editUser->id)->with('location')->get();
-        $locations = Location::all();
-        $works = Work::all();
-        $settlements = Settlement::all();
-        $currencies = Currency::all();
+        $locations = Location::get(['id', 'city']);
+        $works = Work::get(['id', 'name']);
+        $settlements = Settlement::get(['id', 'name']);
+        $currencies = Currency::get(['id', 'name', 'symbol']);
         $distances = [
             ['label' => '+0 km', 'value' => 0],
             ['label' => '+10 km', 'value' => 10],
@@ -168,6 +174,10 @@ class UserController extends Controller
                 $query->orderBy('end_date', 'desc');
             },
             'doctor' => function($query) {
+                $query->whereNotNull('cv');
+                $query->where('share', 1);
+            },
+            'nurse' => function($query) {
                 $query->whereNotNull('cv');
                 $query->where('share', 1);
             }
