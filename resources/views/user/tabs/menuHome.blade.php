@@ -172,7 +172,7 @@
                         </div>
                     </div>
 
-                    @if($editUser->finishedSpecializations && $editUser->doctor !== null)
+                    @if($editUser->finishedSpecializations && ($editUser->doctor !== null || $editUser->nurse !== null))
                         <div class="form-group row">
                             <label for="specializations" class="col-12 col-md-3 col-form-label text-md-right">{{trans('sentence.specializations')}}</label>
                             <div class="col-12 col-md-9">
@@ -219,27 +219,51 @@
                             </div>
                         </div>
 
-                        <div class="form-group row">
-                            <label class="col-12 col-md-3 col-form-label text-md-right" for="sex">{{ trans('sentence.sex') }}</label>
-                            <div class="col-12 col-md-9">
-                                <select data-live-search="true" class="form-control @error('sex') is-invalid @enderror" name="sex" id="sex">
-                                    <option selected>{{ trans('sentence.choose') }}</option>
-                                    <option 
-                                        @if($editUser->doctor->sex === 'male') 
-                                        selected
-                                        @endif 
-                                        value="male">{{ trans('sentence.male') }}</option>
-                                    <option 
-                                        @if($editUser->doctor->sex === 'female') 
-                                        selected
-                                        @endif 
-                                        value="female">{{ trans('sentence.female') }}</option>
-                                </select>
-                                @error('sex')
-                                    <div class="alert alert-danger">{{ $message }}</div>
-                                @enderror
+                        @if($editUser->doctor !== null)
+                            <div class="form-group row">
+                                <label class="col-12 col-md-3 col-form-label text-md-right" for="sex">{{ trans('sentence.sex') }}</label>
+                                <div class="col-12 col-md-9">
+                                    <select data-live-search="true" class="form-control @error('sex') is-invalid @enderror" name="sex" id="sex">
+                                        <option>{{ trans('sentence.choose') }}</option>
+                                        <option 
+                                            @if($editUser->doctor->sex === 'male') 
+                                            selected
+                                            @endif 
+                                            value="male">{{ trans('sentence.male') }}</option>
+                                        <option 
+                                            @if($editUser->doctor->sex === 'female') 
+                                            selected
+                                            @endif 
+                                            value="female">{{ trans('sentence.female') }}</option>
+                                    </select>
+                                    @error('sex')
+                                        <div class="alert alert-danger">{{ $message }}</div>
+                                    @enderror
+                                </div>
                             </div>
-                        </div>
+                        @elseif($editUser->nurse !== null)
+                            <div class="form-group row">
+                                <label class="col-12 col-md-3 col-form-label text-md-right" for="sex">{{ trans('sentence.sex') }}</label>
+                                <div class="col-12 col-md-9">
+                                    <select data-live-search="true" class="form-control @error('sex') is-invalid @enderror" name="sex" id="sex">
+                                        <option>{{ trans('sentence.choose') }}</option>
+                                        <option 
+                                            @if($editUser->nurse->sex === 'male') 
+                                            selected
+                                            @endif 
+                                            value="male">{{ trans('sentence.male') }}</option>
+                                        <option 
+                                            @if($editUser->nurse->sex === 'female') 
+                                            selected
+                                            @endif 
+                                            value="female">{{ trans('sentence.female') }}</option>
+                                    </select>
+                                    @error('sex')
+                                        <div class="alert alert-danger">{{ $message }}</div>
+                                    @enderror
+                                </div>
+                            </div>
+                        @endif
                     @endif
 
                     <div class="form-group row mb-0">
