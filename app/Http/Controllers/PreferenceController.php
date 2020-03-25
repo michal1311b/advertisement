@@ -103,12 +103,15 @@ class PreferenceController extends Controller
     {
         $user = Auth()
             ->user()
-            ->load(['doctor']);
+            ->load(['doctor', 'nurse']);
 
-        if($user->doctor)
+        if($user->doctor || $user->nurse)
         {
             $preData = UserAdvertisement::where('user_id', $user->id)
-            ->with(['advertisements', 'advertisements.galleries'])
+            ->with([
+                'advertisements', 
+                'advertisements.galleries'
+            ])
             ->get();
 
             return view('user.preferences', compact('preData', 'user'));
