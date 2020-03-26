@@ -36,19 +36,20 @@ class ContactController extends Controller
 
             return back();
         } 
+
         DB::beginTransaction();
 
         try {
+            $now = Carbon::now();
+            $data = [];
+            $data = array_merge($data, $request->all());
+
             if($request['emailType'] === 'offer')
             {
                 Application::create([
                     'user_id' => $user->id,
                     'advertisement_id' => $advertisement->id
                 ]);
-    
-                $now = Carbon::now();
-                $data = [];
-                $data = array_merge($data, $request->all());
     
                 if($user->hasRole('doctor')) {
                     if($user->doctor && $user->doctor->cv) {
@@ -80,50 +81,17 @@ class ContactController extends Controller
                 $data['advertisement_id'] = $advertisement->id;
     
                 $contact = Contact::create($data);
-    
-                $room = Room::create([
-                    'name' => 'Chat room ' . $advertisement->title,
-                    'user_id' => $user->id
-                ]);
-    
-                $message = Message::create([
-                    'user_id' => $user->id,
-                    'message' => $contact->message,
-                    'room_id' => $room->id
-                ]);
-    
-                RoomUser::create([
-                    'user_id' => $user->id,
-                    'room_id' => $room->id
-                ]);
-    
-                RoomUser::create([
-                    'user_id' => $advertisement->user_id,
-                    'room_id' => $room->id
-                ]);
-                
-                // $this->sendEmail($contact, $advertisement->user_id);
-    
-                $user_owner = User::find($advertisement->user_id);
-    
-                if($user->hasRole('doctor')) {
-                    \Mail::to($user_owner->email)
-                    ->send(new ApplicationEmail($user->doctor, $room));
-                } else {
-                    \Mail::to($user_owner->email)
-                    ->send(new ApplicationNurseMail($user->nurse, $room));
-                }
-    
-                $user_owner->notify(new ConversationNotification($message, $user));
+
+                $room = $this->buildRoom(
+                    $advertisement->title, 
+                    $user->id, 
+                    $contact->message,
+                    $advertisement->user_id);
             } else {
                 ForeignApplication::create([
                     'user_id' => $user->id,
                     'foreign_offer_id' => $advertisement->id
                 ]);
-    
-                $now = Carbon::now();
-                $data = [];
-                $data = array_merge($data, $request->all());
     
                 if($user->hasRole('doctor')) {
                     if($user->doctor && $user->doctor->cv) {
@@ -154,40 +122,23 @@ class ContactController extends Controller
                 $data['user_id'] = $user->id;
                 $data['foreign_offer_id'] = $advertisement->id;
     
-                $room = Room::create([
-                    'name' => 'Chat room ' . $advertisement->title,
-                    'user_id' => $user->id
-                ]);
-    
-                $message = Message::create([
-                    'user_id' => $user->id,
-                    'message' => $request['message'],
-                    'room_id' => $room->id
-                ]);
-    
-                RoomUser::create([
-                    'user_id' => $user->id,
-                    'room_id' => $room->id
-                ]);
-    
-                RoomUser::create([
-                    'user_id' => $advertisement->user_id,
-                    'room_id' => $room->id
-                ]);
-                
-                // $this->sendEmail($contact, $advertisement->user_id);
-    
-                $user_owner = User::find($advertisement->user_id);
-                    
-                if($user->hasRole('doctor')) {
-                    \Mail::to($user_owner->email)
-                    ->send(new ApplicationEmail($user->doctor, $room));
-                } else {
-                    \Mail::to($user_owner->email)
-                    ->send(new ApplicationNurseMail($user->nurse, $room));
-                }
-                $user_owner->notify(new ConversationNotification($message, $user));
+                $room = $this->buildRoom(
+                    $advertisement->title, 
+                    $user->id, 
+                    $request['message'],
+                    $advertisement->user_id);
             }
+
+            $user_owner = User::find($advertisement->user_id);
+                    
+            if($user->hasRole('doctor')) {
+                \Mail::to($user_owner->email)
+                ->send(new ApplicationEmail($user->doctor, $room['room']));
+            } else {
+                \Mail::to($user_owner->email)
+                ->send(new ApplicationNurseMail($user->nurse, $room['room']));
+            }
+            $user_owner->notify(new ConversationNotification($room['message'], $user));
 
             DB::commit();
 
@@ -202,6 +153,37 @@ class ContactController extends Controller
 
             return back()->withInput($request->all());
         }
+    }
+
+    private function buildRoom($title, $user_id, $message, $advert_user)
+    {
+        $room = Room::create([
+            'name' => 'Chat room ' . $title,
+            'user_id' => $user_id
+        ]);
+
+        $message = Message::create([
+            'user_id' => $user_id,
+            'message' => $message,
+            'room_id' => $room->id
+        ]);
+
+        RoomUser::create([
+            'user_id' => $user_id,
+            'room_id' => $room->id
+        ]);
+
+        RoomUser::create([
+            'user_id' => $advert_user,
+            'room_id' => $room->id
+        ]);
+
+        $roomData = [
+            'room' => $room,
+            'message' => $message
+        ];
+
+        return $roomData;
     }
 
     private function checkApplication($user, $advertisement, $type)
