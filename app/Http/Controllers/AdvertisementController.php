@@ -142,6 +142,7 @@ class AdvertisementController extends Controller
                 'tags',
                 'specialization'
             ])
+            ->withCount('visits')
             ->firstOrFail();
 
         $user = Auth::user();

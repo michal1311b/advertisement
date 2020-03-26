@@ -146,10 +146,10 @@
                                             <span class="badge badge-pill"><img class="user-avatar--smaller" src="{{ asset('images/archived.png') }}" /></span>
                                         </li>
                                     @endif
-                                    {{-- <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        {{ trans('sentence.phone') }}
-                                        <span class="badge badge-pill">{{ $advertisement->phone }}</span>
-                                    </li> --}}
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        {{ trans('sentence.visits') }}
+                                        <span class="badge badge-pill"><i class="fas fa-eye"></i> {{ $advertisement->visits_count }}</span>
+                                    </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
                                         {{ trans('sentence.settlement') }}
                                         <span class="badge badge-pill">{{ $advertisement->work->name }}</span>

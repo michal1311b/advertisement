@@ -123,6 +123,10 @@
                                         {{ trans('sentence.expired_at') }}
                                         <span class="badge badge-pill badge-primary">{{ $advertisement->expired_at }}</span>
                                     </li>
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        {{ trans('sentence.visits') }}
+                                        <span class="badge badge-pill"><i class="fas fa-eye"></i> {{ $advertisement->foreign_visits_count }}</span>
+                                    </li>
                                     @if($advertisement->expired_at < \Carbon\Carbon::now())
                                         <li class="list-group-item d-flex justify-content-between align-items-center font-weight-bold text-danger text-uppercase">
                                             {{ trans('sentence.offer-archive') }}

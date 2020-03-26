@@ -71,12 +71,12 @@ class ForeignOfferController extends Controller
                 'work',
                 'specialization'
             ])
+            ->withCount('foreign_visits')
             ->firstOrFail();
 
         $user = Auth::user();
         
-        if(isset($user->doctor) === false && $user)
-        {
+        if(isset($user->doctor) === false && $user) {
             Visit::storeForeignVisit($user->id, $advertisement->id);
         } else if(isset($user->doctor) !== false && $user) {
             Visit::storeForeignVisit($user->id, $advertisement->id, true);
