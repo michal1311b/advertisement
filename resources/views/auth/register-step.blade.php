@@ -26,28 +26,40 @@
                 <div class="card-header">{{ trans('sentence.register-step') }}</strong></div>
 
                 <div class="card-body">
-                    <div class="row">
-                        <div class="col-12 col-md-4 pb-2 text-center">
-                            <a href="{{ route('register.company') }}" class="btn btn-primary btn-lg">
-                                {{ trans('sentence.register') }} {{ trans('sentence.as') }} {{ trans('sentence.company') }} {{ trans('sentence.and') }} {{ trans('sentence.offer-create-poland') }}
-                            </a>
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-12 col-md-6 pb-2">
+                                <a href="{{ route('register.company') }}" class="btn btn-primary btn-lg">
+                                    {{ trans('sentence.register') }} 
+                                    {{ trans('sentence.as') }} 
+                                    {{ trans('sentence.company') }} 
+                                    {{ trans('sentence.and') }} 
+                                    {{ trans('sentence.offer-create-poland') }}
+                                    <img class="logo" src="{{ asset('images/poland.png') }}" alt="{{ trans('sentence.polish') }}">
+                                </a>
+                            </div>
+                            <div class="col-12 col-md-6 pb-2">
+                                <a href="{{ route('register.foreign') }}" class="btn btn-primary btn-lg">
+                                    {{ trans('sentence.register') }} 
+                                    {{ trans('sentence.as') }} 
+                                    {{ trans('sentence.company') }} 
+                                    {{ trans('sentence.and') }} 
+                                    {{ trans('sentence.offer-create-foreign') }}
+                                    <img class="logo" src="{{ asset('images/globe.png') }}" alt="{{ trans('sentence.polish') }}">
+                                </a>
+                            </div>
                         </div>
-                        <div class="col-12 col-md-4 pb-2 text-center">
-                            <a href="{{ route('register.foreign') }}" class="btn btn-primary btn-lg">
-                                {{ trans('sentence.register') }} {{ trans('sentence.as') }} {{ trans('sentence.company') }} {{ trans('sentence.and') }} {{ trans('sentence.offer-create-foreign') }}
-                            </a>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-12 col-md-4 pb-2 text-center">
-                            <a href="{{ route('register') }}" class="btn btn-primary btn-lg">
-                                {{ trans('sentence.register') }} {{ trans('sentence.as') }} {{ trans('sentence.doctor') }}/ {{ trans('sentence.dentist') }}/ {{ trans('sentence.nurse') }}
-                            </a>
-                        </div>
-                        <div class="col-12 col-md-4 pb-2 text-center">
-                            <a href="{{ route('register.course') }}" class="btn btn-primary btn-lg">
-                                {{ trans('sentence.register') }} {{ trans('sentence.as') }} {{ trans('sentence.company') }} {{ trans('sentence.and') }} {{ trans('sentence.register-course') }}
-                            </a>
+                        <div class="row">
+                            <div class="col-12 col-md-6 pb-2 text-center">
+                                <a href="{{ route('register') }}" class="btn btn-primary btn-lg">
+                                    {{ trans('sentence.register') }} {{ trans('sentence.as') }} {{ trans('sentence.doctor') }}/ {{ trans('sentence.dentist') }}/ {{ trans('sentence.nurse') }}
+                                </a>
+                            </div>
+                            <div class="col-12 col-md-6 pb-2 text-center">
+                                <a href="{{ route('register.course') }}" class="btn btn-primary btn-lg">
+                                    {{ trans('sentence.register') }} {{ trans('sentence.as') }} {{ trans('sentence.company') }} {{ trans('sentence.and') }} {{ trans('sentence.register-course') }}
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
