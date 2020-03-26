@@ -196,6 +196,7 @@ class ForeignOfferController extends Controller
                 $query->with('profile');
             }])
         ->where('expired_at', '>', Carbon::now())
+        ->orderby('created_at', 'desc')
         ->paginate(8);
 
         $specializations = Specialization::all();
