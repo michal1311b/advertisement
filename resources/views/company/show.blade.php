@@ -9,12 +9,6 @@
 @endsection
 
 @section('css')
-<style>
-    .carousel-inner img {
-        width: 100%;
-        height: 100%;
-    }
-</style>
 @endsection
 
 @section('breadcrumbs')
