@@ -10,7 +10,7 @@ return [
   'homepage.what.it' => 'Czym jest EmployMed?',
   'homepage.employmed' => 'EmployMed to serwis internetowy. Idea na stworzenie tego rozwiązania pochodzi od środowisk lekarskich. Naszą misją jest przyspiesznie, usprawnienie procesu poszukiwania pracy przez lekarzy, stomatologów, pielęgniarki i zapewnienie ciągłości opieki medycznej w placówkach, które borykają się z problemami kadrowymi.',
   'homepage.how.it.works' => 'Jak to działa?',
-  'homepage.how.it.works.explain' => 'Po rejestracji lekarz,lekarz-dentysta, pielęgniarka i pracodawca określają swoje preferencje co do finansów i lokalizacji. Nasze algorytmy automatycznie dopasują konta obu zainteresowanych stron i wyślą powiadomienie każdej z nich.',
+  'homepage.how.it.works.explain' => 'Po rejestracji lekarz, lekarz-dentysta, pielęgniarka i pracodawca określają swoje preferencje co do finansów i lokalizacji. Nasze algorytmy automatycznie dopasują konta obu zainteresowanych stron i wyślą powiadomienie każdej z nich.',
   'homepage.for.doctor.stomatologist' => 'Dla lekarza/ lekarza dentysty/ pielęgniarki - Co zyskujesz?',
   'homepage.for.doctor.stomatologist.explain' => '<i class="fas fa-plus-square"></i> Oszczędzasz swój czas – raz wypełniasz profil i aplikacja szuka za Ciebie ofert i Cię o nich powiadamia.<br><i class="fas fa-plus-square"></i> Ty decydujesz gdzie, za jaką stawkę i na jakiej umowie chcesz pracować.<br><i class="fas fa-plus-square"></i> Wybierasz tą ofertę która Ci najbardziej odpowiada.',
   'homepage.for.employer' => 'Dla pracodawcy – co zyskujesz?',
