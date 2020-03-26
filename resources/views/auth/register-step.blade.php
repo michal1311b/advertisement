@@ -52,12 +52,22 @@
                         <div class="row">
                             <div class="col-12 col-md-6 pb-2 text-center">
                                 <a href="{{ route('register') }}" class="btn btn-primary btn-lg">
-                                    {{ trans('sentence.register') }} {{ trans('sentence.as') }} {{ trans('sentence.doctor') }}/ {{ trans('sentence.dentist') }}/ {{ trans('sentence.nurse') }}
+                                    {{ trans('sentence.register') }} 
+                                    {{ trans('sentence.as') }} 
+                                    {{ trans('sentence.doctor') }}/ 
+                                    {{ trans('sentence.dentist') }}/ 
+                                    {{ trans('sentence.nurse') }}
+                                    <img class="logo" src="{{ asset('images/stuff3.png') }}" alt="{{ trans('sentence.polish') }}">
                                 </a>
                             </div>
                             <div class="col-12 col-md-6 pb-2 text-center">
                                 <a href="{{ route('register.course') }}" class="btn btn-primary btn-lg">
-                                    {{ trans('sentence.register') }} {{ trans('sentence.as') }} {{ trans('sentence.company') }} {{ trans('sentence.and') }} {{ trans('sentence.register-course') }}
+                                    {{ trans('sentence.register') }} 
+                                    {{ trans('sentence.as') }} 
+                                    {{ trans('sentence.company') }} 
+                                    {{ trans('sentence.and') }} 
+                                    {{ trans('sentence.register-course') }}
+                                    <img class="logo" src="{{ asset('images/course-icon.png') }}" alt="{{ trans('sentence.register-course') }}">
                                 </a>
                             </div>
                         </div>
