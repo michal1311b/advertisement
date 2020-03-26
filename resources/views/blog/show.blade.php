@@ -117,7 +117,7 @@
 
                         <div class="media-body col-12 col-md-2 btn-group text-right">
                             @if(auth()->check() && auth()->user()->id === $comment->author->id)
-                                <button class="btn btn-success" data-toggle="modal"
+                                <button class="btn btn-rounded btn-success" data-toggle="modal"
                                     data-target="#modaleditcomment{{$comment->id}}">{{ trans('sentence.edit') }}</i>
                                 </button>
 
@@ -131,7 +131,7 @@
                                     'modalKey' => "editcomment".$comment->id
                                 ])
 
-                                <button class="btn btn-danger" data-toggle="modal"
+                                <button class="btn btn-rounded btn-danger" data-toggle="modal"
                                     data-target="#modalremove{{$comment->id}}">{{ trans('sentence.btn-delete') }}</i>
                                 </button>
 

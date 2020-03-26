@@ -38,7 +38,7 @@
                         <td>{{ $contact->city }}</td>
                         <td>{{ $contact->phone }}</td>
                         <td>
-                            <a href="{{ route('user-reply', $contact->id) }}" class="btn btn-success">{{ trans('sentence.reply') }}</a>
+                            <a href="{{ route('user-reply', $contact->id) }}" class="btn btn-rounded btn-success">{{ trans('sentence.reply') }}</a>
                         </td>
                     </tr>
                     <tr>

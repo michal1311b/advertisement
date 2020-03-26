@@ -11,8 +11,8 @@
                     <form method="get" action="{{ route('search-code') }}">
                         {{csrf_field()}}
                         <input type="text" class="form-control" name="search" placeholder="Szukaj...">
-                        <button type="submit" class="btn btn-success border border-warning">Szukaj</button>
-                        <a href="/nagrody-ankieta" class="btn btn-danger">Resetuj</a>
+                        <button type="submit" class="btn btn-rounded btn-success border border-warning">Szukaj</button>
+                        <a href="/nagrody-ankieta" class="btn btn-rounded btn-danger">Resetuj</a>
                     </form>
                     <table class="table table-striped table-responsive">
                         <thead>
@@ -34,12 +34,12 @@
                                 <td>{{ $subcriber->invitation }}</td>
                                 <td>
                                     @if($subcriber->got_price)
-                                    <span class="btn btn-success">ODEBRANE</span>
+                                    <span class="btn btn-rounded btn-success">ODEBRANE</span>
                                     @else
                                     <form method="post" action="{{ route('get-price', $subcriber->id) }}">
                                         {{ method_field('PUT') }}
                                         {{csrf_field()}}
-                                        <button type="submit" class="btn btn-warning border border-warning">Zatwierdź odbiór</button>
+                                        <button type="submit" class="btn btn-rounded btn-warning border border-warning">Zatwierdź odbiór</button>
                                     </form>
                                     @endif
                                 </td>

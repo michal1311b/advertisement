@@ -5,8 +5,8 @@
             <div class="form-group">
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
-                        <button class="btn btn-outline-secondary" type="submit" id="button-addon1">{{ trans('sentence.search') }}</button>
-                        <a href="{{ route('foreign-list') }}" class="btn btn-outline-secondary" id="button-addon2">{{ trans('sentence.clear-search') }}</a>
+                        <button class="btn btn-rounded btn-outline-secondary" type="submit" id="button-addon1">{{ trans('sentence.search') }}</button>
+                        <a href="{{ route('foreign-list') }}" class="btn btn-rounded btn-outline-secondary" id="button-addon2">{{ trans('sentence.clear-search') }}</a>
                     </div>
                     <select data-live-search="true" class="form-control @error('specialization_id') is-invalid @enderror" name="specialization_id" id="specialization_ids">
                         <option selected value="">{{ trans('sentence.choose-spec') }}</option>

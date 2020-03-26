@@ -44,7 +44,7 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-12">
-                                <a class="btn btn-primary go-step2 text-white">
+                                <a class="btn btn-rounded btn-primary go-step2 text-white">
                                     {{ trans('sentence.step2') }}
                                 </a>
                             </div>
@@ -108,7 +108,7 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-12">
-                                <a class="btn btn-primary go-step3 text-white">
+                                <a class="btn btn-rounded btn-primary go-step3 text-white">
                                     {{ trans('sentence.step3') }}
                                 </a>
                             </div>
@@ -252,7 +252,7 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-12">
-                                <button type="submit" class="btn btn-primary" :disabled="blockBtn === true">
+                                <button type="submit" class="btn btn-rounded btn-primary" :disabled="blockBtn === true">
                                     {{ trans('sentence.btn-create') }}
                                 </button>
                             </div>

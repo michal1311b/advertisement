@@ -51,12 +51,12 @@
                             <td>{{ $participant->phone }}</td>
                             <td>
 
-                                <a href="{{ route('user-course-participant-show', ['companycourse' => $course->id, 'id' => $participant->id]) }}" class="btn btn-info text-white">
+                                <a href="{{ route('user-course-participant-show', ['companycourse' => $course->id, 'id' => $participant->id]) }}" class="btn btn-rounded btn-info text-white">
                                     {{ trans('sentence.btn-info') }}
                                 </a>
                             </td>
                             <td>
-                                <button class="btn btn-danger" data-toggle="modal"
+                                <button class="btn btn-rounded btn-danger" data-toggle="modal"
                                     data-target="#modalremove{{$participant->id}}">{{ trans('sentence.btn-delete') }}</i>
                                 </button>
 

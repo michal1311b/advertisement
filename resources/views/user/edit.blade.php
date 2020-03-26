@@ -35,7 +35,7 @@
                         <input type="hidden" name="_method" value="PUT">
                         <input type="hidden" name="type" value="doctor">
                         @csrf
-                        <button type="submit" class="btn {{ $editUser->doctor->share ? 'btn-danger' : 'btn-primary' }}">
+                        <button type="submit" class="btn btn-rounded {{ $editUser->doctor->share ? 'btn-danger' : 'btn-primary' }}">
                             {{ $editUser->doctor->share ? trans('sentence.btn-unshare') : trans('sentence.btn-share') }}
                         </button>
                     </form>
@@ -50,7 +50,7 @@
                         <input type="hidden" name="_method" value="PUT">
                         <input type="hidden" name="type" value="nurse">
                         @csrf
-                        <button type="submit" class="btn {{ $editUser->nurse->share ? 'btn-danger' : 'btn-primary' }}">
+                        <button type="submit" class="btn btn-rounded {{ $editUser->nurse->share ? 'btn-danger' : 'btn-primary' }}">
                             {{ $editUser->nurse->share ? trans('sentence.btn-unshare') : trans('sentence.btn-share') }}
                         </button>
                     </form>

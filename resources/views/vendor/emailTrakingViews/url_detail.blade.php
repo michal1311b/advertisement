@@ -16,7 +16,7 @@
                 <h3>
                     Clicked URLs for Email ID {{$details->first()->email->id}}
                 </h3>
-                <a href="{{ route('mailTracker_ShowEmail',$details->first()->email->id) }}" class="btn btn-default" target="_blank">
+                <a href="{{ route('mailTracker_ShowEmail',$details->first()->email->id) }}" class="btn btn-rounded btn-default" target="_blank">
                     View Message
                 </a>
             </div>

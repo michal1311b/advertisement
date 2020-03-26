@@ -16,7 +16,7 @@
                 <h3>
                     SMTP detail for Email ID {{$details->id}}
                 </h3>
-                <a href="{{ route('mailTracker_ShowEmail',$details->id) }}" class="btn btn-default" target="_blank">
+                <a href="{{ route('mailTracker_ShowEmail',$details->id) }}" class="btn btn-rounded btn-default" target="_blank">
                     View Message
                 </a>
             </div>

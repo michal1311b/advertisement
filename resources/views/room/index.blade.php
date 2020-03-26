@@ -36,7 +36,7 @@
                         <td>{{ $room->user->name }}</td>
                         <td>{{ $room->room->name }}</td>
                         <td>
-                            <a href="{{ route('show-room', $room->room_id) }}" class="btn btn-success">{{ trans('sentence.reply') }}</a>
+                            <a href="{{ route('show-room', $room->room_id) }}" class="btn btn-rounded btn-success">{{ trans('sentence.reply') }}</a>
                         </td>
                     </tr>
                 @endforeach

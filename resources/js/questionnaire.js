@@ -19,12 +19,12 @@ $(document).ready(function(){
 
         if(count > 1)
         {
-            question += '<td><button type="button" name="removeQuestion" id="removeQuestion" class="btn btn-danger remove">Remove</button></td></tr>';
+            question += '<td><button type="button" name="removeQuestion" id="removeQuestion" class="btn btn-rounded btn-danger remove">Remove</button></td></tr>';
             $('.answerContainer').append(question);
         }
         else
         {   
-            question += '<td><button type="button" name="addQuestion" id="addQuestion" class="btn btn-success">Add</button></td></tr>';
+            question += '<td><button type="button" name="addQuestion" id="addQuestion" class="btn btn-rounded btn-success">Add</button></td></tr>';
             $('.answerContainer').append(question);
         }
 
@@ -38,12 +38,12 @@ $(document).ready(function(){
         
         if(number > 1)
         {
-            html += '<td><button type="button" name="remove" id="remove" class="btn btn-danger remove">Remove</button></td></tr>';
+            html += '<td><button type="button" name="remove" id="remove" class="btn btn-rounded btn-danger remove">Remove</button></td></tr>';
             $('.answerContainer').append(html);
         }
         else
         {   
-            html += '<td><button type="button" name="add" id="add" class="btn btn-success">Add</button></td></tr>';
+            html += '<td><button type="button" name="add" id="add" class="btn btn-rounded btn-success">Add</button></td></tr>';
             $('.answerContainer').append(html);
         }
     }

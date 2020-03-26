@@ -12,8 +12,8 @@
                     <p class="float-left">{!!__($description, $description_parameters)!!}</p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-sm btn-primary" data-dismiss="modal">{{ trans('sentence.btn-cancel')}}</button>
-                    <button type="submit" class="btn btn-sm btn-danger">{{__($button)}}</button>
+                    <button type="button" class="btn btn-rounded btn-sm btn-primary" data-dismiss="modal">{{ trans('sentence.btn-cancel')}}</button>
+                    <button type="submit" class="btn btn-rounded btn-sm btn-danger">{{__($button)}}</button>
                 </div>
             </div>
         </div>

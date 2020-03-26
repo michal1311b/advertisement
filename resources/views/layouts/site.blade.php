@@ -43,7 +43,7 @@
     <script src="https://kit.fontawesome.com/96c3aa2e82.js" crossorigin="anonymous"></script>
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css?rand=56') }}" rel="stylesheet">
+    <link href="{{ asset('css/app.css?rand=57') }}" rel="stylesheet">
     @yield('css')
       
     <script type='text/javascript' src='//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js'></script>
@@ -80,7 +80,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-xs-12 py-2">
-                            <button class="btn btn-primary" id="menu-toggle"><i class="fas fa-clinic-medical"></i> {{ __('Menu') }}</button>
+                            <button class="btn btn-rounded btn-primary" id="menu-toggle"><i class="fas fa-clinic-medical"></i> {{ __('Menu') }}</button>
                         </div>
                     </div>
                 </div>
@@ -95,7 +95,7 @@
         </a>
     </div>
     @include('partials.footer')
-    <script src="{{ asset('js/app.js?rand=56') }}" defer></script>
+    <script src="{{ asset('js/app.js?rand=57') }}" defer></script>
     
     <!-- Scripts -->
     @yield('scripts')

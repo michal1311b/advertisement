@@ -122,7 +122,7 @@
                     </div>
                 </div>
             </div>
-            <button type="submit" class="btn btn-primary">{{ trans('sentence.send')}}</button>
+            <button type="submit" class="btn btn-rounded btn-primary">{{ trans('sentence.send')}}</button>
         </form>
     </div>
 </div>

@@ -22,7 +22,7 @@
 <div class="container">
     <div class="row">
         <div class="col-12 text-right">
-        <a href="{{ route('pages.create') }}" class="btn btn-success">{{trans('sentence.btn-create')}}</a>
+        <a href="{{ route('pages.create') }}" class="btn btn-rounded btn-success">{{trans('sentence.btn-create')}}</a>
         </div>
         <div class="col-12">
             <table class="table">
@@ -41,10 +41,10 @@
                             <th scope="row">{{ $page->id }}</th>
                             <td>{{ $page->title }}</td>
                             <td>
-                                <a href="{{ route('pages.edit' , $page) }}" class="btn btn-success">{{trans('sentence.edit')}}</a>
+                                <a href="{{ route('pages.edit' , $page) }}" class="btn btn-rounded btn-success">{{trans('sentence.edit')}}</a>
                             </td>
                             <td>
-                                <button class="btn btn-danger" data-toggle="modal"
+                                <button class="btn btn-rounded btn-danger" data-toggle="modal"
                                     data-target="#modalremove{{$page->id}}">{{trans('sentence.btn-delete')}}</i>
                                 </button>
 

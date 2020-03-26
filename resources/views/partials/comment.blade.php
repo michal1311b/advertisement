@@ -17,7 +17,7 @@
                     <textarea id="content" class="form-control @error('content') is-invalid @enderror" name="content" value="{{ old('content') }}" autocomplete="content" autofocus rows="3"></textarea>
                 </div>
             </div>
-            <button type="submit" class="btn btn-primary">{{ trans('sentence.send')}}</button>
+            <button type="submit" class="btn btn-rounded btn-rounded btn-primary">{{ trans('sentence.send')}}</button>
         </form>
     </div>
 </div>

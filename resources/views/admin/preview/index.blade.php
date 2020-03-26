@@ -43,12 +43,12 @@
                             <td>{{ $jooble->title }}</td>
                             <td>{{ $jooble->email }}</td>
                             <td>
-                                <a href="{{ route('preview-edit' , $jooble) }}" class="btn btn-success">
+                                <a href="{{ route('preview-edit' , $jooble) }}" class="btn btn-rounded btn-success">
                                     {{ trans('sentence.btn-edit') }}
                                 </a>
                             </td>
                             <td>
-                                <a href="{{ route('preview-show' , $jooble) }}" class="btn btn-info">
+                                <a href="{{ route('preview-show' , $jooble) }}" class="btn btn-rounded btn-info">
                                     {{ trans('sentence.show') }}
                                 </a>
                             </td>

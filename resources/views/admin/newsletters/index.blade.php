@@ -25,7 +25,7 @@
             @include('partials.message')
         </div>
         <div class="col-12 text-right">
-            <a href="{{ route('newsletters.create') }}" class="btn btn-success">{{trans('sentence.btn-create')}}</a>
+            <a href="{{ route('newsletters.create') }}" class="btn btn-rounded btn-success">{{trans('sentence.btn-create')}}</a>
         </div>
         <div class="col-12">
             <table class="table">
@@ -54,10 +54,10 @@
                                 @endif
                             </td>
                             <td>
-                                <a href="{{ route('newsletters.edit' , $newsletter) }}" class="btn btn-success">Edit</a>
+                                <a href="{{ route('newsletters.edit' , $newsletter) }}" class="btn btn-rounded btn-success">Edit</a>
                             </td>
                             <td>
-                                <button class="btn btn-danger" data-toggle="modal"
+                                <button class="btn btn-rounded btn-danger" data-toggle="modal"
                                     data-target="#modalremove{{$newsletter->id}}">Delete</i>
                                 </button>
 

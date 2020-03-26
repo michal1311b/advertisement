@@ -48,12 +48,12 @@
                                 @if(is_null($user->banned_until))
                                     <form method="post" action="{{ route('users.block', $user) }}">
                                         {{csrf_field()}}
-                                        <button type="submit" class="btn btn-danger border border-warning">{{ trans('sentence.btn-ban') }}</button>  
+                                        <button type="submit" class="btn btn-rounded btn-danger border border-warning">{{ trans('sentence.btn-ban') }}</button>  
                                     </form>
                                 @else
                                     <form method="post" action="{{ route('users.unblock', $user) }}">
                                         {{csrf_field()}}
-                                        <button type="submit" class="btn btn-success border border-warning">{{ trans('sentence.btn-unban') }}</button>  
+                                        <button type="submit" class="btn btn-rounded btn-success border border-warning">{{ trans('sentence.btn-unban') }}</button>  
                                     </form>
                                 @endif
                             </td>

@@ -55,9 +55,9 @@
                     <label for="cv">{{ trans('sentence.upload-cv')}}</label>
                     
                     @if(isset(auth()->user()->doctor) && auth()->user()->doctor->cv)
-                        <a href="{{ auth()->user()->doctor->cv }}" class="btn btn-primary" target="_blank">{{ trans('sentence.show-cv') }}</a>
+                        <a href="{{ auth()->user()->doctor->cv }}" class="btn btn-rounded btn-primary" target="_blank">{{ trans('sentence.show-cv') }}</a>
                     @elseif(isset(auth()->user()->nurse) && auth()->user()->nurse->cv)
-                        <a href="{{ auth()->user()->nurse->cv }}" class="btn btn-primary" target="_blank">{{ trans('sentence.show-cv') }}</a>
+                        <a href="{{ auth()->user()->nurse->cv }}" class="btn btn-rounded btn-primary" target="_blank">{{ trans('sentence.show-cv') }}</a>
                     @else
                         <input type="file" class="form-control @error('cv') is-invalid @enderror" name="cv" required/>
                         @error('cv')
@@ -79,7 +79,7 @@
                     </label>
                  </div>
             </div>
-            <button type="submit" class="btn btn-primary">{{ trans('sentence.send')}}</button>
+            <button type="submit" class="btn btn-rounded btn-primary">{{ trans('sentence.send')}}</button>
         </form>
     </div>
 </div>

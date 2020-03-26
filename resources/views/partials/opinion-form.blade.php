@@ -31,7 +31,7 @@
                                         @if((Auth::user()->hasRole('doctor') && Auth::user()->id === $opinion->user_id) || Auth::user()->hasRole('admin'))
                                             <div class="col-12">
                                                 <div class="float-left">
-                                                    <button class="btn btn-danger" data-toggle="modal"
+                                                    <button class="btn btn-rounded btn-danger" data-toggle="modal"
                                                         data-target="#modalremove{{$opinion->id}}">
                                                         {{ trans('sentence.btn-delete') }}
                                                     </button>
@@ -68,7 +68,7 @@
                         <label for="content">{{ trans('sentence.message')}}</label>
                         <textarea id="content" class="form-control @error('content') is-invalid @enderror" name="content" value="{{ old('content') }}" autocomplete="content" autofocus rows="3"></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary">{{ trans('sentence.send')}}</button>
+                    <button type="submit" class="btn btn-rounded btn-primary">{{ trans('sentence.send')}}</button>
                 </form>
             </div>
         </div>

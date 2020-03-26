@@ -29,7 +29,7 @@
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-12 col-md-6 pb-2">
-                                <a href="{{ route('register.company') }}" class="btn btn-primary btn-lg">
+                                <a href="{{ route('register.company') }}" class="btn btn-rounded btn-primary btn-lg">
                                     {{ trans('sentence.register') }} 
                                     {{ trans('sentence.as') }} 
                                     {{ trans('sentence.company') }} 
@@ -39,7 +39,7 @@
                                 </a>
                             </div>
                             <div class="col-12 col-md-6 pb-2">
-                                <a href="{{ route('register.foreign') }}" class="btn btn-primary btn-lg">
+                                <a href="{{ route('register.foreign') }}" class="btn btn-rounded btn-primary btn-lg">
                                     {{ trans('sentence.register') }} 
                                     {{ trans('sentence.as') }} 
                                     {{ trans('sentence.company') }} 
@@ -51,7 +51,7 @@
                         </div>
                         <div class="row">
                             <div class="col-12 col-md-6 pb-2 text-center">
-                                <a href="{{ route('register') }}" class="btn btn-primary btn-lg">
+                                <a href="{{ route('register') }}" class="btn btn-rounded btn-primary btn-lg">
                                     {{ trans('sentence.register') }} 
                                     {{ trans('sentence.as') }} 
                                     {{ trans('sentence.doctor') }}/ 
@@ -61,7 +61,7 @@
                                 </a>
                             </div>
                             <div class="col-12 col-md-6 pb-2 text-center">
-                                <a href="{{ route('register.course') }}" class="btn btn-primary btn-lg">
+                                <a href="{{ route('register.course') }}" class="btn btn-rounded btn-primary btn-lg">
                                     {{ trans('sentence.register') }} 
                                     {{ trans('sentence.as') }} 
                                     {{ trans('sentence.company') }} 

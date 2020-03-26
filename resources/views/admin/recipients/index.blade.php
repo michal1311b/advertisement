@@ -25,7 +25,7 @@
             @include('partials.message')
         </div>
         <div class="col-12 text-right">
-            <a href="{{ route('recipients.create') }}" class="btn btn-success">{{trans('sentence.btn-create')}}</a>
+            <a href="{{ route('recipients.create') }}" class="btn btn-rounded btn-success">{{trans('sentence.btn-create')}}</a>
         </div>
         <div class="col-12">
             <table class="table">
@@ -45,10 +45,10 @@
                             <th scope="row">{{ $recipient->id }}</th>
                             <td>{{ $recipient->email }}</td>
                             <td>
-                                <a href="{{ route('recipients.edit' , $recipient) }}" class="btn btn-success">{{trans('sentence.edit')}}</a>
+                                <a href="{{ route('recipients.edit' , $recipient) }}" class="btn btn-rounded btn-success">{{trans('sentence.edit')}}</a>
                             </td>
                             <td>
-                                <button class="btn btn-danger" data-toggle="modal"
+                                <button class="btn btn-rounded btn-danger" data-toggle="modal"
                                     data-target="#modalremove{{$recipient->id}}">{{trans('sentence.btn-delete')}}</i>
                                 </button>
 

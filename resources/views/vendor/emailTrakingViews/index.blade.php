@@ -25,10 +25,10 @@
                             <input class="form-control" type="text" name="search" id="search" value="{{ session('mail-tracker-index-search') }}">
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-success text-white">
+                    <button type="submit" class="btn btn-rounded btn-success text-white">
                         Search
                     </button>
-                    <div class="btn btn-danger text-white">
+                    <div class="btn btn-rounded btn-danger text-white">
                         <a href="{{ route('mailTracker_ClearSearch') }}" class="text-white">
                             Clear Search
                         </a>

@@ -45,7 +45,7 @@
                 </div>
                 <div class="row">
                     <div class="col-4">
-                        <button type="submit" class="btn btn-primary px4">
+                        <button type="submit" class="btn btn-rounded btn-primary px4">
                             Create
                         </button>
                     </div>

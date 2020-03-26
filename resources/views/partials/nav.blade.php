@@ -53,7 +53,7 @@
                 @else
                     @if(auth()->user()->hasRole('admin') || auth()->user()->hasRole('company'))
                         <li class="d-none d-lg-block nav-item">
-                            <a href="{{ route('create-advertisement') }}" class="btn btn-success" title="{{ trans('sentence.offer-create-poland')}}">
+                            <a href="{{ route('create-advertisement') }}" class="btn btn-rounded btn-success" title="{{ trans('sentence.offer-create-poland')}}">
                                 <i class="fas fa-plus-circle"></i>
                             </a>
                         </li>
@@ -98,11 +98,11 @@
                             
                             @if(auth()->user()->hasRole('admin') || auth()->user()->hasRole('company'))
                                 <a class="dropdown-item {{ Request::is('user/offers') ? 'text-white active' : null }}" href="{{ route('user-advertisement-list') }}" title="{{ trans('sentence.user-offers')}}">{{ trans('sentence.user-offers')}}</a>
-                                <a class="dropdown-item {{ Request::is('offer/create') ? 'text-white active' : null }}" href="{{ route('create-advertisement') }}" title="{{ trans('sentence.offer-create-poland')}}">{{ trans('sentence.offer-create-poland')}} <span class="btn btn-success btn-sm"><i class="fas fa-plus-circle"></i></span></a>
+                                <a class="dropdown-item {{ Request::is('offer/create') ? 'text-white active' : null }}" href="{{ route('create-advertisement') }}" title="{{ trans('sentence.offer-create-poland')}}">{{ trans('sentence.offer-create-poland')}} <span class="btn btn-rounded btn-success btn-sm"><i class="fas fa-plus-circle"></i></span></a>
                                 <a class="dropdown-item {{ Request::is('user/foreigns') ? 'text-white active' : null }}" href="{{ route('user-foreign-list') }}" title="{{ trans('sentence.user-foreigns')}}">{{ trans('sentence.user-foreigns')}}</a>
-                                <a class="dropdown-item {{ Request::is('foreign/create') ? 'text-white active' : null }}" href="{{ route('create-foreign') }}" title="{{ trans('sentence.offer-create-foreign')}}">{{ trans('sentence.offer-create-foreign')}} <span class="btn btn-success btn-sm"><i class="fas fa-plus-circle"></i></span></a>
+                                <a class="dropdown-item {{ Request::is('foreign/create') ? 'text-white active' : null }}" href="{{ route('create-foreign') }}" title="{{ trans('sentence.offer-create-foreign')}}">{{ trans('sentence.offer-create-foreign')}} <span class="btn btn-rounded btn-success btn-sm"><i class="fas fa-plus-circle"></i></span></a>
                                 <a class="dropdown-item {{ Request::is('user/courses') ? 'text-white active' : null }}" href="{{ route('user-course-list') }}" title="{{ trans('sentence.user-courses')}}">{{ trans('sentence.user-courses')}}</a>
-                                <a class="dropdown-item {{ Request::is('user/courses/create') ? 'text-white active' : null }}" href="{{ route('create-course') }}" title="{{ trans('sentence.btn-add') }} {{ trans('sentence.courses') }}">{{ trans('sentence.btn-add') }} <span class="text-lowercase">{{ trans('sentence.courses') }} <span class="btn btn-success btn-sm"><i class="fas fa-plus-circle"></i></span></span></a>
+                                <a class="dropdown-item {{ Request::is('user/courses/create') ? 'text-white active' : null }}" href="{{ route('create-course') }}" title="{{ trans('sentence.btn-add') }} {{ trans('sentence.courses') }}">{{ trans('sentence.btn-add') }} <span class="text-lowercase">{{ trans('sentence.courses') }} <span class="btn btn-rounded btn-success btn-sm"><i class="fas fa-plus-circle"></i></span></span></a>
                             @endif
 
                             @if(auth()->user()->hasRole('admin'))

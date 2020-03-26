@@ -68,10 +68,10 @@
                                         <div class="col-12 col-md-8">
                                             <div class="profile-content">
                                                 @if($candidate->doctor !== null)
-                                                    <a href="{{ $candidate->doctor->cv }}" class="btn btn-primary" target="_blank">{{ __('CV') }}</a>
+                                                    <a href="{{ $candidate->doctor->cv }}" class="btn btn-rounded btn-primary" target="_blank">{{ __('CV') }}</a>
                                                 @endif
                                                 @if($candidate->nurse !== null)
-                                                    <a href="{{ $candidate->nurse->cv }}" class="btn btn-primary" target="_blank">{{ __('CV') }}</a>
+                                                    <a href="{{ $candidate->nurse->cv }}" class="btn btn-rounded btn-primary" target="_blank">{{ __('CV') }}</a>
                                                 @endif
                                                 <ul class="nav pt-3">
                                                     <li>{{ $candidate->profile->post_code }} {{ $candidate->profile->city }}</li>

@@ -56,7 +56,7 @@
                                                         {{ csrf_field() }}
                                                         {{ method_field('DELETE') }}
 
-                                                        <button type="submit" id="delete-follow-{{ $advertisement->user->id }}" class="btn btn-danger">
+                                                        <button type="submit" id="delete-follow-{{ $advertisement->user->id }}" class="btn btn-rounded btn-danger">
                                                             <i class="fa fa-btn fa-trash"></i>Unfollow
                                                         </button>
                                                     </form>
@@ -66,7 +66,7 @@
                                                     <form action="{{route('follow', ['id' => $advertisement->user->id])}}" method="POST">
                                                         {{ csrf_field() }}
 
-                                                        <button type="submit" id="follow-user-{{ $advertisement->user->id }}" class="btn btn-success">
+                                                        <button type="submit" id="follow-user-{{ $advertisement->user->id }}" class="btn btn-rounded btn-success">
                                                             <i class="fa fa-btn fa-user"></i>Follow
                                                         </button>
                                                     </form>

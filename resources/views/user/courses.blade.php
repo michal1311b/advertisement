@@ -62,9 +62,9 @@
                     </ul>
                     <!-- End -->
                     <div class="btn-group btn-group-toggle py-2">
-                        <a href="{{ route('edit-course', $course->id) }}" class="btn btn-info border border-warning mr-2 text-white">{{ trans('sentence.edit') }}</a>
+                        <a href="{{ route('edit-course', $course->id) }}" class="btn btn-rounded btn-info border border-warning mr-2 text-white">{{ trans('sentence.edit') }}</a>
 
-                        <button class="btn btn-danger" data-toggle="modal"
+                        <button class="btn btn-rounded btn-danger" data-toggle="modal"
                             data-target="#modalremove{{$course->id}}">{{ trans('sentence.btn-delete') }}</i>
                         </button>
                         @include('partials.confirmation', [
@@ -77,7 +77,7 @@
                             'modalKey' => "remove".$course->id
                         ])
 
-                        <a href="{{ route('user-course-participants', ['id' => $course->id]) }}" class="btn btn-info border border-warning ml-2 text-white">
+                        <a href="{{ route('user-course-participants', ['id' => $course->id]) }}" class="btn btn-rounded btn-info border border-warning ml-2 text-white">
                             {{ trans('sentence.participants') }}
                         </a>
                     </div>

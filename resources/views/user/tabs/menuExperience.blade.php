@@ -90,7 +90,7 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-12 text-left">
-                                <button type="submit" class="btn btn-success">
+                                <button type="submit" class="btn btn-rounded btn-success">
                                     {{ trans('sentence.btn-add') }}
                                 </button>
                             </div>
@@ -108,7 +108,7 @@
 
                         <div class="col-12 col-md-2 btn-group text-right">
 
-                            <button class="btn btn-danger" data-toggle="modal"
+                            <button class="btn btn-rounded btn-danger" data-toggle="modal"
                                 data-target="#modalremove{{$experience->id}}">{{trans('sentence.btn-delete')}}</i>
                             </button>
 
@@ -122,7 +122,7 @@
                                 'modalKey' => "remove".$experience->id
                             ])
 
-                            <button class="btn btn-success" data-toggle="modal"
+                            <button class="btn btn-rounded btn-success" data-toggle="modal"
                                 data-target="#modaledit{{$experience->id}}">{{trans('sentence.btn-edit')}}</i>
                             </button>
 

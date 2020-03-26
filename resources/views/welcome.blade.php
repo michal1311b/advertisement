@@ -73,13 +73,13 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="btn-group" role="group" aria-label="Basic example">
-                                    <a href="#gear" class="btn btn-secondary kreep">
+                                    <a href="#gear" class="btn btn-rounded btn-secondary kreep">
                                         <i class="fas fa-cogs"></i>
                                     </a>
-                                    <a href="#hourglass" class="btn btn-secondary wiggle">
+                                    <a href="#hourglass" class="btn btn-rounded btn-secondary wiggle">
                                         <i class="fas fa-hourglass-half"></i>
                                     </a>
-                                    <a href="#money" class="btn btn-secondary kreep">
+                                    <a href="#money" class="btn btn-rounded btn-secondary kreep">
                                         <i class="fas fa-file-invoice-dollar"></i>
                                     </a>
                                 </div>
@@ -102,7 +102,7 @@
                                         </h6>
                                     </div>
                                     <div>
-                                        <a href="{{ route('register.step') }}" class="btn btn-primary">
+                                        <a href="{{ route('register.step') }}" class="btn btn-rounded btn-primary">
                                             {{ trans('sentence.register') }}
                                         </a>
                                     </div>
@@ -264,7 +264,7 @@
             @endif
         </div>
         <div class="col-12 pt-2 text-center">
-            <a href="{{ route('advertisement-list') }}" class="btn btn-info border border-warning mr-2 text-white">{{ trans('sentence.watch-all') }}</a>
+            <a href="{{ route('advertisement-list') }}" class="btn btn-rounded btn-info border border-warning mr-2 text-white">{{ trans('sentence.watch-all') }}</a>
         </div>
         <div class="col-12 pt-2">
             <h4>{{ trans('sentence.companies-orderBy-offers') }}</h4>

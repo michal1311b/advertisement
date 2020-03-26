@@ -73,7 +73,7 @@
                                 <p>{{ trans('sentence.preview-source') }} <strong>{{ $preview->source }}</strong>, <a href="{{ $preview->link }}">{{ trans('sentence.preview-source-link') }}</a></a></p>
                             </div>
                             <div class="col-12 text-center">
-                                <a href="{{ route('register.company') }}" class="btn btn-primary btn-lg">
+                                <a href="{{ route('register.company') }}" class="btn btn-rounded btn-primary btn-lg">
                                     {{ trans('sentence.register') }} {{ trans('sentence.as') }} {{ trans('sentence.company') }} {{ trans('sentence.and') }} {{ trans('sentence.offer-create-poland') }}
                                 </a>
                             </div>

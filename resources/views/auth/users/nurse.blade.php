@@ -269,7 +269,7 @@
 
             <div class="form-group row mb-0">
                 <div class="col-12">
-                    <button type="submit" class="btn btn-primary">
+                    <button type="submit" class="btn btn-rounded btn-primary">
                         {{ trans('sentence.register') }}
                     </button>
                 </div>

@@ -75,7 +75,7 @@
 
                     <div class="form-group row mb-0">
                         <div class="col-md-12 text-left">
-                            <button type="submit" class="btn btn-success">
+                            <button type="submit" class="btn btn-rounded btn-success">
                                 {{ trans('sentence.btn-update') }}
                             </button>
                         </div>

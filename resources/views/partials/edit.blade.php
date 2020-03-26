@@ -82,8 +82,8 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-sm btn-primary" data-dismiss="modal">{{__('Anuluj')}}</button>
-                    <button type="submit" class="btn btn-sm btn-success">{{__($button)}}</button>
+                    <button type="button" class="btn btn-rounded btn-sm btn-primary" data-dismiss="modal">{{__('Anuluj')}}</button>
+                    <button type="submit" class="btn btn-rounded btn-sm btn-success">{{__($button)}}</button>
                 </div>
             </div>
         </div>

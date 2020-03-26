@@ -36,7 +36,7 @@
                                 <div class="col-12">
                                     {!! $message->message !!}
                                     @if($message->user->doctor && $message->user->doctor->cv && $loop->index === 0)
-                                        <a href="{{$message->user->doctor->cv}}" class="btn btn-primary">{{ trans('sentence.show-cv') }}</a>
+                                        <a href="{{$message->user->doctor->cv}}" class="btn btn-rounded btn-primary">{{ trans('sentence.show-cv') }}</a>
                                     @endif
                                 </div>
                             </div>
@@ -54,7 +54,7 @@
                     <form action="{{ route('reply-room', $messages[0]->room) }}" method="POST">
                         @csrf
                         <textarea class="form-control mb-4" name="reply" placeholder="Reply"></textarea>
-                        <button type="submit" class="btn btn-success mt-3">{{ trans('sentence.send') }}</button>
+                        <button type="submit" class="btn btn-rounded btn-success mt-3">{{ trans('sentence.send') }}</button>
                     </form>
                 </div>
             </div>

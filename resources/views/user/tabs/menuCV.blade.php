@@ -7,8 +7,8 @@
                 @if($editUser->doctor != null)
                     @if($editUser->doctor->cv !== null)
                         <div class="btn-group" role="group" aria-label="Basic example">
-                            <a href="{{ $editUser->doctor->cv }}" class="btn btn-primary" target="_blank">{{ trans('sentence.show-cv') }}</a>
-                            <button class="btn btn-danger" data-toggle="modal"
+                            <a href="{{ $editUser->doctor->cv }}" class="btn btn-rounded btn-primary" target="_blank">{{ trans('sentence.show-cv') }}</a>
+                            <button class="btn btn-rounded btn-danger" data-toggle="modal"
                                 data-target="#modalremovecv{{$editUser->doctor->id}}">{{ trans('sentence.btn-delete') }}</i>
                             </button>
 
@@ -51,7 +51,7 @@
                             </div>
                             <div class="form-group row mt-3">
                                 <div class="col-md-8 offset-md-4">
-                                    <button type="submit" class="btn btn-primary">
+                                    <button type="submit" class="btn btn-rounded btn-primary">
                                         {{ trans('sentence.btn-upload') }}
                                     </button>
                                 </div>
@@ -63,8 +63,8 @@
                 @if($editUser->nurse != null)
                     @if($editUser->nurse->cv != null)
                         <div class="btn-group" role="group" aria-label="Basic example">
-                            <a href="{{ $editUser->nurse->cv }}" class="btn btn-primary" target="_blank">{{ trans('sentence.show-cv') }}</a>
-                            <button class="btn btn-danger" data-toggle="modal"
+                            <a href="{{ $editUser->nurse->cv }}" class="btn btn-rounded btn-primary" target="_blank">{{ trans('sentence.show-cv') }}</a>
+                            <button class="btn btn-rounded btn-danger" data-toggle="modal"
                                 data-target="#modalremovenursecv{{$editUser->nurse->id}}">{{ trans('sentence.btn-delete') }}</i>
                             </button>
 
@@ -107,7 +107,7 @@
                             </div>
                             <div class="form-group row mt-3">
                                 <div class="col-md-8 offset-md-4">
-                                    <button type="submit" class="btn btn-primary">
+                                    <button type="submit" class="btn btn-rounded btn-primary">
                                         {{ trans('sentence.btn-upload') }}
                                     </button>
                                 </div>
