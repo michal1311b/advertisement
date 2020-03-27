@@ -61,5 +61,24 @@ class AppServiceProvider extends ServiceProvider
             ->line('w celu jego usunięcia z naszej bazy. Dziękujemy.')
             ->salutation('Pozdrawiamy - Zespół EmployMed');
         });
+
+        $latouts = [
+            'layouts.site',
+            'layouts.app',
+            'partials.nav',
+            'partials.site-nav'
+        ];
+
+        foreach($latouts as $layout)
+        {
+            view()->composer($layout, function ($view) {
+                $theme = \Cookie::get('theme');
+                if ($theme != 'dark' && $theme != 'light') {
+                    $theme = 'light';
+                }
+            
+                $view->with('theme', $theme);
+            });
+        }
     }
 }

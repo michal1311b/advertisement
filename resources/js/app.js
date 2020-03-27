@@ -130,6 +130,7 @@ $(document).ready(function() {
     require('./datepicker');
     require('./select2-init');
     require('./selectpicker');
+    require('./theme');
 
     $(function () {
         $('#selectBox').change(function () {

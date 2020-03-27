@@ -3,7 +3,7 @@
 <head>
     @include('partials.layouts-header')
     <!-- Styles -->
-    <link href="{{ asset('css/app.css?rand=57') }}" rel="stylesheet">
+    <link href="{{ asset('css/app.css?rand=58') }}" rel="stylesheet">
     @yield('css')
       
     <script type='text/javascript' src='//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js'></script>
@@ -27,11 +27,11 @@
         window.Laravel.Locale = '<?php echo config('app.locale'); ?>';    
     </script>
 </head>
-<body>
+<body class="{{ $theme . '-theme' }}">
     <div id="app">
         <div class="d-flex" id="wrapper">
-            <div class="bg-light border-right" id="sidebar-wrapper">
-                <div class="sidebar-heading">{{ __('EmployMed') }}</div>
+            <div class="{{ 'bg-' . $theme }} side-nav border-right" id="sidebar-wrapper">
+                <div class="sidebar-heading side-nav {{ $theme . '-theme' }}">{{ __('EmployMed') }}</div>
                 @include('partials.site-nav')
             </div>
 
@@ -55,7 +55,7 @@
         </a>
     </div>
     @include('partials.footer')
-    <script src="{{ asset('js/app.js?rand=57') }}" defer></script>
+    <script src="{{ asset('js/app.js?rand=58') }}" defer></script>
     
     <!-- Scripts -->
     @yield('scripts')

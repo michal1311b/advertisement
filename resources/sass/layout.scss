@@ -3,6 +3,18 @@ body {
     position: relative;
     height: auto;
     min-height: 100%;
+    overflow-x: hidden;
+    color: black;
+    background-color: white;
+}
+
+.dark-theme {
+    color: 	#C0C0C0 !important;
+    background-color: black !important;
+}
+
+.site-nav {
+    color: 	#C0C0C0 !important;
 }
 
 #app {
@@ -137,10 +149,6 @@ $color2: #3197EE;
 
 .doctor-main {
     max-width: 150px;
-}
-
-body {
-    overflow-x: hidden;
 }
 
 .shadow:hover {
