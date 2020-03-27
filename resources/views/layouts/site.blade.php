@@ -3,7 +3,7 @@
 <head>
     @include('partials.layouts-header')
     <!-- Styles -->
-    <link href="{{ asset('css/app.css?rand=59') }}" rel="stylesheet">
+    <link href="{{ asset('css/app.css?rand=60') }}" rel="stylesheet">
     @yield('css')
       
     <script type='text/javascript' src='//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js'></script>
@@ -47,15 +47,14 @@
 
                 @yield('breadcrumbs')
                 @yield('content')
-                
             </div>
         </div>
-        <a href="javascript:" id="return-to-top">
+        <a href="javascript:" class="return-to-top">
             <i class="fas fa-arrow-up"></i>
         </a>
     </div>
     @include('partials.footer')
-    <script src="{{ asset('js/app.js?rand=59') }}" defer></script>
+    <script src="{{ asset('js/app.js?rand=60') }}" defer></script>
     
     <!-- Scripts -->
     @yield('scripts')
