@@ -119,6 +119,7 @@ $(document).ready(function() {
                 "min_salary": {{ $advertisement->min_salary }},
                 "max_salary": {{ $advertisement->max_salary }},
                 "currency": "{{ $advertisement->currency->symbol }}",
+                "specialization": "{{ $advertisement->specialization->name }}",
             },
     @endforeach
     ];
@@ -149,10 +150,10 @@ $(document).ready(function() {
         [markers[i].lat, markers[i].lng],
         { 
             icon: icon,
-            title: markers[i].name + ', ' + markers[i].street + ': ' + markers[i].min_salary + '-' + markers[i].max_salary + ' ' + markers[i].currency
+            title: markers[i].name + ', ' + markers[i].street + ': ' + markers[i].min_salary + '-' + markers[i].max_salary + ' ' + markers[i].currency + ', ' + markers[i].specialization
             })
         .addTo( map )
-        .bindPopup( '<a href="' + markers[i].slug + '" target="_blank">' + markers[i].name + ', ' + markers[i].street + ': ' + markers[i].min_salary + '-' + markers[i].max_salary + ' ' + markers[i].currency + '</a>', customOptions );
+        .bindPopup( '<a href="' + markers[i].slug + '" target="_blank">' + markers[i].name + ', ' + markers[i].street + ',<br>' + markers[i].specialization + ': ' + markers[i].min_salary + '-' + markers[i].max_salary + ' ' + markers[i].currency +'</a>', customOptions );
     }
 });
 </script>
