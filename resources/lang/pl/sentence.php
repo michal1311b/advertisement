@@ -205,7 +205,7 @@ return [
   'edit_confirm' => 'Czy na pewno chcesz zaktualizować',
   'salary_negotiable' => 'Stawka do negocjacji?',
   'dashboard' => 'Panel',
-  'login-message' => 'Logowanie powiodło się.',
+  'login-message' => 'Logowanie powiodło się. Wybierz co chcesz zrobić:',
   'male' => 'mężczyzna',
   'female' => 'kobieta',
   'confirm_password' => 'Potwierdź hasło',

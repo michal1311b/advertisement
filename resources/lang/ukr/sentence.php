@@ -205,7 +205,7 @@ return [
   'edit_confirm' => 'Ви впевнені, що хочете оновити',
   'salary_negotiable' => 'Stawka do negocjacji?',
   'dashboard' => 'панель',
-  'login-message' => 'Вхід вдався.',
+  'login-message' => 'Вхід вдався. Виберіть, що ви хочете зробити:',
   'male' => 'людина',
   'female' => 'жінка',
   'confirm_password' => 'Підтвердити пароль',

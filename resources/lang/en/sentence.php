@@ -203,7 +203,7 @@ return [
   'edit_confirm' => 'Are you sure update',
   'salary_negotiable' => 'Salary negotiable?',
   'dashboard' => 'Dashboard',
-  'login-message' => 'You are logged in!',
+  'login-message' => 'Login succeeded. Choose what you want to do:',
   'male' => 'Male',
   'female' => 'Female',
   'confirm_password' => 'Confirm Password',

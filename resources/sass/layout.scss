@@ -29,7 +29,7 @@ body {
 
 .ellipsis {
     line-height: 1.2;
-    height: 1.5em;
+    height: 1.1em;
     display: block;
     display: -webkit-box;
     -webkit-line-clamp: 1;
@@ -164,4 +164,25 @@ $color2: #3197EE;
 
 .btn-rounded {
     border-radius: 25px;
+}
+.home-page {
+    display: inline-block;
+    -webkit-transition: all 200ms ease-in;
+    -webkit-transform: scale(1);
+    -ms-transition: all 200ms ease-in;
+    -ms-transform: scale(1);
+    -moz-transition: all 200ms ease-in;
+    -moz-transform: scale(1);
+    transition: all 200ms ease-in;
+    transform: scale(1);
+}
+.home-page:hover {
+    -webkit-transition: all 200ms ease-in;
+    -webkit-transform: scale(1.1);
+    -ms-transition: all 200ms ease-in;
+    -ms-transform: scale(1.1);
+    -moz-transition: all 200ms ease-in;
+    -moz-transform: scale(1.1);
+    transition: all 200ms ease-in;
+    transform: scale(1.1);
 }

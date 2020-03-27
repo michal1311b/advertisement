@@ -205,7 +205,7 @@ return [
   'edit_confirm' => 'Sind Sie sicher, dass Sie aktualisieren möchten',
   'salary_negotiable' => 'Rate zu verhandeln?',
   'dashboard' => 'Platte',
-  'login-message' => 'Login erfolgreich.',
+  'login-message' => 'Login erfolgreich. Wählen Sie aus, was Sie tun möchten:',
   'male' => 'Mann',
   'female' => 'Frau',
   'confirm_password' => 'Passwort bestätigen',
