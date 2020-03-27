@@ -6,6 +6,7 @@ var langDropdown = document.getElementsByClassName('lang-dropdown');
 var content = document.getElementById('app');
 var card = document.getElementsByClassName('card');
 var li = document.getElementsByClassName('list-group-item');
+var table = document.getElementsByClassName('table')[0];
 var sun_class = 'icon-sun';
 var moon_class = 'icon-moon';
 let cookie = document.cookie.includes('theme=dark;');
@@ -52,6 +53,7 @@ function setDarkTheme() {
         item.classList.add('border');
         item.classList.add('border-white');
     }
+    table.classList.add('dark-theme');
 }
 
 function unsetDarkTheme() {
@@ -74,6 +76,8 @@ function unsetDarkTheme() {
         item.classList.remove('border');
         item.classList.remove('border-white');
     }
+
+    table.classList.remove('dark-theme');
 }
 
 function setCookie(name, value) {
