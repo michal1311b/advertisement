@@ -124,8 +124,12 @@ class PreferenceController extends Controller
     {
         $beginData = UserAdvertisement::truncate();
 
-        $users = User::with(['doctor', 'preference', 'specializations'])
-        ->has('doctor')
+        $users = User::with([
+            'doctor', 
+            'nurse', 
+            'preference', 
+            'specializations'
+        ])
         ->has('preference')
         ->has('specializations')
         ->get();
