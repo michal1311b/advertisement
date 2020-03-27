@@ -28,7 +28,7 @@
             <div id="map1" style="height: 440px; border: 1px solid #AAA;"></div>
         </div>
         <div class="col-12 col-lg-6 mx-auto">
-            <div class="card">
+            <div class="card border border-dark">
                 <div class="card-header">
                     <img src="{{ $user->avatar ?? '/images/logo.png'}}" class="user-avatar user-avatar--smaller"
                     alt="{{ $user->profile->company_name ?? $user->name }}">
