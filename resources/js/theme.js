@@ -28,7 +28,10 @@ toggle_icon.addEventListener('click', function() {
     }
 });
 
-if(cookie) {
+const hours = new Date().getHours();
+const isNightTime = hours > 6 && hours < 20;
+
+if(cookie || !isNightTime) {
     setDarkTheme();
 } else {
     unsetDarkTheme();
@@ -53,7 +56,10 @@ function setDarkTheme() {
         item.classList.add('border');
         item.classList.add('border-white');
     }
-    table.classList.add('dark-theme');
+
+    if(table !== undefined) {
+        table.classList.add('dark-theme');
+    }
 }
 
 function unsetDarkTheme() {
@@ -76,8 +82,9 @@ function unsetDarkTheme() {
         item.classList.remove('border');
         item.classList.remove('border-white');
     }
-
-    table.classList.remove('dark-theme');
+    if(table !== undefined) {
+        table.classList.remove('dark-theme');
+    }
 }
 
 function setCookie(name, value) {
