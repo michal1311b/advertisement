@@ -1,4 +1,4 @@
-<nav class="header-nav navbar navbar-expand-md {{ 'navbar-' . $theme }} shadow-sm sticky-top">
+<nav class="header-nav navbar navbar-expand-md {{ 'navbar-' . $theme }} {{ 'bg-' . $theme }} shadow-sm sticky-top">
     <div class="container">
         <a class="navbar-brand" href="{{ url('/') }}">
             <img src="{{ asset('images/logo.png') }}" class="w-100 logo bg-white" alt="EmployMed Logo"/>
