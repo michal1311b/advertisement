@@ -2,18 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Advertisement;
 use App\Page;
-use App\Profile;
 use App\User;
 use Carbon\Carbon;
 use App\Http\Requests\Admin\Page\StoreRequest;
 use App\Http\Requests\Admin\Page\UploadRequest;
-use App\Role;
 use App\Specialization;
-use Illuminate\Support\Collection;
-use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 
@@ -180,7 +175,6 @@ class PageController extends Controller
      */
     public function destroy(Page $page)
     {
-       
         if ($page->delete()) {
             $message = ['message.success' => trans('sentence.delete-page')];
         }
