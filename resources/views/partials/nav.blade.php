@@ -41,7 +41,12 @@
             <ul class="navbar-nav ml-auto">
                 <!-- Authentication Links -->
                 <li class="nav-item">
-                    <i id="theme-toggle" class="fas fa-{{ $theme == 'dark' ? 'sun' : 'moon' }} text-primary"></i>
+                    <div class="custom-control custom-switch">
+                        <input id="theme-toggle" type="checkbox" class="custom-control-input" {{ $theme == 'dark' ? 'checked' : '' }}>
+                        <label class="custom-control-label" for="theme-toggle">
+                            <i class="fas fa-{{ $theme == 'dark' ? 'sun' : 'moon' }} text-primary"></i>
+                        </label>
+                    </div>
                 </li>
                 <li class="nav-item">
                     <a href="{{ route('company-list') }}" class="nav-link lang-dropdown {{ $theme . '-theme' }}" title="{{ trans('sentence.company-list') }}">{{ trans('sentence.company-list') }}</a>

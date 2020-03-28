@@ -12,7 +12,7 @@ var moon_class = 'icon-moon';
 let cookie = document.cookie.includes('theme=dark;');
 
 toggle_icon.addEventListener('click', function() {
-    if (toggle_icon.classList.contains(sun_class)) {
+    if (toggle_icon.classList.contains(sun_class) && !toggle_icon.checked) {
         toggle_icon.classList.add(moon_class);
         toggle_icon.classList.remove(sun_class);
 
