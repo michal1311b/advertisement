@@ -271,7 +271,7 @@
                         <div class="form-group row mb-0">
                             <div class="col-md-8">
                                 <button type="submit" class="btn btn-rounded btn-primary">
-                                    {{ trans('sentence.reply') }}
+                                    {{ trans('email.reply') }}
                                 </button>
                             </div>
                         </div>

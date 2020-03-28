@@ -33,8 +33,8 @@
                     <tr>
                         <th scope="col">#</th>
                         <th scope="col">{{ trans('sentence.title') }}</th>
-                        <th scope="col">{{ trans('sentence.subject') }}</th>
-                        <th scope="col">{{ trans('sentence.sending_date') }}</th>
+                        <th scope="col">{{ trans('email.subject') }}</th>
+                        <th scope="col">{{ trans('email.sending_date') }}</th>
                         <th scope="col">{{ trans('sentence.edit') }}</th>
                         <th scope="col">{{ trans('buttons.btn-delete') }}</th>
                     </tr>
@@ -48,9 +48,9 @@
                             <td>{{ $newsletter->subject }}</td>
                             <td>
                                 @if($newsletter->sent === 1)
-                                    <span class="badge badge-success">{{ trans('sentence.newsletter-sent') }} {{ $newsletter->sending_date }}</span>
+                                    <span class="badge badge-success">{{ trans('email.newsletter-sent') }} {{ $newsletter->sending_date }}</span>
                                 @else
-                                    <span class="badge badge-info">{{ trans('sentence.sending_date') }}: {{ $newsletter->sending_date }}</span>
+                                    <span class="badge badge-info">{{ trans('email.sending_date') }}: {{ $newsletter->sending_date }}</span>
                                 @endif
                             </td>
                             <td>

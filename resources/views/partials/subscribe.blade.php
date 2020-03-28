@@ -31,7 +31,7 @@
             type="checkbox" name="term1" id="term1" value="1"
             {{ old('term1', 0)  == 1 ? 'checked' : '' }}>
             <label class="form-check-label" for="term1">
-                {{ trans('sentence.newsletter-term') }}
+                {{ trans('email.newsletter-term') }}
             </label>
         </div>
     </div>

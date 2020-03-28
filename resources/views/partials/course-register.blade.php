@@ -1,5 +1,5 @@
 <div class="card">
-    <div class="card-header">{{ trans('sentence.contact-form') }}</div>
+    <div class="card-header">{{ trans('email.contact-form') }}</div>
         <div class="col-md-12">
             @include('partials.validation-errors')
         </div>
@@ -122,7 +122,7 @@
                     </div>
                 </div>
             </div>
-            <button type="submit" class="btn btn-rounded btn-primary">{{ trans('sentence.send')}}</button>
+            <button type="submit" class="btn btn-rounded btn-primary">{{ trans('email.send')}}</button>
         </form>
     </div>
 </div>

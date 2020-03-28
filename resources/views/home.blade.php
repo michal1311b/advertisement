@@ -80,16 +80,16 @@
                                     <a class="nav-link lang-dropdown" href="{{ route('pages.index') }}" title="{{ trans('sentence.pages-list')}}">{{ trans('sentence.pages-list')}}</a>
                                 </li>
                                 <li class="nav-item home-page">
-                                    <a class="nav-link lang-dropdown" href="{{ route('newsletters.index') }}" title="{{ trans('sentence.newsletters-list')}}">{{ trans('sentence.newsletters-list')}}</a>
+                                    <a class="nav-link lang-dropdown" href="{{ route('newsletters.index') }}" title="{{ trans('email.newsletters-list')}}">{{ trans('email.newsletters-list')}}</a>
                                 </li>
                                 <li class="nav-item home-page">
-                                    <a class="nav-link lang-dropdown" href="{{ route('mailinglists.index') }}" title="{{ trans('sentence.mailinglist-list')}}">{{ trans('sentence.mailinglist-list')}}</a>
+                                    <a class="nav-link lang-dropdown" href="{{ route('mailinglists.index') }}" title="{{ trans('email.mailinglist-list')}}">{{ trans('email.mailinglist-list')}}</a>
                                 </li>
                                 <li class="nav-item home-page">
-                                    <a class="nav-link lang-dropdown" href="{{ route('recipients.index') }}" title="{{ trans('sentence.recipients-list')}}">{{ trans('sentence.recipients-list')}}</a>
+                                    <a class="nav-link lang-dropdown" href="{{ route('recipients.index') }}" title="{{ trans('email.recipients-list')}}">{{ trans('email.recipients-list')}}</a>
                                 </li>
                                 <li class="nav-item home-page">
-                                    <a class="nav-link lang-dropdown" href="{{ route('mailTracker_Index') }}" title="{{ trans('sentence.email-tracker')}}">{{ trans('sentence.email-tracker')}}</a>
+                                    <a class="nav-link lang-dropdown" href="{{ route('mailTracker_Index') }}" title="{{ trans('email.email-tracker')}}">{{ trans('email.email-tracker')}}</a>
                                 </li>
                                 <li class="nav-item home-page">
                                     <a class="nav-link lang-dropdown" href="{{ route('preview-list') }}" title="{{ trans('preview.list')}}">{{ trans('preview.list')}}</a>

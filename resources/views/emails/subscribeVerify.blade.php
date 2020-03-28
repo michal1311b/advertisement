@@ -1,5 +1,5 @@
 @component('mail::message')
-{{ trans('sentence.register-subscribtion-thanks') }}
+{{ trans('email.register-subscribtion-thanks') }}
 
 <br>
 <br>

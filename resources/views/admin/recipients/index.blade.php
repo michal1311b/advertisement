@@ -35,7 +35,7 @@
                         <th scope="col">{{ __('Email') }}</th>
                         <th scope="col">{{trans('sentence.edit')}}</th>
                         <th scope="col">{{trans('buttons.btn-delete')}}</th>
-                        <th scope="col">{{trans('sentence.mailinglist-list')}}</th>
+                        <th scope="col">{{trans('email.mailinglist-list')}}</th>
                     </tr>
                 </thead>
                 <tbody>

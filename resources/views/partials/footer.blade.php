@@ -15,7 +15,7 @@
             <li><a href="{{ route('cookies.show') }}" title="{{ trans('sentence.cookies-policy') }}">{{ trans('sentence.cookies-policy') }}</a></li>
             <li><a href="{{ route('company-list') }}" title="{{ trans('company.company-list') }}">{{ trans('company.company-list') }}</a></li>
             <li><a href="{{ route('course.index') }}" title="{{ trans('sentence.courses') }}">{{ trans('sentence.courses') }}</a></li>
-            <li><a href="{{ route('contact.show') }}" title="{{ trans('sentence.contact-form') }}">{{ trans('sentence.contact-form') }}</a></li>
+            <li><a href="{{ route('contact.show') }}" title="{{ trans('email.contact-form') }}">{{ trans('email.contact-form') }}</a></li>
           </ul>
         </div>
       </div>

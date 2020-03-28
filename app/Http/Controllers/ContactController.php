@@ -142,7 +142,7 @@ class ContactController extends Controller
 
             DB::commit();
 
-            session()->flash('success', trans('sentence.message-send'));
+            session()->flash('success', trans('email.message-send'));
 
             return back();
         } catch (\Exception $e) {
@@ -217,7 +217,7 @@ class ContactController extends Controller
 
             DB::commit();
 
-            session()->flash('success', trans('sentence.message-send'));
+            session()->flash('success', trans('email.message-send'));
 
             return back();
         } catch (\Exception $e) {

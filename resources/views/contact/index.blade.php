@@ -25,7 +25,7 @@
                     <th scope="col">{{ trans('sentence.first_name') }}</th>
                     <th scope="col">{{ trans('sentence.city') }}</th>
                     <th scope="col">{{ trans('sentence.phone') }}</th>
-                    <th scope="col">{{ trans('sentence.reply') }}</th>
+                    <th scope="col">{{ trans('email.reply') }}</th>
                 </tr>
             </thead>
             <tbody>
@@ -38,12 +38,12 @@
                         <td>{{ $contact->city }}</td>
                         <td>{{ $contact->phone }}</td>
                         <td>
-                            <a href="{{ route('user-reply', $contact->id) }}" class="btn btn-rounded btn-success">{{ trans('sentence.reply') }}</a>
+                            <a href="{{ route('user-reply', $contact->id) }}" class="btn btn-rounded btn-success">{{ trans('email.reply') }}</a>
                         </td>
                     </tr>
                     <tr>
                         <td colspan="5">
-                            <strong>{{ trans('sentence.message') }}</strong>
+                            <strong>{{ trans('email.message') }}</strong>
                             {!! $contact->message !!}
                         </td>
                     </tr>
@@ -51,7 +51,7 @@
             @else
                 <tr>
                     <td colspan="5">
-                        <strong>{{ trans('sentence.no-message') }}</strong>
+                        <strong>{{ trans('email.no-message') }}</strong>
                     </td>
                 </tr>
             @endif

@@ -1,7 +1,7 @@
 @extends('layouts.site')
 
 @section('title')
-    {{ trans('sentence.contact-form') }}
+    {{ trans('email.contact-form') }}
 @endsection
 
 @section('breadcrumbs')
@@ -19,7 +19,7 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">{{ trans('sentence.contact-form') }}</div>
+                <div class="card-header">{{ trans('email.contact-form') }}</div>
                 <div class="col-md-12">
                     @include('partials.validation-errors')
                 </div>
@@ -58,7 +58,7 @@
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-12">
-                                <label for="message">{{ trans('sentence.message')}}</label>
+                                <label for="message">{{ trans('email.message')}}</label>
                                 <textarea id="message" class="form-control @error('message') is-invalid @enderror" name="message" autocomplete="message" autofocus rows="3">
                                     {{ old('message') }}
                                 </textarea>
@@ -80,7 +80,7 @@
                                 </label>
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-rounded btn-primary">{{ trans('sentence.send')}}</button>
+                        <button type="submit" class="btn btn-rounded btn-primary">{{ trans('email.send')}}</button>
                     </form>
                 </div>
             </div>

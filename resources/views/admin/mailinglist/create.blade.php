@@ -25,7 +25,7 @@
         </div>
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">{{ trans('sentence.mailinglist-create') }}</div>
+                <div class="card-header">{{ trans('email.mailinglist-create') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('mailinglists.store') }}">

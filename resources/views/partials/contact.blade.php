@@ -1,5 +1,5 @@
 <div class="card">
-    <div class="card-header">{{ trans('sentence.contact-form') }}</div>
+    <div class="card-header">{{ trans('email.contact-form') }}</div>
         <div class="col-md-12">
             @include('partials.validation-errors')
         </div>
@@ -42,8 +42,8 @@
             </div>
             <div class="form-row">
                 <div class="form-group col-md-12">
-                    <label for="message">{{ trans('sentence.message')}}</label>
-                    <textarea class="form-control text-left @error('message') is-invalid @enderror" name="message" autocomplete="message" autofocus rows="5">{!! trans('sentence.dear') !!} {!! trans('sentence.send-cv-message') !!} {!! trans('sentence.send-cv-greatings') !!} {{ auth()->user()->name ?? null }} {{ auth()->user()->profile->last_name ?? null }}, {{ auth()->user()->profile->company_phone1 ?? null }}</textarea>
+                    <label for="message">{{ trans('email.message')}}</label>
+                    <textarea class="form-control text-left @error('message') is-invalid @enderror" name="message" autocomplete="message" autofocus rows="5">{!! trans('email.dear') !!} {!! trans('email.send-cv-message') !!} {!! trans('email.send-cv-greatings') !!} {{ auth()->user()->name ?? null }} {{ auth()->user()->profile->last_name ?? null }}, {{ auth()->user()->profile->company_phone1 ?? null }}</textarea>
                     @error('message')
                         <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
@@ -79,7 +79,7 @@
                     </label>
                  </div>
             </div>
-            <button type="submit" class="btn btn-rounded btn-primary">{{ trans('sentence.send')}}</button>
+            <button type="submit" class="btn btn-rounded btn-primary">{{ trans('email.send')}}</button>
         </form>
     </div>
 </div>

@@ -13,11 +13,11 @@
             
             <div class="form-row">
                 <div class="form-group col-md-12">
-                    <label for="content">{{ trans('sentence.message')}}</label>
+                    <label for="content">{{ trans('email.message')}}</label>
                     <textarea id="content" class="form-control @error('content') is-invalid @enderror" name="content" value="{{ old('content') }}" autocomplete="content" autofocus rows="3"></textarea>
                 </div>
             </div>
-            <button type="submit" class="btn btn-rounded btn-rounded btn-primary">{{ trans('sentence.send')}}</button>
+            <button type="submit" class="btn btn-rounded btn-rounded btn-primary">{{ trans('email.send')}}</button>
         </form>
     </div>
 </div>

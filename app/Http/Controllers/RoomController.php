@@ -55,7 +55,7 @@ class RoomController extends Controller
 
         $recipient->notify(new ConversationNotification($message, $user));
 
-        session()->flash('success', trans('sentence.message-send'));
+        session()->flash('success', trans('email.message-send'));
 
         return back();
     }

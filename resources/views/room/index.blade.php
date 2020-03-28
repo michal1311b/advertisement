@@ -24,7 +24,7 @@
                     <th scope="col">{{ __('Email') }}</th>
                     <th scope="col">{{ trans('sentence.first_name') }}</th>
                     <th scope="col">{{ trans('sentence.room_name') }}</th>
-                    <th scope="col">{{ trans('sentence.reply') }}</th>
+                    <th scope="col">{{ trans('email.reply') }}</th>
                 </tr>
             </thead>
             <tbody>
@@ -36,14 +36,14 @@
                         <td>{{ $room->user->name }}</td>
                         <td>{{ $room->room->name }}</td>
                         <td>
-                            <a href="{{ route('show-room', $room->room_id) }}" class="btn btn-rounded btn-success">{{ trans('sentence.reply') }}</a>
+                            <a href="{{ route('show-room', $room->room_id) }}" class="btn btn-rounded btn-success">{{ trans('email.reply') }}</a>
                         </td>
                     </tr>
                 @endforeach
             @else
                 <tr>
                     <td colspan="5">
-                        <strong>{{ trans('sentence.no-message') }}</strong>
+                        <strong>{{ trans('email.no-message') }}</strong>
                     </td>
                 </tr>
             @endif

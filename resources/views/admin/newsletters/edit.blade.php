@@ -30,7 +30,7 @@
         </div>
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">{{ trans('sentence.newsletters-create') }}</div>
+                <div class="card-header">{{ trans('email.newsletters-create') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('newsletters.update', $newsletter) }}">
@@ -38,7 +38,7 @@
                         @csrf
 
                         <div class="form-group row">
-                            <label class="col-12 col-md-3 col-form-label text-md-right" for="mailinglist_id">{{ trans('sentence.mailinglist-list') }}</label>
+                            <label class="col-12 col-md-3 col-form-label text-md-right" for="mailinglist_id">{{ trans('email.mailinglist-list') }}</label>
                             <div class="col-12 col-md-9">
                                 <select data-live-search="true" class="form-control @error('mailinglist_id') is-invalid @enderror" name="mailinglist_id" id="mailinglist_id">
                                     <option selected value="">{{ trans('sentence.choose') }}</option>
@@ -65,7 +65,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="subject" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.subject') }}</label>
+                            <label for="subject" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('email.subject') }}</label>
 
                             <div class="col-12 col-md-9">
                                 <input id="subject" type="text" class="form-control @error('subject') is-invalid @enderror" name="subject" value="{{ $newsletter->subject }}" autocomplete="subject" autofocus>
@@ -76,7 +76,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="message" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.message') }}</label>
+                            <label for="message" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('email.message') }}</label>
 
                             <div class="col-12 col-md-9">
                                 <textarea id="message" class="form-control @error('message') is-invalid @enderror" name="message" value="{{ old('message') }}" autocomplete="message" autofocus rows="3">
@@ -89,7 +89,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="sending_date" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.sending_date') }}</label>
+                            <label for="sending_date" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('email.sending_date') }}</label>
 
                             <div class="col-12 col-md-9">
                                 <input id="sending_date" type="text" class="form-control @error('sending_date') is-invalid @enderror" name="sending_date" value="{{ \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $newsletter->sending_date)->format('Y-m-d') }}" autocomplete="sending_date" autofocus>
@@ -100,7 +100,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="time" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.time') }}</label>
+                            <label for="time" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('email.time') }}</label>
 
                             <div class="col-12 col-md-9">
                                 <input id="time" type="text" class="form-control @error('time') is-invalid @enderror" name="time" value="{{ \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $newsletter->sending_date)->format('H:i:s') }}" autocomplete="time" autofocus>

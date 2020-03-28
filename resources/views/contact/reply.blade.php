@@ -34,7 +34,7 @@
             <br>
             <strong>{{ trans('sentence.phone') }}</strong> {{ $contact->phone }}
             <br>
-            <strong>{{ trans('sentence.message') }}</strong> {!! $contact->message !!}
+            <strong>{{ trans('email.message') }}</strong> {!! $contact->message !!}
             <br>
             <strong>{{ trans('sentence.files') }}</strong> 
             @if($contact->cv)
@@ -44,15 +44,15 @@
             @endif
             <hr>
             @if(count($contact->replies) > 0)
-                <strong>{{ trans('sentence.replies') }}</strong> {{ count($contact->replies) }}<br>
+                <strong>{{ trans('email.replies') }}</strong> {{ count($contact->replies) }}<br>
                 @foreach($contact->replies as $reply)
                     <strong>{{ __('Email:') }}</strong> {{ $reply->email }}
                     <br><br>
-                    <strong>{{ trans('sentence.message') }}</strong> {!! $reply->message !!}
+                    <strong>{{ trans('email.message') }}</strong> {!! $reply->message !!}
                     <hr>
                 @endforeach
             @else
-                {{ trans('sentence.no-reply') }}
+                {{ trans('email.no-reply') }}
             @endif
         </div>
         <div class="col-12">

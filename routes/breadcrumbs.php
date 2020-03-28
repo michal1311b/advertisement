@@ -31,7 +31,7 @@ Breadcrumbs::for('opinion-summary', function ($trail) {
 
 Breadcrumbs::for('contact-form', function ($trail) {
     $trail->parent('home');
-    $trail->push(trans('sentence.contact-form'), route('contact.show'));
+    $trail->push(trans('email.contact-form'), route('contact.show'));
 });
 
 Breadcrumbs::for('advertisement', function ($trail) {
@@ -146,22 +146,22 @@ Breadcrumbs::for('user-preferences', function ($trail) {
 
 Breadcrumbs::for('contacts', function ($trail) {
     $trail->parent('home');
-    $trail->push(trans('sentence.contact-list'), route('user-contact'));
+    $trail->push(trans('email.contact-list'), route('user-contact'));
 });
 
 Breadcrumbs::for('rooms', function ($trail) {
     $trail->parent('home');
-    $trail->push(trans('sentence.contact-list'), route('user-rooms'));
+    $trail->push(trans('email.contact-list'), route('user-rooms'));
 });
 
 Breadcrumbs::for('room', function ($trail, $room) {
     $trail->parent('rooms');
-    $trail->push(trans('sentence.reply-form'), route('show-room', $room));
+    $trail->push(trans('email.reply-form'), route('show-room', $room));
 });
 
 Breadcrumbs::for('reply', function ($trail) {
     $trail->parent('contacts');
-    $trail->push(trans('sentence.reply-form'), route('user-reply'));
+    $trail->push(trans('email.reply-form'), route('user-reply'));
 });
 
 Breadcrumbs::for('categories', function ($trail) {
@@ -199,47 +199,47 @@ Breadcrumbs::for('preview-article', function ($trail, $preview) {
 
 Breadcrumbs::for('mailinglist.create', function ($trail) {
     $trail->parent('home');
-    $trail->push(trans('sentence.mailinglist-list'), route('mailinglists.index'));
-    $trail->push(trans('sentence.mailinglist-create'), route('mailinglists.create'));
+    $trail->push(trans('email.mailinglist-list'), route('mailinglists.index'));
+    $trail->push(trans('email.mailinglist-create'), route('mailinglists.create'));
 });
 
 Breadcrumbs::for('mailinglists', function ($trail) {
     $trail->parent('home');
-    $trail->push(trans('sentence.mailinglist-list'), route('mailinglists.index'));
+    $trail->push(trans('email.mailinglist-list'), route('mailinglists.index'));
 });
 
 Breadcrumbs::for('mailinglist.edit', function ($trail, $mailinglist) {
     $trail->parent('home');
-    $trail->push(trans('sentence.mailinglist-list'), route('mailinglists.index'));
+    $trail->push(trans('email.mailinglist-list'), route('mailinglists.index'));
     $trail->push(trans('sentence.edit') . $mailinglist->title, route('mailinglists.edit', $mailinglist));
 });
 
 Breadcrumbs::for('recipient.create', function ($trail) {
     $trail->parent('home');
-    $trail->push(trans('sentence.recipients-list'), route('recipients.index'));
-    $trail->push(trans('sentence.recipients-create'), route('recipients.create'));
+    $trail->push(trans('email.recipients-list'), route('recipients.index'));
+    $trail->push(trans('email.recipients-create'), route('recipients.create'));
 });
 
 Breadcrumbs::for('recipients', function ($trail) {
     $trail->parent('home');
-    $trail->push(trans('sentence.recipients-list'), route('recipients.index'));
+    $trail->push(trans('email.recipients-list'), route('recipients.index'));
 });
 
 Breadcrumbs::for('recipients.edit', function ($trail, $recipient) {
     $trail->parent('home');
-    $trail->push(trans('sentence.recipients-list'), route('recipients.index'));
+    $trail->push(trans('email.recipients-list'), route('recipients.index'));
     $trail->push(trans('sentence.edit') . $recipient->email, route('recipients.edit', $recipient));
 });
 
 Breadcrumbs::for('newsletters', function ($trail) {
     $trail->parent('home');
-    $trail->push(trans('sentence.newsletters-list'), route('newsletters.index'));
+    $trail->push(trans('email.newsletters-list'), route('newsletters.index'));
 });
 
 Breadcrumbs::for('newsletter.create', function ($trail) {
     $trail->parent('home');
-    $trail->push(trans('sentence.newsletters-list'), route('newsletters.index'));
-    $trail->push(trans('sentence.newsletters-create'), route('newsletters.create'));
+    $trail->push(trans('email.newsletters-list'), route('newsletters.index'));
+    $trail->push(trans('email.newsletters-create'), route('newsletters.create'));
 });
 
 Breadcrumbs::for('posts.create', function ($trail) {

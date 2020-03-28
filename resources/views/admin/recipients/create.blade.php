@@ -25,14 +25,14 @@
         </div>
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">{{ trans('sentence.recipients-create') }}</div>
+                <div class="card-header">{{ trans('email.recipients-create') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('recipients.store') }}">
                         @csrf
 
                         <div class="form-group row">
-                            <label class="col-12 col-md-3 col-form-label text-md-right" for="mailinglist_id">{{ trans('sentence.mailinglist-list') }}</label>
+                            <label class="col-12 col-md-3 col-form-label text-md-right" for="mailinglist_id">{{ trans('email.mailinglist-list') }}</label>
                             <div class="col-12 col-md-9">
                                 <select data-live-search="true" class="form-control @error('mailinglist_id') is-invalid @enderror" name="mailinglist_id" id="mailinglist_id">
                                     <option selected value="">{{ trans('sentence.choose') }}</option>

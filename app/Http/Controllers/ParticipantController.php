@@ -29,7 +29,7 @@ class ParticipantController extends Controller
             'term1' => $request->term1
         ]);
 
-        session()->flash('success', trans('sentence.message-send'));
+        session()->flash('success', trans('email.message-send'));
 
         return back();
     }
