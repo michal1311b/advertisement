@@ -238,7 +238,7 @@ class RegisterController extends Controller
 
             DB::commit();
 
-            session()->flash('success', trans('sentence.account-create-success'));
+            session()->flash('success', trans('crudInfos.account-create-success'));
 
             return back();
         } catch (\Exception $e) {
@@ -369,7 +369,7 @@ class RegisterController extends Controller
 
             return response()->json([
                 'status' => 200,
-                'message' =>  trans('sentence.account-create-success')
+                'message' =>  trans('crudInfos.account-create-success')
             ]);
         } catch (\Exception $e) {
             Log::info($e);
@@ -456,7 +456,7 @@ class RegisterController extends Controller
 
             return response()->json([
                 'status' => 200,
-                'message' =>  trans('sentence.account-create-success')
+                'message' =>  trans('crudInfos.account-create-success')
             ]);
         } catch (\Exception $e) {
             Log::info($e);
@@ -543,7 +543,7 @@ class RegisterController extends Controller
 
             return response()->json([
                 'status' => 200,
-                'message' =>  trans('sentence.account-create-success')
+                'message' =>  trans('crudInfos.account-create-success')
             ]);
         } catch (\Exception $e) {
             Log::info($e);

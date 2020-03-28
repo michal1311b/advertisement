@@ -39,7 +39,7 @@ class ReplyController extends Controller
             $reply
         );
 
-        session()->flash('success',  trans('sentence.reply-send-success'));
+        session()->flash('success',  trans('crudInfos.reply-send-success'));
 
         return back();
     }

@@ -26,7 +26,7 @@ class RecipientController extends Controller
     {
         $reciepient = Recipient::create($request->all());
 
-        session()->flash('success', trans('sentence.recipient-create-success'));
+        session()->flash('success', trans('crudInfos.recipient-create-success'));
 
         return back();
     }
@@ -57,7 +57,7 @@ class RecipientController extends Controller
     {
         $recipient->update($request->all());
 
-        session()->flash('success', trans('sentence.recipient-update-success'));
+        session()->flash('success', trans('crudInfos.recipient-update-success'));
 
         return back();
     }

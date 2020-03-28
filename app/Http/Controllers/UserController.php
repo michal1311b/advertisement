@@ -132,7 +132,7 @@ class UserController extends Controller
             $user->specializations()->sync($specializations);
         }
 
-        session()->flash('success',  trans('sentence.profile-update-success'));
+        session()->flash('success',  trans('crudInfos.profile-update-success'));
 
         return back();
     }

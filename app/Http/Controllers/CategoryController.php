@@ -49,7 +49,7 @@ class CategoryController extends Controller
 
             DB::commit();
 
-            session()->flash('success', trans('sentence.category-create-success'));
+            session()->flash('success', trans('crudInfos.category-create-success'));
 
             return view('admin.categories.index',[
                 'categories' => Category::paginate()
@@ -104,7 +104,7 @@ class CategoryController extends Controller
 
             DB::commit();
 
-            session()->flash('success', trans('sentence.category-update-success'));
+            session()->flash('success', trans('crudInfos.category-update-success'));
 
             return back();
         } catch(\Exception $e) {

@@ -26,7 +26,7 @@ class AdminController extends Controller
         $user->banned_until = Carbon::now()->addDays(14);
         $user->save();
 
-        session()->flash('success', trans('sentence.user-ban-success'));
+        session()->flash('success', trans('crudInfos.user-ban-success'));
 
         return back();
     }
@@ -37,7 +37,7 @@ class AdminController extends Controller
             'banned_until' => null
         ]);
 
-        session()->flash('success', trans('sentence.user-unban-success'));
+        session()->flash('success', trans('crudInfos.user-unban-success'));
 
         return back();
     }

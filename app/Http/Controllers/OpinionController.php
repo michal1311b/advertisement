@@ -17,7 +17,7 @@ class OpinionController extends Controller
             'content' => $request->get('content')
         ]);
 
-        session()->flash('success',  trans('sentence.comment-create-success'));
+        session()->flash('success',  trans('crudInfos.comment-create-success'));
 
         return back();
     }

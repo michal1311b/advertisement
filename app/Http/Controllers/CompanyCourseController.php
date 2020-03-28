@@ -138,7 +138,7 @@ class CompanyCourseController extends Controller
 
             return response()->json([
                 'status' => 201,
-                'message' => trans('sentence.offer-update-success')
+                'message' => trans('crudInfos.offer-update-success')
             ]);
         } catch (\Exception $e) {
             \Log::info($e);
@@ -181,7 +181,7 @@ class CompanyCourseController extends Controller
 
             return response()->json([
                 'status' => 201,
-                'message' => trans('sentence.offer-update-success')
+                'message' => trans('crudInfos.offer-update-success')
             ]);
         } catch (\Exception $e) {
             \Log::info($e);

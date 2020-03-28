@@ -24,7 +24,7 @@ class CourseController extends Controller
 
             DB::commit();
 
-            session()->flash('success',  trans('sentence.course-create-success'));
+            session()->flash('success',  trans('crudInfos.course-create-success'));
 
             return back();
         } catch(\Exception $e) {
@@ -57,7 +57,7 @@ class CourseController extends Controller
 
             DB::commit();
 
-            session()->flash('success',  trans('sentence.course-update-success'));
+            session()->flash('success',  trans('crudInfos.course-update-success'));
 
             return back();
         } catch(\Exception $e) {

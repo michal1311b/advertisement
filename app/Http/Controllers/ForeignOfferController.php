@@ -49,7 +49,7 @@ class ForeignOfferController extends Controller
 
             return response()->json([
                 'status' => 201,
-                'message' => trans('sentence.offer-create-success')
+                'message' => trans('crudInfos.offer-create-success')
             ]);
         } catch (\Exception $e) {
             Log::info($e);
@@ -150,7 +150,7 @@ class ForeignOfferController extends Controller
 
             return response()->json([
                 'status' => 201,
-                'message' => trans('sentence.offer-update-success')
+                'message' => trans('crudInfos.offer-update-success')
             ]);
         } catch (\Exception $e) {
             Log::info($e);
@@ -264,7 +264,7 @@ class ForeignOfferController extends Controller
             $advertisement->reminder_send = 0;
             $advertisement->save();
 
-            session()->flash('success',  trans('sentence.extend-offer-success'));
+            session()->flash('success',  trans('crudInfos.extend-offer-success'));
 
             return back();
         }

@@ -98,7 +98,7 @@ class PageController extends Controller
 
             DB::commit();
 
-            session()->flash('success', trans('sentence.page-create-success'));
+            session()->flash('success', trans('crudInfos.page-create-success'));
 
             return back();
         } catch(\Exception $e) {
@@ -154,7 +154,7 @@ class PageController extends Controller
 
             DB::commit();
 
-            session()->flash('success', trans('sentence.page-update-success'));
+            session()->flash('success', trans('crudInfos.page-update-success'));
 
             return back();
         } catch(\Exception $e) {

@@ -27,7 +27,7 @@ class UserLanguageController extends Controller
             'level' => $request->level
         ]);
 
-        session()->flash('success',  trans('sentence.language-add-success'));
+        session()->flash('success',  trans('crudInfos.language-add-success'));
         
         return back();
     }
@@ -51,7 +51,7 @@ class UserLanguageController extends Controller
         $userLanguage->level = $request->level;
         $userLanguage->save();
 
-        session()->flash('success',  trans('sentence.language-update-success'));
+        session()->flash('success',  trans('crudInfos.language-update-success'));
         
         return back();
     }

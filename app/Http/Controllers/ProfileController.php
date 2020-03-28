@@ -33,7 +33,7 @@ class ProfileController extends Controller
             }
             
 
-            session()->flash('success', trans('sentence.upload-file-success'));
+            session()->flash('success', trans('crudInfos.upload-file-success'));
 
             return back();
         }
@@ -46,7 +46,7 @@ class ProfileController extends Controller
         $doctor->cv = null;
         $doctor->save();
 
-        session()->flash('success', trans('sentence.delete-file-success'));
+        session()->flash('success', trans('crudInfos.delete-file-success'));
 
         return back();
     }
@@ -58,7 +58,7 @@ class ProfileController extends Controller
         $nurse->cv = null;
         $nurse->save();
 
-        session()->flash('success', trans('sentence.delete-file-success'));
+        session()->flash('success', trans('crudInfos.delete-file-success'));
 
         return back();
     }
@@ -77,24 +77,24 @@ class ProfileController extends Controller
                 $user->nurse->share = 1;
                 $user->nurse->save();
 
-                session()->flash('success', trans('sentence.share-profile-success'));
+                session()->flash('success', trans('crudInfos.share-profile-success'));
             } else {
                 $user->nurse->share = 0;
                 $user->nurse->save();
 
-                session()->flash('success', trans('sentence.unshare-profile-success'));
+                session()->flash('success', trans('crudInfos.unshare-profile-success'));
             }
         } else {
             if($user->doctor->share === 0) {
                 $user->doctor->share = 1;
                 $user->doctor->save();
 
-                session()->flash('success', trans('sentence.share-profile-success'));
+                session()->flash('success', trans('crudInfos.share-profile-success'));
             } else {
                 $user->doctor->share = 0;
                 $user->doctor->save();
 
-                session()->flash('success', trans('sentence.unshare-profile-success'));
+                session()->flash('success', trans('crudInfos.unshare-profile-success'));
             }
         }
 

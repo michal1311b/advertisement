@@ -126,7 +126,7 @@ class JoobleController extends Controller
     {
         $jooble->update($request->all());
 
-        session()->flash('success', trans('sentence.preview-update-success'));
+        session()->flash('success', trans('crudInfos.preview-update-success'));
 
         return back();
     }

@@ -24,7 +24,7 @@ class MailinglistController extends Controller
     {
         Mailinglist::create($request->all());
 
-        session()->flash('success', trans('sentence.mailinglist-create-success'));
+        session()->flash('success', trans('crudInfos.mailinglist-create-success'));
 
         return back();
     }
@@ -66,7 +66,7 @@ class MailinglistController extends Controller
     {
         $mailinglist->update($request->all());
 
-        session()->flash('success', trans('sentence.mailinglist-update-success'));
+        session()->flash('success', trans('crudInfos.mailinglist-update-success'));
 
         return back();
     }

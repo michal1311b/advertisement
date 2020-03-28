@@ -63,7 +63,7 @@ class PostController extends Controller
 
             DB::commit();
 
-            session()->flash('success', trans('sentence.post-create-success'));
+            session()->flash('success', trans('crudInfos.post-create-success'));
 
             return view('admin.posts.create',[
                 'categories' => Category::paginate()
@@ -166,7 +166,7 @@ class PostController extends Controller
 
             DB::commit();
 
-            session()->flash('success', trans('sentence.post-update-success'));
+            session()->flash('success', trans('crudInfos.post-update-success'));
 
             return back();
         } catch(\Exception $e) {

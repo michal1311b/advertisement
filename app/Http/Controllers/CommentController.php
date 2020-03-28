@@ -23,7 +23,7 @@ class CommentController extends Controller
             'posted_at' => $now->toDateString()
         ]);
 
-        session()->flash('success',  trans('sentence.comment-create-success'));
+        session()->flash('success',  trans('crudInfos.comment-create-success'));
 
         return back();
     }
@@ -37,7 +37,7 @@ class CommentController extends Controller
 
             DB::commit();
 
-            session()->flash('success',  trans('sentence.comment-update-success'));
+            session()->flash('success',  trans('crudInfos.comment-update-success'));
 
             return back();
         } catch(\Exception $e) {

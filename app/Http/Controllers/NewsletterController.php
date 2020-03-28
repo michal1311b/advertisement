@@ -28,7 +28,7 @@ class NewsletterController extends Controller
             'sending_date' => $request->get('sending_date') . ' ' . $request->get('time'),
         ]);
 
-        session()->flash('success', trans('sentence.newsletter-create-success'));
+        session()->flash('success', trans('crudInfos.newsletter-create-success'));
 
         return back();
     }
@@ -67,7 +67,7 @@ class NewsletterController extends Controller
             'sending_date' => $request->get('sending_date') . ' ' . $request->get('time'),
         ]);
 
-        session()->flash('success', trans('sentence.newsletter-update-success'));
+        session()->flash('success', trans('crudInfos.newsletter-update-success'));
 
         return back();
     }

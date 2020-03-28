@@ -32,7 +32,7 @@ class LanguageController extends Controller
             'id' => $c
         ]);
 
-        return back()->with('success', trans('sentence.language-create-success'));
+        return back()->with('success', trans('crudInfos.language-create-success'));
     }
 
     public function index()
@@ -54,7 +54,7 @@ class LanguageController extends Controller
         $language = Language::find($id);
         $language->update($request->all());
 
-        return back()->with('success', trans('sentence.language-update-success'));
+        return back()->with('success', trans('crudInfos.language-update-success'));
     }
 
     /**

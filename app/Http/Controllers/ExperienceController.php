@@ -24,7 +24,7 @@ class ExperienceController extends Controller
 
             DB::commit();
 
-            session()->flash('success',  trans('sentence.experience-store-success'));
+            session()->flash('success',  trans('crudInfos.experience-store-success'));
 
             return back();
         } catch(\Exception $e) {
@@ -42,7 +42,7 @@ class ExperienceController extends Controller
     {
         if($experience->delete())
         {
-            session()->flash('success',  trans('sentence.experience-delete-success'));
+            session()->flash('success',  trans('crudInfos.experience-delete-success'));
 
             return back();
         }
@@ -57,7 +57,7 @@ class ExperienceController extends Controller
 
             DB::commit();
 
-            session()->flash('success',  trans('sentence.experience-update-success'));
+            session()->flash('success',  trans('crudInfos.experience-update-success'));
 
             return back();
         } catch(\Exception $e) {

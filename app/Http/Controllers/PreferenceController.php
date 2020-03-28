@@ -29,7 +29,7 @@ class PreferenceController extends Controller
 
             DB::commit();
 
-            session()->flash('success',  trans('sentence.preference-update-success'));
+            session()->flash('success',  trans('crudInfos.preference-update-success'));
 
             return back();
         } catch(\Exception $e) {
@@ -61,7 +61,7 @@ class PreferenceController extends Controller
             'radius' => $request->get('radius')
         ]);
 
-        session()->flash('success',  trans('sentence.location-add-success'));
+        session()->flash('success',  trans('crudInfos.location-add-success'));
 
         return back();
     }
@@ -94,7 +94,7 @@ class PreferenceController extends Controller
         $userLocation->radius = $request->radius;
         $userLocation->save();
 
-        session()->flash('success', trans('sentence.location-update-success'));
+        session()->flash('success', trans('crudInfos.location-update-success'));
         
         return back();
     }
