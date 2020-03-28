@@ -29,7 +29,7 @@ toggle_icon.addEventListener('click', function() {
 });
 
 const hours = new Date().getHours();
-const isNightTime = hours > 6 && hours < 20;
+const isNightTime = hours > 5 && hours < 23;
 
 if(cookie || !isNightTime) {
     setDarkTheme();
