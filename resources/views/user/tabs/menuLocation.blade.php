@@ -41,7 +41,7 @@
                     <div class="form-group row mb-0">
                         <div class="col-md-12 text-left">
                             <button type="submit" class="btn btn-rounded btn-success">
-                                {{ trans('sentence.btn-add') }}
+                                {{ trans('buttons.btn-add') }}
                             </button>
                         </div>
                     </div>
@@ -58,16 +58,16 @@
                         <div class="col-12 col-md-2 btn-group text-right">
 
                             <button class="btn btn-rounded btn-danger" data-toggle="modal"
-                                data-target="#modalremovelocation{{$location->location->id}}">{{ trans('sentence.btn-delete') }}</i>
+                                data-target="#modalremovelocation{{$location->location->id}}">{{ trans('buttons.btn-delete') }}</i>
                             </button>
 
                             @include('partials.confirmation', [
                                 'url' => route('delete-user-location', $location->id),
                                 'method' => 'DELETE',
-                                'title' => trans('sentence.btn-delete'). " " . trans('sentence.location'),
+                                'title' => trans('buttons.btn-delete'). " " . trans('sentence.location'),
                                 "description" => trans('sentence.delete_confirm') . " " . trans('sentence.location') . "?",
                                 "description_parameters" => [],
-                                'button' => trans('sentence.btn-delete'),
+                                'button' => trans('buttons.btn-delete'),
                                 'modalKey' => "removelocation".$location->location->id
                             ])
 
@@ -83,7 +83,7 @@
                                 'radius' => $location->radius,
                                 "description" => trans('sentence.edit_confirm') . " " . trans('sentence.location') . "?",
                                 "description_parameters" => [],
-                                'button' => trans('sentence.btn-edit'),
+                                'button' => trans('buttons.btn-edit'),
                                 'modalKey' => "editlocation".$location->location->id
                             ])
                         </div>

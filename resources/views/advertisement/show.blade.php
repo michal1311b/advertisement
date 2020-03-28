@@ -189,7 +189,7 @@
                                         <div class="pb-2">
                                             <input type="number" min="0" class="form-control" id="daysInWeek" placeholder="{{ trans('sentence.work-arrive') }}"> 
                                         </div>
-                                        <span class="btn btn-rounded btn-success" onclick="calculate()">{{ trans('sentence.btn-count') }}</span>
+                                        <span class="btn btn-rounded btn-success" onclick="calculate()">{{ trans('buttons.btn-count') }}</span>
                                     </div>
                                     <p>{{ trans('sentence.arrive-cost') }} <span id="cost" class="text-info font-weight-bold"></span></p>
                                 </div>

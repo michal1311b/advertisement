@@ -44,7 +44,7 @@
                             <td>{{ $jooble->email }}</td>
                             <td>
                                 <a href="{{ route('preview-edit' , $jooble) }}" class="btn btn-rounded btn-success">
-                                    {{ trans('sentence.btn-edit') }}
+                                    {{ trans('buttons.btn-edit') }}
                                 </a>
                             </td>
                             <td>

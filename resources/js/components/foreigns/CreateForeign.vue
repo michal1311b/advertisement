@@ -253,7 +253,7 @@
                         <div class="form-group row mb-0">
                             <div class="col-12">
                                 <button type="submit" class="btn btn-rounded btn-primary" :disabled="blockBtn === true">
-                                    {{ trans('sentence.btn-create') }}
+                                    {{ trans('buttons.btn-create') }}
                                 </button>
                             </div>
                         </div>

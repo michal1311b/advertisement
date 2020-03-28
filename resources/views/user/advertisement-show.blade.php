@@ -26,7 +26,7 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header"> {{ trans('sentence.btn-details') }} <strong>{{ $advertisement->title }}</strong></div>
+                <div class="card-header"> {{ trans('buttons.btn-details') }} <strong>{{ $advertisement->title }}</strong></div>
 
                 <div class="card-body">
                     <div class="container-fluid">

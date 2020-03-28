@@ -59,7 +59,7 @@
                                     <a class="nav-link lang-dropdown" href="{{ route('user-course-list') }}" title="{{ trans('sentence.user-courses')}}">{{ trans('sentence.user-courses')}}</a>
                                 </li>
                                 <li class="nav-item home-page">
-                                    <a class="nav-link lang-dropdown" href="{{ route('create-course') }}" title="{{ trans('sentence.btn-add') }} {{ trans('sentence.courses') }}">{{ trans('sentence.btn-add') }} <span class="text-lowercase">{{ trans('sentence.courses') }} <span class="btn btn-rounded btn-success btn-sm"><i class="fas fa-plus-circle"></i></span></span></a>
+                                    <a class="nav-link lang-dropdown" href="{{ route('create-course') }}" title="{{ trans('buttons.btn-add') }} {{ trans('sentence.courses') }}">{{ trans('buttons.btn-add') }} <span class="text-lowercase">{{ trans('sentence.courses') }} <span class="btn btn-rounded btn-success btn-sm"><i class="fas fa-plus-circle"></i></span></span></a>
                                 </li>
                             @endif
 

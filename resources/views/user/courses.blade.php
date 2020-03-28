@@ -65,7 +65,7 @@
                         <a href="{{ route('edit-course', $course->id) }}" class="btn btn-rounded btn-info border border-warning mr-2 text-white">{{ trans('sentence.edit') }}</a>
 
                         <button class="btn btn-rounded btn-danger" data-toggle="modal"
-                            data-target="#modalremove{{$course->id}}">{{ trans('sentence.btn-delete') }}</i>
+                            data-target="#modalremove{{$course->id}}">{{ trans('buttons.btn-delete') }}</i>
                         </button>
                         @include('partials.confirmation', [
                             'url' => route('delete-user-course', $course->id),
@@ -73,7 +73,7 @@
                             'title' => "Usuń kurs",
                             "description" => "Czy na pewno chcesz usunąć ten kurs?",
                             "description_parameters" => [],
-                            'button' => trans('sentence.btn-delete'),
+                            'button' => trans('buttons.btn-delete'),
                             'modalKey' => "remove".$course->id
                         ])
 

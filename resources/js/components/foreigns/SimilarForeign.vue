@@ -220,11 +220,11 @@
             <div class="form-group row mb-0">
                 <div class="col-6">
                     <button type="submit" class="btn btn-rounded btn-success">
-                        {{ trans('sentence.btn-create') }}
+                        {{ trans('buttons.btn-create') }}
                     </button>
                 </div>
                 <div class="col-6">
-                    <a class="btn btn-rounded btn-warning" @click="createAgain" v-if="showCreateSmiilarBtn">{{ trans('sentence.create-again-btn') }}</a>
+                    <a class="btn btn-rounded btn-warning" @click="createAgain" v-if="showCreateSmiilarBtn">{{ trans('buttons.create-again-btn') }}</a>
                 </div>
             </div>
         </form>

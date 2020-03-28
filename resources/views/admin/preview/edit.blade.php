@@ -25,7 +25,7 @@
         </div>
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">{{ trans('sentence.btn-edit') }}: {{ $jooble->title }}</div>
+                <div class="card-header">{{ trans('buttons.btn-edit') }}: {{ $jooble->title }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('update-preview', $jooble) }}">
@@ -114,7 +114,7 @@
                         <div class="form-group row mb-0">
                             <div class="col-md-9 offset-md-3">
                                 <button type="submit" class="btn btn-rounded btn-primary">
-                                    {{ trans('sentence.btn-update') }}
+                                    {{ trans('buttons.btn-update') }}
                                 </button>
                             </div>
                         </div>

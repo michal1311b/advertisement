@@ -43,7 +43,7 @@
                         <div class="form-group row mb-0">
                             <div class="col-md-12 text-left">
                                 <button type="submit" class="btn btn-rounded btn-success">
-                                    {{ trans('sentence.btn-add') }}
+                                    {{ trans('buttons.btn-add') }}
                                 </button>
                             </div>
                         </div>
@@ -61,16 +61,16 @@
                         <div class="col-12 col-md-2 btn-group text-right">
 
                             <button class="btn btn-rounded btn-danger" data-toggle="modal"
-                                data-target="#modalremove{{$language->language->lang_key}}">{{ trans('sentence.btn-delete') }}</i>
+                                data-target="#modalremove{{$language->language->lang_key}}">{{ trans('buttons.btn-delete') }}</i>
                             </button>
 
                             @include('partials.confirmation', [
                                 'url' => route('delete-user-language', $language->id),
                                 'method' => 'DELETE',
-                                'title' => trans('sentence.btn-delete') . " " . trans('sentence.language'),
+                                'title' => trans('buttons.btn-delete') . " " . trans('sentence.language'),
                                 "description" => trans('sentence.delete_confirm') . " " . trans('sentence.language') . "?",
                                 "description_parameters" => [],
-                                'button' => trans('sentence.btn-delete'),
+                                'button' => trans('buttons.btn-delete'),
                                 'modalKey' => "remove".$language->language->lang_key
                             ])
 
@@ -86,7 +86,7 @@
                                 'level' => $language->level,
                                 "description" => trans('sentence.edit_confirm') . " " . trans('sentence.language') . "?",
                                 "description_parameters" => [],
-                                'button' => trans('sentence.btn-edit'),
+                                'button' => trans('buttons.btn-edit'),
                                 'modalKey' => "editlang".$language->language->lang_key
                             ])
                         </div>

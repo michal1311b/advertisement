@@ -9,16 +9,16 @@
                         <div class="btn-group" role="group" aria-label="Basic example">
                             <a href="{{ $editUser->doctor->cv }}" class="btn btn-rounded btn-primary" target="_blank">{{ trans('sentence.show-cv') }}</a>
                             <button class="btn btn-rounded btn-danger" data-toggle="modal"
-                                data-target="#modalremovecv{{$editUser->doctor->id}}">{{ trans('sentence.btn-delete') }}</i>
+                                data-target="#modalremovecv{{$editUser->doctor->id}}">{{ trans('buttons.btn-delete') }}</i>
                             </button>
 
                             @include('partials.confirmation', [
                                 'url' => route('delete-user-cv', $editUser->doctor),
                                 'method' => 'DELETE',
-                                'title' => trans('sentence.btn-delete') . " CV",
+                                'title' => trans('buttons.btn-delete') . " CV",
                                 "description" => trans('sentence.delete_confirm') ." CV?",
                                 "description_parameters" => [],
-                                'button' => trans('sentence.btn-delete'),
+                                'button' => trans('buttons.btn-delete'),
                                 'modalKey' => "removecv".$editUser->doctor->id
                             ])
                         </div>
@@ -52,7 +52,7 @@
                             <div class="form-group row mt-3">
                                 <div class="col-md-8 offset-md-4">
                                     <button type="submit" class="btn btn-rounded btn-primary">
-                                        {{ trans('sentence.btn-upload') }}
+                                        {{ trans('buttons.btn-upload') }}
                                     </button>
                                 </div>
                             </div>
@@ -65,16 +65,16 @@
                         <div class="btn-group" role="group" aria-label="Basic example">
                             <a href="{{ $editUser->nurse->cv }}" class="btn btn-rounded btn-primary" target="_blank">{{ trans('sentence.show-cv') }}</a>
                             <button class="btn btn-rounded btn-danger" data-toggle="modal"
-                                data-target="#modalremovenursecv{{$editUser->nurse->id}}">{{ trans('sentence.btn-delete') }}</i>
+                                data-target="#modalremovenursecv{{$editUser->nurse->id}}">{{ trans('buttons.btn-delete') }}</i>
                             </button>
 
                             @include('partials.confirmation', [
                                 'url' => route('delete-nurse-cv', $editUser->nurse),
                                 'method' => 'DELETE',
-                                'title' => trans('sentence.btn-delete') . " CV",
+                                'title' => trans('buttons.btn-delete') . " CV",
                                 "description" => trans('sentence.delete_confirm') ." CV?",
                                 "description_parameters" => [],
-                                'button' => trans('sentence.btn-delete'),
+                                'button' => trans('buttons.btn-delete'),
                                 'modalKey' => "removenursecv".$editUser->nurse->id
                             ])
                         </div>
@@ -108,7 +108,7 @@
                             <div class="form-group row mt-3">
                                 <div class="col-md-8 offset-md-4">
                                     <button type="submit" class="btn btn-rounded btn-primary">
-                                        {{ trans('sentence.btn-upload') }}
+                                        {{ trans('buttons.btn-upload') }}
                                     </button>
                                 </div>
                             </div>

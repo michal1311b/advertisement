@@ -127,12 +127,12 @@
                                     'title' => trans('sentence.edit'),
                                     "description" => "Czy na pewno chcesz zaktualizować komentarz?",
                                     "description_parameters" => [],
-                                    'button' => trans('sentence.btn-edit'),
+                                    'button' => trans('buttons.btn-edit'),
                                     'modalKey' => "editcomment".$comment->id
                                 ])
 
                                 <button class="btn btn-rounded btn-danger" data-toggle="modal"
-                                    data-target="#modalremove{{$comment->id}}">{{ trans('sentence.btn-delete') }}</i>
+                                    data-target="#modalremove{{$comment->id}}">{{ trans('buttons.btn-delete') }}</i>
                                 </button>
 
                                 @include('partials.confirmation', [
@@ -141,7 +141,7 @@
                                     'title' => "Usuń komentarz",
                                     "description" => "Czy na pewno chcesz usunąć komentarz?",
                                     "description_parameters" => [],
-                                    'button' => trans('sentence.btn-delete'),
+                                    'button' => trans('buttons.btn-delete'),
                                     'modalKey' => "remove".$comment->id
                                 ])
                             @endif

@@ -83,7 +83,7 @@
 
                         <div class="form-group row">
                             <div class="col-12 offset-md-4 col-md-8" :disabled="!blockGus">
-                                <span class="btn btn-rounded btn-info" @click="getCompanyData" v-if="(formInputs.company_nip !== '') && (formInputs.company_nip.length === 10)">{{ trans('sentence.btn-gus-data') }}</span>
+                                <span class="btn btn-rounded btn-info" @click="getCompanyData" v-if="(formInputs.company_nip !== '') && (formInputs.company_nip.length === 10)">{{ trans('buttons.btn-gus-data') }}</span>
                             </div>
                         </div>
 

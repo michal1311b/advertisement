@@ -67,7 +67,7 @@
                         <a href="{{ route('edit-foreign', $foreign->id) }}" class="btn btn-rounded btn-info border border-warning mr-2 text-white">{{ trans('sentence.edit') }}</a>
 
                         <button class="btn btn-rounded btn-danger" data-toggle="modal"
-                            data-target="#modalremove{{$foreign->id}}">{{ trans('sentence.btn-delete') }}</i>
+                            data-target="#modalremove{{$foreign->id}}">{{ trans('buttons.btn-delete') }}</i>
                         </button>
                         @include('partials.confirmation', [
                             'url' => route('delete-foreign', $foreign->id),
@@ -75,18 +75,18 @@
                             'title' => "Usuń ogłoszenie",
                             "description" => "Czy na pewno chcesz usunąć to ogłoszenie?",
                             "description_parameters" => [],
-                            'button' => trans('sentence.btn-delete'),
+                            'button' => trans('buttons.btn-delete'),
                             'modalKey' => "remove".$foreign->id
                         ])
 
                         {{-- <a href="{{ route('user-foreign-show', ['foreign' => $foreign, 'slug' => $foreign->slug]) }}" class="btn btn-rounded btn-info border border-warning ml-2 text-white">
-                            {{ trans('sentence.btn-matching') }}
+                            {{ trans('buttons.btn-matching') }}
                         </a> --}}
 
-                        <a href="{{ route('user-foreign-similar', $foreign) }}" class="btn btn-rounded btn-success border border-warning ml-2 text-white">{{ trans('sentence.btn-create-similar-ofert') }}</a>
+                        <a href="{{ route('user-foreign-similar', $foreign) }}" class="btn btn-rounded btn-success border border-warning ml-2 text-white">{{ trans('buttons.btn-create-similar-ofert') }}</a>
 
                         @if($date->diffInDays($foreign->expired_at) < 7)
-                            <a href="{{ route('user-extend-foreign', $foreign->id) }}" class="btn btn-rounded btn-warning border border-warning ml-md-2 text-white">{{ trans('sentence.btn-extend-offer') }}</a>
+                            <a href="{{ route('user-extend-foreign', $foreign->id) }}" class="btn btn-rounded btn-warning border border-warning ml-md-2 text-white">{{ trans('buttons.btn-extend-offer') }}</a>
                         @endif
                     </div>
                 @endforeach

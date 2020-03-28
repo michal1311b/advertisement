@@ -91,7 +91,7 @@
                         <div class="form-group row mb-0">
                             <div class="col-md-12 text-left">
                                 <button type="submit" class="btn btn-rounded btn-success">
-                                    {{ trans('sentence.btn-add') }}
+                                    {{ trans('buttons.btn-add') }}
                                 </button>
                             </div>
                         </div>
@@ -109,21 +109,21 @@
                         <div class="col-12 col-md-2 btn-group text-right">
 
                             <button class="btn btn-rounded btn-danger" data-toggle="modal"
-                                data-target="#modalremove{{$experience->id}}">{{trans('sentence.btn-delete')}}</i>
+                                data-target="#modalremove{{$experience->id}}">{{trans('buttons.btn-delete')}}</i>
                             </button>
 
                             @include('partials.confirmation', [
                                 'url' => route('delete-experience', $experience->id),
                                 'method' => 'DELETE',
-                                'title' => trans('sentence.btn-delete') . " " . trans('sentence.experience'),
+                                'title' => trans('buttons.btn-delete') . " " . trans('sentence.experience'),
                                 "description" => trans('sentence.delete_confirm') . " " . trans('sentence.experience') . "?",
                                 "description_parameters" => [],
-                                'button' => trans('sentence.btn-delete'),
+                                'button' => trans('buttons.btn-delete'),
                                 'modalKey' => "remove".$experience->id
                             ])
 
                             <button class="btn btn-rounded btn-success" data-toggle="modal"
-                                data-target="#modaledit{{$experience->id}}">{{trans('sentence.btn-edit')}}</i>
+                                data-target="#modaledit{{$experience->id}}">{{trans('buttons.btn-edit')}}</i>
                             </button>
 
                             @include('partials.edit', [
@@ -132,7 +132,7 @@
                                 'title' => trans('sentence.edit'),
                                 "description" => "Czy na pewno chcesz zaktualizować doświadczenie?",
                                 "description_parameters" => [],
-                                'button' => trans('sentence.btn-edit'),
+                                'button' => trans('buttons.btn-edit'),
                                 'modalKey' => "edit".$experience->id
                             ])
                         </div>

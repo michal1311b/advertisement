@@ -71,7 +71,7 @@
                                 <a href="{{ route('edit-foreign', $foreign->id) }}" class="btn btn-rounded btn-info border border-warning mr-2 text-white">{{ trans('sentence.edit') }}</a>
                                 
                                 <button class="btn btn-rounded btn-danger" data-toggle="modal"
-                                    data-target="#modalremove{{$foreign->id}}">{{ trans('sentence.btn-delete') }}</i>
+                                    data-target="#modalremove{{$foreign->id}}">{{ trans('buttons.btn-delete') }}</i>
                                 </button>
                                 @include('partials.confirmation', [
                                     'url' => route('delete-foreign', $foreign->id),
@@ -79,7 +79,7 @@
                                     'title' => "Usuń ogłoszenie",
                                     "description" => "Czy na pewno chcesz usunąć to ogłoszenie?",
                                     "description_parameters" => [],
-                                    'button' => trans('sentence.btn-delete'),
+                                    'button' => trans('buttons.btn-delete'),
                                     'modalKey' => "remove".$foreign->id
                                 ])
                             </div>

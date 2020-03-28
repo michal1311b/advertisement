@@ -33,7 +33,7 @@
                                                 <div class="float-left">
                                                     <button class="btn btn-rounded btn-danger" data-toggle="modal"
                                                         data-target="#modalremove{{$opinion->id}}">
-                                                        {{ trans('sentence.btn-delete') }}
+                                                        {{ trans('buttons.btn-delete') }}
                                                     </button>
                                                     @include('partials.confirmation', [
                                                         'url' => route('delete-opinion', $opinion->id),
@@ -41,7 +41,7 @@
                                                         'title' => trans('sentence.delete-comment'),
                                                         "description" => trans('sentence.delete-comment-confirm'),
                                                         "description_parameters" => [],
-                                                        'button' => trans('sentence.btn-delete'),
+                                                        'button' => trans('buttons.btn-delete'),
                                                         'modalKey' => "remove".$opinion->id
                                                     ])
                                                 </div>

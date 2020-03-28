@@ -25,7 +25,7 @@
             @include('partials.message')
         </div>
         <div class="col-12 text-right">
-            <a href="{{ route('recipients.create') }}" class="btn btn-rounded btn-success">{{trans('sentence.btn-create')}}</a>
+            <a href="{{ route('recipients.create') }}" class="btn btn-rounded btn-success">{{trans('buttons.btn-create')}}</a>
         </div>
         <div class="col-12">
             <table class="table">
@@ -34,7 +34,7 @@
                         <th scope="col">#</th>
                         <th scope="col">{{ __('Email') }}</th>
                         <th scope="col">{{trans('sentence.edit')}}</th>
-                        <th scope="col">{{trans('sentence.btn-delete')}}</th>
+                        <th scope="col">{{trans('buttons.btn-delete')}}</th>
                         <th scope="col">{{trans('sentence.mailinglist-list')}}</th>
                     </tr>
                 </thead>
@@ -49,7 +49,7 @@
                             </td>
                             <td>
                                 <button class="btn btn-rounded btn-danger" data-toggle="modal"
-                                    data-target="#modalremove{{$recipient->id}}">{{trans('sentence.btn-delete')}}</i>
+                                    data-target="#modalremove{{$recipient->id}}">{{trans('buttons.btn-delete')}}</i>
                                 </button>
 
                                 @include('partials.confirmation', [
@@ -58,7 +58,7 @@
                                     'title' => "Usuń odbiorcę",
                                     "description" => "Czy na pewno chcesz usunąć tego odbiorcę?",
                                     "description_parameters" => [],
-                                    'button' => trans('sentence.btn-delete'),
+                                    'button' => trans('buttons.btn-delete'),
                                     'modalKey' => "remove".$recipient->id
                                 ])
                             </td>

@@ -73,7 +73,7 @@
                                 <a href="{{ route('edit-advertisement', $advertisement->id) }}" class="btn btn-rounded btn-info border border-warning mr-2 text-white">{{ trans('sentence.edit') }}</a>
                                 
                                 <button class="btn btn-rounded btn-danger" data-toggle="modal"
-                                    data-target="#modalremove{{$advertisement->id}}">{{ trans('sentence.btn-delete') }}</i>
+                                    data-target="#modalremove{{$advertisement->id}}">{{ trans('buttons.btn-delete') }}</i>
                                 </button>
                                 @include('partials.confirmation', [
                                     'url' => route('delete-advertisement', $advertisement->id),
@@ -81,7 +81,7 @@
                                     'title' => "Usuń ogłoszenie",
                                     "description" => "Czy na pewno chcesz usunąć to ogłoszenie?",
                                     "description_parameters" => [],
-                                    'button' => trans('sentence.btn-delete'),
+                                    'button' => trans('buttons.btn-delete'),
                                     'modalKey' => "remove".$advertisement->id
                                 ])
                             </div>
