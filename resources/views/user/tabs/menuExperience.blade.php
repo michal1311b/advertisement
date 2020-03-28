@@ -67,7 +67,7 @@
                             <div class="col-sm-9">
                                 <div class="form-check">
                                     <input name="until_now" type="hidden" value="0">
-                                    <input class="form-check-input" 
+                                    <input class="form-check-input custom-checkbox" 
                                     type="checkbox" name="until_now" id="until_now" value="1"
                                     {{ old('until_now', 0)  == 1 ? 'checked' : '' }}>
                                     <label class="form-check-label" for="until_now">

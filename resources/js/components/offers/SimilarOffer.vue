@@ -254,7 +254,7 @@
                 <div class="col-sm-3"></div>
                 <div class="col-sm-9">
                     <div class="form-check">
-                        <input class="form-check-input" 
+                        <input class="form-check-input custom-checkbox" 
                             type="checkbox" name="negotiable" id="negotiable"
                             :checked="formInputs.negotiable === 1"
                             v-model="formInputs.negotiable">

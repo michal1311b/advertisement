@@ -337,7 +337,7 @@
                             <div class="col-sm-3"></div>
                             <div class="col-sm-9">
                                 <div class="form-check">
-                                    <input class="form-check-input" 
+                                    <input class="form-check-input custom-checkbox" 
                                         type="checkbox" name="negotiable" id="negotiable" v-model="formInputs.negotiable">
                                     <label class="form-check-label" for="negotiable">
                                         {{ trans('sentence.salary_negotiable') }}
@@ -351,7 +351,7 @@
                             <div class="col-sm-9">
                                 <div class="form-check">
                                     <ValidationProvider :name="trans('sentence.term1')" rules="required" v-slot="{ errors }">
-                                        <input class="form-check-input" 
+                                        <input class="form-check-input custom-checkbox" 
                                             type="checkbox" name="term1" id="term1" v-model="formInputs.term1" value="1">
                                         <label class="form-check-label" for="term1">
                                             {{ trans('sentence.accept') }} <a href="/regulamin" class="text-lowercase">{{ trans('sentence.regulation') }}</a> EmployMed.eu
@@ -366,7 +366,7 @@
                             <div class="col-sm-3"></div>
                             <div class="col-sm-9">
                                 <div class="form-check">
-                                    <input class="form-check-input" 
+                                    <input class="form-check-input custom-checkbox" 
                                         type="checkbox" name="term2" id="term2" v-model="formInputs.term2">
                                     <label class="form-check-label" for="term2">
                                         {{ trans('sentence.accept') }} <a href="/polityka-cookies" class="text-lowercase">{{ trans('sentence.cookies-policy') }}</a> EmployMed.eu
@@ -379,7 +379,7 @@
                             <div class="col-sm-3"></div>
                             <div class="col-sm-9">
                                 <div class="form-check">
-                                    <input class="form-check-input" 
+                                    <input class="form-check-input custom-checkbox" 
                                         type="checkbox" name="term3" id="term3" v-model="formInputs.term3">
                                     <label class="form-check-label" for="term3">
                                         {{ trans('sentence.data-conversion') }} EmployMed.eu

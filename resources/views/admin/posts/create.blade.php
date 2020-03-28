@@ -65,7 +65,7 @@
                             <div class="col-sm-9">
                                 <div class="form-check">
                                     <input name="is_published" type="hidden" value="0">
-                                    <input class="form-check-input" 
+                                    <input class="form-check-input custom-checkbox" 
                                     type="checkbox" name="is_published" id="is_published" value="1"
                                     {{ old('is_published', 0)  == 1 ? 'checked' : '' }}>
                                     <label class="form-check-label" for="is_published">

@@ -71,7 +71,7 @@
                         <div class="form-group">
                             <div class="form-check">
                                 <input name="term1" type="hidden" value="0">
-                                <input class="form-check-input" value="1" required
+                                <input class="form-check-input custom-checkbox" value="1" required
                                 type="checkbox" name="term1" {{ old('term1', 0) == 1 ? 'checked' : '' }}
                                 id="term1">
             

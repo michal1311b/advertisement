@@ -27,7 +27,7 @@
         
         <div class="form-check pt-3">
             <input name="term1" type="hidden" value="0">
-            <input class="form-check-input" 
+            <input class="form-check-input custom-checkbox" 
             type="checkbox" name="term1" id="term1" value="1"
             {{ old('term1', 0)  == 1 ? 'checked' : '' }}>
             <label class="form-check-label" for="term1">
