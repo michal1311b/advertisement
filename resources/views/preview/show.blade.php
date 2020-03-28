@@ -64,13 +64,13 @@
                         <div class="row">
                             <div class="col-12 pb-3">
                                 <h1 class="text-danger">
-                                    {{ trans('sentence.preview-header') }}
+                                    {{ trans('preview.header') }}
                                 </h1>
 
-                                <h6>{{ trans('sentence.preview-post-offer') }}</h6>
+                                <h6>{{ trans('preview.post-offer') }}</h6>
                             </div>
                             <div class="col-12 pb-3">
-                                <p>{{ trans('sentence.preview-source') }} <strong>{{ $preview->source }}</strong>, <a href="{{ $preview->link }}">{{ trans('sentence.preview-source-link') }}</a></a></p>
+                                <p>{{ trans('preview.source') }} <strong>{{ $preview->source }}</strong>, <a href="{{ $preview->link }}">{{ trans('preview.source-link') }}</a></a></p>
                             </div>
                             <div class="col-12 text-center">
                                 <a href="{{ route('register.company') }}" class="btn btn-rounded btn-primary btn-lg">

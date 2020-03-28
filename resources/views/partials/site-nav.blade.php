@@ -47,7 +47,7 @@
       <a class="side-nav list-group-item list-group-item-action {{ $theme . '-theme' }} {{ Request::is('admin/email-manager') ? 'bg-primary active' : null }}" href="{{ route('mailTracker_Index') }}" title="{{ trans('sentence.email-tracker')}}">{{ trans('sentence.email-tracker')}}</a>
     </div>
     <div class="list-group list-group-flush">
-      <a class="side-nav list-group-item list-group-item-action {{ $theme . '-theme' }} {{ Request::is('admin/previews') ? 'bg-primary active' : null }}" href="{{ route('preview-list') }}" title="{{ trans('sentence.preview-list')}}">{{ trans('sentence.preview-list')}}</a>
+      <a class="side-nav list-group-item list-group-item-action {{ $theme . '-theme' }} {{ Request::is('admin/previews') ? 'bg-primary active' : null }}" href="{{ route('preview-list') }}" title="{{ trans('preview.list')}}">{{ trans('preview.list')}}</a>
     </div>
   @endif
 @endguest

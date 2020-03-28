@@ -183,12 +183,12 @@ Breadcrumbs::for('categories.edit', function ($trail, $category) {
 
 Breadcrumbs::for('jooblies', function ($trail) {
     $trail->parent('home');
-    $trail->push(trans('sentence.preview-list'), route('preview-list'));
+    $trail->push(trans('preview.list'), route('preview-list'));
 });
 
 Breadcrumbs::for('preview.edit', function ($trail, $preview) {
     $trail->parent('home');
-    $trail->push(trans('sentence.preview-list'), route('preview-list'));
+    $trail->push(trans('preview.list'), route('preview-list'));
     $trail->push(trans('sentence.edit') . $preview->title, route('preview-edit', $preview));
 });
 

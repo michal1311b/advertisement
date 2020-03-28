@@ -92,7 +92,7 @@
                                     <a class="nav-link lang-dropdown" href="{{ route('mailTracker_Index') }}" title="{{ trans('sentence.email-tracker')}}">{{ trans('sentence.email-tracker')}}</a>
                                 </li>
                                 <li class="nav-item home-page">
-                                    <a class="nav-link lang-dropdown" href="{{ route('preview-list') }}" title="{{ trans('sentence.preview-list')}}">{{ trans('sentence.preview-list')}}</a>
+                                    <a class="nav-link lang-dropdown" href="{{ route('preview-list') }}" title="{{ trans('preview.list')}}">{{ trans('preview.list')}}</a>
                                 </li>
                             @endif
                     </ul>
