@@ -6,7 +6,7 @@ Breadcrumbs::for('home', function ($trail) {
 });
 
 Breadcrumbs::for('site.homepage', function ($trail) {
-    $trail->push(trans('sentence.homepage'), route('homepage'));
+    $trail->push(trans('homepage.homepage'), route('homepage'));
 });
 
 Breadcrumbs::for('site.register-step', function ($trail) {

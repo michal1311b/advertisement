@@ -5,7 +5,7 @@
 @endsection
 
 @section('description')
-    {{ trans('sentence.homepage.employmed') }}
+    {{ trans('homepage.employmed') }}
 @endsection
 
 @section('breadcrumbs')

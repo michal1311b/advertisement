@@ -2,8 +2,8 @@
     <div class="container">
       <div class="row">
         <div class="col-sm-12 col-md-9">
-          <h6>{{ trans('sentence.homepage.what.it') }}</h6>
-          <p class="text-justify">{{ trans('sentence.homepage.employmed') }}</p>
+          <h6>{{ trans('homepage.what.it') }}</h6>
+          <p class="text-justify">{{ trans('homepage.employmed') }}</p>
         </div>
 
         <div class="col-xs-6 col-md-3">

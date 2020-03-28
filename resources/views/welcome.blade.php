@@ -1,11 +1,11 @@
 @extends('layouts.site')
 
 @section('title')
-    {{ trans('sentence.homepage.site.title') }}
+    {{ trans('homepage.site.title') }}
 @endsection
 
 @section('description')
-    {{ trans('sentence.homepage.site.description') }}
+    {{ trans('homepage.site.description') }}
 @endsection
 
 @section('breadcrumbs')
@@ -33,22 +33,22 @@
       <div class="carousel-item active">
         <img class="d-block w-100" src="{{ asset('images/main1.jpg') }}" alt="Main 1">
         <div class="carousel-caption d-none d-md-block text-dark font-weight-bolder">
-            <h6>{{ trans('sentence.homepage.title') }}</h6>
-            <span>{{ trans('sentence.homepage.slide1') }}</span>
+            <h6>{{ trans('homepage.title') }}</h6>
+            <span>{{ trans('homepage.slide1') }}</span>
         </div>
       </div>
       <div class="carousel-item">
         <img class="d-block w-100" src="{{ asset('images/main2.jpg') }}" alt="Main 2">
         <div class="carousel-caption d-none d-md-block text-white">
-            <h6>{{ trans('sentence.homepage.title') }}</h6>
-            <span>{{ trans('sentence.homepage.slide2') }}</span>
+            <h6>{{ trans('homepage.title') }}</h6>
+            <span>{{ trans('homepage.slide2') }}</span>
         </div>
       </div>
       <div class="carousel-item">
         <img class="d-block w-100" src="{{ asset('images/main3.jpg') }}" alt="Main 3">
         <div class="carousel-caption d-none d-md-block">
-            <h6>{{ trans('sentence.homepage.title') }}</h6>
-            <span>{{ trans('sentence.homepage.slide3') }}</span>
+            <h6>{{ trans('homepage.title') }}</h6>
+            <span>{{ trans('homepage.slide3') }}</span>
         </div>
       </div>
     </div>
@@ -66,7 +66,7 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">{{ trans('sentence.homepage') }}</strong></div>
+                <div class="card-header">{{ trans('homepage.homepage') }}</strong></div>
 
                 <div class="card-body">
                     <div class="container-fluid">
@@ -95,10 +95,10 @@
                                 <div class="content">
                                     <div class="title m-b-md">
                                         <h3>
-                                            {{ trans('sentence.homepage.title') }}
+                                            {{ trans('homepage.title') }}
                                         </h3>
                                         <h6>
-                                            {{ trans('sentence.homepage.subtitle') }}
+                                            {{ trans('homepage.subtitle') }}
                                         </h6>
                                     </div>
                                     <div>
@@ -122,10 +122,10 @@
                                 <div class="content">
                                     <div class="title m-b-md">
                                         <h3>
-                                            {{ trans('sentence.homepage.what.it') }}
+                                            {{ trans('homepage.what.it') }}
                                         </h3>
                                         <h6>
-                                            {{ trans('sentence.homepage.employmed') }}
+                                            {{ trans('homepage.employmed') }}
                                         </h6>
                                     </div>
                                 </div>
@@ -145,10 +145,10 @@
                                     <div class="title m-b-md">
                                         <h3>
                                             <i class="fas fa-cogs"></i>
-                                            {{ trans('sentence.homepage.how.it.works') }}
+                                            {{ trans('homepage.how.it.works') }}
                                         </h3>
                                         <h6>
-                                            {{ trans('sentence.homepage.how.it.works.explain') }}
+                                            {{ trans('homepage.how.it.works.explain') }}
                                         </h6>
                                     </div>
                                 </div>
@@ -168,10 +168,10 @@
                                     <div class="title m-b-md">
                                         <h3>
                                             <i class="fas fa-hourglass-half"></i>
-                                            {{ trans('sentence.homepage.for.doctor.stomatologist') }}
+                                            {{ trans('homepage.for.doctor.stomatologist') }}
                                         </h3>
                                         <h6>
-                                            {!! trans('sentence.homepage.for.doctor.stomatologist.explain') !!}
+                                            {!! trans('homepage.for.doctor.stomatologist.explain') !!}
                                         </h6>
                                     </div>
                                     <div class="body embed-responsive embed-responsive-16by9">
@@ -191,10 +191,10 @@
                                     <div class="title m-b-md">
                                         <h3>
                                             <i class="fas fa-file-invoice-dollar"></i>
-                                            {{ trans('sentence.homepage.for.employer') }}
+                                            {{ trans('homepage.for.employer') }}
                                         </h3>
                                         <h6>
-                                            {!! trans('sentence.homepage.for.employer.explain') !!}
+                                            {!! trans('homepage.for.employer.explain') !!}
                                         </h6>
                                     </div>
                                     <div class="body embed-responsive embed-responsive-16by9">
