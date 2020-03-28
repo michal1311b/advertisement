@@ -13,4 +13,6 @@ return [
     'company-list' => 'Lista pracodawców',
     'register-company' => 'Formularz rejestracji dla placówki medycznej/firmy',
     'visit-company' => 'Zobacz inne oferty tego pracodawcy. Kliknij tutaj.',
+    'companies-orderBy-offers' => 'Pracodawcy z największą ilością ofert',
+    'no-companies' => 'Nie znaleziono żadnych firm zarejestruj się aby być pierwszy.',
 ];

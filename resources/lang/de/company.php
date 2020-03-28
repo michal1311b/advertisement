@@ -13,4 +13,6 @@ return [
     'company-list' => 'Liste der Arbeitgeber',
     'register-company' => 'Anmeldeformular für eine medizinische Einrichtung / Firma',
     'visit-company' => 'Siehe andere Angebote dieses Arbeitgebers. Klicken Sie hier.',
+    'companies-orderBy-offers' => 'Arbeitgeber mit den meisten Angeboten',
+    'no-companies' => 'Kein Unternehmen hat festgestellt, dass das Register an erster Stelle steht.',
 ];

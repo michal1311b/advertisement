@@ -61,7 +61,7 @@
                 </div>
             @else
                 <div class="col-12">
-                    <h4>{{ trans('sentence.no-companies') }}</h4>
+                    <h4>{{ trans('company.no-companies') }}</h4>
                 </div>
             @endif
         </div>

@@ -13,4 +13,6 @@ return [
     'company-list' => 'Company list',
     'register-company' => 'Registration form for a medical facility/company',
     'visit-company' => 'See other offers of this employer. Click here.',
+    'no-companies' => 'No comapnies found, sign in to be the first one.',
+    'companies-orderBy-offers' => 'Employers with the most offers',
 ];
