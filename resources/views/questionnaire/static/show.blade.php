@@ -14,7 +14,7 @@
         </div>
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">{{ trans('sentence.static-quiestionnaire-title') }}</div>
+                <div class="card-header">{{ trans('questionnaire.static-quiestionnaire-title') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('static.questionnaire.store') }}">
@@ -36,11 +36,11 @@
                         </div>
 
                         <div class="form-group">
-                            <h5><span class="grey">2</span>{{ trans('sentence.age') }}</h5>
+                            <h5><span class="grey">2</span>{{ trans('questionnaire.age') }}</h5>
                             <div class="form-check radio px-1">
                                 <input class="form-check-input custom-checkbox" type="radio" value="Do 25" id="age1" name="age">
                                 <label class="form-check-label radio-label" for="age1">
-                                    {{ trans('sentence.age1') }}
+                                    {{ trans('questionnaire.age1') }}
                                 </label>
                             </div>
                             <div class="form-check radio px-1">
@@ -120,13 +120,13 @@
                             <div class="form-check radio px-1">
                                 <input class="form-check-input custom-checkbox" type="radio" value="Szpital" id="hospital" name="workplace">
                                 <label class="form-check-label radio-label" for="hospital">
-                                    {{ trans('sentence.hospital') }}
+                                    {{ trans('questionnaire.hospital') }}
                                 </label>
                             </div>
                             <div class="form-check radio px-1">
                                 <input class="form-check-input custom-checkbox" type="radio" value="Poradnia specjalistyczna" id="specialist-outpatient-clinic" name="workplace">
                                 <label class="form-check-label radio-label" for="specialist-outpatient-clinic">
-                                    {{ trans('sentence.specialist-outpatient-clinic') }}
+                                    {{ trans('questionnaire.specialist-outpatient-clinic') }}
                                 </label>
                             </div>
                             <div class="form-check radio px-1">
@@ -138,19 +138,19 @@
                             <div class="form-check radio px-1">
                                 <input class="form-check-input custom-checkbox" type="radio" value="Prywatna praktyka lekarska" id="private-medical-practice" name="workplace">
                                 <label class="form-check-label radio-label" for="private-medical-practice">
-                                    {{ trans('sentence.private-medical-practice') }}
+                                    {{ trans('questionnaire.private-medical-practice') }}
                                 </label>
                             </div>
                             <div class="form-check radio px-1">
                                 <label class="form-check-label radio-label" for="something-else">
-                                    {{ trans('sentence.something-else') }}
+                                    {{ trans('questionnaire.something-else') }}
                                 </label>
                                 <input class="form-control" type="text" value="" id="something-else" name="workplace_extra">
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <h5><span class="grey">6</span>{{ trans('sentence.time-to-find-job') }}</h5>
+                            <h5><span class="grey">6</span>{{ trans('questionnaire.time-to-find-job') }}</h5>
                             <div class="form-check radio px-1">
                                 <input class="form-check-input custom-checkbox" type="radio" value="5-10 min" id="worktime1" name="worktime">
                                 <label class="form-check-label radio-label" for="worktime1">
@@ -172,14 +172,14 @@
                             <div class="form-check radio px-1">
                                 <input class="form-check-input custom-checkbox" type="radio" value="Powyżej 60 min" id="worktime4" name="worktime">
                                 <label class="form-check-label radio-label" for="worktime4">
-                                    {{ trans('sentence.worktime4') }}
+                                    {{ trans('questionnaire.worktime4') }}
                                 </label>
                             </div>
                         </div>
 
                         <div class="form-group row">
                             <label for="description" class="col-12 col-form-label">
-                                <h5><span class="grey">7</span>{{ trans('sentence.main-problems-in-medicine') }}</h5>
+                                <h5><span class="grey">7</span>{{ trans('questionnaire.main-problems-in-medicine') }}</h5>
                             </label>
 
                             <div class="col-12">
@@ -194,7 +194,7 @@
 
                         <div class="form-group row">
                             <label for="criteria" class="col-12 col-form-label">
-                                <h5><span class="grey">8</span>{{ trans('sentence.main-criteria-to-send-cv') }}</h5>
+                                <h5><span class="grey">8</span>{{ trans('questionnaire.main-criteria-to-send-cv') }}</h5>
                             </label>
 
                             <div class="col-12">
@@ -208,7 +208,7 @@
                         </div>
 
                         <div class="form-group">
-                            <h5><span class="grey">9</span>{{ trans('sentence.social-media-quiestion') }}</h5>
+                            <h5><span class="grey">9</span>{{ trans('questionnaire.social-media-quiestion') }}</h5>
                             <div class="form-check radio px-1">
                                 <input class="form-check-input custom-checkbox" type="radio" value="Facebook" id="facebook" name="social_media">
                                 <label class="form-check-label radio-label" for="facebook">
@@ -218,24 +218,24 @@
                             <div class="form-check radio px-1">
                                 <input class="form-check-input custom-checkbox" type="radio" value="Serwisy pośrednictwa pracy" id="job-placement-services" name="social_media">
                                 <label class="form-check-label radio-label" for="job-placement-services">
-                                    {{ trans('sentence.job-placement-services') }}
+                                    {{ trans('questionnaire.job-placement-services') }}
                                 </label>
                             </div>
                             <div class="form-check radio px-1">
                                 <input class="form-check-input custom-checkbox" type="radio" value="Prasa branżowa" id="industry-press" name="social_media">
                                 <label class="form-check-label radio-label" for="industry-press">
-                                    {{ trans('sentence.industry-press') }}
+                                    {{ trans('questionnaire.industry-press') }}
                                 </label>
                             </div>
                             <div class="form-check radio px-1">
                                 <input class="form-check-input custom-checkbox" type="radio" value="Konsylium" id="consultation" name="social_media">
                                 <label class="form-check-label radio-label" for="consultation">
-                                    {{ trans('sentence.consultation') }}
+                                    {{ trans('questionnaire.consultation') }}
                                 </label>
                             </div>
                             <div class="form-check radio px-1">
                                 <label class="form-check-label radio-label" for="something-else">
-                                    {{ trans('sentence.something-else') }}
+                                    {{ trans('questionnaire.something-else') }}
                                 </label>
                                 <input class="form-control" type="text" value="" id="something-else" name="social_media_extra">
                             </div>

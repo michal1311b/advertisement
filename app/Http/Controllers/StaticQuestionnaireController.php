@@ -19,7 +19,7 @@ class StaticQuestionnaireController extends Controller
     {
         AppStaticQuestionnaire::create($request->all());
 
-        session()->flash('success', trans('sentence.questionnaire-thanks'));
+        session()->flash('success', trans('questionnaire.questionnaire-thanks'));
 
         return back();
     }
