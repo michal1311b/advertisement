@@ -48,8 +48,8 @@
                                 @endforeach
                             </select>
                             <div class="btn-group" role="group" aria-label="Basic example">
-                                <button class="btn btn-rounded btn-outline-secondary" type="submit" id="button-addon1">{{ trans('sentence.search') }}</button>
-                                <a href="{{ route('advertisement-list') }}" class="btn btn-rounded btn-outline-secondary" id="button-addon2">{{ trans('sentence.clear-search') }}</a>
+                                <button class="btn btn-rounded btn-outline-secondary" type="submit" id="button-addon1">{{ trans('buttons.search') }}</button>
+                                <a href="{{ route('advertisement-list') }}" class="btn btn-rounded btn-outline-secondary" id="button-addon2">{{ trans('buttons.clear-search') }}</a>
                             </div>
                         </div>
                     </div>

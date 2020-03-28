@@ -20,4 +20,7 @@ return [
     'btn-create-similar-ofert' => 'Post a similar job offer',
     'btn-extend-offer' => 'Extend the advertisement',
     'btn-count' => 'Calculate',
+    'watch-all' => 'Watch all offers',
+    'search' => 'Search',
+    'clear-search' => 'Clear Search',
 ];

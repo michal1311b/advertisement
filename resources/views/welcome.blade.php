@@ -264,7 +264,7 @@
             @endif
         </div>
         <div class="col-12 pt-2 text-center">
-            <a href="{{ route('advertisement-list') }}" class="btn btn-rounded btn-info border border-warning mr-2 text-white">{{ trans('sentence.watch-all') }}</a>
+            <a href="{{ route('advertisement-list') }}" class="btn btn-rounded btn-info border border-warning mr-2 text-white">{{ trans('buttons.watch-all') }}</a>
         </div>
         <div class="col-12 pt-2">
             <h4>{{ trans('sentence.companies-orderBy-offers') }}</h4>

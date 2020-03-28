@@ -311,10 +311,10 @@ Breadcrumbs::for('site.page', function ($trail, $page) {
 
 Breadcrumbs::for('company-list', function ($trail) {
     $trail->parent('site.homepage');
-    $trail->push(trans('sentence.company-list'), route('company-list'));
+    $trail->push(trans('company.company-list'), route('company-list'));
 });
 
 Breadcrumbs::for('company-site', function ($trail, $company) {
     $trail->parent('company-list');
-    $trail->push(trans('sentence.company-offers') . ' ' . $company->profile->company_name, route('company-show', $company));
+    $trail->push(trans('company.company-offers') . ' ' . $company->profile->company_name, route('company-show', $company));
 });

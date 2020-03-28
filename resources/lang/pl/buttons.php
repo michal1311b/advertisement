@@ -20,4 +20,7 @@ return [
     'btn-create-similar-ofert' => 'Wystaw podobne ogłoszenie',
     'btn-extend-offer' => 'Przedłuż ogłoszenie',
     'btn-count' => 'Oblicz',
+    'watch-all' => 'Wszystkie ogłoszenia',
+    'search' => 'Szukaj',
+    'clear-search' => 'Wyczyść',
 ];

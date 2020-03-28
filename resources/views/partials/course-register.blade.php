@@ -63,21 +63,21 @@
             <div class="card-body">
                 <div class="form-row">
                     <div class="form-group col-md-4">
-                        <label for="company_nip">{{ trans('sentence.company_nip') }}</label>
+                        <label for="company_nip">{{ trans('company.company_nip') }}</label>
                         <input type="company_nip" class="form-control" id="company_nip" name="company_nip" placeholder="" required value="{{ auth()->user()->profile->company_nip ?? old('company_nip') }}">
                         @error('company_nip')
                             <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
                     </div>
                     <div class="form-group col-md-4">
-                        <label for="company_name">{{ trans('sentence.company_name') }}</label>
+                        <label for="company_name">{{ trans('company.company_name') }}</label>
                         <input type="company_name" class="form-control" id="company_name" name="company_name" placeholder="" required value="{{ auth()->user()->profile->company_name ?? old('company_name') }}">
                         @error('company_name')
                             <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
                     </div>
                     <div class="form-group col-md-4">
-                        <label for="company_street">{{ trans('sentence.company_street')}}</label>
+                        <label for="company_street">{{ trans('company.company_street')}}</label>
                         <input type="text" class="form-control" id="company_street" name="company_street" placeholder="" required value="{{ auth()->user()->profile->company_street ?? old('company_street') }}">
                         @error('company_street')
                             <div class="alert alert-danger">{{ $message }}</div>
@@ -86,15 +86,15 @@
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-4">
-                        <label for="company_city">{{ trans('sentence.company_city')}}</label>
+                        <label for="company_city">{{ trans('company.company_city')}}</label>
                         <input type="text" class="form-control" id="company_city" name="company_city" value="{{ auth()->user()->profile->company_city ?? old('company_city') }}">
                     </div>
                     <div class="form-group col-md-4">
-                        <label for="company_post_code">{{ trans('sentence.company_post_code')}}</label>
+                        <label for="company_post_code">{{ trans('company.company_post_code')}}</label>
                         <input type="text" class="form-control" id="company_post_code" name="company_post_code" value="{{ auth()->user()->profile->company_post_code ?? old('company_post_code') }}">
                     </div>
                     <div class="form-group col-md-4">
-                        <label for="company_phone">{{ trans('sentence.company_phone')}}</label>
+                        <label for="company_phone">{{ trans('company.company_phone')}}</label>
                         <input type="text" class="form-control" id="company_phone" name="company_phone" placeholder="" value="{{ auth()->user()->profile->company_phone1 ?? old('company_phone') }}">
                     </div>
                 </div>

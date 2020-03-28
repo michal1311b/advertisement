@@ -102,7 +102,7 @@
                     </div>
 
                     <div class="row">
-                        <div class="font-weight-bold col-12 col-md-3 text-md-right">{{ trans('sentence.company_name') }}</div>
+                        <div class="font-weight-bold col-12 col-md-3 text-md-right">{{ trans('company.company_name') }}</div>
 
                         <div class="col-12 col-md-7">
                             {{ $course->organizer }}

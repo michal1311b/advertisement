@@ -63,27 +63,27 @@
                                         <span class="badge badge-pill">{{ $participant->phone }}</span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        {{ trans('sentence.company_name') }}
+                                        {{ trans('company.company_name') }}
                                         <span class="badge badge-pill">{{ $participant->company_name ?? null }}</span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        {{ trans('sentence.company_street') }}
+                                        {{ trans('company.company_street') }}
                                         <span class="badge badge-pill">{{ $participant->company_street ?? null }}</span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        {{ trans('sentence.company_post_code') }}
+                                        {{ trans('company.company_post_code') }}
                                         <span class="badge badge-pill">{{ $participant->company_post_code ?? null }}</span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        {{ trans('sentence.company_city') }}
+                                        {{ trans('company.company_city') }}
                                         <span class="badge badge-pill">{{ $participant->company_city ?? null }}</span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        {{ trans('sentence.company_nip') }}
+                                        {{ trans('company.company_nip') }}
                                         <span class="badge badge-pill">{{ $participant->company_nip ?? null }}</span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        {{ trans('sentence.company_phone') }}
+                                        {{ trans('company.company_phone') }}
                                         <span class="badge badge-pill">{{ $participant->company_phone ?? null }}</span>
                                     </li>
                                 </ul>

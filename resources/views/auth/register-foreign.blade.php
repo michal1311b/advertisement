@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
 @section('title')
-    {{ trans('sentence.register-company') }}
+    {{ trans('company.register-company') }}
 @endsection
 
 @section('description')
-    {{ trans('sentence.register-company') }}
+    {{ trans('company.register-company') }}
 @endsection
 
 @section('content')

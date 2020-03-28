@@ -20,4 +20,7 @@ return [
     'btn-create-similar-ofert' => 'Veröffentlichen Sie eine ähnliche Anzeige',
     'btn-extend-offer' => 'Erweitern Sie die Anzeige',
     'btn-count' => 'Calculate',
+    'watch-all' => 'Alle Anzeigen',
+    'search' => 'Suchen',
+    'clear-search' => 'Klar',
 ];

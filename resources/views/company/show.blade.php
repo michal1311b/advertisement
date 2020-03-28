@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    {{ trans('sentence.company-offers') . ' ' . $user->profile->company_name ?? '' }}
+    {{ trans('company.company-offers') . ' ' . $user->profile->company_name ?? '' }}
 @endsection
 
 @section('description')

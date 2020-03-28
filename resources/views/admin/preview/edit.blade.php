@@ -90,7 +90,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="company" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.company_name') }}</label>
+                            <label for="company" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('company.company_name') }}</label>
 
                             <div class="col-12 col-md-9">
                                 <input id="company" type="text" class="form-control @error('company') is-invalid @enderror" name="company" value="{{ $jooble->company }}" autocomplete="company" autofocus>

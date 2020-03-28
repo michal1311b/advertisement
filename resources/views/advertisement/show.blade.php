@@ -238,7 +238,7 @@
                             </div>
                             <div class="col-12">
                                 <a href="{{ route('company-show', $advertisement->user) }}" title="{{ $advertisement->user->profile->company_name }}"  class="no-decoration font-weight-bold text-info">
-                                    {{ trans('sentence.visit-company') }}
+                                    {{ trans('company.visit-company') }}
                                 </a>
                             </div>
                         </div>

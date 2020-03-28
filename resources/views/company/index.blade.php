@@ -1,11 +1,11 @@
 @extends('layouts.site')
 
 @section('title')
-    {{ trans('sentence.company-list') }}
+    {{ trans('company.company-list') }}
 @endsection
 
 @section('description')
-    {{ trans('sentence.company-list') }}
+    {{ trans('company.company-list') }}
 @endsection
 
 @section('css')

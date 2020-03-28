@@ -50,10 +50,10 @@
                         </ValidationObserver>
 
                         <div class="form-group row">
-                            <label for="company_nip" class="col-md-4 col-form-label text-md-right">{{ trans('sentence.company_nip') }} <span class="text-danger font-weight-bolder">*</span></label>
+                            <label for="company_nip" class="col-md-4 col-form-label text-md-right">{{ trans('company.company_nip') }} <span class="text-danger font-weight-bolder">*</span></label>
 
                             <div class="col-md-6">
-                                <ValidationProvider :name="trans('sentence.company_nip')" rules="required" v-slot="{ errors }">
+                                <ValidationProvider :name="trans('company.company_nip')" rules="required" v-slot="{ errors }">
                                     <input id="company_nip" type="number" class="form-control" name="company_nip" v-model="formInputs.company_nip" autocomplete="company_nip" autofocus>
                                     <span class="text-danger">{{ errors[0] }}</span >
                                 </ValidationProvider>
@@ -67,10 +67,10 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="company_name" class="col-md-4 col-form-label text-md-right">{{ trans('sentence.company_name') }} <span class="text-danger font-weight-bolder">*</span></label>
+                            <label for="company_name" class="col-md-4 col-form-label text-md-right">{{ trans('company.company_name') }} <span class="text-danger font-weight-bolder">*</span></label>
 
                             <div class="col-md-6">
-                                <ValidationProvider :name="trans('sentence.company_name')" rules="required|min:3|max:191" v-slot="{ errors }">
+                                <ValidationProvider :name="trans('company.company_name')" rules="required|min:3|max:191" v-slot="{ errors }">
                                     <input id="company_name" type="text" class="form-control" name="company_name" v-model="formInputs.company_name" autocomplete="company_name" autofocus>
                                     <span class="text-danger">{{ errors[0] }}</span >
                                 </ValidationProvider>
@@ -78,10 +78,10 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="company_street" class="col-md-4 col-form-label text-md-right">{{ trans('sentence.company_street') }} <span class="text-danger font-weight-bolder">*</span></label>
+                            <label for="company_street" class="col-md-4 col-form-label text-md-right">{{ trans('company.company_street') }} <span class="text-danger font-weight-bolder">*</span></label>
 
                             <div class="col-md-6">
-                                <ValidationProvider :name="trans('sentence.company_street')" rules="required|min:3|max:191" v-slot="{ errors }">
+                                <ValidationProvider :name="trans('company.company_street')" rules="required|min:3|max:191" v-slot="{ errors }">
                                     <input id="company_street" type="text" class="form-control" name="company_street" v-model="formInputs.company_street" autocomplete="company_street" autofocus>
                                     <span class="text-danger">{{ errors[0] }}</span >
                                 </ValidationProvider>
@@ -89,10 +89,10 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="company_post_code" class="col-md-4 col-form-label text-md-right">{{ trans('sentence.company_post_code') }} <span class="text-danger font-weight-bolder">*</span></label>
+                            <label for="company_post_code" class="col-md-4 col-form-label text-md-right">{{ trans('company.company_post_code') }} <span class="text-danger font-weight-bolder">*</span></label>
 
                             <div class="col-md-6">
-                                <ValidationProvider :name="trans('sentence.company_post_code')" rules="required" v-slot="{ errors }">
+                                <ValidationProvider :name="trans('company.company_post_code')" rules="required" v-slot="{ errors }">
                                     <input id="company_post_code" type="text" class="form-control" name="company_post_code" v-model="formInputs.company_post_code" autocomplete="company_post_code" autofocus>
                                     <span class="text-danger">{{ errors[0] }}</span >
                                 </ValidationProvider>
@@ -100,10 +100,10 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="company_city" class="col-md-4 col-form-label text-md-right">{{ trans('sentence.company_city') }} <span class="text-danger font-weight-bolder">*</span></label>
+                            <label for="company_city" class="col-md-4 col-form-label text-md-right">{{ trans('company.company_city') }} <span class="text-danger font-weight-bolder">*</span></label>
 
                             <div class="col-md-6">
-                                <ValidationProvider :name="trans('sentence.company_city')" rules="required|min:3|max:191" v-slot="{ errors }">
+                                <ValidationProvider :name="trans('company.company_city')" rules="required|min:3|max:191" v-slot="{ errors }">
                                     <input id="company_city" type="text" class="form-control" name="company_city" v-model="formInputs.company_city" autocomplete="company_city" autofocus>
                                     <span class="text-danger">{{ errors[0] }}</span >
                                 </ValidationProvider>

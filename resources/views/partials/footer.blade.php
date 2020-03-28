@@ -13,7 +13,7 @@
             <li><a href="{{ route('advertisement-list') }}" title="{{ trans('sentence.offers') }}">{{ trans('sentence.offers') }}</a></li>
             <li><a href="{{ route('foreign-list') }}" title="{{ trans('sentence.foreigns-list') }}">{{ trans('sentence.foreigns-list') }}</a></li>
             <li><a href="{{ route('cookies.show') }}" title="{{ trans('sentence.cookies-policy') }}">{{ trans('sentence.cookies-policy') }}</a></li>
-            <li><a href="{{ route('company-list') }}" title="{{ trans('sentence.company-list') }}">{{ trans('sentence.company-list') }}</a></li>
+            <li><a href="{{ route('company-list') }}" title="{{ trans('company.company-list') }}">{{ trans('company.company-list') }}</a></li>
             <li><a href="{{ route('course.index') }}" title="{{ trans('sentence.courses') }}">{{ trans('sentence.courses') }}</a></li>
             <li><a href="{{ route('contact.show') }}" title="{{ trans('sentence.contact-form') }}">{{ trans('sentence.contact-form') }}</a></li>
           </ul>

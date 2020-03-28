@@ -34,7 +34,7 @@
                             <div class="col-12">
                                 <ul class="list-group">
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        {{ trans('sentence.company_name') }}
+                                        {{ trans('company.company_name') }}
                                         <span class="badge badge-pill">{{ $preview->company }}</span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">

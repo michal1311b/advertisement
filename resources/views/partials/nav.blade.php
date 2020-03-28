@@ -49,7 +49,7 @@
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('company-list') }}" class="nav-link lang-dropdown {{ $theme . '-theme' }}" title="{{ trans('sentence.company-list') }}">{{ trans('sentence.company-list') }}</a>
+                    <a href="{{ route('company-list') }}" class="nav-link lang-dropdown {{ $theme . '-theme' }}" title="{{ trans('company.company-list') }}">{{ trans('company.company-list') }}</a>
                 </li>
                 <li class="nav-item">
                     <a href="{{ route('advertisement-list') }}" class="nav-link lang-dropdown {{ $theme . '-theme' }}" title="{{ trans('sentence.offers') }}">{{ trans('sentence.offers') }}</a>

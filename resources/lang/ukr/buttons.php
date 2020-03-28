@@ -20,4 +20,7 @@ return [
     'btn-create-similar-ofert' => 'Опублікуйте аналогічне оголошення',
     'btn-extend-offer' => 'Розширити рекламу',
     'btn-count' => 'вираховує',
+    'watch-all' => 'Усі оголошення',
+    'search' => 'Пошук',
+    'clear-search' => 'ясно',
 ];

@@ -5,10 +5,10 @@
   <a href="{{ route('advertisement-list') }}" class="side-nav list-group-item list-group-item-action {{ $theme . '-theme' }} {{ Request::is('offer/list') ? 'bg-primary active' : null }}" title="{{ trans('sentence.offers') }}">{{ trans('sentence.offers') }}</a>
 </div>
 <div class="list-group list-group-flush">
-  <a href="{{ route('foreign-list') }}" class="side-nav list-group-item list-group-item-action {{ $theme . '-theme' }} {{ Request::is('foreign/list') ? 'bg-primary active' : null }}" title="{{ trans('sentence.company-list') }}" title="{{ trans('sentence.foreigns-list') }}">{{ trans('sentence.foreigns-list') }}</a>
+  <a href="{{ route('foreign-list') }}" class="side-nav list-group-item list-group-item-action {{ $theme . '-theme' }} {{ Request::is('foreign/list') ? 'bg-primary active' : null }}" title="{{ trans('company.company-list') }}" title="{{ trans('sentence.foreigns-list') }}">{{ trans('sentence.foreigns-list') }}</a>
 </div>
 <div class="list-group list-group-flush">
-  <a href="{{ route('company-list') }}" class="side-nav list-group-item list-group-item-action {{ $theme . '-theme' }} {{ Request::is('company/list') ? 'bg-primary active' : null }}" title="{{ trans('sentence.company-list') }}">{{ trans('sentence.company-list') }}</a>
+  <a href="{{ route('company-list') }}" class="side-nav list-group-item list-group-item-action {{ $theme . '-theme' }} {{ Request::is('company/list') ? 'bg-primary active' : null }}" title="{{ trans('company.company-list') }}">{{ trans('company.company-list') }}</a>
 </div>
 <div class="list-group list-group-flush">
   <a href="{{ route('course.index') }}" class="side-nav list-group-item list-group-item-action {{ $theme . '-theme' }} {{ Request::is('lista-kursow') ? 'bg-primary active' : null }}" title="{{ trans('sentence.courses') }}">{{ trans('sentence.courses') }}</a>

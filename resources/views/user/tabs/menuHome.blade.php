@@ -96,7 +96,7 @@
                     </div>
 
                     <div class="form-group row">
-                        <label for="company_name" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.company_name') }}</label>
+                        <label for="company_name" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('company.company_name') }}</label>
 
                         <div class="col-12 col-md-9">
                             <input id="company_name" type="text" class="form-control @error('company_name') is-invalid @enderror" name="company_name" value="{{ $editUser->profile->company_name }}" autocomplete="company_name" autofocus>
@@ -107,7 +107,7 @@
                     </div>
 
                     <div class="form-group row">
-                        <label for="company_street" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.company_street') }}</label>
+                        <label for="company_street" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('company.company_street') }}</label>
 
                         <div class="col-12 col-md-9">
                             <input id="company_street" type="text" class="form-control @error('company_street') is-invalid @enderror" name="company_street" value="{{ $editUser->profile->company_street }}" autocomplete="company_street" autofocus>
@@ -118,7 +118,7 @@
                     </div>
 
                     <div class="form-group row">
-                        <label for="company_post_code" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.company_post_code') }}</label>
+                        <label for="company_post_code" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('company.company_post_code') }}</label>
 
                         <div class="col-12 col-md-9">
                             <input id="company_post_code" type="text" class="form-control @error('company_post_code') is-invalid @enderror" name="company_post_code" value="{{ $editUser->profile->company_post_code }}" autocomplete="company_post_code" autofocus>
@@ -129,7 +129,7 @@
                     </div>
 
                     <div class="form-group row">
-                        <label for="company_city" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.company_city') }}</label>
+                        <label for="company_city" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('company.company_city') }}</label>
 
                         <div class="col-12 col-md-9">
                             <input id="company_city" type="text" class="form-control @error('company_city') is-invalid @enderror" name="company_city" value="{{ $editUser->profile->company_city }}" autocomplete="company_city" autofocus>
@@ -140,7 +140,7 @@
                     </div>
 
                     <div class="form-group row">
-                        <label for="company_nip" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.company_nip') }}</label>
+                        <label for="company_nip" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('company.company_nip') }}</label>
 
                         <div class="col-12 col-md-9">
                             <input id="company_nip" type="number" class="form-control @error('company_nip') is-invalid @enderror" name="company_nip" value="{{ $editUser->profile->company_nip }}" autocomplete="company_nip" autofocus>
@@ -151,7 +151,7 @@
                     </div>
 
                     <div class="form-group row">
-                        <label for="company_phone1" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.company_phone') }}</label>
+                        <label for="company_phone1" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('company.company_phone') }}</label>
 
                         <div class="col-12 col-md-9">
                             <input id="company_phone1" type="number" class="form-control @error('company_phone1') is-invalid @enderror" name="company_phone1" value="{{ $editUser->profile->company_phone1 }}" autocomplete="company_phone1" autofocus>
@@ -162,7 +162,7 @@
                     </div>
 
                     <div class="form-group row">
-                        <label for="company_phone2" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.company_extra_phone') }}</label>
+                        <label for="company_phone2" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('company.company_extra_phone') }}</label>
 
                         <div class="col-12 col-md-9">
                             <input id="company_phone2" type="number" class="form-control @error('company_phone2') is-invalid @enderror" name="company_phone2" value="{{ $editUser->profile->company_phone2 }}" autocomplete="company_phone2" autofocus>
