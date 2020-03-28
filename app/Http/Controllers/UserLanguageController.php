@@ -60,7 +60,7 @@ class UserLanguageController extends Controller
     {
         $userLanguage = UserLanguage::findOrFail($id);
         if ($userLanguage->delete()) {
-            session()->flash('success',  trans('sentence.delete-language'));
+            session()->flash('success',  trans('crudInfos.delete-language'));
 
             return back();
         }

@@ -38,18 +38,18 @@ class MailinglistController extends Controller
     {
         if(count($mailinglist->load('newsletters')->newsletters) > 0)
         {
-            $message = ['message.error' => trans('sentence.mailinglist-delete-block')];
+            $message = ['message.error' => trans('crudInfos.mailinglist-delete-block')];
             return redirect()->route('mailinglist.index')->with($message);
         }
 
         if(count($mailinglist->load('recipients')->recipients) > 0)
         {
-            $message = ['message.error' => trans('sentence.mailinglist-delete-block')];
+            $message = ['message.error' => trans('crudInfos.mailinglist-delete-block')];
             return redirect()->route('mailinglist.index')->with($message);
         }
         
         if ($mailinglist->delete()) {
-            $message = ['message.success' => trans('sentence.delete-mailinglist')];
+            $message = ['message.success' => trans('crudInfos.delete-mailinglist')];
         }
 
         return redirect()->route('mailinglists.index')->with($message);

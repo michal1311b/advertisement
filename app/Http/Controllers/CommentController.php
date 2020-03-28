@@ -54,7 +54,7 @@ class CommentController extends Controller
     {
         if($comment->delete())
         {
-            session()->flash('success',  trans('sentence.delete-comment'));
+            session()->flash('success',  trans('crudInfos.delete-comment'));
 
             return back();
         }

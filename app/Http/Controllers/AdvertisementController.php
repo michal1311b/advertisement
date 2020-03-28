@@ -211,7 +211,7 @@ class AdvertisementController extends Controller
         unlink(public_path($gallery->path));
         $gallery->delete();
 
-        session()->flash('success', trans('sentence.delete-photo'));
+        session()->flash('success', trans('crudInfos.delete-photo'));
 
         return back();
     }
@@ -246,7 +246,7 @@ class AdvertisementController extends Controller
         $advertisement = Advertisement::with(['tags', 'galleries'])->findOrFail($id);
         
         if ($advertisement->delete()) {
-            session()->flash('success',  trans('sentence.delete-offer'));
+            session()->flash('success',  trans('crudInfos.delete-offer'));
 
             return back();
         }

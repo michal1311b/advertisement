@@ -28,7 +28,7 @@ class OpinionController extends Controller
 
         if($opinion->delete())
         {
-            session()->flash('success',  trans('sentence.delete-comment'));
+            session()->flash('success',  trans('crudInfos.delete-comment'));
 
             return back();
         }

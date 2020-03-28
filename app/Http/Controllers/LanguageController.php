@@ -68,7 +68,7 @@ class LanguageController extends Controller
     {
         $language->delete();
 
-        return back()->with('success', trans('sentence.delete-language'));
+        return back()->with('success', trans('crudInfos.delete-language'));
     }
 
     public function lang($locale)

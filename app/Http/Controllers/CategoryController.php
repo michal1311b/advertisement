@@ -127,12 +127,12 @@ class CategoryController extends Controller
     {
         if(count($category->load('posts')->posts) > 0)
         {
-            $message = ['message.error' => trans('sentence.category-delete-block')];
+            $message = ['message.error' => trans('crudInfos.category-delete-block')];
             return redirect()->route('categories.index')->with($message);
         }
         
         if ($category->delete()) {
-            $message = ['message.success' => trans('sentence.delete-category')];
+            $message = ['message.success' => trans('crudInfos.delete-category')];
         }
 
         return redirect()->route('categories.index')->with($message);

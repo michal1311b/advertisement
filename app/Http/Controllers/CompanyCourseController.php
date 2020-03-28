@@ -73,7 +73,7 @@ class CompanyCourseController extends Controller
         
         if($course->delete())
         {
-            session()->flash('success',  trans('sentence.delete-course'));
+            session()->flash('success',  trans('crudInfos.delete-course'));
 
             return back();
         }
@@ -205,7 +205,7 @@ class CompanyCourseController extends Controller
             $gallery->avatar = null;
             $gallery->save();
             
-            session()->flash('success', trans('sentence.delete-photo'));
+            session()->flash('success', trans('crudInfos.delete-photo'));
 
             return back();
         }

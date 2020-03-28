@@ -43,7 +43,7 @@ class NewsletterController extends Controller
     public function destroy(Newsletter $newsletter)
     {
         if ($newsletter->delete()) {
-            session()->flash('success', trans('sentence.newsletter-delete'));
+            session()->flash('success', trans('crudInfos.newsletter-delete'));
 
             return back();
         }

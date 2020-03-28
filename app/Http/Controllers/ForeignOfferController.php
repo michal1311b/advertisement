@@ -115,7 +115,7 @@ class ForeignOfferController extends Controller
         $foreign = ForeignOffer::findOrFail($id);
         
         if ($foreign->delete()) {
-            session()->flash('success',  trans('sentence.delete-offer'));
+            session()->flash('success',  trans('crudInfos.delete-offer'));
 
             return back();
         }

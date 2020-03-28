@@ -40,7 +40,7 @@ class ParticipantController extends Controller
         
         if($participant->delete())
         {
-            session()->flash('success',  trans('sentence.delete-participant'));
+            session()->flash('success',  trans('crudInfos.delete-participant'));
 
             return back();
         }

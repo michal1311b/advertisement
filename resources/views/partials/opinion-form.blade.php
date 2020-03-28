@@ -38,8 +38,8 @@
                                                     @include('partials.confirmation', [
                                                         'url' => route('delete-opinion', $opinion->id),
                                                         'method' => 'DELETE',
-                                                        'title' => trans('sentence.delete-comment'),
-                                                        "description" => trans('sentence.delete-comment-confirm'),
+                                                        'title' => trans('crudInfos.delete-comment'),
+                                                        "description" => trans('crudInfos.delete-comment-confirm'),
                                                         "description_parameters" => [],
                                                         'button' => trans('buttons.btn-delete'),
                                                         'modalKey' => "remove".$opinion->id

@@ -70,7 +70,7 @@ class PreferenceController extends Controller
     {
         $userLocation = LocationUser::findOrFail($id);
         if ($userLocation->delete()) {
-            session()->flash('success',  trans('sentence.delete-prefered-location'));
+            session()->flash('success',  trans('crudInfos.delete-prefered-location'));
 
             return back();
         }

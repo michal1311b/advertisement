@@ -47,7 +47,7 @@ class RecipientController extends Controller
     {
         if($recipient->delete())
         {
-            session()->flash('success', trans('sentence.recipient-delete'));
+            session()->flash('success', trans('crudInfos.recipient-delete'));
 
             return back();
         }

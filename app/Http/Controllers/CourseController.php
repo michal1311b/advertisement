@@ -42,7 +42,7 @@ class CourseController extends Controller
     {
         if($course->delete())
         {
-            session()->flash('success',  trans('sentence.delete-course'));
+            session()->flash('success',  trans('crudInfos.delete-course'));
 
             return back();
         }

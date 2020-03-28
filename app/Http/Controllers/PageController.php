@@ -176,7 +176,7 @@ class PageController extends Controller
     public function destroy(Page $page)
     {
         if ($page->delete()) {
-            $message = ['message.success' => trans('sentence.delete-page')];
+            $message = ['message.success' => trans('crudInfos.delete-page')];
         }
 
         return redirect()->route('pages.index')->with($message);
