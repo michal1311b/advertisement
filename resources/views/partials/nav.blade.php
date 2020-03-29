@@ -52,16 +52,16 @@
                     <a href="{{ route('company-list') }}" class="nav-link lang-dropdown {{ $theme . '-theme' }}" title="{{ trans('company.company-list') }}">{{ trans('company.company-list') }}</a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('advertisement-list') }}" class="nav-link lang-dropdown {{ $theme . '-theme' }}" title="{{ trans('sentence.offers') }}">{{ trans('sentence.offers') }}</a>
+                    <a href="{{ route('advertisement-list') }}" class="nav-link lang-dropdown {{ $theme . '-theme' }}" title="{{ trans('offer.offers') }}">{{ trans('offer.offers') }}</a>
                 </li>
                 <li class="d-block d-md-none nav-item">
-                    <a href="{{ route('foreign-list') }}" class="nav-link lang-dropdown {{ $theme . '-theme' }}" title="{{ trans('sentence.foreigns-list') }}">{{ trans('sentence.foreigns-list') }}</a>
+                    <a href="{{ route('foreign-list') }}" class="nav-link lang-dropdown {{ $theme . '-theme' }}" title="{{ trans('offer.foreigns-list') }}">{{ trans('offer.foreigns-list') }}</a>
                 </li>
                 @guest
                 @else
                     @if(auth()->user()->hasRole('admin') || auth()->user()->hasRole('company'))
                         <li class="d-none d-lg-block nav-item">
-                            <a href="{{ route('create-advertisement') }}" class="btn btn-rounded btn-success" title="{{ trans('sentence.offer-create-poland')}}">
+                            <a href="{{ route('create-advertisement') }}" class="btn btn-rounded btn-success" title="{{ trans('offer.offer-create-poland')}}">
                                 <i class="fas fa-plus-circle"></i>
                             </a>
                         </li>
@@ -102,13 +102,13 @@
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                             <a class="side-nav dropdown-item" href="{{ route('edit-user', auth()->user()->id) }}" title="{{ trans('sentence.user-profile')}}">{{ trans('sentence.user-profile')}}</a>
                             <a class="side-nav dropdown-item {{ Request::is('user/rooms') ? 'text-white active' : null }}" href="{{ route('user-rooms') }}" title="{{ trans('sentence.user-message')}}">{{ trans('sentence.user-message')}}</a>
-                            <a class="side-nav dropdown-item {{ Request::is('offer/list') ? 'text-white active' : null }}" href="{{ route('advertisement-list') }}" title="{{ trans('sentence.offers-list')}}">{{ trans('sentence.offers-list')}}</a>
+                            <a class="side-nav dropdown-item {{ Request::is('offer/list') ? 'text-white active' : null }}" href="{{ route('advertisement-list') }}" title="{{ trans('offer.offers-list')}}">{{ trans('offer.offers-list')}}</a>
                             
                             @if(auth()->user()->hasRole('admin') || auth()->user()->hasRole('company'))
-                                <a class="side-nav dropdown-item {{ Request::is('user/offers') ? 'text-white active' : null }}" href="{{ route('user-advertisement-list') }}" title="{{ trans('sentence.user-offers')}}">{{ trans('sentence.user-offers')}}</a>
-                                <a class="side-nav dropdown-item {{ Request::is('offer/create') ? 'text-white active' : null }}" href="{{ route('create-advertisement') }}" title="{{ trans('sentence.offer-create-poland')}}">{{ trans('sentence.offer-create-poland')}} <span class="btn btn-rounded btn-success btn-sm"><i class="fas fa-plus-circle"></i></span></a>
-                                <a class="side-nav dropdown-item {{ Request::is('user/foreigns') ? 'text-white active' : null }}" href="{{ route('user-foreign-list') }}" title="{{ trans('sentence.user-foreigns')}}">{{ trans('sentence.user-foreigns')}}</a>
-                                <a class="side-nav dropdown-item {{ Request::is('foreign/create') ? 'text-white active' : null }}" href="{{ route('create-foreign') }}" title="{{ trans('sentence.offer-create-foreign')}}">{{ trans('sentence.offer-create-foreign')}} <span class="btn btn-rounded btn-success btn-sm"><i class="fas fa-plus-circle"></i></span></a>
+                                <a class="side-nav dropdown-item {{ Request::is('user/offers') ? 'text-white active' : null }}" href="{{ route('user-advertisement-list') }}" title="{{ trans('offer.user-offers')}}">{{ trans('offer.user-offers')}}</a>
+                                <a class="side-nav dropdown-item {{ Request::is('offer/create') ? 'text-white active' : null }}" href="{{ route('create-advertisement') }}" title="{{ trans('offer.offer-create-poland')}}">{{ trans('offer.offer-create-poland')}} <span class="btn btn-rounded btn-success btn-sm"><i class="fas fa-plus-circle"></i></span></a>
+                                <a class="side-nav dropdown-item {{ Request::is('user/foreigns') ? 'text-white active' : null }}" href="{{ route('user-foreign-list') }}" title="{{ trans('offer.user-foreigns')}}">{{ trans('offer.user-foreigns')}}</a>
+                                <a class="side-nav dropdown-item {{ Request::is('foreign/create') ? 'text-white active' : null }}" href="{{ route('create-foreign') }}" title="{{ trans('offer.offer-create-foreign')}}">{{ trans('offer.offer-create-foreign')}} <span class="btn btn-rounded btn-success btn-sm"><i class="fas fa-plus-circle"></i></span></a>
                                 <a class="side-nav dropdown-item {{ Request::is('user/courses') ? 'text-white active' : null }}" href="{{ route('user-course-list') }}" title="{{ trans('sentence.user-courses')}}">{{ trans('sentence.user-courses')}}</a>
                                 <a class="side-nav dropdown-item {{ Request::is('user/courses/create') ? 'text-white active' : null }}" href="{{ route('create-course') }}" title="{{ trans('buttons.btn-add') }} {{ trans('sentence.courses') }}">{{ trans('buttons.btn-add') }} <span class="text-lowercase">{{ trans('sentence.courses') }} <span class="btn btn-rounded btn-success btn-sm"><i class="fas fa-plus-circle"></i></span></span></a>
                             @endif

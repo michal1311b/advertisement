@@ -8,7 +8,7 @@
                     <input type="hidden" name="_method" value="PUT">
                     @csrf
                     <div class="form-group row">
-                        <label class="col-12 col-md-3 col-form-label text-md-right" for="work_id">{{ trans('sentence.settlement') }}</label>
+                        <label class="col-12 col-md-3 col-form-label text-md-right" for="work_id">{{ trans('offer.settlement') }}</label>
                         <div class="col-12 col-md-9">
                             <select data-live-search="true" class="form-control @error('work_id') is-invalid @enderror" name="work_id" id="work_id">
                                 <option selected value="">{{ trans('sentence.choose') }}</option>
@@ -27,7 +27,7 @@
                     </div>
 
                     <div class="form-group row">
-                        <label for="min_salary" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.min_salary') }}</label>
+                        <label for="min_salary" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('offer.min_salary') }}</label>
 
                         <div class="col-12 col-md-3">
                             <input id="min_salary" min="0" type="number" class="form-control @error('min_salary') is-invalid @enderror" name="min_salary" value="{{ $editUser->preference->min_salary }}" autocomplete="min_salary" autofocus>
@@ -36,7 +36,7 @@
                             @enderror
                         </div>
 
-                        <label class="col-12 col-md-3 col-form-label text-md-right" for="currency_id">{{ trans('sentence.currency') }}</label>
+                        <label class="col-12 col-md-3 col-form-label text-md-right" for="currency_id">{{ trans('offer.currency') }}</label>
                         <div class="col-12 col-md-3">
                             <select data-live-search="true" class="form-control @error('currency_id') is-invalid @enderror" name="currency_id" id="currency_id">
                                 <option selected value="">{{ trans('sentence.choose') }}</option>
@@ -55,7 +55,7 @@
                     </div>
 
                     <div class="form-group row">
-                        <label class="col-12 col-md-3 col-form-label text-md-right" for="settlement_id">{{ trans('sentence.work-category') }}</label>
+                        <label class="col-12 col-md-3 col-form-label text-md-right" for="settlement_id">{{ trans('offer.work-category') }}</label>
                         <div class="col-12 col-md-9">
                             <select data-live-search="true" class="form-control @error('settlement_id') is-invalid @enderror" name="settlement_id" id="settlement_id">
                                 <option selected value="">{{ trans('sentence.choose') }}</option>

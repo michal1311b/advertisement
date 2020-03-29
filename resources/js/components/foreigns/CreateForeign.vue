@@ -15,7 +15,7 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="description" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.description') }} <span class="text-danger font-weight-bolder">*</span></label>
+                            <label for="description" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('offer.description') }} <span class="text-danger font-weight-bolder">*</span></label>
 
                             <div class="col-12 col-md-9">
                                 <tinymce id="description" name="description" v-model="formInputs.description">
@@ -24,7 +24,7 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="profits" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.profits') }}</label>
+                            <label for="profits" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('offer.profits') }}</label>
 
                             <div class="col-12 col-md-9">
                                 <tinymce id="profits" name="profits" v-model="formInputs.profits">
@@ -33,7 +33,7 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="requirements" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.requirements') }}</label>
+                            <label for="requirements" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('offer.requirements') }}</label>
 
                             <div class="col-12 col-md-9">
                                 <tinymce id="requirements" name="requirements" v-model="formInputs.requirements">
@@ -54,9 +54,9 @@
                 <div class="tab-pane fade" id="step2" role="tabpanel" aria-labelledby="step2">
                     <div class="card-body">
                         <div class="form-group row">
-                            <label class="col-12 col-md-3 col-form-label text-md-right" for="work_id">{{ trans('sentence.settlement') }} <span class="text-danger font-weight-bolder">*</span></label>
+                            <label class="col-12 col-md-3 col-form-label text-md-right" for="work_id">{{ trans('offer.settlement') }} <span class="text-danger font-weight-bolder">*</span></label>
                             <div class="col-12 col-md-9">
-                                <ValidationProvider :name="trans('sentence.settlement')" :rules="'oneOf:' + workIds" v-slot="{ errors }">
+                                <ValidationProvider :name="trans('offer.settlement')" :rules="'oneOf:' + workIds" v-slot="{ errors }">
                                     <select data-live-search="true" class="form-control" name="work_id" v-model="formInputs.work_id" id="work_id">
                                         <option selected>{{ trans('sentence.choose') }}</option>
                                         <option v-for="work in works" :key="work.id" :value="work.id">{{ work.name }}</option>
@@ -66,40 +66,40 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="postCode" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.post_code') }} <span class="text-danger font-weight-bolder">*</span></label>
+                            <label for="postCode" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('offer.post_code') }} <span class="text-danger font-weight-bolder">*</span></label>
 
                             <div class="col-12 col-md-9">
-                                <ValidationProvider :name="trans('sentence.post_code')" rules="required" v-slot="{ errors }">
+                                <ValidationProvider :name="trans('offer.post_code')" rules="required" v-slot="{ errors }">
                                     <input id="post_code" type="text" class="form-control" name="postCode" v-model="formInputs.postCode" autocomplete="postCode" autofocus>
                                     <span class="text-danger">{{ errors[0] }}</span >
                                 </ValidationProvider>
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="street" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.street') }} <span class="text-danger font-weight-bolder">*</span></label>
+                            <label for="street" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('offer.street') }} <span class="text-danger font-weight-bolder">*</span></label>
 
                             <div class="col-12 col-md-9">
-                                <ValidationProvider :name="trans('sentence.street')" rules="required|min:3|max:190" v-slot="{ errors }">
+                                <ValidationProvider :name="trans('offer.street')" rules="required|min:3|max:190" v-slot="{ errors }">
                                     <input id="street" type="text" class="form-control" name="street" v-model="formInputs.street" autocomplete="street" autofocus>
                                     <span class="text-danger">{{ errors[0] }}</span >
                                 </ValidationProvider>
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="city" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.city') }} <span class="text-danger font-weight-bolder">*</span></label>
+                            <label for="city" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('offer.city') }} <span class="text-danger font-weight-bolder">*</span></label>
 
                             <div class="col-12 col-md-9">
-                                <ValidationProvider :name="trans('sentence.city')" rules="required|min:3|max:190" v-slot="{ errors }">
+                                <ValidationProvider :name="trans('offer.city')" rules="required|min:3|max:190" v-slot="{ errors }">
                                     <input id="city" type="text" class="form-control" name="city" v-model="formInputs.city" autocomplete="city" autofocus>
                                     <span class="text-danger">{{ errors[0] }}</span >
                                 </ValidationProvider>
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="phone" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.phone') }} <span class="text-danger font-weight-bolder">*</span></label>
+                            <label for="phone" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('offer.phone') }} <span class="text-danger font-weight-bolder">*</span></label>
 
                             <div class="col-12 col-md-9">
-                                <ValidationProvider :name="trans('sentence.phone')" rules="required|min:3|max:190|integer" v-slot="{ errors }">
+                                <ValidationProvider :name="trans('offer.phone')" rules="required|min:3|max:190|integer" v-slot="{ errors }">
                                     <input id="phone" type="number" class="form-control" name="phone" v-model="formInputs.phone" autocomplete="phone" autofocus>
                                     <span class="text-danger">{{ errors[0] }}</span >
                                 </ValidationProvider>
@@ -140,10 +140,10 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="min_salary" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.min_salary') }} <span class="text-danger font-weight-bolder">*</span></label>
+                            <label for="min_salary" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('offer.min_salary') }} <span class="text-danger font-weight-bolder">*</span></label>
 
                             <div class="col-12 col-md-9">
-                                <ValidationProvider :name="trans('sentence.min_salary')" rules="required" v-slot="{ errors }">
+                                <ValidationProvider :name="trans('offer.min_salary')" rules="required" v-slot="{ errors }">
                                     <input min="0"
                                     id="min_salary" type="number" 
                                     class="form-control" name="min_salary" v-model="formInputs.min_salary" autocomplete="min_salary" autofocus>
@@ -153,10 +153,10 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="max_salary" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.max_salary') }} <span class="text-danger font-weight-bolder">*</span></label>
+                            <label for="max_salary" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('offer.max_salary') }} <span class="text-danger font-weight-bolder">*</span></label>
 
                             <div class="col-12 col-md-9">
-                                <ValidationProvider :name="trans('sentence.max_salary')" rules="required" v-slot="{ errors }">
+                                <ValidationProvider :name="trans('offer.max_salary')" rules="required" v-slot="{ errors }">
                                     <input min="0"
                                     id="max_salary" type="number" 
                                     class="form-control" name="max_salary" v-model="formInputs.max_salary" autocomplete="max_salary" autofocus>
@@ -166,9 +166,9 @@
                         </div>
 
                         <div class="form-group row">
-                            <label class="col-12 col-md-3 col-form-label text-md-right" for="currency_id">{{ trans('sentence.currency') }} <span class="text-danger font-weight-bolder">*</span></label>
+                            <label class="col-12 col-md-3 col-form-label text-md-right" for="currency_id">{{ trans('offer.currency') }} <span class="text-danger font-weight-bolder">*</span></label>
                             <div class="col-12 col-md-9">
-                                <ValidationProvider :name="trans('sentence.currency')" :rules="'oneOf:'+ currencyIds" v-slot="{ errors }">
+                                <ValidationProvider :name="trans('offer.currency')" :rules="'oneOf:'+ currencyIds" v-slot="{ errors }">
                                     <select data-live-search="true" class="form-control" v-model="formInputs.currency_id" id="currency_id">
                                         <option selected>{{ trans('sentence.choose') }}</option>
                                         <option v-for="currency in currencies" :key="currency.id" :value="currency.id">
@@ -181,9 +181,9 @@
                         </div>
 
                         <div class="form-group row">
-                            <label class="col-12 col-md-3 col-form-label text-md-right" for="settlement_id">{{ trans('sentence.work-category') }} <span class="text-danger font-weight-bolder">*</span></label>
+                            <label class="col-12 col-md-3 col-form-label text-md-right" for="settlement_id">{{ trans('offer.work-category') }} <span class="text-danger font-weight-bolder">*</span></label>
                             <div class="col-12 col-md-9">
-                                <ValidationProvider :name="trans('sentence.work-category')" :rules="'oneOf:'+ settlementIds" v-slot="{ errors }">
+                                <ValidationProvider :name="trans('offer.work-category')" :rules="'oneOf:'+ settlementIds" v-slot="{ errors }">
                                     <select data-live-search="true" class="form-control" v-model="formInputs.settlement_id" name="settlement_id" id="settlement_id">
                                         <option selected>{{ trans('sentence.choose') }}</option>
                                         <option v-for="settlement in settlements" :key="settlement.id" :value="settlement.id">
@@ -202,7 +202,7 @@
                                     <input class="form-check-input custom-checkbox" 
                                         type="checkbox" name="negotiable" id="negotiable" v-model="formInputs.negotiable">
                                     <label class="form-check-label" for="negotiable">
-                                        {{ trans('sentence.salary_negotiable') }}
+                                        {{ trans('offer.salary_negotiable') }}
                                     </label>
                                 </div>
                             </div>

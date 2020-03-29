@@ -34,7 +34,7 @@
                                     {{ trans('sentence.as') }} 
                                     {{ trans('sentence.company') }} 
                                     {{ trans('sentence.and') }} 
-                                    {{ trans('sentence.offer-create-poland') }}
+                                    {{ trans('offer.offer-create-poland') }}
                                     <img class="logo" src="{{ asset('images/poland.png') }}" alt="{{ trans('sentence.polish') }}">
                                 </a>
                             </div>
@@ -44,7 +44,7 @@
                                     {{ trans('sentence.as') }} 
                                     {{ trans('sentence.company') }} 
                                     {{ trans('sentence.and') }} 
-                                    {{ trans('sentence.offer-create-foreign') }}
+                                    {{ trans('offer.offer-create-foreign') }}
                                     <img class="logo" src="{{ asset('images/globe.png') }}" alt="{{ trans('sentence.polish') }}">
                                 </a>
                             </div>

@@ -34,7 +34,7 @@
                         @enderror
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="street">{{ trans('sentence.street')}}</label>
+                        <label for="street">{{ trans('offer.street')}}</label>
                         <input type="text" class="form-control" id="street" name="street" placeholder="" required value="{{ auth()->user()->profile->street ?? old('street') }}">
                         @error('street')
                             <div class="alert alert-danger">{{ $message }}</div>
@@ -43,15 +43,15 @@
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-4">
-                        <label for="city">{{ trans('sentence.city')}}</label>
+                        <label for="city">{{ trans('offer.city')}}</label>
                         <input type="text" class="form-control" id="city" name="city" value="{{ auth()->user()->profile->city ?? old('city') }}">
                     </div>
                     <div class="form-group col-md-4">
-                        <label for="post_code">{{ trans('sentence.post_code')}}</label>
+                        <label for="post_code">{{ trans('offer.post_code')}}</label>
                         <input type="text" class="form-control" id="post_code" name="post_code" value="{{ auth()->user()->profile->post_code ?? old('post_code') }}">
                     </div>
                     <div class="form-group col-md-4">
-                        <label for="phone">{{ trans('sentence.phone')}}</label>
+                        <label for="phone">{{ trans('offer.phone')}}</label>
                         <input type="text" class="form-control" id="phone" name="phone" placeholder="" value="{{ auth()->user()->profile->company_phone1 ?? old('phone') }}">
                     </div>
                 </div>

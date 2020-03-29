@@ -9,7 +9,7 @@
                     @csrf
 
                     <div class="form-group row">
-                        <label class="col-12 col-md-3 col-form-label text-md-right" for="location_id">{{ trans('sentence.location') }}</label>
+                        <label class="col-12 col-md-3 col-form-label text-md-right" for="location_id">{{ trans('offer.location') }}</label>
                         <div class="col-12 col-md-9">
                             <select data-live-search="true" class="form-control @error('location_id') is-invalid @enderror" name="user_location_id" id="user_location_id" required>
                                 <option selected>{{ trans('sentence.choose') }}</option>
@@ -49,7 +49,7 @@
 
                 @foreach($userLocations as $location)
                     <div class="row pt-3">
-                        <div class="font-weight-bold col-12 col-md-3 text-md-right">{{ trans('sentence.location') }}</div>
+                        <div class="font-weight-bold col-12 col-md-3 text-md-right">{{ trans('offer.location') }}</div>
 
                         <div class="col-12 col-md-7">
                             {{ $location->location->city }}
@@ -64,8 +64,8 @@
                             @include('partials.confirmation', [
                                 'url' => route('delete-user-location', $location->id),
                                 'method' => 'DELETE',
-                                'title' => trans('buttons.btn-delete'). " " . trans('sentence.location'),
-                                "description" => trans('sentence.delete_confirm') . " " . trans('sentence.location') . "?",
+                                'title' => trans('buttons.btn-delete'). " " . trans('offer.location'),
+                                "description" => trans('sentence.delete_confirm') . " " . trans('offer.location') . "?",
                                 "description_parameters" => [],
                                 'button' => trans('buttons.btn-delete'),
                                 'modalKey' => "removelocation".$location->location->id
@@ -81,7 +81,7 @@
                                 'title' => trans('sentence.edit'),
                                 'location_id' => $location->location_id,
                                 'radius' => $location->radius,
-                                "description" => trans('sentence.edit_confirm') . " " . trans('sentence.location') . "?",
+                                "description" => trans('sentence.edit_confirm') . " " . trans('offer.location') . "?",
                                 "description_parameters" => [],
                                 'button' => trans('buttons.btn-edit'),
                                 'modalKey' => "editlocation".$location->location->id

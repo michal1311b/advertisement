@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
 @section('title')
-    {{ trans('sentence.user-offers') }}
+    {{ trans('offer.user-offers') }}
 @endsection
 
 @section('description')
-    {{ trans('sentence.user-offers') }}
+    {{ trans('offer.user-offers') }}
 @endsection
 
 @section('css')
@@ -43,12 +43,12 @@
                                             <h6 class="font-weight-bold my-2"><i class="fas fa-coins"></i> {{ $foreign->settlement->name }}: {{ $foreign->min_salary }} - {{ $foreign->max_salary }} {{ $foreign->currency->symbol }}</h6>
                                             <h6 class="font-weight-bold ml-3 my-2">
                                                 <img src="{{ asset('images/like.png') }}" width="30" height="30" alt="Like"> {{ $foreign->likes_count }}
-                                                <br><i class="fas fa-eye"></i> {{ trans('sentence.visits') }} {{ $foreign->foreign_visits_count }}
+                                                <br><i class="fas fa-eye"></i> {{ trans('offer.visits') }} {{ $foreign->foreign_visits_count }}
                                             </h6>
                                         </div>
                                         <div class="badge badge-secondary">{{ $foreign->specialization->name }}</div>
                                         <div>
-                                            <i class="fas fa-calendar-day"></i> {{ trans('sentence.expired_at') }} <div class="badge badge-primary">{{ $foreign->expired_at }}</div>
+                                            <i class="fas fa-calendar-day"></i> {{ trans('offer.expired_at') }} <div class="badge badge-primary">{{ $foreign->expired_at }}</div>
                                         </div>
                                     </div>
                                     @if($foreign->image_profile !== null)
@@ -96,7 +96,7 @@
             @else
                 <div class="col-12">
                     <a href="{{ route('create-foreign') }}">
-                        <h4>{{ trans('sentence.no-offers') }}</h4>
+                        <h4>{{ trans('offer.no-offers') }}</h4>
                     </a>
                 </div>
             @endif

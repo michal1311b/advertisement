@@ -63,7 +63,7 @@
                     </div>
 
                     <div class="form-group row">
-                        <label for="street" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.street') }}</label>
+                        <label for="street" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('offer.street') }}</label>
 
                         <div class="col-12 col-md-9">
                             <input id="street" type="text" class="form-control @error('street') is-invalid @enderror" name="street" value="{{ $editUser->profile->street }}" autocomplete="street" autofocus>
@@ -74,7 +74,7 @@
                     </div>
 
                     <div class="form-group row">
-                        <label for="post_code" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.post_code') }}</label>
+                        <label for="post_code" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('offer.post_code') }}</label>
 
                         <div class="col-12 col-md-9">
                             <input id="post_code" type="text" class="form-control @error('post_code') is-invalid @enderror" name="post_code" value="{{ $editUser->profile->post_code }}" autocomplete="post_code" autofocus>
@@ -85,7 +85,7 @@
                     </div>
 
                     <div class="form-group row">
-                        <label for="city" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.city') }}</label>
+                        <label for="city" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('offer.city') }}</label>
 
                         <div class="col-12 col-md-9">
                             <input id="city" type="text" class="form-control @error('city') is-invalid @enderror" name="city" value="{{ $editUser->profile->city }}" autocomplete="city" autofocus>

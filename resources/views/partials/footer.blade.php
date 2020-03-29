@@ -10,8 +10,8 @@
           <h6>Menu</h6>
           <ul class="footer-links">
             <li><a href="https://employmed.eu/blog-employmed" title="{{ __('Blog') }}">{{ __('Blog') }}</a></li>
-            <li><a href="{{ route('advertisement-list') }}" title="{{ trans('sentence.offers') }}">{{ trans('sentence.offers') }}</a></li>
-            <li><a href="{{ route('foreign-list') }}" title="{{ trans('sentence.foreigns-list') }}">{{ trans('sentence.foreigns-list') }}</a></li>
+            <li><a href="{{ route('advertisement-list') }}" title="{{ trans('offer.offers') }}">{{ trans('offer.offers') }}</a></li>
+            <li><a href="{{ route('foreign-list') }}" title="{{ trans('offer.foreigns-list') }}">{{ trans('offer.foreigns-list') }}</a></li>
             <li><a href="{{ route('cookies.show') }}" title="{{ trans('sentence.cookies-policy') }}">{{ trans('sentence.cookies-policy') }}</a></li>
             <li><a href="{{ route('company-list') }}" title="{{ trans('company.company-list') }}">{{ trans('company.company-list') }}</a></li>
             <li><a href="{{ route('course.index') }}" title="{{ trans('sentence.courses') }}">{{ trans('sentence.courses') }}</a></li>

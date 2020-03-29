@@ -57,7 +57,7 @@
             @else
                 <div class="col-12">
                     <a href="{{ route('edit-user', $user) }}">
-                        <h4>{{ trans('sentence.no-preffred-offers') }}</h4>
+                        <h4>{{ trans('offer.no-preffred-offers') }}</h4>
                     </a>
                 </div>
             @endif

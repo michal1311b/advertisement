@@ -1,11 +1,11 @@
 @extends('layouts.site')
 
 @section('title')
-    {{ trans('sentence.offers-archive') }}
+    {{ trans('offer.offers-archive') }}
 @endsection
 
 @section('description')
-    {{ trans('sentence.offers-archive-descripion') }}
+    {{ trans('offer.offers-archive-descripion') }}
 @endsection
 
 @section('css')
@@ -50,7 +50,7 @@
                                     </div>
                                     <div class="badge badge-secondary">{{ $advertisement->specialization->name }}</div>
                                     <div>
-                                        <i class="fas fa-calendar-day"></i> {{ trans('sentence.expired_at') }} <div class="badge badge-primary">{{ $advertisement->expired_at }}</div>
+                                        <i class="fas fa-calendar-day"></i> {{ trans('offer.expired_at') }} <div class="badge badge-primary">{{ $advertisement->expired_at }}</div>
                                     </div>
                                 </div>
                                 <img src="{{ asset('images/archived.png') }}" width="200" class="ml-lg-5 order-1 order-lg-2" alt="Archiwe">
@@ -94,7 +94,7 @@
             @else
                 <div class="col-12">
                     <a href="{{ route('create-advertisement') }}">
-                        <h4>{{ trans('sentence.no-offers') }}</h4>
+                        <h4>{{ trans('offer.no-offers') }}</h4>
                     </a>
                 </div>
             @endif

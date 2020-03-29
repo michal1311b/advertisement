@@ -44,7 +44,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="description" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.description')}}</label>
+                            <label for="description" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('offer.description')}}</label>
 
                             <div class="col-12 col-md-9">
                                 <textarea id="description" class="form-control @error('description') is-invalid @enderror" name="description" autocomplete="description" autofocus rows="3">
@@ -57,7 +57,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="location" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.location') }}</label>
+                            <label for="location" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('offer.location') }}</label>
 
                             <div class="col-12 col-md-9">
                                 <input id="location" type="text" class="form-control @error('location') is-invalid @enderror" name="location" value="{{ $jooble->location }}" autocomplete="location" autofocus>
@@ -68,7 +68,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="salary" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.min_salary') }}</label>
+                            <label for="salary" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('offer.min_salary') }}</label>
 
                             <div class="col-12 col-md-9">
                                 <input id="salary" type="text" class="form-control @error('salary') is-invalid @enderror" name="salary" value="{{ $jooble->salary }}" autocomplete="salary" autofocus>
@@ -79,7 +79,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="type" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.work-category') }}</label>
+                            <label for="type" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('offer.work-category') }}</label>
 
                             <div class="col-12 col-md-9">
                                 <input id="type" type="text" class="form-control @error('type') is-invalid @enderror" name="type" value="{{ $jooble->type }}" autocomplete="type" autofocus>

@@ -26,7 +26,7 @@
         </div>
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">{{ trans('sentence.offer-show') }} <strong>{{ $preview->title }}</strong></div>
+                <div class="card-header">{{ trans('offer.offer-show') }} <strong>{{ $preview->title }}</strong></div>
 
                 <div class="card-body">
                     <div class="container-fluid">
@@ -38,25 +38,25 @@
                                         <span class="badge badge-pill">{{ $preview->company }}</span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        {{ trans('sentence.city') }}
+                                        {{ trans('offer.city') }}
                                         <span class="badge badge-pill">{{ $preview->location }}</span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        {{ trans('sentence.created_at') }}
+                                        {{ trans('offer.created_at') }}
                                         <span class="badge badge-pill">{{ $preview->created_at }}</span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        {{ trans('sentence.settlement') }}
+                                        {{ trans('offer.settlement') }}
                                         <span class="badge badge-pill">{{ $preview->type }}</span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        {{ trans('sentence.salary') }}
+                                        {{ trans('offer.salary') }}
                                         <span class="badge badge-pill">{{ $preview->salary }}</span>
                                     </li>
                                 </ul>
 
                                 <div class="py-2">
-                                    <h4><strong>{{ trans('sentence.description') }}</strong></h4>
+                                    <h4><strong>{{ trans('offer.description') }}</strong></h4>
                                     {!! $preview->description !!}
                                 </div>
                             </div>
@@ -74,7 +74,7 @@
                             </div>
                             <div class="col-12 text-center">
                                 <a href="{{ route('register.company') }}" class="btn btn-rounded btn-primary btn-lg">
-                                    {{ trans('sentence.register') }} {{ trans('sentence.as') }} {{ trans('sentence.company') }} {{ trans('sentence.and') }} {{ trans('sentence.offer-create-poland') }}
+                                    {{ trans('sentence.register') }} {{ trans('sentence.as') }} {{ trans('sentence.company') }} {{ trans('sentence.and') }} {{ trans('offer.offer-create-poland') }}
                                 </a>
                             </div>
                         </div>

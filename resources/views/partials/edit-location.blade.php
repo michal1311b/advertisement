@@ -13,7 +13,7 @@
                         <p class="float-left">{!!__($description, $description_parameters)!!}</p>
                     </div>
 
-                    <label for="location_id" class="col-12 col-form-label">{{ trans('sentence.location')}}</label>
+                    <label for="location_id" class="col-12 col-form-label">{{ trans('offer.location')}}</label>
 
                     <div class="col-12">
                         <select data-live-search="true" class="form-control @error('location_id') is-invalid @enderror" name="location_id" id="location_id">

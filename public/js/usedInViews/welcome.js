@@ -37,7 +37,7 @@ $(document).ready(function() {
                                         '</div>'+
                                         '<div class="badge badge-secondary">'+ input[i].specialization.name +'</div>'+
                                         '<div>'+
-                                            // '<i class="fas fa-calendar-day"></i>' + {{ trans('sentence.expired_at') }} + ' <div class="badge badge-primary">' + input[i].expired_at +'</div>'+
+                                            // '<i class="fas fa-calendar-day"></i>' + {{ trans('offer.expired_at') }} + ' <div class="badge badge-primary">' + input[i].expired_at +'</div>'+
                                         '</div>'+
                                     '</div>'+
                                     '<img src="'+ input[i].user.avatar + '" class="ml-lg-5 order-1 order-lg-2" width="200" alt="EmployMed">'+

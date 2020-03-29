@@ -29,7 +29,7 @@
         </div>
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">{{ trans('sentence.offer-show') }} <strong>{{ $course->title }}</strong></div>
+                <div class="card-header">{{ trans('offer.offer-show') }} <strong>{{ $course->title }}</strong></div>
 
                 <div class="card-body">
                     <div class="container-fluid">
@@ -48,15 +48,15 @@
                                         <span class="badge badge-pill"><img class="user-avatar--smaller" src="{{ $course->user->avatar }}" /></span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        {{ trans('sentence.city') }}
+                                        {{ trans('offer.city') }}
                                         <span class="badge badge-pill">{{ $course->location->city }}</span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        {{ trans('sentence.street') }}
+                                        {{ trans('offer.street') }}
                                         <span class="badge badge-pill">{{ $course->street }}</span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        {{ trans('sentence.state') }}
+                                        {{ trans('offer.state') }}
                                         <span class="badge badge-pill">{{ $course->state->name }}</span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
@@ -64,7 +64,7 @@
                                         <span class="badge badge-pill badge-info text-white">{{ $course->specialization->name }}</span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        {{ trans('sentence.created_at') }}
+                                        {{ trans('offer.created_at') }}
                                         <span class="badge badge-pill">{{ $course->created_at }}</span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
@@ -76,7 +76,7 @@
                                         <span class="badge badge-pill badge-primary">{{ $course->end_date }}</span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        {{ trans('sentence.phone') }}
+                                        {{ trans('offer.phone') }}
                                         <span class="badge badge-pill">{{ $course->phone }}</span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
@@ -100,7 +100,7 @@
                                 </div>
 
                                 <div class="py-2">
-                                    <h4><strong>{{ trans('sentence.description') }}</strong></h4>
+                                    <h4><strong>{{ trans('offer.description') }}</strong></h4>
                                     {!! $course->description !!}
                                 </div>
                             </div>

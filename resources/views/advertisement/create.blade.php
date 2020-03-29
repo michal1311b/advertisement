@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    {{ trans('sentence.offer-create-poland') }}
+    {{ trans('offer.offer-create-poland') }}
 @endsection
 
 @section('breadcrumbs')
@@ -25,7 +25,7 @@
         </div>
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">{{ trans('sentence.offer-create-poland') }}</div>
+                <div class="card-header">{{ trans('offer.offer-create-poland') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('store-advertisement') }}" enctype="multipart/form-data">

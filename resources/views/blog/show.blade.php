@@ -43,7 +43,7 @@
                             <div class="col-12 pb-2">
                                 <ul class="list-group">
                                     <li class="list-group-item d-inline-block">
-                                        {{ trans('sentence.tags') }}
+                                        {{ trans('offer.tags') }}
                                         @foreach($post->pins as $pin)
                                             <a href="{{ route('postTag', ['tagSlug' => $pin->slug]) }}">
                                                 <span class="badge badge-pill badge-info text-white">
@@ -66,7 +66,7 @@
                                         </a>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        {{ trans('sentence.created_at') }}
+                                        {{ trans('offer.created_at') }}
                                         <span class="badge badge-pill">{{ $post->created_at }}</span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
@@ -76,7 +76,7 @@
                                 </ul>
                             </div>
                             <div class="col-12 pt-2">
-                                <h4><strong>{{ trans('sentence.description') }}</strong></h4>
+                                <h4><strong>{{ trans('offer.description') }}</strong></h4>
                                 {!! $post->body !!}
                             </div>
                         </div>
@@ -111,7 +111,7 @@
                         </div>
                         
                         <div class="media-body col-12 col-md-8">
-                          <span class="mt-0 h5 font-weight-bold">{{ $comment->author->name }}</span> <span class="h6">{{ trans('sentence.created_at') }} {{ $comment->created_at }}</span>
+                          <span class="mt-0 h5 font-weight-bold">{{ $comment->author->name }}</span> <span class="h6">{{ trans('offer.created_at') }} {{ $comment->created_at }}</span>
                           {!! $comment->content !!}
                         </div>
 

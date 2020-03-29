@@ -1,7 +1,7 @@
 @extends('layouts.site')
 
 @section('title')
-    {{ trans('sentence.offers-list') }}
+    {{ trans('offer.offers-list') }}
 @endsection
 
 @section('description')
@@ -50,7 +50,7 @@
                                     </div>
                                     <div class="badge badge-secondary">{{ $foreign->specialization->name }}</div>
                                     <div>
-                                        <i class="fas fa-calendar-day"></i> {{ trans('sentence.expired_at') }} <div class="badge badge-primary">{{ $foreign->expired_at }}</div>
+                                        <i class="fas fa-calendar-day"></i> {{ trans('offer.expired_at') }} <div class="badge badge-primary">{{ $foreign->expired_at }}</div>
                                     </div>
                                 </div>
                                 @if($foreign->image_profile !== null)
@@ -92,7 +92,7 @@
             @else
                 <div class="col-12">
                     <a href="{{ route('create-foreign') }}">
-                        <h4>{{ trans('sentence.no-offers') }}</h4>
+                        <h4>{{ trans('offer.no-offers') }}</h4>
                     </a>
                 </div>
             @endif

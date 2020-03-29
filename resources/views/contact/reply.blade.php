@@ -30,9 +30,9 @@
             <br>
             <strong>{{ trans('sentence.first_name') }}</strong> {{ $contact->first_name }}
             <br>
-            <strong>{{ trans('sentence.city') }}</strong> {{ $contact->city }}
+            <strong>{{ trans('offer.city') }}</strong> {{ $contact->city }}
             <br>
-            <strong>{{ trans('sentence.phone') }}</strong> {{ $contact->phone }}
+            <strong>{{ trans('offer.phone') }}</strong> {{ $contact->phone }}
             <br>
             <strong>{{ trans('email.message') }}</strong> {!! $contact->message !!}
             <br>

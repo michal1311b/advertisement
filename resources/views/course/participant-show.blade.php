@@ -35,7 +35,7 @@
         </div>
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">{{ trans('sentence.offer-show') }} <strong>{{ $participant->title }}</strong></div>
+                <div class="card-header">{{ trans('offer.offer-show') }} <strong>{{ $participant->title }}</strong></div>
 
                 <div class="card-body">
                     <div class="container-fluid">
@@ -51,15 +51,15 @@
                                         <span class="badge badge-pill">{{ $participant->last_name }}</span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        {{ trans('sentence.city') }}
+                                        {{ trans('offer.city') }}
                                         <span class="badge badge-pill">{{ $participant->city }}</span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        {{ trans('sentence.street') }}
+                                        {{ trans('offer.street') }}
                                         <span class="badge badge-pill">{{ $participant->street }}</span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        {{ trans('sentence.phone') }}
+                                        {{ trans('offer.phone') }}
                                         <span class="badge badge-pill">{{ $participant->phone }}</span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">

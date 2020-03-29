@@ -118,7 +118,7 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link warning" data-toggle="tab" href="#menu4a">
-                            {{ trans('sentence.locations') }} 
+                            {{ trans('offer.locations') }} 
                             @if(count($userLocations) == 0)
                                 <span class="badge blue-tooltip" data-toggle="tooltip" title="{{ trans('sentence.fill-locations') }}">!</span>
                             @endif

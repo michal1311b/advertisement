@@ -40,20 +40,20 @@
                                 <a class="nav-link lang-dropdown" href="{{ route('user-rooms') }}" title="{{ trans('sentence.user-message')}}">{{ trans('sentence.user-message')}}</a>
                             </li>
                             <li class="nav-item home-page">
-                                <a class="nav-link lang-dropdown" href="{{ route('advertisement-list') }}" title="{{ trans('sentence.offers-list')}}">{{ trans('sentence.offers-list')}}</a>
+                                <a class="nav-link lang-dropdown" href="{{ route('advertisement-list') }}" title="{{ trans('offer.offers-list')}}">{{ trans('offer.offers-list')}}</a>
                             </li>
                             @if(auth()->user()->hasRole('admin') || auth()->user()->hasRole('company'))
                                 <li class="nav-item home-page">    
-                                    <a class="nav-link lang-dropdown" href="{{ route('user-advertisement-list') }}" title="{{ trans('sentence.user-offers')}}">{{ trans('sentence.user-offers')}}</a>
+                                    <a class="nav-link lang-dropdown" href="{{ route('user-advertisement-list') }}" title="{{ trans('offer.user-offers')}}">{{ trans('offer.user-offers')}}</a>
                                 </li>
                                 <li class="nav-item home-page">
-                                    <a class="nav-link lang-dropdown" href="{{ route('create-advertisement') }}" title="{{ trans('sentence.offer-create-poland')}}">{{ trans('sentence.offer-create-poland')}} <span class="btn btn-rounded btn-success btn-sm"><i class="fas fa-plus-circle"></i></span></a>
+                                    <a class="nav-link lang-dropdown" href="{{ route('create-advertisement') }}" title="{{ trans('offer.offer-create-poland')}}">{{ trans('offer.offer-create-poland')}} <span class="btn btn-rounded btn-success btn-sm"><i class="fas fa-plus-circle"></i></span></a>
                                 </li>
                                 <li class="nav-item home-page">
-                                    <a class="nav-link lang-dropdown" href="{{ route('user-foreign-list') }}" title="{{ trans('sentence.user-foreigns')}}">{{ trans('sentence.user-foreigns')}}</a>
+                                    <a class="nav-link lang-dropdown" href="{{ route('user-foreign-list') }}" title="{{ trans('offer.user-foreigns')}}">{{ trans('offer.user-foreigns')}}</a>
                                 </li>
                                 <li class="nav-item home-page">
-                                    <a class="nav-link lang-dropdown" href="{{ route('create-foreign') }}" title="{{ trans('sentence.offer-create-foreign')}}">{{ trans('sentence.offer-create-foreign')}} <span class="btn btn-rounded btn-success btn-sm"><i class="fas fa-plus-circle"></i></span></a>
+                                    <a class="nav-link lang-dropdown" href="{{ route('create-foreign') }}" title="{{ trans('offer.offer-create-foreign')}}">{{ trans('offer.offer-create-foreign')}} <span class="btn btn-rounded btn-success btn-sm"><i class="fas fa-plus-circle"></i></span></a>
                                 </li>
                                 <li class="nav-item home-page">
                                     <a class="nav-link lang-dropdown" href="{{ route('user-course-list') }}" title="{{ trans('sentence.user-courses')}}">{{ trans('sentence.user-courses')}}</a>

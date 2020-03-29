@@ -105,7 +105,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="pins" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.tags') }}</label>
+                            <label for="pins" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('offer.tags') }}</label>
                             <div class="col-12 col-md-9">
                                 <input type="text" value="" name="pins[]" id="pins" data-role="tagsinput" class="form-control" />
                             </div>

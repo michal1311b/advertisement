@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    {{ trans('sentence.offer-create-foreign') }}
+    {{ trans('offer.offer-create-foreign') }}
 @endsection
 
 @section('breadcrumbs')
@@ -25,7 +25,7 @@
         </div>
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">{{ trans('sentence.offer-create-foreign') }}</div>
+                <div class="card-header">{{ trans('offer.offer-create-foreign') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('store-foreign') }}" enctype="multipart/form-data">

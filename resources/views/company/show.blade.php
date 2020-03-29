@@ -39,7 +39,7 @@
                     {{ $user->profile->company_street ?? '' }},
                     {{ $user->profile->company_post_code ?? '' }}
                     {{ $user->profile->company_city ?? '' }}
-                    <h3><i class="fas fa-globe-europe"></i> {{ trans('sentence.offers') }}: {{ count($user->advertisements) }}</h3>
+                    <h3><i class="fas fa-globe-europe"></i> {{ trans('offer.offers') }}: {{ count($user->advertisements) }}</h3>
                 </div>
                 <div class="card-body">
                     @if(count($user->advertisements) > 0)
@@ -75,7 +75,7 @@
                                     </div>
                                     <div class="badge badge-secondary">{{ $advertisement->specialization->name }}</div>
                                     <div>
-                                        <i class="fas fa-calendar-day"></i> {{ trans('sentence.expired_at') }} <div class="badge badge-primary">{{ $advertisement->expired_at }}</div>
+                                        <i class="fas fa-calendar-day"></i> {{ trans('offer.expired_at') }} <div class="badge badge-primary">{{ $advertisement->expired_at }}</div>
                                     </div>
                                 </div>
                                 @if($advertisement->galleries()->count())
@@ -94,7 +94,7 @@
             @else
                 <div class="col-12">
                     <a href="{{ route('create-advertisement') }}">
-                        <h4>{{ trans('sentence.no-offers') }}</h4>
+                        <h4>{{ trans('offer.no-offers') }}</h4>
                     </a>
                 </div>
             @endif
@@ -119,7 +119,7 @@
                     {{ $user->profile->company_street ?? '' }},
                     {{ $user->profile->company_post_code ?? '' }}
                     {{ $user->profile->company_city ?? '' }}
-                    <h3><i class="fas fa-globe-europe"></i> {{ trans('sentence.foreigns-list') }}: {{ count($user->foreignOffers) }}</h3>
+                    <h3><i class="fas fa-globe-europe"></i> {{ trans('offer.foreigns-list') }}: {{ count($user->foreignOffers) }}</h3>
                 </div>
                 <div class="card-body">
                     @if(count($user->foreignOffers) > 0)
@@ -155,7 +155,7 @@
                                     </div>
                                     <div class="badge badge-secondary">{{ $advertisement->specialization->name }}</div>
                                     <div>
-                                        <i class="fas fa-calendar-day"></i> {{ trans('sentence.expired_at') }} <div class="badge badge-primary">{{ $advertisement->expired_at }}</div>
+                                        <i class="fas fa-calendar-day"></i> {{ trans('offer.expired_at') }} <div class="badge badge-primary">{{ $advertisement->expired_at }}</div>
                                     </div>
                                 </div>
                                 @if($advertisement->image_profile !== null)
@@ -174,7 +174,7 @@
             @else
                 <div class="col-12">
                     <a href="{{ route('create-foreign') }}">
-                        <h4>{{ trans('sentence.no-offers') }}</h4>
+                        <h4>{{ trans('offer.no-offers') }}</h4>
                     </a>
                 </div>
             @endif

@@ -211,7 +211,7 @@
     <div class="row">
         <div class="col-12" id="newestOffers">
             <h4 class="py-2">
-                {{ trans('sentence.interested-offers') }}
+                {{ trans('offer.interested-offers') }}
             </h4>
             
             <ul class="list-group shadow" id="newestList">
@@ -219,7 +219,7 @@
         </div>
         <div class="col-12">
             <h4 class="py-2">
-                {{ trans('sentence.newest-offers') }}
+                {{ trans('offer.newest-offers') }}
             </h4>
             @if(count($advertisements) > 0)
                 <ul class="list-group shadow">
@@ -239,7 +239,7 @@
                                             </div>
                                             <div class="badge badge-secondary">{{ $advertisement->specialization->name }}</div>
                                             <div>
-                                                <i class="fas fa-calendar-day"></i> {{ trans('sentence.expired_at') }} <div class="badge badge-primary">{{ $advertisement->expired_at }}</div>
+                                                <i class="fas fa-calendar-day"></i> {{ trans('offer.expired_at') }} <div class="badge badge-primary">{{ $advertisement->expired_at }}</div>
                                             </div>
                                         </div>
                                         @if($advertisement->galleries()->count())
@@ -258,7 +258,7 @@
             @else
                 <div class="col-12 py-3">
                     <a href="{{ route('create-advertisement') }}">
-                        <h4>{{ trans('sentence.no-offers') }}</h4>
+                        <h4>{{ trans('offer.no-offers') }}</h4>
                     </a>
                 </div>
             @endif

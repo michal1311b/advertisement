@@ -35,7 +35,7 @@
         </div>
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">{{ trans('sentence.offer-show') }} <strong>{{ $advertisement->title }}</strong></div>
+                <div class="card-header">{{ trans('offer.offer-show') }} <strong>{{ $advertisement->title }}</strong></div>
 
                 <div class="card-body">
                     <div class="container-fluid">
@@ -93,7 +93,7 @@
                             @endif
                             <div class="col-12 pb-2">
                                 @if($advertisement->tags->count() > 0 && $advertisement->tags[0]->name !== '')
-                                    {{ trans('sentence.tags') }}
+                                    {{ trans('offer.tags') }}
                                     @foreach($advertisement->tags as $tag)
                                         <a href="{{ route('advertisementTag', ['tagSlug' => $tag->slug]) }}">
                                             <span class="badge badge-pill badge-info text-white">
@@ -102,7 +102,7 @@
                                         </a>
                                     @endforeach
                                 @else
-                                    <span class="font-weight-bold">{{ trans('sentence.no-tags') }}</span>
+                                    <span class="font-weight-bold">{{ trans('offer.no-tags') }}</span>
                                 @endif
                             </div>
                             <div class="col-12">
@@ -116,15 +116,15 @@
                                         </a>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        {{ trans('sentence.city') }}
+                                        {{ trans('offer.city') }}
                                         <span class="badge badge-pill">{{ $advertisement->location->city }}</span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        {{ trans('sentence.street') }}
+                                        {{ trans('offer.street') }}
                                         <span class="badge badge-pill">{{ $advertisement->street }}</span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        {{ trans('sentence.state') }}
+                                        {{ trans('offer.state') }}
                                         <span class="badge badge-pill">{{ $advertisement->state->name }}</span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
@@ -132,34 +132,34 @@
                                         <span class="badge badge-pill badge-info text-white">{{ $advertisement->specialization->name }}</span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        {{ trans('sentence.created_at') }}
+                                        {{ trans('offer.created_at') }}
                                         <span class="badge badge-pill">{{ $advertisement->created_at }}</span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        {{ trans('sentence.expired_at') }}
+                                        {{ trans('offer.expired_at') }}
                                         <span class="badge badge-pill badge-primary">{{ $advertisement->expired_at }}</span>
                                     </li>
 
                                     @if($advertisement->expired_at < \Carbon\Carbon::now())
                                         <li class="list-group-item d-flex justify-content-between align-items-center font-weight-bold text-danger text-uppercase">
-                                            {{ trans('sentence.offer-archive') }}
+                                            {{ trans('offer.offer-archive') }}
                                             <span class="badge badge-pill"><img class="user-avatar--smaller" src="{{ asset('images/archived.png') }}" /></span>
                                         </li>
                                     @endif
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        {{ trans('sentence.visits') }}
+                                        {{ trans('offer.visits') }}
                                         <span class="badge badge-pill"><i class="fas fa-eye"></i> {{ $advertisement->visits_count }}</span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        {{ trans('sentence.settlement') }}
+                                        {{ trans('offer.settlement') }}
                                         <span class="badge badge-pill">{{ $advertisement->work->name }}</span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        {{ trans('sentence.salary') }}
+                                        {{ trans('offer.salary') }}
                                         <span class="badge badge-pill">{{ $advertisement->min_salary }} - {{ $advertisement->max_salary }} {{ $advertisement->currency->symbol }}</span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        {{ trans('sentence.salary_negotiable') }}
+                                        {{ trans('offer.salary_negotiable') }}
                                         @if($advertisement->negotiable === 1)
                                             <i class="fas fa-clipboard-check"></i>
                                         @else
@@ -168,7 +168,7 @@
                                         </span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        {{ trans('sentence.work-category') }}
+                                        {{ trans('offer.work-category') }}
                                         <span class="badge badge-pill">{{ $advertisement->settlement->name }}</span>
                                     </li>
                                 </ul>
@@ -181,38 +181,38 @@
                                 <div class="py-2 calculator">
                                     <div class="form-group">
                                         <div class="pb-2">
-                                            <input type="number" min="0" class="form-control" id="fuelCost" placeholder="{{ trans('sentence.fuel-cost') }}">
+                                            <input type="number" min="0" class="form-control" id="fuelCost" placeholder="{{ trans('offer.fuel-cost') }}">
                                         </div>
                                         <div class="pb-2">
-                                            <input type="number" min="0" class="form-control" id="avgFuel" placeholder="{{ trans('sentence.fuel-avg') }}">
+                                            <input type="number" min="0" class="form-control" id="avgFuel" placeholder="{{ trans('offer.fuel-avg') }}">
                                         </div>
                                         <div class="pb-2">
-                                            <input type="number" min="0" class="form-control" id="daysInWeek" placeholder="{{ trans('sentence.work-arrive') }}"> 
+                                            <input type="number" min="0" class="form-control" id="daysInWeek" placeholder="{{ trans('offer.work-arrive') }}"> 
                                         </div>
                                         <span class="btn btn-rounded btn-success" onclick="calculate()">{{ trans('buttons.btn-count') }}</span>
                                     </div>
-                                    <p>{{ trans('sentence.arrive-cost') }} <span id="cost" class="text-info font-weight-bold"></span></p>
+                                    <p>{{ trans('offer.arrive-cost') }} <span id="cost" class="text-info font-weight-bold"></span></p>
                                 </div>
 
                                 <div class="py-2 location-info alert alert-info font-weight-bolder">
-                                    {{ trans('sentence.location-allow-info') }}
+                                    {{ trans('offer.location-allow-info') }}
                                 </div>
 
                                 <div class="py-2" id="description">
-                                    <h4><strong>{{ trans('sentence.description') }}</strong></h4>
+                                    <h4><strong>{{ trans('offer.description') }}</strong></h4>
                                     {!! $advertisement->description !!}
                                 </div>
 
                                 @if($advertisement->requirements !== null)
                                     <div class="py-2">
-                                        <h4><strong>{{ trans('sentence.requirements') }}</strong></h4>
+                                        <h4><strong>{{ trans('offer.requirements') }}</strong></h4>
                                         {!! $advertisement->requirements !!}
                                     </div>
                                 @endif
 
                                 @if($advertisement->profits !== null)
                                     <div class="py-2">
-                                        <h4><strong>{{ trans('sentence.profits') }}</strong></h4>
+                                        <h4><strong>{{ trans('offer.profits') }}</strong></h4>
                                         {!! $advertisement->profits !!}
                                     </div>
                                 @endif
@@ -393,7 +393,7 @@ $(document).ready(function() {
                         bounceOnAddOptions: {duration: 3000, height: 50, loop: 2},
                         bounceOnAddCallback: function() {console.log("done");}
                  })
-                    .bindPopup( "{{trans('sentence.you-are-here')}}" )
+                    .bindPopup( "{{trans('offer.you-are-here')}}" )
                     .addTo( map );
 
                     L.Routing.control({

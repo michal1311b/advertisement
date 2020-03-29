@@ -30,7 +30,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="exp_city" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.city') }}</label>
+                            <label for="exp_city" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('offer.city') }}</label>
 
                             <div class="col-12 col-md-9">
                                 <input id="exp_city" type="text" class="form-control @error('exp_city') is-invalid @enderror" name="exp_city" value="{{ $experience->exp_city ?? '' }}" autocomplete="exp_city" autofocus>
@@ -147,7 +147,7 @@
                     </div>
 
                     <div class="row">
-                        <div class="font-weight-bold col-12 col-md-3 text-md-right">{{ trans('sentence.city') }}</div>
+                        <div class="font-weight-bold col-12 col-md-3 text-md-right">{{ trans('offer.city') }}</div>
 
                         <div class="col-12 col-md-7">
                             {{ $experience->exp_city }}

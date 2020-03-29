@@ -32,11 +32,11 @@
                 </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
-                    <label for="city">{{ trans('sentence.city-not-require')}}</label>
+                    <label for="city">{{ trans('offer.city-not-require')}}</label>
                     <input type="text" class="form-control" id="city" name="city" value="{{ auth()->user()->profile->city ?? null }}">
                 </div>
                 <div class="form-group col-md-6">
-                    <label for="phone">{{ trans('sentence.phone-not-require')}}</label>
+                    <label for="phone">{{ trans('offer.phone-not-require')}}</label>
                     <input type="text" class="form-control" id="phone" name="phone" placeholder="" value="{{ auth()->user()->profile->company_phone1 ?? null }}">
                 </div>
             </div>

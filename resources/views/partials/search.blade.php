@@ -36,7 +36,7 @@
                                 id="range"
                                 name="range" class="form-group">
                             <label for="range" class="ml-3">
-                                {{ trans('sentence.salary') }} <span id="val1" class="font-weight-bold"></span> - <span id="val2" class="font-weight-bold"></span>
+                                {{ trans('offer.salary') }} <span id="val1" class="font-weight-bold"></span> - <span id="val2" class="font-weight-bold"></span>
                             </label>
 
                             <select data-live-search="true" class="form-control @error('currency_id') is-invalid @enderror" name="currency_id" id="currency_ids">

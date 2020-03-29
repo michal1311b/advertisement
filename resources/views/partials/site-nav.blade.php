@@ -2,10 +2,10 @@
   <a href="https://employmed.eu/blog-employmed" class="side-nav list-group-item list-group-item-action {{ $theme . '-theme' }}" title="{{ __('Blog') }}">{{ __('Blog') }}</a>
 </div>
 <div class="list-group list-group-flush">
-  <a href="{{ route('advertisement-list') }}" class="side-nav list-group-item list-group-item-action {{ $theme . '-theme' }} {{ Request::is('offer/list') ? 'bg-primary active' : null }}" title="{{ trans('sentence.offers') }}">{{ trans('sentence.offers') }}</a>
+  <a href="{{ route('advertisement-list') }}" class="side-nav list-group-item list-group-item-action {{ $theme . '-theme' }} {{ Request::is('offer/list') ? 'bg-primary active' : null }}" title="{{ trans('offer.offers') }}">{{ trans('offer.offers') }}</a>
 </div>
 <div class="list-group list-group-flush">
-  <a href="{{ route('foreign-list') }}" class="side-nav list-group-item list-group-item-action {{ $theme . '-theme' }} {{ Request::is('foreign/list') ? 'bg-primary active' : null }}" title="{{ trans('company.company-list') }}" title="{{ trans('sentence.foreigns-list') }}">{{ trans('sentence.foreigns-list') }}</a>
+  <a href="{{ route('foreign-list') }}" class="side-nav list-group-item list-group-item-action {{ $theme . '-theme' }} {{ Request::is('foreign/list') ? 'bg-primary active' : null }}" title="{{ trans('company.company-list') }}" title="{{ trans('offer.foreigns-list') }}">{{ trans('offer.foreigns-list') }}</a>
 </div>
 <div class="list-group list-group-flush">
   <a href="{{ route('company-list') }}" class="side-nav list-group-item list-group-item-action {{ $theme . '-theme' }} {{ Request::is('company/list') ? 'bg-primary active' : null }}" title="{{ trans('company.company-list') }}">{{ trans('company.company-list') }}</a>
@@ -17,7 +17,7 @@
   <a href="{{ route('contact.show') }}" class="side-nav list-group-item list-group-item-action {{ $theme . '-theme' }} {{ Request::is('kontakt') ? 'bg-primary active' : null }}" title="{{ trans('email.contact-form') }}">{{ trans('email.contact-form') }}</a>
 </div>
 <div class="list-group list-group-flush">
-  <a href="{{ route('advertisement-archive') }}" class="side-nav list-group-item list-group-item-action {{ $theme . '-theme' }} {{ Request::is('offer/archive') ? 'bg-primary active' : null }}" title="{{ trans('sentence.offers-archive') }}">{{ trans('sentence.offers-archive') }}</a>
+  <a href="{{ route('advertisement-archive') }}" class="side-nav list-group-item list-group-item-action {{ $theme . '-theme' }} {{ Request::is('offer/archive') ? 'bg-primary active' : null }}" title="{{ trans('offer.offers-archive') }}">{{ trans('offer.offers-archive') }}</a>
 </div>
 @guest
 @else

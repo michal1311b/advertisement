@@ -1,7 +1,7 @@
 @extends('layouts.site')
 
 @section('title')
-    {{ trans('sentence.offers-list') }}
+    {{ trans('offer.offers-list') }}
 @endsection
 
 @section('description')
@@ -53,7 +53,7 @@
                                             </div>
                                             <div class="badge badge-secondary">{{ $advertisement->advertisement->specialization->name ?? '' }}</div>
                                             <div>
-                                                <i class="fas fa-calendar-day"></i> {{ trans('sentence.expired_at') }} <div class="badge badge-primary">{{ $advertisement->advertisement->expired_at ?? '' }}</div>
+                                                <i class="fas fa-calendar-day"></i> {{ trans('offer.expired_at') }} <div class="badge badge-primary">{{ $advertisement->advertisement->expired_at ?? '' }}</div>
                                             </div>
                                         </div>
                                         @if($advertisement->advertisement->galleries()->count())

@@ -48,7 +48,7 @@ class PreferenceController extends Controller
         ->where('user_id', $user->id)->first();
 
         if($newLocation) {
-            session()->flash('error', trans('sentence.location-exists'));
+            session()->flash('error', trans('offer.location-exists'));
         
             return back();
         }
@@ -82,7 +82,7 @@ class PreferenceController extends Controller
         ->where('user_id', $id)->first();
 
         if($newLocation) {
-            session()->flash('error', trans('sentence.location-exists'));
+            session()->flash('error', trans('offer.location-exists'));
         
             return back();
         }

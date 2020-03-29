@@ -1,11 +1,11 @@
 @extends('layouts.site')
 
 @section('title')
-    {{ trans('sentence.average-rate-in-employmed') }}
+    {{ trans('offer.average-rate-in-employmed') }}
 @endsection
 
 @section('description')
-    {{ trans('sentence.average-rate-in-employmed') }}
+    {{ trans('offer.average-rate-in-employmed') }}
 @endsection
 
 @section('breadcrumbs')
@@ -25,7 +25,7 @@
             <div class="card">
                 <div class="card-header">
                     <strong>
-                        {{ trans('sentence.average-rate-in-employmed') }}
+                        {{ trans('offer.average-rate-in-employmed') }}
                     </strong>
                 </div>
 

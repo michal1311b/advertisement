@@ -35,7 +35,7 @@
         </div>
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">{{ trans('sentence.offer-show') }} <strong>{{ $advertisement->title }}</strong></div>
+                <div class="card-header">{{ trans('offer.offer-show') }} <strong>{{ $advertisement->title }}</strong></div>
 
                 <div class="card-body">
                     <div class="container-fluid">
@@ -104,11 +104,11 @@
                                         </a>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        {{ trans('sentence.city') }}
+                                        {{ trans('offer.city') }}
                                         <span class="badge badge-pill">{{ $advertisement->city }}</span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        {{ trans('sentence.street') }}
+                                        {{ trans('offer.street') }}
                                         <span class="badge badge-pill">{{ $advertisement->street }}</span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
@@ -116,37 +116,37 @@
                                         <span class="badge badge-pill badge-info text-white">{{ $advertisement->specialization->name }}</span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        {{ trans('sentence.created_at') }}
+                                        {{ trans('offer.created_at') }}
                                         <span class="badge badge-pill">{{ $advertisement->created_at }}</span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        {{ trans('sentence.expired_at') }}
+                                        {{ trans('offer.expired_at') }}
                                         <span class="badge badge-pill badge-primary">{{ $advertisement->expired_at }}</span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        {{ trans('sentence.visits') }}
+                                        {{ trans('offer.visits') }}
                                         <span class="badge badge-pill"><i class="fas fa-eye"></i> {{ $advertisement->foreign_visits_count }}</span>
                                     </li>
                                     @if($advertisement->expired_at < \Carbon\Carbon::now())
                                         <li class="list-group-item d-flex justify-content-between align-items-center font-weight-bold text-danger text-uppercase">
-                                            {{ trans('sentence.offer-archive') }}
+                                            {{ trans('offer.offer-archive') }}
                                             <span class="badge badge-pill"><img class="user-avatar--smaller" src="{{ asset('images/archived.png') }}" /></span>
                                         </li>
                                     @endif
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        {{ trans('sentence.phone') }}
+                                        {{ trans('offer.phone') }}
                                         <span class="badge badge-pill">{{ $advertisement->phone }}</span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        {{ trans('sentence.settlement') }}
+                                        {{ trans('offer.settlement') }}
                                         <span class="badge badge-pill">{{ $advertisement->work->name }}</span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        {{ trans('sentence.salary') }}
+                                        {{ trans('offer.salary') }}
                                         <span class="badge badge-pill">{{ $advertisement->min_salary }} - {{ $advertisement->max_salary }} {{ $advertisement->currency->symbol }}</span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        {{ trans('sentence.salary_negotiable') }}
+                                        {{ trans('offer.salary_negotiable') }}
                                         @if($advertisement->negotiable === 1)
                                             <i class="fas fa-clipboard-check"></i>
                                         @else
@@ -155,7 +155,7 @@
                                         </span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        {{ trans('sentence.work-category') }}
+                                        {{ trans('offer.work-category') }}
                                         <span class="badge badge-pill">{{ $advertisement->settlement->name }}</span>
                                     </li>
                                 </ul>
@@ -166,20 +166,20 @@
                                 </div>
 
                                 <div class="py-2" id="description">
-                                    <h4><strong>{{ trans('sentence.description') }}</strong></h4>
+                                    <h4><strong>{{ trans('offer.description') }}</strong></h4>
                                     {!! $advertisement->description !!}
                                 </div>
 
                                 @if($advertisement->requirements !== null)
                                     <div class="py-2">
-                                        <h4><strong>{{ trans('sentence.requirements') }}</strong></h4>
+                                        <h4><strong>{{ trans('offer.requirements') }}</strong></h4>
                                         {!! $advertisement->requirements !!}
                                     </div>
                                 @endif
 
                                 @if($advertisement->profits !== null)
                                     <div class="py-2">
-                                        <h4><strong>{{ trans('sentence.profits') }}</strong></h4>
+                                        <h4><strong>{{ trans('offer.profits') }}</strong></h4>
                                         {!! $advertisement->profits !!}
                                     </div>
                                 @endif
@@ -318,7 +318,7 @@ $(document).ready(function() {
 
                 var x = document.getElementById("distance-info");
                 if (navigator.geolocation) {
-                    x.innerHTML = "{{ trans('sentence.distanceBetween') }}" + '' + '<b>'+Math.round(distance, 2) + ' km</b>';
+                    x.innerHTML = "{{ trans('offer.distanceBetween') }}" + '' + '<b>'+Math.round(distance, 2) + ' km</b>';
                 } else { 
                     x.innerHTML = "Geolocation is not supported by this browser.";
                 }
