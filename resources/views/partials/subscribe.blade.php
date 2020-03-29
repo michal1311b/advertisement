@@ -5,7 +5,7 @@
         @include('partials.message')
     </div>
     <div class="form-group col-md-12">
-        <label for="email">{{ __('Email') }}</label>
+        <label for="email">{{ trans('email.email') }}</label>
         <input type="email" class="form-control" id="email" name="email" placeholder="" required>
         @error('email')
             <div class="alert alert-danger">{{ $message }}</div>

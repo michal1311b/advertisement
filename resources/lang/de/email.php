@@ -29,4 +29,5 @@ return [
     'message' => 'Treść',
     'no-message' => 'Keine Nachrichten',
     'message-send' => 'Die Nachricht wurde gesendet',
+    'email' => 'E-mail'
 ];

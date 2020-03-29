@@ -16,7 +16,7 @@
                 @endif
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        <label for="email">{{ __('Email') }}</label>
+                        <label for="email">{{ trans('email.email') }}</label>
                         <input type="email" class="form-control" id="email" name="email" placeholder="" required value="{{ auth()->user()->email ?? null }}">
                         @error('email')
                             <div class="alert alert-danger">{{ $message }}</div>
@@ -67,7 +67,7 @@
                 </div>
             </div>
 
-            <div class="form-group">
+           <div class="form-group">
                 <div class="form-check">
                     <input name="term1" type="hidden" value="0">
                     <input class="form-check-input custom-checkbox" value="1" required

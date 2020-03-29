@@ -34,7 +34,7 @@
                         <th scope="col">#</th>
                         <th scope="col">{{ trans('profile.name') }}</th>
                         <th scope="col">{{ trans('profile.last_name') }}</th>
-                        <th scope="col">{{ __('Email') }}</th>
+                        <th scope="col">{{ trans('email.email') }}</th>
                         <th scope="col">{{ trans('offer.phone') }}</th>
                         <th scope="col">{{ __('Info') }}</th>
                         <th scope="col">{{ trans('buttons.btn-delete') }}</th>

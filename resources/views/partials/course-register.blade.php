@@ -11,7 +11,7 @@
             <div class="card-body">
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        <label for="email">{{ __('Email') }}</label>
+                        <label for="email">{{ trans('email.email') }}</label>
                         <input type="email" class="form-control" id="email" name="email" placeholder="" required value="{{ auth()->user()->email ?? old('email') }}">
                         @error('email')
                             <div class="alert alert-danger">{{ $message }}</div>

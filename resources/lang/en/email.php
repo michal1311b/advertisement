@@ -29,4 +29,5 @@ return [
     'message' => 'Message',
     'no-message' => 'No messages',
     'message-send' => 'Message was send successfully!',
+    'email' => 'E-mail'
 ];

@@ -32,7 +32,7 @@
                 <thead>
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col">{{ __('Email') }}</th>
+                        <th scope="col">{{ trans('email.email') }}</th>
                         <th scope="col">{{trans('sentence.edit')}}</th>
                         <th scope="col">{{trans('buttons.btn-delete')}}</th>
                         <th scope="col">{{trans('email.mailinglist-list')}}</th>

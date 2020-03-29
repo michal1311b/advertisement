@@ -51,7 +51,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="email" class="col-12 col-md-3 col-form-label text-md-right">{{ __('Email') }}</label>
+                            <label for="email" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('email.email') }}</label>
 
                             <div class="col-12 col-md-9">
                                 <input id="email" type="text" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ $recipient->email }}" autocomplete="email" autofocus>

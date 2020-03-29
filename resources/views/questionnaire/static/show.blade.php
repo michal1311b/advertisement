@@ -243,7 +243,7 @@
 
                         <div class="form-group row">
                             <label for="email" class="col-12 col-form-label">
-                                <h5><span class="grey">10</span>{{ __('Email') }}</h5>
+                                <h5><span class="grey">10</span>{{ trans('email.email') }}</h5>
                             </label>
 
                             <div class="col-12">

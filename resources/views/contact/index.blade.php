@@ -21,7 +21,7 @@
             <thead>
                 <tr>
                     <th scope="col">#</th>
-                    <th scope="col">{{ __('Email') }}</th>
+                    <th scope="col">{{ trans('email.email') }}</th>
                     <th scope="col">{{ trans('profile.first_name') }}</th>
                     <th scope="col">{{ trans('offer.city') }}</th>
                     <th scope="col">{{ trans('offer.phone') }}</th>
