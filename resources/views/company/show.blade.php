@@ -32,7 +32,14 @@
                 <div class="card-header">
                     <img src="{{ $user->avatar ?? '/images/logo.png'}}" class="user-avatar user-avatar--smaller"
                     alt="{{ $user->profile->company_name ?? $user->name }}">
-                    <h4>{{ $user->profile->company_name ?? ''}}</h4>
+                    <h4>
+                        {{ $user->profile->company_name ?? ''}}
+                        @if(Cache::has('user-is-online-' . $user->id))
+                            <span class="text-success"><i class="fa fa-circle"></i> Online</span>
+                        @else
+                            <span class="text-secondary"><i class="fa fa-circle"></i> Offline</span>
+                        @endif
+                    </h4>
                 </div>
                 <div class="card-body">
                     <i class="fas fa-map-marker-alt"></i>
@@ -112,7 +119,14 @@
                 <div class="card-header">
                     <img src="{{ $user->avatar ?? '/images/logo.png'}}" class="user-avatar user-avatar--smaller"
                     alt="{{ $user->profile->company_name ?? $user->name }}">
-                    <h4>{{ $user->profile->company_name ?? ''}}</h4>
+                    <h4>
+                        {{ $user->profile->company_name ?? ''}}
+                        @if(Cache::has('user-is-online-' . $user->id))
+                            <span class="text-success"><i class="fa fa-circle"></i> Online</span>
+                        @else
+                            <span class="text-secondary"><i class="fa fa-circle"></i> Offline</span>
+                        @endif
+                    </h4>
                 </div>
                 <div class="card-body">
                     <i class="fas fa-map-marker-alt"></i>

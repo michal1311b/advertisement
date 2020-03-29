@@ -37,7 +37,13 @@
                             <div class="col-12 pb-2">
                                 <div class="btn-toolbar justify-content-between" role="toolbar" aria-label="Toolbar with button groups">
                                     <div class="btn-group" role="group" aria-label="First group">
-                                        <strong>{{ trans('sentence.post-by') }}</strong>&nbsp;{{ $course->user->profile->company_name }}
+                                        <strong>{{ trans('sentence.post-by') }}</strong>&nbsp;
+                                        {{ $course->user->profile->company_name }}&nbsp;
+                                        @if(Cache::has('user-is-online-' . $course->user->id))
+                                            <span class="text-success"><i class="fa fa-circle"></i> Online</span>
+                                        @else
+                                            <span class="text-secondary"><i class="fa fa-circle"></i> Offline</span>
+                                        @endif
                                     </div>
                                 </div>
                             </div>
