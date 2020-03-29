@@ -39,8 +39,6 @@ return [
   'category-edit' => 'Edit Category',
   'pages-list' => 'List of Pages',
   'pages-create' => 'Create page',
-  'city-not-require' => 'City (not required)',
-  'phone-not-require' => 'Phone (not required)',
   'upload-files' => 'Upload files',
   'upload-image' => 'Upload cover image',
   'files' => 'Files',

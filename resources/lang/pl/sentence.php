@@ -37,8 +37,6 @@ return [
   'category-edit' => 'Edytuj kategorie',
   'pages-list' => 'Zakładki menu',
   'pages-create' => 'Stwórz podstronę',
-  'city-not-require' => 'Miasto (nie wymagane)',
-  'phone-not-require' => 'Telefon (nie wymagane)',
   'upload-files' => 'Dodaj pliki',
   'upload-image' => 'Dodaj zdjęcie',
   'files' => 'Pliki',

@@ -48,4 +48,6 @@ return [
     'offers-archive-descripion' => 'Archivankündigungen - Anzeigen, die nicht erweitert wurden, aber auf EmployMed.eu verfügbar waren.',
     'locations' => 'Standorte',
     'tags-info' => 'Fügen Sie durch Kommas getrennte Schlüsselwörter hinzu, um Ihren Eintrag besser an die Mitarbeiter anzupassen.',
+    'city-not-require' => 'Stadt (nicht erforderlich)',
+    'phone-not-require' => 'Telefon (nicht erforderlich)',
 ];

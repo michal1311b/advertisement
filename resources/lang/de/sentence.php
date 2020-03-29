@@ -38,8 +38,6 @@ return [
   'category-edit' => 'Kategorien bearbeiten',
   'pages-list' => 'Menüregisterkarten',
   'pages-create' => 'Erstellen Sie eine Unterseite',
-  'city-not-require' => 'Stadt (nicht erforderlich)',
-  'phone-not-require' => 'Telefon (nicht erforderlich)',
   'upload-files' => 'Dateien hinzufügen',
   'upload-image' => 'Fügen Sie ein Foto hinzu',
   'files' => 'Dateien',

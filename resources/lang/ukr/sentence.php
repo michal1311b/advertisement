@@ -38,8 +38,6 @@ return [
   'category-edit' => 'Редагування категорій',
   'pages-list' => 'Вкладки меню',
   'pages-create' => 'Створіть підсторінку',
-  'city-not-require' => 'Місто (не обов’язково)',
-  'phone-not-require' => 'Телефон (не потрібно)',
   'upload-files' => 'Додайте файли',
   'upload-image' => 'Додати фотографію',
   'files' => 'файли',
