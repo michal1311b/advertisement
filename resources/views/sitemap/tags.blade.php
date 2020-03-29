@@ -9,5 +9,5 @@
                 <priority>0.9</priority>
             </url>
         @endforeach
-    @endforeach
+    @endif
 </urlset>
