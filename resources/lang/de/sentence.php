@@ -27,7 +27,6 @@ return [
   'posts-list' => 'Artikel',
   'post-create' => 'Erstellen Sie einen Artikel',
   'post-by' => 'Hinzugefügt von',
-  'no-post' => 'Es gibt keine Artikel',
   'edit' => 'Ausgabe ',
   'show' => 'Ansicht',
   'user-list' => 'Benutzerliste',
@@ -43,7 +42,6 @@ return [
   'phone-not-require' => 'Telefon (nicht erforderlich)',
   'upload-files' => 'Dateien hinzufügen',
   'upload-image' => 'Fügen Sie ein Foto hinzu',
-  'no-files' => 'Keine Anhänge',
   'files' => 'Dateien',
   'level' => 'Niveau',
   'radius' => 'Strahl',
@@ -68,7 +66,6 @@ return [
   'similar' => 'Ähnliche Angebote',
   'confirm-link' => 'Hier ist der Bestätigungslink: ',
   'nil-validation-faild' => 'Validierung bei NIL fehlgeschlagen.',
-  'no-candidates' => 'Keine passenden Kandidaten',
   'room_name' => 'Chat Name',
   'cookies-policy' => 'Cookie-Richtlinie',
   'regulation' => 'Vorschriften',
@@ -101,6 +98,4 @@ return [
   'signin-to-comment' => 'Loggen Sie sich ein, um einen Kommentar hinzuzufügen - nur für den Arzt!',
   'comment-count' => 'Anzahl der Kommentare',
   'visitors-list' => 'Website-Besucher',
-  'no-categories' => 'Keine Kategorie',
-  'no-courses' => 'Keine Kurse gefunden, melden Sie sich an, um sie zuerst hinzuzufügen.'
 ];

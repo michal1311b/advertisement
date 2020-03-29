@@ -88,7 +88,7 @@
             @else
                 <div class="col-12">
                     <a href="{{ route('store-company-course') }}">
-                        <h4>{{ trans('profile.no-courses') }}</h4>
+                        <h4>{{ trans('empty.no-courses') }}</h4>
                     </a>
                 </div>
             @endif

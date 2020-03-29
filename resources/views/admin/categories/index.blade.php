@@ -68,7 +68,7 @@
                 @else
                     <tr>
                         <td colspan="5">
-                            <strong>{{ trans('profile.no-categories') }}</strong>
+                            <strong>{{ trans('empty.no-categories') }}</strong>
                         </td>
                     </tr>
                 @endif

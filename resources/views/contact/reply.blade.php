@@ -40,7 +40,7 @@
             @if($contact->cv)
                 <a href="{{ $contact->cv }}" _target="blank">{{ __('Open') }}</a>
             @else
-                {{ trans('profile.no-files') }}
+                {{ trans('empty.no-files') }}
             @endif
             <hr>
             @if(count($contact->replies) > 0)

@@ -27,7 +27,6 @@ return [
   'posts-list' => 'List of Posts',
   'post-create' => 'Create Post',
   'post-by' => 'Posted by',
-  'no-post' => 'No posts found',
   'edit' => 'Edit',
   'show' => 'Show',
   'user-foreigns' => 'User List of foreign advertisements',
@@ -44,7 +43,6 @@ return [
   'phone-not-require' => 'Phone (not required)',
   'upload-files' => 'Upload files',
   'upload-image' => 'Upload cover image',
-  'no-files' => 'There is in no files',
   'files' => 'Files',
   'level' => 'Level',
   'radius' => 'Radius',
@@ -69,7 +67,6 @@ return [
   'similar' => 'Similar offers',
   'confirm-link' => 'Here is answer link: ',
   'nil-validation-faild' => 'Validation at NIL failed.',
-  'no-candidates' => 'No matching candidates',
   'room_name' => 'Chat room name',
   'cookies-policy' => 'Cookies policy',
   'regulation' => 'Regulation',
@@ -102,6 +99,4 @@ return [
   'signin-to-comment' => 'Log in to add a comment - intended only for the doctor!',
   'comment-count' => 'Number of Comments',
   'visitors-list' => 'Website visitors',
-  'no-categories' => 'No categories',
-  'no-courses' => 'No courses found, log in to add first.'
 ];

@@ -118,7 +118,7 @@
                         @else
                             <div class="row">
                                 <div class="col-12">
-                                    {{ trans('profile.no-candidates') }}
+                                    {{ trans('empty.no-candidates') }}
                                 </div>
                             </div>
                         @endif
