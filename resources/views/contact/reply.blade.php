@@ -28,7 +28,7 @@
         <div class="col-12">
             <strong>{{ __('Email:') }}</strong> {{ $contact->email }}
             <br>
-            <strong>{{ trans('sentence.first_name') }}</strong> {{ $contact->first_name }}
+            <strong>{{ trans('profile.first_name') }}</strong> {{ $contact->first_name }}
             <br>
             <strong>{{ trans('offer.city') }}</strong> {{ $contact->city }}
             <br>
@@ -40,7 +40,7 @@
             @if($contact->cv)
                 <a href="{{ $contact->cv }}" _target="blank">{{ __('Open') }}</a>
             @else
-                {{ trans('sentence.no-files') }}
+                {{ trans('profile.no-files') }}
             @endif
             <hr>
             @if(count($contact->replies) > 0)

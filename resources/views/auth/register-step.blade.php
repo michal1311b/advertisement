@@ -54,9 +54,9 @@
                                 <a href="{{ route('register') }}" class="btn btn-rounded btn-primary btn-lg">
                                     {{ trans('sentence.register') }} 
                                     {{ trans('sentence.as') }} 
-                                    {{ trans('sentence.doctor') }}/ 
-                                    {{ trans('sentence.dentist') }}/ 
-                                    {{ trans('sentence.nurse') }}
+                                    {{ trans('profile.doctor') }}/ 
+                                    {{ trans('profile.dentist') }}/ 
+                                    {{ trans('profile.nurse') }}
                                     <img class="logo" src="{{ asset('images/stuff3.png') }}" alt="{{ trans('sentence.polish') }}">
                                 </a>
                             </div>

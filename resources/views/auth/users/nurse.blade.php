@@ -19,7 +19,7 @@
             </div>
 
             <div class="form-group row">
-                <label for="birthday" class="col-md-4 col-form-label text-md-right">{{ trans('sentence.birthday') }} <span class="text-danger font-weight-bolder">*</span></label>
+                <label for="birthday" class="col-md-4 col-form-label text-md-right">{{ trans('profile.birthday') }} <span class="text-danger font-weight-bolder">*</span></label>
 
                 <div class="col-md-6">
                     <input id="birthday_n" type="text" class="form-control @error('birthday') is-invalid @enderror" name="birthday" value="{{ old('birthday') }}" required autocomplete="birthday" autofocus>
@@ -33,7 +33,7 @@
             </div>
 
             <div class="form-group row">
-                <label for="name" class="col-md-4 col-form-label text-md-right">{{ trans('sentence.first_name') }} <span class="text-danger font-weight-bolder">*</span></label>
+                <label for="name" class="col-md-4 col-form-label text-md-right">{{ trans('profile.first_name') }} <span class="text-danger font-weight-bolder">*</span></label>
 
                 <div class="col-md-6">
                     <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
@@ -75,7 +75,7 @@
             </div>
 
             <div class="form-group row">
-                <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ trans('sentence.confirm_password') }} <span class="text-danger font-weight-bolder">*</span></label>
+                <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ trans('profile.confirm_password') }} <span class="text-danger font-weight-bolder">*</span></label>
 
                 <div class="col-md-6">
                     <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
@@ -83,12 +83,12 @@
             </div>
 
             <div class="form-group row">
-                <label class="col-md-4 col-form-label text-md-right" for="sex">{{ trans('sentence.sex') }} <span class="text-danger font-weight-bolder">*</span></label>
+                <label class="col-md-4 col-form-label text-md-right" for="sex">{{ trans('profile.sex') }} <span class="text-danger font-weight-bolder">*</span></label>
                 <div class="col-md-6">
                     <select data-live-search="true" class="form-control @error('sex') is-invalid @enderror" name="sex" id="sex">
                         <option>{{ trans('sentence.choose') }}</option>
-                        <option {{ old('sex') == 'male' ? 'selected' : '' }} value="male">{{ trans('sentence.male') }}</option>
-                        <option {{ old('sex') == 'female' ? 'selected' : '' }} value="female">{{ trans('sentence.female') }}</option>
+                        <option {{ old('sex') == 'male' ? 'selected' : '' }} value="male">{{ trans('profile.male') }}</option>
+                        <option {{ old('sex') == 'female' ? 'selected' : '' }} value="female">{{ trans('profile.female') }}</option>
                     </select>
                     @error('sex')
                         <div class="alert alert-danger">{{ $message }}</div>
@@ -97,7 +97,7 @@
             </div>
 
             <div class="form-group row">
-                <label for="specializations" class="col-md-4 col-form-label text-md-right">{{trans('sentence.specializations')}}</label>
+                <label for="specializations" class="col-md-4 col-form-label text-md-right">{{trans('profile.specializations')}}</label>
                 <div class="col-md-6">
                     <select multiple="multiple"
                             class="form-control{{ $errors->has('specializations') ? ' is-invalid' : '' }}"
@@ -117,7 +117,7 @@
             </div>
 
             <div class="form-group row">
-                <label for="specializationsp" class="col-md-4 col-form-label text-md-right">{{trans('sentence.specializations.pending')}}</label>
+                <label for="specializationsp" class="col-md-4 col-form-label text-md-right">{{trans('profile.specializations.pending')}}</label>
                 <div class="col-md-6">
                     <select multiple="multiple"
                             class="form-control{{ $errors->has('specializations') ? ' is-invalid' : '' }}"

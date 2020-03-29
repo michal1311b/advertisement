@@ -100,8 +100,8 @@
                         </a>
     
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                            <a class="side-nav dropdown-item" href="{{ route('edit-user', auth()->user()->id) }}" title="{{ trans('sentence.user-profile')}}">{{ trans('sentence.user-profile')}}</a>
-                            <a class="side-nav dropdown-item {{ Request::is('user/rooms') ? 'text-white active' : null }}" href="{{ route('user-rooms') }}" title="{{ trans('sentence.user-message')}}">{{ trans('sentence.user-message')}}</a>
+                            <a class="side-nav dropdown-item" href="{{ route('edit-user', auth()->user()->id) }}" title="{{ trans('profile.user-profile')}}">{{ trans('profile.user-profile')}}</a>
+                            <a class="side-nav dropdown-item {{ Request::is('user/rooms') ? 'text-white active' : null }}" href="{{ route('user-rooms') }}" title="{{ trans('profile.user-message')}}">{{ trans('profile.user-message')}}</a>
                             <a class="side-nav dropdown-item {{ Request::is('offer/list') ? 'text-white active' : null }}" href="{{ route('advertisement-list') }}" title="{{ trans('offer.offers-list')}}">{{ trans('offer.offers-list')}}</a>
                             
                             @if(auth()->user()->hasRole('admin') || auth()->user()->hasRole('company'))
@@ -109,7 +109,7 @@
                                 <a class="side-nav dropdown-item {{ Request::is('offer/create') ? 'text-white active' : null }}" href="{{ route('create-advertisement') }}" title="{{ trans('offer.offer-create-poland')}}">{{ trans('offer.offer-create-poland')}} <span class="btn btn-rounded btn-success btn-sm"><i class="fas fa-plus-circle"></i></span></a>
                                 <a class="side-nav dropdown-item {{ Request::is('user/foreigns') ? 'text-white active' : null }}" href="{{ route('user-foreign-list') }}" title="{{ trans('offer.user-foreigns')}}">{{ trans('offer.user-foreigns')}}</a>
                                 <a class="side-nav dropdown-item {{ Request::is('foreign/create') ? 'text-white active' : null }}" href="{{ route('create-foreign') }}" title="{{ trans('offer.offer-create-foreign')}}">{{ trans('offer.offer-create-foreign')}} <span class="btn btn-rounded btn-success btn-sm"><i class="fas fa-plus-circle"></i></span></a>
-                                <a class="side-nav dropdown-item {{ Request::is('user/courses') ? 'text-white active' : null }}" href="{{ route('user-course-list') }}" title="{{ trans('sentence.user-courses')}}">{{ trans('sentence.user-courses')}}</a>
+                                <a class="side-nav dropdown-item {{ Request::is('user/courses') ? 'text-white active' : null }}" href="{{ route('user-course-list') }}" title="{{ trans('profile.user-courses')}}">{{ trans('profile.user-courses')}}</a>
                                 <a class="side-nav dropdown-item {{ Request::is('user/courses/create') ? 'text-white active' : null }}" href="{{ route('create-course') }}" title="{{ trans('buttons.btn-add') }} {{ trans('sentence.courses') }}">{{ trans('buttons.btn-add') }} <span class="text-lowercase">{{ trans('sentence.courses') }} <span class="btn btn-rounded btn-success btn-sm"><i class="fas fa-plus-circle"></i></span></span></a>
                             @endif
 

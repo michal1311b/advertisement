@@ -11,7 +11,7 @@
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
 
-        <label for="specializations" class="col-form-label">{{ trans('sentence.specializations') }}</label>
+        <label for="specializations" class="col-form-label">{{ trans('profile.specializations') }}</label>
         <select multiple="multiple"
                 class="form-control{{ $errors->has('specializations') ? ' is-invalid' : '' }}"
                 id="specializations" name="specializations[]">

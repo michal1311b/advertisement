@@ -17,7 +17,7 @@
                 @method('PATCH') 
                 @csrf
                 <div class="input-group mb-3">
-                    <input id="name" type="name" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ $language->name }}" placeholder="{{ trans('sentence.name') }}" required autofocus>
+                    <input id="name" type="name" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ $language->name }}" placeholder="{{ trans('profile.name') }}" required autofocus>
 
                     @if ($errors->has('name'))
                         <span class="invalid-feedback" role="alert">

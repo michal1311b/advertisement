@@ -72,7 +72,7 @@
             </div>
         @else
             <div class="col-12">
-                <h4>{{ trans('sentence.no-post') }}</h4>
+                <h4>{{ trans('profile.no-post') }}</h4>
             </div>
         @endif
     </div>

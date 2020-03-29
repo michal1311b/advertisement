@@ -7,7 +7,7 @@
                 @if($editUser->doctor != null)
                     @if($editUser->doctor->cv !== null)
                         <div class="btn-group" role="group" aria-label="Basic example">
-                            <a href="{{ $editUser->doctor->cv }}" class="btn btn-rounded btn-primary" target="_blank">{{ trans('sentence.show-cv') }}</a>
+                            <a href="{{ $editUser->doctor->cv }}" class="btn btn-rounded btn-primary" target="_blank">{{ trans('profile.show-cv') }}</a>
                             <button class="btn btn-rounded btn-danger" data-toggle="modal"
                                 data-target="#modalremovecv{{$editUser->doctor->id}}">{{ trans('buttons.btn-delete') }}</i>
                             </button>
@@ -28,7 +28,7 @@
                             @csrf
                             <div class="form-group row mb-0">
                                 <div class="col-md-8 offset-md-4">
-                                    <div class="pb-3">{{ trans('sentence.add-cv-file') }}</div>
+                                    <div class="pb-3">{{ trans('profile.add-cv-file') }}</div>
                                     <input type="file" class="dropzone" id="dropzone" name="cv">
 
                                     <div id="template-preview">
@@ -63,7 +63,7 @@
                 @if($editUser->nurse != null)
                     @if($editUser->nurse->cv != null)
                         <div class="btn-group" role="group" aria-label="Basic example">
-                            <a href="{{ $editUser->nurse->cv }}" class="btn btn-rounded btn-primary" target="_blank">{{ trans('sentence.show-cv') }}</a>
+                            <a href="{{ $editUser->nurse->cv }}" class="btn btn-rounded btn-primary" target="_blank">{{ trans('profile.show-cv') }}</a>
                             <button class="btn btn-rounded btn-danger" data-toggle="modal"
                                 data-target="#modalremovenursecv{{$editUser->nurse->id}}">{{ trans('buttons.btn-delete') }}</i>
                             </button>
@@ -84,7 +84,7 @@
                             @csrf
                             <div class="form-group row mb-0">
                                 <div class="col-md-8 offset-md-4">
-                                    <div class="pb-3">{{ trans('sentence.add-cv-file') }}</div>
+                                    <div class="pb-3">{{ trans('profile.add-cv-file') }}</div>
                                     <input type="file" class="dropzone" id="dropzone" name="cv">
 
                                     <div id="template-preview">

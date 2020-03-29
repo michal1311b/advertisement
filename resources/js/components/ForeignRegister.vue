@@ -9,16 +9,16 @@
 
         <ul class="nav nav-tabs" id="myTab" role="tablist">
             <li class="nav-item">
-                <a class="nav-link step1 active" id="step1-tab" data-toggle="tab" href="#step1" role="tab" aria-controls="step1" aria-selected="true">{{ trans('sentence.step1') }}</a>
+                <a class="nav-link step1 active" id="step1-tab" data-toggle="tab" href="#step1" role="tab" aria-controls="step1" aria-selected="true">{{ trans('buttons.step1') }}</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link step2" id="step2-tab" data-toggle="tab" href="#step2" role="tab" aria-controls="step2" aria-selected="false">{{ trans('sentence.step2') }}</a>
+                <a class="nav-link step2" id="step2-tab" data-toggle="tab" href="#step2" role="tab" aria-controls="step2" aria-selected="false">{{ trans('buttons.step2') }}</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link step3" id="step3-tab" data-toggle="tab" href="#step3" role="tab" aria-controls="step3" aria-selected="false">{{ trans('sentence.step3') }}</a>
+                <a class="nav-link step3" id="step3-tab" data-toggle="tab" href="#step3" role="tab" aria-controls="step3" aria-selected="false">{{ trans('buttons.step3') }}</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link step4" id="step4-tab" data-toggle="tab" href="#step4" role="tab" aria-controls="step4" aria-selected="false">{{ trans('sentence.step4') }}</a>
+                <a class="nav-link step4" id="step4-tab" data-toggle="tab" href="#step4" role="tab" aria-controls="step4" aria-selected="false">{{ trans('buttons.step4') }}</a>
             </li>
         </ul>
         <form method="POST" @submit.prevent="handleSubmit(submitForm)" enctype="multipart/form-data">
@@ -26,10 +26,10 @@
                 <div class="tab-pane fade active show" id="step1" role="tabpanel" aria-labelledby="step1">
                     <div class="card-body">
                         <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ trans('sentence.username') }} <span class="text-danger font-weight-bolder">*</span></label>
+                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ trans('profile.username') }} <span class="text-danger font-weight-bolder">*</span></label>
 
                             <div class="col-md-6">
-                                <ValidationProvider :name="trans('sentence.username')" rules="required|min:3|max:190" v-slot="{ errors }">
+                                <ValidationProvider :name="trans('profile.username')" rules="required|min:3|max:190" v-slot="{ errors }">
                                     <input id="name" type="text" class="form-control" name="name" v-model="formInputs.name" autocomplete="name" autofocus>
                                     <span class="text-danger">{{ errors[0] }}</span >
                                 </ValidationProvider>
@@ -59,10 +59,10 @@
                             </div>
 
                             <div class="form-group row">
-                                <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ trans('sentence.confirm_password') }} <span class="text-danger font-weight-bolder">*</span></label>
+                                <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ trans('profile.confirm_password') }} <span class="text-danger font-weight-bolder">*</span></label>
 
                                 <div class="col-md-6">
-                                    <ValidationProvider :name="trans('sentence.confirm_password')" v-slot="{ errors }" vid="password-confirm">
+                                    <ValidationProvider :name="trans('profile.confirm_password')" v-slot="{ errors }" vid="password-confirm">
                                         <input id="password-confirm" type="password" class="form-control" name="password_confirmation" v-model="formInputs.password_confirmation" autocomplete="new-password">
                                         <span class="text-danger">{{ errors[0] }}</span >
                                     </ValidationProvider>
@@ -134,7 +134,7 @@
                         <div class="form-group row mb-0">
                             <div class="col-12">
                                 <a class="btn btn-rounded btn-primary go-step2 text-white">
-                                    {{ trans('sentence.step2') }}
+                                    {{ trans('buttons.step2') }}
                                 </a>
                             </div>
                         </div>
@@ -183,7 +183,7 @@
                         <div class="form-group row mb-0">
                             <div class="col-12">
                                 <a class="btn btn-rounded btn-primary go-step3 text-white">
-                                    {{ trans('sentence.step3') }}
+                                    {{ trans('buttons.step3') }}
                                 </a>
                             </div>
                         </div>
@@ -247,7 +247,7 @@
                         <div class="form-group row mb-0">
                             <div class="col-12">
                                 <a class="btn btn-rounded btn-primary go-step4 text-white">
-                                    {{ trans('sentence.step4') }}
+                                    {{ trans('buttons.step4') }}
                                 </a>
                             </div>
                         </div>
@@ -256,9 +256,9 @@
                 <div class="tab-pane fade" id="step4" role="tabpanel" aria-labelledby="step4">
                     <div class="card-body">
                         <div class="form-group row">
-                            <label class="col-12 col-md-3 col-form-label text-md-right" for="specialization_id">{{ trans('sentence.specialization') }} <span class="text-danger font-weight-bolder">*</span></label>
+                            <label class="col-12 col-md-3 col-form-label text-md-right" for="specialization_id">{{ trans('profile.specialization') }} <span class="text-danger font-weight-bolder">*</span></label>
                             <div class="col-12 col-md-9">
-                                <ValidationProvider :name="trans('sentence.specialization')" :rules="'oneOf:'+ specializationIds" v-slot="{ errors }">
+                                <ValidationProvider :name="trans('profile.specialization')" :rules="'oneOf:'+ specializationIds" v-slot="{ errors }">
                                     <select data-live-search="true" class="form-control" name="specialization_id" v-model="formInputs.specialization_id" id="specialization_id">
                                         <option selected>{{ trans('sentence.choose') }}</option>
                                         <option v-for="specialization in specializations" :key="specialization.id" :value="specialization.id">

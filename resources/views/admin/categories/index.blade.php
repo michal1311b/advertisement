@@ -32,7 +32,7 @@
                 <thead>
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col">{{trans('sentence.name')}}</th>
+                        <th scope="col">{{trans('profile.name')}}</th>
                         <th scope="col">{{__('Is active?')}}</th>
                         <th scope="col">{{trans('sentence.edit')}}</th>
                         <th scope="col">{{trans('buttons.btn-delete')}}</th>
@@ -68,7 +68,7 @@
                 @else
                     <tr>
                         <td colspan="5">
-                            <strong>{{ trans('sentence.no-categories') }}</strong>
+                            <strong>{{ trans('profile.no-categories') }}</strong>
                         </td>
                     </tr>
                 @endif

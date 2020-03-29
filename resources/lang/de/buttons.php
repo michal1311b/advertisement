@@ -23,4 +23,8 @@ return [
     'watch-all' => 'Alle Anzeigen',
     'search' => 'Suchen',
     'clear-search' => 'Klar',
+    'step1' => 'Schritt 1',
+    'step2' => 'Schritt 2',
+    'step3' => 'Schritt 3',
+    'step4' => 'Schritt 4',
 ];

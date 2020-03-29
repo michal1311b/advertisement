@@ -46,4 +46,6 @@ return [
     'newest-offers' => 'Die neuesten Angebote auf EmployMed.eu',
     'interested-offers' => 'Angebote, die Sie interessieren könnten',
     'offers-archive-descripion' => 'Archivankündigungen - Anzeigen, die nicht erweitert wurden, aber auf EmployMed.eu verfügbar waren.',
+    'locations' => 'Standorte',
+    'tags-info' => 'Fügen Sie durch Kommas getrennte Schlüsselwörter hinzu, um Ihren Eintrag besser an die Mitarbeiter anzupassen.',
 ];

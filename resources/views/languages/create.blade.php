@@ -16,7 +16,7 @@
             <form method="POST" action="{{ route('language.store') }}">
                 @csrf
                 <div class="input-group mb-3">
-                    <input id="name" type="name" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" placeholder="{{ trans('sentence.name') }}" required autofocus>
+                    <input id="name" type="name" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" placeholder="{{ trans('profile.name') }}" required autofocus>
 
                     @if ($errors->has('name'))
                         <span class="invalid-feedback" role="alert">

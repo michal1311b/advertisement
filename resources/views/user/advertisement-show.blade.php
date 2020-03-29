@@ -47,14 +47,14 @@
                                                         {{ $candidate->name }} {{ $candidate->profile->last_name }}
                                                     </div>
                                                     <div class="profile-usertitle-job">
-                                                        <div>{{ trans('sentence.specializations') }}</div>
+                                                        <div>{{ trans('profile.specializations') }}</div>
                                                         @if(count($candidate->specializations) > 0)
                                                             <ul>
                                                                 @foreach($candidate->specializations as $specialization)
                                                                     <li>
                                                                         {{ $specialization->name }}
                                                                         @if($specialization->pivot->is_pending)
-                                                                            ({{ trans('sentence.pending') }})
+                                                                            ({{ trans('profile.pending') }})
                                                                         @endif
                                                                     </li>
                                                                 @endforeach
@@ -97,7 +97,7 @@
                                                                     {{ $experience->workplace }}, {{ $experience->exp_city }}, {{ $experience->exp_company_name }}, {{ $experience->start_date }} - {{ $experience->end_date }}
                                                                 </div>
                                                                 <div>
-                                                                    <strong>{{ trans('sentence.responsibilities') }}</strong>
+                                                                    <strong>{{ trans('profile.responsibilities') }}</strong>
                                                                 </div>
                                                                 <div>{!! $experience->responsibility !!}</div>
                                                             </li>
@@ -118,7 +118,7 @@
                         @else
                             <div class="row">
                                 <div class="col-12">
-                                    {{ trans('sentence.no-candidates') }}
+                                    {{ trans('profile.no-candidates') }}
                                 </div>
                             </div>
                         @endif

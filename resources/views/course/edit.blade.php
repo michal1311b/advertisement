@@ -29,7 +29,7 @@
         </div>
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">{{ trans('sentence.edit-courses') }}</div>
+                <div class="card-header">{{ trans('profile.edit-courses') }}</div>
 
                 <div class="card-body">
                     <edit-course 

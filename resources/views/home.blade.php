@@ -34,10 +34,10 @@
                             </li>
                         @endif
                             <li class="nav-item home-page">
-                                <a class="nav-link lang-dropdown" href="{{ route('edit-user', auth()->user()->id) }}" title="{{ trans('sentence.user-profile')}}">{{ trans('sentence.user-profile')}}</a>
+                                <a class="nav-link lang-dropdown" href="{{ route('edit-user', auth()->user()->id) }}" title="{{ trans('profile.user-profile')}}">{{ trans('profile.user-profile')}}</a>
                             </li>
                             <li class="nav-item home-page">   
-                                <a class="nav-link lang-dropdown" href="{{ route('user-rooms') }}" title="{{ trans('sentence.user-message')}}">{{ trans('sentence.user-message')}}</a>
+                                <a class="nav-link lang-dropdown" href="{{ route('user-rooms') }}" title="{{ trans('profile.user-message')}}">{{ trans('profile.user-message')}}</a>
                             </li>
                             <li class="nav-item home-page">
                                 <a class="nav-link lang-dropdown" href="{{ route('advertisement-list') }}" title="{{ trans('offer.offers-list')}}">{{ trans('offer.offers-list')}}</a>
@@ -56,7 +56,7 @@
                                     <a class="nav-link lang-dropdown" href="{{ route('create-foreign') }}" title="{{ trans('offer.offer-create-foreign')}}">{{ trans('offer.offer-create-foreign')}} <span class="btn btn-rounded btn-success btn-sm"><i class="fas fa-plus-circle"></i></span></a>
                                 </li>
                                 <li class="nav-item home-page">
-                                    <a class="nav-link lang-dropdown" href="{{ route('user-course-list') }}" title="{{ trans('sentence.user-courses')}}">{{ trans('sentence.user-courses')}}</a>
+                                    <a class="nav-link lang-dropdown" href="{{ route('user-course-list') }}" title="{{ trans('profile.user-courses')}}">{{ trans('profile.user-courses')}}</a>
                                 </li>
                                 <li class="nav-item home-page">
                                     <a class="nav-link lang-dropdown" href="{{ route('create-course') }}" title="{{ trans('buttons.btn-add') }} {{ trans('sentence.courses') }}">{{ trans('buttons.btn-add') }} <span class="text-lowercase">{{ trans('sentence.courses') }} <span class="btn btn-rounded btn-success btn-sm"><i class="fas fa-plus-circle"></i></span></span></a>
@@ -68,7 +68,7 @@
                                     <a class="nav-link lang-dropdown" href="{{ route('watch-visitors-on-map') }}" title="{{ trans('sentence.visitors-list') }}">{{ trans('sentence.visitors-list') }}</a>
                                 </li>
                                 <li class="nav-item home-page">
-                                    <a class="nav-link lang-dropdown" href="{{ route('users.list') }}" title="{{ trans('sentence.user-list')}}">{{ trans('sentence.user-list')}}</a>
+                                    <a class="nav-link lang-dropdown" href="{{ route('users.list') }}" title="{{ trans('profile.user-list')}}">{{ trans('profile.user-list')}}</a>
                                 </li>
                                 <li class="nav-item home-page">
                                     <a class="nav-link lang-dropdown" href="{{ route('categories.index') }}" title="{{ trans('sentence.category-list')}}">{{ trans('sentence.category-list')}}</a>

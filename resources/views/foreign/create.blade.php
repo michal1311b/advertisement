@@ -33,13 +33,13 @@
 
                         <ul class="nav nav-tabs" id="myTab">
                             <li class="nav-item">
-                                <a class="nav-link active step1" data-toggle="tab" href="#step1">{{ trans('sentence.step1') }}</a>
+                                <a class="nav-link active step1" data-toggle="tab" href="#step1">{{ trans('buttons.step1') }}</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link step2" data-toggle="tab" href="#step2">{{ trans('sentence.step2') }}</a>
+                                <a class="nav-link step2" data-toggle="tab" href="#step2">{{ trans('buttons.step2') }}</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link step3" data-toggle="tab" href="#step3">{{ trans('sentence.step3') }}</a>
+                                <a class="nav-link step3" data-toggle="tab" href="#step3">{{ trans('buttons.step3') }}</a>
                             </li>
                         </ul>
 

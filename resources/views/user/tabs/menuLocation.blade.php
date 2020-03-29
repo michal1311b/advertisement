@@ -2,7 +2,7 @@
                     
     <div class="col-md-12 py-3">
         <div class="card">
-            <div class="card-header">{{ trans('sentence.edit-prefered-location') }}</div>
+            <div class="card-header">{{ trans('profile.edit-prefered-location') }}</div>
 
             <div class="card-body">
                 <form method="POST" action="{{ route('store-prefered-location', $editUser) }}">

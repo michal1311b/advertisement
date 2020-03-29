@@ -43,11 +43,11 @@
                             <div class="col-12">
                                 <ul class="list-group">
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        {{ trans('sentence.first_name') }}
+                                        {{ trans('profile.first_name') }}
                                         <span class="badge badge-pill">{{ $participant->first_name }}</span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        {{ trans('sentence.last_name') }}
+                                        {{ trans('profile.last_name') }}
                                         <span class="badge badge-pill">{{ $participant->last_name }}</span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">

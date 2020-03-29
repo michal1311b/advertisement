@@ -84,7 +84,7 @@
                         <a class="nav-link warning" data-toggle="tab" href="#menu1">
                             {{ trans('sentence.experience') }} 
                             @if(count($editUser->experiences) == 0)
-                                <span class="badge blue-tooltip" data-toggle="tooltip" title="{{ trans('sentence.fill-experience') }}">!</span>
+                                <span class="badge blue-tooltip" data-toggle="tooltip" title="{{ trans('profile.fill-experience') }}">!</span>
                             @endif
                         </a>
                     </li>
@@ -92,7 +92,7 @@
                         <a class="nav-link warning" data-toggle="tab" href="#menu2">
                             {{ trans('sentence.courses') }} 
                             @if(count($editUser->courses) == 0)
-                                <span class="badge blue-tooltip" data-toggle="tooltip" title="{{ trans('sentence.fill-courses') }}">!</span>
+                                <span class="badge blue-tooltip" data-toggle="tooltip" title="{{ trans('profile.fill-courses') }}">!</span>
                             @endif
                         </a>
                     </li>
@@ -100,19 +100,19 @@
                         <a class="nav-link warning" data-toggle="tab" href="#menu3">
                             {{ trans('sentence.languages') }} 
                             @if(count($userLanguages) == 0)
-                                <span class="badge blue-tooltip" data-toggle="tooltip" title="{{ trans('sentence.fill-languages') }}">!</span>
+                                <span class="badge blue-tooltip" data-toggle="tooltip" title="{{ trans('profile.fill-languages') }}">!</span>
                             @endif
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link warning" data-toggle="tab" href="#menu4">
-                            {{ trans('sentence.preferences') }} 
+                            {{ trans('profile.preferences') }} 
                             @if(
                                 !$editUser->preference->work_id ||
                                 !$editUser->preference->settlement_id ||
                                 !$editUser->preference->currency_id ||
                                 !$editUser->preference->min_salary)
-                                <span class="badge blue-tooltip" data-toggle="tooltip" title="{{ trans('sentence.fill-preferences') }}">!</span>
+                                <span class="badge blue-tooltip" data-toggle="tooltip" title="{{ trans('profile.fill-preferences') }}">!</span>
                             @endif
                         </a>
                     </li>
@@ -120,7 +120,7 @@
                         <a class="nav-link warning" data-toggle="tab" href="#menu4a">
                             {{ trans('offer.locations') }} 
                             @if(count($userLocations) == 0)
-                                <span class="badge blue-tooltip" data-toggle="tooltip" title="{{ trans('sentence.fill-locations') }}">!</span>
+                                <span class="badge blue-tooltip" data-toggle="tooltip" title="{{ trans('profile.fill-locations') }}">!</span>
                             @endif
                         </a>
                     </li>
@@ -129,12 +129,12 @@
                             {{ __('CV') }} 
                             @if($editUser->doctor != null)
                                 @if($editUser->doctor->cv === null)
-                                    <span class="badge blue-tooltip" data-toggle="tooltip" title="{{ trans('sentence.add-cv') }}">!</span>
+                                    <span class="badge blue-tooltip" data-toggle="tooltip" title="{{ trans('profile.add-cv') }}">!</span>
                                 @endif
                             @endif
                             @if($editUser->nurse != null)
                                 @if($editUser->nurse->cv === null)
-                                    <span class="badge blue-tooltip" data-toggle="tooltip" title="{{ trans('sentence.add-cv') }}">!</span>
+                                    <span class="badge blue-tooltip" data-toggle="tooltip" title="{{ trans('profile.add-cv') }}">!</span>
                                 @endif
                             @endif
                         </a>

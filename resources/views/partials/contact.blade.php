@@ -23,7 +23,7 @@
                         @enderror
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="first_name">{{ trans('sentence.first_name')}}</label>
+                        <label for="first_name">{{ trans('profile.first_name')}}</label>
                         <input type="text" class="form-control" id="first_name" name="first_name" placeholder="" required value="{{ auth()->user()->name ?? null }}">
                         @error('first_name')
                             <div class="alert alert-danger">{{ $message }}</div>
@@ -52,12 +52,12 @@
 
             <div class="form-row">
                 <div class="form-group col-md-12">
-                    <label for="cv">{{ trans('sentence.upload-cv')}}</label>
+                    <label for="cv">{{ trans('profile.upload-cv')}}</label>
                     
                     @if(isset(auth()->user()->doctor) && auth()->user()->doctor->cv)
-                        <a href="{{ auth()->user()->doctor->cv }}" class="btn btn-rounded btn-primary" target="_blank">{{ trans('sentence.show-cv') }}</a>
+                        <a href="{{ auth()->user()->doctor->cv }}" class="btn btn-rounded btn-primary" target="_blank">{{ trans('profile.show-cv') }}</a>
                     @elseif(isset(auth()->user()->nurse) && auth()->user()->nurse->cv)
-                        <a href="{{ auth()->user()->nurse->cv }}" class="btn btn-rounded btn-primary" target="_blank">{{ trans('sentence.show-cv') }}</a>
+                        <a href="{{ auth()->user()->nurse->cv }}" class="btn btn-rounded btn-primary" target="_blank">{{ trans('profile.show-cv') }}</a>
                     @else
                         <input type="file" class="form-control @error('cv') is-invalid @enderror" name="cv" required/>
                         @error('cv')

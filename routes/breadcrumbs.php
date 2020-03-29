@@ -110,7 +110,7 @@ Breadcrumbs::for('foreign-edit', function ($trail, $foreign) {
 
 Breadcrumbs::for('course-edit', function ($trail, $course) {
     $trail->parent('home');
-    $trail->push(trans('sentence.user-courses'), route('user-course-list'));
+    $trail->push(trans('profile.user-courses'), route('user-course-list'));
     $trail->push(trans('sentence.edit') . ' ' . $course->title, route('edit-course', $course));
 });
 
@@ -295,13 +295,13 @@ Breadcrumbs::for('pages', function ($trail) {
 
 Breadcrumbs::for('users', function ($trail) {
     $trail->parent('home');
-    $trail->push(trans('sentence.user-list'), route('users.list'));
+    $trail->push(trans('profile.user-list'), route('users.list'));
 });
 
 Breadcrumbs::for('participants', function ($trail, $course) {
     $trail->parent('home');
     $trail->push(trans('sentence.courses'), route('user-course-list'));
-    $trail->push(trans('sentence.participants') . ': ' . $course->title, route('user-course-participants', $course));
+    $trail->push(trans('profile.participants') . ': ' . $course->title, route('user-course-participants', $course));
 });
 
 Breadcrumbs::for('site.page', function ($trail, $page) {

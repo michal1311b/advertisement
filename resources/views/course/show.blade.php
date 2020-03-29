@@ -60,7 +60,7 @@
                                         <span class="badge badge-pill">{{ $course->state->name }}</span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        {{ trans('sentence.specialization') }}
+                                        {{ trans('profile.specialization') }}
                                         <span class="badge badge-pill badge-info text-white">{{ $course->specialization->name }}</span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
@@ -68,11 +68,11 @@
                                         <span class="badge badge-pill">{{ $course->created_at }}</span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        {{ trans('sentence.start_date') }}
+                                        {{ trans('profile.start_date') }}
                                         <span class="badge badge-pill badge-primary">{{ $course->start_date }}</span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        {{ trans('sentence.end_date') }}
+                                        {{ trans('profile.end_date') }}
                                         <span class="badge badge-pill badge-primary">{{ $course->end_date }}</span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">

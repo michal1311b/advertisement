@@ -1,7 +1,7 @@
 <div class="tab-pane container fade" id="menu3">
     <div class="col-md-12 py-3">
         <div class="card">
-            <div class="card-header">{{ trans('sentence.edit-language') }}</div>
+            <div class="card-header">{{ trans('profile.edit-language') }}</div>
 
             <div class="card-body">
                 <form method="POST" action="{{ route('store-language', $editUser) }}">

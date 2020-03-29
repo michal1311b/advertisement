@@ -45,7 +45,7 @@
                         <div class="form-group row mb-0">
                             <div class="col-12">
                                 <a class="btn btn-rounded btn-primary go-step2 text-white">
-                                    {{ trans('sentence.step2') }}
+                                    {{ trans('buttons.step2') }}
                                 </a>
                             </div>
                         </div>
@@ -109,7 +109,7 @@
                         <div class="form-group row mb-0">
                             <div class="col-12">
                                 <a class="btn btn-rounded btn-primary go-step3 text-white">
-                                    {{ trans('sentence.step3') }}
+                                    {{ trans('buttons.step3') }}
                                 </a>
                             </div>
                         </div>
@@ -118,9 +118,9 @@
                 <div class="tab-pane fade" id="step3" role="tabpanel" aria-labelledby="step3">
                     <div class="card-body">
                         <div class="form-group row">
-                            <label class="col-12 col-md-3 col-form-label text-md-right" for="specialization_id">{{ trans('sentence.specialization') }} <span class="text-danger font-weight-bolder">*</span></label>
+                            <label class="col-12 col-md-3 col-form-label text-md-right" for="specialization_id">{{ trans('profile.specialization') }} <span class="text-danger font-weight-bolder">*</span></label>
                             <div class="col-12 col-md-9">
-                                <ValidationProvider :name="trans('sentence.specialization')" :rules="'oneOf:'+ specializationIds" v-slot="{ errors }">
+                                <ValidationProvider :name="trans('profile.specialization')" :rules="'oneOf:'+ specializationIds" v-slot="{ errors }">
                                     <select data-live-search="true" class="form-control" name="specialization_id" v-model="formInputs.specialization_id" id="specialization_id">
                                         <option selected>{{ trans('sentence.choose') }}</option>
                                         <option v-for="specialization in specializations" :key="specialization.id" :value="specialization.id">

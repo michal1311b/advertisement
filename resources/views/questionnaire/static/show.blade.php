@@ -20,17 +20,17 @@
                     <form method="POST" action="{{ route('static.questionnaire.store') }}">
                         @csrf
                         <div class="form-group">
-                            <h5><span class="grey">1</span>{{ trans('sentence.sex') }}</h5>
+                            <h5><span class="grey">1</span>{{ trans('profile.sex') }}</h5>
                             <div class="form-check radio px-1">
                                 <input class="form-check-input custom-checkbox" type="radio" value="kobieta" id="female" name="sex">
                                 <label class="form-check-label radio-label" for="female">
-                                    {{ trans('sentence.female') }}
+                                    {{ trans('profile.female') }}
                                 </label>
                             </div>
                             <div class="form-check radio px-1">
                                 <input class="form-check-input custom-checkbox" type="radio" value="mężczyzna" id="male" name="sex">
                                 <label class="form-check-label radio-label" for="male">
-                                    {{ trans('sentence.male') }}
+                                    {{ trans('profile.male') }}
                                 </label>
                             </div>
                         </div>
@@ -77,12 +77,12 @@
 
                         <div class="form-group row">
                             <label for="specializations" class="col-12 col-form-label">
-                                <h5><span class="grey">3</span>{{ trans('sentence.specializations') }}</h5>
+                                <h5><span class="grey">3</span>{{ trans('profile.specializations') }}</h5>
                             </label>
                             <div class="col-md-12">
                                 <select class="form-control{{ $errors->has('specializations') ? ' is-invalid' : '' }}"
                                         id="specializations" name="specialization_id">
-                                        <option value="">{{ trans('sentence.no-specialization') }}</option>
+                                        <option value="">{{ trans('profile.no-specialization') }}</option>
                                     @foreach ($specializations as $key => $specialization)
                                         <option value="{{ $specialization->id }}">{{ $specialization->name }}</option>
                                     @endforeach
@@ -97,12 +97,12 @@
 
                         <div class="form-group row">
                             <label for="specializations" class="col-12 col-form-label">
-                                <h5><span class="grey">4</span>{{ trans('sentence.specializations.pending') }}</h5>
+                                <h5><span class="grey">4</span>{{ trans('profile.specializations.pending') }}</h5>
                             </label>
                             <div class="col-md-12">
                                 <select class="form-control{{ $errors->has('specializations') ? ' is-invalid' : '' }}"
                                         id="specializationsp" name="specializationp_id">
-                                        <option value="">{{ trans('sentence.no-specialization') }}</option>
+                                        <option value="">{{ trans('profile.no-specialization') }}</option>
                                     @foreach ($specializations as $key => $specialization)
                                         <option value="{{ $specialization->id }}">{{ $specialization->name }}</option>
                                     @endforeach
@@ -116,7 +116,7 @@
                         </div>
 
                         <div class="form-group">
-                            <h5><span class="grey">5</span>{{ trans('sentence.workplace') }}</h5>
+                            <h5><span class="grey">5</span>{{ trans('profile.workplace') }}</h5>
                             <div class="form-check radio px-1">
                                 <input class="form-check-input custom-checkbox" type="radio" value="Szpital" id="hospital" name="workplace">
                                 <label class="form-check-label radio-label" for="hospital">

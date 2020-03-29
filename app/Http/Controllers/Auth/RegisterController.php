@@ -163,7 +163,7 @@ class RegisterController extends Controller
 
             if(!isset($request->specializations) && !isset($request->specializationsp)) {
                 return back()->withErrors([
-                    'message' => trans('sentence.one-specialization-at-least')
+                    'message' => trans('profile.one-specialization-at-least')
                 ])->withInput($request->all());
             }
 

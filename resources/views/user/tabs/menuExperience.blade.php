@@ -1,14 +1,14 @@
 <div class="tab-pane container fade" id="menu1">
     <div class="col-md-12 py-3">
         <div class="card">
-            <div class="card-header">{{ trans('sentence.edit-experience') }}</div>
+            <div class="card-header">{{ trans('profile.edit-experience') }}</div>
 
             <div class="card-body">
                 <form method="POST" action="{{ route('store-experience', $editUser) }}">
                     @csrf
                     @if($editUser->doctor !== null || $editUser->nurse !== null)
                         <div class="form-group row">
-                            <label for="workplace" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.workplace') }}</label>
+                            <label for="workplace" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('profile.workplace') }}</label>
 
                             <div class="col-12 col-md-9">
                                 <input id="workplace" type="text" class="form-control @error('workplace') is-invalid @enderror" name="workplace" value="{{ $experience->workplace ?? '' }}" autocomplete="workplace" autofocus>
@@ -41,7 +41,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="start_date" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.start_date') }}</label>
+                            <label for="start_date" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('profile.start_date') }}</label>
 
                             <div class="col-12 col-md-9">
                                 <input id="start_date" type="text" class="form-control @error('start_date') is-invalid @enderror" name="start_date" value="{{ $experience->start_date ?? '' }}" autocomplete="start_date" autofocus placeholder="YYYY-MM-DD">
@@ -52,7 +52,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="end_date" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.end_date') }}</label>
+                            <label for="end_date" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('profile.end_date') }}</label>
 
                             <div class="col-12 col-md-9">
                                 <input id="end_date" type="text" class="form-control @error('end_date') is-invalid @enderror" name="end_date" value="{{ $experience->end_date ?? '' }}" autocomplete="end_date" autofocus placeholder="YYYY-MM-DD">
@@ -71,14 +71,14 @@
                                     type="checkbox" name="until_now" id="until_now" value="1"
                                     {{ old('until_now', 0)  == 1 ? 'checked' : '' }}>
                                     <label class="form-check-label" for="until_now">
-                                    {{ trans('sentence.until') }}
+                                    {{ trans('profile.until') }}
                                     </label>
                                 </div>
                             </div>
                         </div>
 
                         <div class="form-group row">
-                            <label for="responsibility" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.responsibilities') }}</label>
+                            <label for="responsibility" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('profile.responsibilities') }}</label>
 
                             <div class="col-12 col-md-9">
                                 <textarea id="responsibility" type="responsibility" class="form-control @error('responsibility') is-invalid @enderror" name="responsibility" value="{{ old('responsibility') }}" autocomplete="responsibility" autofocus rows="3"></textarea>
@@ -100,7 +100,7 @@
 
                 @foreach($editUser->experiences as $experience)
                     <div class="row pt-3">
-                        <div class="font-weight-bold col-12 col-md-3 text-md-right">{{ trans('sentence.workplace') }}</div>
+                        <div class="font-weight-bold col-12 col-md-3 text-md-right">{{ trans('profile.workplace') }}</div>
 
                         <div class="col-12 col-md-7">
                             {{ $experience->workplace }}
@@ -175,7 +175,7 @@
                     </div>
 
                     <div class="row">
-                        <div class="font-weight-bold col-12 col-md-3 text-md-right">{{ trans('sentence.responsibilities') }}</div>
+                        <div class="font-weight-bold col-12 col-md-3 text-md-right">{{ trans('profile.responsibilities') }}</div>
 
                         <div class="col-12 col-md-7">
                             {!! $experience->responsibility !!}

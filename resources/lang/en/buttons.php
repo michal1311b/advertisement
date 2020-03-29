@@ -23,4 +23,8 @@ return [
     'watch-all' => 'Watch all offers',
     'search' => 'Search',
     'clear-search' => 'Clear Search',
+    'step1' => 'Step 1',
+    'step2' => 'Step 2',
+    'step3' => 'Step 3',
+    'step4' => 'Krok 4',
 ];

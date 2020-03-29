@@ -46,4 +46,6 @@ return [
     'newest-offers' => 'The latest offers on EmployMed.eu',
     'interested-offers' => 'Offers that may interest you',
     'offers-archive-descripion' => 'Archival announcements - ads that were not extended but were available on EmployMed.eu.',
+    'locations' => 'Locations',
+    'tags-info' => 'Add keywords separated by commas to better match the advertisement to the employees.',
 ];

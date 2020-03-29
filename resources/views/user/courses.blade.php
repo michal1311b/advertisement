@@ -46,7 +46,7 @@
                                     </div>
                                     <div class="badge badge-secondary">{{ $course->specialization->name }}</div>
                                     <div>
-                                        <i class="fas fa-calendar-day"></i> {{ trans('sentence.start_date') }} <span class="badge badge-primary">{{ $course->start_date }}</span> - {{ trans('sentence.end_date') }} <span class="badge badge-primary">{{ $course->end_date }}</span>
+                                        <i class="fas fa-calendar-day"></i> {{ trans('profile.start_date') }} <span class="badge badge-primary">{{ $course->start_date }}</span> - {{ trans('profile.end_date') }} <span class="badge badge-primary">{{ $course->end_date }}</span>
                                     </div>
                                 </div>
                                 @if($course->avatar !== null)
@@ -78,7 +78,7 @@
                         ])
 
                         <a href="{{ route('user-course-participants', ['id' => $course->id]) }}" class="btn btn-rounded btn-info border border-warning ml-2 text-white">
-                            {{ trans('sentence.participants') }}
+                            {{ trans('profile.participants') }}
                         </a>
                     </div>
                 @endforeach
@@ -88,7 +88,7 @@
             @else
                 <div class="col-12">
                     <a href="{{ route('store-company-course') }}">
-                        <h4>{{ trans('sentence.no-courses') }}</h4>
+                        <h4>{{ trans('profile.no-courses') }}</h4>
                     </a>
                 </div>
             @endif

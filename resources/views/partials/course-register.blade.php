@@ -18,7 +18,7 @@
                         @enderror
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="first_name">{{ trans('sentence.first_name')}}</label>
+                        <label for="first_name">{{ trans('profile.first_name')}}</label>
                         <input type="text" class="form-control" id="first_name" name="first_name" placeholder="" required value="{{ auth()->user()->name ?? old('first_name') }}">
                         @error('first_name')
                             <div class="alert alert-danger">{{ $message }}</div>
@@ -27,7 +27,7 @@
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        <label for="last_name">{{ trans('sentence.last_name') }}</label>
+                        <label for="last_name">{{ trans('profile.last_name') }}</label>
                         <input type="last_name" class="form-control" id="last_name" name="last_name" placeholder="" required value="{{ auth()->user()->profile->last_name ?? old('last_name') }}">
                         @error('last_name')
                             <div class="alert alert-danger">{{ $message }}</div>

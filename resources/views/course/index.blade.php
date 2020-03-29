@@ -49,7 +49,7 @@
                                     </div>
                                     <div class="badge badge-secondary">{{ $course->specialization->name }}</div>
                                     <div>
-                                        <i class="fas fa-calendar-day"></i> {{ trans('sentence.start_date') }} <span class="badge badge-primary">{{ $course->start_date }}</span> - {{ trans('sentence.end_date') }} <span class="badge badge-primary">{{ $course->end_date }}</span>
+                                        <i class="fas fa-calendar-day"></i> {{ trans('profile.start_date') }} <span class="badge badge-primary">{{ $course->start_date }}</span> - {{ trans('profile.end_date') }} <span class="badge badge-primary">{{ $course->end_date }}</span>
                                     </div>
                                 </div>
                                 @if($course->avatar !== null)

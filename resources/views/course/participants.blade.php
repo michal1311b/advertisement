@@ -32,8 +32,8 @@
                 <thead>
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col">{{ trans('sentence.name') }}</th>
-                        <th scope="col">{{ trans('sentence.last_name') }}</th>
+                        <th scope="col">{{ trans('profile.name') }}</th>
+                        <th scope="col">{{ trans('profile.last_name') }}</th>
                         <th scope="col">{{ __('Email') }}</th>
                         <th scope="col">{{ trans('offer.phone') }}</th>
                         <th scope="col">{{ __('Info') }}</th>
@@ -75,7 +75,7 @@
                 @else
                     <tr>
                         <td colspan="5">
-                            <strong>{{ trans('sentence.no-participants')}}</strong>
+                            <strong>{{ trans('profile.no-participants')}}</strong>
                         </td>
                     </tr>
                 @endif

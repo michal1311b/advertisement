@@ -32,7 +32,7 @@
                 <thead>
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col">{{ trans('sentence.name') }}</th>
+                        <th scope="col">{{ trans('profile.name') }}</th>
                         <th scope="col">{{ __('Email') }}</th>
                         <th scope="col">{{ trans('buttons.btn-ban') }}</th>
                     </tr>

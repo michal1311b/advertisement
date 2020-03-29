@@ -1,7 +1,7 @@
 <div class="tab-pane container fade" id="menu4">
     <div class="col-md-12 py-3">
         <div class="card">
-            <div class="card-header">{{ trans('sentence.edit-preference') }}</div>
+            <div class="card-header">{{ trans('profile.edit-preference') }}</div>
 
             <div class="card-body">
                 <form method="POST" action="{{ route('update-preference', $editUser->preference) }}" enctype="multipart/form-data">

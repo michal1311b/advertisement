@@ -23,4 +23,8 @@ return [
     'watch-all' => 'Wszystkie ogłoszenia',
     'search' => 'Szukaj',
     'clear-search' => 'Wyczyść',
+    'step1' => 'Krok 1',
+    'step2' => 'Krok 2',
+    'step3' => 'Krok 3',
+    'step4' => 'Krok 4',
 ];

@@ -23,9 +23,9 @@
                 </div>
 
                     <div class="form-group row">
-                    <label class="col-12 col-md-3 col-form-label text-md-right" for="specialization_id">{{ trans('sentence.specialization') }} <span class="text-danger font-weight-bolder">*</span></label>
+                    <label class="col-12 col-md-3 col-form-label text-md-right" for="specialization_id">{{ trans('profile.specialization') }} <span class="text-danger font-weight-bolder">*</span></label>
                     <div class="col-12 col-md-9">
-                        <ValidationProvider :name="trans('sentence.specialization')" :rules="'oneOf:'+ specializationIds" v-slot="{ errors }">
+                        <ValidationProvider :name="trans('profile.specialization')" :rules="'oneOf:'+ specializationIds" v-slot="{ errors }">
                             <select data-live-search="true" class="form-control" name="specialization_id" v-model="formInputs.specialization_id" id="specialization_id">
                                 <option selected>{{ trans('sentence.choose') }}</option>
                                 <option v-for="specialization in specializations" :key="specialization.id" :value="specialization.id">
@@ -38,10 +38,10 @@
                 </div>
 
                 <div class="form-group row">
-                    <label for="start_course_date" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.start_date') }} <span class="text-danger font-weight-bolder">*</span></label>
+                    <label for="start_course_date" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('profile.start_date') }} <span class="text-danger font-weight-bolder">*</span></label>
 
                     <div class="col-12 col-md-9">
-                        <ValidationProvider :name="trans('sentence.start_date')" rules="required" v-slot="{ errors }">
+                        <ValidationProvider :name="trans('profile.start_date')" rules="required" v-slot="{ errors }">
                             <datepicker
                             v-model="formInputs.start_date" 
                             :format="'yyyy-MM-dd'" 
@@ -56,10 +56,10 @@
                 </div>
 
                 <div class="form-group row">
-                    <label for="end_course_date" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.end_date') }} <span class="text-danger font-weight-bolder">*</span></label>
+                    <label for="end_course_date" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('profile.end_date') }} <span class="text-danger font-weight-bolder">*</span></label>
 
                     <div class="col-12 col-md-9">
-                        <ValidationProvider :name="trans('sentence.end_date')" rules="required" v-slot="{ errors }">
+                        <ValidationProvider :name="trans('profile.end_date')" rules="required" v-slot="{ errors }">
                             <datepicker
                             v-model="formInputs.end_date" 
                             :format="'yyyy-MM-dd'" 

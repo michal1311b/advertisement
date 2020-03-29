@@ -1,7 +1,7 @@
 <div class="tab-pane container active" id="home">
     <div class="col-md-12 py-3">
         <div class="card">
-            <div class="card-header">{{ trans('sentence.edit-profile') }}</div>
+            <div class="card-header">{{ trans('profile.edit-profile') }}</div>
 
             <div class="card-body">
                 <form method="POST" action="{{ route('update-user', $editUser) }}" enctype="multipart/form-data">
@@ -9,7 +9,7 @@
                     @csrf
                     
                     <div class="form-group row">
-                        <label class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.profile-image') }}</label>
+                        <label class="col-12 col-md-3 col-form-label text-md-right">{{ trans('profile.profile-image') }}</label>
 
                         <div class="col-12 col-md-9">
                             @if($editUser->avatar)
@@ -21,7 +21,7 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="name" class="col-12 col-md-3 col-form-label text-md-right">{{ $editUser->doctor ? trans('sentence.first_name') : trans('sentence.name') }}</label>
+                        <label for="name" class="col-12 col-md-3 col-form-label text-md-right">{{ $editUser->doctor ? trans('profile.first_name') : trans('profile.name') }}</label>
 
                         <div class="col-12 col-md-9">
                             <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ $editUser->name }}" autocomplete="name" autofocus>
@@ -52,7 +52,7 @@
                     </div>
 
                     <div class="form-group row">
-                        <label for="last_name" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.last_name') }}</label>
+                        <label for="last_name" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('profile.last_name') }}</label>
 
                         <div class="col-12 col-md-9">
                             <input id="last_name" type="text" class="form-control @error('last_name') is-invalid @enderror" name="last_name" value="{{ $editUser->profile->last_name }}" autocomplete="last_name" autofocus>
@@ -174,7 +174,7 @@
 
                     @if($editUser->finishedSpecializations && ($editUser->doctor !== null || $editUser->nurse !== null))
                         <div class="form-group row">
-                            <label for="specializations" class="col-12 col-md-3 col-form-label text-md-right">{{trans('sentence.specializations')}}</label>
+                            <label for="specializations" class="col-12 col-md-3 col-form-label text-md-right">{{trans('profile.specializations')}}</label>
                             <div class="col-12 col-md-9">
                                 <select multiple="multiple"
                                         class="form-control{{ $errors->has('specializations') ? ' is-invalid' : '' }}"
@@ -197,7 +197,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="specializationsp" class="col-12 col-md-3 col-form-label text-md-right">{{trans('sentence.specializations.pending')}}</label>
+                            <label for="specializationsp" class="col-12 col-md-3 col-form-label text-md-right">{{trans('profile.specializations.pending')}}</label>
                             <div class="col-12 col-md-9">
                                 <select multiple="multiple"
                                         class="form-control{{ $errors->has('specializations') ? ' is-invalid' : '' }}"
@@ -221,7 +221,7 @@
 
                         @if($editUser->doctor !== null)
                             <div class="form-group row">
-                                <label class="col-12 col-md-3 col-form-label text-md-right" for="sex">{{ trans('sentence.sex') }}</label>
+                                <label class="col-12 col-md-3 col-form-label text-md-right" for="sex">{{ trans('profile.sex') }}</label>
                                 <div class="col-12 col-md-9">
                                     <select data-live-search="true" class="form-control @error('sex') is-invalid @enderror" name="sex" id="sex">
                                         <option>{{ trans('sentence.choose') }}</option>
@@ -229,12 +229,12 @@
                                             @if($editUser->doctor->sex === 'male') 
                                             selected
                                             @endif 
-                                            value="male">{{ trans('sentence.male') }}</option>
+                                            value="male">{{ trans('profile.male') }}</option>
                                         <option 
                                             @if($editUser->doctor->sex === 'female') 
                                             selected
                                             @endif 
-                                            value="female">{{ trans('sentence.female') }}</option>
+                                            value="female">{{ trans('profile.female') }}</option>
                                     </select>
                                     @error('sex')
                                         <div class="alert alert-danger">{{ $message }}</div>
@@ -243,7 +243,7 @@
                             </div>
                         @elseif($editUser->nurse !== null)
                             <div class="form-group row">
-                                <label class="col-12 col-md-3 col-form-label text-md-right" for="sex">{{ trans('sentence.sex') }}</label>
+                                <label class="col-12 col-md-3 col-form-label text-md-right" for="sex">{{ trans('profile.sex') }}</label>
                                 <div class="col-12 col-md-9">
                                     <select data-live-search="true" class="form-control @error('sex') is-invalid @enderror" name="sex" id="sex">
                                         <option>{{ trans('sentence.choose') }}</option>
@@ -251,12 +251,12 @@
                                             @if($editUser->nurse->sex === 'male') 
                                             selected
                                             @endif 
-                                            value="male">{{ trans('sentence.male') }}</option>
+                                            value="male">{{ trans('profile.male') }}</option>
                                         <option 
                                             @if($editUser->nurse->sex === 'female') 
                                             selected
                                             @endif 
-                                            value="female">{{ trans('sentence.female') }}</option>
+                                            value="female">{{ trans('profile.female') }}</option>
                                     </select>
                                     @error('sex')
                                         <div class="alert alert-danger">{{ $message }}</div>

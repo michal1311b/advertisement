@@ -22,7 +22,7 @@
                 <tr>
                     <th scope="col">#</th>
                     <th scope="col">{{ __('Email') }}</th>
-                    <th scope="col">{{ trans('sentence.first_name') }}</th>
+                    <th scope="col">{{ trans('profile.first_name') }}</th>
                     <th scope="col">{{ trans('offer.city') }}</th>
                     <th scope="col">{{ trans('offer.phone') }}</th>
                     <th scope="col">{{ trans('email.reply') }}</th>
