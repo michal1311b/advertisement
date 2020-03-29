@@ -44,7 +44,14 @@
                                 <div class="btn-toolbar justify-content-between" role="toolbar" aria-label="Toolbar with button groups">
                                     <div class="btn-group" role="group" aria-label="First group">
                                         <strong>{{ trans('sentence.post-by') }}</strong>&nbsp;
-                                        <a href="{{ route('company-show', $advertisement->user) }}" title="{{ $advertisement->user->profile->company_name }}" >{{ $advertisement->user->profile->company_name }}</a>
+                                        <a href="{{ route('company-show', $advertisement->user) }}" title="{{ $advertisement->user->profile->company_name }}" >
+                                            {{ $advertisement->user->profile->company_name }}
+                                            @if(Cache::has('user-is-online-' . $advertisement->user->id))
+                                                <span class="text-success"><i class="fa fa-circle"></i> Online</span>
+                                            @else
+                                                <span class="text-secondary"><i class="fa fa-circle"></i> Offline</span>
+                                            @endif
+                                        </a>
                                     </div>
                                     <div class="input-group">
                                         @if(Auth::check() && (Auth::user()->id !== $advertisement->user->id))

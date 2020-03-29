@@ -46,6 +46,11 @@
                                         <strong>{{ trans('sentence.post-by') }}</strong>&nbsp;
                                         <a href="{{ route('company-show', $advertisement->user) }}" title="{{ $advertisement->user->profile->company_name }}">
                                             {{ $advertisement->user->profile->company_name }}
+                                            @if(Cache::has('user-is-online-' . $advertisement->user->id))
+                                                <span class="text-success"><i class="fa fa-circle"></i> Online</span>
+                                            @else
+                                                <span class="text-secondary"><i class="fa fa-circle"></i> Offline</span>
+                                            @endif
                                         </a>
                                     </div>
                                     <div class="input-group">

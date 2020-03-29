@@ -68,7 +68,7 @@
                                     <a class="nav-link lang-dropdown" href="{{ route('watch-visitors-on-map') }}" title="{{ trans('sentence.visitors-list') }}">{{ trans('sentence.visitors-list') }}</a>
                                 </li>
                                 <li class="nav-item home-page">
-                                    <a class="nav-link lang-dropdown" href="{{ route('users.list') }}" title="{{ trans('profile.user-list')}}">{{ trans('profile.user-list')}}</a>
+                                    <a class="nav-link lang-dropdown" href="{{ route('users.list') }}" title="{{ trans('sentence.user-list')}}">{{ trans('sentence.user-list')}}</a>
                                 </li>
                                 <li class="nav-item home-page">
                                     <a class="nav-link lang-dropdown" href="{{ route('categories.index') }}" title="{{ trans('sentence.category-list')}}">{{ trans('sentence.category-list')}}</a>

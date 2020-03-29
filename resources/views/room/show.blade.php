@@ -28,6 +28,11 @@
                     <div class="card-header">
                         <img src="{{ asset($message->user->avatar) }}" alt="avatar" class="user-avatar user-avatar--smaller">
                         {{ $message->user->name }}
+                        @if(Cache::has('user-is-online-' . $message->user->id))
+                            <span class="text-success"><i class="fa fa-circle"></i> Online</span>
+                        @else
+                            <span class="text-secondary"><i class="fa fa-circle"></i> Offline</span>
+                        @endif
                     </div>
 
                     <div class="card-body">

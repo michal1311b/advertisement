@@ -35,6 +35,7 @@
                         <th scope="col">{{ trans('profile.name') }}</th>
                         <th scope="col">{{ trans('email.email') }}</th>
                         <th scope="col">{{ trans('buttons.btn-ban') }}</th>
+                        <th scope="col">{{ __('Online') }}</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -55,6 +56,13 @@
                                         {{csrf_field()}}
                                         <button type="submit" class="btn btn-rounded btn-success border border-warning">{{ trans('buttons.btn-unban') }}</button>  
                                     </form>
+                                @endif
+                            </td>
+                            <td>
+                                @if(Cache::has('user-is-online-' . $user->id))
+                                    <span class="text-success"><i class="fa fa-circle"></i> Online</span>
+                                @else
+                                    <span class="text-secondary"><i class="fa fa-circle"></i> Offline</span>
                                 @endif
                             </td>
                         </tr>

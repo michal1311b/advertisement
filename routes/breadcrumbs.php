@@ -295,7 +295,7 @@ Breadcrumbs::for('pages', function ($trail) {
 
 Breadcrumbs::for('users', function ($trail) {
     $trail->parent('home');
-    $trail->push(trans('profile.user-list'), route('users.list'));
+    $trail->push(trans('sentence.user-list'), route('users.list'));
 });
 
 Breadcrumbs::for('participants', function ($trail, $course) {

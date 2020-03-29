@@ -23,7 +23,7 @@
 @else
   @if(auth()->user()->hasRole('admin'))
     <div class="list-group list-group-flush">
-      <a class="side-nav list-group-item list-group-item-action {{ $theme . '-theme' }} {{ Request::is('admin/users') ? 'bg-primary active' : null }}" href="{{ route('users.list') }}" title="{{ trans('profile.user-list')}}">{{ trans('profile.user-list')}}</a>
+      <a class="side-nav list-group-item list-group-item-action {{ $theme . '-theme' }} {{ Request::is('admin/users') ? 'bg-primary active' : null }}" href="{{ route('users.list') }}" title="{{ trans('sentence.user-list')}}">{{ trans('sentence.user-list')}}</a>
     </div>
     <div class="list-group list-group-flush">
       <a class="side-nav list-group-item list-group-item-action {{ $theme . '-theme' }} {{ Request::is('admin/categories') ? 'bg-primary active' : null }}" href="{{ route('categories.index') }}" title="{{ trans('sentence.category-list')}}">{{ trans('sentence.category-list')}}</a>
