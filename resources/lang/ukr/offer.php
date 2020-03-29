@@ -50,4 +50,5 @@ return [
     'tags-info' => 'Додайте ключові слова, розділені комами, щоб краще відповідати вашим записам працівникам.',
     'city-not-require' => 'Місто (не обов’язково)',
     'phone-not-require' => 'Телефон (не потрібно)',
+    'salary_negotiable' => 'Stawka do negocjacji?',
 ];

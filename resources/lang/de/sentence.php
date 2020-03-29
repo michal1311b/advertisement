@@ -56,7 +56,6 @@ return [
   'organizer' => 'Veranstalter',
   'delete_confirm' => 'Sind Sie sicher, dass Sie löschen möchten',
   'edit_confirm' => 'Sind Sie sicher, dass Sie aktualisieren möchten',
-  'salary_negotiable' => 'Rate zu verhandeln?',
   'dashboard' => 'Platte',
   'login-message' => 'Login erfolgreich. Wählen Sie aus, was Sie tun möchten:',
   'error-message' => 'Es ist ein Fehler aufgetreten. Bitte überprüfen Sie Ihre Angaben sorgfältig und versuchen Sie es erneut.',

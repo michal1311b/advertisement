@@ -50,4 +50,5 @@ return [
     'tags-info' => 'Dodaj słowa kluczowe oddzielając je przecinkami, aby lepiej dopasować ogłoszenie do pracowników.',
     'city-not-require' => 'Miasto (nie wymagane)',
     'phone-not-require' => 'Telefon (nie wymagane)',
+    'salary_negotiable' => 'Stawka do negocjacji?',
 ];

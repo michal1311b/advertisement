@@ -57,7 +57,6 @@ return [
   'organizer' => 'Organizer',
   'delete_confirm' => 'Are you sure delete',
   'edit_confirm' => 'Are you sure update',
-  'salary_negotiable' => 'Salary negotiable?',
   'dashboard' => 'Dashboard',
   'login-message' => 'Login succeeded. Choose what you want to do:',
   'error-message' => 'Something went wrong, please check your details carefully and try again.',

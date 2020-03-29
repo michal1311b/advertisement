@@ -55,7 +55,6 @@ return [
   'organizer' => 'Organizator',
   'delete_confirm' => 'Czy na pewno chcesz usunać',
   'edit_confirm' => 'Czy na pewno chcesz zaktualizować',
-  'salary_negotiable' => 'Stawka do negocjacji?',
   'dashboard' => 'Panel',
   'login-message' => 'Logowanie powiodło się. Wybierz co chcesz zrobić:',
   'error-message' => 'Coś poszło nie tak, sprawdź dokładnie wprowadzone dane i spróbuj ponownie.',

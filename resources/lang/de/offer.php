@@ -50,4 +50,5 @@ return [
     'tags-info' => 'Fügen Sie durch Kommas getrennte Schlüsselwörter hinzu, um Ihren Eintrag besser an die Mitarbeiter anzupassen.',
     'city-not-require' => 'Stadt (nicht erforderlich)',
     'phone-not-require' => 'Telefon (nicht erforderlich)',
+    'salary_negotiable' => 'Rate zu verhandeln?',
 ];

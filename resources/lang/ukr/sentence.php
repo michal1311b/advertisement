@@ -56,7 +56,6 @@ return [
   'organizer' => 'організатор',
   'delete_confirm' => 'Ви впевнені, що хочете видалити',
   'edit_confirm' => 'Ви впевнені, що хочете оновити',
-  'salary_negotiable' => 'Stawka do negocjacji?',
   'dashboard' => 'панель',
   'login-message' => 'Вхід вдався. Виберіть, що ви хочете зробити:',
   'error-message' => 'Щось пішло не так, будь ласка, уважно перевірте свої дані та спробуйте ще раз.',

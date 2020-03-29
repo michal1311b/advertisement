@@ -50,4 +50,5 @@ return [
     'tags-info' => 'Add keywords separated by commas to better match the advertisement to the employees.',
     'city-not-require' => 'City (not required)',
     'phone-not-require' => 'Phone (not required)',
+    'salary_negotiable' => 'Salary negotiable?',
 ];
