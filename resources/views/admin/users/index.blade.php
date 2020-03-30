@@ -59,7 +59,7 @@
                                 @endif
                             </td>
                             <td>
-                                @if(Cache::has('user-is-online-' . $user->id))
+                                @if($user->isOnline())
                                     <span class="text-success"><i class="fa fa-circle"></i> Online</span>
                                 @else
                                     <span class="text-secondary"><i class="fa fa-circle"></i> Offline</span>

@@ -40,7 +40,7 @@
                                     <div class="media-body order-2 order-lg-1">
                                         <h5 class="mt-0 font-weight-bold my-2">
                                             <i class="fas fa-building"></i> {{ $company->profile->company_name }}
-                                            @if(Cache::has('user-is-online-' . $company->id))
+                                            @if($company->isOnline())
                                                 <span class="text-success"><i class="fa fa-circle"></i> Online</span>
                                             @else
                                                 <span class="text-secondary"><i class="fa fa-circle"></i> Offline</span>

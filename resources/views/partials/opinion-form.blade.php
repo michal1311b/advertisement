@@ -24,7 +24,7 @@
                                         <div class="commentText">
                                             <p class="font-weight-bolder">
                                                 {{ $opinion->user->name }} {{ $opinion->user->profile->last_name }}
-                                                @if(Cache::has('user-is-online-' . $opinion->user->id))
+                                                @if($opinion->user->isOnline())
                                                     <span class="text-success"><i class="fa fa-circle"></i> Online</span>
                                                 @else
                                                     <span class="text-secondary"><i class="fa fa-circle"></i> Offline</span>
