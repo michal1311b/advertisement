@@ -96,7 +96,7 @@
                             @if(auth()->user()->avatar)
                                 <img src="{{ asset(auth()->user()->avatar) }}" alt="avatar" class="user-avatar user-avatar--smaller">
                             @endif
-                            {{ auth()->user()->name }} <span class="caret"></span>
+                            <span class="side-nav">{{ auth()->user()->name }}</span> <span class="caret"></span>
                         </a>
     
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
