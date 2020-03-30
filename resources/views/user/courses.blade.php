@@ -31,7 +31,7 @@
                 </div>
                 @foreach($courses as $course)
                     <!-- List group-->
-                    <ul class="list-group shadow">
+                    <ul class="list-group shadow offer-item color{{ $course->specialization_id }}">
                         <a href="{{ route('show-course', ['id' => $course->id, 'slug' => $course->slug]) }}" class="no-decoration" title="{{ $course->title }}"> 
                             <!-- list group item-->
                             <li class="list-group-item">
@@ -44,7 +44,7 @@
                                     <div class="d-flex align-items-center justify-content-between mt-1">
                                         <h6 class="font-weight-bold"><i class="fas fa-coins"></i> {{ $course->price }} {{ $course->currency->symbol }}</h6>
                                     </div>
-                                    <div class="badge badge-secondary">{{ $course->specialization->name }}</div>
+                                    <div class="badge badge-pill offer-item border{{ $course->specialization_id }} text-white">{{ $course->specialization->name }}</div>
                                     <div>
                                         <i class="fas fa-calendar-day"></i> {{ trans('profile.start_date') }} <span class="badge badge-primary">{{ $course->start_date }}</span> - {{ trans('profile.end_date') }} <span class="badge badge-primary">{{ $course->end_date }}</span>
                                     </div>

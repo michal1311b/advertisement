@@ -31,7 +31,7 @@
             @if(count($advertisements) > 0)
                 @foreach($advertisements as $advertisement)
                     <!-- List group-->
-                    <ul class="list-group shadow">
+                    <ul class="list-group shadow offer-item color{{ $advertisement->specialization_id }}">
                         <a href="{{ route('show-advertisement', ['id' => $advertisement->id, 'slug' => $advertisement->slug]) }}" class="no-decoration"> 
                             <!-- list group item-->
                             <li class="list-group-item">
@@ -44,7 +44,7 @@
                                             <h6 class="font-weight-bold ml-3 my-2"><i class="fas fa-eye"></i> {{ trans('offer.visits') }} {{ count($advertisement->visits) }}</h6>
                                         </div>
                                         <div class="d-flex align-items-center justify-content-between mt-1">
-                                            <div class="badge badge-secondary">{{ $advertisement->specialization->name }}</div>
+                                            <div class="badge badge-pill offer-item border{{ $advertisement->specialization_id }} text-white">{{ $advertisement->specialization->name }}</div>
                                             <h6 class="font-weight-bold ml-3 my-2"><img src="{{ asset('images/like.png') }}" width="30" height="30" alt="Like"> {{ $advertisement->likes_count }}</h6>
                                         </div>
                                         <div>

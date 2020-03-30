@@ -24,7 +24,9 @@
 @section('content')
 <div class="container">
     <div class="row">
-        @include('partials.search')
+        <div class="col-12">
+            @include('partials.search')
+        </div>
         <div class="col-12">
             <ul class="list-group">
                 <li class="list-group-item d-flex align-items-center">
@@ -38,7 +40,7 @@
                 @foreach($advertisements as $advertisement)
                     @if($advertisement->advertisement !== null)
                         <!-- List group-->
-                        <ul class="list-group shadow">
+                        <ul class="list-group shadow offer-item color{{ $advertisement->advertisement->specialization_id }}">
                             <a href="{{ route('show-advertisement', ['id' => $advertisement->advertisement->id, 'slug' => $advertisement->advertisement->slug]) }}" class="no-decoration" title="{{ $advertisement->advertisement->title }}"> 
                                 <!-- list group item-->
                                 <li class="list-group-item">
@@ -51,7 +53,7 @@
                                             <div class="d-flex align-items-center justify-content-between mt-1">
                                                 <h6 class="font-weight-bold my-2"><i class="fas fa-coins"></i> {{ $advertisement->advertisement->settlement->name ?? '' }}: {{ $advertisement->advertisement->min_salary ?? '' }} - {{ $advertisement->advertisement->max_salary ?? '' }} {{ $advertisement->advertisement->currency->symbol ?? '' }}</h6>
                                             </div>
-                                            <div class="badge badge-secondary">{{ $advertisement->advertisement->specialization->name ?? '' }}</div>
+                                            <div class="badge badge-pill offer-item border{{ $advertisement->advertisement->specialization_id }} text-white">{{ $advertisement->advertisement->specialization->name ?? '' }}</div>
                                             <div>
                                                 <i class="fas fa-calendar-day"></i> {{ trans('offer.expired_at') }} <div class="badge badge-primary">{{ $advertisement->advertisement->expired_at ?? '' }}</div>
                                             </div>

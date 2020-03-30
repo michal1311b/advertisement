@@ -28,7 +28,7 @@
             @include('partials.message')
         </div>
         <div class="col-md-12">
-            <div class="card">
+            <div class="card offer-item color{{ $course->specialization_id }}">
                 <div class="card-header">{{ trans('offer.offer-show') }} <strong>{{ $course->title }}</strong></div>
 
                 <div class="card-body">
@@ -40,9 +40,7 @@
                                         <strong>{{ trans('sentence.post-by') }}</strong>&nbsp;
                                         {{ $course->user->profile->company_name }}&nbsp;
                                         @if($course->user->isOnline())
-                                            <span class="text-success"><i class="fa fa-circle"></i> Online</span>
-                                        @else
-                                            <span class="text-secondary"><i class="fa fa-circle"></i> Offline</span>
+                                            <span class="text-success"><i class="fa fa-circle"></i> {{ trans('offer.employer-online') }}</span>
                                         @endif
                                     </div>
                                 </div>
@@ -67,7 +65,7 @@
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
                                         {{ trans('profile.specialization') }}
-                                        <span class="badge badge-pill badge-info text-white">{{ $course->specialization->name }}</span>
+                                        <span class="badge badge-pill offer-item border{{ $course->specialization_id }} text-white">{{ $course->specialization->name }}</span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
                                         {{ trans('offer.created_at') }}
@@ -126,7 +124,7 @@
             <div class="col-md-12">
                 @foreach($similars as $similar)
                     <!-- List group-->
-                    <ul class="list-group shadow">
+                    <ul class="list-group shadow offer-item color{{ $similar->specialization_id }}">
                         <a href="{{ route('show-course', ['id' => $similar->id, 'slug' => $similar->slug]) }}" class="no-decoration"> 
                             <!-- list group item-->
                             <li class="list-group-item">
@@ -139,7 +137,7 @@
                                     <div class="d-flex align-items-center justify-content-between mt-1">
                                         <h6 class="font-weight-bold"><i class="fas fa-coins"></i> {{ $similar->price }} {{ $similar->currency->symbol }}</h6>
                                     </div>
-                                    <div class="badge badge-secondary">{{ $similar->specialization->name }}</div>
+                                    <div class="badge badge-pill offer-item border{{ $similar->specialization_id }} text-white">{{ $similar->specialization->name }}</div>
                                 </div>
                                 @if($similar->avatar)
                                     <img src="{{ $similar->avatar }}" width="200" class="ml-lg-5 order-1 order-lg-2" alt="{{ $similar->title }}">

@@ -7,7 +7,9 @@
                     <select data-live-search="true" class="form-control @error('specialization_id') is-invalid @enderror" name="specialization_id" id="specialization_ids">
                         <option selected value="">{{ trans('sentence.choose-spec') }}</option>
                         @foreach($specializations as $specialization)
-                            <option value="{{ $specialization->id }}">{{ $specialization->name }}</option>
+                            <option value="{{ $specialization->id }}">
+                                {{ $specialization->name }}
+                            </option>
                         @endforeach
                     </select>
                     <select data-live-search="true" class="form-control @error('location_id') is-invalid @enderror" name="location_id" id="location_ids">

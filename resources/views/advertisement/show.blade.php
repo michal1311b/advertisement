@@ -28,13 +28,13 @@
 @endsection
 
 @section('content')
-<div class="container">
+<div class="container px-0">
     <div class="row justify-content-center">
         <div class="col-md-12">
             @include('partials.message')
         </div>
         <div class="col-md-12">
-            <div class="card">
+            <div class="card offer-item color{{ $advertisement->specialization_id }}">
                 <div class="card-header">{{ trans('offer.offer-show') }} <strong>{{ $advertisement->title }}</strong></div>
 
                 <div class="card-body">
@@ -134,7 +134,7 @@
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
                                         {{ trans('profile.specialization') }}
-                                        <span class="badge badge-pill badge-info text-white">{{ $advertisement->specialization->name }}</span>
+                                        <span class="badge badge-pill offer-item border{{ $advertisement->specialization_id }} text-white">{{ $advertisement->specialization->name }}</span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
                                         {{ trans('offer.created_at') }}
@@ -268,7 +268,7 @@
             <div class="col-md-12">
                 @foreach($similars as $similar)
                     <!-- List group-->
-                    <ul class="list-group shadow">
+                    <ul class="list-group shadow offer-item color{{ $similar->specialization_id }}">
                         <a href="{{ route('show-advertisement', ['id' => $similar->id, 'slug' => $similar->slug]) }}" class="no-decoration"> 
                             <!-- list group item-->
                             <li class="list-group-item">
@@ -281,7 +281,7 @@
                                     <div class="d-flex align-items-center justify-content-between mt-1">
                                         <h6 class="font-weight-bold"><i class="fas fa-coins"></i> {{ $similar->settlement->name }}: {{ $similar->min_salary }} - {{ $similar->max_salary }} {{ $similar->currency->symbol }}</h6>
                                     </div>
-                                    <div class="badge badge-secondary">{{ $similar->specialization->name }}</div>
+                                    <div class="badge badge-pill offer-item border{{ $similar->specialization_id }} text-white">{{ $similar->specialization->name }}</div>
                                 </div>
                                 @if($similar->galleries()->count())
                                     <img src="{{ $similar->galleries[0]->path }}" width="200" class="ml-lg-5 order-1 order-lg-2" alt="{{$similar->galleries[0]->oldName}}">

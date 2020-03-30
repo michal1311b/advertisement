@@ -31,7 +31,7 @@
             @if(count($foreigns) > 0)
                 @foreach($foreigns as $foreign)
                     <!-- List group-->
-                    <ul class="list-group shadow">
+                    <ul class="list-group shadow offer-item color{{ $foreign->specialization_id }}">
                         <a href="{{ route('show-foreign', ['id' => $foreign->id, 'slug' => $foreign->slug]) }}" class="no-decoration"> 
                             <!-- list group item-->
                             <li class="list-group-item">
@@ -46,7 +46,7 @@
                                                 <br><i class="fas fa-eye"></i> {{ trans('offer.visits') }} {{ $foreign->foreign_visits_count }}
                                             </h6>
                                         </div>
-                                        <div class="badge badge-secondary">{{ $foreign->specialization->name }}</div>
+                                        <div class="badge badge-pill offer-item border{{ $foreign->specialization_id }} text-white">{{ $foreign->specialization->name }}</div>
                                         <div>
                                             <i class="fas fa-calendar-day"></i> {{ trans('offer.expired_at') }} <div class="badge badge-primary">{{ $foreign->expired_at }}</div>
                                         </div>

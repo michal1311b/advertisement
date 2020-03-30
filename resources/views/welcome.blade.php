@@ -225,7 +225,7 @@
                 <ul class="list-group shadow">
                     @foreach($advertisements as $advertisement)
                         <!-- List group-->
-                            <a href="{{ route('show-advertisement', ['id' => $advertisement->id, 'slug' => $advertisement->slug]) }}" class="no-decoration" title="{{ $advertisement->title }}"> 
+                            <a href="{{ route('show-advertisement', ['id' => $advertisement->id, 'slug' => $advertisement->slug]) }}" class="no-decoration offer-item color{{ $advertisement->specialization_id }}" title="{{ $advertisement->title }}"> 
                                 <!-- list group item-->
                                 <li class="list-group-item">
                                     <!-- Custom content-->
@@ -237,7 +237,7 @@
                                             <div class="d-flex align-items-center justify-content-between mt-1">
                                                 <h6 class="font-weight-bold"><i class="fas fa-coins"></i> {{ $advertisement->settlement->name }}: {{ $advertisement->min_salary }}&nbsp;-&nbsp;{{ $advertisement->max_salary }} {{ $advertisement->currency->symbol }}</h6>
                                             </div>
-                                            <div class="badge badge-secondary">{{ $advertisement->specialization->name }}</div>
+                                            <div class="badge badge-pill offer-item border{{ $advertisement->specialization_id }} text-white">{{ $advertisement->specialization->name }}</div>
                                             <div>
                                                 <i class="fas fa-calendar-day"></i> {{ trans('offer.expired_at') }} <div class="badge badge-primary">{{ $advertisement->expired_at }}</div>
                                             </div>
