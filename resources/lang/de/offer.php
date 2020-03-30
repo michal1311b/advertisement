@@ -51,4 +51,5 @@ return [
     'city-not-require' => 'Stadt (nicht erforderlich)',
     'phone-not-require' => 'Telefon (nicht erforderlich)',
     'salary_negotiable' => 'Rate zu verhandeln?',
+    'employer-online' => 'Der Arbeitgeber ist online'
 ];

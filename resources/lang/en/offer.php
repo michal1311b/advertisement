@@ -51,4 +51,5 @@ return [
     'city-not-require' => 'City (not required)',
     'phone-not-require' => 'Phone (not required)',
     'salary_negotiable' => 'Salary negotiable?',
+    'employer-online' => 'The employer is online'
 ];

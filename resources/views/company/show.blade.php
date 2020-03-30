@@ -35,9 +35,7 @@
                     <h4>
                         {{ $user->profile->company_name ?? ''}}
                         @if($user->isOnline())
-                            <span class="text-success"><i class="fa fa-circle"></i> Online</span>
-                        @else
-                            <span class="text-secondary"><i class="fa fa-circle"></i> Offline</span>
+                            <span class="text-success"><i class="fa fa-circle"></i> {{ trans('offer.employer-online') }}</span>
                         @endif
                     </h4>
                 </div>
@@ -122,9 +120,7 @@
                     <h4>
                         {{ $user->profile->company_name ?? ''}}
                         @if($user->isOnline())
-                            <span class="text-success"><i class="fa fa-circle"></i> Online</span>
-                        @else
-                            <span class="text-secondary"><i class="fa fa-circle"></i> Offline</span>
+                            <span class="text-success"><i class="fa fa-circle"></i> {{ trans('offer.employer-online') }}</span>
                         @endif
                     </h4>
                 </div>

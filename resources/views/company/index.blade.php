@@ -41,9 +41,7 @@
                                         <h5 class="mt-0 font-weight-bold my-2">
                                             <i class="fas fa-building"></i> {{ $company->profile->company_name }}
                                             @if($company->isOnline())
-                                                <span class="text-success"><i class="fa fa-circle"></i> Online</span>
-                                            @else
-                                                <span class="text-secondary"><i class="fa fa-circle"></i> Offline</span>
+                                                <span class="text-success"><i class="fa fa-circle"></i> {{ trans('offer.employer-online') }}</span>
                                             @endif
                                         </h5>
                                         <h6 class="mt-0 font-weight-bold mb-2"><i class="fas fa-map-marker-alt"></i> {{ $company->profile->company_city }}, {{ $company->profile->company_street }} {{ $company->profile->post_code }}</h6>

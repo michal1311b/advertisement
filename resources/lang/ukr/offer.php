@@ -51,4 +51,5 @@ return [
     'city-not-require' => 'Місто (не обов’язково)',
     'phone-not-require' => 'Телефон (не потрібно)',
     'salary_negotiable' => 'Stawka do negocjacji?',
+    'employer-online' => 'Роботодавець онлайн'
 ];
