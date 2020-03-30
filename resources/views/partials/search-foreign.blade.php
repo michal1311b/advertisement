@@ -24,7 +24,11 @@
                         <select data-live-search="true" class="form-control @error('specialization_id') is-invalid @enderror" name="specialization_id" id="specialization_ids">
                             <option selected value="">{{ trans('sentence.choose-spec') }}</option>
                             @foreach($specializations as $specialization)
-                                <option value="{{ $specialization->id }}">{{ $specialization->name }}</option>
+                                <option value="{{ $specialization->id }}" 
+                                    data-content="<img class='rounded-circle' 
+                                    src='{{asset('/images/icons/' . $specialization->id . '.jpg') }}'/> 
+                                    {{ $specialization->name }}">
+                                </option>
                             @endforeach
                         </select>
                         <div class="btn-group" role="group" aria-label="Basic example">
