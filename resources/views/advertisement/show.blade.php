@@ -130,7 +130,10 @@
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
                                         {{ trans('offer.state') }}
-                                        <span class="badge badge-pill">{{ $advertisement->state->name }}</span>
+                                        <span class="badge badge-pill">
+                                            {{ $advertisement->state->name }}
+                                            <img class="state-icon" src="{{ asset('images/icons/states/' . $advertisement->state->id . '.png') }}" alt="{{ trans('offer.state') }} {{ $advertisement->state->name }}">
+                                        </span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
                                         {{ trans('profile.specialization') }}

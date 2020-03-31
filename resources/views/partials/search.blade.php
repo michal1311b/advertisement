@@ -23,7 +23,11 @@
                     <select data-live-search="true" class="form-control @error('location_id') is-invalid @enderror" name="state_id" id="state_ids">
                         <option selected value="">{{ trans('sentence.choose-state') }}</option>
                         @foreach($states as $state)
-                            <option value="{{ $state->id }}">{{ $state->name }}</option>
+                            <option value="{{ $state->id }}" 
+                                data-content="<img class='state-icon' 
+                                src='{{asset('/images/icons/states/' . $state->id . '.png') }}'/> 
+                                {{ $state->name }}">
+                            </option>
                         @endforeach
                     </select>
                 </div> <!-- card-body.// -->
