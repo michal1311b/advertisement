@@ -3,11 +3,22 @@
 <head>
     @include('partials.layouts-header')
     <!-- Styles -->
-    <link href="{{ asset('css/app.css?rand=62') }}" rel="stylesheet">
+    <link href="{{ asset('css/app.css?rand=63') }}" rel="stylesheet">
     @yield('css')
       
     <script type='text/javascript' src='//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js'></script>
-
+    <script>
+        window.trans = <?php
+        // copy all translations from /resources/lang/CURRENT_LOCALE/* to global JS variable
+        $lang_files = File::files(resource_path() . '/lang/' . App::getLocale());
+        $trans = [];
+        foreach ($lang_files as $f) {
+            $filename = pathinfo($f)['filename'];
+            $trans[$filename] = trans($filename);
+        }
+        echo json_encode($trans);
+        ?>;
+    </script>
     <script>
         var LoggedUser = false;
     </script>
@@ -54,7 +65,7 @@
         </a>
     </div>
     @include('partials.footer')
-    <script src="{{ asset('js/app.js?rand=62') }}" defer></script>
+    <script src="{{ asset('js/app.js?rand=63') }}" defer></script>
     
     <!-- Scripts -->
     @yield('scripts')

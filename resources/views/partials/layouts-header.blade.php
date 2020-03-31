@@ -39,3 +39,8 @@
 <link rel="dns-prefetch" href="//fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 <script src="https://kit.fontawesome.com/96c3aa2e82.js" crossorigin="anonymous"></script>
+
+<script>
+    window._locale = '{{ app()->getLocale() }}';
+    window._translations = {!! cache('translations') !!};
+</script>

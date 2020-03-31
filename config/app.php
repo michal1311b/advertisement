@@ -179,7 +179,7 @@ return [
         Lab404\AuthChecker\AuthCheckerServiceProvider::class,
         Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider::class,
         Anhskohbo\NoCaptcha\NoCaptchaServiceProvider::class,
-
+        App\Providers\TranslationServiceProvider::class,
     ],
 
     /*

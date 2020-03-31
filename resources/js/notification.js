@@ -31,7 +31,7 @@ function showNotifications(notifications, target) {
         $(target).addClass('has-notifications');
         $('#badge-notify').text(notifications.length);
     } else {
-        $(target + 'Menu').html('<li class="dropdown-header">No notifications</li>');
+        $(target + 'Menu').html('<li class="dropdown-header">'+Vue.prototype.trans('notifications.no-notifications')+'</li>');
         $(target).removeClass('has-notifications');
         $('#badge-notify').text(0);
     }
@@ -72,12 +72,12 @@ function makeNotificationText(notification) {
         text += `<li class="dropdown-header"><strong>${name}</strong> followed you</li>`;
     } else if(notification.type === NOTIFICATION_TYPES.newPost) {
         const name = notification.data.following_name;
-        text += `<li class="dropdown-header"><strong>${name}</strong> published a post</li>`;
+        text += `<li class="dropdown-header"><strong>${name}</strong> `+Vue.prototype.trans('notifications.publish-post')+`</li>`;
     } else if(notification.type === NOTIFICATION_TYPES.newMessage) {
         const email = notification.data.email;
-        text += `<li class="dropdown-header"><strong>${email}</strong> send You a message</li>`;
+        text += `<li class="dropdown-header"><strong>${email}</strong> `+Vue.prototype.trans('notifications.send-message')+`</li>`;
     } else if(notification.type === NOTIFICATION_TYPES.chatMessage) {
-        text += `<li class="dropdown-header">You have new application</li>`;
+        text += `<li class="dropdown-header">`+Vue.prototype.trans('notifications.new-application')+`</li>`;
     }
     return text;
 }

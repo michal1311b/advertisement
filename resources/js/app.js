@@ -105,6 +105,8 @@ Vue.component('course-create', CreateCourse);
 import SimilarForeign from './components/foreigns/SimilarForeign.vue';
 Vue.component('similar-foreign', SimilarForeign);
 
+Vue.mixin(require('./trans'));
+
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application

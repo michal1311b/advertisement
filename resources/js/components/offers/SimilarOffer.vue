@@ -488,7 +488,7 @@
                     
                     if(response.data.message.substring(0,17) === 'Undefined offset:'
                     || response.data.message.substring(0,17) === 'file_get_contents') {
-                        this.$toasted.success('Nie prawidłowy adres placówki.');
+                        this.$toasted.success(Vue.prototype.trans('notifications.invalid-company-address'));
                         return;
                     }
                     if(response.data.status === 200 || response.data.status === 201)
