@@ -23,7 +23,7 @@
 <div class="container">
     <div class="row justify-content-center">
         @foreach($messages as $message)
-            <div class="col-md-12">
+            <div class="col-md-12" id="#message{{ $message->id }}">
                 <div class="card">
                     <div class="card-header">
                         <img src="{{ asset($message->user->avatar) }}" alt="avatar" class="user-avatar user-avatar--smaller">
@@ -50,7 +50,7 @@
                 </div>
             </div>
         @endforeach
-        <div class="col-12">
+        <div class="col-12" id="paginate">
             {{ $messages->links() }}
         </div>
         <div class="col-12">
@@ -69,4 +69,5 @@
 @endsection
 
 @section('scripts')
+<script src="{{ asset('js/usedInViews/scrollMessage.js') }}"></script>
 @endsection

@@ -10,9 +10,22 @@ const NOTIFICATION_TYPES = {
 
 // check if there's a logged in user
 if(Laravel.userId) {
-    $.get('/offer/notifications', function (data) {
-        addNotifications(data, "#notifications");
-    });
+    let notificationIds = [];
+
+    setInterval(function(){ 
+        $.get('/offer/notifications', function (data) {
+            window.localStorage.setItem('notifications', notificationIds);
+            
+            data.forEach(function(item, index) {
+                let toCompare = window.localStorage.getItem('notifications');
+                if(!toCompare.includes(item.id)) {
+                    notificationIds.push(item.id);
+                    addNotifications(item, "#notifications");
+                }
+            });
+            window.localStorage.setItem('notifications', notificationIds);
+        });
+     }, 3000);
 }
 
 function addNotifications(newNotifications, target) {
