@@ -84,7 +84,7 @@
                 @else
                     <li class="nav-item dropdown">
                         <a class="dropdown-toggle notification" id="notifications" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            <span>{{ __('Inbox') }}</span>
+                            <i class="fas fa-envelope fa-2x"></i>
                             <span class="badge" id="badge-notify"></span>
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="notificationsMenu" id="notificationsMenu">
