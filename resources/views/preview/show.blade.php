@@ -74,7 +74,7 @@
                             </div>
                             <div class="col-12 text-center">
                                 <a href="{{ route('register.company') }}" class="btn btn-rounded btn-primary btn-lg">
-                                    {{ trans('sentence.register') }} {{ trans('sentence.as') }} {{ trans('sentence.company') }} {{ trans('sentence.and') }} {{ trans('offer.offer-create-poland') }}
+                                    {{ trans('sentence.register') }} {{ trans('sentence.as') }} {{ trans('company.company') }} {{ trans('sentence.and') }} {{ trans('offer.offer-create-poland') }}
                                 </a>
                             </div>
                         </div>

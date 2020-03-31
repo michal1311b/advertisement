@@ -32,7 +32,7 @@
                                 <a href="{{ route('register.company') }}" class="btn btn-rounded btn-primary btn-lg">
                                     {{ trans('sentence.register') }} 
                                     {{ trans('sentence.as') }} 
-                                    {{ trans('sentence.company') }} 
+                                    {{ trans('company.company') }} 
                                     {{ trans('sentence.and') }} 
                                     {{ trans('offer.offer-create-poland') }}
                                     <img class="logo" src="{{ asset('images/poland.png') }}" alt="{{ trans('sentence.polish') }}">
@@ -42,7 +42,7 @@
                                 <a href="{{ route('register.foreign') }}" class="btn btn-rounded btn-primary btn-lg">
                                     {{ trans('sentence.register') }} 
                                     {{ trans('sentence.as') }} 
-                                    {{ trans('sentence.company') }} 
+                                    {{ trans('company.company') }} 
                                     {{ trans('sentence.and') }} 
                                     {{ trans('offer.offer-create-foreign') }}
                                     <img class="logo" src="{{ asset('images/globe.png') }}" alt="{{ trans('sentence.polish') }}">
@@ -64,7 +64,7 @@
                                 <a href="{{ route('register.course') }}" class="btn btn-rounded btn-primary btn-lg">
                                     {{ trans('sentence.register') }} 
                                     {{ trans('sentence.as') }} 
-                                    {{ trans('sentence.company') }} 
+                                    {{ trans('company.company') }} 
                                     {{ trans('sentence.and') }} 
                                     {{ trans('sentence.register-course') }}
                                     <img class="logo" src="{{ asset('images/course-icon.png') }}" alt="{{ trans('sentence.register-course') }}">
