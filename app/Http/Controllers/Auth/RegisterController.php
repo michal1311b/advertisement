@@ -310,7 +310,7 @@ class RegisterController extends Controller
         {
             return response()->json([
                 'status' => 422,
-                'message' => trans('sentence.invalid-nip')
+                'message' => trans('company.invalid-nip')
             ]);
         }
 

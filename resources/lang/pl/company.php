@@ -15,4 +15,5 @@ return [
     'visit-company' => 'Zobacz inne oferty tego pracodawcy. Kliknij tutaj.',
     'companies-orderBy-offers' => 'Pracodawcy z największą ilością ofert',
     'no-companies' => 'Nie znaleziono żadnych firm zarejestruj się aby być pierwszy.',
+    'invalid-nip' => 'Nieprawidłowy numer NIP',
 ];

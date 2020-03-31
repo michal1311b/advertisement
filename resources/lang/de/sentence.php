@@ -68,7 +68,6 @@ return [
   'regulation' => 'Vorschriften',
   'accept' => 'Akzeptieren',
   'data-conversion' => 'Ich stimme der Verarbeitung meiner persönlichen Daten durch den Administrator zu',
-  'invalid-nip' => 'Ungültige Steueridentifikationsnummer',
   'rodo-term' => 'Ich bin damit einverstanden, dass meine personenbezogenen Daten zum Zwecke der Einstellung gemäß Art. 6 Klausel 1 lit. eine Verordnung (EU) 2016/679 des Europäischen Parlaments und des Rates vom 27. April 2016 zum Schutz des Einzelnen bei der Verarbeitung personenbezogener Daten und zum freien Datenverkehr sowie zur Aufhebung der Richtlinie 95/46 / EG (Allgemeine Datenschutzverordnung)',
   'applied-again' => 'Für diese Anzeige wurde bereits eine Bewerbung eingereicht.',
   'register-step' => 'Wählen Sie den Kontotyp',
