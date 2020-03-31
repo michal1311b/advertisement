@@ -58,7 +58,7 @@
                 <div class="card-footer">
                     <form action="{{ route('reply-room', $messages[0]->room) }}" method="POST">
                         @csrf
-                        <textarea class="form-control mb-4" name="reply" placeholder="Reply"></textarea>
+                        <textarea class="form-control mb-4" name="reply" placeholder="{{ trans('email.reply-form') }}"></textarea>
                         <button type="submit" class="btn btn-rounded btn-success mt-3">{{ trans('email.send') }}</button>
                     </form>
                 </div>
