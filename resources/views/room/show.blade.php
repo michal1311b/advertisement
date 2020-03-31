@@ -53,6 +53,9 @@
         <div class="col-12" id="paginate">
             {{ $messages->links() }}
         </div>
+        <span class="btn btn-rounded btn-success" onclick="openInNewTab()">
+            {{ trans('email.open-new-tab') }}
+        </span>
         <div class="col-12">
             <div class="card">
                 <div class="card-footer">

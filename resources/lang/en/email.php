@@ -29,5 +29,6 @@ return [
     'message' => 'Message',
     'no-message' => 'No messages',
     'message-send' => 'Message was send successfully!',
-    'email' => 'E-mail'
+    'email' => 'E-mail',
+    'open-new-tab' => 'Open in a new window'
 ];

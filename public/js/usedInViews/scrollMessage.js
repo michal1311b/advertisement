@@ -9,3 +9,9 @@ $(document).ready(function() {
         }, 2000);
     }
 });
+
+function openInNewTab() {
+    let url = window.location.href;
+
+    window.open(url, "CHAT_WindowName", "height=560,width=360");
+}

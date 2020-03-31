@@ -29,5 +29,6 @@ return [
     'message' => 'Treść',
     'no-message' => 'Keine Nachrichten',
     'message-send' => 'Die Nachricht wurde gesendet',
-    'email' => 'E-mail'
+    'email' => 'E-mail',
+    'open-new-tab' => 'In einem neuen Fenster öffnen'
 ];
