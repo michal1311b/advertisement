@@ -6,5 +6,6 @@ return [
     'send-message' => 'надіслати Вам повідомлення',
     'publish-post' => 'опублікував допис',
     'fill-street-number' => 'Заповніть номер вулиці в полі адреси компанії',
-    'invalid-company-address' => 'Недійсна адреса розетки.'
+    'invalid-company-address' => 'Недійсна адреса розетки.',
+    'message-from' => 'Повідомлення від '
 ];

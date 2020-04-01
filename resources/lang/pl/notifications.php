@@ -7,5 +7,6 @@ return [
     'publish-post' => 'opublikował nowe ogłoszenie',
     'fill-street-number' => 'Uzupełnij numer ulicy w polu Adres firmy',
     'invalid-nip' => 'Nie prawidłowy numer NIP',
-    'invalid-company-address' => 'Nie prawidłowy adres placówki.'
+    'invalid-company-address' => 'Nie prawidłowy adres placówki.',
+    'message-from' => 'Wiadomość od '
 ];

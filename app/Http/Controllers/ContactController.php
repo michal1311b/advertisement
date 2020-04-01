@@ -158,7 +158,7 @@ class ContactController extends Controller
     private function buildRoom($title, $user_id, $message, $advert_user)
     {
         $room = Room::create([
-            'name' => 'Chat room ' . $title,
+            'name' =>  trans('notifications.message-from') . $title,
             'user_id' => $user_id
         ]);
 

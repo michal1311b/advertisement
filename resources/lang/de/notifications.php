@@ -6,5 +6,6 @@ return [
     'send-message' => 'Sende dir eine Nachricht',
     'publish-post' => 'hat einen Beitrag veröffentlicht',
     'fill-street-number' => 'Vervollständigen Sie die Hausnummer im Feld Firmenadresse',
-    'invalid-company-address' => 'Ungültige Steckdosenadresse.'
+    'invalid-company-address' => 'Ungültige Steckdosenadresse.',
+    'message-from' => 'Nachricht von '
 ];
