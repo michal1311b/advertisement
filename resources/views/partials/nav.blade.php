@@ -88,7 +88,7 @@
                             <span class="badge" id="badge-notify"></span>
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="notificationsMenu" id="notificationsMenu">
-                            <li class="dropdown-header">{{ __('No notifications') }}</li>
+                            <li class="dropdown-header">{{ trans('notifications.no-notifications') }}</li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
