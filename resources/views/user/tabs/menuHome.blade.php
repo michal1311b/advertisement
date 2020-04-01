@@ -291,6 +291,31 @@
                         </div>
                     @endif
 
+                    @if($editUser->facilities && ($editUser->hasRole('company') || $editUser->hasRole('admin')))
+                        <div class="form-group row">
+                            <label for="facilities" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('profile.facilities') }}</label>
+                            <div class="col-12 col-md-9">
+                                <select multiple="multiple"
+                                        class="form-control{{ $errors->has('facilities') ? ' is-invalid' : '' }}"
+                                        id="facilities" name="facilities[]">
+                                    @foreach ($facilities as $key => $facility)
+                                        @if(in_array($facility->id, $editUser->facilities->pluck('id')->toArray()))
+                                            <option value="{{ $facility->id }}"
+                                            selected>{{ $facility->name }}</option>
+                                        @else
+                                            <option value="{{ $facility->id }}">{{ $facility->name }}</option>
+                                        @endif
+                                    @endforeach
+                                </select>
+                                @if ($errors->has('facilities'))
+                                    <span class="invalid-feedback" role="alert">
+                                        {{  $errors->first('facilities') }}
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+                    @endif
+
                     <div class="form-group row mb-0">
                         <div class="col-md-12 text-left">
                             <button type="submit" class="btn btn-rounded btn-success">

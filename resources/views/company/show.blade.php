@@ -41,6 +41,24 @@
             </div>
         </div>
     @endif
+    @if(count($user->facilities) > 0)
+        <div class="row">
+            <div class="col-12">
+                <div class="card border border-dark">
+                    <div class="card-header">
+                        {{ trans('profile.facilities') }}
+                    </div>
+                    <div class="card-body">
+                        @foreach($user->facilities as $facility)
+                            <span class="btn btn-info text-white">
+                                {{ $facility->name }}
+                            </span>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+        </div>
+    @endif
     <div class="row">
         <div class="col-12 col-lg-6 pb-3">
             <div id="map1" style="height: 440px; border: 1px solid #AAA;"></div>

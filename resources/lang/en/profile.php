@@ -48,5 +48,6 @@ return [
     'one-specialization-at-least' => 'You must select at least one specialization',
     'no-specialization' => 'No specialization',
     'location-exists' => 'Location already exists.',
-    'departments' => 'Type of department or clinic'
+    'departments' => 'Type of department or clinic',
+    'facilities' => 'Types of medical facilities'
 ];

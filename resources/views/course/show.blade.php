@@ -65,7 +65,7 @@
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
                                         {{ trans('profile.specialization') }}
-                                        <span class="badge badge-pill offer-item border{{ $course->specialization_id }} text-white">{{ $course->specialization->name }}</span>
+                                        <span class="ml-2 btn btn-sm offer-item border{{ $course->specialization_id }} text-white">{{ $course->specialization->name }}</span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
                                         {{ trans('offer.created_at') }}

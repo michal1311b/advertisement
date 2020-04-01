@@ -25,3 +25,7 @@ $('#specializations_np').select2({
 $('#departments').select2({
     width: '100%'
 });
+
+$('#facilities').select2({
+    width: '100%'
+});

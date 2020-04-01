@@ -48,5 +48,6 @@ return [
     'one-specialization-at-least' => 'Musisz wybrać co najmniej jedną specjalizację',
     'no-specialization' => 'Brak specjalizacji',
     'location-exists' => 'Lokalizacja już została dodana.',
-    'departments' => 'Rodzaj oddziału lub poradni'
+    'departments' => 'Rodzaj oddziału lub poradni',
+    'facilities' => 'Rodzaje placówek medycznych'
 ];

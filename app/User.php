@@ -108,6 +108,12 @@ class User extends Authenticatable implements MustVerifyEmail, HasLoginsAndDevic
         ->withTimestamps();
     }
 
+    public function facilities()
+    {
+        return $this->belongsToMany(Facility::class)
+        ->withTimestamps();
+    }
+
     public function likedAdvertisements()
     {
         return $this->morphedByMany('App\Advertisement', 'likeable')->whereDeletedAt(null);
