@@ -316,6 +316,19 @@
                         </div>
                     @endif
 
+                    <div class="form-group row">
+                        <label for="about" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.body') }}</label>
+
+                        <div class="col-12 col-md-9">
+                            <textarea id="about" class="form-control @error('about') is-invalid @enderror" name="about">
+                                {!! $editUser->profile->about !!}
+                            </textarea>
+                            @error('about')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
+                    </div>
+
                     <div class="form-group row mb-0">
                         <div class="col-md-12 text-left">
                             <button type="submit" class="btn btn-rounded btn-success">
