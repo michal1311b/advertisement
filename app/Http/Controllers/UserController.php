@@ -30,19 +30,43 @@ class UserController extends Controller
 {
     public function edit(User $user)
     {
-        $editUser = Auth::user()
-        ->load([
-            'doctor', 
-            'nurse', 
-            'profile', 
-            'finishedSpecializations', 
-            'pendingSpecializations', 
-            'experiences', 
-            'courses', 
-            'preference'
-        ]);
-
         $user = Auth::user();
+
+        if($user->hasRole('company') || $user->hasRole('admin')) {
+            $editUser = Auth::user()
+            ->load([
+                'preference'
+            ]);
+        } else {
+            $editUser = Auth::user()
+            ->load([
+                'doctor', 
+                'nurse', 
+                'profile', 
+                'finishedSpecializations', 
+                'pendingSpecializations', 
+                'experiences', 
+                'courses', 
+                'preference'
+            ]);
+            $languages = Language::all();
+            $userLanguages = UserLanguage::where('user_id', $editUser->id)->with('language')->get();
+            $userLocations = LocationUser::where('user_id', $editUser->id)->with('location')->get();
+            $locations = Location::get(['id', 'city']);
+            $works = Work::get(['id', 'name']);
+            $settlements = Settlement::get(['id', 'name']);
+            $currencies = Currency::get(['id', 'name', 'symbol']);
+            $distances = [
+                ['label' => '+0 km', 'value' => 0],
+                ['label' => '+10 km', 'value' => 10],
+                ['label' => '+20 km', 'value' => 20],
+                ['label' => '+50 km', 'value' => 50],
+                ['label' => '+100 km', 'value' => 100],
+                ['label' => '+150 km', 'value' => 150],
+                ['label' => 'Cała Polska', 'value' => 1000],
+            ];
+        }
+        
         $user->checkAuthorization($editUser->id, $user->id);
         
         if($user->hasRole('nurse')) {
@@ -50,23 +74,6 @@ class UserController extends Controller
         } else {
             $specializations = Specialization::whereIn('type', [0, 1, 2])->get();
         }
-        
-        $languages = Language::all();
-        $userLanguages = UserLanguage::where('user_id', $editUser->id)->with('language')->get();
-        $userLocations = LocationUser::where('user_id', $editUser->id)->with('location')->get();
-        $locations = Location::get(['id', 'city']);
-        $works = Work::get(['id', 'name']);
-        $settlements = Settlement::get(['id', 'name']);
-        $currencies = Currency::get(['id', 'name', 'symbol']);
-        $distances = [
-            ['label' => '+0 km', 'value' => 0],
-            ['label' => '+10 km', 'value' => 10],
-            ['label' => '+20 km', 'value' => 20],
-            ['label' => '+50 km', 'value' => 50],
-            ['label' => '+100 km', 'value' => 100],
-            ['label' => '+150 km', 'value' => 150],
-            ['label' => 'Cała Polska', 'value' => 1000],
-        ];
 
         return view('user.edit', compact([
             'editUser',
