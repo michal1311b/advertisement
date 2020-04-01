@@ -49,5 +49,7 @@ return [
     'no-specialization' => 'Keine Spezialisierung',
     'location-exists' => 'Der Ort wurde bereits hinzugefügt.',
     'departments' => 'Art der Abteilung oder Klinik',
-    'facilities' => 'Arten von medizinischen Einrichtungen'
+    'facilities' => 'Arten von medizinischen Einrichtungen',
+    'about-company' => 'Über uns',
+    'about-employee' => 'Über mich',
 ];

@@ -317,7 +317,13 @@
                     @endif
 
                     <div class="form-group row">
-                        <label for="about" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.body') }}</label>
+                        <label for="about" class="col-12 col-md-3 col-form-label text-md-right">
+                            @if($editUser->hasRole('company') || $editUser->hasRole('admin'))
+                                {{ trans('profile.about-company') }}
+                            @else
+                                {{ trans('profile.about-employee') }}
+                            @endif
+                        </label>
 
                         <div class="col-12 col-md-9">
                             <textarea id="about" class="form-control @error('about') is-invalid @enderror" name="about">

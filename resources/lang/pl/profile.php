@@ -49,5 +49,7 @@ return [
     'no-specialization' => 'Brak specjalizacji',
     'location-exists' => 'Lokalizacja już została dodana.',
     'departments' => 'Rodzaj oddziału lub poradni',
-    'facilities' => 'Rodzaje placówek medycznych'
+    'facilities' => 'Rodzaje placówek medycznych',
+    'about-company' => 'O nas',
+    'about-employee' => 'O mnie',
 ];

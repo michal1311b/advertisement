@@ -49,5 +49,7 @@ return [
     'no-specialization' => 'Без спеціалізації',
     'location-exists' => 'Місцезнаходження вже додано.',
     'departments' => 'Тип відділення або клініки',
-    'facilities' => 'Види медичних установ'
+    'facilities' => 'Види медичних установ',
+    'about-company' => 'Про нас',
+    'about-employee' => 'Про мене',
 ];

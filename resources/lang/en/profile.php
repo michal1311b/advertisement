@@ -49,5 +49,7 @@ return [
     'no-specialization' => 'No specialization',
     'location-exists' => 'Location already exists.',
     'departments' => 'Type of department or clinic',
-    'facilities' => 'Types of medical facilities'
+    'facilities' => 'Types of medical facilities',
+    'about-company' => 'About us',
+    'about-employee' => 'About me',
 ];

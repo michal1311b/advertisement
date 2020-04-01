@@ -23,6 +23,20 @@
 
 @section('content')
 <div class="container py-5">
+    @if($user->profile->about)
+        <div class="row">
+            <div class="col-12">
+                <div class="card border border-dark">
+                    <div class="card-header">
+                        {{ trans('profile.about-company') }}
+                    </div>
+                    <div class="card-body">
+                        {!! $user->profile->about !!}
+                    </div>
+                </div>
+            </div>
+        </div>
+    @endif
     @if(count($user->departments) > 0)
         <div class="row">
             <div class="col-12">
