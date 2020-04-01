@@ -330,14 +330,14 @@ class CreateDepartmentsTable extends Migration
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'name' => 'Hostel dla os&oacute;b psychicznie chorych',
-                'slug' => Str::slug('Hostel dla os&oacute;b psychicznie chorych'),
+                'name' => 'Hostel dla osób psychicznie chorych',
+                'slug' => Str::slug('Hostel dla osób psychicznie chorych'),
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'name' => 'Hostel dla os&oacute;b z zaburzeniami psychicznymi',
-                'slug' => Str::slug('Hostel dla os&oacute;b z zaburzeniami psychicznymi'),
+                'name' => 'Hostel dla osób z zaburzeniami psychicznymi',
+                'slug' => Str::slug('Hostel dla osób z zaburzeniami psychicznymi'),
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],
@@ -348,14 +348,14 @@ class CreateDepartmentsTable extends Migration
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'name' => 'Hostel dla uzależnionych od środk&oacute;w psychoaktywnych',
-                'slug' => Str::slug('Hostel dla uzależnionych od środk&oacute;w psychoaktywnych'),
+                'name' => 'Hostel dla uzależnionych od środków psychoaktywnych',
+                'slug' => Str::slug('Hostel dla uzależnionych od środków psychoaktywnych'),
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'name' => 'Hostel dla uzależnionych od środk&oacute;w psychoaktywnych dla dzieci',
-                'slug' => Str::slug('Hostel dla uzależnionych od środk&oacute;w psychoaktywnych dla dzieci'),
+                'name' => 'Hostel dla uzależnionych od środków psychoaktywnych dla dzieci',
+                'slug' => Str::slug('Hostel dla uzależnionych od środków psychoaktywnych dla dzieci'),
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],
@@ -384,8 +384,8 @@ class CreateDepartmentsTable extends Migration
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'name' => 'Oddział/ośrodek rehabilitacji dla uzależnionych od substancji psychoaktywnych ze wsp&oacute;łistniejącymi zaburzeniami psychotycznymi',
-                'slug' => Str::slug('Oddział/ośrodek rehabilitacji dla uzależnionych od substancji psychoaktywnych ze wsp&oacute;łistniejącymi zaburzeniami psychotycznymi'),
+                'name' => 'Oddział/ośrodek rehabilitacji dla uzależnionych od substancji psychoaktywnych ze współistniejącymi zaburzeniami psychotycznymi',
+                'slug' => Str::slug('Oddział/ośrodek rehabilitacji dla uzależnionych od substancji psychoaktywnych ze współistniejącymi zaburzeniami psychotycznymi'),
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],
@@ -402,26 +402,26 @@ class CreateDepartmentsTable extends Migration
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'name' => 'Oddział/ośrodek terapii dla uzależnionych od substancji psychoaktywnych ze wsp&oacute;łistniejącymi zaburzeniami psychotycznymi',
-                'slug' => Str::slug('Oddział/ośrodek terapii dla uzależnionych od substancji psychoaktywnych ze wsp&oacute;łistniejącymi zaburzeniami psychotycznymi'),
+                'name' => 'Oddział/ośrodek terapii dla uzależnionych od substancji psychoaktywnych ze współistniejącymi zaburzeniami psychotycznymi',
+                'slug' => Str::slug('Oddział/ośrodek terapii dla uzależnionych od substancji psychoaktywnych ze współistniejącymi zaburzeniami psychotycznymi'),
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'name' => 'Oddział/ośrodek terapii dla uzależnionych od substancji psychoaktywnych ze wsp&oacute;łistniejącymi zaburzeniami psychotycznymi dla dzieci',
-                'slug' => Str::slug('Oddział/ośrodek terapii dla uzależnionych od substancji psychoaktywnych ze wsp&oacute;łistniejącymi zaburzeniami psychotycznymi dla dzieci'),
+                'name' => 'Oddział/ośrodek terapii dla uzależnionych od substancji psychoaktywnych ze współistniejącymi zaburzeniami psychotycznymi dla dzieci',
+                'slug' => Str::slug('Oddział/ośrodek terapii dla uzależnionych od substancji psychoaktywnych ze współistniejącymi zaburzeniami psychotycznymi dla dzieci'),
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'name' => 'Oddział/zesp&oacute;ł chirurgii jednego dnia',
-                'slug' => Str::slug('Oddział/zesp&oacute;ł chirurgii jednego dnia'),
+                'name' => 'Oddział/zespół chirurgii jednego dnia',
+                'slug' => Str::slug('Oddział/zespół chirurgii jednego dnia'),
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'name' => 'Oddział/zesp&oacute;ł chirurgii jednego dnia dla dzieci',
-                'slug' => Str::slug('Oddział/zesp&oacute;ł chirurgii jednego dnia dla dzieci'),
+                'name' => 'Oddział/zespół chirurgii jednego dnia dla dzieci',
+                'slug' => Str::slug('Oddział/zespół chirurgii jednego dnia dla dzieci'),
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],
@@ -486,8 +486,8 @@ class CreateDepartmentsTable extends Migration
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'name' => 'Oddział chirurgiczny og&oacute;lny',
-                'slug' => Str::slug('Oddział chirurgiczny og&oacute;lny'),
+                'name' => 'Oddział chirurgiczny ogólny',
+                'slug' => Str::slug('Oddział chirurgiczny ogólny'),
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],
@@ -576,50 +576,50 @@ class CreateDepartmentsTable extends Migration
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'name' => 'Oddział chor&oacute;b metabolicznych',
-                'slug' => Str::slug('Oddział chor&oacute;b metabolicznych'),
+                'name' => 'Oddział chorób metabolicznych',
+                'slug' => Str::slug('Oddział chorób metabolicznych'),
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'name' => 'Oddział chor&oacute;b metabolicznych dla dzieci',
-                'slug' => Str::slug('Oddział chor&oacute;b metabolicznych dla dzieci'),
+                'name' => 'Oddział chorób metabolicznych dla dzieci',
+                'slug' => Str::slug('Oddział chorób metabolicznych dla dzieci'),
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'name' => 'Oddział chor&oacute;b tropikalnych',
-                'slug' => Str::slug('Oddział chor&oacute;b tropikalnych'),
+                'name' => 'Oddział chorób tropikalnych',
+                'slug' => Str::slug('Oddział chorób tropikalnych'),
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'name' => 'Oddział chor&oacute;b wewnętrznych',
-                'slug' => Str::slug('Oddział chor&oacute;b wewnętrznych'),
+                'name' => 'Oddział chorób wewnętrznych',
+                'slug' => Str::slug('Oddział chorób wewnętrznych'),
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'name' => 'Oddział chor&oacute;b wewnętrznych dla dzieci',
-                'slug' => Str::slug('Oddział chor&oacute;b wewnętrznych dla dzieci'),
+                'name' => 'Oddział chorób wewnętrznych dla dzieci',
+                'slug' => Str::slug('Oddział chorób wewnętrznych dla dzieci'),
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'name' => 'Oddział chor&oacute;b zakaźnych',
-                'slug' => Str::slug('Oddział chor&oacute;b zakaźnych'),
+                'name' => 'Oddział chorób zakaźnych',
+                'slug' => Str::slug('Oddział chorób zakaźnych'),
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'name' => 'Oddział chor&oacute;b zakaźnych dla dzieci',
-                'slug' => Str::slug('Oddział chor&oacute;b zakaźnych dla dzieci'),
+                'name' => 'Oddział chorób zakaźnych dla dzieci',
+                'slug' => Str::slug('Oddział chorób zakaźnych dla dzieci'),
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'name' => 'Oddział chor&oacute;b zawodowych',
-                'slug' => Str::slug('Oddział chor&oacute;b zawodowych'),
+                'name' => 'Oddział chorób zawodowych',
+                'slug' => Str::slug('Oddział chorób zawodowych'),
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],
@@ -672,8 +672,8 @@ class CreateDepartmentsTable extends Migration
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'name' => 'Oddział dzienny dla os&oacute;b z autyzmem dziecięcym',
-                'slug' => Str::slug('Oddział dzienny dla os&oacute;b z autyzmem dziecięcym'),
+                'name' => 'Oddział dzienny dla osób z autyzmem dziecięcym',
+                'slug' => Str::slug('Oddział dzienny dla osób z autyzmem dziecięcym'),
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],
@@ -720,14 +720,14 @@ class CreateDepartmentsTable extends Migration
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'name' => 'Oddział dzienny terapii uzależnienia od środk&oacute;w psychoaktywnych',
-                'slug' => Str::slug('Oddział dzienny terapii uzależnienia od środk&oacute;w psychoaktywnych'),
+                'name' => 'Oddział dzienny terapii uzależnienia od środków psychoaktywnych',
+                'slug' => Str::slug('Oddział dzienny terapii uzależnienia od środków psychoaktywnych'),
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'name' => 'Oddział dzienny terapii uzależnienia od środk&oacute;w psychoaktywnych dla dzieci i młodzieży',
-                'slug' => Str::slug('Oddział dzienny terapii uzależnienia od środk&oacute;w psychoaktywnych dla dzieci i młodzieży'),
+                'name' => 'Oddział dzienny terapii uzależnienia od środków psychoaktywnych dla dzieci i młodzieży',
+                'slug' => Str::slug('Oddział dzienny terapii uzależnienia od środków psychoaktywnych dla dzieci i młodzieży'),
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],
@@ -804,20 +804,20 @@ class CreateDepartmentsTable extends Migration
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'name' => 'Oddział gruźlicy i chor&oacute;b płuc',
-                'slug' => Str::slug('Oddział gruźlicy i chor&oacute;b płuc'),
+                'name' => 'Oddział gruźlicy i chorób płuc',
+                'slug' => Str::slug('Oddział gruźlicy i chorób płuc'),
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'name' => 'Oddział gruźlicy i chor&oacute;b płuc dzieci',
-                'slug' => Str::slug('Oddział gruźlicy i chor&oacute;b płuc dzieci'),
+                'name' => 'Oddział gruźlicy i chorób płuc dzieci',
+                'slug' => Str::slug('Oddział gruźlicy i chorób płuc dzieci'),
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'name' => 'Oddział gruźlicy i chor&oacute;b płuc dzieci',
-                'slug' => Str::slug('Oddział gruźlicy i chor&oacute;b płuc dzieci'),
+                'name' => 'Oddział gruźlicy i chorób płuc dzieci',
+                'slug' => Str::slug('Oddział gruźlicy i chorób płuc dzieci'),
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],
@@ -1284,14 +1284,14 @@ class CreateDepartmentsTable extends Migration
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'name' => 'Oddział terapii uzależnienia od narkotyk&oacute;w, substancji psychoaktywnych',
-                'slug' => Str::slug('Oddział terapii uzależnienia od narkotyk&oacute;w, substancji psychoaktywnych'),
+                'name' => 'Oddział terapii uzależnienia od narkotyków, substancji psychoaktywnych',
+                'slug' => Str::slug('Oddział terapii uzależnienia od narkotyków, substancji psychoaktywnych'),
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'name' => 'Oddział terapii uzależnienia od narkotyk&oacute;w, substancji psychoaktywnych dla dzieci',
-                'slug' => Str::slug('Oddział terapii uzależnienia od narkotyk&oacute;w, substancji psychoaktywnych dla dzieci'),
+                'name' => 'Oddział terapii uzależnienia od narkotyków, substancji psychoaktywnych dla dzieci',
+                'slug' => Str::slug('Oddział terapii uzależnienia od narkotyków, substancji psychoaktywnych dla dzieci'),
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],
@@ -1362,8 +1362,8 @@ class CreateDepartmentsTable extends Migration
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'name' => 'Oddział wszczepiania rozrusznik&oacute;w',
-                'slug' => Str::slug('Oddział wszczepiania rozrusznik&oacute;w'),
+                'name' => 'Oddział wszczepiania rozruszników',
+                'slug' => Str::slug('Oddział wszczepiania rozruszników'),
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],
@@ -1512,14 +1512,14 @@ class CreateDepartmentsTable extends Migration
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'name' => 'Poradnia alergii sk&oacute;rnych',
-                'slug' => Str::slug('Poradnia alergii sk&oacute;rnych'),
+                'name' => 'Poradnia alergii skórnych',
+                'slug' => Str::slug('Poradnia alergii skórnych'),
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'name' => 'Poradnia alergii sk&oacute;rnych u dzieci',
-                'slug' => Str::slug('Poradnia alergii sk&oacute;rnych u dzieci'),
+                'name' => 'Poradnia alergii skórnych u dzieci',
+                'slug' => Str::slug('Poradnia alergii skórnych u dzieci'),
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],
@@ -1614,8 +1614,8 @@ class CreateDepartmentsTable extends Migration
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'name' => 'Poradnia chirurgii og&oacute;lnej',
-                'slug' => Str::slug('Poradnia chirurgii og&oacute;lnej'),
+                'name' => 'Poradnia chirurgii ogólnej',
+                'slug' => Str::slug('Poradnia chirurgii ogólnej'),
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],
@@ -1692,116 +1692,116 @@ class CreateDepartmentsTable extends Migration
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'name' => 'Poradnia chor&oacute;b błon śluzowych przyzębia',
-                'slug' => Str::slug('Poradnia chor&oacute;b błon śluzowych przyzębia'),
+                'name' => 'Poradnia chorób błon śluzowych przyzębia',
+                'slug' => Str::slug('Poradnia chorób błon śluzowych przyzębia'),
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'name' => 'Poradnia chor&oacute;b błon śluzowych przyzębia u dzieci',
-                'slug' => Str::slug('Poradnia chor&oacute;b błon śluzowych przyzębia u dzieci'),
+                'name' => 'Poradnia chorób błon śluzowych przyzębia u dzieci',
+                'slug' => Str::slug('Poradnia chorób błon śluzowych przyzębia u dzieci'),
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'name' => 'Poradnia chor&oacute;b jelitowych',
-                'slug' => Str::slug('Poradnia chor&oacute;b jelitowych'),
+                'name' => 'Poradnia chorób jelitowych',
+                'slug' => Str::slug('Poradnia chorób jelitowych'),
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'name' => 'Poradnia chor&oacute;b jelitowych dla dzieci',
-                'slug' => Str::slug('Poradnia chor&oacute;b jelitowych dla dzieci'),
+                'name' => 'Poradnia chorób jelitowych dla dzieci',
+                'slug' => Str::slug('Poradnia chorób jelitowych dla dzieci'),
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'name' => 'Poradnia chor&oacute;b metabolicznych',
-                'slug' => Str::slug('Poradnia chor&oacute;b metabolicznych'),
+                'name' => 'Poradnia chorób metabolicznych',
+                'slug' => Str::slug('Poradnia chorób metabolicznych'),
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'name' => 'Poradnia chor&oacute;b metabolicznych dla dzieci',
-                'slug' => Str::slug('Poradnia chor&oacute;b metabolicznych dla dzieci'),
+                'name' => 'Poradnia chorób metabolicznych dla dzieci',
+                'slug' => Str::slug('Poradnia chorób metabolicznych dla dzieci'),
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'name' => 'Poradnia chor&oacute;b mięśni',
-                'slug' => Str::slug('Poradnia chor&oacute;b mięśni'),
+                'name' => 'Poradnia chorób mięśni',
+                'slug' => Str::slug('Poradnia chorób mięśni'),
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'name' => 'Poradnia chor&oacute;b mięśni u dzieci',
-                'slug' => Str::slug('Poradnia chor&oacute;b mięśni u dzieci'),
+                'name' => 'Poradnia chorób mięśni u dzieci',
+                'slug' => Str::slug('Poradnia chorób mięśni u dzieci'),
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'name' => 'Poradnia chor&oacute;b naczyniowych m&oacute;zgu',
-                'slug' => Str::slug('Poradnia chor&oacute;b naczyniowych m&oacute;zgu'),
+                'name' => 'Poradnia chorób naczyniowych mózgu',
+                'slug' => Str::slug('Poradnia chorób naczyniowych mózgu'),
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'name' => 'Poradnia chor&oacute;b naczyń',
-                'slug' => Str::slug('Poradnia chor&oacute;b naczyń'),
+                'name' => 'Poradnia chorób naczyń',
+                'slug' => Str::slug('Poradnia chorób naczyń'),
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'name' => 'Poradnia chor&oacute;b naczyń u dzieci',
-                'slug' => Str::slug('Poradnia chor&oacute;b naczyń u dzieci'),
+                'name' => 'Poradnia chorób naczyń u dzieci',
+                'slug' => Str::slug('Poradnia chorób naczyń u dzieci'),
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'name' => 'Poradnia chor&oacute;b odzwierzęcych i pasożytniczych',
-                'slug' => Str::slug('Poradnia chor&oacute;b odzwierzęcych i pasożytniczych'),
+                'name' => 'Poradnia chorób odzwierzęcych i pasożytniczych',
+                'slug' => Str::slug('Poradnia chorób odzwierzęcych i pasożytniczych'),
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'name' => 'Poradnia chor&oacute;b odzwierzęcych i pasożytniczych u dzieci',
-                'slug' => Str::slug('Poradnia chor&oacute;b odzwierzęcych i pasożytniczych u dzieci'),
+                'name' => 'Poradnia chorób odzwierzęcych i pasożytniczych u dzieci',
+                'slug' => Str::slug('Poradnia chorób odzwierzęcych i pasożytniczych u dzieci'),
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'name' => 'Poradnia chor&oacute;b tropikalnych',
-                'slug' => Str::slug('Poradnia chor&oacute;b tropikalnych'),
+                'name' => 'Poradnia chorób tropikalnych',
+                'slug' => Str::slug('Poradnia chorób tropikalnych'),
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'name' => 'Poradnia chor&oacute;b wewnętrznych',
-                'slug' => Str::slug('Poradnia chor&oacute;b wewnętrznych'),
+                'name' => 'Poradnia chorób wewnętrznych',
+                'slug' => Str::slug('Poradnia chorób wewnętrznych'),
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'name' => 'Poradnia chor&oacute;b wewnętrznych dla dzieci',
-                'slug' => Str::slug('Poradnia chor&oacute;b wewnętrznych dla dzieci'),
+                'name' => 'Poradnia chorób wewnętrznych dla dzieci',
+                'slug' => Str::slug('Poradnia chorób wewnętrznych dla dzieci'),
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'name' => 'Poradnia chor&oacute;b zakaźnych',
-                'slug' => Str::slug('Poradnia chor&oacute;b zakaźnych'),
+                'name' => 'Poradnia chorób zakaźnych',
+                'slug' => Str::slug('Poradnia chorób zakaźnych'),
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'name' => 'Poradnia chor&oacute;b zakaźnych u dzieci',
-                'slug' => Str::slug('Poradnia chor&oacute;b zakaźnych u dzieci'),
+                'name' => 'Poradnia chorób zakaźnych u dzieci',
+                'slug' => Str::slug('Poradnia chorób zakaźnych u dzieci'),
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'name' => 'Poradnia chor&oacute;b zawodowych',
-                'slug' => Str::slug('Poradnia chor&oacute;b zawodowych'),
+                'name' => 'Poradnia chorób zawodowych',
+                'slug' => Str::slug('Poradnia chorób zawodowych'),
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],
@@ -1962,14 +1962,14 @@ class CreateDepartmentsTable extends Migration
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'name' => 'Poradnia gruźlicy i chor&oacute;b płuc',
-                'slug' => Str::slug('Poradnia gruźlicy i chor&oacute;b płuc'),
+                'name' => 'Poradnia gruźlicy i chorób płuc',
+                'slug' => Str::slug('Poradnia gruźlicy i chorób płuc'),
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'name' => 'Poradnia gruźlicy i chor&oacute;b płuc dla dzieci',
-                'slug' => Str::slug('Poradnia gruźlicy i chor&oacute;b płuc dla dzieci'),
+                'name' => 'Poradnia gruźlicy i chorób płuc dla dzieci',
+                'slug' => Str::slug('Poradnia gruźlicy i chorób płuc dla dzieci'),
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],
@@ -2040,14 +2040,14 @@ class CreateDepartmentsTable extends Migration
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'name' => 'Poradnia leczenia b&oacute;lu (neurologiczna)',
-                'slug' => Str::slug('Poradnia leczenia b&oacute;lu (neurologiczna)'),
+                'name' => 'Poradnia leczenia bólu (neurologiczna)',
+                'slug' => Str::slug('Poradnia leczenia bólu (neurologiczna)'),
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'name' => 'Poradnia leczenia b&oacute;lu dla dzieci',
-                'slug' => Str::slug('Poradnia leczenia b&oacute;lu dla dzieci'),
+                'name' => 'Poradnia leczenia bólu dla dzieci',
+                'slug' => Str::slug('Poradnia leczenia bólu dla dzieci'),
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],
@@ -2232,14 +2232,14 @@ class CreateDepartmentsTable extends Migration
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'name' => 'Poradnia nowotwor&oacute;w krwi',
-                'slug' => Str::slug('Poradnia nowotwor&oacute;w krwi'),
+                'name' => 'Poradnia nowotworów krwi',
+                'slug' => Str::slug('Poradnia nowotworów krwi'),
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'name' => 'Poradnia nowotwor&oacute;w krwi u dzieci',
-                'slug' => Str::slug('Poradnia nowotwor&oacute;w krwi u dzieci'),
+                'name' => 'Poradnia nowotworów krwi u dzieci',
+                'slug' => Str::slug('Poradnia nowotworów krwi u dzieci'),
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],
@@ -2328,8 +2328,8 @@ class CreateDepartmentsTable extends Migration
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'name' => 'Poradnia parkinsonizmu i chor&oacute;b układu pozapiramidowego',
-                'slug' => Str::slug('Poradnia parkinsonizmu i chor&oacute;b układu pozapiramidowego'),
+                'name' => 'Poradnia parkinsonizmu i chorób układu pozapiramidowego',
+                'slug' => Str::slug('Poradnia parkinsonizmu i chorób układu pozapiramidowego'),
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],
@@ -2364,8 +2364,8 @@ class CreateDepartmentsTable extends Migration
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'name' => 'Poradnia profilaktyki chor&oacute;b piersi',
-                'slug' => Str::slug('Poradnia profilaktyki chor&oacute;b piersi'),
+                'name' => 'Poradnia profilaktyki chorób piersi',
+                'slug' => Str::slug('Poradnia profilaktyki chorób piersi'),
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],
@@ -2526,8 +2526,8 @@ class CreateDepartmentsTable extends Migration
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'name' => 'Poradnia seksuologiczna i patologii wsp&oacute;łżycia',
-                'slug' => Str::slug('Poradnia seksuologiczna i patologii wsp&oacute;łżycia'),
+                'name' => 'Poradnia seksuologiczna i patologii współżycia',
+                'slug' => Str::slug('Poradnia seksuologiczna i patologii współżycia'),
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],
@@ -2556,8 +2556,8 @@ class CreateDepartmentsTable extends Migration
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'name' => 'Poradnia terapii uzależnienia i wsp&oacute;łuzależnienia od alkoholu',
-                'slug' => Str::slug('Poradnia terapii uzależnienia i wsp&oacute;łuzależnienia od alkoholu'),
+                'name' => 'Poradnia terapii uzależnienia i współuzależnienia od alkoholu',
+                'slug' => Str::slug('Poradnia terapii uzależnienia i współuzależnienia od alkoholu'),
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],
@@ -2802,8 +2802,8 @@ class CreateDepartmentsTable extends Migration
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'name' => 'Pracownia rentgenodiagnostyki og&oacute;lnej',
-                'slug' => Str::slug('Pracownia rentgenodiagnostyki og&oacute;lnej'),
+                'name' => 'Pracownia rentgenodiagnostyki ogólnej',
+                'slug' => Str::slug('Pracownia rentgenodiagnostyki ogólnej'),
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],
@@ -2826,8 +2826,8 @@ class CreateDepartmentsTable extends Migration
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'name' => 'Pracownia środk&oacute;w pomocniczych',
-                'slug' => Str::slug('Pracownia środk&oacute;w pomocniczych'),
+                'name' => 'Pracownia środków pomocniczych',
+                'slug' => Str::slug('Pracownia środków pomocniczych'),
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],
@@ -2874,14 +2874,14 @@ class CreateDepartmentsTable extends Migration
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'name' => 'Punkt pobrań materiał&oacute;w do badań',
-                'slug' => Str::slug('Punkt pobrań materiał&oacute;w do badań'),
+                'name' => 'Punkt pobrań materiałów do badań',
+                'slug' => Str::slug('Punkt pobrań materiałów do badań'),
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'name' => 'Punkt pobrań materiał&oacute;w do badań dla dzieci',
-                'slug' => Str::slug('Punkt pobrań materiał&oacute;w do badań dla dzieci'),
+                'name' => 'Punkt pobrań materiałów do badań dla dzieci',
+                'slug' => Str::slug('Punkt pobrań materiałów do badań dla dzieci'),
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],
@@ -3054,122 +3054,122 @@ class CreateDepartmentsTable extends Migration
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'name' => 'Zesp&oacute;ł (oddział) leczenia środowiskowego (domowego)',
-                'slug' => Str::slug('Zesp&oacute;ł (oddział) leczenia środowiskowego (domowego)'),
+                'name' => 'Zespół (oddział) leczenia środowiskowego (domowego)',
+                'slug' => Str::slug('Zespół (oddział) leczenia środowiskowego (domowego)'),
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'name' => 'Zesp&oacute;ł (oddział) leczenia środowiskowego (domowego) dla dzieci',
-                'slug' => Str::slug('Zesp&oacute;ł (oddział) leczenia środowiskowego (domowego) dla dzieci'),
+                'name' => 'Zespół (oddział) leczenia środowiskowego (domowego) dla dzieci',
+                'slug' => Str::slug('Zespół (oddział) leczenia środowiskowego (domowego) dla dzieci'),
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'name' => 'Zesp&oacute;ł długoterminowej opieki domowej',
-                'slug' => Str::slug('Zesp&oacute;ł długoterminowej opieki domowej'),
+                'name' => 'Zespół długoterminowej opieki domowej',
+                'slug' => Str::slug('Zespół długoterminowej opieki domowej'),
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'name' => 'Zesp&oacute;ł długoterminowej opieki domowej dla dzieci',
-                'slug' => Str::slug('Zesp&oacute;ł długoterminowej opieki domowej dla dzieci'),
+                'name' => 'Zespół długoterminowej opieki domowej dla dzieci',
+                'slug' => Str::slug('Zespół długoterminowej opieki domowej dla dzieci'),
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'name' => 'Zesp&oacute;ł domowego leczenia tlenem',
-                'slug' => Str::slug('Zesp&oacute;ł domowego leczenia tlenem'),
+                'name' => 'Zespół domowego leczenia tlenem',
+                'slug' => Str::slug('Zespół domowego leczenia tlenem'),
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'name' => 'Zesp&oacute;ł domowego leczenia tlenem u dzieci',
-                'slug' => Str::slug('Zesp&oacute;ł domowego leczenia tlenem u dzieci'),
+                'name' => 'Zespół domowego leczenia tlenem u dzieci',
+                'slug' => Str::slug('Zespół domowego leczenia tlenem u dzieci'),
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'name' => 'Zesp&oacute;ł domowej dializoterapii otrzewnowej',
-                'slug' => Str::slug('Zesp&oacute;ł domowej dializoterapii otrzewnowej'),
+                'name' => 'Zespół domowej dializoterapii otrzewnowej',
+                'slug' => Str::slug('Zespół domowej dializoterapii otrzewnowej'),
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'name' => 'Zesp&oacute;ł domowej dializoterapii otrzewnowej dziecięcej',
-                'slug' => Str::slug('Zesp&oacute;ł domowej dializoterapii otrzewnowej dziecięcej'),
+                'name' => 'Zespół domowej dializoterapii otrzewnowej dziecięcej',
+                'slug' => Str::slug('Zespół domowej dializoterapii otrzewnowej dziecięcej'),
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'name' => 'Zesp&oacute;ł leczenia środowiskowego (domowego) dla os&oacute;b z autyzmem',
-                'slug' => Str::slug('Zesp&oacute;ł leczenia środowiskowego (domowego) dla os&oacute;b z autyzmem'),
+                'name' => 'Zespół leczenia środowiskowego (domowego) dla osób z autyzmem',
+                'slug' => Str::slug('Zespół leczenia środowiskowego (domowego) dla osób z autyzmem'),
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'name' => 'Zesp&oacute;ł lotnictwa sanitarnego',
-                'slug' => Str::slug('Zesp&oacute;ł lotnictwa sanitarnego'),
+                'name' => 'Zespół lotnictwa sanitarnego',
+                'slug' => Str::slug('Zespół lotnictwa sanitarnego'),
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'name' => 'Zesp&oacute;ł opieki domowej przy zakładzie/oddziale pielęgnacyjnoopiekuńczym lub opiekuńczo-leczniczym psychiatrycznym',
-                'slug' => Str::slug('Zesp&oacute;ł opieki domowej przy zakładzie/oddziale pielęgnacyjnoopiekuńczym lub opiekuńczo-leczniczym psychiatrycznym'),
+                'name' => 'Zespół opieki domowej przy zakładzie/oddziale pielęgnacyjnoopiekuńczym lub opiekuńczo-leczniczym psychiatrycznym',
+                'slug' => Str::slug('Zespół opieki domowej przy zakładzie/oddziale pielęgnacyjnoopiekuńczym lub opiekuńczo-leczniczym psychiatrycznym'),
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'name' => 'Zesp&oacute;ł rehabilitacji domowej',
-                'slug' => Str::slug('Zesp&oacute;ł rehabilitacji domowej'),
+                'name' => 'Zespół rehabilitacji domowej',
+                'slug' => Str::slug('Zespół rehabilitacji domowej'),
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'name' => 'Zesp&oacute;ł rehabilitacji domowej dla dzieci',
-                'slug' => Str::slug('Zesp&oacute;ł rehabilitacji domowej dla dzieci'),
+                'name' => 'Zespół rehabilitacji domowej dla dzieci',
+                'slug' => Str::slug('Zespół rehabilitacji domowej dla dzieci'),
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'name' => 'Zesp&oacute;ł transportu sanitarnego',
-                'slug' => Str::slug('Zesp&oacute;ł transportu sanitarnego'),
+                'name' => 'Zespół transportu sanitarnego',
+                'slug' => Str::slug('Zespół transportu sanitarnego'),
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'name' => 'Zesp&oacute;ł wyjazdowy kardiologiczny K',
-                'slug' => Str::slug('Zesp&oacute;ł wyjazdowy kardiologiczny K'),
+                'name' => 'Zespół wyjazdowy kardiologiczny K',
+                'slug' => Str::slug('Zespół wyjazdowy kardiologiczny K'),
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'name' => 'Zesp&oacute;ł wyjazdowy neonatologiczny N',
-                'slug' => Str::slug('Zesp&oacute;ł wyjazdowy neonatologiczny N'),
+                'name' => 'Zespół wyjazdowy neonatologiczny N',
+                'slug' => Str::slug('Zespół wyjazdowy neonatologiczny N'),
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'name' => 'Zesp&oacute;ł wyjazdowy og&oacute;ln',
-                'slug' => Str::slug('Zesp&oacute;ł wyjazdowy og&oacute;ln'),
+                'name' => 'Zespół wyjazdowy ogóln',
+                'slug' => Str::slug('Zespół wyjazdowy ogóln'),
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'name' => 'Zesp&oacute;ł wyjazdowy reanimacyjny R',
-                'slug' => Str::slug('Zesp&oacute;ł wyjazdowy reanimacyjny R'),
+                'name' => 'Zespół wyjazdowy reanimacyjny R',
+                'slug' => Str::slug('Zespół wyjazdowy reanimacyjny R'),
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'name' => 'Zesp&oacute;ł wyjazdowy reanimacyjny R',
-                'slug' => Str::slug('Zesp&oacute;ł wyjazdowy reanimacyjny R'),
+                'name' => 'Zespół wyjazdowy reanimacyjny R',
+                'slug' => Str::slug('Zespół wyjazdowy reanimacyjny R'),
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],
             [
-                'name' => 'Zesp&oacute;ł wyjazdowy wypadkowy W',
-                'slug' => Str::slug('Zesp&oacute;ł wyjazdowy wypadkowy W'),
+                'name' => 'Zespół wyjazdowy wypadkowy W',
+                'slug' => Str::slug('Zespół wyjazdowy wypadkowy W'),
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ],

@@ -20,6 +20,7 @@ use App\LocationUser;
 use App\Work;
 use App\Settlement;
 use App\Currency;
+use App\Department;
 use App\ForeignOffer;
 use App\State;
 use App\UserAdvertisement;
@@ -35,8 +36,11 @@ class UserController extends Controller
         if($user->hasRole('company') || $user->hasRole('admin')) {
             $editUser = Auth::user()
             ->load([
-                'preference'
+                'preference',
+                'departments'
             ]);
+
+            $departments = Department::get(['id', 'name']);
         } else {
             $editUser = Auth::user()
             ->load([
@@ -85,7 +89,8 @@ class UserController extends Controller
             'settlements',
             'currencies',
             'locations',
-            'distances'
+            'distances',
+            'departments'
         ]));
     }
 
@@ -137,6 +142,11 @@ class UserController extends Controller
         if($specializations)
         {
             $user->specializations()->sync($specializations);
+        }
+
+        if($request->input('departments'))
+        {
+            $user->departments()->sync($request->input('departments'));
         }
 
         session()->flash('success',  trans('crudInfos.profile-update-success'));

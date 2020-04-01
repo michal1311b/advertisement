@@ -48,4 +48,5 @@ return [
     'one-specialization-at-least' => 'Sie müssen mindestens eine Spezialisierung auswählen',
     'no-specialization' => 'Keine Spezialisierung',
     'location-exists' => 'Der Ort wurde bereits hinzugefügt.',
+    'departments' => 'Art der Abteilung oder Klinik'
 ];

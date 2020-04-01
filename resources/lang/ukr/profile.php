@@ -48,4 +48,5 @@ return [
     'one-specialization-at-least' => 'Ви повинні вибрати принаймні одну спеціалізацію',
     'no-specialization' => 'Без спеціалізації',
     'location-exists' => 'Місцезнаходження вже додано.',
+    'departments' => 'Тип відділення або клініки'
 ];
