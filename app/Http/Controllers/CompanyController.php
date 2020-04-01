@@ -55,6 +55,7 @@ class CompanyController extends Controller
     {
         $user->load([
             'profile',
+            'departments',
             'advertisements' => function($query) {
                 $query->paginate();
                 $query->where('expired_at', '>', Carbon::now());
