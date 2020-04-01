@@ -47,4 +47,5 @@ return [
     'edit-prefered-location' => 'Edit your prefered location',
     'one-specialization-at-least' => 'You must select at least one specialization',
     'no-specialization' => 'No specialization',
+    'location-exists' => 'Location already exists.',
 ];

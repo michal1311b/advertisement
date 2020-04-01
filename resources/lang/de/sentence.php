@@ -52,7 +52,6 @@ return [
   'body' => 'Inhalt',
   'start' => 'Anfang',
   'end' => 'Ende',
-  'location-exists' => 'Der Ort wurde bereits hinzugefügt.',
   'organizer' => 'Veranstalter',
   'delete_confirm' => 'Sind Sie sicher, dass Sie löschen möchten',
   'edit_confirm' => 'Sind Sie sicher, dass Sie aktualisieren möchten',

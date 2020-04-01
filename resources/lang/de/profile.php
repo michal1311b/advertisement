@@ -47,4 +47,5 @@ return [
     'edit-prefered-location' => 'Bearbeiten Sie Ihren bevorzugten Standort',
     'one-specialization-at-least' => 'Sie müssen mindestens eine Spezialisierung auswählen',
     'no-specialization' => 'Keine Spezialisierung',
+    'location-exists' => 'Der Ort wurde bereits hinzugefügt.',
 ];

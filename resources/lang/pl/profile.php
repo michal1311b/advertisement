@@ -47,4 +47,5 @@ return [
     'edit-prefered-location' => 'Edycja preferowanej lokalizacji',
     'one-specialization-at-least' => 'Musisz wybrać co najmniej jedną specjalizację',
     'no-specialization' => 'Brak specjalizacji',
+    'location-exists' => 'Lokalizacja już została dodana.',
 ];

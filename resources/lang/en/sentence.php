@@ -53,7 +53,6 @@ return [
   'body' => 'Body',
   'start' => 'Start',
   'end' => 'End',
-  'location-exists' => 'Location already exists.',
   'organizer' => 'Organizer',
   'delete_confirm' => 'Are you sure delete',
   'edit_confirm' => 'Are you sure update',

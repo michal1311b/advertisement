@@ -51,7 +51,6 @@ return [
   'body' => 'Treść',
   'start' => 'Początek',
   'end' => 'Koniec',
-  'location-exists' => 'Lokalizacja już została dodana.',
   'organizer' => 'Organizator',
   'delete_confirm' => 'Czy na pewno chcesz usunać',
   'edit_confirm' => 'Czy na pewno chcesz zaktualizować',

@@ -47,4 +47,5 @@ return [
     'edit-prefered-location' => 'Редагування бажаного місцеположення',
     'one-specialization-at-least' => 'Ви повинні вибрати принаймні одну спеціалізацію',
     'no-specialization' => 'Без спеціалізації',
+    'location-exists' => 'Місцезнаходження вже додано.',
 ];
