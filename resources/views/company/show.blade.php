@@ -65,10 +65,10 @@
             @if(count($user->advertisements) > 0)
                 @foreach($user->advertisements as $advertisement)
                     <!-- List group-->
-                    <ul class="list-group shadow offer-item color{{ $advertisement->specialization_id }}">
+                    <ul class="list-group shadow offer-item color{{ $advertisement->specialization_id }}" id="p{{ $advertisement->id }}">
                         <a href="{{ route('show-advertisement', ['id' => $advertisement->id, 'slug' => $advertisement->slug]) }}" class="no-decoration"> 
                             <!-- list group item-->
-                            <li class="list-group-item" id="p{{ $advertisement->id }}">
+                            <li class="list-group-item">
                                 <!-- Custom content-->
                                 <div class="media align-items-lg-center flex-column flex-lg-row p-3">
                                 <div class="media-body order-2 order-lg-1">
@@ -150,10 +150,10 @@
             @if(count($user->foreignOffers) > 0)
                 @foreach($user->foreignOffers as $advertisement)
                     <!-- List group-->
-                    <ul class="list-group shadow offer-item color{{ $advertisement->specialization_id }}">
+                    <ul class="list-group shadow offer-item color{{ $advertisement->specialization_id }}" id="{{ $advertisement->id }}">
                         <a href="{{ route('show-foreign', ['id' => $advertisement->id, 'slug' => $advertisement->slug]) }}" class="no-decoration"> 
                             <!-- list group item-->
-                            <li class="list-group-item" id="{{ $advertisement->id }}">
+                            <li class="list-group-item">
                                 <!-- Custom content-->
                                 <div class="media align-items-lg-center flex-column flex-lg-row p-3">
                                 <div class="media-body order-2 order-lg-1">
