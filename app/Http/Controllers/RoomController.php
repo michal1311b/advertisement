@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Message;
 use App\Notifications\ConversationNotification;
-use App\Notifications\NewMessage;
 use App\Room;
 use App\RoomUser;
 use App\User;

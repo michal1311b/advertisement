@@ -219,7 +219,7 @@ class UserController extends Controller
     {
         $follower = auth()->user();
         if ($follower->id == $user->id) {
-            return back()->withError("You can't follow yourself");
+            return back()->withError(trans('notifications.cannot-follow'));
         }
         if(!$follower->isFollowing($user->id)) {
             $follower->follow($user->id);
@@ -227,9 +227,9 @@ class UserController extends Controller
             // sending a notification
             $user->notify(new UserFollowed($follower));
 
-            return back()->withSuccess("You are now friends with {$user->name}");
+            return back()->withSuccess(trans('notifications.follow-user') . $user->name);
         }
-        return back()->withError("You are already following {$user->name}");
+        return back()->withError(trans('notifications.already-follow') . $user->name);
     }
 
     public function unfollow(User $user)
@@ -237,9 +237,9 @@ class UserController extends Controller
         $follower = auth()->user();
         if($follower->isFollowing($user->id)) {
             $follower->unfollow($user->id);
-            return back()->withSuccess("You are no longer friends with {$user->name}");
+            return back()->withSuccess(trans('notifications.unfollow-user') . $user->name);
         }
-        return back()->withError("You are not following {$user->name}");
+        return back()->withError(trans('notifications.unfollow-user') . $user->name);
     }
     
     public function notifications()

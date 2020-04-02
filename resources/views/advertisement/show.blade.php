@@ -60,7 +60,7 @@
                                                         {{ method_field('DELETE') }}
 
                                                         <button type="submit" id="delete-follow-{{ $advertisement->user->id }}" class="btn btn-rounded btn-danger">
-                                                            <i class="fa fa-btn fa-trash"></i>Unfollow
+                                                            <i class="fa fa-btn fa-trash"></i> {{ trans('buttons.unfollow') }}
                                                         </button>
                                                     </form>
                                                 </div>
@@ -70,7 +70,7 @@
                                                         {{ csrf_field() }}
 
                                                         <button type="submit" id="follow-user-{{ $advertisement->user->id }}" class="btn btn-rounded btn-success">
-                                                            <i class="fa fa-btn fa-user"></i>Follow
+                                                            <i class="fa fa-btn fa-user"></i> {{ trans('buttons.follow') }}
                                                         </button>
                                                     </form>
                                                 </div>

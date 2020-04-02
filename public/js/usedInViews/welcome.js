@@ -33,7 +33,7 @@ $(document).ready(function() {
                                         '<h6 class="mt-0 font-weight-bold mb-2"><i class="fas fa-map-marker-alt"></i> '+ input[i].location.city +'</h6>'+
                                         '<h6 class="mt-0 mb-2"><i class="fas fa-user-md"></i> '+ input[i].user.profile.company_name +'</h6>'+
                                         '<div class="d-flex align-items-center justify-content-between mt-1">'+
-                                            '<h6 class="font-weight-bold"><i class="fas fa-coins"></i> '+ input[i].settlement.name + ':' + input[i].min_salary + '-' + input[i].max_salary + ' ' + input[i].currency.symbol +'</h6>' +
+                                            '<h6 class="font-weight-bold"><i class="fas fa-coins"></i> '+ input[i].settlement.name + ': ' + input[i].min_salary + '-' + input[i].max_salary + ' ' + input[i].currency.symbol +'</h6>' +
                                         '</div>'+
                                         '<div class="badge badge-pill text-white offer-item border'+input[i].specialization_id+'">'+ input[i].specialization.name +'</div>'+
                                         '<div>'+

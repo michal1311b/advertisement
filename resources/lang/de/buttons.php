@@ -27,4 +27,6 @@ return [
     'step2' => 'Schritt 2',
     'step3' => 'Schritt 3',
     'step4' => 'Schritt 4',
+    'follow' => 'Folgen',
+    'unfollow' => 'Hör auf zu folgen'
 ];
