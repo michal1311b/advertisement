@@ -32,19 +32,25 @@ class RoomController extends Controller
 
     public function show(Room $room, Request $request)
     {
-        if($request->has('read')) {
-            $notification = $request->user()->notifications()->where('id', $request->read)->first();
-            if($notification) {
-                $notification->markAsRead();
-            }
-        }
+        $user = auth()->user();
         
-        $messages = Message::where('room_id', $room->id)
-        ->with(['user', 'user.doctor', 'room'])
-        ->orderBy('created_at', 'asc')
-        ->paginate();
-
-        return view('room.show', compact('messages'));
+        if(($room->user_id === $user->id) || ($room->recipient_id === $user->id)) {
+            if($request->has('read')) {
+                $notification = $request->user()->notifications()->where('id', $request->read)->first();
+                if($notification) {
+                    $notification->markAsRead();
+                }
+            }
+            
+            $messages = Message::where('room_id', $room->id)
+            ->with(['user', 'user.doctor', 'room'])
+            ->orderBy('created_at', 'asc')
+            ->paginate();
+    
+            return view('room.show', compact('messages'));
+        } else {
+            return back();
+        }
     }
 
     public function reply(Request $request, Room $room)
