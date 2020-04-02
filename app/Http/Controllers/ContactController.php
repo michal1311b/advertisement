@@ -159,7 +159,8 @@ class ContactController extends Controller
     {
         $room = Room::create([
             'name' =>  trans('notifications.message-from') . $title,
-            'user_id' => $user_id
+            'user_id' => $user_id,
+            'recipient_id' => $advert_user
         ]);
 
         $message = Message::create([

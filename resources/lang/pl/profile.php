@@ -52,4 +52,5 @@ return [
     'facilities' => 'Rodzaje placówek medycznych',
     'about-company' => 'O nas',
     'about-employee' => 'O mnie',
+    'users' => 'Uczestnicy'
 ];

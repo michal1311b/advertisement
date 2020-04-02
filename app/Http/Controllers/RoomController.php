@@ -16,9 +16,18 @@ class RoomController extends Controller
     {
         $user = auth()->user();
 
-        $rooms = RoomUser::where('user_id', $user->id)->with(['room', 'user'])->paginate();
+        $rooms = RoomUser::where('user_id', $user->id)
+        ->with([
+            'room' => function($query){
+                $query->with('user', 'recipient');
+            }
+        ])
+        ->paginate();
 
-        return view('room.index', compact('rooms'));
+        return view('room.index', compact([
+            'rooms',
+            'user'
+        ]));
     }
 
     public function show(Room $room, Request $request)

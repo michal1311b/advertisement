@@ -52,4 +52,5 @@ return [
     'facilities' => 'Види медичних установ',
     'about-company' => 'Про нас',
     'about-employee' => 'Про мене',
+    'users' => 'користувачів'
 ];

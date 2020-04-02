@@ -52,4 +52,5 @@ return [
     'facilities' => 'Types of medical facilities',
     'about-company' => 'About us',
     'about-employee' => 'About me',
+    'users' => 'Users'
 ];
