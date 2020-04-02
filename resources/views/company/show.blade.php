@@ -45,11 +45,15 @@
                         {{ trans('profile.departments') }}
                     </div>
                     <div class="card-body">
-                        @foreach($user->departments as $department)
-                            <span class="btn btn-info text-white">
-                                {{ $department->name }}
-                            </span>
-                        @endforeach
+                        <ul class="tags">
+                            @foreach($user->departments as $department)
+                                <li>
+                                    <span class="tag">
+                                        {{ $department->name }}
+                                    </span>
+                                </li>
+                            @endforeach
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -63,11 +67,15 @@
                         {{ trans('profile.facilities') }}
                     </div>
                     <div class="card-body">
-                        @foreach($user->facilities as $facility)
-                            <span class="btn btn-info text-white">
-                                {{ $facility->name }}
-                            </span>
-                        @endforeach
+                        <ul class="tags">
+                            @foreach($user->facilities as $facility)
+                                <li>
+                                    <span class="tag">
+                                        {{ $facility->name }}
+                                    </span>
+                                </li>    
+                            @endforeach
+                        </ul>
                     </div>
                 </div>
             </div>

@@ -30,8 +30,14 @@
         <div class="col-12">
             <ul class="list-group">
                 <li class="list-group-item d-flex align-items-center">
-                    {{ trans('sentence.search-by')}}
-                    <span class="ml-4 badge badge-pill badge-info text-white">{{ str_replace('-', ' ', request()->segment(3)) }}</span>
+                    <span class="pr-2">{{ trans('sentence.search-by')}}</span> 
+                    <ul class="tags">
+                        <li>
+                            <span class="tag">
+                                {{ str_replace('-', ' ', request()->segment(3)) }}
+                            </span>
+                        </li>
+                    </ul>
                 </li>
             </ul>
         </div>

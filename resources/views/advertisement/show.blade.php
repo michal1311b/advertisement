@@ -98,14 +98,15 @@
                             @endif
                             <div class="col-12 pb-2">
                                 @if($advertisement->tags->count() > 0 && $advertisement->tags[0]->name !== '')
-                                    {{ trans('offer.tags') }}
-                                    @foreach($advertisement->tags as $tag)
-                                        <a href="{{ route('advertisementTag', ['tagSlug' => $tag->slug]) }}">
-                                            <span class="badge badge-pill badge-info text-white">
+                                    
+                                    <ul class="tags">
+                                        {{ trans('offer.tags') }}
+                                        @foreach($advertisement->tags as $tag)
+                                            <a class="tag" href="{{ route('advertisementTag', ['tagSlug' => $tag->slug]) }}">
                                                 {{ $tag->name }}
-                                            </span>
-                                        </a>
-                                    @endforeach
+                                            </a>
+                                        @endforeach
+                                    </ul>
                                 @else
                                     <span class="font-weight-bold">{{ trans('offer.no-tags') }}</span>
                                 @endif
