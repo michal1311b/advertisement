@@ -19,7 +19,10 @@
         </div>
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">{{ trans('sentence.register') }}</div>
+                <div class="card-header">
+                    <img class="logo" src="{{ asset('images/poland.png') }}" alt="{{ trans('sentence.polish') }}">
+                    {{ trans('sentence.register') }}
+                </div>
                 
                 @error('message')
                     <div class="alert alert-danger }}">{!! $message !!}</div>
