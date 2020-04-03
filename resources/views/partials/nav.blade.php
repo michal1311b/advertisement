@@ -1,7 +1,7 @@
 <nav class="header-nav navbar navbar-expand-lg {{ 'navbar-' . $theme }} {{ 'bg-' . $theme }} shadow-sm sticky-top">
     <div class="container">
         <a class="navbar-brand" href="{{ url('/') }}">
-            <img src="{{ asset('images/logo.png') }}" class="w-100 logo bg-white" alt="EmployMed Logo"/>
+            <img src="{{ asset('images/logo.png') }}" class="w-100 logo bg-white numberCircle" alt="EmployMed Logo"/>
         </a>
         <button class="navbar-toggler lang-dropdown bg-info" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
             <span class="navbar-toggler-icon"></span>
@@ -131,7 +131,7 @@
                 @endguest
                 <li class="nav-item">
                     <a href="https://www.facebook.com/EmployMed" class="nav-link lang-dropdown {{ $theme . '-theme' }}" title="EmployMed Facebook site">
-                        <img src="{{asset('images/facebook.png')}}" width="30" height="30" alt="Dołącz do nas na facebooku">    
+                        <img src="{{asset('images/facebook.png')}}" width="30" height="30" alt="Dołącz do nas na facebooku" class="numberCircle">    
                     </a>
                 </li>
                 
