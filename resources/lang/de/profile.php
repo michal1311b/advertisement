@@ -55,4 +55,5 @@ return [
     'users' => 'Mitglieder',
     'fill-departments' => 'CVervollständigen Sie die Art der Abteilung oder Klinik',
     'fill-facilities' => 'Vervollständigen Sie die Arten von medizinischen Einrichtungen',
+    'fill-about' => 'Füllen Sie dieses Feld aus, damit andere Sie besser kennenlernen können',
 ];

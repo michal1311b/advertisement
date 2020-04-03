@@ -271,7 +271,9 @@
                             <label for="departments" class="col-12 col-md-3 col-form-label text-md-right">
                                 {{ trans('profile.departments') }}
                                 @if(count($editUser->departments) == 0)
-                                    <span class="badge blue-tooltip" data-toggle="tooltip" title="{{ trans('profile.fill-departments') }}">!</span>
+                                    <a class="warning" href="#">
+                                        <span class="badge blue-tooltip" data-toggle="tooltip" title="{{ trans('profile.fill-departments') }}">!</span>
+                                    </a>
                                 @endif
                             </label>
                             <div class="col-12 col-md-9">
@@ -301,7 +303,9 @@
                             <label for="facilities" class="col-12 col-md-3 col-form-label text-md-right">
                                 {{ trans('profile.facilities') }}
                                 @if(count($editUser->facilities) == 0)
-                                    <span class="badge blue-tooltip" data-toggle="tooltip" title="{{ trans('profile.fill-facilities') }}">!</span>
+                                    <a class="warning" href="#">
+                                        <span class="badge blue-tooltip" data-toggle="tooltip" title="{{ trans('profile.fill-facilities') }}">!</span>
+                                    </a>
                                 @endif
                             </label>
                             <div class="col-12 col-md-9">
@@ -332,6 +336,11 @@
                                 {{ trans('profile.about-company') }}
                             @else
                                 {{ trans('profile.about-employee') }}
+                            @endif
+                            @if(!$editUser->profile->about)
+                                <a class="warning" href="#">
+                                    <span class="badge blue-tooltip" data-toggle="tooltip" title="{{ trans('profile.fill-about') }}">!</span>
+                                </a>
                             @endif
                         </label>
 

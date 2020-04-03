@@ -55,4 +55,5 @@ return [
     'users' => 'Uczestnicy',
     'fill-departments' => 'Uzupełnij rodzaj oddziału lub poradni',
     'fill-facilities' => 'Uzupełnij rodzaje placówek medycznych',
+    'fill-about' => 'Uzupełnij to pole, aby inni mogli lepiej Cię poznać',
 ];

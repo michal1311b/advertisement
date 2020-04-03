@@ -3,7 +3,7 @@
 <head>
     @include('partials.layouts-header')
     <!-- Styles -->
-    <link href="{{ asset('css/app.css?rand=65') }}" rel="stylesheet">
+    <link href="{{ asset('css/app.css?rand=66') }}" rel="stylesheet">
     @yield('css')
       
     <script type='text/javascript' src='//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js'></script>
@@ -65,7 +65,7 @@
         </a>
     </div>
     @include('partials.footer')
-    <script src="{{ asset('js/app.js?rand=65') }}" defer></script>
+    <script src="{{ asset('js/app.js?rand=66') }}" defer></script>
     
     <!-- Scripts -->
     @yield('scripts')

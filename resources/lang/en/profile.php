@@ -55,4 +55,5 @@ return [
     'users' => 'Users',
     'fill-departments' => 'Complete the type of department or clinic',
     'fill-facilities' => 'Complete the types of medical facilities',
+    'fill-about' => 'Complete this field so that others can get to know you better',
 ];
