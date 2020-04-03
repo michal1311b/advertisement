@@ -268,7 +268,12 @@
 
                     @if($editUser->departments && ($editUser->hasRole('company') || $editUser->hasRole('admin')))
                         <div class="form-group row">
-                            <label for="departments" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('profile.departments') }}</label>
+                            <label for="departments" class="col-12 col-md-3 col-form-label text-md-right">
+                                {{ trans('profile.departments') }}
+                                @if(count($editUser->departments) == 0)
+                                    <span class="badge blue-tooltip" data-toggle="tooltip" title="{{ trans('profile.fill-departments') }}">!</span>
+                                @endif
+                            </label>
                             <div class="col-12 col-md-9">
                                 <select multiple="multiple"
                                         class="form-control{{ $errors->has('departments') ? ' is-invalid' : '' }}"
@@ -293,7 +298,12 @@
 
                     @if($editUser->facilities && ($editUser->hasRole('company') || $editUser->hasRole('admin')))
                         <div class="form-group row">
-                            <label for="facilities" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('profile.facilities') }}</label>
+                            <label for="facilities" class="col-12 col-md-3 col-form-label text-md-right">
+                                {{ trans('profile.facilities') }}
+                                @if(count($editUser->facilities) == 0)
+                                    <span class="badge blue-tooltip" data-toggle="tooltip" title="{{ trans('profile.fill-facilities') }}">!</span>
+                                @endif
+                            </label>
                             <div class="col-12 col-md-9">
                                 <select multiple="multiple"
                                         class="form-control{{ $errors->has('facilities') ? ' is-invalid' : '' }}"

@@ -52,5 +52,7 @@ return [
     'facilities' => 'Rodzaje placówek medycznych',
     'about-company' => 'O nas',
     'about-employee' => 'O mnie',
-    'users' => 'Uczestnicy'
+    'users' => 'Uczestnicy',
+    'fill-departments' => 'Uzupełnij rodzaj oddziału lub poradni',
+    'fill-facilities' => 'Uzupełnij rodzaje placówek medycznych',
 ];

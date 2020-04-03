@@ -52,5 +52,7 @@ return [
     'facilities' => 'Arten von medizinischen Einrichtungen',
     'about-company' => 'Über uns',
     'about-employee' => 'Über mich',
-    'users' => 'Mitglieder'
+    'users' => 'Mitglieder',
+    'fill-departments' => 'CVervollständigen Sie die Art der Abteilung oder Klinik',
+    'fill-facilities' => 'Vervollständigen Sie die Arten von medizinischen Einrichtungen',
 ];
