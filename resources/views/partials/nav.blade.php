@@ -1,4 +1,4 @@
-<nav class="header-nav navbar navbar-expand-md {{ 'navbar-' . $theme }} {{ 'bg-' . $theme }} shadow-sm sticky-top">
+<nav class="header-nav navbar navbar-expand-lg {{ 'navbar-' . $theme }} {{ 'bg-' . $theme }} shadow-sm sticky-top">
     <div class="container">
         <a class="navbar-brand" href="{{ url('/') }}">
             <img src="{{ asset('images/logo.png') }}" class="w-100 logo bg-white" alt="EmployMed Logo"/>
@@ -84,7 +84,7 @@
                 @else
                     <li class="nav-item dropdown">
                         <a class="dropdown-toggle notification" id="notifications" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            <i class="fas fa-envelope fa-2x"></i>
+                            <i class="fas fa-envelope fa-2x" id="envelope"></i>
                             <span class="badge" id="badge-notify"></span>
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="notificationsMenu" id="notificationsMenu">
