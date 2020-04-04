@@ -47,7 +47,7 @@ return [
     'interested-offers' => 'Oferty, które mogą Cię zainteresować',
     'offers-archive-descripion' => 'Archiwalne ogłoszenia - ogłoszenia, które nie zostały przedłużone, a były dostępne w serwisie EmployMed.eu.',
     'locations' => 'Lokalizacje',
-    'tags-info' => 'Dodaj słowa kluczowe oddzielając je przecinkami, aby lepiej dopasować ogłoszenie do pracowników.',
+    'tags-info' => 'Dodaj słowa kluczowe oddzielając je ENTEREM, aby lepiej dopasować ogłoszenie do pracowników.',
     'city-not-require' => 'Miasto (nie wymagane)',
     'phone-not-require' => 'Telefon (nie wymagane)',
     'salary_negotiable' => 'Stawka do negocjacji?',

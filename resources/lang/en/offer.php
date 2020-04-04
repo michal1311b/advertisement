@@ -47,7 +47,7 @@ return [
     'interested-offers' => 'Offers that may interest you',
     'offers-archive-descripion' => 'Archival announcements - ads that were not extended but were available on EmployMed.eu.',
     'locations' => 'Locations',
-    'tags-info' => 'Add keywords separated by commas to better match the advertisement to the employees.',
+    'tags-info' => 'Add keywords, separating them with ENTER, to better match the advertisement to employees.',
     'city-not-require' => 'City (not required)',
     'phone-not-require' => 'Phone (not required)',
     'salary_negotiable' => 'Salary negotiable?',

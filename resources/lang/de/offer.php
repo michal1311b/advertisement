@@ -47,7 +47,7 @@ return [
     'interested-offers' => 'Angebote, die Sie interessieren könnten',
     'offers-archive-descripion' => 'Archivankündigungen - Anzeigen, die nicht erweitert wurden, aber auf EmployMed.eu verfügbar waren.',
     'locations' => 'Standorte',
-    'tags-info' => 'Fügen Sie durch Kommas getrennte Schlüsselwörter hinzu, um Ihren Eintrag besser an die Mitarbeiter anzupassen.',
+    'tags-info' => 'Fügen Sie Keywords hinzu und trennen Sie sie mit ENTER, um die Anzeige besser an die Mitarbeiter anzupassen.',
     'city-not-require' => 'Stadt (nicht erforderlich)',
     'phone-not-require' => 'Telefon (nicht erforderlich)',
     'salary_negotiable' => 'Rate zu verhandeln?',
