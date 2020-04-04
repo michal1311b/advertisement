@@ -209,6 +209,11 @@
         </div>
     </div>
     <div class="row">
+        <div class="col-12">
+            @include('partials.search')
+        </div>
+    </div>
+    <div class="row">
         <div class="col-12" id="newestOffers">
             <h4 class="py-2">
                 {{ trans('offer.interested-offers') }}

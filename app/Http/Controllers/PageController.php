@@ -3,12 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\Advertisement;
+use App\Currency;
 use App\Page;
 use App\User;
 use Carbon\Carbon;
 use App\Http\Requests\Admin\Page\StoreRequest;
 use App\Http\Requests\Admin\Page\UploadRequest;
+use App\Location;
 use App\Specialization;
+use App\State;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 
@@ -58,7 +61,19 @@ class PageController extends Controller
         ->orderBy('advertisements_count')
         ->get(['id', 'avatar']);
 
-        return view('welcome', compact(['advertisements', 'companies']));
+        $locations = Location::get(['id', 'city']);
+        $specializations = Specialization::all();
+        $currencies = Currency::get(['id', 'symbol']);
+        $states = State::get(['id', 'name']);
+
+        return view('welcome', compact([
+            'advertisements', 
+            'companies',
+            'locations', 
+            'specializations', 
+            'currencies',
+            'states'
+        ]));
     }
 
     /**
