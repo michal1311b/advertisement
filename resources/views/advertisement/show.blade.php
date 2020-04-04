@@ -138,7 +138,11 @@
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
                                         {{ trans('profile.specialization') }}
-                                        <span class="ml-2 btn btn-sm offer-item border{{ $advertisement->specialization_id }} text-white">{{ $advertisement->specialization->name }}</span>
+                                        <span class="ml-2 btn btn-sm offer-item border{{ $advertisement->specialization_id }} text-white">
+                                            {{ $advertisement->specialization->name }}
+                                            <img src="{{ asset('images/icons/' . $advertisement->specialization->id . '.jpg') }}" 
+                                            class="rounded-circle" alt="{{ $advertisement->specialization->name }}">
+                                        </span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
                                         {{ trans('offer.created_at') }}
@@ -152,7 +156,9 @@
                                     @if($advertisement->expired_at < \Carbon\Carbon::now())
                                         <li class="list-group-item d-flex justify-content-between align-items-center font-weight-bold text-danger text-uppercase">
                                             {{ trans('offer.offer-archive') }}
-                                            <span class="badge badge-pill"><img class="user-avatar--smaller" src="{{ asset('images/archived.png') }}" /></span>
+                                            <span class="badge badge-pill">
+                                                <img class="user-avatar--smaller" src="{{ asset('images/archived.png') }}" />
+                                            </span>
                                         </li>
                                     @endif
                                     <li class="list-group-item d-flex justify-content-between align-items-center">

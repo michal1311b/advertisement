@@ -65,7 +65,11 @@
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
                                         {{ trans('profile.specialization') }}
-                                        <span class="ml-2 btn btn-sm offer-item border{{ $course->specialization_id }} text-white">{{ $course->specialization->name }}</span>
+                                        <span class="ml-2 btn btn-sm offer-item border{{ $course->specialization_id }} text-white">
+                                            {{ $course->specialization->name }}
+                                            <img src="{{ asset('images/icons/' . $course->specialization->id . '.jpg') }}" 
+                                            class="rounded-circle" alt="{{ $course->specialization->name }}">
+                                        </span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
                                         {{ trans('offer.created_at') }}

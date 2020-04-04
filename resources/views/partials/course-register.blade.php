@@ -121,8 +121,13 @@
                         </label>
                     </div>
                 </div>
+
+                <div class="form-group">
+                    <button type="submit" class="btn btn-rounded btn-primary">
+                        {{ trans('email.send')}}
+                    </button>
+                </div>
             </div>
-            <button type="submit" class="btn btn-rounded btn-primary">{{ trans('email.send')}}</button>
         </form>
     </div>
 </div>
