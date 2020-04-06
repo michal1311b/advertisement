@@ -21,10 +21,27 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 
+/**
+ * @group Advertisement management
+ *
+ * APIs for managing advertisements
+ */
 class AdvertisementController extends Controller
 {
+    /**
+     * use trait CurrencyExchange
+     */
     use CurrencyExchange;
 
+    /**
+     * @queryParam $advertisements list of advertisements 
+     * from Poland with Location, Settlement, Specialization,
+     * Currency, State, User, Gallery
+     * @queryParam $locations list of locations, get [id, city]
+     * @queryParam $specializations list of specializations
+     * @queryParam $currencies list of currencies, get [id, symbol]
+     * @queryParam $states list of states, get [id, name]
+     */
     public function index()
     {
         $advertisements = Advertisement::select(
@@ -83,6 +100,28 @@ class AdvertisementController extends Controller
             'states'
         ]));
     }
+
+    /**
+	 * Create a advertisement
+     * @urlParam $request
+     * @queryParam $works list of works
+     * @queryParam $settlements list of settlements
+     * @queryParam $locations list of locations, get [id, city]
+     * @queryParam $specializations list of specializations
+     * @queryParam $currencies list of currencies, get [id, symbol]
+     * @queryParam $states list of states, get [id, name]
+     * @queryParam $user get auth user with loaded profile
+     * 
+     * @response view with params [
+     * works,
+     * states,
+     * locations,
+     * specializations,
+     * currencies,
+     * settlements,
+     * user
+     * ]
+	 */
     public function create(Request $request)
     {
         $request->user()->authorizeRoles(['company', 'admin']);
@@ -106,6 +145,27 @@ class AdvertisementController extends Controller
         ));
     }
 
+    /**
+	 * Store a advertisement
+     * @urlParam $request
+     * @queryParam $works list of works
+     * @queryParam $settlements list of settlements
+     * @queryParam $locations list of locations, get [id, city]
+     * @queryParam $specializations list of specializations
+     * @queryParam $currencies list of currencies, get [id, symbol]
+     * @queryParam $states list of states, get [id, name]
+     * @queryParam $user get auth user with loaded profile
+     * 
+     * @response 201 {
+     *  "status" => 201,
+     *  "message" => string
+     * }
+     * 
+     * @response {
+     *  "status" => "status error",
+     *  "message" => string
+     * }
+	 */
     public function store(StoreRequest $request)
     {
         Log::info($request->all());
@@ -131,6 +191,17 @@ class AdvertisementController extends Controller
         }
     }
 
+     /**
+	 * Show a advertisement
+     * @urlParam $id required The ID of the advertisement
+     * @urlParam $slug required The slug of the advertisement
+     * @queryParam $advertisement current advertisement depends on slug and id
+     * with galleries, user, work, state, tags, specialization, counted visits
+     * @queryParam $similars list of advertisements depends on specialization_id,
+     * settlement_id, min_salary, id, expired_at
+     * @queryParam $currencyExchanges counted currencies depend on advetisement's currency
+     * @queryParam $opinions list of opinions with user and user's profile data order by created_at
+     */
     public function show($id, $slug)
     {
         $advertisement = Advertisement::whereSlug($slug)
@@ -186,6 +257,20 @@ class AdvertisementController extends Controller
         ]));
     }
 
+     /**
+	 * Show a advertisement
+     * @urlParam $id required The ID of the advertisement
+     * @urlParam $request required url data
+     * @queryParam $advertisement current advertisement depends on slug and id
+     * with galleries, user, work, state, tags, specialization, counted visits
+     * @queryParam $works list of works
+     * @queryParam $settlements list of settlements
+     * @queryParam $locations list of locations, get [id, city]
+     * @queryParam $specializations list of specializations
+     * @queryParam $currencies list of currencies
+     * @queryParam $states list of states
+     * @queryParam $tags list of imploded tags
+     */
     public function edit(Request $request, $id)
     {
         $request->user()->authorizeRoles(['company', 'admin']);
@@ -211,6 +296,10 @@ class AdvertisementController extends Controller
         return view('advertisement.edit', compact(['advertisement', 'works', 'states', 'tags', 'locations', 'specializations', 'currencies', 'settlements']));
     }
 
+    /**
+	 * delete a Gallery's item
+     * @urlParam $id required The ID of Gallery's item
+     */
     public function deletePhoto($id)
     {
         $gallery = Gallery::findOrFail($id);
@@ -222,6 +311,21 @@ class AdvertisementController extends Controller
         return back();
     }
 
+    /**
+	 * update a advertisement
+     * @urlParam $id required The ID of the advertisement
+     * @urlParam $request required url data
+     * 
+     * @response 201 {
+     *  "status" => 201,
+     *  "message" => string
+     * }
+     * 
+     * @response {
+     *  "status" => "status error",
+     *  "message" => string
+     * }
+     */
     public function update(Request $request, $id)
     {
         DB::beginTransaction();
@@ -247,6 +351,10 @@ class AdvertisementController extends Controller
         }
     }
 
+    /**
+	 * delete a Advertisement's item
+     * @urlParam $id required The ID of Advertisement's item
+     */
     public function delete($id)
     {
         $advertisement = Advertisement::with(['tags', 'galleries'])->findOrFail($id);
@@ -266,6 +374,16 @@ class AdvertisementController extends Controller
         echo 'email sent';
     }
 
+    /**
+	 * search an advertisements
+     * @urlParam $request required url data
+     * 
+     * @queryParam $advertisements list of advertisements
+     * @queryParam $locations list of locations
+     * @queryParam $specializations list of specializations 
+     * @queryParam $currencies list of currencies
+     * @queryParam $states list of states
+     */
     public function search(Request $request)
     {
         $range = explode(',', $request->input('range'));
@@ -375,6 +493,13 @@ class AdvertisementController extends Controller
         ]));
     }
 
+     /**
+	 * extend time of publishing an advertisement
+     * @urlParam $id required to find advertisement
+     * 
+     * @queryParam $user_id authenticated user's ID
+     * @queryParam $advertisement current advertisement
+     */
     public function extendAdvertisement($id)
     {
         $user_id = Auth::user()->id;
@@ -398,6 +523,16 @@ class AdvertisementController extends Controller
         }
     }
 
+    /**
+     * Show list of archive's advertisements
+     * @queryParam $advertisements list of advertisements 
+     * from Poland with Location, Settlement, Specialization,
+     * Currency, State, User, Gallery
+     * @queryParam $locations list of locations, get [id, city]
+     * @queryParam $specializations list of specializations
+     * @queryParam $currencies list of currencies, get [id, symbol]
+     * @queryParam $states list of states, get [id, name]
+     */
     public function showArchive()
     {
         $advertisements = Advertisement::select(
