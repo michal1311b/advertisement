@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Currency;
 use App\ForeignOffer;
 use App\Http\Requests\Foreign\StoreRequest;
+use App\Http\Service\CurrencyExchange;
 use App\Http\Service\Visit;
 use App\Opinion;
 use App\Settlement;
@@ -103,10 +104,13 @@ class ForeignOfferController extends Controller
         ->orderby('created_at', 'desc')
         ->paginate();
 
+        $currencyExchanges = CurrencyExchange::convertSalary($advertisement->currency);
+
         return view('foreign.show', compact([
             'advertisement', 
             'similars',
-            'opinions'
+            'opinions',
+            'currencyExchanges'
         ]));
     }
 

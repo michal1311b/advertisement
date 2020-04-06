@@ -11,6 +11,7 @@ use App\Location;
 use App\State;
 use App\Gallery;
 use App\Http\Requests\Advertisement\StoreRequest;
+use App\Http\Service\CurrencyExchange;
 use App\Jobs\SendEmailJob;
 use App\Http\Service\Visit;
 use App\Opinion;
@@ -22,6 +23,8 @@ use Illuminate\Support\Facades\Log;
 
 class AdvertisementController extends Controller
 {
+    use CurrencyExchange;
+
     public function index()
     {
         $advertisements = Advertisement::select(
@@ -173,10 +176,13 @@ class AdvertisementController extends Controller
         ->orderby('created_at', 'desc')
         ->paginate(5);
 
+        $currencyExchanges = CurrencyExchange::convertSalary($advertisement->currency);
+        
         return view('advertisement.show', compact([
             'advertisement', 
             'similars',
-            'opinions'
+            'opinions',
+            'currencyExchanges'
         ]));
     }
 

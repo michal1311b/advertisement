@@ -150,7 +150,18 @@
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
                                         {{ trans('offer.salary') }}
-                                        <span class="badge badge-pill">{{ $advertisement->min_salary }} - {{ $advertisement->max_salary }} {{ $advertisement->currency->symbol }}</span>
+                                        <span class="badge badge-pill">
+                                            <select class="custom-select">
+                                                <option selected>
+                                                    {{ $advertisement->min_salary }} - {{ $advertisement->max_salary }} {{ $advertisement->currency->symbol }}
+                                                </option>
+                                                @foreach($currencyExchanges->rates as $key => $value)
+                                                    <option>
+                                                        {{ round($advertisement->min_salary * $value, 2) }} - {{ round($advertisement->max_salary * $value, 2) }} {{ $key }}
+                                                    </option>
+                                                @endforeach
+                                            </select>    
+                                        </span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
                                         {{ trans('offer.salary_negotiable') }}
