@@ -24,7 +24,6 @@ class StoreRequest extends FormRequest
     public function rules()
     {
         return [
-            'link' => 'required|min:3',
             'comment' => 'required|min:3',
             'company_name' => 'required|min:3|max:190',
             'status' => 'required',
