@@ -15,6 +15,12 @@ use App\Http\Requests\CompanyCourse\StoreRequest;
 
 class CompanyCourseController extends Controller
 {
+     /**
+     * @queryParam $courses list of courses 
+     * with Location, Specialization, Currency, State, User
+     * 
+     * @response view with params [ courses ]
+     */
     public function index()
     {
         $courses = CompanyCourse::with([
@@ -33,11 +39,22 @@ class CompanyCourseController extends Controller
             'specialization' => function($query){
                 $query->select('id', 'name');
             }
-        ])->paginate(8);
+        ])->paginate();
 
         return view('course.index', compact('courses'));
     }
 
+    /**
+	 * Show an course
+     * @urlParam $id required The ID of the course
+     * @urlParam $slug required The slug of the course
+     * @queryParam $course current course depends on slug and id
+     * with user, state, specialization, currency
+     * @queryParam $similars list of courses depends on specialization_id,
+     * state_id, price, id, end_date
+     * 
+     * @response view with params [ course, similars ]
+     */
     public function show($id, $slug)
     {
         $course = CompanyCourse::whereSlug($slug)
@@ -64,9 +81,15 @@ class CompanyCourseController extends Controller
         ->where('end_date', '>', Carbon::now())
         ->paginate(3);
 
-        return view('course.show', compact(['course', 'similars']));
+        return view('course.show', compact([
+            'course', 'similars'
+        ]));
     }
 
+    /**
+	 * delete a CompanyCourse
+     * @urlParam $id required The ID of CompanyCourse
+     */
     public function delete($id)
     {
         $course = CompanyCourse::findOrFail($id);
@@ -79,6 +102,14 @@ class CompanyCourseController extends Controller
         }
     }
 
+     /**
+	 * Show an course's participants
+     * @urlParam $id required The ID of the course
+     * @queryParam $participants list of participants
+     * @queryParam $course current course
+     * 
+     * @response view with params [ course, participants ]
+     */
     public function getCourseParticiapnts($id)
     {
         $participants = Participant::with('company_course')->where('company_course_id', $id)->paginate();
