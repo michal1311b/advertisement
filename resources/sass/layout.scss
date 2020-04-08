@@ -190,3 +190,9 @@ $color2: #3197EE;
     transition: all 200ms ease-in;
     transform: scale(1.1);
 }
+
+tfoot input {
+    width: 100%;
+    padding: 3px;
+    box-sizing: border-box;
+}

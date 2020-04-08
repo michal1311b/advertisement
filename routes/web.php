@@ -31,6 +31,8 @@ Route::get('/send-opinion', 'EmailController@sendOpinionEmail')->name('send-opin
 Route::get('/send-opinion/{user}/{opinion}/{type}', 'EmailController@storeOpinion')->name('store-opinion');
 Route::get('/dziekujemy-za-opinie', 'EmailController@thanksOpinion')->name('thanks-opinion');
 Route::get('/srednie-stawki', 'PageController@showAverageSalary')->name('average-salary');
+Route::get('/live', 'LiveController@show')->name('live');
+Route::post('/live', 'LiveController@store')->name('live.store');
 
 Route::get('/preview/{jooble}', 'JoobleController@show')->name('preview-show');
 
