@@ -19,6 +19,11 @@ Breadcrumbs::for('cookies', function ($trail) {
     $trail->push(trans('sentence.cookies-policy'), route('cookies.show'));
 });
 
+Breadcrumbs::for('live', function ($trail) {
+    $trail->parent('site.homepage');
+    $trail->push(trans('live.title'), route('live'));
+});
+
 Breadcrumbs::for('regulation', function ($trail) {
     $trail->parent('home');
     $trail->push(trans('sentence.regulation'), route('regulation.show'));
