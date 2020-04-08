@@ -10,6 +10,15 @@ use Illuminate\Pagination\LengthAwarePaginator;
 
 class CompanyController extends Controller
 {
+     /**
+     * @urlParam Illuminate\Http\Request $request
+     * @queryParam $users list of users, with advertisements, foreignOffers
+     * @queryParam $companies list of companies
+     * 
+     * @response view with params [
+     * companies
+     * ]
+     */
     public function index(Request $request)
     {
         $items = new Collection();
@@ -51,6 +60,17 @@ class CompanyController extends Controller
         return view('company.index', compact('companies'));
     }
 
+    /**
+     * @urlParam App\User $user
+     * @queryParam $user with profile, departments, facilities,
+     * advertisements, foreignOffers, foreignOffers's specialization,
+     * advertisements's specialization, advertisements's location,
+     * advertisements's galleries
+     * 
+     * @response view with params [
+     * user
+     * ]
+     */
     public function show(User $user)
     {
         $user->load([
