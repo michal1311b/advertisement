@@ -2,11 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Category;
 use App\Http\Requests\Admin\Category\StoreRequest;
 use App\Http\Requests\Admin\Category\UploadRequest;
-use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 
@@ -91,9 +89,9 @@ class CategoryController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param  App\Http\Requests\Admin\Category\UploadRequest  $request
+     * @param  App\Category  $category
+     * @return view
      */
     public function update(Category $category, UploadRequest $request)
     {

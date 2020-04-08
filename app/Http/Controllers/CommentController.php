@@ -6,12 +6,17 @@ use App\Comment;
 use App\Http\Requests\Comment\StoreRequest;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
-use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 
 class CommentController extends Controller
 {
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  App\Http\Requests\Comment\StoreRequest $request
+     * @return view
+     */
     public function store(StoreRequest $request)
     {
         $now = Carbon::now();
@@ -28,6 +33,13 @@ class CommentController extends Controller
         return back();
     }
 
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  Illuminate\Http\Request $request
+     * @param  App\Comment $comment
+     * @return view
+     */
     public function update(Comment $comment, Request $request)
     {
         DB::beginTransaction();
@@ -50,6 +62,12 @@ class CommentController extends Controller
         }
     }
 
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  Comment $comment
+     * @return \Illuminate\Http\Response
+     */
     public function delete(Comment $comment)
     {
         if($comment->delete())
