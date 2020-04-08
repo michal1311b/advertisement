@@ -4,10 +4,15 @@ namespace App\Http\Controllers;
 
 use App\User;
 use Carbon\Carbon;
-use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
+    /**
+     * @queryParam $users list of users
+     * @response view with params [
+     * users
+     * ] 
+     */
     public function index()
     {
         return view('admin.users.index',[
@@ -15,6 +20,10 @@ class AdminController extends Controller
         ]);
     }
 
+    /**
+     * @queryParam $user object of User's model
+     * @response view 
+     */
     public function block(User $user)
     {
         if($user->hasRole('admin'))
@@ -31,6 +40,10 @@ class AdminController extends Controller
         return back();
     }
 
+     /**
+     * @queryParam $user object of User's model
+     * @response view 
+     */
     public function unblock(User $user)
     {
         $user->update([

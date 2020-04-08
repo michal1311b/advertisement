@@ -41,6 +41,14 @@ class AdvertisementController extends Controller
      * @queryParam $specializations list of specializations
      * @queryParam $currencies list of currencies, get [id, symbol]
      * @queryParam $states list of states, get [id, name]
+     * 
+     * @response view with params [
+     * advertisements,
+     * locations,
+     * specializations,
+     * currencies,
+     * states
+     * ]
      */
     public function index()
     {
@@ -192,7 +200,7 @@ class AdvertisementController extends Controller
     }
 
      /**
-	 * Show a advertisement
+	 * Show an advertisement
      * @urlParam $id required The ID of the advertisement
      * @urlParam $slug required The slug of the advertisement
      * @queryParam $advertisement current advertisement depends on slug and id
@@ -201,6 +209,13 @@ class AdvertisementController extends Controller
      * settlement_id, min_salary, id, expired_at
      * @queryParam $currencyExchanges counted currencies depend on advetisement's currency
      * @queryParam $opinions list of opinions with user and user's profile data order by created_at
+     * 
+     * @response view with params [
+     * advertisement, 
+     * similars, 
+     * opinions, 
+     * currencyExchanges
+     * ]
      */
     public function show($id, $slug)
     {
@@ -258,7 +273,7 @@ class AdvertisementController extends Controller
     }
 
      /**
-	 * Show a advertisement
+	 * Edit an advertisement
      * @urlParam $id required The ID of the advertisement
      * @urlParam $request required url data
      * @queryParam $advertisement current advertisement depends on slug and id
@@ -270,6 +285,17 @@ class AdvertisementController extends Controller
      * @queryParam $currencies list of currencies
      * @queryParam $states list of states
      * @queryParam $tags list of imploded tags
+     * 
+     * @response view with params [
+     * works,
+     * states,
+     * locations,
+     * specializations,
+     * currencies,
+     * settlements,
+     * advertisement,
+     * tags
+     * ]
      */
     public function edit(Request $request, $id)
     {
@@ -293,7 +319,16 @@ class AdvertisementController extends Controller
 
         $tags = implode(",", $tags_array);
 
-        return view('advertisement.edit', compact(['advertisement', 'works', 'states', 'tags', 'locations', 'specializations', 'currencies', 'settlements']));
+        return view('advertisement.edit', compact([
+            'advertisement',
+            'works',
+            'states',
+            'tags',
+            'locations',
+            'specializations',
+            'currencies',
+            'settlements'
+        ]));
     }
 
     /**
@@ -383,6 +418,17 @@ class AdvertisementController extends Controller
      * @queryParam $specializations list of specializations 
      * @queryParam $currencies list of currencies
      * @queryParam $states list of states
+     * 
+     * @response view with params [
+     * works,
+     * states,
+     * locations,
+     * specializations,
+     * currencies,
+     * settlements,
+     * advertisement,
+     * tags
+     * ]
      */
     public function search(Request $request)
     {
