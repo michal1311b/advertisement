@@ -12,4 +12,9 @@ return [
     'follow-user' => 'You follow the employer ',
     'already-follow' => 'You are already following the employer: ',
     'unfollow-user' => 'You unfollow the employer ',
+    'verify-email' => 'Verify Your Email Address',
+    'fresh-verification-send' => 'A fresh verification link has been sent to your email address.',
+    'check-email' => 'Before proceeding, please check your email for a verification link.',
+    'not-recive-email' => 'If you did not receive the email',
+    'send-another-email' => 'click here to request another' 
 ];

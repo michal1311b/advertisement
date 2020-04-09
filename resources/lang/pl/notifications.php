@@ -13,4 +13,9 @@ return [
     'follow-user' => 'Obserwujesz pracodawcę ',
     'already-follow' => 'Obserwujesz już pracodawcę: ',
     'unfollow-user' => 'Nie obserwujesz już pracodawcy: ',
+    'verify-email' => 'Zweryfikuj swój adres email',
+    'fresh-verification-send' => 'Nowy link weryfikacyjny został wysłany na Twój adres e-mail.',
+    'check-email' => 'Przed kontynuowaniem sprawdź adres e-mail, aby kliknąć w link weryfikacyjny.',
+    'not-recive-email' => 'Jeśli nie otrzymałeś wiadomości e-mail',
+    'send-another-email' => 'kliknij tutaj, aby wysłać jeszcze raz' 
 ];

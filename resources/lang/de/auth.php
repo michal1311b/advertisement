@@ -15,5 +15,5 @@ return [
 
     'failed' => 'Die eingegebenen Daten existieren nicht.',
     'throttle' => 'Zu viele Anmeldeversuche. Bitte versuchen Sie es erneut in: Sekunden Sekunden.',
-
+    'verify' => 'E-Mail bestätigen'
 ];

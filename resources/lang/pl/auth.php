@@ -15,5 +15,6 @@ return [
 
     'failed' => 'Wprowadzone dane nie istnieją.',
     'throttle' => 'Za dużo prób logowania. Proszę spróbuj ponownie za :seconds sekund.',
+    'verify' => 'Zweryfikuj email'
 
 ];
