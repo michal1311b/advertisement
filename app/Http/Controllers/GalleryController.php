@@ -52,7 +52,7 @@ class GalleryController extends Controller
             $offset_y = 200;
             
             $text1 = $adverisement->title;
-            $text2 = $adverisement->settlement->name . ': ' . $adverisement->min_salary. '-'.$adverisement->min_salary . $adverisement->currency->symbol;
+            $text2 = $adverisement->settlement->name . ': ' . $adverisement->min_salary. '-'.$adverisement->max_salary . $adverisement->currency->symbol;
             $text3 = trim($adverisement->location->city) . ', ' . $adverisement->state->name;
             $text4 = $adverisement->user->profile->company_name;
             $text5 = 'Specjalizacja: ' . $adverisement->specialization->name;
