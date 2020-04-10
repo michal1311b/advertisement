@@ -8,6 +8,7 @@ use App\Http\Requests\Foreign\StoreRequest;
 use App\Http\Service\CurrencyExchange;
 use App\Http\Service\Visit;
 use App\Opinion;
+use App\Poster;
 use App\Settlement;
 use App\Specialization;
 use App\Work;
@@ -106,11 +107,16 @@ class ForeignOfferController extends Controller
 
         $currencyExchanges = CurrencyExchange::convertSalary($advertisement->currency);
 
+        $poster = Poster::where('posterable_type', 'App\ForeignOffer')
+        ->where('posterable_id', $id)
+        ->first('path');
+
         return view('foreign.show', compact([
             'advertisement', 
             'similars',
             'opinions',
-            'currencyExchanges'
+            'currencyExchanges',
+            'poster'
         ]));
     }
 

@@ -202,9 +202,11 @@
                                     </div>
                                 @endif
                             </div>
-                            <div class="col-12 col-md-4">
-                                <img src="{{ $advertisement->image_profile }}" class="d-block" width="320" alt="{{ $advertisement->title }}">
-                            </div>
+                            @if($poster)
+                                <div class="col-12 col-md-4 img-hover-zoom--quick-zoom" data-interval="10000">
+                                    <img src="{{ $poster->path }}" class="d-block" alt="poster">
+                                </div>
+                            @endif
                             <div class="col-12">
                                 <a href="{{ route('company-show', $advertisement->user) }}" title="{{ $advertisement->user->profile->company_name }}"  class="no-decoration font-weight-bold text-info">
                                     {{ trans('company.visit-company') }}
