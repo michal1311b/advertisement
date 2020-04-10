@@ -247,12 +247,12 @@
                                 <div id="advertisementCarousel" class="carousel slide" data-ride="carousel">
                                     <div class="carousel-inner">
                                         @if($poster)
-                                            <div class="carousel-item" data-interval="10000">
+                                            <div class="carousel-item active" data-interval="10000">
                                                 <img src="{{ $poster->path }}" class="d-block" width="320" alt="poster">
                                             </div>
                                         @endif
                                         @foreach($advertisement->galleries as $image)
-                                            <div class="carousel-item {{ $loop->first ? 'active' : '' }}" data-interval="10000">
+                                            <div class="carousel-item" data-interval="10000">
                                                 <img src="{{ $image->path }}" class="d-block" width="320" alt="{{ $image->oldName }}">
                                             </div>
                                         @endforeach
