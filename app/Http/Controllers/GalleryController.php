@@ -26,7 +26,7 @@ class GalleryController extends Controller
 
         foreach($adverisements as $adverisement)
         {
-           if($this->checkPosterExist($adverisement->id))
+           if($this->checkPosterExist($adverisement->id, 'App\Advertisement'))
            {
                continue;
            }
@@ -106,10 +106,10 @@ class GalleryController extends Controller
         }
     }
 
-    private function checkPosterExist($id)
+    private function checkPosterExist($id, $type)
     {
         $poster = Poster::where('posterable_id', $id)
-        ->where('posterable_type', 'App\Advertisement')
+        ->where('posterable_type', $type)
         ->first();
 
         if($poster) {
@@ -136,7 +136,6 @@ class GalleryController extends Controller
     }
 
     private function getColor($id) {
-        
         $colors = [
             '#8e8e8e', 
             '#b2e710', 

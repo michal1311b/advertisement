@@ -243,16 +243,16 @@
                                     </div>
                                 @endif
                             </div>
-                            <div class="col-12 col-md-4">
+                            <div class="col-12">
                                 <div id="advertisementCarousel" class="carousel slide" data-ride="carousel">
                                     <div class="carousel-inner">
                                         @if($poster)
-                                            <div class="carousel-item active img-hover-zoom--quick-zoom" data-interval="10000">
+                                            <div class="carousel-item col-12 col-md-4 active img-hover-zoom--quick-zoom" data-interval="10000">
                                                 <img src="{{ $poster->path }}" class="d-block" alt="poster">
                                             </div>
                                         @endif
                                         @foreach($advertisement->galleries as $image)
-                                            <div class="carousel-item" data-interval="10000">
+                                            <div class="carousel-item col-12 col-md-4" data-interval="10000">
                                                 <img src="{{ $image->path }}" class="d-block" width="320" alt="{{ $image->oldName }}">
                                             </div>
                                         @endforeach
