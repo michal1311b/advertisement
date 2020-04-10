@@ -247,8 +247,8 @@
                                 <div id="advertisementCarousel" class="carousel slide" data-ride="carousel">
                                     <div class="carousel-inner">
                                         @if($poster)
-                                            <div class="carousel-item active" data-interval="10000">
-                                                <img src="{{ $poster->path }}" class="d-block" width="320" alt="poster">
+                                            <div class="carousel-item active img-hover-zoom--quick-zoom" data-interval="10000">
+                                                <img src="{{ $poster->path }}" class="d-block" alt="poster">
                                             </div>
                                         @endif
                                         @foreach($advertisement->galleries as $image)
