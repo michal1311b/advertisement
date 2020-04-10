@@ -88,10 +88,11 @@ class GalleryController extends Controller
             imagettftext($image_p, $font_size, 0, $offset_x, $offset_y+280, $text_color, $font, $text2);
             
             $isHttp = isset($_SERVER['HTTPS']) ? 'https://' : 'http://';
-            $path = $isHttp . "{$_SERVER['HTTP_HOST']}" .  '/posters' . '/'. time(). '_' .rand(1, 10000) .'.jpg';
+            $destination = '/posters' . '/'. time(). '_' .rand(1, 10000) .'.jpg';
+            $path = $isHttp . "{$_SERVER['HTTP_HOST']}" .  $destination;
             
             // Save the picture
-            imagejpeg($image_p, public_path('/posters' . '/'. time(). '_' . rand(1, 10000) .'.jpg'), 100); 
+            imagejpeg($image_p, public_path($destination), 100); 
         
             // Clear
             imagedestroy($image); 
