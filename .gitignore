@@ -11,6 +11,7 @@
 /public/courses/*
 /public/posts/*
 /public/cv/*
+/public/posters/*
 /storage/*.key
 /vendor
 /database/locations.sql

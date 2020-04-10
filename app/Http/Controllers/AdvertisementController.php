@@ -15,6 +15,7 @@ use App\Http\Service\CurrencyExchange;
 use App\Jobs\SendEmailJob;
 use App\Http\Service\Visit;
 use App\Opinion;
+use App\Poster;
 use App\Settlement;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
@@ -234,8 +235,7 @@ class AdvertisementController extends Controller
 
         $user = Auth::user();
         
-        if(isset($user->doctor) === false && $user)
-        {
+        if(isset($user->doctor) === false && $user) {
             Visit::storeVisit($user->id, $advertisement->id);
         } else if(isset($user->doctor) !== false && $user) {
             Visit::storeVisit($user->id, $advertisement->id, true);
@@ -263,12 +263,17 @@ class AdvertisementController extends Controller
         ->paginate(5);
 
         $currencyExchanges = CurrencyExchange::convertSalary($advertisement->currency);
+
+        $poster = Poster::where('posterable_type', 'App\Advertisement')
+        ->where('posterable_id', $id)
+        ->first('path');
         
         return view('advertisement.show', compact([
             'advertisement', 
             'similars',
             'opinions',
-            'currencyExchanges'
+            'currencyExchanges',
+            'poster'
         ]));
     }
 

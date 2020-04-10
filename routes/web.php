@@ -22,6 +22,8 @@ Route::get('/sitemap.xml/companies', 'SitemapController@companies');
 
 Route::get('/fb-post', 'FacebookController@storeFacebook');
 
+Route::get('/create-posters', 'GalleryController@storePosers');
+
 Route::get('/get-company-info/{nip}', 'GusController@checkNip')->name('get-company-info');
 Route::get('/update-company-info', 'GusController@getGUSData')->name('update-company-info');
 
