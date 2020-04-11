@@ -123,6 +123,7 @@ Route::group(array('prefix' => 'offer'), function () {
     Route::get('notifications', 'UserController@notifications');
     Route::get('users', 'UserController@read')->name('read');
     Route::get('like/{id}', ['as' => 'offer.like', 'uses' => 'LikeController@likeOffer'])->middleware(['auth', 'verified']);
+    Route::get('/{specialization}/{slug}', 'SpecializationController@indexFromPoland')->name('offers-by-specialization');
 });
 
 Route::group(array('prefix' => 'foreign'), function () {
@@ -140,6 +141,7 @@ Route::group(array('prefix' => 'foreign'), function () {
     Route::post('/create-similar-offer/create', 'ForeignOfferController@store')->name('store-foreign');
 
     Route::get('/extend-offer/{id}', 'ForeignOfferController@extendAdvertisement')->name('user-extend-foreign')->middleware(['auth', 'verified']);
+    Route::get('/{specialization}/{slug}', 'SpecializationController@indexFromForeign')->name('foreigns-by-specialization');
 });
 
 Route::group(array('prefix' => 'user'), function () {

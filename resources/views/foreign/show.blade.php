@@ -116,11 +116,13 @@
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
                                         {{ trans('profile.specialization') }}
-                                        <span class="ml-2 btn btn-sm offer-item border{{ $advertisement->specialization_id }} text-white">
-                                            {{ $advertisement->specialization->name }}
-                                            <img src="{{ asset('images/icons/' . $advertisement->specialization->id . '.jpg') }}" 
-                                            class="rounded-circle" alt="{{ $advertisement->specialization->name }}">
-                                        </span>
+                                        <a href="{{ route('foreigns-by-specialization', ['specialization' => $advertisement->specialization, 'slug' => $advertisement->specialization->slug]) }}">
+                                            <span class="ml-2 btn btn-sm offer-item border{{ $advertisement->specialization_id }} text-white">
+                                                {{ $advertisement->specialization->name }}
+                                                <img src="{{ asset('images/icons/' . $advertisement->specialization->id . '.jpg') }}" 
+                                                class="rounded-circle" alt="{{ $advertisement->specialization->name }}">
+                                            </span>
+                                        </a>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
                                         {{ trans('offer.created_at') }}
