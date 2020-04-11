@@ -215,16 +215,20 @@
     </div>
     <div class="row">
         <div class="col-12 col-md-6 text-center">
-            <h4 class="py-2">
-                {{ trans('offer.offers-count') }}
-            </h4>
-            <span class="step poland--bg">{{ $countAdverts }}</span>
+            <a href="{{ route('advertisement-list') }}" class="no-decoration" title="{{ trans('offer.offers') }}">
+                <h4 class="py-2">
+                    {{ trans('offer.offers-count') }}
+                </h4>
+                <span class="step poland--bg">{{ $countAdverts }}</span>
+            </a>
         </div>
         <div class="col-12 col-md-6 text-center">
-            <h4 class="py-2">
-                {{ trans('offer.foreign-count') }}
-            </h4>
-            <span class="step foreign--bg">{{ $countForeings }}</span>
+            <a href="{{ route('foreign-list') }}" class="no-decoration" title="{{ trans('offer.foreigns-list') }}">
+                <h4 class="py-2">
+                    {{ trans('offer.foreign-count') }}
+                </h4>
+                <span class="step foreign--bg">{{ $countForeings }}</span>
+            </a>
         </div>
         <div class="col-12" id="newestOffers">
             <h4 class="py-2">
@@ -285,7 +289,7 @@
             @endif
         </div>
         <div class="col-12 pt-2 text-center">
-            <a href="{{ route('advertisement-list') }}" class="btn btn-rounded btn-info border border-warning mr-2 text-white">{{ trans('buttons.watch-all') }}</a>
+            <a href="{{ route('advertisement-list') }}" class="btn btn-rounded btn-info border border-warning mr-2 text-white" title="{{ trans('buttons.watch-all') }}">{{ trans('buttons.watch-all') }}</a>
         </div>
         <div class="col-12 pt-2">
             <h4>{{ trans('company.companies-orderBy-offers') }}</h4>
