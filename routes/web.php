@@ -123,8 +123,8 @@ Route::group(array('prefix' => 'offer'), function () {
     Route::get('notifications', 'UserController@notifications');
     Route::get('users', 'UserController@read')->name('read');
     Route::get('like/{id}', ['as' => 'offer.like', 'uses' => 'LikeController@likeOffer'])->middleware(['auth', 'verified']);
-    Route::get('/{specialization}/{slug}', 'SpecializationController@indexFromPoland')->name('offers-by-specialization');
-    Route::get('/{state}/{slug}', 'StateController@indexFromPoland')->name('offers-by-state');
+    Route::get('/{specialization}/specialization/{slug}', 'SpecializationController@indexFromPoland')->name('offers-by-specialization');
+    Route::get('/{state}/state/{slug}', 'StateController@indexFromPoland')->name('offers-by-state');
 });
 
 Route::group(array('prefix' => 'foreign'), function () {
