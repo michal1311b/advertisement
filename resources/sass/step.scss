@@ -1,8 +1,8 @@
-span.step {
-    .poland--bg {
+.step {
+    &.poland--bg {
         background: #94C3E1;
     } 
-    .foreign--bg {
+    &.foreign--bg {
         background: rgb(0, 157, 255);
     } 
     border-radius: 60px;
