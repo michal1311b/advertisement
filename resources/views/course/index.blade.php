@@ -47,7 +47,11 @@
                                     <div class="d-flex align-items-center justify-content-between mt-1">
                                         <h6 class="font-weight-bold"><i class="fas fa-coins"></i> {{ $course->price }} {{ $course->currency->symbol }}</h6>
                                     </div>
-                                    <div class="badge badge-pill offer-item border{{ $course->specialization_id }} text-white">{{ $course->specialization->name }}</div>
+                                    <div class="badge badge-pill offer-item border{{ $course->specialization_id }} text-white">
+                                        {{ $course->specialization->name }}
+                                        <img src="{{ asset('images/icons/' . $course->specialization->id . '.jpg') }}" 
+                                        class="rounded-circle" alt="{{ $course->specialization->name }}">
+                                    </div>
                                     <div>
                                         <i class="fas fa-calendar-day"></i> {{ trans('profile.start_date') }} <span class="badge badge-primary">{{ $course->start_date }}</span> - {{ trans('profile.end_date') }} <span class="badge badge-primary">{{ $course->end_date }}</span>
                                     </div>

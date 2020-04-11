@@ -35,9 +35,10 @@ $(document).ready(function() {
                                         '<div class="d-flex align-items-center justify-content-between mt-1">'+
                                             '<h6 class="font-weight-bold"><i class="fas fa-coins"></i> '+ input[i].settlement.name + ': ' + input[i].min_salary + '-' + input[i].max_salary + ' ' + input[i].currency.symbol +'</h6>' +
                                         '</div>'+
-                                        '<div class="badge badge-pill text-white offer-item border'+input[i].specialization_id+'">'+ input[i].specialization.name +'</div>'+
+                                        '<div class="badge badge-pill text-white offer-item border'+input[i].specialization_id+'">'+ input[i].specialization.name +' <img src="'+ window.location.href + 'images/icons/' + input[i].specialization_id + '.jpg"' +
+                                        'class="rounded-circle" alt="' + input[i].specialization.name + '">' +'</div>'+
                                         '<div>'+
-                                            // '<i class="fas fa-calendar-day"></i>' + {{ trans('offer.expired_at') }} + ' <div class="badge badge-primary">' + input[i].expired_at +'</div>'+
+                                            '<i class="fas fa-calendar-day"></i>' + Vue.prototype.trans('offer.expired_at') + ' <div class="badge badge-primary">' + input[i].expired_at +'</div>'+
                                         '</div>'+
                                     '</div>'+
                                     '<img src="'+ input[i].user.avatar + '" class="ml-lg-5 order-1 order-lg-2" width="200" alt="EmployMed">'+

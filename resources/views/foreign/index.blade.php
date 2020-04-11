@@ -48,7 +48,11 @@
                                     <div class="d-flex align-items-center justify-content-between mt-1">
                                         <h6 class="font-weight-bold"><i class="fas fa-coins"></i> {{ $foreign->settlement->name }}: {{ $foreign->min_salary }} - {{ $foreign->max_salary }} {{ $foreign->currency->symbol }}</h6>
                                     </div>
-                                    <div class="badge badge-pill offer-item border{{ $foreign->specialization_id }} text-white">{{ $foreign->specialization->name }}</div>
+                                    <div class="badge badge-pill offer-item border{{ $foreign->specialization_id }} text-white">
+                                        {{ $foreign->specialization->name }}
+                                        <img src="{{ asset('images/icons/' . $foreign->specialization->id . '.jpg') }}" 
+                                        class="rounded-circle" alt="{{ $foreign->specialization->name }}">
+                                    </div>
                                     <div>
                                         <i class="fas fa-calendar-day"></i> {{ trans('offer.expired_at') }} <div class="badge badge-primary">{{ $foreign->expired_at }}</div>
                                     </div>

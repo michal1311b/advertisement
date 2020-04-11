@@ -38,10 +38,12 @@
                                 <div class="btn-toolbar justify-content-between" role="toolbar" aria-label="Toolbar with button groups">
                                     <div class="btn-group" role="group" aria-label="First group">
                                         <strong>{{ trans('sentence.post-by') }}</strong>&nbsp;
-                                        {{ $course->user->profile->company_name }}&nbsp;
-                                        @if($course->user->isOnline())
-                                            <span class="text-success"><i class="fa fa-circle"></i> {{ trans('offer.employer-online') }}</span>
-                                        @endif
+                                        <a href="{{ route('company-show', $course->user) }}" title="{{ $course->user->profile->company_name }}" >
+                                            {{ $course->user->profile->company_name }}&nbsp;
+                                            @if($course->user->isOnline())
+                                                <span class="text-success"><i class="fa fa-circle"></i> {{ trans('offer.employer-online') }}</span>
+                                            @endif
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -49,7 +51,11 @@
                                 <ul class="list-group">
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
                                         {{ __('Logo') }}
-                                        <span class="badge badge-pill"><img class="user-avatar--smaller" src="{{ $course->user->avatar }}" /></span>
+                                        <a href="{{ route('company-show', $course->user) }}" title="{{ $course->user->profile->company_name }}">
+                                            <span class="badge badge-pill">
+                                                <img class="user-avatar--smaller" src="{{ $course->user->avatar }}" alt="{{ $course->user->profile->company_name }}"/>
+                                            </span>
+                                        </a>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
                                         {{ trans('offer.city') }}

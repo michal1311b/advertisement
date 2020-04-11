@@ -246,7 +246,11 @@
                                     <div class="d-flex align-items-center justify-content-between mt-1">
                                         <h6 class="font-weight-bold"><i class="fas fa-coins"></i> {{ $similar->settlement->name }}: {{ $similar->min_salary }} - {{ $similar->max_salary }} {{ $similar->currency->symbol }}</h6>
                                     </div>
-                                    <div class="badge badge-pill offer-item border{{ $similar->specialization_id }} text-white">{{ $similar->specialization->name }}</div>
+                                    <div class="badge badge-pill offer-item border{{ $similar->specialization_id }} text-white">
+                                        {{ $similar->specialization->name }}
+                                        <img src="{{ asset('images/icons/' . $similar->specialization->id . '.jpg') }}" 
+                                        class="rounded-circle" alt="{{ $similar->specialization->name }}">
+                                    </div>
                                 </div>
                                 @if($similar->image_profile !== null)
                                     <img src="{{ $similar->image_profile }}" width="200" class="ml-lg-5 order-1 order-lg-2" alt="{{ $similar->title }}">

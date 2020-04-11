@@ -44,7 +44,7 @@
                                 <div class="btn-toolbar justify-content-between" role="toolbar" aria-label="Toolbar with button groups">
                                     <div class="btn-group" role="group" aria-label="First group">
                                         <strong>{{ trans('sentence.post-by') }}</strong>&nbsp;
-                                        <a href="{{ route('company-show', $advertisement->user) }}" title="{{ $advertisement->user->profile->company_name }}" >
+                                        <a href="{{ route('company-show', $advertisement->user) }}" title="{{ $advertisement->user->profile->company_name }}">
                                             {{ $advertisement->user->profile->company_name }}
                                             @if($advertisement->user->isOnline())
                                                 <span class="text-success"><i class="fa fa-circle"></i> {{ trans('offer.employer-online') }}</span>
@@ -307,7 +307,11 @@
                                     <div class="d-flex align-items-center justify-content-between mt-1">
                                         <h6 class="font-weight-bold"><i class="fas fa-coins"></i> {{ $similar->settlement->name }}: {{ $similar->min_salary }} - {{ $similar->max_salary }} {{ $similar->currency->symbol }}</h6>
                                     </div>
-                                    <div class="badge badge-pill offer-item border{{ $similar->specialization_id }} text-white">{{ $similar->specialization->name }}</div>
+                                    <div class="badge badge-pill offer-item border{{ $similar->specialization_id }} text-white">
+                                        {{ $similar->specialization->name }}
+                                        <img src="{{ asset('images/icons/' . $similar->specialization->id . '.jpg') }}" 
+                                        class="rounded-circle" alt="{{ $similar->specialization->name }}">
+                                    </div>
                                 </div>
                                 @if($similar->galleries()->count())
                                     <img src="{{ $similar->galleries[0]->path }}" width="200" class="ml-lg-5 order-1 order-lg-2" alt="{{$similar->galleries[0]->oldName}}">
