@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 
 class Page extends Model
 {
@@ -37,6 +38,6 @@ class Page extends Model
 
     private static function getUniqueSlug($title)
     {
-        return str_slug($title, '-');
+        return Str::slug($title, '-');
     }
 }

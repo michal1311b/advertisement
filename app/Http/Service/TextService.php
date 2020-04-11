@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Service;
+use Illuminate\Support\Str;
 
 trait TextService
 {
@@ -16,6 +17,6 @@ trait TextService
 
     public static function getUniqueSlug($title)
     {
-        return str_slug($title, '-');
+        return Str::slug($title, '-');
     }
 }

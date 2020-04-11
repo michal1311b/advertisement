@@ -2,6 +2,7 @@
 
 use App\Page;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Str;
 
 class PagesTableSeeder extends Seeder
 {
@@ -21,7 +22,7 @@ class PagesTableSeeder extends Seeder
                 'title' => $title,
                 'shot_description' => $faker->sentence(10),
                 'body' => $faker->paragraph(4),
-                'slug' => str_slug($title, '-'),
+                'slug' => Str::slug($title, '-'),
                 'is_active' => false
             ]);
         }

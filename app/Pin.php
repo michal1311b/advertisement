@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 
 class Pin extends Model
 {
@@ -15,6 +16,6 @@ class Pin extends Model
 
     public static function getUniqueSlug($title)
     {
-        return str_slug($title, '-');
+        return Str::slug($title, '-');
     }
 }

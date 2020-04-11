@@ -170,7 +170,6 @@
                                         @else
                                             <i class="fas fa-times-circle"></i>
                                         @endif
-                                        </span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
                                         {{ trans('offer.work-category') }}

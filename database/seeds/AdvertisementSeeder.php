@@ -12,6 +12,7 @@ use App\Tag;
 use App\Specialization;
 use App\Settlement;
 use Carbon\Carbon;
+use Illuminate\Support\Str;
 
 class AdvertisementSeeder extends Seeder
 {
@@ -63,7 +64,7 @@ class AdvertisementSeeder extends Seeder
             $advertisement->term2 = 1;
             $advertisement->term3 = 1;
             $advertisement->negotiable = 0;
-            $advertisement->slug = str_slug($title, '-');
+            $advertisement->slug = Str::slug($title, '-');
             $advertisement->expired_at = Carbon::now()->addDays(30);
 
             $advertisement->save();
@@ -86,7 +87,7 @@ class AdvertisementSeeder extends Seeder
                 $name = $faker->name; 
                 $tag->advertisement_id = $advertisement->id;
                 $tag->name = $name;
-                $tag->slug = str_slug($name, '-');
+                $tag->slug = Str::slug($name, '-');
                 $tag->save();
             }
         }
