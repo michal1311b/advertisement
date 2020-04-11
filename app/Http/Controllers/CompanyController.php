@@ -78,11 +78,9 @@ class CompanyController extends Controller
             'departments',
             'facilities',
             'advertisements' => function($query) {
-                $query->paginate();
                 $query->where('expired_at', '>', Carbon::now());
             },
             'foreignOffers' => function($query) {
-                $query->paginate();
                 $query->where('expired_at', '>', Carbon::now());
             },
             'foreignOffers.specialization',
