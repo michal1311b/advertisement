@@ -51,5 +51,7 @@ return [
     'city-not-require' => 'Місто (не обов’язково)',
     'phone-not-require' => 'Телефон (не потрібно)',
     'salary_negotiable' => 'Stawka do negocjacji?',
-    'employer-online' => 'Роботодавець онлайн'
+    'employer-online' => 'Роботодавець онлайн',
+    'offers-count' => 'Поточна кількість оголошень з Польщі',
+    'foreign-count' => 'Поточна кількість оголошень з-за кордону',
 ];

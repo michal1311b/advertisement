@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Advertisement;
 use App\Currency;
+use App\ForeignOffer;
 use App\Page;
 use App\User;
 use Carbon\Carbon;
@@ -54,7 +55,12 @@ class PageController extends Controller
                 $query->with('profile');
             }])
         ->where('expired_at', '>', Carbon::now())
-        ->orderBy('id', 'desc')->take(5)->get();
+        ->orderBy('id', 'desc')
+        ->take(5)
+        ->get();
+
+        $countAdverts = count(Advertisement::where('expired_at', '>', Carbon::now())->get());
+        $countForeings = count(ForeignOffer::where('expired_at', '>', Carbon::now())->get());
 
         $companies = User::has('advertisements', '>' , 2)
         ->withCount('advertisements')
@@ -72,7 +78,9 @@ class PageController extends Controller
             'locations', 
             'specializations', 
             'currencies',
-            'states'
+            'states',
+            'countAdverts',
+            'countForeings'
         ]));
     }
 

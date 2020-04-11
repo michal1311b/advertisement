@@ -214,6 +214,18 @@
         </div>
     </div>
     <div class="row">
+        <div class="col-12 col-md-6 text-center">
+            <h4 class="py-2">
+                {{ trans('offer.offers-count') }}
+            </h4>
+            <span class="step poland--bg">{{ $countAdverts }}</span>
+        </div>
+        <div class="col-12 col-md-6 text-center">
+            <h4 class="py-2">
+                {{ trans('offer.foreign-count') }}
+            </h4>
+            <span class="step foreign--bg">{{ $countForeings }}</span>
+        </div>
         <div class="col-12" id="newestOffers">
             <h4 class="py-2">
                 {{ trans('offer.interested-offers') }}

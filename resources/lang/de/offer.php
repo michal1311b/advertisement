@@ -51,5 +51,7 @@ return [
     'city-not-require' => 'Stadt (nicht erforderlich)',
     'phone-not-require' => 'Telefon (nicht erforderlich)',
     'salary_negotiable' => 'Rate zu verhandeln?',
-    'employer-online' => 'Der Arbeitgeber ist online'
+    'employer-online' => 'Der Arbeitgeber ist online',
+    'offers-count' => 'Aktuelle Anzahl Anzeigen aus Polen',
+    'foreign-count' => 'Aktuelle Anzahl Anzeigen aus dem Ausland',
 ];

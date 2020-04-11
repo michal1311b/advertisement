@@ -51,5 +51,7 @@ return [
     'city-not-require' => 'Miasto (nie wymagane)',
     'phone-not-require' => 'Telefon (nie wymagane)',
     'salary_negotiable' => 'Stawka do negocjacji?',
-    'employer-online' => 'Pracodawca jest Online'
+    'employer-online' => 'Pracodawca jest Online',
+    'offers-count' => 'Aktualna liczba ogłoszeń z Polski',
+    'foreign-count' => 'Aktualna liczba ogłoszeń zza granicy',
 ];
