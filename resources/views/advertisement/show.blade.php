@@ -131,10 +131,12 @@
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
                                         {{ trans('offer.state') }}
-                                        <span class="badge badge-pill">
-                                            {{ $advertisement->state->name }}
-                                            <img class="state-icon" src="{{ asset('images/icons/states/' . $advertisement->state->id . '.png') }}" alt="{{ trans('offer.state') }} {{ $advertisement->state->name }}">
-                                        </span>
+                                        <a href="{{ route('offers-by-state', ['specialization' => $advertisement->state, 'slug' => $advertisement->state->slug]) }}" title="{{ $advertisement->state->name }}">
+                                            <span class="badge badge-pill">
+                                                {{ $advertisement->state->name }}
+                                                <img class="state-icon" src="{{ asset('images/icons/states/' . $advertisement->state->id . '.png') }}" alt="{{ trans('offer.state') }} {{ $advertisement->state->name }}">
+                                            </span>
+                                        </a>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
                                         {{ trans('profile.specialization') }}
