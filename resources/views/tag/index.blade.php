@@ -59,7 +59,11 @@
                                             <div class="d-flex align-items-center justify-content-between mt-1">
                                                 <h6 class="font-weight-bold my-2"><i class="fas fa-coins"></i> {{ $advertisement->advertisement->settlement->name ?? '' }}: {{ $advertisement->advertisement->min_salary ?? '' }} - {{ $advertisement->advertisement->max_salary ?? '' }} {{ $advertisement->advertisement->currency->symbol ?? '' }}</h6>
                                             </div>
-                                            <div class="badge badge-pill offer-item border{{ $advertisement->advertisement->specialization_id }} text-white">{{ $advertisement->advertisement->specialization->name ?? '' }}</div>
+                                            <div class="badge badge-pill offer-item border{{ $advertisement->advertisement->specialization_id }} text-white">
+                                                {{ $advertisement->advertisement->specialization->name ?? '' }}
+                                                <img src="{{ asset('images/icons/' . $advertisement->advertisement->specialization->id . '.jpg') }}" 
+                                                class="rounded-circle" alt="{{ $advertisement->advertisement->specialization->name }}">
+                                            </div>
                                             <div>
                                                 <i class="fas fa-calendar-day"></i> {{ trans('offer.expired_at') }} <div class="badge badge-primary">{{ $advertisement->advertisement->expired_at ?? '' }}</div>
                                             </div>

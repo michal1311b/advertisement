@@ -136,7 +136,11 @@
                                     <div class="d-flex align-items-center justify-content-between mt-1">
                                         <h6 class="font-weight-bold"><i class="fas fa-coins"></i> {{ $advertisement->settlement->name }}: {{ $advertisement->min_salary }} - {{ $advertisement->max_salary }} {{ $advertisement->currency->symbol }}</h6>
                                     </div>
-                                    <div class="badge badge-pill offer-item border{{ $advertisement->specialization_id }} text-white">{{ $advertisement->specialization->name }}</div>
+                                    <div class="badge badge-pill offer-item border{{ $advertisement->specialization_id }} text-white">
+                                        {{ $advertisement->specialization->name }}
+                                        <img src="{{ asset('images/icons/' . $advertisement->specialization->id . '.jpg') }}" 
+                                        class="rounded-circle" alt="{{ $advertisement->specialization->name }}">
+                                    </div>
                                     <div>
                                         <i class="fas fa-calendar-day"></i> {{ trans('offer.expired_at') }} <div class="badge badge-primary">{{ $advertisement->expired_at }}</div>
                                     </div>
@@ -221,7 +225,11 @@
                                     <div class="d-flex align-items-center justify-content-between mt-1">
                                         <h6 class="font-weight-bold"><i class="fas fa-coins"></i> {{ $advertisement->settlement->name }}: {{ $advertisement->min_salary }} - {{ $advertisement->max_salary }} {{ $advertisement->currency->symbol }}</h6>
                                     </div>
-                                    <div class="badge badge-pill offer-item border{{ $advertisement->specialization_id }} text-white">{{ $advertisement->specialization->name }}</div>
+                                    <div class="badge badge-pill offer-item border{{ $advertisement->specialization_id }} text-white">
+                                        {{ $advertisement->specialization->name }}
+                                        <img src="{{ asset('images/icons/' . $advertisement->specialization->id . '.jpg') }}" 
+                                        class="rounded-circle" alt="{{ $advertisement->specialization->name }}">
+                                    </div>
                                     <div>
                                         <i class="fas fa-calendar-day"></i> {{ trans('offer.expired_at') }} <div class="badge badge-primary">{{ $advertisement->expired_at }}</div>
                                     </div>

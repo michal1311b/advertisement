@@ -32,7 +32,7 @@
                 @foreach($companies as $company)
                     <!-- List group-->
                     <ul class="list-group shadow">
-                        <a href="{{ route('company-show', $company) }}" class="no-decoration"> 
+                        <a href="{{ route('company-show', $company) }}" class="no-decoration" title="{{ $company->profile->company_name }}"> 
                             <!-- list group item-->
                             <li class="list-group-item">
                                 <!-- Custom content-->

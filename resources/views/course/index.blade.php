@@ -59,7 +59,7 @@
                                 @if($course->avatar !== null)
                                     <img src="{{ $course->avatar }}" width="200" class="ml-lg-5 order-1 order-lg-2" alt="{{ $course->title }}">
                                 @else
-                                <img src="{{ asset('images/course-default.png') }}" width="200" class="ml-lg-5 order-1 order-lg-2" alt="No image">
+                                    <img src="{{ asset('images/course-default.png') }}" width="200" class="ml-lg-5 order-1 order-lg-2" alt="No image">
                                 @endif
                                 </div>
                                 <!-- End -->
