@@ -36,10 +36,20 @@
                                 <div class="media align-items-lg-center flex-column flex-lg-row p-3">
                                     <div class="media-body order-2 order-lg-1">
                                         <h5 class="mt-0 font-weight-bold mb-2">{{ $data->advertisements->title }}</h5>
+                                        <h6 class="mt-0 font-weight-bold mb-2"><i class="fas fa-map-marker-alt"></i> {{ $data->advertisements->location->city }}</h6>
                                         <div class="d-flex align-items-center justify-content-between mt-1">
                                             <h6 class="font-weight-bold my-2"><i class="fas fa-coins"></i> {{ $data->advertisements->settlement->name }}: {{ $data->advertisements->min_salary }} - {{ $data->advertisements->max_salary }} {{ $data->advertisements->currency->symbol }}</h6>
                                         </div>
-                                        <div class="badge badge-secondary">{{ $data->advertisements->specialization->name }}</div>
+                                        <div class="badge badge-pill offer-item border{{ $data->advertisements->specialization_id }} text-white">
+                                            {{ $data->advertisements->specialization->name }}
+                                            <img src="{{ asset('images/icons/' . $data->advertisements->specialization->id . '.jpg') }}" 
+                                            class="rounded-circle" alt="{{ $data->advertisements->specialization->name }}">
+                                        </div>
+                                        <div>
+                                            <i class="fas fa-calendar-day"></i> {{ trans('offer.expired_at') }} <div class="badge badge-primary">
+                                                {{ $data->advertisements->expired_at }}
+                                            </div>
+                                        </div>
                                     </div>
                                     @if($data->advertisements->galleries()->count())
                                         <img src="{{ $data->advertisements->galleries[0]->path }}" width="200" class="ml-lg-5 order-1 order-lg-2" alt="{{$data->advertisements->galleries[0]->oldName}}">

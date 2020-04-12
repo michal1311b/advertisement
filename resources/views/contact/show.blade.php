@@ -32,14 +32,16 @@
                         @csrf
                         <div class="form-row">
                             <div class="form-group col-md-6">
-                                <label for="email">{{ trans('email.email') }}</label>
+                                <label for="email">
+                                    <i class="fas fa-at"></i>&nbsp;{{ trans('email.email') }}
+                                </label>
                                 <input type="email" class="form-control" id="email" name="email" placeholder="" required value="{{ auth()->user()->email ?? old('email') }}">
                                 @error('email')
                                     <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
                             </div>
                             <div class="form-group col-md-6">
-                                <label for="first_name">{{ trans('profile.first_name')}}</label>
+                                <label for="first_name"><i class="fas fa-user-circle"></i>&nbsp;{{ trans('profile.first_name')}}</label>
                                 <input type="text" class="form-control" id="first_name" name="first_name" placeholder="" required value="{{ auth()->user()->name ?? old('first_name') }}">
                                 @error('first_name')
                                     <div class="alert alert-danger">{{ $message }}</div>

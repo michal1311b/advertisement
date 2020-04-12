@@ -8,7 +8,9 @@
                     @csrf
                     @if($editUser->doctor !== null || $editUser->nurse !== null)
                         <div class="form-group row">
-                            <label class="col-12 col-md-3 col-form-label text-md-right" for="lang_key">{{ trans('sentence.language') }}</label>
+                            <label class="col-12 col-md-3 col-form-label text-md-right" for="lang_key">
+                                <i class="fas fa-language"></i> {{ trans('sentence.language') }}
+                            </label>
                             <div class="col-12 col-md-9">
                                 <select data-live-search="true" class="form-control @error('lang_key') is-invalid @enderror" name="lang_key" id="lang_key">
                                     <option selected value="">{{ trans('sentence.choose') }}</option>
@@ -23,7 +25,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label class="col-12 col-md-3 col-form-label text-md-right" for="level">{{ trans('sentence.level') }}</label>
+                            <label class="col-12 col-md-3 col-form-label text-md-right" for="level"><i class="fas fa-layer-group"></i> {{ trans('sentence.level') }}</label>
                             <div class="col-12 col-md-9">
                                 <select data-live-search="true" class="form-control @error('level') is-invalid @enderror" name="level" id="level">
                                     <option selected value="">{{ trans('sentence.choose') }}</option>
@@ -52,7 +54,7 @@
 
                 @foreach($userLanguages as $language)
                     <div class="row pt-3">
-                        <div class="font-weight-bold col-12 col-md-3 text-md-right">{{ trans('sentence.language') }}</div>
+                        <div class="font-weight-bold col-12 col-md-3 text-md-right"><i class="fas fa-language"></i> {{ trans('sentence.language') }}</div>
 
                         <div class="col-12 col-md-7">
                             {{ $language->language->name }}
@@ -93,7 +95,7 @@
                     </div>
 
                     <div class="row">
-                        <div class="font-weight-bold col-12 col-md-3 text-md-right">{{ trans('sentence.level') }}</div>
+                        <div class="font-weight-bold col-12 col-md-3 text-md-right"><i class="fas fa-layer-group"></i> {{ trans('sentence.level') }}</div>
 
                         <div class="col-12 col-md-7">
                             {{ $language->level }}

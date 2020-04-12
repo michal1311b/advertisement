@@ -8,7 +8,9 @@
                     @csrf
                     @if($editUser->doctor !== null || $editUser->nurse !== null)
                         <div class="form-group row">
-                            <label for="workplace" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('profile.workplace') }}</label>
+                            <label for="workplace" class="col-12 col-md-3 col-form-label text-md-right">
+                                <i class="fas fa-briefcase"></i>&nbsp;{{ trans('profile.workplace') }}
+                            </label>
 
                             <div class="col-12 col-md-9">
                                 <input id="workplace" type="text" class="form-control @error('workplace') is-invalid @enderror" name="workplace" value="{{ $experience->workplace ?? '' }}" autocomplete="workplace" autofocus>
@@ -19,7 +21,9 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="exp_company_name" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('company.company_name') }}</label>
+                            <label for="exp_company_name" class="col-12 col-md-3 col-form-label text-md-right">
+                                <i class="fas fa-building"></i>&nbsp;{{ trans('company.company_name') }}
+                            </label>
 
                             <div class="col-12 col-md-9">
                                 <input id="exp_company_name" type="text" class="form-control @error('exp_company_name') is-invalid @enderror" name="exp_company_name" value="{{ $experience->exp_company_name ?? '' }}" autocomplete="exp_company_name" autofocus>
@@ -30,7 +34,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="exp_city" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('offer.city') }}</label>
+                            <label for="exp_city" class="col-12 col-md-3 col-form-label text-md-right"><i class="fas fa-city"></i>&nbsp;{{ trans('offer.city') }}</label>
 
                             <div class="col-12 col-md-9">
                                 <input id="exp_city" type="text" class="form-control @error('exp_city') is-invalid @enderror" name="exp_city" value="{{ $experience->exp_city ?? '' }}" autocomplete="exp_city" autofocus>
@@ -41,7 +45,9 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="start_date" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('profile.start_date') }}</label>
+                            <label for="start_date" class="col-12 col-md-3 col-form-label text-md-right">
+                                <i class="fas fa-calendar-plus"></i>&nbsp;{{ trans('profile.start_date') }}
+                            </label>
 
                             <div class="col-12 col-md-9">
                                 <input id="start_date" type="text" class="form-control @error('start_date') is-invalid @enderror" name="start_date" value="{{ $experience->start_date ?? '' }}" autocomplete="start_date" autofocus placeholder="YYYY-MM-DD">
@@ -52,7 +58,9 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="end_date" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('profile.end_date') }}</label>
+                            <label for="end_date" class="col-12 col-md-3 col-form-label text-md-right">
+                                <i class="fas fa-calendar-minus"></i>&nbsp;{{ trans('profile.end_date') }}
+                            </label>
 
                             <div class="col-12 col-md-9">
                                 <input id="end_date" type="text" class="form-control @error('end_date') is-invalid @enderror" name="end_date" value="{{ $experience->end_date ?? '' }}" autocomplete="end_date" autofocus placeholder="YYYY-MM-DD">
@@ -78,7 +86,9 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="responsibility" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('profile.responsibilities') }}</label>
+                            <label for="responsibility" class="col-12 col-md-3 col-form-label text-md-right">
+                                <i class="fas fa-capsules"></i>&nbsp;{{ trans('profile.responsibilities') }}
+                            </label>
 
                             <div class="col-12 col-md-9">
                                 <textarea id="responsibility" type="responsibility" class="form-control @error('responsibility') is-invalid @enderror" name="responsibility" value="{{ old('responsibility') }}" autocomplete="responsibility" autofocus rows="3"></textarea>
@@ -100,7 +110,9 @@
 
                 @foreach($editUser->experiences as $experience)
                     <div class="row pt-3">
-                        <div class="font-weight-bold col-12 col-md-3 text-md-right">{{ trans('profile.workplace') }}</div>
+                        <div class="font-weight-bold col-12 col-md-3 text-md-right">
+                            <i class="fas fa-briefcase"></i>&nbsp;{{ trans('profile.workplace') }}
+                        </div>
 
                         <div class="col-12 col-md-7">
                             {{ $experience->workplace }}
@@ -139,7 +151,9 @@
                     </div>
 
                     <div class="row">
-                        <div class="font-weight-bold col-12 col-md-3 text-md-right">{{ trans('company.company_name') }}</div>
+                        <div class="font-weight-bold col-12 col-md-3 text-md-right">
+                            <i class="fas fa-building"></i>&nbsp;{{ trans('company.company_name') }}
+                        </div>
 
                         <div class="col-12 col-md-7">
                             {{ $experience->exp_company_name }}
@@ -147,7 +161,9 @@
                     </div>
 
                     <div class="row">
-                        <div class="font-weight-bold col-12 col-md-3 text-md-right">{{ trans('offer.city') }}</div>
+                        <div class="font-weight-bold col-12 col-md-3 text-md-right">
+                            <i class="fas fa-map-marker-alt"></i>&nbsp;{{ trans('offer.city') }}
+                        </div>
 
                         <div class="col-12 col-md-7">
                             {{ $experience->exp_city }}
@@ -155,7 +171,9 @@
                     </div>
 
                     <div class="row">
-                        <div class="font-weight-bold col-12 col-md-3 text-md-right">{{ trans('sentence.start') }}</div>
+                        <div class="font-weight-bold col-12 col-md-3 text-md-right">
+                            <i class="fas fa-calendar-plus"></i>&nbsp;{{ trans('sentence.start') }}
+                        </div>
 
                         <div class="col-12 col-md-7">
                             {{ $experience->start_date }}
@@ -163,7 +181,9 @@
                     </div>
 
                     <div class="row">
-                        <div class="font-weight-bold col-12 col-md-3 text-md-right">{{ trans('sentence.end') }}</div>
+                        <div class="font-weight-bold col-12 col-md-3 text-md-right">
+                            <i class="fas fa-calendar-minus"></i>&nbsp;{{ trans('sentence.end') }}
+                        </div>
 
                         <div class="col-12 col-md-7">
                             @if($experience->end_date)
@@ -175,7 +195,9 @@
                     </div>
 
                     <div class="row">
-                        <div class="font-weight-bold col-12 col-md-3 text-md-right">{{ trans('profile.responsibilities') }}</div>
+                        <div class="font-weight-bold col-12 col-md-3 text-md-right">
+                            <i class="fas fa-capsules"></i>&nbsp;{{ trans('profile.responsibilities') }}
+                        </div>
 
                         <div class="col-12 col-md-7">
                             {!! $experience->responsibility !!}

@@ -8,7 +8,9 @@
                     @csrf
                     @if($editUser->doctor !== null || $editUser->nurse !== null)
                         <div class="form-group row">
-                            <label for="name" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('profile.name') }}</label>
+                            <label for="name" class="col-12 col-md-3 col-form-label text-md-right">
+                                <i class="fas fa-chalkboard-teacher"></i> {{ trans('profile.name') }}
+                            </label>
 
                             <div class="col-12 col-md-9">
                                 <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="" autocomplete="name" autofocus>
@@ -19,7 +21,9 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="organizer" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.organizer') }}</label>
+                            <label for="organizer" class="col-12 col-md-3 col-form-label text-md-right">
+                                <i class="fas fa-cubes"></i> {{ trans('sentence.organizer') }}
+                            </label>
 
                             <div class="col-12 col-md-9">
                                 <input id="organizer" type="text" class="form-control @error('organizer') is-invalid @enderror" name="organizer" value="" autocomplete="organizer" autofocus>
@@ -30,7 +34,9 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="start_date" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('profile.start_date') }}</label>
+                            <label for="start_date" class="col-12 col-md-3 col-form-label text-md-right">
+                                <i class="fas fa-calendar-plus"></i>&nbsp;{{ trans('profile.start_date') }}
+                            </label>
 
                             <div class="col-12 col-md-9">
                                 <input id="start_course" type="text" class="form-control @error('start_date') is-invalid @enderror" name="start_date" value="" autocomplete="start_date" autofocus placeholder="YYYY-MM-DD">
@@ -41,7 +47,9 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="end_date" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('profile.end_date') }}</label>
+                            <label for="end_date" class="col-12 col-md-3 col-form-label text-md-right">
+                                <i class="fas fa-calendar-minus"></i>&nbsp;{{ trans('profile.end_date') }}
+                            </label>
 
                             <div class="col-12 col-md-9">
                                 <input id="end_course" type="text" class="form-control @error('end_date') is-invalid @enderror" name="end_date" value="" autocomplete="end_date" autofocus placeholder="YYYY-MM-DD">
@@ -63,7 +71,9 @@
 
                 @foreach($editUser->courses as $course)
                     <div class="row pt-3">
-                        <div class="font-weight-bold col-12 col-md-3 text-md-right">{{ trans('profile.name') }}</div>
+                        <div class="font-weight-bold col-12 col-md-3 text-md-right">
+                            <i class="fas fa-chalkboard-teacher"></i> {{ trans('profile.name') }}
+                        </div>
 
                         <div class="col-12 col-md-7">
                             {{ $course->name }}
@@ -102,7 +112,9 @@
                     </div>
 
                     <div class="row">
-                        <div class="font-weight-bold col-12 col-md-3 text-md-right">{{ trans('company.company_name') }}</div>
+                        <div class="font-weight-bold col-12 col-md-3 text-md-right">
+                            <i class="fas fa-cubes"></i> {{ trans('company.company_name') }}
+                        </div>
 
                         <div class="col-12 col-md-7">
                             {{ $course->organizer }}
@@ -110,7 +122,9 @@
                     </div>
 
                     <div class="row">
-                        <div class="font-weight-bold col-12 col-md-3 text-md-right">{{ trans('sentence.start') }}</div>
+                        <div class="font-weight-bold col-12 col-md-3 text-md-right">
+                            <i class="fas fa-calendar-plus"></i>&nbsp;{{ trans('sentence.start') }}
+                        </div>
 
                         <div class="col-12 col-md-7">
                             {{ $course->start_date }}
@@ -118,7 +132,9 @@
                     </div>
 
                     <div class="row">
-                        <div class="font-weight-bold col-12 col-md-3 text-md-right">{{ trans('sentence.end') }}</div>
+                        <div class="font-weight-bold col-12 col-md-3 text-md-right">
+                            <i class="fas fa-calendar-minus"></i>&nbsp;{{ trans('sentence.end') }}
+                        </div>
 
                         <div class="col-12 col-md-7">
                             {{ $course->end_date }}

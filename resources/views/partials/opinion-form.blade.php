@@ -72,7 +72,7 @@
                         <input type="hidden" name="type" value="2">
                     @endif
                     <div class="form-group">
-                        <label for="content">{{ trans('email.message')}}</label>
+                        <label for="content"><i class="fas fa-comments"></i>&nbsp;{{ trans('email.message')}}</label>
                         <textarea id="content" class="form-control @error('content') is-invalid @enderror" name="content" value="{{ old('content') }}" autocomplete="content" autofocus rows="3"></textarea>
                     </div>
                     <button type="submit" class="btn btn-rounded btn-primary">{{ trans('email.send')}}</button>

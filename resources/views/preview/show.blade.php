@@ -56,7 +56,7 @@
                                 </ul>
 
                                 <div class="py-2">
-                                    <h4><strong>{{ trans('offer.description') }}</strong></h4>
+                                    <h4><strong><i class="fas fa-audio-description"></i>&nbsp;{{ trans('offer.description') }}</strong></h4>
                                     {!! $preview->description !!}
                                 </div>
                             </div>

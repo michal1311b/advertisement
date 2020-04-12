@@ -5,7 +5,7 @@
 
             <div class="form-group row">
                 <input id="type" type="hidden" class="form-control" name="type" value="doctor" required autocomplete="type" autofocus>
-                <label for="pwz" class="col-md-4 col-form-label text-md-right">{{ __('PWZ') }} <span class="text-danger font-weight-bolder">*</span></label>
+                <label for="pwz" class="col-md-4 col-form-label text-md-right"><i class="fas fa-key"></i>&nbsp;{{ __('PWZ') }} <span class="text-danger font-weight-bolder">*</span></label>
 
                 <div class="col-md-6">
                     <input id="pwz" type="number" class="form-control @error('pwz') is-invalid @enderror" name="pwz" value="{{ old('pwz') }}" required autocomplete="pwz" autofocus>
@@ -19,7 +19,7 @@
             </div>
 
             <div class="form-group row">
-                <label for="birthday" class="col-md-4 col-form-label text-md-right">{{ trans('profile.birthday') }} <span class="text-danger font-weight-bolder">*</span></label>
+                <label for="birthday" class="col-md-4 col-form-label text-md-right"><i class="fas fa-birthday-cake"></i>&nbsp;{{ trans('profile.birthday') }} <span class="text-danger font-weight-bolder">*</span></label>
 
                 <div class="col-md-6">
                     <input id="birthday" type="text" class="form-control @error('birthday') is-invalid @enderror" name="birthday" value="{{ old('birthday') }}" required autocomplete="birthday" autofocus>
@@ -33,7 +33,7 @@
             </div>
 
             <div class="form-group row">
-                <label for="name" class="col-md-4 col-form-label text-md-right">{{ trans('profile.first_name') }} <span class="text-danger font-weight-bolder">*</span></label>
+                <label for="name" class="col-md-4 col-form-label text-md-right"><i class="fas fa-user-md"></i>&nbsp;{{ trans('profile.first_name') }} <span class="text-danger font-weight-bolder">*</span></label>
 
                 <div class="col-md-6">
                     <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
@@ -47,7 +47,7 @@
             </div>
 
             <div class="form-group row">
-                <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail') }} <span class="text-danger font-weight-bolder">*</span></label>
+                <label for="email" class="col-md-4 col-form-label text-md-right"><i class="fas fa-at"></i>&nbsp;{{ trans('email.email') }} <span class="text-danger font-weight-bolder">*</span></label>
 
                 <div class="col-md-6">
                     <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
@@ -61,7 +61,7 @@
             </div>
 
             <div class="form-group row">
-                <label for="password" class="col-md-4 col-form-label text-md-right">{{ trans('sentence.password') }} <span class="text-danger font-weight-bolder">*</span></label>
+                <label for="password" class="col-md-4 col-form-label text-md-right"><i class="fas fa-lock"></i>&nbsp;{{ trans('sentence.password') }} <span class="text-danger font-weight-bolder">*</span></label>
 
                 <div class="col-md-6">
                     <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
@@ -75,7 +75,7 @@
             </div>
 
             <div class="form-group row">
-                <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ trans('profile.confirm_password') }} <span class="text-danger font-weight-bolder">*</span></label>
+                <label for="password-confirm" class="col-md-4 col-form-label text-md-right"><i class="fas fa-lock"></i>&nbsp;{{ trans('profile.confirm_password') }} <span class="text-danger font-weight-bolder">*</span></label>
 
                 <div class="col-md-6">
                     <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
@@ -83,7 +83,7 @@
             </div>
 
             <div class="form-group row">
-                <label class="col-md-4 col-form-label text-md-right" for="sex">{{ trans('profile.sex') }} <span class="text-danger font-weight-bolder">*</span></label>
+                <label class="col-md-4 col-form-label text-md-right" for="sex"><i class="fas fa-venus-mars"></i>&nbsp;{{ trans('profile.sex') }} <span class="text-danger font-weight-bolder">*</span></label>
                 <div class="col-md-6">
                     <select data-live-search="true" class="form-control @error('sex') is-invalid @enderror" name="sex" id="sex">
                         <option selected>{{ trans('sentence.choose') }}</option>
@@ -97,7 +97,7 @@
             </div>
 
             <div class="form-group row">
-                <label for="specializations" class="col-md-4 col-form-label text-md-right">{{trans('profile.specializations')}}</label>
+                <label for="specializations" class="col-md-4 col-form-label text-md-right"><i class="fas fa-diagnoses"></i>&nbsp;{{trans('profile.specializations')}}</label>
                 <div class="col-md-6">
                     <select multiple="multiple"
                             class="form-control{{ $errors->has('specializations') ? ' is-invalid' : '' }}"
@@ -117,7 +117,7 @@
             </div>
 
             <div class="form-group row">
-                <label for="specializations" class="col-md-4 col-form-label text-md-right">{{trans('profile.specializations.pending')}}</label>
+                <label for="specializations" class="col-md-4 col-form-label text-md-right"><i class="fas fa-diagnoses"></i>&nbsp;{{trans('profile.specializations.pending')}}</label>
                 <div class="col-md-6">
                     <select multiple="multiple"
                             class="form-control{{ $errors->has('specializations') ? ' is-invalid' : '' }}"
@@ -137,7 +137,7 @@
             </div>
 
             <div class="form-group row">
-                <label class="col-md-4 col-form-label text-md-right" for="work_id">{{ trans('offer.settlement') }} <span class="text-danger font-weight-bolder">*</span></label>
+                <label class="col-md-4 col-form-label text-md-right" for="work_id"><i class="fas fa-file-contract"></i>&nbsp;{{ trans('offer.settlement') }} <span class="text-danger font-weight-bolder">*</span></label>
                 <div class="col-md-6">
                     <select data-live-search="true" class="form-control @error('work_id') is-invalid @enderror" name="work_id" id="work_id">
                         <option selected value="">{{ trans('sentence.choose') }}</option>
@@ -152,7 +152,7 @@
             </div>
 
             <div class="form-group row">
-                <label class="col-md-4 col-form-label text-md-right" for="settlement_id">{{ trans('offer.work-category') }} <span class="text-danger font-weight-bolder">*</span></label>
+                <label class="col-md-4 col-form-label text-md-right" for="settlement_id"><i class="fas fa-handshake"></i>&nbsp;{{ trans('offer.work-category') }} <span class="text-danger font-weight-bolder">*</span></label>
                 <div class="col-md-6">
                     <select data-live-search="true" class="form-control @error('settlement_id') is-invalid @enderror" name="settlement_id" id="settlement_id">
                         <option selected value="">{{ trans('sentence.choose') }}</option>
@@ -167,7 +167,7 @@
             </div>
 
             <div class="form-group row">
-                <label for="min_salary"  class="col-md-4 col-form-label text-md-right">{{ trans('offer.min_salary') }} <span class="text-danger font-weight-bolder">*</span></label>
+                <label for="min_salary"  class="col-md-4 col-form-label text-md-right"><i class="fas fa-coins"></i>&nbsp;{{ trans('offer.min_salary') }} <span class="text-danger font-weight-bolder">*</span></label>
 
                 <div class="col-md-6">
                     <input id="min_salary" min="0" type="number" class="form-control @error('min_salary') is-invalid @enderror" required name="min_salary" value="{{ old('min_salary') }}" autocomplete="min_salary" autofocus>
@@ -178,7 +178,7 @@
             </div>
 
             <div class="form-group row">
-                <label class="col-md-4 col-form-label text-md-right" for="settlement_id">{{ trans('offer.currency') }} <span class="text-danger font-weight-bolder">*</span></label>
+                <label class="col-md-4 col-form-label text-md-right" for="settlement_id"><i class="fas fa-coins"></i>&nbsp;{{ trans('offer.currency') }} <span class="text-danger font-weight-bolder">*</span></label>
                 <div class="col-md-6">
                     <select data-live-search="true" class="form-control @error('currency_id') is-invalid @enderror" name="currency_id" id="currency_id">
                         <option selected value="">{{ trans('sentence.choose') }}</option>
@@ -193,7 +193,7 @@
             </div>
 
             <div class="form-group row">
-                <label class="col-md-4 col-form-label text-md-right" for="user_location_id">{{ trans('offer.location') }} <span class="text-danger font-weight-bolder">*</span></label>
+                <label class="col-md-4 col-form-label text-md-right" for="user_location_id"><i class="fas fa-city"></i>&nbsp;{{ trans('offer.location') }} <span class="text-danger font-weight-bolder">*</span></label>
                 <div class="col-md-6">
                     <select data-live-search="true" class="form-control @error('user_location_id') is-invalid @enderror" name="user_location_id" id="user_location_id" required>
                         <option selected>{{ trans('sentence.choose') }}</option>
@@ -208,7 +208,7 @@
             </div>
 
             <div class="form-group row">
-                <label class="col-md-4 col-form-label text-md-right" for="radius">{{ trans('sentence.radius') }} <span class="text-danger font-weight-bolder">*</span></label>
+                <label class="col-md-4 col-form-label text-md-right" for="radius"><i class="fas fa-circle-notch"></i>&nbsp;{{ trans('sentence.radius') }} <span class="text-danger font-weight-bolder">*</span></label>
                 <div class="col-md-6">
                     <select data-live-search="true" class="form-control @error('radius') is-invalid @enderror" name="radius" id="radius" required>
                         <option selected value="">{{ trans('sentence.choose') }}</option>

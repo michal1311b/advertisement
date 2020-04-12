@@ -9,7 +9,7 @@
                     @csrf
                     
                     <div class="form-group row">
-                        <label class="col-12 col-md-3 col-form-label text-md-right">{{ trans('profile.profile-image') }}</label>
+                        <label class="col-12 col-md-3 col-form-label text-md-right"><i class="fas fa-user-alt"></i>&nbsp;{{ trans('profile.profile-image') }}</label>
 
                         <div class="col-12 col-md-9">
                             @if($editUser->avatar)
@@ -21,7 +21,7 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="name" class="col-12 col-md-3 col-form-label text-md-right">{{ $editUser->doctor ? trans('profile.first_name') : trans('profile.name') }}</label>
+                        <label for="name" class="col-12 col-md-3 col-form-label text-md-right">{!! $editUser->doctor ? '<i class="fas fa-user-md"></i> '.trans('profile.first_name') : '<i class="fas fa-user-tie"></i> '.trans('profile.name') !!}</label>
 
                         <div class="col-12 col-md-9">
                             <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ $editUser->name }}" autocomplete="name" autofocus>
@@ -33,12 +33,16 @@
 
                     <div class="form-group row">
                         @if($editUser->provider_name)
-                            <label for="password" class="col-12 col-md-3 col-form-label text-md-right"></label>
+                            <label for="password" class="col-12 col-md-3 col-form-label text-md-right">
+                                <i class="fas fa-lock"></i>&nbsp;{{ trans('sentence.password') }}
+                            </label>
 
                             <div class="col-12 col-md-9">
                             <input id="password" type="hidden" value="null" name="password">
                         @else
-                        <label for="password" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.password') }}</label>
+                        <label for="password" class="col-12 col-md-3 col-form-label text-md-right">
+                            <i class="fas fa-lock"></i>&nbsp;{{ trans('sentence.password') }}
+                        </label>
                         <div class="col-12 col-md-9">
                             <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" autocomplete="new-password">
 
@@ -52,7 +56,9 @@
                     </div>
 
                     <div class="form-group row">
-                        <label for="last_name" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('profile.last_name') }}</label>
+                        <label for="last_name" class="col-12 col-md-3 col-form-label text-md-right">
+                            <i class="far fa-user-circle"></i>&nbsp;{{ trans('profile.last_name') }}
+                        </label>
 
                         <div class="col-12 col-md-9">
                             <input id="last_name" type="text" class="form-control @error('last_name') is-invalid @enderror" name="last_name" value="{{ $editUser->profile->last_name }}" autocomplete="last_name" autofocus>
@@ -63,7 +69,9 @@
                     </div>
 
                     <div class="form-group row">
-                        <label for="street" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('offer.street') }}</label>
+                        <label for="street" class="col-12 col-md-3 col-form-label text-md-right">
+                            <i class="fas fa-road"></i>&nbsp;{{ trans('offer.street') }}
+                        </label>
 
                         <div class="col-12 col-md-9">
                             <input id="street" type="text" class="form-control @error('street') is-invalid @enderror" name="street" value="{{ $editUser->profile->street }}" autocomplete="street" autofocus>
@@ -74,7 +82,7 @@
                     </div>
 
                     <div class="form-group row">
-                        <label for="post_code" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('offer.post_code') }}</label>
+                        <label for="post_code" class="col-12 col-md-3 col-form-label text-md-right"><i class="fas fa-map-marked"></i>&nbsp;{{ trans('offer.post_code') }}</label>
 
                         <div class="col-12 col-md-9">
                             <input id="post_code" type="text" class="form-control @error('post_code') is-invalid @enderror" name="post_code" value="{{ $editUser->profile->post_code }}" autocomplete="post_code" autofocus>
@@ -85,7 +93,9 @@
                     </div>
 
                     <div class="form-group row">
-                        <label for="city" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('offer.city') }}</label>
+                        <label for="city" class="col-12 col-md-3 col-form-label text-md-right">
+                            <i class="fas fa-city"></i>&nbsp;{{ trans('offer.city') }}
+                        </label>
 
                         <div class="col-12 col-md-9">
                             <input id="city" type="text" class="form-control @error('city') is-invalid @enderror" name="city" value="{{ $editUser->profile->city }}" autocomplete="city" autofocus>
@@ -96,7 +106,9 @@
                     </div>
 
                     <div class="form-group row">
-                        <label for="company_name" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('company.company_name') }}</label>
+                        <label for="company_name" class="col-12 col-md-3 col-form-label text-md-right">
+                            <i class="fas fa-building"></i>&nbsp;{{ trans('company.company_name') }}
+                        </label>
 
                         <div class="col-12 col-md-9">
                             <input id="company_name" type="text" class="form-control @error('company_name') is-invalid @enderror" name="company_name" value="{{ $editUser->profile->company_name }}" autocomplete="company_name" autofocus>
@@ -107,7 +119,9 @@
                     </div>
 
                     <div class="form-group row">
-                        <label for="company_street" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('company.company_street') }}</label>
+                        <label for="company_street" class="col-12 col-md-3 col-form-label text-md-right">
+                            <i class="fas fa-road"></i>&nbsp;{{ trans('company.company_street') }}
+                        </label>
 
                         <div class="col-12 col-md-9">
                             <input id="company_street" type="text" class="form-control @error('company_street') is-invalid @enderror" name="company_street" value="{{ $editUser->profile->company_street }}" autocomplete="company_street" autofocus>
@@ -118,7 +132,9 @@
                     </div>
 
                     <div class="form-group row">
-                        <label for="company_post_code" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('company.company_post_code') }}</label>
+                        <label for="company_post_code" class="col-12 col-md-3 col-form-label text-md-right">
+                            <i class="fas fa-map-marked"></i>&nbsp;{{ trans('company.company_post_code') }}
+                        </label>
 
                         <div class="col-12 col-md-9">
                             <input id="company_post_code" type="text" class="form-control @error('company_post_code') is-invalid @enderror" name="company_post_code" value="{{ $editUser->profile->company_post_code }}" autocomplete="company_post_code" autofocus>
@@ -129,7 +145,9 @@
                     </div>
 
                     <div class="form-group row">
-                        <label for="company_city" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('company.company_city') }}</label>
+                        <label for="company_city" class="col-12 col-md-3 col-form-label text-md-right">
+                            <i class="fas fa-city"></i>&nbsp;{{ trans('company.company_city') }}
+                        </label>
 
                         <div class="col-12 col-md-9">
                             <input id="company_city" type="text" class="form-control @error('company_city') is-invalid @enderror" name="company_city" value="{{ $editUser->profile->company_city }}" autocomplete="company_city" autofocus>
@@ -140,7 +158,7 @@
                     </div>
 
                     <div class="form-group row">
-                        <label for="company_nip" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('company.company_nip') }}</label>
+                        <label for="company_nip" class="col-12 col-md-3 col-form-label text-md-right"><i class="fas fa-id-badge"></i>&nbsp;{{ trans('company.company_nip') }}</label>
 
                         <div class="col-12 col-md-9">
                             <input id="company_nip" type="number" class="form-control @error('company_nip') is-invalid @enderror" name="company_nip" value="{{ $editUser->profile->company_nip }}" autocomplete="company_nip" autofocus>
@@ -151,7 +169,9 @@
                     </div>
 
                     <div class="form-group row">
-                        <label for="company_phone1" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('company.company_phone') }}</label>
+                        <label for="company_phone1" class="col-12 col-md-3 col-form-label text-md-right">
+                            <i class="fas fa-phone"></i>&nbsp;{{ trans('company.company_phone') }}
+                        </label>
 
                         <div class="col-12 col-md-9">
                             <input id="company_phone1" type="number" class="form-control @error('company_phone1') is-invalid @enderror" name="company_phone1" value="{{ $editUser->profile->company_phone1 }}" autocomplete="company_phone1" autofocus>
@@ -162,7 +182,9 @@
                     </div>
 
                     <div class="form-group row">
-                        <label for="company_phone2" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('company.company_extra_phone') }}</label>
+                        <label for="company_phone2" class="col-12 col-md-3 col-form-label text-md-right">
+                            <i class="fas fa-phone"></i>&nbsp;{{ trans('company.company_extra_phone') }}
+                        </label>
 
                         <div class="col-12 col-md-9">
                             <input id="company_phone2" type="number" class="form-control @error('company_phone2') is-invalid @enderror" name="company_phone2" value="{{ $editUser->profile->company_phone2 }}" autocomplete="company_phone2" autofocus>
@@ -174,7 +196,9 @@
 
                     @if($editUser->finishedSpecializations && ($editUser->doctor !== null || $editUser->nurse !== null))
                         <div class="form-group row">
-                            <label for="specializations" class="col-12 col-md-3 col-form-label text-md-right">{{trans('profile.specializations')}}</label>
+                            <label for="specializations" class="col-12 col-md-3 col-form-label text-md-right">
+                                <i class="fas fa-diagnoses"></i>&nbsp;{{trans('profile.specializations')}}
+                            </label>
                             <div class="col-12 col-md-9">
                                 <select multiple="multiple"
                                         class="form-control{{ $errors->has('specializations') ? ' is-invalid' : '' }}"
@@ -197,7 +221,9 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="specializationsp" class="col-12 col-md-3 col-form-label text-md-right">{{trans('profile.specializations.pending')}}</label>
+                            <label for="specializationsp" class="col-12 col-md-3 col-form-label text-md-right">
+                                <i class="fas fa-diagnoses"></i>&nbsp;{{trans('profile.specializations.pending')}}
+                            </label>
                             <div class="col-12 col-md-9">
                                 <select multiple="multiple"
                                         class="form-control{{ $errors->has('specializations') ? ' is-invalid' : '' }}"
@@ -221,7 +247,9 @@
 
                         @if($editUser->doctor !== null)
                             <div class="form-group row">
-                                <label class="col-12 col-md-3 col-form-label text-md-right" for="sex">{{ trans('profile.sex') }}</label>
+                                <label class="col-12 col-md-3 col-form-label text-md-right" for="sex">
+                                    <i class="fas fa-venus-mars"></i>&nbsp;{{ trans('profile.sex') }}
+                                </label>
                                 <div class="col-12 col-md-9">
                                     <select data-live-search="true" class="form-control @error('sex') is-invalid @enderror" name="sex" id="sex">
                                         <option>{{ trans('sentence.choose') }}</option>
@@ -269,7 +297,7 @@
                     @if($editUser->departments && ($editUser->hasRole('company') || $editUser->hasRole('admin')))
                         <div class="form-group row">
                             <label for="departments" class="col-12 col-md-3 col-form-label text-md-right">
-                                {{ trans('profile.departments') }}
+                                <i class="fas fa-hospital"></i>&nbsp;{{ trans('profile.departments') }}
                                 @if(count($editUser->departments) == 0)
                                     <a class="warning" href="#">
                                         <span class="badge blue-tooltip" data-toggle="tooltip" title="{{ trans('profile.fill-departments') }}">!</span>
@@ -301,7 +329,7 @@
                     @if($editUser->facilities && ($editUser->hasRole('company') || $editUser->hasRole('admin')))
                         <div class="form-group row">
                             <label for="facilities" class="col-12 col-md-3 col-form-label text-md-right">
-                                {{ trans('profile.facilities') }}
+                                <i class="far fa-hospital"></i>&nbsp;{{ trans('profile.facilities') }}
                                 @if(count($editUser->facilities) == 0)
                                     <a class="warning" href="#">
                                         <span class="badge blue-tooltip" data-toggle="tooltip" title="{{ trans('profile.fill-facilities') }}">!</span>
@@ -333,9 +361,9 @@
                     <div class="form-group row">
                         <label for="about" class="col-12 col-md-3 col-form-label text-md-right">
                             @if($editUser->hasRole('company') || $editUser->hasRole('admin'))
-                                {{ trans('profile.about-company') }}
+                                <i class="far fa-building"></i>&nbsp;{{ trans('profile.about-company') }}
                             @else
-                                {{ trans('profile.about-employee') }}
+                                <i class="far fa-user"></i>&nbsp;{{ trans('profile.about-employee') }}
                             @endif
                             @if(!$editUser->profile->about)
                                 <a class="warning" href="#">

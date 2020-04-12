@@ -139,3 +139,14 @@ label:hover:before {
   background: #ffffff;
   border: 2px solid #fff;
 }
+
+.no-style {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.selectedMarker {
+  height: 40px!important; 
+  width: 40px!important; 
+}

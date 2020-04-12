@@ -79,7 +79,7 @@
                                         <span class="badge badge-pill">{{ $participant->company_city ?? null }}</span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        {{ trans('company.company_nip') }}
+                                        <i class="fas fa-id-badge"></i>&nbsp;{{ trans('company.company_nip') }}
                                         <span class="badge badge-pill">{{ $participant->company_nip ?? null }}</span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">

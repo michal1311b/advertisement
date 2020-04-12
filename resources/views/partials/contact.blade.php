@@ -16,14 +16,14 @@
                 @endif
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        <label for="email">{{ trans('email.email') }}</label>
+                        <label for="email"><i class="fas fa-at"></i>&nbsp;{{ trans('email.email') }}</label>
                         <input type="email" class="form-control" id="email" name="email" placeholder="" required value="{{ auth()->user()->email ?? null }}">
                         @error('email')
                             <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="first_name">{{ trans('profile.first_name')}}</label>
+                        <label for="first_name"><i class="fas fa-user-tie"></i>&nbsp;{{ trans('profile.first_name')}}</label>
                         <input type="text" class="form-control" id="first_name" name="first_name" placeholder="" required value="{{ auth()->user()->name ?? null }}">
                         @error('first_name')
                             <div class="alert alert-danger">{{ $message }}</div>
@@ -32,17 +32,19 @@
                 </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
-                    <label for="city">{{ trans('offer.city-not-require')}}</label>
+                    <label for="city">
+                        <i class="fas fa-city"></i>&nbsp;{{ trans('offer.city-not-require')}}
+                    </label>
                     <input type="text" class="form-control" id="city" name="city" value="{{ auth()->user()->profile->city ?? null }}">
                 </div>
                 <div class="form-group col-md-6">
-                    <label for="phone">{{ trans('offer.phone-not-require')}}</label>
+                    <label for="phone"><i class="fas fa-phone"></i>&nbsp;{{ trans('offer.phone-not-require')}}</label>
                     <input type="text" class="form-control" id="phone" name="phone" placeholder="" value="{{ auth()->user()->profile->company_phone1 ?? null }}">
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-12">
-                    <label for="message">{{ trans('email.message')}}</label>
+                    <label for="message"><i class="fas fa-envelope-open-text"></i>&nbsp;{{ trans('email.message')}}</label>
                     <textarea class="form-control text-left @error('message') is-invalid @enderror" name="message" autocomplete="message" autofocus rows="5">{!! trans('email.dear') !!} {!! trans('email.send-cv-message') !!} {!! trans('email.send-cv-greatings') !!} {{ auth()->user()->name ?? null }} {{ auth()->user()->profile->last_name ?? null }}, {{ auth()->user()->profile->company_phone1 ?? null }}</textarea>
                     @error('message')
                         <div class="alert alert-danger">{{ $message }}</div>
@@ -52,7 +54,7 @@
 
             <div class="form-row">
                 <div class="form-group col-md-12">
-                    <label for="cv">{{ trans('profile.upload-cv')}}</label>
+                    <label for="cv"><i class="fas fa-file-upload"></i>&nbsp;{{ trans('profile.upload-cv')}}</label>
                     
                     @if(isset(auth()->user()->doctor) && auth()->user()->doctor->cv)
                         <a href="{{ auth()->user()->doctor->cv }}" class="btn btn-rounded btn-primary" target="_blank">{{ trans('profile.show-cv') }}</a>

@@ -3,7 +3,7 @@
         <form @submit.prevent="handleSubmit(submitForm)" enctype="multipart/form-data">
 
             <div class="form-group row">
-                <label for="title" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.title') }} <span class="text-danger font-weight-bolder">*</span></label>
+                <label for="title" class="col-12 col-md-3 col-form-label text-md-right"><i class="fas fa-heading"></i>&nbsp;{{ trans('sentence.title') }} <span class="text-danger font-weight-bolder">*</span></label>
 
                 <div class="col-12 col-md-9">
                     <ValidationProvider :name="trans('sentence.title')" rules="required|min:3|max:190" v-slot="{ errors }">
@@ -14,7 +14,7 @@
             </div>
 
             <div class="form-group row">
-                <label for="description" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('offer.description') }} <span class="text-danger font-weight-bolder">*</span></label>
+                <label for="description" class="col-12 col-md-3 col-form-label text-md-right"><i class="fas fa-audio-description"></i>&nbsp;{{ trans('offer.description') }} <span class="text-danger font-weight-bolder">*</span></label>
 
                 <div class="col-12 col-md-9">
                     <tinymce id="description" name="description" 
@@ -23,7 +23,7 @@
             </div>
 
             <div class="form-group row">
-                <label for="profits" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('offer.profits') }}</label>
+                <label for="profits" class="col-12 col-md-3 col-form-label text-md-right"><i class="fab fa-product-hunt"></i>&nbsp;{{ trans('offer.profits') }}</label>
 
                 <div class="col-12 col-md-9">
                     <tinymce id="profits" name="profits" v-model="formInputs.profits"></tinymce>
@@ -31,7 +31,7 @@
             </div>
 
             <div class="form-group row">
-                <label for="requirements" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('offer.requirements') }}</label>
+                <label for="requirements" class="col-12 col-md-3 col-form-label text-md-right"><i class="fas fa-align-justify"></i>&nbsp;{{ trans('offer.requirements') }}</label>
 
                 <div class="col-12 col-md-9">
                     <tinymce id="requirements" name="requirements" v-model="formInputs.requirements"></tinymce>
@@ -39,7 +39,7 @@
             </div>
 
             <div class="form-group row">
-                <label class="col-12 col-md-3 col-form-label text-md-right" for="work_id">{{ trans('offer.settlement') }} <span class="text-danger font-weight-bolder">*</span></label>
+                <label class="col-12 col-md-3 col-form-label text-md-right" for="work_id"><i class="fas fa-file-contract"></i>&nbsp;{{ trans('offer.settlement') }} <span class="text-danger font-weight-bolder">*</span></label>
                 <div class="col-12 col-md-9">
                     <ValidationProvider :name="trans('offer.settlement')" :rules="'oneOf:' + workIds" v-slot="{ errors }">
                         <select data-live-search="true" class="form-control" 
@@ -59,7 +59,7 @@
             </div>
 
             <div class="form-group row">
-                <label class="col-12 col-md-3 col-form-label text-md-right" for="state_id">{{ trans('offer.state') }} <span class="text-danger font-weight-bolder">*</span></label>
+                <label class="col-12 col-md-3 col-form-label text-md-right" for="state_id"><i class="fas fa-flag"></i>&nbsp;{{ trans('offer.state') }} <span class="text-danger font-weight-bolder">*</span></label>
                 <div class="col-12 col-md-9">
                     <ValidationProvider :name="trans('offer.state')" :rules="'oneOf:' + stateIds" v-slot="{ errors }">
                         <select data-live-search="true" class="form-control" 
@@ -79,7 +79,7 @@
             </div>
 
             <div class="form-group row">
-                <label class="col-12 col-md-3 col-form-label text-md-right" for="location_id">{{ trans('offer.location') }} <span class="text-danger font-weight-bolder">*</span></label>
+                <label class="col-12 col-md-3 col-form-label text-md-right" for="location_id"><i class="fas fa-city"></i>&nbsp;{{ trans('offer.location') }} <span class="text-danger font-weight-bolder">*</span></label>
                 <div class="col-12 col-md-9">
                     <ValidationProvider :name="trans('offer.location')" :rules="'oneOf:' + locationIds" v-slot="{ errors }">
                         <select data-live-search="true" class="form-control" 
@@ -97,7 +97,7 @@
             </div>
 
             <div class="form-group row">
-                <label for="postCode" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('offer.post_code') }} <span class="text-danger font-weight-bolder">*</span></label>
+                <label for="postCode" class="col-12 col-md-3 col-form-label text-md-right"><i class="fas fa-map-marked"></i>&nbsp;{{ trans('offer.post_code') }} <span class="text-danger font-weight-bolder">*</span></label>
 
                 <div class="col-12 col-md-9">
                     <ValidationProvider :name="trans('offer.post_code')" rules="required" v-slot="{ errors }">
@@ -111,7 +111,7 @@
             </div>
             
             <div class="form-group row">
-                <label for="street" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('offer.street') }} <span class="text-danger font-weight-bolder">*</span></label>
+                <label for="street" class="col-12 col-md-3 col-form-label text-md-right"><i class="fas fa-road"></i>&nbsp;{{ trans('offer.street') }} <span class="text-danger font-weight-bolder">*</span></label>
 
                 <div class="col-12 col-md-9">
                     <ValidationProvider :name="trans('offer.street')" rules="required|min:3|max:190" v-slot="{ errors }">
@@ -125,7 +125,7 @@
             </div>
 
             <div class="form-group row">
-                <label class="col-12 col-md-3 col-form-label text-md-right" for="specialization_id">{{ trans('profile.specialization') }} <span class="text-danger font-weight-bolder">*</span></label>
+                <label class="col-12 col-md-3 col-form-label text-md-right" for="specialization_id"><i class="fas fa-diagnoses"></i>&nbsp;{{ trans('profile.specialization') }} <span class="text-danger font-weight-bolder">*</span></label>
                 <div class="col-12 col-md-9">
                     <ValidationProvider :name="trans('profile.specialization')" :rules="'oneOf:'+ specializationIds" v-slot="{ errors }">
                         <select data-live-search="true" class="form-control" 
@@ -153,7 +153,7 @@
             </div>
 
             <div class="form-group row">
-                <label for="email" class="col-12 col-md-3 col-form-label text-md-right">E-mail <span class="text-danger font-weight-bolder">*</span></label>
+                <label for="email" class="col-12 col-md-3 col-form-label text-md-right"><i class="fas fa-envelope-open-text"></i>&nbsp;E-Mail <span class="text-danger font-weight-bolder">*</span></label>
 
                 <div class="col-12 col-md-9">
                     <ValidationProvider name="email" rules="required|email" v-slot="{ errors }">
@@ -196,7 +196,7 @@
             </div>
 
             <div class="form-group row">
-                <label class="col-12 col-md-3 col-form-label text-md-right" for="settlement_id">{{ trans('offer.work-category') }} <span class="text-danger font-weight-bolder">*</span></label>
+                <label class="col-12 col-md-3 col-form-label text-md-right" for="settlement_id"><i class="fas fa-handshake"></i>&nbsp;{{ trans('offer.work-category') }} <span class="text-danger font-weight-bolder">*</span></label>
                 <div class="col-12 col-md-9">
                     <ValidationProvider :name="trans('offer.work-category')" :rules="'oneOf:'+ settlementIds" v-slot="{ errors }">
                         <select data-live-search="true" 
@@ -217,7 +217,7 @@
             </div>
 
             <div class="form-group row">
-                <label for="min_salary" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('offer.min_salary') }} <span class="text-danger font-weight-bolder">*</span></label>
+                <label for="min_salary" class="col-12 col-md-3 col-form-label text-md-right"><i class="fas fa-coins"></i>&nbsp;{{ trans('offer.min_salary') }} <span class="text-danger font-weight-bolder">*</span></label>
 
                 <div class="col-12 col-md-9">
                     <input min="0"
@@ -227,7 +227,7 @@
             </div>
 
             <div class="form-group row">
-                <label for="max_salary" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('offer.max_salary') }} <span class="text-danger font-weight-bolder">*</span></label>
+                <label for="max_salary" class="col-12 col-md-3 col-form-label text-md-right"><i class="fas fa-coins"></i>&nbsp;{{ trans('offer.max_salary') }} <span class="text-danger font-weight-bolder">*</span></label>
 
                 <div class="col-12 col-md-9">
                     <input min="0" id="max_salary" type="number" 
@@ -238,7 +238,7 @@
             </div>
 
             <div class="form-group row">
-                <label class="col-12 col-md-3 col-form-label text-md-right" for="currency_id">{{ trans('offer.currency') }} <span class="text-danger font-weight-bolder">*</span></label>
+                <label class="col-12 col-md-3 col-form-label text-md-right" for="currency_id"><i class="fas fa-coins"></i>&nbsp;{{ trans('offer.currency') }} <span class="text-danger font-weight-bolder">*</span></label>
                 <div class="col-12 col-md-9">
                     <select data-live-search="true" class="form-control" name="currency_id" id="currency_id">
                         <option selected>{{ trans('sentence.choose') }}</option>

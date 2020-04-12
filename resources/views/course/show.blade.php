@@ -50,7 +50,9 @@
                             <div class="col-12">
                                 <ul class="list-group">
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        {{ __('Logo') }}
+                                        <span>
+                                            <i class="fas fa-box"></i>&nbsp;{{ __('Logo') }}
+                                        </span>
                                         <a href="{{ route('company-show', $course->user) }}" title="{{ $course->user->profile->company_name }}">
                                             <span class="badge badge-pill">
                                                 <img class="user-avatar--smaller" src="{{ $course->user->avatar }}" alt="{{ $course->user->profile->company_name }}"/>
@@ -58,19 +60,27 @@
                                         </a>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        {{ trans('offer.city') }}
+                                        <span>
+                                            <i class="fas fa-city"></i>&nbsp;{{ trans('offer.city') }}
+                                        </span>
                                         <span class="badge badge-pill">{{ $course->location->city }}</span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        {{ trans('offer.street') }}
+                                        <span>
+                                            <i class="fas fa-road"></i>&nbsp;{{ trans('offer.street') }}
+                                        </span>
                                         <span class="badge badge-pill">{{ $course->street }}</span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        {{ trans('offer.state') }}
+                                        <span>
+                                            <i class="fas fa-flag"></i>&nbsp;{{ trans('offer.state') }}
+                                        </span>
                                         <span class="badge badge-pill">{{ $course->state->name }}</span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        {{ trans('profile.specialization') }}
+                                        <span>
+                                            <i class="fas fa-clinic-medical"></i>&nbsp;{{ trans('profile.specialization') }}
+                                        </span>
                                         <span class="ml-2 btn btn-sm offer-item border{{ $course->specialization_id }} text-white">
                                             {{ $course->specialization->name }}
                                             <img src="{{ asset('images/icons/' . $course->specialization->id . '.jpg') }}" 
@@ -78,28 +88,40 @@
                                         </span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        {{ trans('offer.created_at') }}
+                                        <span>
+                                            <i class="far fa-calendar-plus"></i>&nbsp;{{ trans('offer.created_at') }}
+                                        </span>
                                         <span class="badge badge-pill">{{ $course->created_at }}</span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        {{ trans('profile.start_date') }}
+                                        <span>
+                                            <i class="fas fa-calendar-plus"></i>&nbsp;{{ trans('profile.start_date') }}
+                                        </span>
                                         <span class="badge badge-pill badge-primary">{{ $course->start_date }}</span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        {{ trans('profile.end_date') }}
+                                        <span>
+                                            <i class="fas fa-calendar-minus"></i>&nbsp;{{ trans('profile.end_date') }}
+                                        </span>
                                         <span class="badge badge-pill badge-primary">{{ $course->end_date }}</span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        {{ trans('offer.phone') }}
+                                        <span>
+                                            <i class="fas fa-phone"></i>&nbsp;{{ trans('offer.phone') }}
+                                        </span>
                                         <span class="badge badge-pill">{{ $course->phone }}</span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        {{ trans('sentence.price') }}
+                                        <span>
+                                            <i class="fas fa-hand-holding-usd"></i>&nbsp;{{ trans('sentence.price') }}
+                                        </span>
                                         <span class="badge badge-pill">{{ $course->price }} {{ $course->currency->symbol }}</span>
                                     </li>
                                     @if($course->facebook !== null)
                                         <li class="list-group-item d-flex justify-content-between align-items-center">
-                                            {{ __('Facebook') }}
+                                            <span>
+                                                <i class="fab fa-facebook"></i>&nbsp;{{ __('Facebook') }}
+                                            </span>
                                             <a href="{{ $course->facebook }}" title="Facebook">
                                                 <span class="badge badge-pill">
                                                     <img class="user-avatar--smaller" src="{{ asset('images/facebook.png') }}" alt="Facebook"/>
@@ -114,7 +136,7 @@
                                 </div>
 
                                 <div class="py-2">
-                                    <h4><strong>{{ trans('offer.description') }}</strong></h4>
+                                    <h4><strong><i class="fas fa-audio-description"></i>&nbsp;{{ trans('offer.description') }}</strong></h4>
                                     {!! $course->description !!}
                                 </div>
                             </div>

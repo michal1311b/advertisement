@@ -114,7 +114,9 @@
                             <div class="col-12">
                                 <ul class="list-group">
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        {{ __('Logo') }}
+                                        <span>
+                                            <i class="fas fa-box"></i>&nbsp;{{ __('Logo') }}
+                                        </span>
                                         <a href="{{ route('company-show', $advertisement->user) }}" title="{{ $advertisement->user->profile->company_name }}" >
                                             <span class="badge badge-pill">
                                                 <img class="user-avatar--smaller" alt="{{ $advertisement->user->profile->company_name }} logo" src="{{ $advertisement->user->avatar }}" />
@@ -122,15 +124,21 @@
                                         </a>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        {{ trans('offer.city') }}
+                                        <span>
+                                            <i class="fas fa-city"></i>&nbsp;{{ trans('offer.city') }}
+                                        </span>
                                         <span class="badge badge-pill">{{ $advertisement->location->city }}</span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        {{ trans('offer.street') }}
+                                        <span>
+                                            <i class="fas fa-road"></i>&nbsp;{{ trans('offer.street') }}
+                                        </span>
                                         <span class="badge badge-pill">{{ $advertisement->street }}</span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        {{ trans('offer.state') }}
+                                        <span>
+                                            <i class="fas fa-flag"></i>&nbsp;{{ trans('offer.state') }}
+                                        </span>
                                         <a href="{{ route('offers-by-state', ['state' => $advertisement->state, 'slug' => $advertisement->state->slug]) }}" title="{{ $advertisement->state->name }}">
                                             <span class="badge badge-pill">
                                                 {{ $advertisement->state->name }}
@@ -139,7 +147,9 @@
                                         </a>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        {{ trans('profile.specialization') }}
+                                        <span>
+                                            <i class="fas fa-clinic-medical"></i>&nbsp;{{ trans('profile.specialization') }}
+                                        </span>
                                         <a href="{{ route('offers-by-specialization', ['specialization' => $advertisement->specialization, 'slug' => $advertisement->specialization->slug]) }}">
                                             <span class="ml-2 btn btn-sm offer-item border{{ $advertisement->specialization_id }} text-white">
                                                 {{ $advertisement->specialization->name }}
@@ -149,32 +159,44 @@
                                         </a>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        {{ trans('offer.created_at') }}
+                                        <span>
+                                            <i class="far fa-calendar-plus"></i>&nbsp;{{ trans('offer.created_at') }}
+                                        </span>
                                         <span class="badge badge-pill">{{ $advertisement->created_at }}</span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        {{ trans('offer.expired_at') }}
+                                        <span>
+                                            <i class="fas fa-calendar-day"></i>&nbsp;{{ trans('offer.expired_at') }}
+                                        </span>
                                         <span class="badge badge-pill badge-primary">{{ $advertisement->expired_at }}</span>
                                     </li>
 
                                     @if($advertisement->expired_at < \Carbon\Carbon::now())
                                         <li class="list-group-item d-flex justify-content-between align-items-center font-weight-bold text-danger text-uppercase">
-                                            {{ trans('offer.offer-archive') }}
+                                            <span>
+                                                <i class="fas fa-calendar-day"></i> {{ trans('offer.offer-archive') }}
+                                            </span>
                                             <span class="badge badge-pill">
                                                 <img class="user-avatar--smaller" src="{{ asset('images/archived.png') }}" />
                                             </span>
                                         </li>
                                     @endif
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        {{ trans('offer.visits') }}
+                                        <span>
+                                            <i class="fas fa-eye"></i>&nbsp;{{ trans('offer.visits') }}
+                                        </span>
                                         <span class="badge badge-pill"><i class="fas fa-eye"></i> {{ $advertisement->visits_count }}</span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        {{ trans('offer.settlement') }}
+                                        <span>
+                                            <i class="fas fa-file-contract"></i>&nbsp;{{ trans('offer.settlement') }}
+                                        </span>
                                         <span class="badge badge-pill">{{ $advertisement->work->name }}</span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        {{ trans('offer.salary') }}
+                                        <span>
+                                            <i class="fas fa-coins"></i>&nbsp;{{ trans('offer.salary') }}
+                                        </span>
                                         <span class="badge badge-pill">
                                             <select class="custom-select">
                                                 <option selected>
@@ -189,7 +211,9 @@
                                         </span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        {{ trans('offer.salary_negotiable') }}
+                                        <span>
+                                            <i class="fas fa-file-signature"></i>&nbsp;{{ trans('offer.salary_negotiable') }}
+                                        </span>
                                         @if($advertisement->negotiable === 1)
                                             <i class="fas fa-clipboard-check"></i>
                                         @else
@@ -198,7 +222,9 @@
                                         </span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        {{ trans('offer.work-category') }}
+                                        <span>
+                                            <i class="fas fa-handshake"></i>&nbsp;{{ trans('offer.work-category') }}
+                                        </span>
                                         <span class="badge badge-pill">{{ $advertisement->settlement->name }}</span>
                                     </li>
                                 </ul>
@@ -229,20 +255,20 @@
                                 </div>
 
                                 <div class="py-2" id="description">
-                                    <h4><strong>{{ trans('offer.description') }}</strong></h4>
+                                    <h4><strong><i class="fas fa-audio-description"></i>&nbsp;{{ trans('offer.description') }}</strong></h4>
                                     {!! $advertisement->description !!}
                                 </div>
 
                                 @if($advertisement->requirements !== null)
                                     <div class="py-2">
-                                        <h4><strong>{{ trans('offer.requirements') }}</strong></h4>
+                                        <h4><strong><i class="fas fa-align-justify"></i>&nbsp;{{ trans('offer.requirements') }}</strong></h4>
                                         {!! $advertisement->requirements !!}
                                     </div>
                                 @endif
 
                                 @if($advertisement->profits !== null)
                                     <div class="py-2">
-                                        <h4><strong>{{ trans('offer.profits') }}</strong></h4>
+                                        <h4><strong><i class="fab fa-product-hunt"></i>&nbsp;{{ trans('offer.profits') }}</strong></h4>
                                         {!! $advertisement->profits !!}
                                     </div>
                                 @endif

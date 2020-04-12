@@ -26,7 +26,9 @@
                 <div class="tab-pane fade active show" id="step1" role="tabpanel" aria-labelledby="step1">
                     <div class="card-body">
                         <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ trans('profile.username') }} <span class="text-danger font-weight-bolder">*</span></label>
+                            <label for="name" class="col-md-4 col-form-label text-md-right">
+                                <i class="fas fa-user-alt"></i>&nbsp;{{ trans('profile.username') }} <span class="text-danger font-weight-bolder">*</span>
+                            </label>
 
                             <div class="col-md-6">
                                 <ValidationProvider :name="trans('profile.username')" rules="required|min:3|max:190" v-slot="{ errors }">
@@ -37,7 +39,9 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">E-Mail <span class="text-danger font-weight-bolder">*</span></label>
+                            <label for="email" class="col-md-4 col-form-label text-md-right">
+                                <i class="fas fa-envelope-open-text"></i>&nbsp;E-Mail <span class="text-danger font-weight-bolder">*</span>
+                            </label>
 
                             <div class="col-md-6">
                                 <ValidationProvider name="email" rules="required|email" v-slot="{ errors }">
@@ -48,7 +52,9 @@
                         </div>
                         <ValidationObserver>
                             <div class="form-group row">
-                                <label for="password" class="col-md-4 col-form-label text-md-right">{{ trans('sentence.password') }} <span class="text-danger font-weight-bolder">*</span></label>
+                                <label for="password" class="col-md-4 col-form-label text-md-right">
+                                    <i class="fas fa-lock"></i>&nbsp;{{ trans('sentence.password') }} <span class="text-danger font-weight-bolder">*</span>
+                                </label>
 
                                 <div class="col-md-6">
                                     <ValidationProvider :name="trans('sentence.password')" rules="required|min:8|confirmed:password-confirm" v-slot="{ errors }">
@@ -59,7 +65,9 @@
                             </div>
 
                             <div class="form-group row">
-                                <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ trans('profile.confirm_password') }} <span class="text-danger font-weight-bolder">*</span></label>
+                                <label for="password-confirm" class="col-md-4 col-form-label text-md-right">
+                                    <i class="fas fa-lock"></i>&nbsp;{{ trans('profile.confirm_password') }} <span class="text-danger font-weight-bolder">*</span>
+                                </label>
 
                                 <div class="col-md-6">
                                     <ValidationProvider :name="trans('profile.confirm_password')" v-slot="{ errors }" vid="password-confirm">
@@ -71,7 +79,9 @@
                         </ValidationObserver>
 
                         <div class="form-group row">
-                            <label for="company_nip" class="col-md-4 col-form-label text-md-right">{{ trans('company.company_nip') }} <span class="text-danger font-weight-bolder">*</span></label>
+                            <label for="company_nip" class="col-md-4 col-form-label text-md-right">
+                                <i class="fas fa-id-badge"></i>&nbsp;{{ trans('company.company_nip') }} <span class="text-danger font-weight-bolder">*</span>
+                            </label>
 
                             <div class="col-md-6">
                                 <ValidationProvider :name="trans('company.company_nip')" rules="required" v-slot="{ errors }">
@@ -88,7 +98,9 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="company_name" class="col-md-4 col-form-label text-md-right">{{ trans('company.company_name') }} <span class="text-danger font-weight-bolder">*</span></label>
+                            <label for="company_name" class="col-md-4 col-form-label text-md-right">
+                                <i class="fas fa-building"></i>&nbsp;{{ trans('company.company_name') }} <span class="text-danger font-weight-bolder">*</span>
+                            </label>
 
                             <div class="col-md-6">
                                 <ValidationProvider :name="trans('company.company_name')" rules="required|min:3|max:191" v-slot="{ errors }">
@@ -99,7 +111,9 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="company_street" class="col-md-4 col-form-label text-md-right">{{ trans('company.company_street') }} <span class="text-danger font-weight-bolder">*</span></label>
+                            <label for="company_street" class="col-md-4 col-form-label text-md-right">
+                                <i class="fas fa-road"></i>&nbsp;{{ trans('company.company_street') }} <span class="text-danger font-weight-bolder">*</span>
+                            </label>
 
                             <div class="col-md-6">
                                 <ValidationProvider :name="trans('company.company_street')" rules="required|min:3|max:191" v-slot="{ errors }">
@@ -110,7 +124,9 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="company_post_code" class="col-md-4 col-form-label text-md-right">{{ trans('company.company_post_code') }} <span class="text-danger font-weight-bolder">*</span></label>
+                            <label for="company_post_code" class="col-md-4 col-form-label text-md-right">
+                                <i class="fas fa-map-marked"></i>&nbsp;{{ trans('company.company_post_code') }} <span class="text-danger font-weight-bolder">*</span>
+                            </label>
 
                             <div class="col-md-6">
                                 <ValidationProvider :name="trans('company.company_post_code')" rules="required" v-slot="{ errors }">
@@ -121,7 +137,9 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="company_city" class="col-md-4 col-form-label text-md-right">{{ trans('company.company_city') }} <span class="text-danger font-weight-bolder">*</span></label>
+                            <label for="company_city" class="col-md-4 col-form-label text-md-right">
+                                <i class="fas fa-city"></i>&nbsp;{{ trans('company.company_city') }} <span class="text-danger font-weight-bolder">*</span>
+                            </label>
 
                             <div class="col-md-6">
                                 <ValidationProvider :name="trans('company.company_city')" rules="required|min:3|max:191" v-slot="{ errors }">
@@ -143,7 +161,7 @@
                 <div class="tab-pane fade" id="step2" role="tabpanel" aria-labelledby="step2">
                     <div class="card-body">
                         <div class="form-group row">
-                            <label for="title" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('sentence.title') }} <span class="text-danger font-weight-bolder">*</span></label>
+                            <label for="title" class="col-12 col-md-3 col-form-label text-md-right"><i class="fas fa-heading"></i>&nbsp;{{ trans('sentence.title') }} <span class="text-danger font-weight-bolder">*</span></label>
 
                             <div class="col-12 col-md-9">
                                 <ValidationProvider :name="trans('sentence.title')" rules="required|min:3|max:190" v-slot="{ errors }">
@@ -153,7 +171,7 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="description" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('offer.description') }} <span class="text-danger font-weight-bolder">*</span></label>
+                            <label for="description" class="col-12 col-md-3 col-form-label text-md-right"><i class="fas fa-audio-description"></i>&nbsp;{{ trans('offer.description') }} <span class="text-danger font-weight-bolder">*</span></label>
 
                             <div class="col-12 col-md-9">
                                 <tinymce id="description" name="description" v-model="formInputs.description">
@@ -162,7 +180,7 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="profits" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('offer.profits') }}</label>
+                            <label for="profits" class="col-12 col-md-3 col-form-label text-md-right"><i class="fab fa-product-hunt"></i>&nbsp;{{ trans('offer.profits') }}</label>
 
                             <div class="col-12 col-md-9">
                                 <tinymce id="profits" name="profits" v-model="formInputs.profits">
@@ -171,7 +189,7 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="requirements" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('offer.requirements') }}</label>
+                            <label for="requirements" class="col-12 col-md-3 col-form-label text-md-right"><i class="fas fa-align-justify"></i>&nbsp;{{ trans('offer.requirements') }}</label>
 
                             <div class="col-12 col-md-9">
                                 <tinymce id="requirements" name="requirements" v-model="formInputs.requirements">
@@ -192,7 +210,9 @@
                 <div class="tab-pane fade" id="step3" role="tabpanel" aria-labelledby="step3">
                     <div class="card-body">
                         <div class="form-group row">
-                            <label class="col-12 col-md-3 col-form-label text-md-right" for="work_id">{{ trans('offer.settlement') }} <span class="text-danger font-weight-bolder">*</span></label>
+                            <label class="col-12 col-md-3 col-form-label text-md-right" for="work_id">
+                                <i class="fas fa-file-contract"></i>&nbsp;{{ trans('offer.settlement') }} <span class="text-danger font-weight-bolder">*</span>
+                            </label>
                             <div class="col-12 col-md-9">
                                 <ValidationProvider :name="trans('offer.settlement')" :rules="'oneOf:' + workIds" v-slot="{ errors }">
                                     <select data-live-search="true" class="form-control" name="work_id" v-model="formInputs.work_id" id="work_id">
@@ -204,7 +224,9 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label class="col-12 col-md-3 col-form-label text-md-right" for="location_id">{{ trans('offer.location') }} <span class="text-danger font-weight-bolder">*</span></label>
+                            <label class="col-12 col-md-3 col-form-label text-md-right" for="location_id">
+                                <i class="fas fa-city"></i>&nbsp;{{ trans('offer.location') }} <span class="text-danger font-weight-bolder">*</span>
+                            </label>
                             <div class="col-12 col-md-9">
                                 <ValidationProvider :name="trans('offer.location')" :rules="'oneOf:' + locationIds" v-slot="{ errors }">
                                     <select data-live-search="true" class="form-control" name="location_id" v-model="formInputs.location_id" id="location_id">
@@ -218,7 +240,9 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label class="col-12 col-md-3 col-form-label text-md-right" for="state_id">{{ trans('offer.state') }} <span class="text-danger font-weight-bolder">*</span></label>
+                            <label class="col-12 col-md-3 col-form-label text-md-right" for="state_id">
+                                <i class="fas fa-flag"></i>&nbsp;{{ trans('offer.state') }} <span class="text-danger font-weight-bolder">*</span>
+                            </label>
                             <div class="col-12 col-md-9">
                                 <ValidationProvider :name="trans('offer.state')" :rules="'oneOf:' + stateIds" v-slot="{ errors }">
                                     <select data-live-search="true" class="form-control" name="state_id" v-model="formInputs.state_id" id="state_id">
@@ -232,7 +256,7 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="postCode" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('offer.post_code') }} <span class="text-danger font-weight-bolder">*</span></label>
+                            <label for="postCode" class="col-12 col-md-3 col-form-label text-md-right"><i class="fas fa-map-marked"></i>&nbsp;{{ trans('offer.post_code') }} <span class="text-danger font-weight-bolder">*</span></label>
 
                             <div class="col-12 col-md-9">
                                 <ValidationProvider :name="trans('offer.post_code')" rules="required" v-slot="{ errors }">
@@ -242,7 +266,7 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="street" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('offer.street') }} <span class="text-danger font-weight-bolder">*</span></label>
+                            <label for="street" class="col-12 col-md-3 col-form-label text-md-right"><i class="fas fa-road"></i>&nbsp;{{ trans('offer.street') }} <span class="text-danger font-weight-bolder">*</span></label>
 
                             <div class="col-12 col-md-9">
                                 <ValidationProvider :name="trans('offer.street')" rules="required|min:3|max:190" v-slot="{ errors }">
@@ -252,7 +276,9 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="phone" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('offer.phone') }} <span class="text-danger font-weight-bolder">*</span></label>
+                            <label for="phone" class="col-12 col-md-3 col-form-label text-md-right">
+                                <i class="fas fa-phone"></i>&nbsp;{{ trans('offer.phone') }} <span class="text-danger font-weight-bolder">*</span>
+                            </label>
 
                             <div class="col-12 col-md-9">
                                 <ValidationProvider :name="trans('offer.phone')" rules="required|min:3|max:190|integer" v-slot="{ errors }">
@@ -274,7 +300,7 @@
                 <div class="tab-pane fade" id="step4" role="tabpanel" aria-labelledby="step4">
                     <div class="card-body">
                         <div class="form-group row">
-                            <label class="col-12 col-md-3 col-form-label text-md-right" for="specialization_id">{{ trans('profile.specialization') }} <span class="text-danger font-weight-bolder">*</span></label>
+                            <label class="col-12 col-md-3 col-form-label text-md-right" for="specialization_id"><i class="fas fa-diagnoses"></i>&nbsp;{{ trans('profile.specialization') }} <span class="text-danger font-weight-bolder">*</span></label>
                             <div class="col-12 col-md-9">
                                 <ValidationProvider :name="trans('profile.specialization')" :rules="'oneOf:'+ specializationIds" v-slot="{ errors }">
                                     <select data-live-search="true" class="form-control" name="specialization_id" v-model="formInputs.specialization_id" id="specialization_id">
@@ -289,7 +315,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label class="col-12 col-md-3 col-form-label text-md-right" for="galleries">{{ trans('sentence.upload-image') }} <span class="text-danger font-weight-bolder">*</span></label>
+                            <label class="col-12 col-md-3 col-form-label text-md-right" for="galleries"><i class="fas fa-images"></i>&nbsp;{{ trans('sentence.upload-image') }} <span class="text-danger font-weight-bolder">*</span></label>
                             <div class="col-12 col-md-9">
                                 <input type="file" class="form-control" name="galleries[]" ref="file" @change="onFileChange();" multiple/>
                             </div>
@@ -297,7 +323,7 @@
 
                         <div class="form-group row">
                             <label for="tags" class="col-12 col-md-3 col-form-label text-md-right warning">
-                                {{ trans('offer.tags') }} <span class="badge blue-tooltip" data-toggle="tooltip" :title="trans('offer.tags-info')">!</span>
+                                <i class="fas fa-tags"></i>&nbsp;{{ trans('offer.tags') }} <span class="badge blue-tooltip" data-toggle="tooltip" :title="trans('offer.tags-info')">!</span>
                             </label>
                             <div class="col-12 col-md-9">
                                 <vue-tags-input
@@ -309,7 +335,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="min_salary" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('offer.min_salary') }} <span class="text-danger font-weight-bolder">*</span></label>
+                            <label for="min_salary" class="col-12 col-md-3 col-form-label text-md-right"><i class="fas fa-coins"></i>&nbsp;{{ trans('offer.min_salary') }} <span class="text-danger font-weight-bolder">*</span></label>
 
                             <div class="col-12 col-md-9">
                                 <ValidationProvider :name="trans('offer.min_salary')" rules="required|numeric" v-slot="{ errors }">
@@ -322,7 +348,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="max_salary" class="col-12 col-md-3 col-form-label text-md-right">{{ trans('offer.max_salary') }} <span class="text-danger font-weight-bolder">*</span></label>
+                            <label for="max_salary" class="col-12 col-md-3 col-form-label text-md-right"><i class="fas fa-coins"></i>&nbsp;{{ trans('offer.max_salary') }} <span class="text-danger font-weight-bolder">*</span></label>
 
                             <div class="col-12 col-md-9">
                                 <ValidationProvider :name="trans('offer.max_salary')" rules="required|is_not:min_salary|numeric" v-slot="{ errors }">
@@ -335,7 +361,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label class="col-12 col-md-3 col-form-label text-md-right" for="currency_id">{{ trans('offer.currency') }} <span class="text-danger font-weight-bolder">*</span></label>
+                            <label class="col-12 col-md-3 col-form-label text-md-right" for="currency_id"><i class="fas fa-coins"></i>&nbsp;{{ trans('offer.currency') }} <span class="text-danger font-weight-bolder">*</span></label>
                             <div class="col-12 col-md-9">
                                 <ValidationProvider :name="trans('offer.currency')" :rules="'oneOf:'+ currencyIds" v-slot="{ errors }">
                                     <select data-live-search="true" class="form-control" v-model="formInputs.currency_id" id="currency_id">
@@ -350,7 +376,9 @@
                         </div>
 
                         <div class="form-group row">
-                            <label class="col-12 col-md-3 col-form-label text-md-right" for="settlement_id">{{ trans('offer.work-category') }} <span class="text-danger font-weight-bolder">*</span></label>
+                            <label class="col-12 col-md-3 col-form-label text-md-right" for="settlement_id">
+                                <i class="fas fa-handshake"></i>&nbsp;{{ trans('offer.work-category') }} <span class="text-danger font-weight-bolder">*</span>
+                            </label>
                             <div class="col-12 col-md-9">
                                 <ValidationProvider :name="trans('offer.work-category')" :rules="'oneOf:'+ settlementIds" v-slot="{ errors }">
                                     <select data-live-search="true" class="form-control" v-model="formInputs.settlement_id" name="settlement_id" id="settlement_id">

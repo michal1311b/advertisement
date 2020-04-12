@@ -12,7 +12,7 @@
             
             <div class="form-row">
                 <div class="form-group col-md-12">
-                    <label for="message">{{ trans('email.message') }}</label>
+                    <label for="message"><i class="fas fa-envelope-open-text"></i>&nbsp;{{ trans('email.message') }}</label>
                     <textarea id="message" class="form-control @error('message') is-invalid @enderror" name="message" value="{{ old('message') }}" autocomplete="message" autofocus rows="3"></textarea>
                 </div>
             </div>

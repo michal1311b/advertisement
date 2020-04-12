@@ -106,10 +106,12 @@
                 </div>
                 <div class="card-body">
                     @if(count($user->advertisements) > 0)
-                        <ul>
+                        <ul class="no-style">
                             @foreach($user->advertisements as $specialization)
-                                <a href="#p{{ $specialization->id }}">
-                                    <li>
+                                <a href="#p{{ $specialization->id }}" class="p{{ $specialization->id }}">
+                                    <li class="py-1">
+                                        <img src="{{ asset('images/icons/' . $specialization->specialization->id . '.jpg') }}" 
+                                        class="rounded-circle" alt="{{ $specialization->specialization->name }}">
                                         {{ $specialization->specialization->name }}, {{ $specialization->location->city }}, {{ $specialization->min_salary }}-{{ $specialization->max_salary }} {{ $specialization->currency->symbol }}
                                     </li>
                                 </a>
@@ -195,10 +197,12 @@
                 </div>
                 <div class="card-body">
                     @if(count($user->foreignOffers) > 0)
-                        <ul>
+                        <ul class="no-style">
                             @foreach($user->foreignOffers as $specialization)
-                                <a href="#{{ $specialization->id }}">
-                                    <li>
+                                <a href="#{{ $specialization->id }}"class="{{ $specialization->id }}">
+                                    <li class="py-1">
+                                        <img src="{{ asset('images/icons/' . $specialization->specialization->id . '.jpg') }}" 
+                                        class="rounded-circle" alt="{{ $specialization->specialization->name }}">
                                         {{ $specialization->specialization->name }}, {{ $specialization->city }}, {{ $specialization->min_salary }}-{{ $specialization->max_salary }} {{ $specialization->currency->symbol }}
                                     </li>
                                 </a>
@@ -268,6 +272,7 @@ $(document).ready(function() {
     markers1 = [
         @foreach($user->advertisements as $advertisement)
             {
+                "_id": "{{ $advertisement->id }}",
                 "id": "{{ $advertisement->specialization->id }}",
                 "street": "{{ $advertisement->street }}",
                 "name": "{{ $advertisement->location->city }}",
@@ -291,6 +296,9 @@ $(document).ready(function() {
         subdomains: ['a','b','c']
     }).addTo( map1 );
 
+    var markers1Arr = [];
+    var markers2Arr = [];
+
     for ( var i=0; i < markers1.length; ++i ) 
     {
         let icon = L.icon({ 
@@ -298,17 +306,30 @@ $(document).ready(function() {
             iconSize: [26, 26],
         });
 
-        L.marker( 
+        var m = L.marker( 
         [markers1[i].lat, markers1[i].lng],
         { icon: icon } )
         .bindPopup( '<a href="' + markers1[i].slug + '" target="_blank">' + markers1[i].name + ', ' + markers1[i].street + ': ' + markers1[i].min_salary + '-' + markers1[i].max_salary + ' ' + markers1[i].currency + '</a>' )
         .addTo( map1 );
-    }
+
+        markers1Arr['p'+markers1[i]._id] = m;
+
+        $('.p' +markers1[i]._id).mouseenter(function(e) {
+            let m = markers1Arr[e.currentTarget.className];
+            
+            $(m._icon).addClass('selectedMarker');
+        })
+        .mouseleave(function(e) {
+            let m = markers1Arr[e.currentTarget.className];
+            $(m._icon).removeClass('selectedMarker');
+        });
+    }  
 
     document.getElementById('map2').innerHTML = "<div id='map2' style='width: 100%; height: 100%;'></div>";
     markers2 = [
         @foreach($user->foreignOffers as $advertisement)
             {
+                "_id": "{{ $advertisement->id }}",
                 "id": "{{ $advertisement->specialization->id }}",
                 "street": "{{ $advertisement->street }}",
                 "name": "{{ $advertisement->city }}",
@@ -339,11 +360,23 @@ $(document).ready(function() {
             iconSize: [26, 26],
         });
 
-        L.marker( 
+        var m = L.marker( 
         [markers2[i].lat, markers2[i].lng],
         { icon: icon } )
         .bindPopup( '<a href="' + markers2[i].slug + '" target="_blank">' + markers2[i].name + ', ' + markers2[i].street + ': ' + markers2[i].min_salary + '-' + markers2[i].max_salary + ' ' + markers2[i].currency + '</a>' )
         .addTo( map2 );
+
+        markers2Arr[markers2[i]._id] = m;
+
+        $('.' +markers2[i]._id).mouseenter(function(e) {
+            let m = markers2Arr[e.currentTarget.className];
+            
+            $(m._icon).addClass('selectedMarker');
+        })
+        .mouseleave(function(e) {
+            let m = markers2Arr[e.currentTarget.className];
+            $(m._icon).removeClass('selectedMarker');
+        });
     }
 });
 </script>
