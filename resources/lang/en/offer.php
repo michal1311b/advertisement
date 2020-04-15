@@ -54,4 +54,6 @@ return [
     'employer-online' => 'The employer is online',
     'offers-count' => 'Current number of job\'s offers from Poland',
     'foreign-count' => 'Current number of job\'s offers from abroad',
+    'voivodeship-offers' => 'Offers from the province:',
+    'specialization-offers' => 'Specialization offers:'
 ];

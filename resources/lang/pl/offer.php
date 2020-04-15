@@ -54,4 +54,6 @@ return [
     'employer-online' => 'Pracodawca jest Online',
     'offers-count' => 'Aktualna liczba ogłoszeń z Polski',
     'foreign-count' => 'Aktualna liczba ogłoszeń zza granicy',
+    'voivodeship-offers' => 'Oferty z województwa:',
+    'specialization-offers' => 'Oferty ze specjalizacji:'
 ];

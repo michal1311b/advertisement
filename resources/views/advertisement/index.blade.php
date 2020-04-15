@@ -27,6 +27,24 @@
         <div class="col-12 pb-3">
             <div id="map" style="height: 440px; border: 1px solid #AAA;"></div>
         </div>
+        @if(isset($state))
+            <div class="col-12 pb-3">
+                <h4>
+                    {{ trans('offer.voivodeship-offers') }} <strong>{{ $state->name }}</strong>
+                    <img class="state-icon" src="{{ asset('images/icons/states/' . $state->id . '.png') }}" alt="{{ trans('offer.state') }} {{ $state->name }}">
+                </h4>
+            </div>
+        @endif
+        @if(isset($specialization))
+            <div class="col-12 pb-3">
+                {{ trans('offer.specialization-offers') }}
+                <span class="ml-2 btn btn-sm offer-item border{{ $specialization->id }} text-white">
+                    {{ $specialization->name }}
+                    <img src="{{ asset('images/icons/' . $specialization->id . '.jpg') }}" 
+                    class="rounded-circle" alt="{{ $specialization->name }}">
+                </span>
+            </div>
+        @endif
         <div class="col-lg-12 mx-auto">
             @include('partials.search')
             @if(count($advertisements) > 0)

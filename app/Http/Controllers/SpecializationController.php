@@ -58,7 +58,8 @@ class SpecializationController extends Controller
             'foreigns', 
             'specializations', 
             'expirateDate', 
-            'currencies'
+            'currencies',
+            'specialization'
         ]));
     }
 
@@ -118,7 +119,8 @@ class SpecializationController extends Controller
             'locations', 
             'specializations', 
             'currencies',
-            'states'
+            'states',
+            'specialization'
         ]));
     }
 }

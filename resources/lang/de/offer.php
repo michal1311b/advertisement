@@ -54,4 +54,6 @@ return [
     'employer-online' => 'Der Arbeitgeber ist online',
     'offers-count' => 'Aktuelle Anzahl Anzeigen aus Polen',
     'foreign-count' => 'Aktuelle Anzahl Anzeigen aus dem Ausland',
+    'voivodeship-offers' => 'Angebote aus der Provinz:',
+    'specialization-offers' => 'Spezialisierungsangebote:'
 ];

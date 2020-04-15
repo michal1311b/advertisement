@@ -54,4 +54,6 @@ return [
     'employer-online' => 'Роботодавець онлайн',
     'offers-count' => 'Поточна кількість оголошень з Польщі',
     'foreign-count' => 'Поточна кількість оголошень з-за кордону',
+    'voivodeship-offers' => 'Пропозиції з провінції:',
+    'specialization-offers' => 'Пропозиції:'
 ];

@@ -68,7 +68,8 @@ class StateController extends Controller
             'locations', 
             'specializations', 
             'currencies',
-            'states'
+            'states',
+            'state'
         ]));
     }
 }

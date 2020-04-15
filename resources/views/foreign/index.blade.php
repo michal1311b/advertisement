@@ -27,6 +27,16 @@
         <div class="col-12 pb-3">
             <div id="map" style="height: 440px; border: 1px solid #AAA;"></div>
         </div>
+        @if(isset($specialization))
+            <div class="col-12 pb-3">
+                {{ trans('offer.specialization-offers') }}
+                <span class="ml-2 btn btn-sm offer-item border{{ $specialization->id }} text-white">
+                    {{ $specialization->name }}
+                    <img src="{{ asset('images/icons/' . $specialization->id . '.jpg') }}" 
+                    class="rounded-circle" alt="{{ $specialization->name }}">
+                </span>
+            </div>
+        @endif
         <div class="col-lg-12 mx-auto">
             @include('partials.search-foreign')
             @if(count($foreigns) > 0)
