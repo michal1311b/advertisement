@@ -53,7 +53,7 @@
                 </div>
                 @foreach($advertisements as $advertisement)
                     <!-- List group-->
-                    <ul class="list-group shadow offer-item color{{ $advertisement->specialization_id }}">
+                    <ul class="list-group shadow offer-item color{{ $advertisement->specialization_id }}" id="o{{ $advertisement->id }}">
                         <a href="{{ route('show-advertisement', ['id' => $advertisement->id, 'slug' => $advertisement->slug]) }}" class="no-decoration" title="{{ $advertisement->title }}"> 
                             <!-- list group item-->
                             <li class="list-group-item">
@@ -86,6 +86,9 @@
                             <!-- End -->
                         </a>
                     </ul>
+                    <div class="pop-up" id="popup{{ $advertisement->id }}">
+                        <div id="map{{ $advertisement->id }}" style="height: 220px; border: 1px solid #AAA;"></div>
+                     </div>
                     <!-- End -->
                     @if(Auth::user() && Auth::user()->hasRole('admin'))
                         <div class="col-md-12">
@@ -143,7 +146,7 @@ $(document).ready(function() {
                 "currency": "{{ $advertisement->currency->symbol }}",
                 "specialization": "{{ $advertisement->specialization->name }}",
             },
-    @endforeach
+        @endforeach
     ];
     var map = L.map( 'map', {
         center: [52.237049, 21.017532],
@@ -177,6 +180,46 @@ $(document).ready(function() {
         .addTo( map )
         .bindPopup( '<a href="' + markers[i].slug + '" target="_blank">' + markers[i].name + ', ' + markers[i].street + ',<br>' + markers[i].specialization + ': ' + markers[i].min_salary + '-' + markers[i].max_salary + ' ' + markers[i].currency +'</a>', customOptions );
     }
+
+    var moveLeft = 20;
+    var moveDown = 10;
+
+    @foreach($advertisements as $advertisement)
+        $(function() {
+            document.getElementById('map' + {{ $advertisement->id }}).innerHTML = "<div id='map{{ $advertisement->id }}' style='width: 100%; height: 100%;'></div>";
+            
+            $('#o' + {{ $advertisement->id }}).hover(function(e) {
+                $('#popup' + {{ $advertisement->id }}).show();
+                let map{{ $advertisement->id }} = L.map( 'map'+{{ $advertisement->id }}, {
+                    center: [{{ $advertisement->latitude }}, {{ $advertisement->longitude }}],
+                    minZoom: 2,
+                    zoom: 15
+                });
+
+                L.tileLayer( 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+                    subdomains: ['a','b','c']
+                }).addTo( map{{ $advertisement->id }} );
+
+                let icon{{ $advertisement->id }} = L.icon({ 
+                    iconUrl: '{{ URL::asset('/images/icons/') }}' + '/' + {{ $advertisement->specialization_id }} + '.jpg',
+                    iconSize: [26, 26],
+                });
+                L.marker( 
+                [{{ $advertisement->latitude }}, {{ $advertisement->longitude }}],
+                { 
+                    icon: icon{{ $advertisement->id }}
+                })
+                .addTo( map{{ $advertisement->id }} );
+            }, function() {
+                $('#popup' + {{ $advertisement->id }}).hide();
+            });
+
+            $('#o' + {{ $advertisement->id }}).mousemove(function(e) {
+                $('#popup' + {{ $advertisement->id }}).css('top', e.pageY + moveDown).css('left', e.pageX + moveLeft);
+            });
+        });
+    @endforeach
 });
 </script>
 @endsection

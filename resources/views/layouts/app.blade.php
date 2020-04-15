@@ -4,7 +4,7 @@
     @include('partials.layouts-header')
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css?rand=70') }}" rel="stylesheet">
+    <link href="{{ asset('css/app.css?rand=71') }}" rel="stylesheet">
     @yield('css')
 
     <script type='text/javascript' src='//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js'></script>
@@ -52,7 +52,7 @@
         <i class="fas fa-arrow-up"></i>
     </a>
 
-    <script src="{{ asset('js/app.js?rand=70') }}" defer></script>
+    <script src="{{ asset('js/app.js?rand=71') }}" defer></script>
     <!-- Scripts -->
     @yield('scripts')
 

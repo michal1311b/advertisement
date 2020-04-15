@@ -213,3 +213,17 @@ tfoot input {
     width: 400px;
     height: 400px;
 }
+
+
+/* HOVER STYLES */
+ 
+div.pop-up {
+    display: none;
+    width: 100%;
+    padding: 10px;
+    background: #eeeeee;
+    color: #000000;
+    border: 1px solid #1a1a1a;
+    font-size: 90%;
+    z-index: 1000000;
+}
