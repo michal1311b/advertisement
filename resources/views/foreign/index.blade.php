@@ -45,7 +45,7 @@
                 </div>
                 @foreach($foreigns as $foreign)
                     <!-- List group-->
-                    <ul class="list-group shadow offer-item color{{ $foreign->specialization_id }}">
+                    <ul class="list-group shadow offer-item color{{ $foreign->specialization_id }}"  id="o{{ $foreign->id }}">
                         <a href="{{ route('show-foreign', ['id' => $foreign->id, 'slug' => $foreign->slug]) }}" class="no-decoration" title="{{ $foreign->title }}"> 
                             <!-- list group item-->
                             <li class="list-group-item">
@@ -78,6 +78,9 @@
                             <!-- End -->
                         </a>
                     </ul>
+                    <div class="pop-up" id="popup{{ $foreign->id }}">
+                        <div id="map{{ $foreign->id }}" style="height: 220px; border: 1px solid #AAA;"></div>
+                     </div>
                     <!-- End -->
                     @if(Auth::user() && Auth::user()->hasRole('admin'))
                         <div class="col-md-12">
@@ -169,6 +172,46 @@ $(document).ready(function() {
         .addTo( map )
         .bindPopup( '<a href="' + markers[i].slug + '" target="_blank">' + markers[i].name + ', ' + markers[i].street + ',<br>' + markers[i].specialization + ': ' + markers[i].min_salary + '-' + markers[i].max_salary + ' ' + markers[i].currency +'</a>', customOptions );
     }
+
+    var moveLeft = 20;
+    var moveDown = 10;
+
+    @foreach($foreigns as $foreign)
+        $(function() {
+            document.getElementById('map' + {{ $foreign->id }}).innerHTML = "<div id='map{{ $foreign->id }}' style='width: 100%; height: 100%;'></div>";
+            
+            $('#o' + {{ $foreign->id }}).hover(function(e) {
+                $('#popup' + {{ $foreign->id }}).show();
+                let map{{ $foreign->id }} = L.map( 'map'+{{ $foreign->id }}, {
+                    center: [{{ $foreign->latitude }}, {{ $foreign->longitude }}],
+                    minZoom: 2,
+                    zoom: 15
+                });
+
+                L.tileLayer( 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+                    subdomains: ['a','b','c']
+                }).addTo( map{{ $foreign->id }} );
+
+                let icon{{ $foreign->id }} = L.icon({ 
+                    iconUrl: '{{ URL::asset('/images/icons/') }}' + '/' + {{ $foreign->specialization_id }} + '.jpg',
+                    iconSize: [26, 26],
+                });
+                L.marker( 
+                [{{ $foreign->latitude }}, {{ $foreign->longitude }}],
+                { 
+                    icon: icon{{ $foreign->id }}
+                })
+                .addTo( map{{ $foreign->id }} );
+            }, function() {
+                $('#popup' + {{ $foreign->id }}).hide();
+            });
+
+            $('#o' + {{ $foreign->id }}).mousemove(function(e) {
+                $('#popup' + {{ $foreign->id }}).css('top', e.pageY + moveDown).css('left', e.pageX + moveLeft);
+            });
+        });
+    @endforeach
 });
 </script>
 @endsection
