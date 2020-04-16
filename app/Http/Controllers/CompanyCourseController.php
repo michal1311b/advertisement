@@ -103,7 +103,7 @@ class CompanyCourseController extends Controller
     }
 
      /**
-	 * Show an course's participants
+	 * Show an course's participants list
      * @urlParam $id required The ID of the course
      * @queryParam $participants list of participants
      * @queryParam $course current course
@@ -121,6 +121,25 @@ class CompanyCourseController extends Controller
         ]));
     }
 
+    /**
+	 * Edit a company's course
+     * @urlParam $id required The ID of company's course
+     * @urlParam $request required url data
+     * @queryParam course current course depends on id
+     * with state, location, currency, specialization
+     * @queryParam $locations list of locations, get [id, city]
+     * @queryParam $specializations list of specializations
+     * @queryParam $currencies list of currencies
+     * @queryParam $states list of states
+     * 
+     * @response view with params [
+     * course,
+     * states,
+     * locations,
+     * specializations,
+     * currencies
+     * ]
+     */
     public function edit(Request $request, $id)
     {
         $request->user()->authorizeRoles(['company', 'admin']);
@@ -157,6 +176,21 @@ class CompanyCourseController extends Controller
         ]));
     }
 
+    /**
+	 * update a company's course
+     * @urlParam $id required The ID of the company's course
+     * @urlParam $request required url data
+     * 
+     * @response 201 {
+     *  "status" => 201,
+     *  "message" => string
+     * }
+     * 
+     * @response {
+     *  "status" => "status error",
+     *  "message" => string
+     * }
+     */
     public function update(Request $request, $id)
     {
         DB::beginTransaction();
@@ -182,14 +216,38 @@ class CompanyCourseController extends Controller
         }
     }
 
+     /**
+	 * Show an course's participant
+     * @urlParam $id required The ID of the course
+     * @queryParam $participant current participant
+     * @queryParam $course current course
+     * 
+     * @response view with params [ course, participant ]
+     */
     public function showCourseParticiapnt($course, $participant)
     {
         $course = CompanyCourse::find($course);
         $participant = Participant::find($participant);
 
-        return view('course.participant-show', compact(['course', 'participant']));
+        return view('course.participant-show', compact([
+            'course', 'participant'
+        ]));
     }
 
+    /**
+	 * Create a course
+     * @queryParam $locations list of locations, get [id, city]
+     * @queryParam $specializations list of specializations
+     * @queryParam $currencies list of currencies, get [id, symbol]
+     * @queryParam $states list of states, get [id, name]
+     * 
+     * @response view with params [
+     * states,
+     * locations,
+     * specializations,
+     * currencies
+     * ]
+	 */
     public function create()
     {
         $states = State::get(['id', 'name']);
@@ -197,9 +255,28 @@ class CompanyCourseController extends Controller
         $specializations = Specialization::get(['id', 'name']);
         $currencies = Currency::get(['id', 'symbol']);
 
-        return view('course.create', compact(['states', 'locations', 'specializations', 'currencies']));
+        return view('course.create', compact([
+            'states', 
+            'locations', 
+            'specializations', 
+            'currencies'
+        ]));
     }
 
+    /**
+	 * Store a course
+     * @urlParam StoreRequest $request
+     * 
+     * @response 201 {
+     *  "status" => 201,
+     *  "message" => string
+     * }
+     * 
+     * @response {
+     *  "status" => "status error",
+     *  "message" => string
+     * }
+	 */
     public function store(StoreRequest $request)
     {
         DB::beginTransaction();
@@ -225,6 +302,10 @@ class CompanyCourseController extends Controller
         }
     }
 
+    /**
+	 * delete a course's avatar
+     * @urlParam $id required The ID of Company's course
+     */
     public function deletePhoto($id)
     {
         $gallery = CompanyCourse::findOrFail($id);

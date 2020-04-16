@@ -60,7 +60,7 @@
                                                         {{ method_field('DELETE') }}
 
                                                         <button type="submit" id="delete-follow-{{ $advertisement->user->id }}" class="btn btn-rounded btn-danger">
-                                                            <i class="fa fa-btn fa-trash"></i>Unfollow
+                                                            <i class="fa fa-btn fa-trash"></i> {{ trans('buttons.unfollow') }}
                                                         </button>
                                                     </form>
                                                 </div>

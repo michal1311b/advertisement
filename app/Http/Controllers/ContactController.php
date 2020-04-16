@@ -28,15 +28,7 @@ class ContactController extends Controller
 	 * Store an applications for Advertisements
      * @urlParam StoreRequest $request
      * 
-     * @response 201 {
-     *  "status" => 201,
-     *  "message" => string
-     * }
-     * 
-     * @response {
-     *  "status" => "status error",
-     *  "message" => string
-     * }
+     * @response view of advertisement or foreign's offer
 	 */
     public function store(StoreRequest $request, $id)
     {
@@ -171,6 +163,18 @@ class ContactController extends Controller
         }
     }
 
+    /**
+	 * Store room for advertisement or foreign offers
+     * @urlParam $title
+     * @urlParam $user_id
+     * @urlParam $message
+     * @urlParam $advert_user
+     * 
+     * @response [
+     *  room,
+     *  message
+     * ]
+	 */
     private function buildRoom($title, $user_id, $message, $advert_user)
     {
         $room = Room::create([
@@ -203,6 +207,14 @@ class ContactController extends Controller
         return $roomData;
     }
 
+    /**
+	 * Check if exist application for any advertisement or foreign offers
+     * @urlParam $user
+     * @urlParam $advertisement
+     * @urlParam $type
+     * 
+     * @response true if application exists or void if it doesn't
+	 */
     private function checkApplication($user, $advertisement, $type)
     {
         if($type === 'offer')
@@ -220,11 +232,22 @@ class ContactController extends Controller
         }
     }
 
+    /**
+	 * Show site's contact form view
+     * 
+     * @response view 
+     */
     public function show()
     {
         return view('contact.show');
     }
 
+    /**
+	 * Store site's contact gorm
+     * @urlParam SiteRequest $request
+     * 
+     * @response view with site's contact form
+	 */
     public function sendForm(SiteRequest $request)
     {
         DB::beginTransaction();

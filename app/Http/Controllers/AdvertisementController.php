@@ -156,14 +156,7 @@ class AdvertisementController extends Controller
 
     /**
 	 * Store a advertisement
-     * @urlParam $request
-     * @queryParam $works list of works
-     * @queryParam $settlements list of settlements
-     * @queryParam $locations list of locations, get [id, city]
-     * @queryParam $specializations list of specializations
-     * @queryParam $currencies list of currencies, get [id, symbol]
-     * @queryParam $states list of states, get [id, name]
-     * @queryParam $user get auth user with loaded profile
+     * @urlParam StoreRequest $request
      * 
      * @response 201 {
      *  "status" => 201,
