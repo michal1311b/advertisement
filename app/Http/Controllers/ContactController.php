@@ -4,12 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Advertisement;
 use App\Application;
-use Illuminate\Http\Request;
 use App\Contact;
 use App\ForeignApplication;
+use App\ForeignOffer;
 use App\User;
-use App\Http\Service\Mailer;
-use App\Notifications\NewMessage;
 use App\Http\Requests\Contact\StoreRequest;
 use App\Http\Requests\SiteContact\StoreRequest as SiteRequest;
 use App\Mail\ApplicationEmail;
@@ -26,16 +24,30 @@ use Illuminate\Support\Facades\Log;
 
 class ContactController extends Controller
 {
-    public function store(StoreRequest $request, Advertisement $advertisement)
+    /**
+	 * Store an applications for Advertisements
+     * @urlParam StoreRequest $request
+     * 
+     * @response 201 {
+     *  "status" => 201,
+     *  "message" => string
+     * }
+     * 
+     * @response {
+     *  "status" => "status error",
+     *  "message" => string
+     * }
+	 */
+    public function store(StoreRequest $request, $id)
     {
         $user = auth()->user();
 
-        if($this->checkApplication($user, $advertisement, $request['emailType']))
+        if($this->checkApplication($user, $id, $request['emailType']))
         {
             session()->flash('error', trans('sentence.applied-again'));
 
             return back();
-        } 
+        }
 
         DB::beginTransaction();
 
@@ -46,6 +58,8 @@ class ContactController extends Controller
 
             if($request['emailType'] === 'offer')
             {
+                $advertisement = Advertisement::find($id);
+                 
                 Application::create([
                     'user_id' => $user->id,
                     'advertisement_id' => $advertisement->id
@@ -88,6 +102,8 @@ class ContactController extends Controller
                     $contact->message,
                     $advertisement->user_id);
             } else {
+                $advertisement = ForeignOffer::find($id);
+                
                 ForeignApplication::create([
                     'user_id' => $user->id,
                     'foreign_offer_id' => $advertisement->id
@@ -189,16 +205,16 @@ class ContactController extends Controller
 
     private function checkApplication($user, $advertisement, $type)
     {
-        if($type === 'offfer')
+        if($type === 'offer')
         {
             $application = Application::where('user_id', $user->id)
-            ->where('advertisement_id', $advertisement->id)->get();
+            ->where('advertisement_id', $advertisement)->first();
         } else {
             $application = ForeignApplication::where('user_id', $user->id)
-            ->where('foreign_offer_id', $advertisement->id)->get();
+            ->where('foreign_offer_id', $advertisement)->first();
         }
 
-        if(count($application))
+        if($application)
         {
             return true;
         }
@@ -229,13 +245,5 @@ class ContactController extends Controller
 
             return back()->withInput($request->all());
         }
-    }
-
-    private function sendEmail(Contact $contact, $userId)
-    {
-        Mailer::sendEmail(
-            $contact::with('user')
-            ->find($userId)
-        );
     }
 }
