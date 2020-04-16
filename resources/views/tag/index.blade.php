@@ -46,7 +46,7 @@
                 @foreach($advertisements as $advertisement)
                     @if($advertisement->advertisement !== null)
                         <!-- List group-->
-                        <ul class="list-group shadow offer-item color{{ $advertisement->advertisement->specialization_id }}">
+                        <ul class="list-group shadow offer-item color{{ $advertisement->advertisement->specialization_id }}" id="o{{ $advertisement->advertisement->id }}">
                             <a href="{{ route('show-advertisement', ['id' => $advertisement->advertisement->id, 'slug' => $advertisement->advertisement->slug]) }}" class="no-decoration" title="{{ $advertisement->advertisement->title }}"> 
                                 <!-- list group item-->
                                 <li class="list-group-item">
@@ -80,6 +80,9 @@
                             </a>
                         </ul>
                         <!-- End -->
+                        <div class="pop-up" id="popup{{ $advertisement->advertisement->id }}">
+                            <div id="map{{ $advertisement->advertisement->id }}" style="height: 220px; border: 1px solid #AAA;"></div>
+                        </div>
                     @endif
                 @endforeach
             </div>
@@ -92,4 +95,49 @@
 @endsection
 
 @section('scripts')
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.6.0/leaflet.css" integrity="sha256-SHMGCYmST46SoyGgo4YR/9AlK1vf3ff84Aq9yK4hdqM=" crossorigin="anonymous" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.6.0/leaflet.js" integrity="sha256-fNoRrwkP2GuYPbNSJmMJOCyfRB2DhPQe0rGTgzRsyso=" crossorigin="anonymous"></script>
+<script>
+    var moveLeft = 20;
+    var moveDown = 10;
+
+    @foreach($advertisements as $advertisement)
+        @if($advertisement->advertisement !== null)
+            $(function() {
+                document.getElementById('map' + {{ $advertisement->advertisement->id }}).innerHTML = "<div id='map{{ $advertisement->advertisement->id }}' style='width: 100%; height: 100%;'></div>";
+                
+                $('#o' + {{ $advertisement->advertisement->id }}).hover(function(e) {
+                    $('#popup' + {{ $advertisement->advertisement->id }}).show();
+                    let map{{ $advertisement->advertisement->id }} = L.map( 'map'+{{ $advertisement->advertisement->id }}, {
+                        center: [{{ $advertisement->advertisement->latitude }}, {{ $advertisement->advertisement->longitude }}],
+                        minZoom: 2,
+                        zoom: 15
+                    });
+
+                    L.tileLayer( 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+                        subdomains: ['a','b','c']
+                    }).addTo( map{{ $advertisement->advertisement->id }} );
+
+                    let icon{{ $advertisement->advertisement->id }} = L.icon({ 
+                        iconUrl: '{{ URL::asset('/images/icons/') }}' + '/' + {{ $advertisement->advertisement->specialization_id }} + '.jpg',
+                        iconSize: [26, 26],
+                    });
+                    L.marker( 
+                    [{{ $advertisement->advertisement->latitude }}, {{ $advertisement->advertisement->longitude }}],
+                    { 
+                        icon: icon{{ $advertisement->advertisement->id }}
+                    })
+                    .addTo( map{{ $advertisement->advertisement->id }} );
+                }, function() {
+                    $('#popup' + {{ $advertisement->advertisement->id }}).hide();
+                });
+
+                $('#o' + {{ $advertisement->advertisement->id }}).mousemove(function(e) {
+                    $('#popup' + {{ $advertisement->advertisement->id }}).css('top', e.pageY + moveDown).css('left', e.pageX + moveLeft);
+                });
+            });
+        @endif
+    @endforeach
+</script>
 @endsection
