@@ -30,12 +30,12 @@ Breadcrumbs::for('regulation', function ($trail) {
 });
 
 Breadcrumbs::for('opinion-summary', function ($trail) {
-    $trail->parent('home');
+    $trail->parent('site.homepage');
     $trail->push(trans('sentence.thanks-for-opinion'), route('thanks-opinion'));
 });
 
 Breadcrumbs::for('contact-form', function ($trail) {
-    $trail->parent('home');
+    $trail->parent('site.homepage');
     $trail->push(trans('email.contact-form'), route('contact.show'));
 });
 
