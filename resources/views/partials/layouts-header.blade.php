@@ -29,9 +29,12 @@
 @if ( $app->environment('production') )
     <meta name="google-site-verification" content="jfNlGa8VrIzRlRuXIAQUluPtz8yJ1L7tIclBGgo50ek" />
     <meta name="robots" content="index, follow">
-    @if(auth()->user()->hasRole('doctor') || auth()->user()->hasRole('nurse'))
-        <script data-ad-client="ca-pub-2054450046880980" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    @endif
+    @guest
+    @else
+        @if(auth()->user()->hasRole('doctor') || auth()->user()->hasRole('nurse'))
+            <script data-ad-client="ca-pub-2054450046880980" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        @endif
+    @endguest
 @else
     <meta name="robots" content="noindex, nofollow">
 @endif
